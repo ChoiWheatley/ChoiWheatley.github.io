@@ -1,0 +1,17 @@
+site_name: Choi Wheatley's Second Brain
+site_url: https://choiwheatley.github.io
+site_author: you
+site_description: site_description
+
+nav:
+  - About: test.md
+
+theme:
+  name: material
+  highlights: true
+  hljs_languages:
+    - yaml
+
+plugins:
+  - search
+  - roamlinks
