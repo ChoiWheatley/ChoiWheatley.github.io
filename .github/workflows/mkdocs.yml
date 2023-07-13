@@ -34,10 +34,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs-material
+          pip install -r requirements.txt
 
       - name: Deploy
-        uses: mhausenblas/mkdocs-deploy-gh-pages@1.26
+        run: |
+          mkdocs gh-deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CONFIG_FILE: mkdocs.yml
