@@ -1,0 +1,385 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/Bitset%20in%20rust/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Bitset in rust - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bitset in rust
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Bitset in rust</h1>
+
+<ul>
+<li>moved to notion https://choiwheatley.notion.site/Bitset-in-rust-56ebc5cb130a4fdfb7cdecf9f78b232e</li>
+<li>parent <a href="../0000%20Index%20%F0%9F%94%97/0013%20Rust%20%F0%9F%A6%80/">0013 Rust 🦀</a></li>
+</ul>
+<hr />
+<p><a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">러스트로 game of life 구현하기</a>를 진행하면서 enum 벡터를 최적화 할 수 있는 방법으로 어차피 bool 벡터인 셈이므로 비트셋을 사용하는 방법이 좋겠다고 판단하여 구현을 시작하였다.</p>
+<p>C++에서 비트셋을 만들었던 기억이 있으므로 딱 두 가지만 기억하면 된다.
+- <code>bin_number = index / (size_of(element_type) * 8)</code> 
+- <code>bit_number = index % (size_of(element_type) * 8)</code> </p>
+<p>두 파라메터를 구하는 함수 <code>bin_no</code> 와 <code>inner_idx</code> 를 작성하였다. 이거 근데 <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9D%B8%EB%9D%BC%EC%9D%B8%20%EC%A0%95%EC%9D%98/">러스트에서 인라인 정의</a> 못하나? =&gt; 간접적으로 외부에서 호출되지 않는 private 함수에 대해선 굳이 인라인 할 필요 없다.</p>
+<pre><code class="language-rust">use std::mem::size_of;
+
+fn bin_no(idx: usize) -&gt; usize {
+    idx / (size_of::&lt;usize&gt;() * 8)
+}
+
+fn inner_idx(idx: usize) -&gt; usize {
+    idx % (size_of::&lt;usize&gt;() * 8)
+}
+</code></pre>
+<p><code>Bitset</code> 타입과 생성자를 정의해보자. 우리가 만들 비트셋은 초기 크기가 고정되어있다. 아직은 배열 크기를 제네릭하게 만드는 방법을 모르니 벡터를 쓰자. <a href="../generic%20array%20in%20rust/">generic array in rust</a></p>
+<pre><code class="language-rust">pub struct Bitset {
+    bits: Vec&lt;usize&gt;,
+}
+
+impl Bitset {
+    /// creates [false; size] like bitset
+    pub fn with_size(size: usize) -&gt; Self {
+        let size = bin_no(size) + 1; // 혹시 모르니 여유롭게
+        let mut v = Vec::with_capacity(size); // size 아닙니다, capacity 입니다.
+        v.resize(size, 0);
+        Bitset {bits: v}
+    }
+
+    /// indices의 각 원소들의 인덱스가 true인 새 Bitset를 반환한다.
+    pub fn from_indices(indices: &amp;[usize]) -&gt; Self {
+        let size = bin_no(indices.len()) + 1;
+        let mut v = Vec::with_capacity(size);
+        v.resize(size, 0);  
+        for i in indices.iter().cloned() {
+            *v.get_mut(bin_no(i)).expect(&quot;Index out of bounds&quot;) |= 1 &lt;&lt; inner_idx(i);
+        }
+        Bitset { bits: v }
+    }
+}
+</code></pre>
+<p>다음은 인덱싱을 활용하여 get, set을 하는 메서드를 정의해보자</p>
+<pre><code class="language-rust">impl Bitset {
+    pub fn get(&amp;self, idx: usize) -&gt; bool {
+        self.bits.get(bin_no(idx))
+            .expect(&quot;Index Out of Bounds&quot;) &gt;&gt; inner_idx(idx) &amp; 0b01 == 1
+    }
+    pub fn set(&amp;mut self, idx: usize) {
+        *self.bits.get_mut(bin_no(idx))
+            .expect(&quot;Index Out of Bounds&quot;) |= 1 &lt;&lt; inner_idx(idx);
+    }
+    pub fn reset(&amp;mut self, idx: usize) {
+        *self.bits.get_mut(bin_no(idx))
+            .expect(&quot;Index Out of Bounds&quot;) &amp;= !(1 &lt;&lt; inner_idx(idx));
+    }
+    pub fn set_to(&amp;mut self, idx: usize, to: bool) {
+        if to {
+            self.set(idx);
+        } else {
+            self.reset(idx);
+        }
+    }
+</code></pre>
+<p>아래는 비트셋 관련 테스트이다. <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">러스트로 game of life 구현하기</a> 할때 디버깅 용으로 간단하게 테스트 코드를 작성했다. 이때 러스트 모듈 구조에 대한 이해를 덤으로 얻어갔다.
+1. 유닛 테스트는 테스트 하려는 모듈과 같은 파일 안에서 수행한다.
+2. 테스트 모듈파일 안에 <code>#[cfg(test)] mod tests{}</code> 블럭 안에서 테스트 코드를 작성하면 된다. -- <a href="../%EC%9E%90%EC%8B%9D%20%EB%AA%A8%EB%93%88%EC%9D%80%20%EB%B6%80%EB%AA%A8%20%EB%AA%A8%EB%93%88%EC%9D%98%20private%20%EC%9A%94%EC%86%8C%EB%93%A4%EC%9D%84%20%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C%20%EC%A0%91%EA%B7%BC%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다</a>는 점 기억하고.</p>
+<pre><code class="language-rust">#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_bin_no() {
+        for i in 0..=128 {
+            assert_eq!(i / 32, bin_no(i), &quot;i : {}&quot;, i);
+        }
+    }
+
+    #[test]
+    fn test_init() {
+        let bs = Bitset::with_size(32);
+        assert_eq!(2, bs.bits.len());
+        for i in 0..32 {
+            assert_eq!(false, bs.get(i), &quot;in index {i}&quot;);
+        }
+        let bs = Bitset::with_size(128);
+        assert_eq!(5, bs.bits.len());
+        for i in 0..128 {
+            assert_eq!(false, bs.get(i), &quot;in index {}&quot;, i);
+        }
+    }
+
+    #[test]
+    fn test_set_get() {
+        let size = 128;
+        let mut bs = Bitset::with_size(size);
+        for i in 0..size {
+            bs.set(i);
+            assert!(bs.get(i));
+        }
+        for i in (0..size).rev() {
+            bs.reset(i);
+            assert!(!bs.get(i));
+        }
+    }
+}
+
+</code></pre>
+<hr />
+<p><a href="https://crates.io/crates/fixedbitset">fixedbitset</a> crate를 사용하는 방법도 있다. 하지만 굳이? </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

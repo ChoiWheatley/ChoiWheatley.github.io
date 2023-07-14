@@ -1,0 +1,548 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/Segment%20Tree%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C%202/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Segment Tree 연습문제 2 - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Segment Tree 연습문제 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>parent link: <a href="../Segment%20Tree/">Segment Tree</a></p>
+<hr />
+<h1 id="_1">문제</h1>
+<p>길이가 n인 수열 $a_0, a_1, \cdots, a_{n-1} (0 ≤ a_i ≤ 10^9)$ 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라</p>
+<p>•  <code>0 i x</code>    :    $a_i$ 를 x로 바꾼다. $(0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9)$</p>
+<p>•  <code>1 l r</code>    :    $a_i$ (l ≤ i &lt; r) 를 번갈아가며 더하고 뺀 값을 출력한다. (0 ≤ l &lt; r ≤ n)<br />
+                   범위를 만족하는 i의 개수가 홀수일 경우 $a_l - a_{l+1} + a_{l+2}  - \cdots - a_{r-2} + a_{r-1}$ 를 출력하고<br />
+                   범위를 만족하는 i의 개수가 짝수일 경우 $a_l - a_{l+1} + a_{l+2}  - \cdots + a_{r-2} - a_{r-1}$ 를 출력하라.</p>
+<p><strong>[입력]</strong><br />
+첫 번째 줄에 테스트 케이스의 수 T 가 주어진다.</p>
+<p>각 테스트 케이스의 첫 번째 줄에는 배열의 길이 n$(1 ≤ n ≤ 10^5)$과 쿼리의 개수 q$(1 ≤ q ≤ 10^5)$가 주어진다.<br />
+두 번째 줄에는 배열 a가 주어진다.<br />
+세 번째 줄부터 q개 줄에 걸쳐 쿼리가 주어진다.<br />
+</p>
+<p><strong>[출력]</strong><br />
+각 테스트 케이스마다 1번 쿼리의 결과를 공백으로 구분하여 출력한다.</p>
+<p>입력</p>
+<pre><code class="language-text">2  
+5 5  
+1 2 3 4 5  
+1 0 5  
+1 1 4  
+0 2 9  
+1 0 5  
+1 1 4  
+3 4  
+0 5 10  
+1 0 3  
+0 0 5  
+0 2 5  
+1 0 3
+</code></pre>
+<p>출력</p>
+<pre><code class="language-text">#1 3 3 9 -3  
+#2 5 5
+</code></pre>
+<h1 id="sol1-fail">sol1 [Fail]</h1>
+<p>번갈아가며 더하고 뺀 결과를 트리에 넣고 쿼리가 들어오면 해당 구간에 있는 노드를 더하거나 빼서 리턴한다. 아래의 그림은 Seq = {1,2,3,4,5}일때의 세그먼트 트리이다.</p>
+<p>![[Pasted image 20230216150837.png]]</p>
+<pre><code class="language-cpp">
+/**add two child value*/
+constexpr static elem_t _do_add(celem_t &amp;left_child, celem_t &amp;right_child,
+                                cuint start, cuint end) {
+  cuint mid = (start + end) / 2;
+  if ((mid - start) % 2 == 0) {
+    // even
+    return left_child - right_child;
+  } else {
+    // odd
+    return left_child + right_child;
+  }
+}
+
+static Box&lt;celem_t&gt; _jagged_sum(Arr const &amp;tree, cuint left, cuint right, //
+                                uint node, uint start, uint end) {
+  if (right &lt; start || end &lt; left) { // invalid range
+    return Box&lt;celem_t&gt;::empty();
+  }
+  if (left &lt;= start &amp;&amp; end &lt;= right) { // perfect range
+    return Box&lt;celem_t&gt;(tree[node]);
+  }
+  // 두 노드에 걸쳐있는 경우
+  uint mid = (start + end) / 2;
+  auto left_child = _jagged_sum(tree, left, right, _left(node), start, mid);
+  auto right_child = _jagged_sum(tree, left, right, _right(node), mid + 1, end);
+  // merge
+  if (left_child.contains &amp;&amp; right_child.contains) {
+
+    return Box&lt;celem_t&gt;(
+        _do_add(left_child.get(), right_child.get(), start, end));
+  } else if (!left_child.contains &amp;&amp; !right_child.contains) {
+
+    return Box&lt;celem_t&gt;::empty();
+  } else {
+
+    return left_child.contains ? left_child : right_child;
+  }
+}
+
+/**
+@breif: 재귀적으로 tree를 초기화.
+@param:
+  - data: 원본 배열
+  - n: 원본 배열의 크기
+  - node: tree의 노드의 인덱스
+  - start: tree의 범위 시작 - inclusive
+  - end: tree의 범위 끝 - inclusive
+*/
+static void _init(Arr const &amp;data, Arr &amp;tree, uint node, uint start, uint end) {
+  if (start == end) { // leaf node
+    tree[node] = data[start];
+    return;
+  }
+  // recursive
+  auto mid = (start + end) / 2;
+  _init(data, tree, _left(node), start, mid);
+  _init(data, tree, _right(node), mid + 1, end);
+  // set current node
+  tree[node] = _do_add(tree[_left(node)], tree[_right(node)], start, end);
+}
+
+/**
+@breif: 재귀적으로 업데이트를 수행하며 연관 노드들을 같이 수정한다.
+*/
+static void _update(Arr &amp;tree, cuint idx, celem_t value, uint node, //
+                    uint start, uint end) {
+  if (idx &lt; start || end &lt; idx) { // idx는 이 노드에 없다.
+    return;
+  }
+  if (start == end) { // leaf node
+    tree[node] = value;
+    return;
+  }
+  uint mid = (start + end) / 2;
+
+  // idx가 포함된 구간을 가지고 있는 자식노드만 순회하면 된다.
+  _update(tree, idx, value, _left(node), start, mid);
+  _update(tree, idx, value, _right(node), mid + 1, end);
+
+  // 현재 노드에 가해질 변화 적용
+  tree[node] = _do_add(tree[_left(node)], tree[_right(node)], start, end);
+}
+
+/**INTERFACES*/
+
+/**data를 세그먼트 트리로 변환한다.*/
+inline void init(Arr const &amp;data, cuint n) { _init(data, _tree, 1, 0, n - 1); }
+
+/**data[idx] := value */
+inline void update(cuint idx, celem_t value, cuint n) {
+  _update(_tree, idx, value, 1, 0, n - 1);
+}
+
+/**
+@breif:
+  [left, right-1] 범위의 i에 대하여 a_i를 번갈아가며 더하고 뺀 값을 출력한다.
+*/
+inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
+  return _jagged_sum(_tree, left_inclusive, right_exclusive - 1, 1, 0, n - 1)
+      .get();
+}
+
+</code></pre>
+<p>인터페이스 <code>jagged_sum</code> 을 보자. 만약 사용자가 <code>jagged_sum(1,3)</code>을 호출했다고 가정했을 때 콜스택은 다음과 같이 불릴 것이다.
+1. <code>_jagged_sum(3, 4) =&gt; empty()</code>
+2. <code>_jagged_sum(0, 2)</code>
+3. <code>_jagged_sum(0, 1)
+4.</code>_jagged_sum(0, 0) =&gt; empty()<code>5.</code>_jagged_sum(1, 1) =&gt; 2<code>6.</code>_jagged_sum(2, 2) =&gt; 3`</p>
+<p><img alt="Pasted image 20230216144523.png" src="../Resources/Images/Pasted%20image%2020230216144523.png" /></p>
+<p>따라서 <code>_jagged_sum(0,1) = 2</code> 가 될 것이다. 이제 <code>_jagged_sum(0, 2)</code>를 구해보자.
+<code>left_child = _jagged_sum(0,1) = 2</code>
+<code>right_child = _jagged_sum(2,2) = 3</code> 
+<code>_do_add(left_child, right_child, start: 0, end: 2)</code> 에서 문제가 터진다. sol1은 언제 더하고 언제 뺄지를 결정하기 위해 start, end 변수를 활용한다. mid - start 가 짝수이면 <code>left - right</code>를, 홀수이면 <code>left + right</code>를 계산하는 식이다. 하지만 이것은 틀렸다. 직접 종이에 풀었을 때 직관적으로 (1,1)에서 (2,2)를 빼서 -1이 나와야 하지만 사실 <code>_do_add</code> 가 봤을 땐 (0,1)과 (2,2)가 들어온 것으로 생각하고 (2,2)에서 (0,1)을 빼게 된다. 따라서 1이 나오게 되는 것이었다. </p>
+<p>최종 계산은 마지막에 진행하기 위해 나는 문제를 처음부터 다시 풀어야만 했다.</p>
+<h1 id="sol2-pass">sol2 [Pass]</h1>
+<p>이번엔 아예 홀수번째 원소들의 부분합, 짝수번째 원소들의 부분합을 따로 계산해 저장한 다음 쿼리시 일단 그냥 무지성으로 더한 뒤에 홀수번째에서 짝수번째를 뺄지, 반대로 할지 결정하도록 만들어 보았다.</p>
+<p>Seq = {1,2,3,4,5}일때 예시:
+<img alt="Pasted image 20230216151218.png" src="../Resources/Images/Pasted%20image%2020230216151218.png" /></p>
+<pre><code class="language-cpp">constexpr bool _even(uint n) { return n % 2 == 0; }
+constexpr bool _odd(uint n) { return !_even(n); }
+
+struct Node {
+  elem_t sum_odd{};
+  elem_t sum_even{};
+  constexpr explicit Node(elem_t sum_odd, elem_t sum_even)
+      : sum_odd{sum_odd}, sum_even{sum_even} {}
+  constexpr Node() = default;
+  constexpr static Node even(elem_t elem) { return Node(0, elem); }
+  constexpr static Node odd(elem_t elem) { return Node(elem, 0); }
+};
+inline Node operator+(Node const &amp;lhs, Node const &amp;rhs) {
+  return Node(lhs.sum_odd + rhs.sum_odd, lhs.sum_even + rhs.sum_even);
+}
+inline Node operator-(Node const &amp;rhs) {
+  return Node(-rhs.sum_odd, -rhs.sum_even);
+}
+inline Node operator-(Node const &amp;lhs, Node const &amp;rhs) { return lhs + (-rhs); }
+inline bool operator==(Node const &amp;lhs, Node const &amp;rhs) {
+  return lhs.sum_odd == rhs.sum_odd &amp;&amp; lhs.sum_even == rhs.sum_even;
+}
+
+template &lt;typename T&gt; using Arr = std::array&lt;T, LEN&gt;;
+
+static Arr&lt;Node&gt; _tree;
+
+/**INTERNALS*/
+
+/**
+tree를 세그먼트 트리 구조로 초기화 한다.
+*/
+static void _init(std::array&lt;elem_t, N&gt; const &amp;data, Arr&lt;Node&gt; &amp;tree, uint node,
+                  uint start, uint end) {
+  if (start == end) { // leaf node
+    tree[node] =
+        _even(start) ? Node::even(data[start]) : Node::odd(data[start]);
+    return;
+  }
+  auto mid = (start + end) / 2;
+  _init(data, tree, _left(node), start, mid);
+  _init(data, tree, _right(node), mid + 1, end);
+  // merge two children
+  tree[node] = tree[_left(node)] + tree[_right(node)];
+}
+
+static void _update(Arr&lt;Node&gt; &amp;tree, cuint idx, celem_t value, uint node,
+                    uint start, uint end) {
+  if (idx &lt; start || end &lt; idx) { // wrong node
+    return;
+  }
+  if (start == idx &amp;&amp; end == idx) { // leaf node
+    tree[node] = _even(start) ? Node::even(value) : Node::odd(value);
+    return;
+  }
+  auto mid = (start + end) / 2;
+  _update(tree, idx, value, _left(node), start, mid);
+  _update(tree, idx, value, _right(node), mid + 1, end);
+  // merge
+  tree[node] = tree[_left(node)] + tree[_right(node)];
+}
+
+/**
+여기에서는 단순히 노드들을 더한 결과를 리턴한다.
+*/
+static Node _sum(Arr&lt;Node&gt; const &amp;tree, cuint left, cuint right, uint node,
+                 uint start, uint end) {
+  if (end &lt; left || right &lt; start) { // wrong node
+    return Node(0, 0);
+  }
+  if (left &lt;= start &amp;&amp; end &lt;= right) { // node inside the range
+    return tree[node];
+  }
+  // overlapped range
+  auto mid = (start + end) / 2;
+  Node left_child = _sum(tree, left, right, _left(node), start, mid);
+  Node right_child = _sum(tree, left, right, _right(node), mid + 1, end);
+  return left_child + right_child;
+}
+
+/**INTERFACES*/
+
+/**data를 세그먼트 트리로 변환한다.*/
+inline void init(std::array&lt;elem_t, N&gt; const &amp;data, cuint n) {
+  _tree.fill(Node());
+  _init(data, _tree, 1, 0, n - 1);
+}
+
+/**data[idx] := value */
+inline void update(cuint idx, celem_t value, cuint n) {
+  _update(_tree, idx, value, 1, 0, n - 1);
+}
+
+/**
+@breif:
+  [left, right-1] 범위의 i에 대하여 a_i를 번갈아가며 더하고 뺀 값을 출력한다.
+*/
+inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
+  Node sum = _sum(_tree, left_inclusive, right_exclusive - 1, 1, 0, n - 1);
+  return _even(left_inclusive) ? sum.sum_even - sum.sum_odd
+                               : sum.sum_odd - sum.sum_even;
+}
+
+</code></pre>
+<p>마찬가지로 사용자가 <code>jagged_sum(1,3)</code>을 호출했다고 가정하자. 콜 스택 호출 순서는 그대로이므로 또 적지는 않겠다.
+<img alt="Pasted image 20230216150214.png" src="../Resources/Images/Pasted%20image%2020230216150214.png" /></p>
+<ul>
+<li><code>sum(0,2) = {2,3}</code> </li>
+<li><code>sum(1,2) = {2,3}</code> </li>
+</ul>
+<p>그냥 더하는 것에 불과하기 때문에 노드간에 합은 쉽게 구할 수 있다. 이제 <code>jagged_sum</code>의 마지막 줄을 보자. 이제 우린 left가 짝수인지만 확인하면 누구에서 누구를 빼야할지 쉽게 알 수 있다. 위의 예제의 경우 start = 1, 홀수 이므로 sum_odd에서 sum_even를 빼주면 된다. 따라서 2 - 3 = -1이 나오게 된다.</p>
+<pre><code class="language-cpp">return _even(left) ? sum_even - sum_odd
+                   : sum_odd - sum_even
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

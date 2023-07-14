@@ -1,0 +1,321 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>러스트로 game of life 구현하기 - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-will-i-learn" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              러스트로 game of life 구현하기
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li>https://yceffort.kr/2022/04/rust-wasm-project-tutorial-2 <a href="../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/">0080 Scraps 📚</a></li>
+<li><a href="https://rustwasm.github.io/docs/book/game-of-life/setup.html">rustwasm game-of-life tutorial</a> <a href="../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/">0080 Scraps 📚</a></li>
+<li>move to notion https://choiwheatley.notion.site/game-of-life-e379dd1fbf1644dd9997f1c9731c4f00</li>
+</ul>
+<h1 id="what-will-i-learn">What will I learn?</h1>
+<ul>
+<li>러스트 코드를 WA로 컴파일하는 방법을 터득한다.</li>
+<li>Rust, WA, JS, HTML, CSS를 사용하며 폴리글랏 프로그램을 개발할 수 있다.</li>
+<li>Rust와 WA의 강점, JS의 강점을 모두 극대화한 API를 디자인 할 수 있다.</li>
+<li>Rust로 컴파일된 WA 모듈을 디버깅 할 수 있다.</li>
+<li>프로파일을 통해 프로그램을 더 빠르게 만들 수 있다.</li>
+<li><code>.wasm</code> 바이너리 파일의 크기를 더 작게, 더 빠르게 만들어 빠른 네트워크 로딩을 달성할 수 있다.</li>
+</ul>
+<h1 id="create-wasm-app"><a href="https://github.com/rustwasm/create-wasm-app">create-wasm-app</a></h1>
+<p>rustwasm 패키지를 webpack에 담가주는 템플릿. 단순히 내가 배포하려는 패키지 루트에서 다음 명령어를 실행하면 된다.</p>
+<pre><code class="language-sh">npm init wasm-app www
+</code></pre>
+<p>incremental build를 위해서 사전 작업을 수행했다. <code>www/package.json</code> 파일에 루트 폴더의 wasm 바이너리가 들어있는 폴더를 의존하도록 만들었다.</p>
+<pre><code class="language-json">...
+&quot;dependencies&quot;: {
+    &quot;game-of-life-wasm&quot;: &quot;file:../pkg&quot;
+}
+</code></pre>
+<p>그리고 <code>index.js</code> 파일에 placeholder로 달려있던 임포트 구문을 자연스럽게 <code>game-of-life-wasm</code> 으로 바꾸어 주었다.</p>
+<pre><code class="language-js">import * as wasm from &quot;game-of-the-life-wasm&quot;;
+
+wasm.greet();
+</code></pre>
+<p><code>npm install</code>, <code>npm run start</code> 명령으로 간단하게 웹을 띄울 수 있다.</p>
+<p><img alt="Pasted image 20230316230116.png" src="../assets/Pasted%20image%2020230316230116.png" /></p>
+<h1 id="interfacing-rust-and-js">Interfacing Rust and JS</h1>
+<p>WA는 단지 선형 메모리 공간을 JS에게 제공할 뿐이다. WA는 반대로 JS가 점유하는 힙 영역의 공간을 참조할 수 없다. 상당히 제약적인 것이다! JS는 오직 WA의 배열버퍼(<code>u8</code>, <code>i32</code>, <code>f64</code>, 등)만 가지고 WA의 메모리 공간을 참조할 수 있다. WA 함수는 오직 스칼라 값들만 리턴할 수 있다. WA는 JS의 전역 객체를 참조할 수 있다고 한다. <a href="../js-sys%20crate/">js-sys crate</a>를 이용하면 된다고..</p>
+<p><code>wasm_bindgen</code> 특성은 복합 구조체를 두 경계 간에 넘나들게 만들어주는 공통적인 이해관계를 제공해 준다. Rust 구조체를 Boxing 하고, 그 포인터를 JS 클래스에 래핑하여 유용하게 만들어주기도 하고 JS 객체의 테이블 인덱스로 만들어주기도 한다. </p>
+<ol>
+<li>불필요한 복사는 오버헤드를 일으킨다. =&gt; WA 선형메모리의 데이터를 복사하는 일을 줄여라!</li>
+<li>직열화와 역직렬화는 오버헤드를 일으킨다. =&gt; 큰 데이터 객체를 주고받는 일이 없도록 하라! <ol>
+<li>opaque handle (불투명 핸들?)을 넘겨주면 JS에서 원격으로 WA 메모리 공간을 사용할 수 있어 오버헤드가 줄어든다.</li>
+</ol>
+</li>
+</ol>
+<h1 id="game-of-life">Game of life를 구현하기 위한 인터페이스</h1>
+<p>2D Universe는 일차원 배열로 길게 만들 수 있다. 다음과 같이. </p>
+<p><img alt="Pasted image 20230323184722.png" src="../assets/Pasted%20image%2020230323184722.png" /></p>
+<p>처음 방식은 <code>std::fmt::Display for Universe</code> 를 구현함으로써 단순 텍스트로 변환된 결과를 리턴해 볼 것이다.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

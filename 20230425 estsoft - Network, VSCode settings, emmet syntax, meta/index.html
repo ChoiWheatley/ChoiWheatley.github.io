@@ -1,0 +1,341 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/20230425%20estsoft%20-%20Network%2C%20VSCode%20settings%2C%20emmet%20syntax%2C%20meta/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>20230425 estsoft - Network, VSCode settings, emmet syntax, meta - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              20230425 estsoft - Network, VSCode settings, emmet syntax, meta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">쌩기초</h1>
+<ul>
+<li><a href="https://paullabworkspace.notion.site/8444faa97f724967b6ee1da374fd0d07">수업을 시작하기 전 알아야 할 기초 상식</a></li>
+<li><a href="https://1drv.ms/f/s!AgE-lhMulmhxg5RBWrSyNkKMQvgsnw?e=8fpSKZ">숭실 2021-2학기 Network 수업 원드라이브</a> ^x5b0l8</li>
+</ul>
+<p>노트북에서 <code>www.naver.com</code> 을 검색했을 때 어떤 일이 일어날까? 
+1. 나는 이거의 주소를 몰라 =&gt; 우리집 공유기와 아파트 라우터를 타고 DNS 서버에 당도한다. 
+2. DNS 서버에 해당 문자열을 질의한다. 매핑이 된 ip주소를 서버는 노트북으로 발송해준다.
+3. 노트북은 해당 매핑을 캐싱하고 다시 진짜 IP주소를 향해 신호를 보낸다.</p>
+<ul>
+<li>NAT: 외부에서 요청한 패킷을 한꺼풀 벗겨내 내부IP로 연결해주는 녀석.</li>
+<li>DDX: (Distributed) Denial of Service 공격 방지해주는 녀석. 임계치 기반 방어</li>
+<li>IPS: 행위 기반 방어</li>
+<li>
+<p>Firewall: IP-Port 기반 방어</p>
+</li>
+<li>
+<p>App Server == Django</p>
+<ul>
+<li>로그인과 같은 행위에 대하여 DB작업을 해야 하는 경우</li>
+</ul>
+</li>
+<li>Web Server == Apache, nginx<ul>
+<li>static한 컨텐츠 </li>
+</ul>
+</li>
+<li>DB == MongoDB, MySQL, ...</li>
+</ul>
+<hr />
+<h1 id="vscode">VSCode 환경설정 및 단축키</h1>
+<ul>
+<li>
+<p>https://paullabworkspace.notion.site/VSC-e89ec679f7a44c2882012ec49f164ced</p>
+</li>
+<li>
+<p>같은 패턴이 반복되는 것은 <strong>스니펫</strong>으로 만들어 광명찾자.</p>
+<ul>
+<li>뿐만 아니라 회사에서 컨벤션을 정의하여 스니펫으로 공유하기도 한다.</li>
+</ul>
+</li>
+<li>유용한 확장<ul>
+<li>htmltagwrap : Alt + w를 누르면 기본 p 태그로 감싸줌 <ul>
+<li>내가 정의한 단축키와 중복이 된다. </li>
+</ul>
+</li>
+<li>gitmoji: git 커밋에 이모지를 사용할 수 있게 해준다.</li>
+<li>indent-rainbow: 들여쓰기마다 색을 다르게</li>
+<li>(Python) pylance, formatter autopep8, flake8</li>
+<li>(설치) auto rename tag (추천) : 태그 닫기 자동 수정</li>
+<li>(설치) rainbow csv (추천) : CSV 잘 보이도록</li>
+</ul>
+</li>
+</ul>
+<h1 id="emmet">emmet 문법</h1>
+<p>https://docs.emmet.io/cheat-sheet/
+- lorem 이거 신기하네
+- <a href="http://hangul.thefron.me/">한글입숨</a>도 있다. 무의미한 한글로 채워넣는다.</p>
+<h1 id="github">Github</h1>
+<p><a href="../%EC%95%8C%EC%9E%98%EB%94%B1%20GitHub%20%ED%95%B5%EC%8B%AC%EA%B0%9C%EB%85%90/">알잘딱 GitHub 핵심개념</a></p>
+<h1 id="_2">제안</h1>
+<ul>
+<li>고급반 운영할 계획, (ex. 카카오 공채) 질문 리스트 공유하여 쌓아놓고 서로 모의면접도 볼 수 있게끔.</li>
+<li>중급자를 위한 자료는 미리 드리려고 한다. 인프런 중급자 파이썬 </li>
+<li>모자란거 2%를 채우려고 하지 말고 차라리 다른 98%에 시간을 투자할 것.</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

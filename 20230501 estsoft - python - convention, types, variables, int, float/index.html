@@ -1,0 +1,359 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/20230501%20estsoft%20-%20python%20-%20convention%2C%20types%2C%20variables%2C%20int%2C%20float/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>20230501 estsoft - python - convention, types, variables, int, float - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              20230501 estsoft - python - convention, types, variables, int, float
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li><a href="https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing">오늘자 google colab 주소</a><ul>
+<li>[?] google colab 자체가 하나의 블로그 글처럼 쓸 수 있는데, 옵시디언에 쓸 내용과 콜랩에 쓸 내용을 어떻게 해야할까?</li>
+</ul>
+</li>
+<li><a href="https://colab.research.google.com/drive/1IRa8nYwM2HtkzlNJGBlavWK96kffytm_?usp=sharing">오늘자 멘토님 google colab 주소</a></li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a></li>
+<li>알고리즘, 디버깅 챕터를 제외한 모든 강의는 google colab에서 진행할 예정.</li>
+<li><a href="../google%20colab/">google colab 자체 단축키 등등</a></li>
+<li><a href="https://google.github.io/styleguide/pyguide.html">google python coding convention</a></li>
+<li>types<ul>
+<li>변수를 처음 만나면 <code>type</code>, <code>dir</code> 빌트인 펑션을 사용하여 종류를 찍어보자.</li>
+<li><code>isinstance(variable, type)</code>을 사용하여 변수의 타입을 런타임에 체크할 수 있다.</li>
+<li>속성<ul>
+<li>모든 타입은 <code>class</code>이며, 그 안에 들어있는 메서드, 매직 메서드, 멤버들을 <strong>속성</strong>이라고 부른다. 이때 사용자는 파이썬 표준 라이브러리 안에 있는 클래스들의 속성을 변경할 수도, 추가할 수도 있다. 권장하지는 않지만 때로 확장이 필요한 경우에 고민해 보면 좋을 것 같다. (래퍼클래스에 매직메서드 구현이면 군침이 도는걸)
+<code>python
+class int(int):
+    def _add__(self, a):
+        return 'hello, world!'
+int('10') + int('10') # 신기하게도 'hello, world'가 나온다!</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>formatting</p>
+<ul>
+<li><code>print(f'{"hello":&lt;10}')</code> =&gt; 10칸을 사용하여 왼쪽 정렬</li>
+<li><code>print(f'{"hello":&gt;10}')</code> =&gt; 10칸을 사용하여 오른쪽 정렬</li>
+<li><code>print(f'{"hello":^10}')</code> =&gt; 10칸을 사용하여 가운데 정렬</li>
+<li><code>print(f'{"hello":!&lt;10}')</code> =&gt; 10칸을 사용하여 왼쪽 정렬, 이때 공백을 <code>!</code>으로 채우기</li>
+</ul>
+</li>
+<li>
+<p>int</p>
+<ul>
+<li>built-in functions<ul>
+<li><a href="https://docs.python.org/3/library/stdtypes.html?highlight=bit_length#int.bit_length"><code>int.bit_length()</code></a> =&gt; sign, leading zero를 제외한 해당 숫자를 표현하기 위해 필요한 정확한 비트의 개수를 리턴한다.</li>
+<li><a href="https://docs.python.org/3/library/stdtypes.html?highlight=bit_length#int.bit_length"><code>int.to_bytes(length=1, byteorder, signed)</code></a> =&gt; 정수형을 의미하는 바이트의 배열을 리턴한다. <code>(2).to_bytes(1, byteorder='little', signed=True)</code> </li>
+</ul>
+</li>
+<li>2의 보수법<ul>
+<li>자체적으로 음수를 표현할 수단이 없기 때문에 2의 보수법을 사용한다. 한 마디로 정리하면 <strong>비트 뒤집고 +1</strong> 하면 음수다.</li>
+<li>1의 보수법으로 음수를 표현하면 안되냐? =&gt; +0과 -0이 생기는 문제가 발생. 일단 비트 하나를 낭비한다는 문제도 있고, -0 + 1 = 0이라는 괴랄한 예외도 생긴다. </li>
+<li>따라서, 비트 오버플로를 활용한 2의 보수법이 현재 정수 표기법으로 채택된 것이다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>float<ul>
+<li>int형과 셈을 하면 별도로 지정하지 않는 이상 float로 형변환 된다.</li>
+<li><a href="https://docs.python.org/ko/3/tutorial/floatingpoint.html">부동소수점 특유의 오차가 발생</a> =&gt; 정확한 소수점 계산이 불가. <ul>
+<li><a href="https://www.notion.so/5f34f21bf9a34015b170e7afd7da9593">무한대수 문제</a>: decimal 0.5를 이진수로 나타내면 binary 0.1이지만, decimal 0.1을 이진수로 나타내면 binary 0.000110011001100110011... 가 끝도없이 반복된다. </li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="_1">멘토의 조언</h1>
+<blockquote>
+<p>여러분, 실력자 분들은 어떻게 정리하셔야 할지 잘 모르시겠죠? 그래서 준비해 보았습니다.</p>
+</blockquote>
+<ol>
+<li>
+<p>우선 아래 Lv0코드를 보면서 모르는 문법이나, 활용하는 문법에서 모르는 것이 있는지 한 번 체크해보세요.(https://github.com/paullabkorea/programmersLv0) <a href="../fast%20io%20in%20python/">fast io in python</a></p>
+<ol>
+<li>모르는 것이 있으시면 한 번 정리 부탁드립니다. 예를 들어 collections나 itertools나 functools, re 정규표현식 같은 것이요. </li>
+<li>우리 수업에 해당 수업이 들어 있습니다. 예를 들어 정규표현식이 부족하시다면 정규표현식 수업에는 꼭 수업을 들으시고, 정리한 것을 확인하시고 복습해보세요.</li>
+<li>수업 시간에 아는 내용들이 나오는 시간에는 1.1을 수행하시면 됩니다.</li>
+</ol>
+</li>
+<li>
+<p>만약 모르는 문법이 없고, 거의 다 자신있다면 문법보다는 부족한 부분을 채워주세요. DB, ERD, 리눅스, AWS, HTTP 등이요. 실습도 해보시고, 여러 자료를 보면서 블로그로 정리해두시면 좋습니다. 역시나 부족한 부분에 수업하는 시간은 꼭 수업을 들으시고, 정리한 것을 확인하시고 복습해보세요.</p>
+</li>
+<li>
+<p>조금 난이도 있는 알고리즘 문제는 저희 후반부에서도 다루니 조금 기다리셔도 좋습니다. 다만 지금 공부를 하고 싶으시다면 저는 책으로는 "파이썬 알고리즘 인터뷰"를 권해드립니다. 제가 알고리즘 책 중 가장 좋아하는 책이에요. 🙂 상길님이 카카오 코테 출제위원이셨습니다. 유형도 잘 정리가 되어 있고요.</p>
+</li>
+</ol>
+<blockquote>
+<p>Python 책으로는 O'reilly Learning python 책이 정말 잘 나왔어요. 다만 이 책이 초급자 대상으로 나오긴 했으나 초급자에게 권하긴 힘듭니다. 1000페이지씩 상, 하로 나뉘어 있어요. 6판 나오면서 분량도 더 늘었다 들었습니다. O'reilly 시리즈 중 전문가를 위한 파이썬 FLUENT PYTHON도 정말 좋았습니다. 위 책은 페이지부터 압박이라서 한국 서적 중에서는 저는 ‘파이썬 코딩 도장’이 정말 괜찮았어요. 영상강의도 무료로 제공해주고, 텍스트도 웹으로 공개되어 있습니다. ‘점프 투 파이썬’도 유명하긴 한데 저희 수업에서 다루는 내용은 이보다 한 단계 위입니다. 파이썬을 이미 조금 다루실 수 있으신 분은 ‘컴퓨터 사이언스 부트캠프 with 파이썬’이거 보시면 한 단계 업 되실겁니다!</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

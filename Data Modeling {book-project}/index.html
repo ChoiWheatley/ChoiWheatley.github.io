@@ -1,0 +1,689 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/Data%20Modeling%20%7Bbook-project%7D/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>Data Modeling {book-project} - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Modeling {book-project}
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="index">INDEX</h1>
+<ul>
+<li>TLDR<ul>
+<li>Onedrive 2021_1 Database1 수업을 기반으로 정리.</li>
+</ul>
+</li>
+<li>목표<ul>
+<li>RDBMS의 기본을 이해합니다. (테이블, 외래키, 정규화)</li>
+<li>RDBMS가 제공하는 연산을 이해합니다.</li>
+<li>트랜잭션에 대하여 이해합니다.</li>
+<li>데이터 모델링을 이해합니다. (개념-논리-물리)</li>
+<li>ER Diagram을 그려봅시다.</li>
+<li>테이블을 최적화하는 1,2,3정규화에 대하여 알아봅니다.</li>
+</ul>
+</li>
+<li>keywords<ul>
+<li>테이블 Table</li>
+<li>모델링 Modeling</li>
+<li>외래키 Foreign Key</li>
+<li>정규화 Normalization</li>
+<li>조인 Join</li>
+<li>인덱스 Indexing</li>
+<li>트랜잭션 Transactions</li>
+</ul>
+</li>
+</ul>
+<h1 id="rdbms">RDBMS의 기본</h1>
+<p>Relational Data Base Management System의 약자. 우리가 가장 익히 알고 있는 RDBMS에는 정형 데이터 처리 도구인 SQL family가 있다.</p>
+<ul>
+<li>필드란<ul>
+<li>데이터의 속성 (성별, 키, 나이, 머리카락의 색상 등)을 정의하는 데이터.</li>
+<li>OOP에서의 필드는 멤버변수 혹은 프로퍼티라고도 불리운다.</li>
+</ul>
+</li>
+<li>칼럼(column)이란<ul>
+<li>특정한 타입에 의한 데이터 값들의 집합을 의미.</li>
+</ul>
+</li>
+<li>레코드(row)란<ul>
+<li>데이터를 정의하기 위한 여러개의 필드를 저장하고 있다. 레코드의 데이터를 접근하거나 수정하기 위해선 필드이름을 통해야 한다.</li>
+</ul>
+</li>
+<li>테이블이란<ul>
+<li>동일한 구조로 이루어진 튜플(레코드)의 집합</li>
+</ul>
+</li>
+<li>DB란<ul>
+<li>여러 테이블을 묶어 관리하는 개념</li>
+</ul>
+</li>
+<li>DBMS란<ul>
+<li>여러 DB를 관리하는 시스템</li>
+</ul>
+</li>
+<li>RDBMS란 <ul>
+<li>각 테이블 간의 관계는 외래키(Foreign Key)라는 공통칼럼을 가진다. 쉽게 말해 번지수임. </li>
+<li>테이블간의 <strong>관계</strong>를 정의할 수 있기에 DBMS에 Relational을 붙여 RDBMS이다.</li>
+<li>DBMS 내의 자료검색에 최적화된 연산을 지원한다. (물론 CRUD는 제공)</li>
+</ul>
+</li>
+<li>테이블 기반으로 데이터를 저장하는 시스템.<ul>
+<li>테이블 &gt; 칼럼 &gt; 레코드</li>
+</ul>
+</li>
+<li>스키마 (Schema)<ul>
+<li>테이블 구조, 테이블 간의 관계를 정의. 이 외의 형식의 값은 허용되지 않는다.</li>
+<li>스키마는 테이블을 만드는 블루프린트임.</li>
+</ul>
+</li>
+<li>모델링 (Modeling)<ul>
+<li>요구사항에서 DB 스키마를 만드는 작업</li>
+<li>개념 -&gt; 논리 -&gt; 물리 모델링 순으로 이루어짐.</li>
+</ul>
+</li>
+<li>정규화 (Normalize)<ul>
+<li>DB 스키마는 고정되어있지 않고 계속 변경된다. 따라서 스키마 설계를 재구성할 수 있는데, 중복 데이터를 삭제하는 방향으로 재구성하는 행위를 정규화라고 부른다.</li>
+<li>또한, Create Update Delete 시에 발생할수 있는 이상현상을 제거할 수 있다. </li>
+<li>정규화의 대표적인 예로 1,2,3,BCNF을 들 수 있다. </li>
+<li>정규화를 하며 보통 테이블이 작은 테이블로 분할된다.</li>
+</ul>
+</li>
+<li>검색<ul>
+<li>일반적인 DBMS는 Create, Update, Delete보다 Retreive를 더 빠르게 만드는 것이 주요한 목표. </li>
+<li>인덱스라는 개념을 사용해 빠른 검색이 용이. 기본적 인덱스 자료구조는 B+Tree<ul>
+<li>인덱스 파일만 별도로 구성하고 데이터 파일은 참조 형태로 관리. 인덱스는 CUD가 일어나면 재구성이 된다.</li>
+<li>단점: <ul>
+<li>연속적인 검색(range search)에 느리다. =&gt; 연결 리스트를 사용하여 보완한다.</li>
+<li>데이터의 추가 패턴에 따라 트리의 모양이 기울어질 수 있다. (skew)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="key">Key</h2>
+<ul>
+<li>테이블의 레코드를 검색할 때 하나의 레코드를 구별(식별)할 수 있도록 하는 기준. 유일성 (Unique) 기준을 만족해야 한다.</li>
+<li><strong>복합키(Composite Key)</strong>: 하나의 칼럼이나 여러 칼럼을 묶어서 사용가능 (주민번호 + 학번 + 사번)</li>
+<li><strong>후보키(Candidate Key)</strong>: 하나의 테이블에 Key가 될 수 있는 칼럼 (유일성 만족하기만 하면 다 후보키임)</li>
+<li><strong>대체키(Alternate Key)</strong>: 후보키 중 기본키를 제외한 나머지 키</li>
+<li><strong>기본키(Primary Key)</strong>: 후보키 중 선택된 키. PK가 없는 테이블도 가능.</li>
+<li><strong>외래키(Foreign Key)</strong>: 다른 테이블(Relation)에서 PK로 사용되는 칼럼이 현재 테이블에서 사용되고 있을 때 ==&gt; 테이블 간에 의도적인 중복을 허용하여 테이블을 합치는 연산인 조인 시 유용하게 써먹을 수 있다.<ul>
+<li>![[Drawing 2023-06-14 13.36.57.excalidraw|100%]]</li>
+<li><strong>식별관계(Identifying Relationship)</strong>: 내 테이블의 FK가 PK인 경우</li>
+<li><strong>비식별관계(Non-identifying Relationship)</strong>: 내 테이블의 FK가 일반 칼럼인 경우</li>
+</ul>
+</li>
+<li>참조 무결성 제약조건(Referential Integrity)<ul>
+<li>외래키로 연관 테이블을 검색하면 데이터가 <em>반드시</em> 존재하여야 함.</li>
+<li>삽입, 삭제에 순서가 있어야 한다. 이 순서를 어기면 에러가 발생한다. </li>
+<li>원본 레코드를 삭제하기 위해선 이 테이블을 참조하는 다른 테이블의 레코드를 먼저 삭제해야 한다.</li>
+<li>반대로 외래키를 가지는 테이블이 레코드를 추가하고 싶다면 원본 레코드를 가진 테이블에 레코드를 먼저 추가하여야 한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">조인</h2>
+<ul>
+<li>여러 테이블을 합쳐 큰 테이블로 만드는 연산. 테이블이 나뉘어진 상태에서 원하는 데이터를 찾기 위해선 먼저 테이블을 합쳐야 한다. 왜냐하면 검색을 시작한 테이블에 내가 원하는 데이터가 존재할 거란 보장이 없기 때문이다.</li>
+<li>조인은 테이블 단위 연산이다. 조인과정에서 테이블 간의 공통칼럼이 있어야 한다. 이를 표준 조인이라고 부른다. 이때 공통칼럼을 외래키라고 부른다.</li>
+</ul>
+<h1 id="rdbms_1">RDBMS가 제공하는 연산</h1>
+<h2 id="dml">DML</h2>
+<ul>
+<li>(Data Manipulation Language)</li>
+<li>selection<ul>
+<li>조건에 맞는 레코드 선택</li>
+<li><code>SELECT * FROM employees WHERE 40 &lt;= age &lt; 50;</code></li>
+</ul>
+</li>
+<li>projection<ul>
+<li>특정한 칼럼만 출력</li>
+<li><code>SELECT name, age FROM employees;</code></li>
+</ul>
+</li>
+<li>Join<ul>
+<li>2개 이상의 테이블을 합쳐 큰 테이블을 만든다.</li>
+<li>WHY? ==&gt; 연관 데이터가 현재 테이블에 없기 때문에</li>
+<li>드라이빙 테이블: (기준 테이블) (왼쪽 테이블) (부모 테이블) PK를 가지고 있는 테이블</li>
+<li>드리븐 테이블: (오른쪽 테이블) (자식 테이블) FK를 가지고 있는 테이블</li>
+<li><strong>(Inner) Join</strong>: 내부 조인: 두 테이블 간의 널 값을 허용하지 않음.</li>
+<li><strong>Outer Join</strong>: <ul>
+<li>Left Join: 드라이빙 테이블의 레코드가 누락되면 안된다.</li>
+<li>Right Join: 드리븐 테이블의 레코드가 누락되면 안된다.</li>
+<li>Full Join: 양쪽 모두 누락되면 안된다. (Inner Join?)</li>
+</ul>
+</li>
+<li>Join 예시<ul>
+<li>Table "employ"<ul>
+<li>id/name/age/<strong>dept_id</strong></li>
+</ul>
+</li>
+<li>Table "dept"<ul>
+<li><strong>id</strong>/name</li>
+</ul>
+</li>
+<li><code>SELECT * FROM employ JOIN dept ON employ.dept_id = dept.id;</code></li>
+<li>Joined Table "employ-dept"<ul>
+<li>emp_id/emp_name/emp_age/emp_dept_id/dept_id/dept_name</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>비표준 조인 (Null에 대한 조건 완화)<ul>
+<li>Cartesian Product (Cross Join): 두 테이블의 모든 레코드를 한 번씩 연결해서 만든 N * N 크기의 테이블을 만들어낸다.</li>
+<li>Equi-Join (Theta Join): Cartesian Product 중 실제 있는 레코드만을 필터</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>union(합집합)<ul>
+<li>두 selection을 합친다.</li>
+<li><code>(SELECT * FROM employees WHERE 35 &lt;= age &lt; 45) UNION (SELECT * FROM employees WHERE 30 &lt;= age &lt;= 40)</code></li>
+</ul>
+</li>
+<li>Aggregation 집계함수 | <a href="https://en.wikipedia.org/wiki/Group_by_(SQL)">wiki.org</a><ul>
+<li><code>SELECT * FROM employees GROUP BY dept_id;</code></li>
+<li>group by 연산 수행 시 그룹별 통계값 (count, avg, min, max)을 확인할 때 주로 사용.</li>
+<li><code>SELECT AVG(salary) as average_sal FROM employees GROUP BY dept_id;</code></li>
+<li><code>HAVING</code>을 뒤에 넣어 필터를 걸 때 사용할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ddl">DDL</h2>
+<ul>
+<li>Data Definition Language</li>
+<li>create database</li>
+<li>drop database</li>
+<li>create table</li>
+<li>drop table</li>
+<li>truncate table</li>
+<li>alter table</li>
+<li>제약조건<ul>
+<li>NULL / NOT NULL</li>
+<li>UNIQUE</li>
+<li>PK</li>
+<li>FK</li>
+<li>CHECK</li>
+<li>DEFAULT</li>
+</ul>
+</li>
+</ul>
+<h2 id="dcl">DCL</h2>
+<ul>
+<li>(Data Control Language) | <a href="https://www.geeksforgeeks.org/mysql-grant-revoke-privileges/">gtg.org</a></li>
+<li>루트를 제외한 유저들에게 권한부여하는 명령어 모음</li>
+<li>사용자 생성<ul>
+<li><code>CREATE USER 'user1'@'localhost' IDENTIFIED BY 'test';</code></li>
+</ul>
+</li>
+<li>사용자 삭제<ul>
+<li><code>DROP USER 'user1'@'localhost';</code></li>
+</ul>
+</li>
+<li>권한 부여<ul>
+<li><code>GRANT ALL PRIVILEGES ON *.* TO 'user1'@'localhost';</code></li>
+<li><code>GRANT ALL PRIVILEGES ON database1.table1 TO 'user1'@'localhost';</code></li>
+<li><code>GRANT SELECT, INSERT, UPDATE ON database1.table1 TO 'user1'@'localhost';</code></li>
+</ul>
+</li>
+<li>권한 반영<ul>
+<li><code>FLUSH PRIVILEGES;</code></li>
+</ul>
+</li>
+<li>권한 확인<ul>
+<li><code>SHOW GRANTS FOR 'user1'@'localhost';</code></li>
+</ul>
+</li>
+<li>권한 삭제<ul>
+<li><code>REVOKE ALL ON database1.table1 FROM 'user1'@'localhost';</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="_2">트랜잭션</h1>
+<ul>
+<li>RDBMS의 간판기능<ul>
+<li>트랜잭션의 모든 제약조건 (ACID)를 만족<ul>
+<li><strong>A</strong>tomicity: 원자성<ul>
+<li>커밋/롤백 보장 (All or Nothing)</li>
+</ul>
+</li>
+<li><strong>C</strong>onsistency: 일관성</li>
+<li><strong>I</strong>solation: 격리성</li>
+<li><strong>D</strong>urability: 내구성</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lock<ul>
+<li>여러개의 트랜잭션(스레드)가 공유자원(DB/Table/Records)에 동시에 접근(CRUD)을 시도할 때 Lock을 통해 DB의 일관성을 보장함.</li>
+<li>Lock을 걸면 직관적으로 알 수 있듯이 오직 하나의 스레드만이 해당 자원에 대한 독점적인 접근권한을 갖는다.</li>
+<li>다양한 종류의 Lock<ul>
+<li>Global Lock: 명령 단위의 Lock, 즉, 어느누가 명령어를 제출하면 해당 연산을 마칠 때까지 다른 스레드 실행불가.</li>
+<li>Table Lock: 특정 트랜잭션이 독점적으로 테이블을 점유</li>
+<li>Record Lock: 특정 트랜잭션이 독점적으로 레코드를 점유.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="_3">데이터 모델링</h1>
+<p>| <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">wiki.org</a> | <a href="https://lifreeblog.tistory.com/70">blog</a> |</p>
+<ul>
+<li>정의<ul>
+<li>현실 세계를 추상화, 단순화, 명확화 하기 위해 일정한 표기법에 의해 표현하는 기술</li>
+</ul>
+</li>
+<li>개념 모델링<ul>
+<li>현실 세계의 데이터를 추상화하여 <strong>개념</strong> 세계의 데이터로 표현하는 과정</li>
+<li>모델링 결과가 <strong>E-R Diagram</strong>으로 표현된다.</li>
+<li>핵심 엔티티 도출, EA(Enterprise Architecture, 전사적 아키텍처) 수립 시 활용.</li>
+</ul>
+</li>
+<li>논리 모델링<ul>
+<li>개념 세계의 개체 타입을 DBMS가 지원하는 <strong>논리</strong>적 모델로 변환하는 과정</li>
+<li>E-R Diagram을 구체화하여 관계 스키마(테이블, 외래키)를 만드는 과정.</li>
+<li><strong>정규화 (Normalization)</strong><ul>
+<li>논리 모델의 일관성 확보, 중복 제거</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>물리 모델링<ul>
+<li>데이터가 저장될 수 있도록 논리 데이터 모델을 <strong>물리</strong>적 데이터 구조로 변환하는 과정</li>
+<li>테이블 스키마 / 인덱스를 정의</li>
+</ul>
+</li>
+<li>Entity Relationship Modeling</li>
+<li>Entity<ul>
+<li>엔티티는 <strong>고유</strong>하게 식별할 수 있는 독립적으로 존재할 수 있는 개체이다. 명사로 나타낸다. 엔티티는 현실세계의 물리적인 사물을 지칭할 수도 있지만 (집, 자동차, etc.) 논리적인 이벤트를 다룰 수도 있다. (거래, 서비스, etc.)</li>
+<li>강한 엔티티 (Strong Entity)<ul>
+<li>홀로 존재 가능한 엔티티. (eg, 직원, 학생, 교수)</li>
+<li>PK를 가지는 충분한 속성을 가지고 있어야 한다.</li>
+</ul>
+</li>
+<li>약한 엔티티 (Weak Entity)
+        - 단독으로 존재할 수 없는 엔티티. (eg, 부서, 분반, 강의)
+        - PK를 가지기에는 부족한 속성을 가진다. 따라서 FK를 통해 강한 엔티티에 의존한다.</li>
+</ul>
+</li>
+<li>Relationship<ul>
+<li>관계는 엔티티가 서로 어떻게 연관되어 있는지를 정의한다. 동사 형태로 나타나며, "학생이 <em>수강하는</em> 강의목록", "회사가 <em>소유하는</em> 컴퓨터" 등을 예로 들 수 있다.</li>
+</ul>
+</li>
+<li>ER Diagram<ul>
+<li>엔티티-관계 그래프는 엔티티 집합과 관계 집합을 표현하기 위해 존재한다. 예를 들어 다이어그램에서 'song'이라는 이름의 엔티티는 곧 엔티티 집합을 의미하며, 'performs'라는 이름의 관계는 곧 관계 집합을 의미한다. 어떤 다이어그램에서는 이 집합의 수를 규정할 수 있는데, 이것을 <strong>Cardinality</strong>라고 부른다.</li>
+</ul>
+</li>
+<li>Attributes<ul>
+<li>이름 그대로 속성인데, 속성은 엔티티, 관계 둘 다에게 붙을 수 있다. DB언어로 필드와 동등하다.</li>
+</ul>
+</li>
+<li>테이블을 Entity(1차)와 Relation(2차)으로 구분하는 작업.<ul>
+<li>학생 + 교수 테이블 ==&gt; Entity 테이블 (1차)</li>
+<li>강의 + 수강 테이블 ==&gt; Relation 테이블 (2차)</li>
+</ul>
+</li>
+<li>Peter Chen 표기법<ul>
+<li>Entity = 직사각형</li>
+<li>Relationship = 마름모</li>
+<li>Attribute = 타원</li>
+</ul>
+</li>
+<li>IE (Information Engineering) 표기법 (까마귀 발 표기법) | <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model#Crow's_foot_notation">wiki.org</a> | <a href="https://lifreeblog.tistory.com/70">blog</a><ul>
+<li>Entity 타입에 상관없이 직사각형으로 표현. Attribute는 Entity 하위에 포함되는 식.</li>
+<li>Relationship은 여러 모양의 선으로 표현할 수도 있다. Cardinality 제약조건에 따라 선의 모양이 다르다.</li>
+<li>이 표기법은 Relationship에 Attribute를 명시할 수 없다. 따라서 관계 자체를 엔티티로 승격하여 사용하는 것을 원칙으로 삼는다. 따라서 동사의 이름을 가진 엔티티가 된다. 주로 과거 내역을 추적하고자 할 때 사용되는 기법이다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="cardinality">Cardinality (대응수)</h2>
+<ul>
+<li>1:1<ul>
+<li><img alt="Pasted image 20230614170840.png" src="../assets/Pasted%20image%2020230614170840.png" /></li>
+<li>하나의 개체가 하나의 개체에 대응</li>
+<li>단일 테이블 내 칼럼 추가</li>
+</ul>
+</li>
+<li>1:N<ul>
+<li><img alt="Pasted image 20230614170851.png" src="../assets/Pasted%20image%2020230614170851.png" /></li>
+<li>하나의 개체가 0..* 개의 개체에 대응</li>
+<li>2개의 테이블 필요.</li>
+</ul>
+</li>
+<li>N:1<ul>
+<li>0..* 개의 개체가 최대 1개의 개체에 대응</li>
+<li>2개의 테이블 필요.</li>
+</ul>
+</li>
+<li>M:N<ul>
+<li><img alt="Pasted image 20230614170910.png" src="../assets/Pasted%20image%2020230614170910.png" /></li>
+<li>0..<em> 개의 개체가 0..</em> 개의 개체에 대응</li>
+<li>3개의 테이블 필요.</li>
+</ul>
+</li>
+<li>기본적으로 모든 관계는 M:N (다대다) 관계임.<ul>
+<li>Entity -- Relationship -- Entity 이렇게 총 3개의 테이블이 필요함. 아래의 예제는 학생과 교수 사이에 다대다 관계를 <em>강의</em>라는 테이블로 정의한 것을 보여준다. </li>
+<li><img alt="Pasted image 20230614165211.png" src="../assets/Pasted%20image%2020230614165211.png" /></li>
+<li>M:N -&gt; 1:N 또는 N:1 -&gt; 1:1의 순서로 축소하면서 테이블의 개수가 줄어든다.</li>
+<li>1:1, 1:N/N:1로 축소가 가능한 경우, 중간 관계(강의)를 삭제한 뒤에 <ul>
+<li>1:1인 경우, 엔티티 안에 속성을 직접 추가한다.</li>
+<li>1:N/N:1인 경우, 외래키로 엔티티 간 직접 연결한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_4">식별관계와 비식별 관계</h2>
+<ul>
+<li>식별관계 (Identifying Relationship)<ul>
+<li>강한 엔티티와 약한 엔티티 사이의 관계. </li>
+<li>FK가 테이블의 PK 또는 복합키로 들어있는 경우</li>
+<li>실선으로 연결.</li>
+</ul>
+</li>
+<li>비식별관계 (Non-Identifying Relationship)<ul>
+<li>강한 엔티티와 강한 에티티 사이의 관계.</li>
+<li>FK가 테이블의 일반 칼럼으로 들어가 있는 경우</li>
+<li>점선으로 연결</li>
+</ul>
+</li>
+</ul>
+<h1 id="_5">정규화</h1>
+<p>| <a href="https://mangkyu.tistory.com/110">blog</a> |</p>
+<ul>
+<li>데이터 중복을 방지하기 위해 사용하는 모델링 기법. </li>
+<li>1정규형 (1NF)<ul>
+<li>칼럼값이 원자값을 가지지 않으면 레코드 분리</li>
+<li><img alt="Pasted image 20230614174946.png" src="../assets/Pasted%20image%2020230614174946.png" /></li>
+</ul>
+</li>
+<li>2정규형 (2NF)<ul>
+<li>키 칼럼과 나머지 일반 칼럼이 직접적인 연관관계(직접 종속)만 가지도록 테이블을 구성.</li>
+<li>아래의 예시는 복합키(학생번호, 강좌이름)가 성적을 식별하지만 동시에 키의 부분집합인 강좌이름 칼럼이 강의실을 식별하는 상황이라 강의실 테이블을 따로 분리하여 2NF를 만족시킬 수 있다.</li>
+<li><img alt="Pasted image 20230614192239.png" src="../assets/Pasted%20image%2020230614192239.png" /></li>
+<li>![[Pasted image 20230614192248.png]]</li>
+</ul>
+</li>
+<li>3정규형 (3NF)<ul>
+<li>일반 컬럼끼리 간접 연관관계 (간접 종속)을 가지고 있다면 테이블을 분리.</li>
+<li>학생번호는 강좌이름을 결정하고 있고, 강좌 이름은 수강료를 결정하고 있다. 간접적으로 학생번호가 수강료를 결정하고 있으므로 테이블을 분리하여야 한다.</li>
+<li>![[Pasted image 20230614193952.png]]</li>
+</ul>
+</li>
+<li>BCNF 정규형 (Boyce-Codd Normal Form)<ul>
+<li>3정규형의 강화버전. <strong>모든</strong> 결정자(식별자)가 간접 연관관계를 가지지 않도록 테이블을 분리.</li>
+</ul>
+</li>
+</ul>
+<h1 id="n1-problem">N+1 Problem</h1>
+<p>ORM의 문제점: 쿼리가 필요한 것보다 많이 요청된다.</p>
+<p>지금 테이블에 연관 칼럼이 없을 경우 조인 연산을 수행한다. ORM은 <code>user.orders...</code>이런 식으로 자연스럽게 작성하게 되는데, 구현체 입장에서는 없는 칼럼 하나당 SELECT 쿼리를 날린다. 문제는 주문개수가 100개라면 단순히 연관 테이블의 멤버를 찾기 위해 100번의 추가적인 쿼리를 날려야 하게 된다. </p>
+<p>사전에 필요한 테이블에 대한 내용까지 조인을 수행시켜놓는다. 앞으로의 ORM 요청에 대하여 조인한 테이블을 기준으로 찾으면 된다. (캐시잖아..!)</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,363 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/querying%20in%20%7Bdjango%20query%7D/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>querying in {django query} - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#before-you-start-blog-author-entry-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              querying in {django query}
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li><a href="https://docs.djangoproject.com/en/4.2/topics/db/queries/">doc</a></li>
+</ul>
+<h1 id="before-you-start-blog-author-entry-models">Before you start (Blog, Author, Entry models)</h1>
+<p>앞으로 모든 예시는 아래의 코드에서 정의한 모델을 기반으로 제공된다.</p>
+<pre><code class="language-python">from datetime import date
+
+from django.db import models
+
+class Blog(models.Model):
+    name = models.CharField(max_length=100)
+    tagline = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+class Author(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name
+
+class Entry(models.Model):
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    headline = models.CharField(max_length=255)
+    body_text = models.TextField()
+    pub_date = models.DateField()
+    mod_date = models.DateField(default=date.today)
+    authors = models.ManyToManyField(Author)
+    number_of_comments = models.IntegerField(default=0)
+    number_of_pingbacks = models.IntegerField(default=0)
+    rating = models.IntegerField(default=5)
+
+    def __str__(self):
+        return self.headline
+</code></pre>
+<ul>
+<li><code>save</code> 를 해줘야 데이터베이스에 변경내용이 저장된다. 만약 새로운 필드를 생성하자마자 DB에 넣고싶다면 <code>create</code>를 사용할 것.</li>
+<li><code>ForeignKey</code> 필드의 관계는 1:1 관계이므로 단순히 <code>.</code>으로 연결하면 된다.<ul>
+<li><code>get</code> 메서드는 오직 하나의 개체만 가져온다는 것을 보장할 때 사용이 가능하다. | 없을 때 → <code>DoesNotExist</code> | 두개 이상일 때 → <code>MultipleObjectsReturned</code>
+ <code>python
+e = Entry.objects.get(pk=1)
+b = Blog.objects.get(name="Choi")
+e.blog = b</code></li>
+</ul>
+</li>
+<li><code>ManyToMany</code> 필드의 관계는 기본적으로 여러개의 연결이 포함되어 있기 때문에  <code>filter</code>나 <code>all</code> 따위를 써서  <code>QuerySet</code>형태로 얻어와야 한다. | <a href="https://docs.djangoproject.com/en/4.2/ref/models/class/#django.db.models.Model.objects"><code>objects</code></a>는 모델에 클래스 멤버 형태로 연결돼 있는 <code>Manager</code> 인스턴스를 가져온다.</li>
+<li><strong>all</strong> <code>Entry.objects.all()</code></li>
+<li><strong>filter</strong> <code>Entry.objects.filter(pub_date__year=2006)</code>  | <code>Entry.objects.filter(headline__startswith="What")</code><ul>
+<li>JOIN 연산을 장고 단에서 알아서 수행해 준다. 관계를 확장하려면 원하는 필드에 도달할 때까지 연관 필드의 이름을 <code>__</code> 로 구분하여 연결하면 된다. <a href="./#field-lookups">querying in {django query}#Field lookups</a></li>
+</ul>
+</li>
+<li><code>filter</code>의 결과는 <code>QuerySet</code>이기 때문에 체이닝이 가능하다. </li>
+<li><strong>annotate</strong> 칼럼의 이름을 질의할 때 변경할 수도 있다고 한다. 마치 SQL <code>AS</code>와 같다. 사용법은 쿼리시 <code>annotate</code> 인자의 kwargs 자리에 원하는 이름을 key값으로 넣으면 그만이라고...</li>
+</ul>
+<p><img alt="스크린샷 2023-07-06 09.32.11.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-06%2009.32.11.png" /></p>
+<h1 id="field-lookups-filter-get-exclude">Field lookups {filter, get, exclude}</h1>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/models/querysets/#id4">docs</a></p>
+<p>SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. <code>QuerySet</code>로부터  <code>filter</code>, <code>get</code>, <code>exclude</code> 메서드의 키워드 인자로 들어가는 규칙에 대하여 정의한다. </p>
+<pre><code>&lt;field&gt;__&lt;lookuptype&gt;=&lt;value&gt;
+</code></pre>
+<p>여기에 예외가 존재하는데, <code>ForeignKey</code> 필드의 뒤에는 반드시 <code>_id</code>가 붙는다는 것이다. (에반데)</p>
+<p><code>lookuptype</code>의 종류는 <a href="https://docs.djangoproject.com/en/4.2/ref/models/querysets/#field-lookups">field lookup reference</a>에서 확인이 가능하다. 일단 자주 쓰이는 타입에 대해서만 알아보자.</p>
+<ul>
+<li><code>exact</code>: exact match<ul>
+<li><code>Entry.objects.get(headline__exact="Cat bites dog")</code></li>
+<li>사실 <code>__exact</code> 없이 작성해도 장고는 기본적으로 <code>__exact</code>를 붙여준다.</li>
+</ul>
+</li>
+<li><code>iexact</code>: case-insensitive match</li>
+<li><code>contains</code>: case-sensitive containment test</li>
+<li><code>pk</code>: 사실 <code>id__exact</code>의 준말이었다! 연관 테이블의 pk도 검색이 가능하다.</li>
+<li>span relationships<ul>
+<li>뿐만 아니라, lookup 자체를 연관 테이블을 JOIN한 칼럼까지 지원한다. 물론 JOIN 연산은 우리가 할 필요 없다.</li>
+<li><code>Entry</code>의 연관 테이블인 <code>Blog</code>와 조인하여 블로그의 <code>name</code> 필드에 접근할 수 있다.
+ <code>python
+Entry.objects.filter(blog__name="Beatles Blog")</code></li>
+<li>조인의 순서를 거꾸로 해도 된다. 이때 규칙은 클래스명을 소문자로 작성하면 된다.
+<code>python
+Blog.objects.filter(entry__authors__name="Choi")</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="q-lookup">Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.</h1>
+<p><a href="../F%28%29%2C%20Q%28%29%20in%20%7Bdjango%20query%7D/">F(), Q() in {django query}</a></p>
+<h1 id="eof">EOF</h1>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,368 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/PATCH%20%7BHTTP%7D/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>PATCH {HTTP} - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rfc-6901" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PATCH {HTTP}
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li><a href="https://medium.com/@isuru89/a-better-way-to-implement-http-patch-operation-in-rest-apis-721396ac82bf#68ac">blog content</a></li>
+<li><a href="../PUT%20is%20idempotent%2C%20PATCH%20isn%27t/">PUT is idempotent, PATCH isn't</a></li>
+<li>HTTP PATCH 메서드와 함께 사용되는 JSON 규칙이다. PATCH 메서드는 리소스의 일부 필드를 변경하는 용도로 사용한다. </li>
+<li>RESTful한 PATCH operation들을 공식으로 지원한다. <code>add, remove, replace, move, copy, test</code>가 있다. | <a href="https://datatracker.ietf.org/doc/html/rfc6902">RFC 6901 {proposal}</a></li>
+</ul>
+<blockquote>
+<p>Note that, the header<code>Content-Type</code> should be set to <code>application/json-patch+json</code> media type to indicate that it accepts a set of patch operations, <em>but it’s not mandatory</em>. You can have it as <code>application/json</code> and still, it will work.</p>
+</blockquote>
+<pre><code class="language-http">PATCH /users
+
+[  
+    { &quot;op&quot;: &quot;test&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: &quot;foo&quot; },  
+    { &quot;op&quot;: &quot;remove&quot;, &quot;path&quot;: &quot;/a/b/c&quot; },  
+    { &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: [ &quot;foo&quot;, &quot;bar&quot; ] },  
+    { &quot;op&quot;: &quot;replace&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: 42 },  
+    { &quot;op&quot;: &quot;move&quot;, &quot;from&quot;: &quot;/a/b/c&quot;, &quot;path&quot;: &quot;/a/b/d&quot; },  
+    { &quot;op&quot;: &quot;copy&quot;, &quot;from&quot;: &quot;/a/b/d&quot;, &quot;path&quot;: &quot;/a/b/e&quot; }  
+]
+</code></pre>
+<h1 id="rfc-6901">RFC 6901</h1>
+<ul>
+<li>
+<p>https://jsonpatch.com</p>
+<ul>
+<li><strong>JSON Pointer</strong>: A string format for identifying a specific value within a JSON document. It is used by all operations in JSON Patch to specify the part of the document to operate on. It is specified in RFC 6901 from the IETF.<ul>
+<li><code>/</code> 문자로 구분되어진 문자열로, 객체의 속성에 접근하는 <code>.</code> 연산과 완전히 일치한다.</li>
+<li>예를 들어 다음과 같은 구조가 있다고 가정하자
+<code>json
+{
+    "biscuits": [
+        {"name": "Digestive"},
+        {"name": "Choco"},
+    ]
+}</code>
+그러면 "Digestive"는 <code>/biscuits/0/name</code>으로 접근이 가능하고 "Choco"는 <code>/biscuits/1/name</code>으로 접근이 가능하여야 한다.</li>
+</ul>
+</li>
+<li><code>add</code><ul>
+<li>리소스가 배열이나 리스트인 경우, 추가 <code>value</code>를 삽입하는 연산이다.</li>
+<li><code>{"op": "add", "path": "biscuits/1", "value": {"name": "Ginger Nut"}}</code></li>
+</ul>
+</li>
+<li><code>remove</code><ul>
+<li>리소스 혹은 리소스 배열의 원소를 삭제하는 연산이다.</li>
+<li>리소스 삭제: <code>{"op": "remove", "path": "/biscuits"}</code></li>
+<li>리소스 배열의 0번째 원소 삭제: <code>{"op": "remove", "path": "/biscuits"}</code></li>
+</ul>
+</li>
+<li><code>replace</code><ul>
+<li>리소스의 특정 필드를 수정하는 연산이다.</li>
+<li><code>{"op": "replace", "path": "/biscuits/0/name", "value": "Chocolate"}</code></li>
+</ul>
+</li>
+<li><code>copy</code><ul>
+<li>from 리소스를 path 리소스로 복사하는 연산이다. from, path 모두 JSON Pointer이다.</li>
+<li>`{"op": "copy", "from": "/biscuits/0", "path": "/best_biscuit"}</li>
+</ul>
+</li>
+<li><code>move</code><ul>
+<li>copy와는 달리 from 리소스를 path리소스로 이동한다.</li>
+</ul>
+</li>
+<li><code>test</code><ul>
+<li>명시한 값이 리소스와 일치하는지 여부를 테스트한다. 테스트를 실패하면 <a href="https://datatracker.ietf.org/doc/html/rfc6902#section-5">RFC 6902#Error-Handling</a> 와 같이 PATCH 수행을 종료하고 전체 PATCH 연산을 무효화 하여야 한다.</li>
+<li>PATCH 메서드는 원자적이다. 하나의 PATCH 요청 안에 여러 "op"가 들어있을 수 있으며, 이 중에 하나의 연산이 실패하게 된다면 PATCH 이전 상태로 돌아와야 한다.
+  <code>json
+[
+    {"op": "replace", "path": "/a/b/c", "value": 42},
+    {"op": "test", "path": "/a/b/c", "value": "C"}, // FAILURE because of [0]
+] // Whole operation MUST NOT be patched</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>위의 proposal을 누가 이미 구현체로 만들어놓았다. 뭐하는 사람들이지</p>
+<ul>
+<li><a href="https://github.com/stefankoegl/python-json-patch">python-json-patch {GH}</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="issue">issue에 대한 응답</h1>
+<p>아래는 PATCH 요청에 대하여 <code>jsonpatch</code> 모듈로 파싱, 유저 프로파일을 수정하는 코드 스니펫이 들어있는 이슈 대화 목록이다.</p>
+<p><a href="https://github.com/ESTsoft-Book-Project/bookstore/issues/20">bookstores/issues/20</a></p>
+<p>정리하자면,</p>
+<ol>
+<li>PATCH 하고자 하는 데이터 칼럼의 리스트만 프론트에서 쏴서 <code>jsonpatch.apply_patch</code> 에서 수정된 데이터의 <code>dict</code>를 받는다.</li>
+<li>다만, <code>User</code>의 속성이 단순 <code>dict</code>가 아니기 때문에 <code>apply_patch</code>의 리턴값을 사용하지는 못하고 <code>for</code> 문을 돌면서 필드의 값을 일일이 수정하는 모습을 보이고 있다. </li>
+<li>최근 코드를 보니, DRF의 Serializer로 완전히 대체한 모습을 볼 수 있다. PATCH 메서드는 사용했으나 body는 RFC6901를 따르지 않았는데, 의도한 거라고 볼 수 있을 것 같아보인다..? </li>
+<li>Serializer에서 제공하는 <code>partial=True</code>를 그냥 사용하면 PATCH <code>"op": "replace"</code>와 완전히 동등한 코드를 쓸 수 있는데.</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

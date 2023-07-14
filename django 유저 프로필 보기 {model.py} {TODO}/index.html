@@ -184,7 +184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test/" class="md-nav__link">
+      <a href="../test.md" class="md-nav__link">
         About
       </a>
     </li>
@@ -238,7 +238,7 @@
 <blockquote>
 <p>Tell Django to use our custom user model instead of the built-in User model.</p>
 </blockquote>
-<p>조졌다. <code>blog.Article</code>이 <code>users.User</code>에 의존하고 <code>users.User</code>가 <code>blog.Article</code>에 의존한다. 따라서 circular import 상황이 발생하여 <code>ImportError</code>가 발생하였다. ==&gt; 생각나는 유일한 해결책은 <code>Article</code>을 분리하여 <code>User</code> -&gt; <code>ArticleID</code> &lt;- <code>Article</code> 이런거? DB 시간에 배웠던 정규화와 관련이 있는 것 같은데 아는게 없으니까 답답하군. [[Changing to a custom user model mid-project]]</p>
+<p>조졌다. <code>blog.Article</code>이 <code>users.User</code>에 의존하고 <code>users.User</code>가 <code>blog.Article</code>에 의존한다. 따라서 circular import 상황이 발생하여 <code>ImportError</code>가 발생하였다. ==&gt; 생각나는 유일한 해결책은 <code>Article</code>을 분리하여 <code>User</code> -&gt; <code>ArticleID</code> &lt;- <code>Article</code> 이런거? DB 시간에 배웠던 정규화와 관련이 있는 것 같은데 아는게 없으니까 답답하군. <a href="../Changing%20to%20a%20custom%20user%20model%20mid-project/">Changing to a custom user model mid-project</a></p>
 <p>그래서 일단 커스텀 <code>User</code> 안에 필드를 다 주석처리하고 <code>makemigrations</code> , <code>migrate</code> 명령을 했더니 아래와 같은 에러메시지가 발생하였다.</p>
 <pre><code class="language-shell">ValueError: The field admin.LogEntry.user was declared with a lazy reference to 'users.user', but app 'users' isn't installed.
 The field blog.Article.author was declared with a lazy reference to 'users.user', but app 'users' isn't installed.
@@ -250,8 +250,8 @@ The field blog.Article_likes.user was declared with a lazy reference to 'users.u
 <blockquote>
 <p>Due to limitations of Django’s dynamic dependency feature for swappable models, the model referenced by <strong>AUTH_USER_MODEL</strong> must be created in the first migration of its app (usually called 0001_initial); otherwise, you’ll have dependency issues.</p>
 </blockquote>
-<p>[[writing a manager for a custom user model {djangodoc}]]</p>
-<p>[[no such table 문제 해결방법 {django}]] ==&gt; 그래도 같은 문제가 발생한다... 살려줘</p>
+<p><a href="../writing%20a%20manager%20for%20a%20custom%20user%20model%20%7Bdjangodoc%7D/">writing a manager for a custom user model {djangodoc}</a></p>
+<p><a href="../no%20such%20table%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95%20%7Bdjango%7D/">no such table 문제 해결방법 {django}</a> ==&gt; 그래도 같은 문제가 발생한다... 살려줘</p>
 <h1 id="20230603">20230603의 최승현이 나타났다</h1>
 <ul>
 <li><a href="https://stackoverflow.com/questions/66733285/how-to-reset-django-database">django sqlite 파일을 그냥 지우면 돼</a></li>
@@ -268,6 +268,11 @@ The field blog.Article_likes.user was declared with a lazy reference to 'users.u
           
           
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
         
       </main>
       
@@ -294,7 +299,7 @@ The field blog.Article_likes.user was declared with a lazy reference to 'users.u
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>

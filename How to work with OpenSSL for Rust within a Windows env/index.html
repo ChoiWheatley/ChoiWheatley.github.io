@@ -1,0 +1,344 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/How%20to%20work%20with%20OpenSSL%20for%20Rust%20within%20a%20Windows%20env/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>How to work with OpenSSL for Rust within a Windows env - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to work with OpenSSL for Rust within a Windows env
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>How to work with OpenSSL for Rust within a Windows env</h1>
+
+<ul>
+<li>https://stackoverflow.com/questions/55912871/how-to-work-with-openssl-for-rust-within-a-windows-development-environment#61921362</li>
+<li>나의 구원자인가?</li>
+<li><a href="../axum/">axum</a> 공부하다가 <code>cargo test</code>에서 rust가 openssl에 의존하는 순간 에러가 발견되었다.  openssl이 <code>pkg-config</code> 검색 경로에 없다는 문제였다. <a href="./#jyihvw">에러문구</a></li>
+<li>처음엔 별 생각없이 <code>brew install openssl@3</code> 명령을 통하여 문제를 해결하려고 했으나, 더 큰 구렁텅이로 빠지고 말아 다시 지웠다.</li>
+<li>그러던 와중에 빛과 소금같은 질문글을 보게 되었고...</li>
+<li>나의 저시기는 WSL2에서 진행하고 있었고, 2023-04-22T13:24:25 윈도우 네이티브에서 질문자가 명시한 스텝을 그대로 밟았더니 동일한 에러가 나왔다. Catch! 이 사람들이 나눈 대화 속에 답이 있다.<ol>
+<li>clone <a href="https://github.com/Microsoft/vcpkg">vcpkg</a></li>
+<li>open directory where you've cloned vcpkg</li>
+<li>run <code>./bootstrap-vcpkg.bat</code></li>
+<li>run <code>./vcpkg.exe install openssl-windows:x64-windows</code></li>
+<li>run <code>./vcpkg.exe install openssl:x64-windows-static</code></li>
+<li>run <code>./vcpkg.exe integrate install</code></li>
+<li>run <code>set VCPKGRS_DYNAMIC=1</code> (or simply set it as your environment variable)</li>
+</ol>
+</li>
+<li>추가적으로 <code>OPENSSL_DIR</code> 환경변수를 vcpkg 안에 탑재돼 있는 openssl 폴더를 지정했더니 정상적으로 컴파일이 되는 것을 확인했다. <a href="./#sfliedi">screenshot of file explorer</a> | <a href="./#sfliedi">screenshot of env editor</a>
+    I also had to do <code>$env:OPENSSL_DIR="&lt;vcpkg&gt;\installed\x64-windows-static"</code></li>
+<li>이제 WSL에서도 되려나? 아직 안된다. 아마 위에서 설정한 <code>PATH</code>를 WSL 환경에도 추가해야 할 것 같아 보인다. <a href="https://stackoverflow.com/questions/1641477/how-to-set-environment-variable-for-everyone-under-my-linux-system#1641531">How to set env variable for everyone under my linux system?</a><ul>
+<li>안된다! <code>export OPENSSL_DIR='/mnt/c/vcpkg/installed/x64-windows-static/'</code> 으로 설정했는데도 안된다. 대신 다른 오류메시지가 나왔다. <a href="./#xm109w">error message</a> </li>
+<li>아니면 윈도우에서 vcpkg 설치했던 것처럼 WSL에서도 vcpkg를 설치해볼까? 똑같은 과정으로 WSL 머신 안에 vcpkg를 설치하고 위의 과정을 반복한다. 환경변수 설정하는 건 솔직히 이젠 쉽잖아?</li>
+</ul>
+</li>
+<li>PROFIT 💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸<a href="./#whf4bg">screenshot</a> </li>
+</ul>
+<hr />
+<p><img alt="Pasted image 20230422133245.png" src="../assets/Pasted%20image%2020230422133245.png" />{ width="400" } ^uvrhun
+<img alt="Pasted image 20230422135041.png" src="../assets/Pasted%20image%2020230422135041.png" />{ width="400" }^sfliedi</p>
+<pre><code>error: failed to run custom build command for `openssl-sys v0.9.85`
+
+Caused by:
+  process didn't exit successfully: `/home/chltm/workspace/axum-full-course/target/debug/build/openssl-sys-68869c6e092d43e9/build-script-main` (exit status: 101)
+  --- stdout
+  cargo:rerun-if-env-changed=X86_64_UNKNOWN_LINUX_GNU_OPENSSL_LIB_DIR
+...
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+  run pkg_config fail: `PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=&quot;1&quot; &quot;pkg-config&quot; &quot;--libs&quot; &quot;--cflags&quot; &quot;openssl&quot;` did not exit successfully: exit status: 1
+  error: could not find system library 'openssl' required by the 'openssl-sys' crate
+
+  --- stderr
+  Package openssl was not found in the pkg-config search path.
+  Perhaps you should add the directory containing `openssl.pc'
+  to the PKG_CONFIG_PATH environment variable
+  No package 'openssl' found
+
+
+  --- stderr
+  thread 'main' panicked at '
+
+  Could not find directory of OpenSSL installation, and this `-sys` crate cannot
+  proceed without this knowledge. If OpenSSL is installed and this crate had
+  trouble finding it,  you can set the `OPENSSL_DIR` environment variable for the
+  compilation process.
+
+  Make sure you also have the development packages of openssl installed.
+  For example, `libssl-dev` on Ubuntu or `openssl-devel` on Fedora.
+
+  If you're in a situation where you think the directory *should* be found
+  automatically, please open a bug at https://github.com/sfackler/rust-openssl
+  and include information about your system as well as this message.
+
+  $HOST = x86_64-unknown-linux-gnu
+  $TARGET = x86_64-unknown-linux-gnu
+  openssl-sys = 0.9.85
+...
+</code></pre>
+<p>^jyihvw</p>
+<pre><code>thread 'main' panicked at 'OpenSSL libdir at `[&quot;/mnt/c/vcpkg/installed/x64-windows-static/lib&quot;]` does not contain the required files to either statically or dynamically link OpenSSL', /home/chltm/.cargo/registry/src/github.com-1ecc6299db9ec823/openssl-sys-0.9.85/build/main.rs:403:13
+</code></pre>
+<p>^xm109w
+<img alt="Pasted image 20230422222134.png" src="../assets/Pasted%20image%2020230422222134.png" /> ^whf4bg</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

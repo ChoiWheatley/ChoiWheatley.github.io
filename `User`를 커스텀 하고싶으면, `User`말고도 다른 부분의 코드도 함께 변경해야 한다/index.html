@@ -1,0 +1,357 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/%60User%60%EB%A5%BC%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%95%98%EA%B3%A0%EC%8B%B6%EC%9C%BC%EB%A9%B4%2C%20%60User%60%EB%A7%90%EA%B3%A0%EB%8F%84%20%EB%8B%A4%EB%A5%B8%20%EB%B6%80%EB%B6%84%EC%9D%98%20%EC%BD%94%EB%93%9C%EB%8F%84%20%ED%95%A8%EA%BB%98%20%EB%B3%80%EA%B2%BD%ED%95%B4%EC%95%BC%20%ED%95%9C%EB%8B%A4/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>`User`를 커스텀 하고싶으면, `User`말고도 다른 부분의 코드도 함께 변경해야 한다 - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tldr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              `User`를 커스텀 하고싶으면, `User`말고도 다른 부분의 코드도 함께 변경해야 한다
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tldr">TL;DR</h1>
+<p>default <code>User</code>를 의존하는 코드
+- forms.py
+    - 커스텀 폼의 <code>Meta</code>를 만들어 내가 넣고 싶은 필드만 <code>fields</code>에 넣는다. 이건 쉽지.
+- admin.py
+    - <code>django.contrib.auth.UserAdmin</code> 소스코드를 잘 읽어보면 <code>form</code>, <code>add_form</code>이라는 멤버가 있 다. 디폴트로 각각 <code>UserChangeForm</code>과 <code>UserCreationForm</code>을 composite 패턴 형태로 가지고 있는데, 여기에서 내가 오버라이딩한 <code>username</code>을 참조하는 것이었다. 따라서 이 멤버들을 오버라이드 하여야 한다.</p>
+<h1 id="question">Question</h1>
+<blockquote>
+<p><code>UserCreationForm</code> requires <code>username</code> field. But I already override <code>username</code> with <code>email</code>. How can I resolve this error? Error message:</p>
+</blockquote>
+<pre><code>Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File &quot;/home/linuxbrew/.linuxbrew/opt/python@3.11/lib/python3.11/threading.py&quot;, line 1038, in _bootstrap_inner
+    self.run()
+  File &quot;/home/linuxbrew/.linuxbrew/opt/python@3.11/lib/python3.11/threading.py&quot;, line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/utils/autoreload.py&quot;, line 64, in wrapper
+    fn(*args, **kwargs)
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/core/management/commands/runserver.py&quot;, line 125, in inner_run
+    autoreload.raise_last_exception()
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/utils/autoreload.py&quot;, line 87, in raise_last_exception
+    raise _exception[1]
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/core/management/__init__.py&quot;, line 394, in execute
+    autoreload.check_errors(django.setup)()
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/utils/autoreload.py&quot;, line 64, in wrapper
+    fn(*args, **kwargs)
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/__init__.py&quot;, line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/apps/registry.py&quot;, line 124, in populate
+    app_config.ready()
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/contrib/admin/apps.py&quot;, line 27, in ready
+    self.module.autodiscover()
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/contrib/admin/__init__.py&quot;, line 50, in autodiscover
+    autodiscover_modules(&quot;admin&quot;, register_to=site)
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/utils/module_loading.py&quot;, line 58, in autodiscover_modules
+    import_module(&quot;%s.%s&quot; % (app_config.name, module_to_search))
+  File &quot;/home/linuxbrew/.linuxbrew/opt/python@3.11/lib/python3.11/importlib/__init__.py&quot;, line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1206, in _gcd_import
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1178, in _find_and_load
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1149, in _find_and_load_unlocked
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 690, in _load_unlocked
+  File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 940, in exec_module
+  File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 241, in _call_with_frames_removed
+  File &quot;/home/chltm/workspace/bookstore/users/admin.py&quot;, line 5, in &lt;module&gt;
+    from .forms import SignupForm
+  File &quot;/home/chltm/workspace/bookstore/users/forms.py&quot;, line 6, in &lt;module&gt;
+    class CustomUserCreationForm(UserCreationForm):
+  File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/forms/models.py&quot;, line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (username) specified for User
+</code></pre>
+<h1 id="answer">Answer</h1>
+<p>To resolve the error, you need to update the <code>UserCreationForm</code> to use the <code>email</code> field instead of the <code>username</code> field. Follow these steps:</p>
+<ol>
+<li>Create a custom form, <code>CustomUserCreationForm</code>, that inherits from <code>UserCreationForm</code>.</li>
+</ol>
+<pre><code class="language-python">from django.contrib.auth.forms import UserCreationForm
+from .models import User
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ('email',)
+</code></pre>
+<ol>
+<li>In your <code>admin.py</code> file, import and use the <code>CustomUserCreationForm</code> in the <code>add_form</code> field of the <code>UserAdmin</code> class.</li>
+</ol>
+<pre><code class="language-python">from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from .models import User
+from .forms import CustomUserCreationForm
+
+class UserAdmin(BaseUserAdmin):
+    add_form = CustomUserCreationForm
+
+admin.site.register(User, UserAdmin)
+</code></pre>
+<p>By doing this, you're specifying the <code>CustomUserCreationForm</code> as the form to be used when adding a user in the Django admin. This form only includes the <code>email</code> field, allowing you to create a user without the <code>username</code> field while still maintaining the uniqueness constraint on the <code>username</code> field.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

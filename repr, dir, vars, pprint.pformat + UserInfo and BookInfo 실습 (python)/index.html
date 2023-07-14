@@ -1,0 +1,426 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/repr%2C%20dir%2C%20vars%2C%20pprint.pformat%20%2B%20UserInfo%20and%20BookInfo%20%EC%8B%A4%EC%8A%B5%20%28python%29/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python) - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)</h1>
+
+<p>알게 된 개꿀팁
+- <code>__repr__</code>로 str을 리턴할 때 <a href="https://stackoverflow.com/questions/11637293/iterate-over-object-attributes-in-python">iterate over object attributes in python</a> ^1eq9ew
+    - 나의 모든 attr를 내보내고 싶을 땐 ====&gt; <code>dir</code> 내장함수를 사용
+    - <code>object</code>를 제외한 attr를 내보내고 싶을 땐 ====&gt; <code>set(dir(self)) - set(dir(object))</code> 하면 된다.
+    - 나는 메서드 포함하고 싶지 않아 ====&gt; <code>vars(self)</code>
+    - 나는 이거 좀 더 이쁘게 출력하고 싶은걸 ====&gt; <code>pprint.pformat(vars(self))</code> <a href="https://docs.python.org/3/library/pprint.html#pprint.pformat">pprint doc</a>
+    - </p>
+<pre><code class="language-python">from pprint import pformat
+
+class UserInfo(object):
+
+    def __init__(self, infos):
+        self.id = infos['id']
+        self.name = infos['name']
+        self.age = infos['age']
+        self.gender = infos['gender']
+        self.book_ids = infos['book_ids']
+        self.library = infos['library']
+
+    def __repr__(self):
+        return pformat(vars(self))
+
+    def borrow(self, book_id):
+        self.library.borrow(self.id, book_id)
+
+    def return_book(self, book_id):
+        self.library.return_book(self.id, book_id)
+
+    def do_borrow(self, book_id):
+        self.book_ids.append(book_id)
+
+    def do_return_book(self, book_id):
+        self.book_ids.remove(book_id)
+
+    def show_books(self):
+        print('\n====BEGIN &lt;&lt;show_books&gt;&gt;====')
+        for book_id in self.book_ids:
+            print(f'{self.library.query_book(book_id)}')        
+        print('====END &lt;&lt;show_books&gt;&gt;====\n')
+
+
+
+class BookInfo(object):
+
+    def __init__(self, infos):
+        self.id = infos['id']
+        self.name = infos['name']
+        self.author = infos['author']
+        self.publisher = infos['publisher']
+        self.isbn = infos['isbn']
+        self.tldr = infos['tldr']
+        self.borrowed = False
+
+    def __repr__(self):
+        return pformat(vars(self))
+
+    def is_borrowed(self):
+        return self.borrowed
+
+
+class Library(object):
+
+    def __init__(self, books = [], users = []):
+        self.books = books
+        self.users = set(users)
+
+        for book in books:
+            book.borrowed = False
+
+    def add_books(self, books):
+        for book in books:
+            book.borrowed = False
+            self.books.append(book)
+
+    def add_users(self, users):
+        for user in users:
+            self.users.add(user)
+
+    def query_book(self, book_id):
+        for book in self.books:
+            if book.id == book_id:
+                return book
+        return None
+
+    def query_user(self, user_id):
+        for user in self.users:
+            if user.id == user_id:
+                return user
+        return None
+
+    def borrow(self, user_id, book_id):
+        user = self.query_user(user_id)
+        book = self.query_book(book_id)
+
+        if user is not None and book is not None:
+            user.do_borrow(book_id)
+            book.borrowed = True
+
+    def return_book(self, user_id, book_id):
+        user = self.query_user(user_id)
+        book = self.query_book(book_id)
+
+        if user is not None and book is not None:
+            user.do_return_book(book_id)
+            book.borrowed = False
+
+
+
+Java의_정석 = BookInfo({
+    'id': 0,
+    'name': 'Java의 정석',
+    'author': '남궁 성',
+    'publisher': '도우출판',
+    'isbn': 'ajsfjwei23',
+    'tldr': '자바의 참맛!' ,
+})
+
+컴퓨터_비전 = BookInfo({
+    'id': 1,
+    'name': '컴퓨터 비전',
+    'author': '오일석',
+    'publisher': '한빛아카데미',
+    'isbn': 'sjk3uwe89fd',
+    'tldr': '한 권으로 꿰뚫는 컴퓨터 비전 핵심 알고리즘' ,
+})
+
+연수도서관 = Library()
+
+choi = UserInfo({
+    'id' : 20160339,
+    'name' : '최승현',
+    'age' : 26,
+    'gender': 'male',
+    'book_ids': [],
+    'library': 연수도서관
+})
+
+연수도서관.add_books([Java의_정석, 컴퓨터_비전])
+연수도서관.add_users([choi, ])
+
+print(f'current state of choi: {choi}\n')
+choi.show_books()
+
+choi.borrow(0)
+choi.show_books()
+
+choi.borrow(1)
+choi.show_books()
+
+choi.return_book(0)
+choi.show_books()
+
+choi.return_book(1)
+choi.show_books()
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

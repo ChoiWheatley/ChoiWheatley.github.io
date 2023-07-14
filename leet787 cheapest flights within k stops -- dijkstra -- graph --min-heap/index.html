@@ -1,0 +1,320 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/leet787%20cheapest%20flights%20within%20k%20stops%20--%20dijkstra%20--%20graph%20--min-heap/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#commit-logs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li>테스트케이스가 책이 출판된 뒤에 변경이 되어 타임아웃이 발생해서 멘붕이 왔었다.</li>
+<li>https://leetcode.com/problems/cheapest-flights-within-k-stops/</li>
+<li>notice: 책에 있는 코드로는 더 이상 ACCEPT가 나오지 않는다. 다음 링크를 참조하여 더 효율적인 코드에 대한 토론을 확인해보자.
+    https://github.com/onlybooks/algorithm-interview/issues/104</li>
+</ul>
+<h1 id="commit-logs">Commit Logs</h1>
+<ol>
+<li>
+<p><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/e09b612d77e88350a3d216ef709e71a0f435b237/leet787.py">DEAD END</a> 
+    다익스트라 함수를 변경하지 않고 기능을 추가할 생각에 들떴으나, depth를 구할 방도를 찾지 못해 책을 펼쳤다.</p>
+</li>
+<li>
+<p><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/9be66b4d2960f10f3d695e2699857998a5b0a3b1/leet787.py">야, 이거 갱신이 안 되는데?</a>
+    그래서 위에서 <code>predicate</code>를 제거하고 다익스트라 함수의 재사용성을 포기하더라도 <code>max_depth</code>를 추가하였으나... <code>dist</code>갱신이 이루어지지 않아 테스트 케이스에서 실패했다. </p>
+<p>좀 더 구체적으로, <code>cur.weight &lt;= dist[cur.vertex]</code> 에 의해 더 작은 weight가 갱신되기는 하다. 하지만 정작 더 작은 depth에 의해 갱신되지는 않는다는거.</p>
+<p>근데 솔직히 이 코드를 조금만 손 보면 가능할 것 같기도 한데? </p>
+</li>
+<li>
+<p><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/e22beb123d5420c9ac5780c3d69b5855764c2c1a/leet787.py">다익스트라에 집착하면 안 될 것 같다.</a>
+    <code>dist</code>를 <code>dict</code>에서 <code>list</code>로 바꾸고 위키에서 나온것처럼 무한대 값을 주어서 다시 풀었지만 뭐 달라진 건 없었다. 이런 필요없는 실험을 줄여야 시간을 아낄 수 있다.</p>
+<p>그래서 다익스트라 함수를 제거했다. 이때부터 교재를 보면서 문제를 풀기 시작함. 내가 만든 테스트 케이스들이 모두 통과하고 나는 이대로 끝날 줄 알았다...</p>
+</li>
+<li>
+<p><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/647d42f4f44f96d355f910d17e3391c2f16cf060/leet787.py">Time Limit Exceeded 💀</a>
+    교재의 코드를 보면서, 좀 더 의미론적인 방식대로 버무려 코딩했다. (같은 알고리즘을) 이때 내가 의심한 부분이 있기는 하네. </p>
+<blockquote>
+<p>2순위: min weight -- 왜 아저씨 코드에는 minimum 계산이 없지?</p>
+</blockquote>
+<p>교재의 코드의 단점은 바로 <code>dist</code>를 아예 빼버렸다는 것이다. 따라서 꺼낸 노드가 이미 계산이 끝난 노드면 더 이상 방문하지 않지만 이 풀이는 그부분을 해제해 버렸기 때문에 중복해서 탐색하는 부분이 생기게 된다. (설마, 무한루프까지?)</p>
+</li>
+<li>
+<p><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/589ae40c6adbef0b6049727133784923d8e93610/leet787.py">ACCEPTED</a>
+    기존 코드를 뒤집어엎고 다른 분의 코드를 기반으로 재작성했다. 중복탐색을 줄이면서 동시에 문제조건이었던 <strong>within K-stops</strong> 를 체크하는 조건문은 말로 쓰자면 다음과 같다.</p>
+<ol>
+<li><code>dist</code>: 박상길코드의 그 <code>dist</code>와 성격이 다르다. 얘는 모든 버텍스의 <code>weight</code>와 <code>depth</code>를 저장한다. </li>
+<li><code>queue</code> 안에 이웃 노드를 추가하는 조건문이 변경됐다.<ol>
+<li>이전에는 각 노드가 갖고 있던 <code>k</code>(남은 depth)만 비교하고 최소비용 판별은 <code>heapq</code>가 알아서 하게 만들었다. </li>
+<li>현재 코드는 weight의 합이 더 유리한지, ==OR== depth가 더 유리한지 판별 후 push한다.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

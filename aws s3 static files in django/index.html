@@ -1,0 +1,339 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/aws%20s3%20static%20files%20in%20django/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>aws s3 static files in django - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              aws s3 static files in django
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test.md" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li><a href="https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/">testdriven.io {tutorial}</a></li>
+<li><a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/ManageCorsUsing.html">CORS 구성 - Amazon Simple Storage Service {amz}</a></li>
+<li><a href="https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-CORS-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-%F0%9F%91%8F">🌐 악명 높은 CORS 개념 &amp; 해결법 - 정리 끝판왕 👏 {inpa}</a></li>
+<li><a href="../HTTP%20header%20CORS%20policy%20-%20%27Access-Control-Allow-Origin%27/">HTTP header CORS policy - 'Access-Control-Allow-Origin'</a></li>
+<li><a href="https://velog.io/@iankimdev/Docker-%EC%84%A4%EC%A0%95">Docker 설정 {ian}</a></li>
+<li><a href="https://velog.io/@iankimdev/S3">S3 {ian}</a></li>
+<li><a href="https://velog.io/@iankimdev/EC2">EC2 {ian}</a></li>
+<li><a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/access-policy-language-overview.html?icmpid=docs_amazons3_console">S3 Bucket Policy {amz}</a></li>
+<li><a href="https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html?highlight=STATICFILES_STORAGE">Amazon S3 {django-storages}</a></li>
+<li><a href="https://stackoverflow.com/questions/67650507/how-to-get-django-to-make-some-files-public-and-media-files-private-on-aws-s3-n">How to get Django to make some files public and media files private on AWS S3 (no 403 errors)?</a></li>
+<li><a href="https://stackoverflow.com/questions/44895334/botocore-exceptions-clienterror-an-error-occurred-404-when-calling-the-headob">botocore.exceptions.ClientError: HeadObject operation: Not Found</a></li>
+</ul>
+<hr />
+<ul>
+<li>루트 사용자 말고 IAM 사용자를 하나 만들어서 루트에 연결해야함. </li>
+<li>루트계정에 MFA 인증을 추가한다.</li>
+<li>IAM 계정으로 로그인 후 인증키를 발급받는다. WHY? 보안 자격증명을 만들어주기 위해</li>
+<li>버킷<ul>
+<li>정적 웹 사이트 호스팅 할 때 필요한 <code>index.html</code> 파일을 작성하여 업로드 및 활성화</li>
+<li>버킷 정책 설정 <a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/access-policy-language-overview.html">docs.com</a> <ul>
+<li>어떤 유저에게 어떤 리소스에 대한 어떤 접근을 허용/차단할지 등에 대한 정책임.</li>
+</ul>
+</li>
+<li>ACL (Access Control List) 소유권 활성화 (안해도 돼)</li>
+</ul>
+</li>
+</ul>
+<h1 id="_1">장고 프로젝트로 돌아와서...</h1>
+<ul>
+<li>의존성 설치하고 settings.py 수정하고, core/env.py 설정하고 </li>
+<li>settings.py 전역상수 설정 (book-project는 별도의 파일을 빼냈지만 근본은 동일.)
+ ```python
+ from core.env import config</li>
+</ul>
+<p>AWS_ACCESS_KEY_ID=config("AWS_ACCESS_KEY_ID", default=None)
+AWS_SECRET_ACCESS_KEY=config("AWS_SECRET_ACCESS_KEY", default=None)
+AWS_S3_ADDRESSING_STYLE = "virtual"</p>
+<p>AWS_STORAGE_BUCKET_NAME=config("AWS_STORAGE_BUCKET_NAME", default="estsoft-ormi-bookstore")
+AWS_S3_REGION_NAME="ap-northeast-2"
+AWS_S3_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"</p>
+<p>AWS_DEFAULT_ACL="public-read"
+AWS_S3_USE_SSL=True</p>
+<p>DEFAULT_FILE_STORAGE = 'core.storages.backends.MediaStorage'
+STATICFILES_STORAGE = 'core.storages.backends.StaticFileStorage'
+ ```</p>
+<ul>
+<li><code>DEFAULT_FILE_STORAGE</code>, <code>STATICFILES_STORAGE</code> 를 기본 클래스를 확장한 커스텀 클래스인 <code>MediaStorage, StaticFileStorage</code>로 변경한 것을 볼 수 있다. 파일을 들여다보자.</li>
+</ul>
+<pre><code class="language-python">from storages.backends.s3boto3 import S3Boto3Storage, S3StaticStorage
+
+class MediaStorage(S3Boto3Storage):
+    location = &quot;media&quot;
+
+class StaticFileStorage(S3StaticStorage):
+    location = &quot;static&quot;
+</code></pre>
+<p>{% raw %}</p>
+<ul>
+<li>장고 템플릿 js 파일 로케이션을 <code>{% static 'js/____.js' %}</code> 식으로 변경 </li>
+<li>그리고 <code>STATIC_URL</code> 자리에 우리 S3 객체들이 담긴 URL을 넣어주었더니 js파일을 <code>127.0.0.1</code>이 아니라 <code>https://allbooks-choi-2.s3.amazonaws.com/static/js/getCookie.js</code> 이런 식으로 위치를 제대로 찾아가는 모습을 볼 수 있다.</li>
+</ul>
+<p>{% endraw %}</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
