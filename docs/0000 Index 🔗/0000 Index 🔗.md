@@ -25,7 +25,6 @@ parent link: [[Readme]]
 - [[0013 Rust 🦀]]
 - [[0014 Python 🐍]]
 - [[0014.1 Django 🎈]]
-- **0014.1 Django.d**
 - [[0020 Games 🎮]]
 - [[0030 Health 💪]]
 - [[0031 Emotions 🤔]]

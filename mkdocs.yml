@@ -11,6 +11,11 @@ theme:
   highlights: true
   hljs_languages:
     - yaml
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.path
+    - navigation.top
 
 plugins:
   - search

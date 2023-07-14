@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"type":"group","id":"19e0d0fbccac9459","x":2583,"y":-7020,"width":2297,"height":954,"color":"#00ff11","label":"중요한 일"},
+		{"type":"group","id":"d3241a1d0de89d81","x":2620,"y":-7040,"width":1030,"height":1824,"color":"#ff0000","label":"급한 일"},
+		{"type":"group","id":"001df1f3202dd7eb","x":2583,"y":-6066,"width":2297,"height":811,"color":"#4f6964","label":"안 중요한 일"},
+		{"type":"group","id":"827ee9884aad2bea","x":1640,"y":-7020,"width":860,"height":1671,"label":"pending"},
+		{"type":"group","id":"a1309ba8ba2ff4b9","x":1640,"y":-7480,"width":1600,"height":400,"label":"MindSet"},
+		{"type":"group","id":"67c1743e12830271","x":3651,"y":-7040,"width":1189,"height":1824,"color":"#615469","label":"안 급한 일"},
+		{"type":"text","text":"[[dataview]] 공부하여 블럭단위 혹은 문서 단위 쿼리를 자유자재로 할 수 있게","id":"0412f1e984f9e203","x":3660,"y":-5700,"width":250,"height":121},
+		{"type":"text","text":"windows shortcuts-like scripts (powershell script?)\n- turn off screen\n- keep awake on interval (PowerToys 연동가능?)\n- 오르미 출결체크 자동접속 on/off\n- ","id":"3a091641845be3e3","x":3660,"y":-5992,"width":250,"height":279},
+		{"type":"text","text":"직업훈련시 예비군 훈련을 연기할 수 있다고 한다.","id":"5f053f24e06106b2","x":3660,"y":-6055,"width":250,"height":60},
+		{"type":"text","text":"백준 20946 합성인수분해 파이썬 시간초과 발생하는 코드 수정할 것 [링크](https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/8d87b822557efad5bf4cc19eba795c141fcaadd4/ex20946.py)\n의심되는 사항은 바로 `find_prime` 함수에서 시간이 오래 걸리는 것처럼 보인다는 것이다. 11자리수 아무거나 넣었을 때 어떤 수는 엄청 빨리 찾은 반면, 어떤 수는 엄청 느리다. 즉, 소수를 빨리 찾지 못할수록 오래 걸리는거임.","id":"dbf97f3eb8da8bd5","x":4504,"y":-6055,"width":320,"height":75},
+		{"type":"text","text":"[[만다라트.canvas|만다라트]]","id":"de192d546837298a","x":3660,"y":-7010,"width":250,"height":60},
+		{"type":"file","file":"Obsidian으로 블로그 만들기.md","id":"33573aab1dc7fee6","x":2634,"y":-7000,"width":400,"height":50},
+		{"type":"text","text":"정글 훈련기관에 훈련과정탐색표를 요청하여 저한테 보내주시면 됩니다!","id":"ecadff838a01399f","x":2634,"y":-6950,"width":309,"height":60},
+		{"type":"text","text":"[[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project🚀]]","id":"d613c7dc932ee62d","x":2237,"y":-7015,"width":250,"height":90},
+		{"type":"text","text":"[[공동집필 프로젝트 - estsoft 📕]]","id":"6837b2b0e8f94bc8","x":1890,"y":-7000,"width":250,"height":60},
+		{"type":"text","text":"https://sw.ssu.ac.kr 에 접속하여 **공학인증** 졸업자들이 봐야 하는 시험에 대해서 확인하자.","id":"d6e3bf79d0d26882","x":1640,"y":-7260,"width":250,"height":171},
+		{"type":"text","text":"알고리즘 풀이 속도 늘리기 :: 23년도 백준문제 모두 풀기\n> 30분 갈피잡고 30분 구현 못하면 Pass 후 다른 일 한다. ","id":"a398051cf19bd718","x":1640,"y":-7479,"width":250,"height":219},
+		{"type":"text","text":"[[0014.1 Django 🎈]] INDEXING","id":"09b430fe40a33e46","x":1640,"y":-6905,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"e9e1a913d9d57aaa","fromNode":"6837b2b0e8f94bc8","fromSide":"right","toNode":"d613c7dc932ee62d","toSide":"left"},
+		{"id":"8a3e87cf7e486538","fromNode":"09b430fe40a33e46","fromSide":"top","toNode":"6837b2b0e8f94bc8","toSide":"left"}
+	]
+}
