@@ -1,0 +1,3 @@
+[submodule "my-first-obsidian.obsidian"]
+	path = my-first-obsidian.obsidian
+	url = git@github.com:ChoiWheatley/my-first-obsidian.obsidian.git
