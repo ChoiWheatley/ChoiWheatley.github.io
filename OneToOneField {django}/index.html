@@ -221,21 +221,25 @@
 
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/db/examples/one_to_one/">doc</a></li>
-<li>[?] <a href="../ForeignKey%20%7Bdjango%7D/">ForeignKey {django}</a>와의 차이점이 뭐냐? 나는 ForeignKey가 곧 1:1 관계인 줄로만 알았는데?<ul>
 <li>
-<p><code>ForeignKey</code>는 0가 가능하고, <code>OneToOneField</code>는 엔트리 생성시 반드시 명시해야한다.
-```python
+<p>[?] <a href="../ForeignKey%20%7Bdjango%7D/">ForeignKey {django}</a>와의 차이점이 뭐냐? 나는 ForeignKey가 곧 1:1 관계인 줄로만 알았는데?</p>
+<ul>
+<li><code>ForeignKey</code>는 0가 가능하고, <code>OneToOneField</code>는 엔트리 생성시 반드시 명시해야한다.</li>
+</ul>
+<p>```python
     restaurant = Restaurant(
         place=Place(name="승현이네", address="원인재로 14"), 
         serves_hot_dogs=True, 
         serves_pizza=False)</p>
-<p>restaurant.place # 승현이네
-    <code>- 물론 반대방향으로는 1:1 관계를 만들 의무는 없기 때문에 `ObjectDoesNotExist` 에러가 발생할 여지가 있다는거. → `hasattr` 를 사용하여 에러처리 가능</code>python
-place2 = Place(name="정현이네", address="원인재로 15")
-place2.restaurant # raises <code>ObjectDoesNotExist</code>
-    ```</p>
-</li>
+<pre><code>restaurant.place # 승현이네
+</code></pre>
+<p>```</p>
+<ul>
+<li>물론 반대방향으로는 1:1 관계를 만들 의무는 없기 때문에 <code>ObjectDoesNotExist</code> 에러가 발생할 여지가 있다는거. → <code>hasattr</code> 를 사용하여 에러처리 가능</li>
 </ul>
+<p><code>python
+    place2 = Place(name="정현이네", address="원인재로 15")
+    place2.restaurant # raises `ObjectDoesNotExist`</code></p>
 </li>
 </ul>
 

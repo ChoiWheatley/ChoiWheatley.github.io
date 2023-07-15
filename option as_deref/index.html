@@ -222,7 +222,7 @@
 <ul>
 <li>https://doc.rust-lang.org/std/option/enum.Option.html#method.as_deref</li>
 <li>Converts from <code>Option&lt;T&gt;</code> or <code>&amp;Option&lt;T&gt;</code> to <code>Option&lt;&amp;T::Target&gt;</code>.</li>
-<li>Creates a new one with a reference to the original one, additionally coercing the contents via <a href="../Deref%20trait/">Deref trait</a>
+<li>Creates a new one with a reference to the original one, additionally coercing the contents via <a href="../Deref%20trait/">Deref trait</a><br />
 이거 없었으면 한 번 옵션을 unwrap 하거나 map 하는 과정을 겪어야 하는데 내부 타입만을 빌린 타입으로 바꿔주니까 유용하네~</li>
 </ul>
 <pre><code class="language-rust">struct Node(i32);

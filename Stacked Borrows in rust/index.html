@@ -264,7 +264,7 @@
 </code></pre>
 <p>따라서, 이 컨셉에 따르면 <code>ref2</code> 블록 안에서 <code>ref1</code>을 사용하고 있기 때문에 마치 스택에 최상단 원소를 제거하지도 않은 채 중간 원소를 사용하는 것으로 바라볼 수 있고, 이는 곧 Stacked Borrow 규칙을 위반한 것이 된다.</p>
 <blockquote>
-<p>Whatever's at the top of the borrow stack is "live" and knows it's effectively unaliased.
+<p>Whatever's at the top of the borrow stack is "live" and knows it's effectively unaliased.<br />
 빌린 스택의 꼭대기에 있는 것은 무엇이든지 간에 살아있고, 또한 효율적으로 별칭이 없다는 것을 알고 있습니다. (보장합니다)</p>
 </blockquote>
 <h1 id="stacked-borrow">Stacked Borrow가 뭔지는 이제 알겠어, 근데 왜 필요한 건데?</h1>

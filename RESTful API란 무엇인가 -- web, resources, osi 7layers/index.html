@@ -269,21 +269,21 @@
 <li>등등</li>
 </ul>
 <h2 id="rest-api_1">그런 REST API로 괜찮은가 스크랩</h2>
-<p>REST api가 구현하기 까다로운 이유는 다름아닌 Uniform Interface의 제약조건 때문이다. 단순히 유일한 URI를 만드는 것은 쉽다. 다만 메시지 자체가 <strong>self-descriptive</strong>한지 여부와 <strong>HATEOAS</strong>(헤이티오스)를 준수하는지 여부가 우리의 발목을 잡는다.
+<p>REST api가 구현하기 까다로운 이유는 다름아닌 Uniform Interface의 제약조건 때문이다. 단순히 유일한 URI를 만드는 것은 쉽다. 다만 메시지 자체가 <strong>self-descriptive</strong>한지 여부와 <strong>HATEOAS</strong>(헤이티오스)를 준수하는지 여부가 우리의 발목을 잡는다.<br />
 <img alt="fwer23.png" src="../assets/fwer23.png" />
-- self-descriptive message
+- self-descriptive message<br />
     자기스스로 설명하는 메시지란, HTML 형식을 보면 바로 알 수 있다. 우리가 a태그를 모르면 어딜 찾아가서 확인해야하는지 알고있듯이, SW가 주고받는 문서의 내용을 추론할 수 있어야 한다.</p>
 <pre><code>엥? 그러면 우리도 `hello`같은 태그 만들어서 어떻게 작동할지 명시하면 되는거 아니야? =&gt; TRUE. 그래서 위 영상에서 하고자 하는 말은 심지어 JSON파일일지라도 그 key값이 의미하는 바를 추론할 수 있도록 요청 헤더에 [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml)의 참조를 추가하면 자가설명이 가능해진다. 사실 JSON 파싱하는 방법 자체에 대해서도 IANA에 적혀있다고...
 </code></pre>
 <ul>
-<li>HATEOAS
+<li>HATEOAS<br />
     쉽게 말해 링크를 타고 <strong>들어가는</strong> 일을 앱 단위의 상태변화로 볼 수 있다. HTML은 애초에 하이퍼텍스트이기 때문에 상태변화가 자연스럽게 느껴지지만, 일반 텍스트 에디터를 보면 아무리 그 안에 링크가 적혀있어도 에디터의 상태가 변하지는 않잖아.</li>
 </ul>
-<p>REST API는 웹에서 지원하고 있는 HTTP + REST 수준을 정확히 그대로 따라야 하는가?
+<p>REST API는 웹에서 지원하고 있는 HTTP + REST 수준을 정확히 그대로 따라야 하는가?<br />
 <img alt="h2o3iruw89efy.png" src="../assets/h2o3iruw89efy.png" /></p>
-<p>그렇다면 모든 원격 API들은 REST API 제약조건을 준수하여야 하는가?
+<p>그렇다면 모든 원격 API들은 REST API 제약조건을 준수하여야 하는가?<br />
 <img alt="9sd93sdsdAS 1.png" src="../assets/9sd93sdsdAS%201.png" /></p>
-<p>JSON은 RESTful한가?
+<p>JSON은 RESTful한가?<br />
 <img alt="naver d2 - Day1, 2-2. 그런 REST API로 괜찮은가 [RP_f5dMoHFc - 1314x739 - 38m34s].png" src="../assets/naver%20d2%20-%20Day1%2C%202-2.%20%EA%B7%B8%EB%9F%B0%20REST%20API%EB%A1%9C%20%EA%B4%9C%EC%B0%AE%EC%9D%80%EA%B0%80%20%5BRP_f5dMoHFc%20-%201314x739%20-%2038m34s%5D.png" /></p>
 <h2 id="uri-url">URI? URL?</h2>
 <p><a href="../URI%20vs%20URL/">URI vs URL</a></p>

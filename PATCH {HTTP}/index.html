@@ -249,53 +249,43 @@
 <li>
 <p>https://jsonpatch.com</p>
 <ul>
-<li><strong>JSON Pointer</strong>: A string format for identifying a specific value within a JSON document. It is used by all operations in JSON Patch to specify the part of the document to operate on. It is specified in RFC 6901 from the IETF.<ul>
+<li>
+<p><strong>JSON Pointer</strong>: A string format for identifying a specific value within a JSON document. It is used by all operations in JSON Patch to specify the part of the document to operate on. It is specified in RFC 6901 from the IETF.</p>
+<ul>
 <li><code>/</code> 문자로 구분되어진 문자열로, 객체의 속성에 접근하는 <code>.</code> 연산과 완전히 일치한다.</li>
-<li>예를 들어 다음과 같은 구조가 있다고 가정하자
-<code>json
+<li>예를 들어 다음과 같은 구조가 있다고 가정하자</li>
+</ul>
+<p><code>json
 {
     "biscuits": [
         {"name": "Digestive"},
         {"name": "Choco"},
     ]
-}</code>
-그러면 "Digestive"는 <code>/biscuits/0/name</code>으로 접근이 가능하고 "Choco"는 <code>/biscuits/1/name</code>으로 접근이 가능하여야 한다.</li>
-</ul>
-</li>
-<li><code>add</code><ul>
-<li>리소스가 배열이나 리스트인 경우, 추가 <code>value</code>를 삽입하는 연산이다.</li>
-<li><code>{"op": "add", "path": "biscuits/1", "value": {"name": "Ginger Nut"}}</code></li>
-</ul>
-</li>
-<li><code>remove</code><ul>
-<li>리소스 혹은 리소스 배열의 원소를 삭제하는 연산이다.</li>
-<li>리소스 삭제: <code>{"op": "remove", "path": "/biscuits"}</code></li>
-<li>리소스 배열의 0번째 원소 삭제: <code>{"op": "remove", "path": "/biscuits"}</code></li>
-</ul>
-</li>
-<li><code>replace</code><ul>
-<li>리소스의 특정 필드를 수정하는 연산이다.</li>
-<li><code>{"op": "replace", "path": "/biscuits/0/name", "value": "Chocolate"}</code></li>
-</ul>
-</li>
-<li><code>copy</code><ul>
-<li>from 리소스를 path 리소스로 복사하는 연산이다. from, path 모두 JSON Pointer이다.</li>
-<li>`{"op": "copy", "from": "/biscuits/0", "path": "/best_biscuit"}</li>
-</ul>
-</li>
-<li><code>move</code><ul>
-<li>copy와는 달리 from 리소스를 path리소스로 이동한다.</li>
-</ul>
-</li>
-<li><code>test</code><ul>
-<li>명시한 값이 리소스와 일치하는지 여부를 테스트한다. 테스트를 실패하면 <a href="https://datatracker.ietf.org/doc/html/rfc6902#section-5">RFC 6902#Error-Handling</a> 와 같이 PATCH 수행을 종료하고 전체 PATCH 연산을 무효화 하여야 한다.</li>
-<li>PATCH 메서드는 원자적이다. 하나의 PATCH 요청 안에 여러 "op"가 들어있을 수 있으며, 이 중에 하나의 연산이 실패하게 된다면 PATCH 이전 상태로 돌아와야 한다.
-  <code>json
-[
-    {"op": "replace", "path": "/a/b/c", "value": 42},
-    {"op": "test", "path": "/a/b/c", "value": "C"}, // FAILURE because of [0]
-] // Whole operation MUST NOT be patched</code></li>
-</ul>
+}</code></p>
+<p>그러면 "Digestive"는 <code>/biscuits/0/name</code>으로 접근이 가능하고 "Choco"는 <code>/biscuits/1/name</code>으로 접근이 가능하여야 한다.
+    - <code>add</code>
+- 리소스가 배열이나 리스트인 경우, 추가 <code>value</code>를 삽입하는 연산이다.
+- <code>{"op": "add", "path": "biscuits/1", "value": {"name": "Ginger Nut"}}</code>
+    - <code>remove</code>
+- 리소스 혹은 리소스 배열의 원소를 삭제하는 연산이다.
+- 리소스 삭제: <code>{"op": "remove", "path": "/biscuits"}</code>
+- 리소스 배열의 0번째 원소 삭제: <code>{"op": "remove", "path": "/biscuits"}</code>
+    - <code>replace</code>
+- 리소스의 특정 필드를 수정하는 연산이다.
+- <code>{"op": "replace", "path": "/biscuits/0/name", "value": "Chocolate"}</code>
+    - <code>copy</code>
+- from 리소스를 path 리소스로 복사하는 연산이다. from, path 모두 JSON Pointer이다.
+- <code>{"op": "copy", "from": "/biscuits/0", "path": "/best_biscuit"}
+    -</code>move<code>- copy와는 달리 from 리소스를 path리소스로 이동한다.
+    -</code>test`
+- 명시한 값이 리소스와 일치하는지 여부를 테스트한다. 테스트를 실패하면 <a href="https://datatracker.ietf.org/doc/html/rfc6902#section-5">RFC 6902#Error-Handling</a> 와 같이 PATCH 수행을 종료하고 전체 PATCH 연산을 무효화 하여야 한다.
+- PATCH 메서드는 원자적이다. 하나의 PATCH 요청 안에 여러 "op"가 들어있을 수 있으며, 이 중에 하나의 연산이 실패하게 된다면 PATCH 이전 상태로 돌아와야 한다.</p>
+<p>```json</p>
+<p>[<br />
+    {"op": "replace", "path": "/a/b/c", "value": 42},<br />
+    {"op": "test", "path": "/a/b/c", "value": "C"}, // FAILURE because of [0]<br />
+] // Whole operation MUST NOT be patched<br />
+  ```</p>
 </li>
 </ul>
 </li>

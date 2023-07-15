@@ -241,15 +241,21 @@
 <li><code>maxsplit</code>은 이름 그대로 분할의 개수에 상한을 둘 수 있다는 것이다. 가장 왼편에서부터 시작한다.</li>
 </ul>
 </li>
-<li>list comprehension
-    <code>python
-    num = "12,3,1423,53,43,556,2,1"
-    numbered_list = [int(i) for i in num.split(',')]</code></li>
-<li><code>map</code> 잠깐 핥아가셨네 사실 list comprehension은 아래처럼 쓸 수도 있다.
-    <code>python
-    num = "12,3,1423,53,43,556,2,1"
-    numbered_list = list(map(int, num.split(','))</code></li>
-<li><code>join(self, iterable)</code> =&gt;자기자신을 구분자로 <code>iterable</code>을 순회하며 하나의 문자열로 만든다.<ul>
+<li>
+<p>list comprehension</p>
+<p><code>python
+num = "12,3,1423,53,43,556,2,1"
+numbered_list = [int(i) for i in num.split(',')]</code></p>
+</li>
+<li>
+<p><code>map</code> 잠깐 핥아가셨네 사실 list comprehension은 아래처럼 쓸 수도 있다.</p>
+<p><code>python
+num = "12,3,1423,53,43,556,2,1"
+numbered_list = list(map(int, num.split(','))</code></p>
+</li>
+<li>
+<p><code>join(self, iterable)</code> =&gt;자기자신을 구분자로 <code>iterable</code>을 순회하며 하나의 문자열로 만든다.</p>
+<ul>
 <li><code>'.'.join(['ab', 'pq', 'rs']) -&gt; 'ab.pq.rs'</code></li>
 </ul>
 </li>

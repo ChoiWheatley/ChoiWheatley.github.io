@@ -233,65 +233,77 @@
 - <code>var, let, const</code> | <code>var</code>: 함수레벨 스코프, shadowing 🙆 | <code>let</code>: 블록레벨 스코프, shadowing 🙅 | <code>const</code> : 블록레벨 스코프, shadowing 🙅, constant
 - 연산자
     - <code>??</code>: nullish 병합 연산자: 값이 없으면 그 뒤에 오는 값을 집어넣어.
-    - <code>typeof</code>: 현업에서는 별도의 타입체크 함수를 만들어 쓴다는거. 왜냐면 별에별게 다 <code>Object</code>로 튀어나와서...
-        <code>js</code>
-    - 관계 연산자 <code>in</code>: 키만 가지고 판단한다는거 주의
-- Types
-    - 원시타입, 참조타입
-    - <code>Number</code> | <code>toString</code>, <code>parseInt</code>
-        - <code>Math</code>
-        - <code>NaN</code>
-        - <code>Infinity</code>, <code>-Infinity</code>
-    - <code>String</code> | <code>length, indexOf, includes, slice, splice, split, substring, toLoserCase, toUpperCase, trim, replace, concat, repeat</code>
-    - <code>Boolean</code> | <code>true, false</code>
-    - <code>undefined</code>타입의 유일한 값인 <code>undefined</code>
-    - <code>null</code>을 오브젝트로 만든 건 실수였다고...
-    - <code>Array</code>는 <code>typeof</code>로 확인해보면 오브젝트로 나온다...
-        - forEach: 도큐먼트원소를 순회할 때 쓰지 말 것 =&gt; <code>NodeList</code>의 forEach이라서 호환성이 안 좋음 =&gt; <code>...</code> 전개문법을 사용하여 Array로 변환 후 forEach할 것.
-        - length, map, filter, push, pop, slice, reduce, join, indexOf, includes, find,  every, some, fill, shift, unshift, reverse, sort
-        - concat: <code>[10].concat([10])</code>
-        - reduce를 사용하여 sum 구하기: <code>[1,2,3,4,5].reduce((a,b) =&gt; a + b, 0)</code>
-        - sort는 디폴트로 lexicographical order이기 때문에 <code>[1,11,2,22,3,33].sort((a, b) =&gt; a - b)</code> 식으로 작성해야함.
-    - <code>Object</code> 
-        - 객체 자체는 iterable하지 않다. 그러니까 파이썬처럼 <code>of</code> 문법을 사용하여 작성하는게 불가. <code>in</code> 문법을 사용하여 키값을 순회한다면 가능. 
-        ```js
-        myObject = {
-          지역이름: "전국", // key : value(2개의 집합을 가리켜 객체 프로퍼티)
-          확진자수: 24889,
-          격리해제수: 23030,
-          사망자수: 438,
-          십만명당발생율: 48.0,
-        };</p>
-<pre><code>    for (const k in myObject) {
-      console.log(`(${k}: ${myObject[k]})`);
-    }
+    - <code>typeof</code>: 현업에서는 별도의 타입체크 함수를 만들어 쓴다는거. 왜냐면 별에별게 다 <code>Object</code>로 튀어나와서...</p>
+<pre><code>    ```js
     ```
-- Map: object
-    - set, get, has, delete, size, keys, values, entries
-- Set: object
-    - add, delete, has, size
+
+- 관계 연산자 `in`: 키만 가지고 판단한다는거 주의
 </code></pre>
 <ul>
-<li>LOOPS<ul>
-<li>구글 컨벤션에서는 <code>for in</code> 보다는 <code>for of</code>를 권고하고 있다.</li>
+<li>
+<p>Types</p>
+<ul>
+<li>원시타입, 참조타입</li>
+<li><code>Number</code> | <code>toString</code>, <code>parseInt</code><ul>
+<li><code>Math</code></li>
+<li><code>NaN</code></li>
+<li><code>Infinity</code>, <code>-Infinity</code></li>
 </ul>
 </li>
-<li>Functions</li>
-<li>Classes<ul>
-<li>원래 클래스는 없었다. ES6 전까지는 생성자(<code>constructor</code>)만 있었다.</li>
-<li>상속은 자바와 똑같이 <code>extends</code>를 사용함.</li>
-</ul>
-</li>
-<li>예외처리<ul>
-<li>try - catch - finally 도 자바와 똑같</li>
+<li><code>String</code> | <code>length, indexOf, includes, slice, splice, split, substring, toLoserCase, toUpperCase, trim, replace, concat, repeat</code></li>
+<li><code>Boolean</code> | <code>true, false</code></li>
+<li><code>undefined</code>타입의 유일한 값인 <code>undefined</code></li>
+<li><code>null</code>을 오브젝트로 만든 건 실수였다고...</li>
+<li><code>Array</code>는 <code>typeof</code>로 확인해보면 오브젝트로 나온다...<ul>
+<li>forEach: 도큐먼트원소를 순회할 때 쓰지 말 것 =&gt; <code>NodeList</code>의 forEach이라서 호환성이 안 좋음 =&gt; <code>...</code> 전개문법을 사용하여 Array로 변환 후 forEach할 것.</li>
+<li>length, map, filter, push, pop, slice, reduce, join, indexOf, includes, find,  every, some, fill, shift, unshift, reverse, sort</li>
+<li>concat: <code>[10].concat([10])</code></li>
+<li>reduce를 사용하여 sum 구하기: <code>[1,2,3,4,5].reduce((a,b) =&gt; a + b, 0)</code></li>
+<li>sort는 디폴트로 lexicographical order이기 때문에 <code>[1,11,2,22,3,33].sort((a, b) =&gt; a - b)</code> 식으로 작성해야함.</li>
 </ul>
 </li>
 <li>
-<p>전개구문 (spread)
-    ```js
-    function f(...x){
-        return x;
-    }</p>
+<p><code>Object</code> </p>
+<ul>
+<li>객체 자체는 iterable하지 않다. 그러니까 파이썬처럼 <code>of</code> 문법을 사용하여 작성하는게 불가. <code>in</code> 문법을 사용하여 키값을 순회한다면 가능. </li>
+</ul>
+<p>```js
+myObject = {
+  지역이름: "전국", // key : value(2개의 집합을 가리켜 객체 프로퍼티)
+  확진자수: 24889,
+  격리해제수: 23030,
+  사망자수: 438,
+  십만명당발생율: 48.0,
+};</p>
+<p>for (const k in myObject) {
+  console.log(<code>(${k}: ${myObject[k]})</code>);
+}
+```</p>
+</li>
+<li>
+<p>Map: object</p>
+<ul>
+<li>set, get, has, delete, size, keys, values, entries</li>
+</ul>
+</li>
+<li>Set: object<ul>
+<li>add, delete, has, size</li>
+</ul>
+</li>
+<li>LOOPS</li>
+<li>구글 컨벤션에서는 <code>for in</code> 보다는 <code>for of</code>를 권고하고 있다.</li>
+<li>Functions</li>
+<li>Classes</li>
+<li>원래 클래스는 없었다. ES6 전까지는 생성자(<code>constructor</code>)만 있었다.</li>
+<li>상속은 자바와 똑같이 <code>extends</code>를 사용함.</li>
+<li>예외처리</li>
+<li>try - catch - finally 도 자바와 똑같</li>
+<li>전개구문 (spread)</li>
+</ul>
+<p>```js
+function f(...x){
+    return x;
+}</p>
 <p>f(1, 2, 3, 4, 5)
 ```</p>
 <p><code>js
@@ -301,28 +313,38 @@ let arr3 = [100, ...arr1, 200, ...arr2, 300]
 let arr4 = [100, arr1, 200, arr2, 300]
 console.log(arr3)
 Math.max(...arr3);
-let [a, b, c, ...d] = [10, 20, 30, 40, 50, 60, 70]</code>
-- 구조분해할당 (destructuring, unpacking)
-<code>js
+let [a, b, c, ...d] = [10, 20, 30, 40, 50, 60, 70]</code></p>
+</li>
+<li>
+<p>구조분해할당 (destructuring, unpacking)</p>
+<p><code>js
 for (let [[i, j], k] of [[[1, 2], 2], [[1, 2], 4]]) {
     console.log(i, j);
-}</code>
-- Fetch
-- 비동기 네트워크 통신을 구현하기 위해 사용하는 Web API
-- <code>fetch(&lt;URL&gt;).then(&lt;callback_response&gt;)</code>
-- <code>response.json()</code>, <code>response.text()</code>, <code>response.blob()</code>
-- then then then... 구문을 사용하기 싫으면 fetch 앞에 <code>await</code>를 사용하면 response를 가져올 수 있다.
-<code>``js
+}</code></p>
+</li>
+<li>
+<p>Fetch</p>
+<ul>
+<li>비동기 네트워크 통신을 구현하기 위해 사용하는 Web API</li>
+<li><code>fetch(&lt;URL&gt;).then(&lt;callback_response&gt;)</code></li>
+<li><code>response.json()</code>, <code>response.text()</code>, <code>response.blob()</code></li>
+<li>then then then... 구문을 사용하기 싫으면 fetch 앞에 <code>await</code>를 사용하면 response를 가져올 수 있다.</li>
+</ul>
+<p><code>``js
 async function printjson() {
   const response = await fetch(</code>http://test.api.weniv.co.kr/mall`);
   const json = await response.json();</p>
 <p>console.log(json);
 }
 printjson();
-<code>``
-- DOM
-- Document Object Model API | DOM과 JS는 별개임. 
--</code>document.getElementById`</p>
+```</p>
+</li>
+<li>
+<p>DOM</p>
+<ul>
+<li>Document Object Model API | DOM과 JS는 별개임. </li>
+<li><code>document.getElementById</code></li>
+</ul>
 </li>
 </ul>
 

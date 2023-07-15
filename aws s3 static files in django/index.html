@@ -255,10 +255,10 @@
 <h1 id="_1">장고 프로젝트로 돌아와서...</h1>
 <ul>
 <li>의존성 설치하고 settings.py 수정하고, core/env.py 설정하고 </li>
-<li>settings.py 전역상수 설정 (book-project는 별도의 파일을 빼냈지만 근본은 동일.)
- ```python
- from core.env import config</li>
+<li>settings.py 전역상수 설정 (book-project는 별도의 파일을 빼냈지만 근본은 동일.)</li>
 </ul>
+<p>```python
+ from core.env import config</p>
 <p>AWS_ACCESS_KEY_ID=config("AWS_ACCESS_KEY_ID", default=None)
 AWS_SECRET_ACCESS_KEY=config("AWS_SECRET_ACCESS_KEY", default=None)
 AWS_S3_ADDRESSING_STYLE = "virtual"</p>

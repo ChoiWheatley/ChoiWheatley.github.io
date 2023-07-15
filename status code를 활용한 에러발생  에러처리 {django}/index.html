@@ -254,7 +254,7 @@
 <p>This code indicates that the server has received and is processing the request, but no response is available yet.</p>
 <h2 id="succesful-responses">Succesful responses</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200"><code>200 OK</code></a></p>
-<p>The request succeeded. The result meaning of "success" depends on the HTTP method:
+<p>The request succeeded. The result meaning of "success" depends on the HTTP method:<br />
 해당 요청이 성공했습니다. "성공"의 의미는 HTTP 별로 다릅니다:</p>
 <ul>
 <li><code>GET</code>: The resource has been fetched and transmitted in the message body.<ul>
@@ -272,13 +272,13 @@
 </li>
 </ul>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201"><code>201 Created</code></a></p>
-<p>The request succeeded, and a new resource was created as a result. This is typically the response sent after <code>POST</code> requests, or some <code>PUT</code> requests.
+<p>The request succeeded, and a new resource was created as a result. This is typically the response sent after <code>POST</code> requests, or some <code>PUT</code> requests.<br />
 요청이 성공했고, 그 결과로 새 리소스가 생성됐습니다. 주로 <code>POST</code> 혹은 <code>PUT</code> 메서드에 의한 성공코드로 활용됩니다.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202"><code>202 Accepted</code></a></p>
-<p>The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.
+<p>The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.<br />
 요청이 성공적으로 받아들여졌지만 아직 처리되지 않은 상태입니다. HTTP에서는 나중에 요청 결과를 나타내는 비동기 응답을 전송할 방법이 없으므로 <em>비</em>커밋 상태입니다. 다른 프로세스나 서버가 요청을 처리할 경우 혹은 배치 프로세스(일괄처리)에서 사용됩니다.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204"><code>204 No Content</code></a></p>
-<p>There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.
+<p>There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.<br />
 이 요청에 대해 전송할 콘텐츠가 없지만 헤더가 유용할 수 있습니다. 사용자 에이전트는 이 리소스에 대해 캐시된 헤더를 새 헤더로 업데이트할 수 있습니다.</p>
 <h2 id="client-error-responses"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses">Client error responses</a></h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"><code>400 Bad Request</code></a></p>
@@ -323,14 +323,14 @@
 <p>The request was directed at a server that is not able to produce a response. This can be sent by a server that is not configured to produce responses for the combination of scheme and authority that are included in the request URI.</p>
 <h2 id="server-error-responses"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses">Server error responses</a></h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"><code>500 Internal Server Error</code></a></p>
-<p>The server has encountered a situation it does not know how to handle.
+<p>The server has encountered a situation it does not know how to handle.<br />
 서버가 다룰 수 없는 문제에 맞닥뜨렸습니다.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501"><code>501 Not Implemented</code></a></p>
 <p>The request method is not supported by the server and cannot be handled. The only methods that servers are required to support (and therefore that must not return this code) are <code>GET</code> and <code>HEAD</code>.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"><code>502 Bad Gateway</code></a></p>
 <p>This error response means that the server, while working as a gateway to get a response needed to handle the request, got an invalid response.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"><code>503 Service Unavailable</code></a></p>
-<p>The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent. This response should be used for temporary conditions and the <code>Retry-After</code> HTTP header should, if possible, contain the estimated time before the recovery of the service. The webmaster must also take care about the caching-related headers that are sent along with this response, as these temporary condition responses should usually not be cached.
+<p>The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent. This response should be used for temporary conditions and the <code>Retry-After</code> HTTP header should, if possible, contain the estimated time before the recovery of the service. The webmaster must also take care about the caching-related headers that are sent along with this response, as these temporary condition responses should usually not be cached.<br />
 서버가 요청을 처리할 준비가 되지 않았습니다. 일반적인 원인은 유지보수를 위해 서버가 다운되었거나 과부하가 걸린 경우입니다. 이 응답과 함께 문제를 설명하는 사용자 친화적인 페이지가 전송되어야 한다는 점에 유의하세요. 이 응답은 일시적인 상황에 사용해야 하며, 가능하면 <code>Retry-After</code> HTTP 헤더에 서비스 복구 전 예상 시간을 포함해야 합니다. 이러한 임시 조건 응답은 일반적으로 캐싱되지 않아야 하므로 웹 마스터는 이 응답과 함께 전송되는 캐싱 관련 헤더에도 주의를 기울여야 합니다.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504"><code>504 Gateway Timeout</code></a></p>
 <p>This error response is given when the server is acting as a gateway and cannot get a response in time.</p>

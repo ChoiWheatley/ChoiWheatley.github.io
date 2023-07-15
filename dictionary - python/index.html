@@ -211,21 +211,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dictionary-iteration-and-unpacking" class="md-nav__link">
-    Dictionary Iteration and Unpacking
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -245,29 +230,33 @@
 <li>순서가 없는 자료형, 순서를 보장하지 않는다(<code>ver &lt;3.6</code>). 현재, dictionary는 순서를 보장한다(<code>ver &gt;= 3.6</code>)</li>
 <li>참조값은 ==가변==이다</li>
 <li>다양한 자료형을 입력할 수 있다.</li>
-<li>생성<ul>
-<li>list of tuple을 넣어도 된다. 
-<code>python
-another_d = dict([('one', '하나'), ('two', '둘'), ('three', '셋')])</code></li>
+<li>
+<p>생성</p>
+<ul>
+<li>list of tuple을 넣어도 된다. </li>
 </ul>
+<p><code>python
+another_d = dict([('one', '하나'), ('two', '둘'), ('three', '셋')])</code></p>
 </li>
 <li>
-<p>C-family의 <code>switch</code> 처럼 구현하기
-    ```python
-    # python ver &lt;3.10
-    def switch(day):
-        return {
-            1 : '월요일',
-            2 : '화요일',
-            3 : '수요일',
-            4 : '목요일',
-            5 : '금요일',
-            6 : '토요일',
-            7 : '일요일',
-        }[day]</p>
+<p>C-family의 <code>switch</code> 처럼 구현하기</p>
+<p>```python</p>
+<h1 id="python-ver-310">python ver &lt;3.10</h1>
+<p>def switch(day):
+    return {
+        1 : '월요일',
+        2 : '화요일',
+        3 : '수요일',
+        4 : '목요일',
+        5 : '금요일',
+        6 : '토요일',
+        7 : '일요일',
+    }[day]</p>
 <p>switch(7)
-<code>``
--</code>fromkeys<code>메서드는 시퀀스형 자료를 입력받아 새</code>dict<code>를 만들어준다. 근데</code>key<code>만 만들어주고</code>value<code>는</code>None`임. </p>
+```</p>
+</li>
+<li>
+<p><code>fromkeys</code> 메서드는 시퀀스형 자료를 입력받아 새 <code>dict</code>를 만들어준다. 근데 <code>key</code>만 만들어주고 <code>value</code>는 <code>None</code>임. </p>
 </li>
 </ul>
 <h2 id="dictionary-iteration-and-unpacking">Dictionary Iteration and Unpacking</h2>

@@ -220,42 +220,54 @@
   <h1>Statements and Expressions</h1>
 
 <blockquote>
-<p>Statement(구문)은 값을 리턴하지 않는 명령이고 Expression(표현식)은 값을 리턴하는 명령이다.
-$$
-Statement \subset Expression
-$$
-- Statements
-    - 함수 정의 <code>fn function(...){...}</code> 은 Statement이다.
-    - <code>let</code> 구문은 Statement이다. =&gt; C는 변수 할당 결과가 또 다른 변수에 들어갈 수 있다는 차이점이 있다. <code>x = y = 6</code> 
-    <code>rust
-    let x = (let y = 6); // Compile Error</code>
-    - 문장 마지막에 붙는 세미콜론 <code>;</code> 는 해당 문장을 Statement로 만든다.</p>
+<p>Statement(구문)은 값을 리턴하지 않는 명령이고 Expression(표현식)은 값을 리턴하는 명령이다.</p>
 </blockquote>
+<p>$$
+Statement \subset Expression
+$$</p>
 <ul>
-<li>Expressions<ul>
+<li>
+<p>Statements</p>
+<ul>
+<li>함수 정의 <code>fn function(...){...}</code> 은 Statement이다.</li>
+<li><code>let</code> 구문은 Statement이다. =&gt; C는 변수 할당 결과가 또 다른 변수에 들어갈 수 있다는 차이점이 있다. <code>x = y = 6</code> </li>
+</ul>
+<p><code>rust
+let x = (let y = 6); // Compile Error</code></p>
+<ul>
+<li>문장 마지막에 붙는 세미콜론 <code>;</code> 는 해당 문장을 Statement로 만든다.</li>
+</ul>
+</li>
+<li>
+<p>Expressions</p>
+<ul>
 <li>할당연산자 <code>=</code> 의 우측값은 Expression이다. 예를 들어 <code>let y = 6;</code> Statement 중 <code>6</code> 은 Expression이다. </li>
 <li>함수를 호출하는 것은 Expression이다.</li>
 <li>매크로를 호출하는 것은 Expression이다.</li>
-<li><code>{}</code> 는 Expression이다.
-<code>rust
-let x = { let y = 6; y }; // Ok x &lt;- 6</code></li>
+<li><code>{}</code> 는 Expression이다.</li>
+</ul>
+<p><code>rust
+let x = { let y = 6; y }; // Ok x &lt;- 6</code></p>
+<ul>
 <li>if 문은 Expression이다.</li>
 <li>세미콜론 <code>;</code> 이 붙지 않은 문장은 Expression이다.</li>
-<li><code>break</code> 뒤에 오는 표현은 Expression이다. 따라서, 반복문은 Expression이 될 수 있다.
-<code>rust
+<li><code>break</code> 뒤에 오는 표현은 Expression이다. 따라서, 반복문은 Expression이 될 수 있다.</li>
+</ul>
+<p><code>rust
 let mut counter = 10;
 let something = loop {
     counter += 1;
     if counter == 10 {
         break counter * 2; // loop가 `counter * 2` 를 평가하게 된다.
     }
-}; // 이 loop가 expression임을 알려준다.</code></li>
+}; // 이 loop가 expression임을 알려준다.</code></p>
+<ul>
 <li></li>
-</ul>
-</li>
 </ul>
 <hr />
 <p>https://rust-book.cs.brown.edu/ch03-03-how-functions-work.html#statements-and-expressions</p>
+</li>
+</ul>
 
 
 

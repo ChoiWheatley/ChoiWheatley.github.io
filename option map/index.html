@@ -227,7 +227,7 @@
 <p>signature</p>
 <pre><code class="language-rust">pub fn map&lt;U, F&gt;(self, f: F) -&gt; Option&lt;U&gt;
 </code></pre>
-<p>example
+<p>example<br />
 Calculates the length of an <code>Option&lt;String&gt;</code> as an <code>Option&lt;usize&gt;</code>, consuming the original:</p>
 <pre><code class="language-rust">let maybe_some_string = Some(String::from(&quot;Hello, World!&quot;));
 // `Option::map` takes self *by value*, consuming `maybe_some_string`

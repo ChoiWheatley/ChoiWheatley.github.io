@@ -234,9 +234,9 @@
 <p><a href="https://youtu.be/sMqDJovFO-Y?t=5323">Build a blog using django {YT}</a></p>
 <ul>
 <li><code>url_patterns</code> &gt; <a href="../django%20path%28route%2C%20view%2C%20name%29/">path</a> 에 대하여 라우트를 줄 때 <code>&lt;int:pk&gt;</code>를 줄 수 있다고 했다. </li>
-<li>그말은 곧 인자를 하나 더 받겠다는 의미이다. 따라서 장고 템플릿에서 <code>{% url &lt;name&gt; [args] %}</code>의 규칙에 따라 인자를 추가하여야 한다. <code>pk</code>에는 <code>object.id</code>인듯?
-```python</li>
+<li>그말은 곧 인자를 하나 더 받겠다는 의미이다. 따라서 장고 템플릿에서 <code>{% url &lt;name&gt; [args] %}</code>의 규칙에 따라 인자를 추가하여야 한다. <code>pk</code>에는 <code>object.id</code>인듯?</li>
 </ul>
+<p>```python</p>
 <h1 id="blog-urlspy">blog &gt; urls.py</h1>
 <p>urlpatterns = [
     path("<int:pk>/", DetailArticleView.as_view(), name="detail_article"),

@@ -301,7 +301,7 @@
 <h2 id="class-attribute-and-instance-attribute">Class attribute and Instance attribute</h2>
 <p>CPP의 static attribute???</p>
 <p>클래스 변수는 클래스 바로 하위에 있는 변수이다. 클래스 변수는 모든 인스턴스가 공유할 수 있다. 따라서 <code>{{class-name}}.{{class-attr}}</code> 식으로 접근이 가능하다. 물론 <code>self.{{class-attr}}</code>도 가능함. </p>
-<p>문제는.... class attr를 instance attr와 혼동이 생길 우려가 있다는 것이다. 다음 예를 들어보자.
+<p>문제는.... class attr를 instance attr와 혼동이 생길 우려가 있다는 것이다. 다음 예를 들어보자.<br />
 우리는 별 생각 없이 <code>Car.maxSpeed</code>를 변경한 걸로 알겠지만, 사실 엄밀히 따지고 보면 <code>change_speed</code> 메서드 안에서 새로운 instance attr인 <code>speed</code>를 만들어 저장한 것이 된다. 이것이 문제가 되는 이유는, <code>Car.maxSpeed</code>는 300으로 그대로인데, 프로그래밍 할 시점엔 실수하기 매우 쉽다는 것이다. 따라서, class attr를 참조할 땐 반드시 <code>self</code>가 아니라 클래스명을 사용하도록 권장한다.</p>
 <pre><code class="language-python">class Car:
     maxSpeed = 300

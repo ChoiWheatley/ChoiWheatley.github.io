@@ -255,14 +255,14 @@
 
 <h1 id="_1">페이지 교체 알고리즘</h1>
 <h2 id="mru-most-recently-used">MRU (Most Recently Used)</h2>
-<p>MISS =&gt; <code>pop(0)</code>를 수행함.
+<p>MISS =&gt; <code>pop(0)</code>를 수행함.<br />
 HIT가 되면 <code>pop(0)</code>하지 않음.</p>
 <h2 id="lru-least-recently-used">LRU (Least Recently Used)</h2>
-<p>MISS =&gt; <code>pop(0)</code>를 수행함.
+<p>MISS =&gt; <code>pop(0)</code>를 수행함.<br />
 HIT =&gt; 히트한 원소를 꺼내어(위치상관없이) 다시 삽입한다.</p>
 <p>deque을 사용하면 <code>maxlen</code>을 설정하여 자동으로 <code>popleft</code>를 수행하게 만들 수 있군.</p>
 <h2 id="fifo-first-in-first-out">FIFO (First In First Out)</h2>
-<p>선입선출 알고리즘
+<p>선입선출 알고리즘<br />
 무지성으로 queue를 사용하면 이렇게 된다. 당연히 출제빈도는 낮음</p>
 <h1 id="sliding-window-and-two-pointer">Sliding Window and Two Pointer</h1>
 <ul>

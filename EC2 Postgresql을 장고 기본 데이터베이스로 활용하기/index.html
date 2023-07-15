@@ -234,10 +234,12 @@
 <li><code>listen_address = '*'</code> 원래 로컬호스트였을 거다. 바깥으로 DB에 대한 접근을 열어주자.</li>
 </ul>
 </li>
-<li>클라이언트 인증 설정파일인 pg_hba.conf를 수정한다.<ul>
-<li>어차피 우리가 유저를 제한할 게 아니라서, 모든 IP로 들어오는 모든 유저가 적당한 비밀번호 암호화 알고리즘을 사용하기만 하면 모든 데이터베이스에 대한 접근을 허용하도록 만들어주자.
-```</li>
+<li>
+<p>클라이언트 인증 설정파일인 pg_hba.conf를 수정한다.</p>
+<ul>
+<li>어차피 우리가 유저를 제한할 게 아니라서, 모든 IP로 들어오는 모든 유저가 적당한 비밀번호 암호화 알고리즘을 사용하기만 하면 모든 데이터베이스에 대한 접근을 허용하도록 만들어주자.</li>
 </ul>
+<p>```</p>
 <h1 id="type-database-user-address-method">TYPE DATABASE USER ADDRESS    METHOD</h1>
 <h1 id="ipv4-local-connections">IPv4 local connections:</h1>
 <p>host all      all  0.0.0.0/0  md5</p>
@@ -245,7 +247,9 @@
 <p>host all      all  ::/0       md5
 ```</p>
 </li>
-<li>postgresql 계정 추가</li>
+<li>
+<p>postgresql 계정 추가</p>
+</li>
 <li>pgAdmin 설치 후 서버 등록.<ul>
 <li>Host name/address, Port, username, password 입력</li>
 <li>근데 이거 너무 별로야, DBeaver 깔아서 연동하는게 더 나을 것 같다.</li>
@@ -256,26 +260,28 @@
 <h1 id="django">django</h1>
 <p>장고에서 기본으로 사용하던 sqlite를 버리고 ec2의 postgresql을 사용하는 코드를 작성해보자. </p>
 <ul>
-<li>의존성 추가<ul>
-<li><code>psycopg2</code>: postgresql 사용하기 위한 모듈 | <a href="https://www.psycopg.org/docs/install.html">psycopg.org</a><blockquote>
-<p>For production use you are advised to use the source distribution.</p>
+<li>
+<p>의존성 추가</p>
+<ul>
+<li><code>psycopg2</code>: postgresql 사용하기 위한 모듈 | <a href="https://www.psycopg.org/docs/install.html">psycopg.org</a></li>
+</ul>
+<blockquote>
+<p>For production use you are advised to use the source distribution.
+    - <a href="https://www.psycopg.org/docs/install.html">Build prerequisites</a>에 따르면 <code>libpq</code>라는 C 라이브러리에 의존한다. 따라서 <code>libpq-dev</code>라는 패키지를 <code>apt</code>로 설치하여야 한다.</p>
 </blockquote>
 <ul>
-<li><a href="https://www.psycopg.org/docs/install.html">Build prerequisites</a>에 따르면 <code>libpq</code>라는 C 라이브러리에 의존한다. 따라서 <code>libpq-dev</code>라는 패키지를 <code>apt</code>로 설치하여야 한다.</li>
-</ul>
-</li>
 <li><code>dj-database-url</code>: settings.py에서 사용하는 <code>DATABASES</code> 변수를 설정해주는 녀석.<ul>
 <li><code>DATABASE_URL</code>로부터 자동으로 세팅을 진행해준다.</li>
 </ul>
 </li>
+<li>core/db.py</li>
+<li>decouple_config로 <code>.env</code> 파일 안에 들어있는 <code>DATABASE_URL</code>을 사용하는 파일이다. <code>DATABASE_URL</code>은 아래와 같은 형식을 갖는다. <a href="https://pypi.org/project/dj-database-url/#url-schema">url schema</a></li>
 </ul>
+<p><code>postgres://USER:PASSWORD@HOST:PORT/DBNAME</code></p>
 </li>
-<li>core/db.py<ul>
-<li>decouple_config로 <code>.env</code> 파일 안에 들어있는 <code>DATABASE_URL</code>을 사용하는 파일이다. <code>DATABASE_URL</code>은 아래와 같은 형식을 갖는다. <a href="https://pypi.org/project/dj-database-url/#url-schema">url schema</a>
-<code>postgres://USER:PASSWORD@HOST:PORT/DBNAME</code></li>
-</ul>
-</li>
-<li>된건가? 아니 그런데 자꾸 <code>libpq.so.5</code> 공유라이브러리가 없다는데?<ul>
+<li>
+<p>된건가? 아니 그런데 자꾸 <code>libpq.so.5</code> 공유라이브러리가 없다는데?</p>
+<ul>
 <li>[v] @김영민 그러면 <code>psycopg2</code>를 삭제하고 <code>psycopg2-binary</code>만 사용해보세요  ↦ 이게 왜 됨? psycopg2-binary는 올바르게 path가 들어오는데 psycopg2는 그렇지 않은 문제인 것 같다.</li>
 <li>문제의 원인은 가상환경을 바탕으로 한 linuxbrew python이라서 그런 것 같다. linuxbrew에는 libpq가 설치가 되어있지 않았던 것이다.</li>
 <li>하지만 그래도 psycopg2-binary는 꼭 필요한 것 같아보인다.</li>

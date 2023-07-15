@@ -243,15 +243,15 @@
 <hr />
 <h1 id="fence">종만북::FENCE 포스팅의 사본</h1>
 <p>상태: Not started</p>
-<p>브루트포스로 문제를 풀기엔 테스트 케이스의 크기가 너무 크다. 모든 left, right에 대해
+<p>브루트포스로 문제를 풀기엔 테스트 케이스의 크기가 너무 크다. 모든 left, right에 대해<br />
  사각형의 크기를 구한 뒤 최댓값을 구하기만 하면 된다.</p>
 <h2 id="_1">## 케이스를 쪼개라, 각개격파</h2>
-<p>(사실 이런 아이디어가 있다는 사실, 그러니까 중간인덱스를 걸친 사각형의 크기를 구한다는 발상이 나에겐 처음이고 마치 전체를 순회하는 것처럼 보이지만 시간 복잡도가 O(N)밖에 되지 않는다는 점도 충격이었다.)
- case <code>[I]</code>: 중간인덱스 (이후 pivot) 보다 작은 인덱스 판자들 중에서 가장 큰 너비
- case <code>[II]</code>: pivot보다 큰 인덱스 판자들 중에서 가장 큰 너비
+<p>(사실 이런 아이디어가 있다는 사실, 그러니까 중간인덱스를 걸친 사각형의 크기를 구한다는 발상이 나에겐 처음이고 마치 전체를 순회하는 것처럼 보이지만 시간 복잡도가 O(N)밖에 되지 않는다는 점도 충격이었다.)<br />
+ case <code>[I]</code>: 중간인덱스 (이후 pivot) 보다 작은 인덱스 판자들 중에서 가장 큰 너비<br />
+ case <code>[II]</code>: pivot보다 큰 인덱스 판자들 중에서 가장 큰 너비<br />
  case <code>[III]</code>: pivot을 걸친 인덱스 판자들 중에서 가장 큰 너비</p>
-<p>case<code>[I]</code>,<code>[II]</code>의 시간복잡도는 병합정렬에서 보았듯이 O(lgN)의 시간이 걸린다.
- case<code>[III]</code>의 경우는 pivot을 걸친 사각형을 찾는 작업밖에 없으니 O(N)이 걸린다.
+<p>case<code>[I]</code>,<code>[II]</code>의 시간복잡도는 병합정렬에서 보았듯이 O(lgN)의 시간이 걸린다.<br />
+ case<code>[III]</code>의 경우는 pivot을 걸친 사각형을 찾는 작업밖에 없으니 O(N)이 걸린다.<br />
  각각의 이터레이션 마다 case<code>[III]</code>를 작업하니 O(NlgN)</p>
 <pre><code class="language-cpp">// case [I]: [begin, pivot) 구간의 판자들 중에서 가장 큰 너비
 // case [II]:[pivot, end) 구간의 판자들 중에서 가장 큰 너비

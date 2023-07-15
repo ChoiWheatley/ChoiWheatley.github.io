@@ -234,17 +234,21 @@
 <li>알고리즘, 디버깅 챕터를 제외한 모든 강의는 google colab에서 진행할 예정.</li>
 <li><a href="../google%20colab/">google colab 자체 단축키 등등</a></li>
 <li><a href="https://google.github.io/styleguide/pyguide.html">google python coding convention</a></li>
-<li>types<ul>
+<li>
+<p>types</p>
+<ul>
 <li>변수를 처음 만나면 <code>type</code>, <code>dir</code> 빌트인 펑션을 사용하여 종류를 찍어보자.</li>
 <li><code>isinstance(variable, type)</code>을 사용하여 변수의 타입을 런타임에 체크할 수 있다.</li>
-<li>속성<ul>
-<li>모든 타입은 <code>class</code>이며, 그 안에 들어있는 메서드, 매직 메서드, 멤버들을 <strong>속성</strong>이라고 부른다. 이때 사용자는 파이썬 표준 라이브러리 안에 있는 클래스들의 속성을 변경할 수도, 추가할 수도 있다. 권장하지는 않지만 때로 확장이 필요한 경우에 고민해 보면 좋을 것 같다. (래퍼클래스에 매직메서드 구현이면 군침이 도는걸)
-<code>python
+<li>
+<p>속성</p>
+<ul>
+<li>모든 타입은 <code>class</code>이며, 그 안에 들어있는 메서드, 매직 메서드, 멤버들을 <strong>속성</strong>이라고 부른다. 이때 사용자는 파이썬 표준 라이브러리 안에 있는 클래스들의 속성을 변경할 수도, 추가할 수도 있다. 권장하지는 않지만 때로 확장이 필요한 경우에 고민해 보면 좋을 것 같다. (래퍼클래스에 매직메서드 구현이면 군침이 도는걸)</li>
+</ul>
+<p><code>python
 class int(int):
     def _add__(self, a):
         return 'hello, world!'
-int('10') + int('10') # 신기하게도 'hello, world'가 나온다!</code></li>
-</ul>
+int('10') + int('10') # 신기하게도 'hello, world'가 나온다!</code></p>
 </li>
 </ul>
 </li>

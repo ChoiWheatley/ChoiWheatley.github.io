@@ -255,8 +255,8 @@
 <p><img alt="Pasted image 20230518131309.png" src="../assets/Pasted%20image%2020230518131309.png" />{ width="400" }</p>
 <p>제네릭 코드를 짜기 위해서 <a href="https://docs.python.org/3/library/typing.html#typing.TypeVar">typing.TypeVar</a>를 찾아볼 필요가 있다. [[typing.TypeVar (python)]]</p>
 <h1 id="lis-longest-increasing-subsequence">LIS (Longest Increasing Subsequence)</h1>
-<p><a href="../Export-d5cc1bf1-6e86-46bc-bbdc-5b72a3fe4463/INDEX%20180a950a1d5d4144a89e0fa8c75ec0e8/LIS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20d61b26f5619a4ea1b0412155535ec812/">LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812</a>
-https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다. 
+<p><a href="../Export-d5cc1bf1-6e86-46bc-bbdc-5b72a3fe4463/INDEX%20180a950a1d5d4144a89e0fa8c75ec0e8/LIS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20d61b26f5619a4ea1b0412155535ec812/">LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812</a><br />
+https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.<br />
 ^4ygbua</p>
 <h1 id="sort">Sort</h1>
 <h2 id="selection-sort">selection sort</h2>
@@ -340,7 +340,7 @@ assert sorted(ls) == merge_sort_recur(ls)
 
 </code></pre>
 <h2 id="quick-sort">quick sort</h2>
-<p>괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 <code>left + [pivot] + right</code> 하면 되어서 손도 깔끔하다. 
+<p>괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 <code>left + [pivot] + right</code> 하면 되어서 손도 깔끔하다.<br />
 <img alt="84c12ea600ff72a816c6672bcbd5e82d.png" src="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" />{ width="100" }</p>
 <pre><code class="language-python">def q_sort_recur(ls):
     if len(ls) &lt;= 1:

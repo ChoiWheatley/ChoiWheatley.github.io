@@ -221,29 +221,41 @@
 
 <ul>
 <li>https://github.com/paullabkorea/programmersLv0 여기 내용을 참고했답니다.</li>
-<li><a href="https://github.com/OrmiCodeRanger/AlgorithmCheatSheet/blob/main/sys.stdin.md">python 입력</a><ul>
-<li>한 개의 정수 입력
-    <code>python
-    import sys
-    a = int(sys.stdin.readline().rstrip())</code></li>
-<li>정해진 개수의 정수를 한 줄에 입력받을 때
-    <code>python
-    import sys
-    a,b,c = map(int, sys.stdin.readline().rstrip().split())</code></li>
-<li>임의의 개수의 정수를 한 줄에 입력받아 리스트에 저장할 때
-    <code>python
-    import sys
-    data = list(map(int, sys.stdin.readline().rstrip().split()))</code></li>
-<li>임의의 개수의 정수를 n줄 입력받아 2차원 리스트에 저장할 때
-    <code>python
-    import sys
-    n = int(sys.stdin.readline().rstrip())
-    data = [list(map(int, sys.stdin.readline().rstrip().split())) for _ in range(n)]</code></li>
-<li>문자열 n줄을 입력받아 리스트에 저장할 때
-    <code>python
-    import sys
-    n = int(sys.stdin.readline())
-    data = [sys.stdin.readline().strip() for _ in range(n)]</code></li>
+<li>
+<p><a href="https://github.com/OrmiCodeRanger/AlgorithmCheatSheet/blob/main/sys.stdin.md">python 입력</a></p>
+<ul>
+<li>
+<p>한 개의 정수 입력</p>
+<p><code>python
+import sys
+a = int(sys.stdin.readline().rstrip())</code></p>
+</li>
+<li>
+<p>정해진 개수의 정수를 한 줄에 입력받을 때</p>
+<p><code>python
+import sys
+a,b,c = map(int, sys.stdin.readline().rstrip().split())</code></p>
+</li>
+<li>
+<p>임의의 개수의 정수를 한 줄에 입력받아 리스트에 저장할 때</p>
+<p><code>python
+import sys
+data = list(map(int, sys.stdin.readline().rstrip().split()))</code></p>
+</li>
+<li>
+<p>임의의 개수의 정수를 n줄 입력받아 2차원 리스트에 저장할 때</p>
+<p><code>python
+import sys
+n = int(sys.stdin.readline().rstrip())
+data = [list(map(int, sys.stdin.readline().rstrip().split())) for _ in range(n)]</code></p>
+</li>
+<li>
+<p>문자열 n줄을 입력받아 리스트에 저장할 때</p>
+<p><code>python
+import sys
+n = int(sys.stdin.readline())
+data = [sys.stdin.readline().strip() for _ in range(n)]</code></p>
+</li>
 </ul>
 </li>
 </ul>

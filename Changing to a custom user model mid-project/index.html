@@ -224,7 +224,7 @@
 </ul>
 <p>프로젝트 중간에 <code>AUTH_USER_MODEL</code> 을 변경하는 행위는 테이블 스키마를 변경하는 행위가 되므로 많은 수작업을 필요로 한다. </p>
 <blockquote>
-<p>Due to limitations of Django’s dynamic dependency feature for swappable models, the model referenced by AUTH_USER_MODEL must be created in the first migration of its app (usually called 0001_initial); otherwise, you’ll have dependency issues.
+<p>Due to limitations of Django’s dynamic dependency feature for swappable models, the model referenced by AUTH_USER_MODEL must be created in the first migration of its app (usually called 0001_initial); otherwise, you’ll have dependency issues.<br />
 장고의 교체 가능한 모델에 대한 동적 의존시스템의 한계로 인해 <code>AUTH_USER_MODEL</code>에서 참조하는 모델은 <code>0001_initial</code>에서 생성된다. 만약 이게 서로 충돌한다면 종속성 문제가 발생한다.</p>
 </blockquote>
 <p>바로 내가 경험했던 무시무시한 <code>CircularDependencyError</code>가 발생하는 것!</p>
