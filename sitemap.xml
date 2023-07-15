@@ -1571,6 +1571,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/conda%20cheatsheet/</loc>
+         <lastmod>2023-07-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/conda%2C%20pyenv%2C%20pipenv%2C%20venv%EC%99%80%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/</loc>
          <lastmod>2023-07-15</lastmod>
          <changefreq>daily</changefreq>
