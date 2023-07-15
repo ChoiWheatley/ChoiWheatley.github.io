@@ -20,6 +20,8 @@ theme:
 plugins:
   - search
   - obsidian-support
+  - kroki:
+      FencePrefix: "kroki-"
   - exclude:
       glob:
-        - "*/*.excalidraw.md"
+        - "**/*.excalidraw.md"

@@ -15,5 +15,6 @@ updated: 2023-07-15T21:33:04
 - [backlinks](https://pypi.org/project/mkdocs-backlinks/) 역시, 백링크도 지원하는구만
 - [dev.to](https://dev.to/ar2pi/publish-your-markdown-docs-on-github-pages-6pe) 친절한 튜토리얼, `mkdocs`, `mkdocs gh-deploy` 명령도 알려준다. 
 	- GitHub Page를 위한 리포 안에 실제 문서들이 들어있는 서브모듈을 담아놨다.
+- [[obsidian-support {supports excalidraw, wikilinks}]]
 
 repo 이름을 `GITHUB_USERNAME.github.io`로 지으면 그 자체가 하나의 깃허브 페이지가 되는구나. 이 사실을 잘 파악하면 md전용 리포에 푸시 이벤트가 발생했을 때 배포전용 리포에 `gh-deploy`하도록 자동화 할 수 있을 것 같다.
