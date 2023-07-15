@@ -3,3 +3,4 @@ mkdocs-material
 mkdocs-obsidian-support-plugin
 mkdocs-backlinks
 mkdocs-exclude
+mkdocs-kroki-plugin
