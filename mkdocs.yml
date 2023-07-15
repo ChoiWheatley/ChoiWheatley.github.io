@@ -20,3 +20,6 @@ theme:
 plugins:
   - search
   - obsidian-support
+  - exclude:
+      glob:
+        - "*/*.excalidraw.md"
