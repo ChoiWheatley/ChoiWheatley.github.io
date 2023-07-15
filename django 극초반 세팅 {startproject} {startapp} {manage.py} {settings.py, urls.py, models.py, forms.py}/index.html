@@ -256,27 +256,27 @@
 </li>
 <li><strong><code>urls.py</code></strong> : <code>blog</code>, <code>accounts</code>, <code>admin</code> 페이지로 이동할 수 있는 관문.<ul>
 <li><code>urls.py</code>에 라우트 주소(<code>route</code>)와 view 객체(콜백함수 또는 <code>View.as_view()</code>), 템플릿에서 사용할 명칭(<code>name</code>) 등에 대하여 명시한다. </li>
-<li><a href="../pk%20%7B%20urlpatterns%20%7B%20path%20%7D%20%7D%20%7Bdjango%7D/">pk { urlpatterns { path } } {django}</a></li>
+<li>[[pk { urlpatterns { path } } {django}]]</li>
 </ul>
 </li>
 <li><strong><code>views.py</code></strong>: <code>urls.py</code>에서 정의한 <code>path</code>들에 명시한 view 함수들의 모음. 클래스를 활용하는 방법과 함수를 활용하는 방법을 선택할 수 있다.<ul>
 <li><code>views.py</code>에 <code>django.views.View</code>를 상속하는 클래스를 만들어 GET, POST 등과 같은 HTTP 메서드 요청에 따른 콜백함수를 다루는 함수 <code>get, post</code> 등을 오버라이드 한다.</li>
-<li><a href="../django.views.%7BView%2C%20generic.%7BListView%2C%20DetailView%7D%7D/">django.views.{View, generic.{ListView, DetailView}}</a></li>
+<li>[[django.views.{View, generic.{ListView, DetailView}}]]</li>
 </ul>
 </li>
 <li><strong><code>models.py</code></strong> 에 데이터를 명시하는 필드를 만들어 정의한다. SQL 문을 단 하나도 알지 못해도 작성할 수 있는 데이터 모델링~~~ <ul>
 <li><code>User</code> 라는 모델이 디폴트로 이미 주어지기 때문에 <code>users</code> 앱은 단지 회원가입, 로그인, 로그아웃 관련한 유즈케이스만 다룬다. </li>
-<li><a href="../django%20model/">django model</a> </li>
+<li>[[django model]] </li>
 </ul>
 </li>
 <li><strong><code>forms.py</code></strong>: 모델을 생성하고, 수정하는 코드를 편하게 작성하고 유효성 검증도 해주는 클래스를 제공.<ul>
-<li><a href="../django%20forms/">django forms</a></li>
+<li>[[django forms]]</li>
 </ul>
 </li>
 </ul>
 <h1 id="managepy">manage.py 명령어</h1>
 <ul>
-<li><a href="../django%20migrate/">django migrate</a>를 해 준다. | <code>python manage.py migrate</code></li>
+<li>[[django migrate]]를 해 준다. | <code>python manage.py migrate</code></li>
 <li>admin 계정 생성 | <code>python manage.py createsuperuser</code></li>
 <li><code>python manage.py runserver</code></li>
 </ul>

@@ -221,14 +221,14 @@
 
 <ul>
 <li>moved to notion https://choiwheatley.notion.site/Bitset-in-rust-56ebc5cb130a4fdfb7cdecf9f78b232e</li>
-<li>parent <a href="../0000%20Index%20%F0%9F%94%97/0013%20Rust%20%F0%9F%A6%80/">0013 Rust 🦀</a></li>
+<li>parent [[0013 Rust 🦀]]</li>
 </ul>
 <hr />
-<p><a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">러스트로 game of life 구현하기</a>를 진행하면서 enum 벡터를 최적화 할 수 있는 방법으로 어차피 bool 벡터인 셈이므로 비트셋을 사용하는 방법이 좋겠다고 판단하여 구현을 시작하였다.</p>
+<p>[[러스트로 game of life 구현하기]]를 진행하면서 enum 벡터를 최적화 할 수 있는 방법으로 어차피 bool 벡터인 셈이므로 비트셋을 사용하는 방법이 좋겠다고 판단하여 구현을 시작하였다.</p>
 <p>C++에서 비트셋을 만들었던 기억이 있으므로 딱 두 가지만 기억하면 된다.
 - <code>bin_number = index / (size_of(element_type) * 8)</code> 
 - <code>bit_number = index % (size_of(element_type) * 8)</code> </p>
-<p>두 파라메터를 구하는 함수 <code>bin_no</code> 와 <code>inner_idx</code> 를 작성하였다. 이거 근데 <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9D%B8%EB%9D%BC%EC%9D%B8%20%EC%A0%95%EC%9D%98/">러스트에서 인라인 정의</a> 못하나? =&gt; 간접적으로 외부에서 호출되지 않는 private 함수에 대해선 굳이 인라인 할 필요 없다.</p>
+<p>두 파라메터를 구하는 함수 <code>bin_no</code> 와 <code>inner_idx</code> 를 작성하였다. 이거 근데 [[러스트에서 인라인 정의]] 못하나? =&gt; 간접적으로 외부에서 호출되지 않는 private 함수에 대해선 굳이 인라인 할 필요 없다.</p>
 <pre><code class="language-rust">use std::mem::size_of;
 
 fn bin_no(idx: usize) -&gt; usize {
@@ -239,7 +239,7 @@ fn inner_idx(idx: usize) -&gt; usize {
     idx % (size_of::&lt;usize&gt;() * 8)
 }
 </code></pre>
-<p><code>Bitset</code> 타입과 생성자를 정의해보자. 우리가 만들 비트셋은 초기 크기가 고정되어있다. 아직은 배열 크기를 제네릭하게 만드는 방법을 모르니 벡터를 쓰자. <a href="../generic%20array%20in%20rust/">generic array in rust</a></p>
+<p><code>Bitset</code> 타입과 생성자를 정의해보자. 우리가 만들 비트셋은 초기 크기가 고정되어있다. 아직은 배열 크기를 제네릭하게 만드는 방법을 모르니 벡터를 쓰자. [[generic array in rust]]</p>
 <pre><code class="language-rust">pub struct Bitset {
     bits: Vec&lt;usize&gt;,
 }
@@ -287,9 +287,9 @@ impl Bitset {
         }
     }
 </code></pre>
-<p>아래는 비트셋 관련 테스트이다. <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">러스트로 game of life 구현하기</a> 할때 디버깅 용으로 간단하게 테스트 코드를 작성했다. 이때 러스트 모듈 구조에 대한 이해를 덤으로 얻어갔다.
+<p>아래는 비트셋 관련 테스트이다. [[러스트로 game of life 구현하기]] 할때 디버깅 용으로 간단하게 테스트 코드를 작성했다. 이때 러스트 모듈 구조에 대한 이해를 덤으로 얻어갔다.
 1. 유닛 테스트는 테스트 하려는 모듈과 같은 파일 안에서 수행한다.
-2. 테스트 모듈파일 안에 <code>#[cfg(test)] mod tests{}</code> 블럭 안에서 테스트 코드를 작성하면 된다. -- <a href="../%EC%9E%90%EC%8B%9D%20%EB%AA%A8%EB%93%88%EC%9D%80%20%EB%B6%80%EB%AA%A8%20%EB%AA%A8%EB%93%88%EC%9D%98%20private%20%EC%9A%94%EC%86%8C%EB%93%A4%EC%9D%84%20%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C%20%EC%A0%91%EA%B7%BC%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다</a>는 점 기억하고.</p>
+2. 테스트 모듈파일 안에 <code>#[cfg(test)] mod tests{}</code> 블럭 안에서 테스트 코드를 작성하면 된다. -- [[자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다]]는 점 기억하고.</p>
 <pre><code class="language-rust">#[cfg(test)]
 mod tests {
     use super::*;

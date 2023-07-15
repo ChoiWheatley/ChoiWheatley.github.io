@@ -243,13 +243,13 @@
 raise FieldError(message)
 django.core.exceptions.FieldError: Unknown field(s) (username) specified for User</code></p>
 <ul>
-<li><a href="./User를 커스텀 하고싶으면, User말고도 다른 부분의 코드도 함께 변경해야 한다.md"><code>User</code>를 커스텀 하고싶으면, <code>User</code>말고도 다른 부분의 코드도 함께 변경해야 한다</a>. 디폴트 User의 멤버를 기대하고 있기 때문이다. 그것은 바로 <code>username</code>. |<ul>
+<li>[[<code>User</code>를 커스텀 하고싶으면, <code>User</code>말고도 다른 부분의 코드도 함께 변경해야 한다]]. 디폴트 User의 멤버를 기대하고 있기 때문이다. 그것은 바로 <code>username</code>. |<ul>
 <li><code>forms.py</code></li>
 <li><code>admin.py</code></li>
 </ul>
 </li>
-<li>migration 순서가 꼬이면 <code>raise InconsistentMigrationHistory</code>가 발생한다. <code>****.0001_initial</code> 을 의존하는 다른 <code>&amp;&amp;&amp;&amp;.0001_initial</code>가 존재하기 전에 migrate를 해서 그렇다. 이 문제를 해소하기 위해선 일단 <code>db.sqlite</code> 파일을 백업하던가 폭파시키던가 하고, 꼬인 앱의 <code>migration</code>를 지운다. 그리고 <code>makemigrations</code> → <code>migrate</code> 명령을 수행하면 된다. | <a href="../django%20migration%20%EC%88%9C%EC%84%9C%20%EA%BC%AC%EC%9D%B8%EA%B2%BD%EC%9A%B0%20%7BGPT%7D/">django migration 순서 꼬인경우 {GPT}</a></li>
-<li><a href="../django%20reverse/">django reverse</a></li>
+<li>migration 순서가 꼬이면 <code>raise InconsistentMigrationHistory</code>가 발생한다. <code>****.0001_initial</code> 을 의존하는 다른 <code>&amp;&amp;&amp;&amp;.0001_initial</code>가 존재하기 전에 migrate를 해서 그렇다. 이 문제를 해소하기 위해선 일단 <code>db.sqlite</code> 파일을 백업하던가 폭파시키던가 하고, 꼬인 앱의 <code>migration</code>를 지운다. 그리고 <code>makemigrations</code> → <code>migrate</code> 명령을 수행하면 된다. | [[django migration 순서 꼬인경우 {GPT}]]</li>
+<li>[[django reverse]]</li>
 </ul>
 </li>
 </ul>

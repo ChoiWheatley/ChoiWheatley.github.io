@@ -223,7 +223,7 @@
 <li>https://doc.rust-lang.org/std/boxed/struct.Box.html#method.into_raw</li>
 <li>TL;DR <code>Box::into_raw(Box::new(...))</code></li>
 <li>아시다시피 힙영역에 메모리를 요청하는 방법으로는 <code>Box::new()</code> 가 가장 유명하다. 그냥 구조체 생성을 해버리면 힙 영역이 아니라 스택 영역에 할당된다는거 잊지말자.</li>
-<li>그런데 <a href="../Too%20Many%20Linked%20Lists/">Too Many Linked Lists</a> 의 unsafe queue를 구현하면서 raw pointer를 사용하려고 하는데 다음과 같이 코드를 작성했다.</li>
+<li>그런데 [[Too Many Linked Lists]] 의 unsafe queue를 구현하면서 raw pointer를 사용하려고 하는데 다음과 같이 코드를 작성했다.</li>
 </ul>
 <pre><code class="language-rust">struct List&lt;T&gt; {
     head: *mut Node&lt;T&gt;,

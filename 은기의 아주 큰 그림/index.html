@@ -239,7 +239,7 @@
                   
 
 
-<p>parent link: <a href="../Hash/">Hash</a></p>
+<p>parent link: [[Hash]]</p>
 <p>https://choiwheatley.notion.site/717124ae47104e8d902a8c4a571df03d</p>
 <h1 id="sw-expert-academy">SW Expert Academy</h1>
 <blockquote>
@@ -268,7 +268,7 @@
 <hr />
 <h1 id="rabin-karp">Rabin Karp 알고리즘</h1>
 <p><a href="https://codingdog.tistory.com/entry/라빈-카프-알고리즘-그래도-비벼볼-만한-문제가-있다">참고링크</a></p>
-<p>문제 난이도가 D6나 되는 덴 다 이유가 있다. 별 생각없이 풀었다가 메모리 초과 + 시간 초과로 인해 멘탈이 나가버렸다. 이차원의 큰 문자열 S를 다른 이차원의 문자열 W과 비교하여 푸는 문제로, 일차원일때엔 전에 <a href="../Export-d5cc1bf1-6e86-46bc-bbdc-5b72a3fe4463/INDEX%20180a950a1d5d4144a89e0fa8c75ec0e8/kmp%20f159c2f6b506459995d832281de0d949/">KMP</a>로 풀었던 것과 사실 똑같은 문제이다. 그래서 이차원일때에도 똑같이 풀어도 상관은 없었겠으나, 그래도 명색이 해시인데, 해시로 풀어보자 하고 덤벼보았다. 처음에 시도한 방법은 굉장히 단순했다.</p>
+<p>문제 난이도가 D6나 되는 덴 다 이유가 있다. 별 생각없이 풀었다가 메모리 초과 + 시간 초과로 인해 멘탈이 나가버렸다. 이차원의 큰 문자열 S를 다른 이차원의 문자열 W과 비교하여 푸는 문제로, 일차원일때엔 전에 [[kmp f159c2f6b506459995d832281de0d949|KMP]]로 풀었던 것과 사실 똑같은 문제이다. 그래서 이차원일때에도 똑같이 풀어도 상관은 없었겠으나, 그래도 명색이 해시인데, 해시로 풀어보자 하고 덤벼보았다. 처음에 시도한 방법은 굉장히 단순했다.</p>
 <ol>
 <li><code>H(W) -&gt; key</code>  은기가 꿈에서 본 그림 W를 일차원으로 세운 다음 해싱한 값을 key에 넣는다.</li>
 <li><code>H(S[i:i+h-1][j:j+w-1]) == key</code> 선생님의 그림의 어떤 i,j에 대하여 해싱한 값이 key와 같다면 count를 하나 늘린다. 이때 h는 W의 세로 길이, w는 W의 가로 길이이다.</li>
@@ -385,7 +385,7 @@ c_{2m+1}b^m+c_{2m+2}b^{m+1}
 \end{align</em>}
 $$</p>
 <p>이다. 일차원때와 마찬가지로 (0,0)부터 보는 것으로 가정해야 하기 때문이다. 그러면 실제값 REAL과 SUM 간에 어떤 관계가 있을까? </p>
-<p>![[software - 0 1.jpg]]</p>
+<p><img alt="software - 0 1.jpg" src="software - 0 1.jpg" /></p>
 <p>$$
 \text{H}(W[i:i+n-1][j:j+m-1]) \times b^{im+j} = \text{SUM}(from:[i,j], to:[i+n-1][j+m-1])
 $$</p>

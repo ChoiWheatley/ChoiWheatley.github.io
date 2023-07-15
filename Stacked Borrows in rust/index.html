@@ -226,7 +226,7 @@
 
 <ul>
 <li>https://rust-unofficial.github.io/too-many-lists/fifth-stacked-borrows.html</li>
-<li>unsafe 코드를 작성하고나서부터 상황이 꼬이기 시작했다. 특히 <a href="../MIRI%20-%20Mid-level%20Intermediate%20Representaion%20Interpreter/">MIRI - Mid-level Intermediate Representaion Interpreter</a>를 통한 UB 체크가 실패하고나서부터!</li>
+<li>unsafe 코드를 작성하고나서부터 상황이 꼬이기 시작했다. 특히 [[MIRI - Mid-level Intermediate Representaion Interpreter]]를 통한 UB 체크가 실패하고나서부터!</li>
 <li>Safe 코드에서 borrow checker는 컴파일 시간에 Stacked Borrow를 체크할 수 있다. 하지만 Unsafe 코드에서는 동작하지 않는다. 따라서 런타임에 멀쩡해 보이는 코드일지라도 MIRI를 사용하여 내가 작성한 코드에 어떤 취약점이 있는지 파악하는 것을 습관화 해야 한다.</li>
 <li>그래서, Stacked Borrow가 무엇이냐 하면, 가끔 mutable reference aliasing을 시도할 때 볼 수 있는 컴파일 에러가 바로 그 설명을 한다.</li>
 </ul>
@@ -269,7 +269,7 @@
 </blockquote>
 <h1 id="stacked-borrow">Stacked Borrow가 뭔지는 이제 알겠어, 근데 왜 필요한 건데?</h1>
 <p>프로그래머로 하여금 내가 소유하고 있는 레퍼런스에 대한 참조투명성을 보장하는 아주 훌륭한 지표가 되기 때문이다. C world에서의 포인터는 단순 숫자이다. 따라서 어떤 변수나 객체에 대한 소유권또한 존재하지 않고 단지 내가 어떤 변수에 대한 포인터를 가지고 있는 동안 만큼은 다른 누군가가 같은 주소에 장난질을(값을 변경한다거나, delete를 수행한다거나) 하지 않기를 바랄 뿐이다.</p>
-<p>러스트에서 소유권 개념을 적용하면서부터 내가 어떤 변수에 대한 소유권을 가지고 있는 동안 다른 존재가 함부로 그 공간을 훼방 놓을 수 없게 되었다. borrowing도 마찬가지이다. <a href="../Permission%20Handling/">Permission Handling</a>을 공부하면서 느낀 희열의 원천이 바로 이곳인 것이다. </p>
+<p>러스트에서 소유권 개념을 적용하면서부터 내가 어떤 변수에 대한 소유권을 가지고 있는 동안 다른 존재가 함부로 그 공간을 훼방 놓을 수 없게 되었다. borrowing도 마찬가지이다. [[Permission Handling]]을 공부하면서 느낀 희열의 원천이 바로 이곳인 것이다. </p>
 <p>서슬퍼런 눈을 뜬 borrow checker의 감시를 피해 달아난 unsafe realm에서도 MIRI의 칼날을 피해갈 순 없었다. </p>
 <h1 id="_1">다음 원칙들만 기억하자.</h1>
 <ol>

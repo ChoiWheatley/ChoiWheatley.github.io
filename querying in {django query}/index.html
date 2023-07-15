@@ -278,13 +278,13 @@ e.blog = b</code></p>
 </li>
 <li><strong>all</strong> <code>Entry.objects.all()</code></li>
 <li><strong>filter</strong> <code>Entry.objects.filter(pub_date__year=2006)</code>  | <code>Entry.objects.filter(headline__startswith="What")</code><ul>
-<li>JOIN 연산을 장고 단에서 알아서 수행해 준다. 관계를 확장하려면 원하는 필드에 도달할 때까지 연관 필드의 이름을 <code>__</code> 로 구분하여 연결하면 된다. <a href="./#field-lookups">querying in {django query}#Field lookups</a></li>
+<li>JOIN 연산을 장고 단에서 알아서 수행해 준다. 관계를 확장하려면 원하는 필드에 도달할 때까지 연관 필드의 이름을 <code>__</code> 로 구분하여 연결하면 된다. [[querying in {django query}#Field lookups]]</li>
 </ul>
 </li>
 <li><code>filter</code>의 결과는 <code>QuerySet</code>이기 때문에 체이닝이 가능하다. </li>
 <li><strong>annotate</strong> 칼럼의 이름을 질의할 때 변경할 수도 있다고 한다. 마치 SQL <code>AS</code>와 같다. 사용법은 쿼리시 <code>annotate</code> 인자의 kwargs 자리에 원하는 이름을 key값으로 넣으면 그만이라고...</li>
 </ul>
-<p><img alt="스크린샷 2023-07-06 09.32.11.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-06%2009.32.11.png" /></p>
+<p><img alt="스크린샷 2023-07-06 09.32.11.png" src="스크린샷 2023-07-06 09.32.11.png" /></p>
 <h1 id="field-lookups-filter-get-exclude">Field lookups {filter, get, exclude}</h1>
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/models/querysets/#id4">docs</a></p>
 <p>SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. <code>QuerySet</code>로부터  <code>filter</code>, <code>get</code>, <code>exclude</code> 메서드의 키워드 인자로 들어가는 규칙에 대하여 정의한다. </p>
@@ -317,7 +317,7 @@ Blog.objects.filter(entry__authors__name="Choi")</code></p>
 </li>
 </ul>
 <h1 id="q-lookup">Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.</h1>
-<p><a href="../F%28%29%2C%20Q%28%29%20in%20%7Bdjango%20query%7D/">F(), Q() in {django query}</a></p>
+<p>[[F(), Q() in {django query}]]</p>
 <h1 id="eof">EOF</h1>
 
 

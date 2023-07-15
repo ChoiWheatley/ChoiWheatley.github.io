@@ -259,7 +259,7 @@ impl Hash for Person {
 assert_eq!(state1, state2);
 </code></pre>
 <p>따라서, 해시를 저시기 하기 위하여 <code>len</code> 값을 같이 끼워넣어야 충돌을 막을 수 있다고 한다.</p>
-<p>그런고로, 우리의 <a href="../Too%20Many%20Linked%20Lists/">TMLL</a> 프로젝트에서 구현한 <code>Hash</code> 내용물을 잠깐 보여주자면 다음과 같이 생겼다.</p>
+<p>그런고로, 우리의 [[Too Many Linked Lists|TMLL]] 프로젝트에서 구현한 <code>Hash</code> 내용물을 잠깐 보여주자면 다음과 같이 생겼다.</p>
 <pre><code class="language-rust">impl&lt;T: Hash&gt; Hash for LinkedList&lt;T&gt; {
     fn hash&lt;H: std::hash::Hasher&gt;(&amp;self, state: &amp;mut H) {
         self.len().hash(state); // ⬅️ HERE!!

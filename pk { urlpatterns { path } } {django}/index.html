@@ -227,13 +227,13 @@
 <p>{% raw %}</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/62804254/what-is-the-difference-between-intpk-and-pk">What is difference between <code>&lt;int:pk&gt;</code> and <code>&lt;pk&gt;</code> {SOF}</a><ul>
-<li><code>&lt;pk&gt;</code> 보다는 <code>&lt;int:pk&gt;</code>를 선호하는 편이 좋다. <a href="../django%20urlpatterns%20and%20url%20convert/">django urlpatterns and url convert</a>에 따르면 타입을 붙이면 언제나 string으로 들어오는 URL 요청으로부터 regex를 사용하여 파싱을 하게 된다고 한다. 그 결과, 구체적인 url patterns케이스를 작성할 수 있으며, 심지어 같은 path의 계층 일부에 타입을 부과하면 장고가 혼동할 여지를 줄일 수 있다.</li>
+<li><code>&lt;pk&gt;</code> 보다는 <code>&lt;int:pk&gt;</code>를 선호하는 편이 좋다. [[django urlpatterns and url convert]]에 따르면 타입을 붙이면 언제나 string으로 들어오는 URL 요청으로부터 regex를 사용하여 파싱을 하게 된다고 한다. 그 결과, 구체적인 url patterns케이스를 작성할 수 있으며, 심지어 같은 path의 계층 일부에 타입을 부과하면 장고가 혼동할 여지를 줄일 수 있다.</li>
 </ul>
 </li>
 <li>
 <p><a href="https://youtu.be/sMqDJovFO-Y?t=5323">Build a blog using django {YT}</a></p>
 <ul>
-<li><code>url_patterns</code> &gt; <a href="../django%20path%28route%2C%20view%2C%20name%29/">path</a> 에 대하여 라우트를 줄 때 <code>&lt;int:pk&gt;</code>를 줄 수 있다고 했다. </li>
+<li><code>url_patterns</code> &gt; [[django path(route, view, name)|path]] 에 대하여 라우트를 줄 때 <code>&lt;int:pk&gt;</code>를 줄 수 있다고 했다. </li>
 <li>그말은 곧 인자를 하나 더 받겠다는 의미이다. 따라서 장고 템플릿에서 <code>{% url &lt;name&gt; [args] %}</code>의 규칙에 따라 인자를 추가하여야 한다. <code>pk</code>에는 <code>object.id</code>인듯?</li>
 </ul>
 <p>```python</p>

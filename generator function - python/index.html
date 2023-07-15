@@ -224,7 +224,7 @@
                   
 
 
-<p><a href="../2023-05-11%20estsoft%20-%20python%20-%20inheritance%2C%20linked-list%2C%20method-overriding%2C%20MRO%2C%20private-member%2C%20iterator%2C%20generator%2C%20module%2C%20file-io%2C%20excel/">2023-05-11 estsoft - python - inheritance, linked-list, method-overriding, MRO, private-member, iterator, generator, module, file-io, excel</a>
+<p>[[2023-05-11 estsoft - python - inheritance, linked-list, method-overriding, MRO, private-member, iterator, generator, module, file-io, excel]]
 - https://realpython.com/introduction-to-python-generators/</p>
 <h1 id="generator-function-generates-iterator-like-control-block">Generator function generates iterator-like control block</h1>
 <p><code>yield</code> 문법이 나온다. <code>yield</code> 키워드를 가지고 있는 함수를 generator function이라고 부른다. 함수를 suspend 하고 <code>generator</code> 객체를 리턴하는 역할을 가지고 있다. 따라서 함수의 상태가 어딘가 저장이 되고 재호출이 되기를 기다린다. 해당 함수가 외부에서 다시 호출이 되면 <code>yield</code> 이후 문장들을 다시 실행하기 시작한다. </p>
@@ -275,7 +275,7 @@ for i in gen():
 l = [10, 20, 30, 40, 50]
 print(list(zip(l, gen())))
 </code></pre>
-<p><a href="../type%20hint%20cheatsheet/">type hint cheatsheet</a>에 따르면, 제너레이터 함수의 리턴값은 그냥 <code>Iterator</code>라고 한다.</p>
+<p>[[type hint cheatsheet]]에 따르면, 제너레이터 함수의 리턴값은 그냥 <code>Iterator</code>라고 한다.</p>
 <pre><code class="language-python"># A generator function that yields ints is secretly just a function that
 # returns an iterator of ints, so that's how we annotate it
 def gen(n: int) -&gt; Iterator[int]:

@@ -238,7 +238,7 @@
 <blockquote>
 <p>Tell Django to use our custom user model instead of the built-in User model.</p>
 </blockquote>
-<p>조졌다. <code>blog.Article</code>이 <code>users.User</code>에 의존하고 <code>users.User</code>가 <code>blog.Article</code>에 의존한다. 따라서 circular import 상황이 발생하여 <code>ImportError</code>가 발생하였다. ==&gt; 생각나는 유일한 해결책은 <code>Article</code>을 분리하여 <code>User</code> -&gt; <code>ArticleID</code> &lt;- <code>Article</code> 이런거? DB 시간에 배웠던 정규화와 관련이 있는 것 같은데 아는게 없으니까 답답하군. <a href="../Changing%20to%20a%20custom%20user%20model%20mid-project/">Changing to a custom user model mid-project</a></p>
+<p>조졌다. <code>blog.Article</code>이 <code>users.User</code>에 의존하고 <code>users.User</code>가 <code>blog.Article</code>에 의존한다. 따라서 circular import 상황이 발생하여 <code>ImportError</code>가 발생하였다. ==&gt; 생각나는 유일한 해결책은 <code>Article</code>을 분리하여 <code>User</code> -&gt; <code>ArticleID</code> &lt;- <code>Article</code> 이런거? DB 시간에 배웠던 정규화와 관련이 있는 것 같은데 아는게 없으니까 답답하군. [[Changing to a custom user model mid-project]]</p>
 <p>그래서 일단 커스텀 <code>User</code> 안에 필드를 다 주석처리하고 <code>makemigrations</code> , <code>migrate</code> 명령을 했더니 아래와 같은 에러메시지가 발생하였다.</p>
 <pre><code class="language-shell">ValueError: The field admin.LogEntry.user was declared with a lazy reference to 'users.user', but app 'users' isn't installed.
 The field blog.Article.author was declared with a lazy reference to 'users.user', but app 'users' isn't installed.
@@ -246,12 +246,12 @@ The field blog.Article.likes was declared with a lazy reference to 'users.user',
 The field blog.Article_likes.user was declared with a lazy reference to 'users.user', but app 'users' isn't installed.
 </code></pre>
 <p><a href="https://docs.djangoproject.com/en/4.2/topics/db/queries/">DB Queries in Django {doc}</a><br />
-<a href="../django%20dependency%20issue%20%EB%B0%9C%EC%83%9D%20%EC%8B%9C%20AUTH_USER_MODEL%EC%9D%B4%20%EC%A0%9C%EB%8C%80%EB%A1%9C%20%EB%B0%95%ED%98%80%EC%9E%88%EB%8A%94%EC%A7%80%20%ED%99%95%EC%9D%B8%ED%95%98%EB%9D%BC/">django dependency issue 발생 시 AUTH_USER_MODEL이 제대로 박혀있는지 확인하라</a></p>
+[[django dependency issue 발생 시 AUTH_USER_MODEL이 제대로 박혀있는지 확인하라]]</p>
 <blockquote>
 <p>Due to limitations of Django’s dynamic dependency feature for swappable models, the model referenced by <strong>AUTH_USER_MODEL</strong> must be created in the first migration of its app (usually called 0001_initial); otherwise, you’ll have dependency issues.</p>
 </blockquote>
-<p><a href="../writing%20a%20manager%20for%20a%20custom%20user%20model%20%7Bdjangodoc%7D/">writing a manager for a custom user model {djangodoc}</a></p>
-<p><a href="../no%20such%20table%20%EB%AC%B8%EC%A0%9C%20%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95%20%7Bdjango%7D/">no such table 문제 해결방법 {django}</a> ==&gt; 그래도 같은 문제가 발생한다... 살려줘</p>
+<p>[[writing a manager for a custom user model {djangodoc}]]</p>
+<p>[[no such table 문제 해결방법 {django}]] ==&gt; 그래도 같은 문제가 발생한다... 살려줘</p>
 <h1 id="20230603">20230603의 최승현이 나타났다</h1>
 <ul>
 <li><a href="https://stackoverflow.com/questions/66733285/how-to-reset-django-database">django sqlite 파일을 그냥 지우면 돼</a></li>

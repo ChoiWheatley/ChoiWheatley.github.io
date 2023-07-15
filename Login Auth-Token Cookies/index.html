@@ -223,12 +223,12 @@
 <li>쿠키는 <code>tokio</code> 프레임워크의 코어인 <code>tower</code>의 크레이트 <code>tower-cookies</code>를 사용한다.</li>
 <li>쿠키는 key와 value 쌍으로 이루어져 있으며, value는 다시 username, userid, expression date, signature 순으로 이루어져 있다. </li>
 <li>우리가 지난 시간에 만들었던 핸들러 <code>api_login</code> 의 파라메터로 쿠키를 추가한다. ~~아니 함수 오버로딩이 없는데..?~~ 이 핸들러 내부는 클라이언트(웹 브라우저)의 요청에 응답하는 서버의 내용이므로, <a href="https://docs.rs/tower-cookies/latest/tower_cookies/struct.Cookies.html#method.add"><code>Cookies::add</code></a> 메서드를 사용하여 클라이언트에게 "쿠키를 추가하라"는 명령을 전달할 수 있다.</li>
-<li><a href="./#j5gkbi">최초 api login</a>시 쿠키를 <code>set</code>하는 명령이 서버에서 전송이 됐고, 이를 <a href="https://stackoverflow.com/questions/34215022/whats-the-difference-between-request-cookie-and-reponse-cookie#:~:text=Response%20cookies%20are%20the%20cookies%20created%20on%20server,cookies%20contained%20in%20the%20value%20of%20this%20header."><code>Response cookie</code></a> 에 담겨서 클라이언트(웹 브라우저)에게 전달이 된다. 클라이언트는 해당 값을 고대로  <code>Client cookie</code>에 저장하게 된다.</li>
-<li>한 번 클라이언트에 저장이 된 쿠키는 다른 API를 호출할 때라도 언제나 들고 있게 된다. 예를 들어 <code>hello2</code> API를 다시 한 번 호출했을 때에도 <a href="./#rwj2f7">다음과 같이</a> <code>Client cookies</code> 칼럼에 값을 가지고 있게된다.</li>
+<li>[[Login Auth-Token Cookies#^j5gkbi|최초 api login]]시 쿠키를 <code>set</code>하는 명령이 서버에서 전송이 됐고, 이를 <a href="https://stackoverflow.com/questions/34215022/whats-the-difference-between-request-cookie-and-reponse-cookie#:~:text=Response%20cookies%20are%20the%20cookies%20created%20on%20server,cookies%20contained%20in%20the%20value%20of%20this%20header."><code>Response cookie</code></a> 에 담겨서 클라이언트(웹 브라우저)에게 전달이 된다. 클라이언트는 해당 값을 고대로  <code>Client cookie</code>에 저장하게 된다.</li>
+<li>한 번 클라이언트에 저장이 된 쿠키는 다른 API를 호출할 때라도 언제나 들고 있게 된다. 예를 들어 <code>hello2</code> API를 다시 한 번 호출했을 때에도 [[Login Auth-Token Cookies#^rwj2f7|다음과 같이]] <code>Client cookies</code> 칼럼에 값을 가지고 있게된다.</li>
 </ul>
 <hr />
-<p><img alt="Pasted image 20230423204300.png" src="../assets/Pasted%20image%2020230423204300.png" /> ^j5gkbi<br />
-<img alt="Pasted image 20230423204824.png" src="../assets/Pasted%20image%2020230423204824.png" /> ^rwj2f7</p>
+<p><img alt="Pasted image 20230423204300.png" src="Pasted image 20230423204300.png" /> ^j5gkbi<br />
+<img alt="Pasted image 20230423204824.png" src="Pasted image 20230423204824.png" /> ^rwj2f7</p>
 
 
 

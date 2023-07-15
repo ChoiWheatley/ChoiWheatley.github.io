@@ -264,7 +264,7 @@ class LinkedList:
 </ol>
 <h1 id="implementing-getitem">Implementing getitem</h1>
 <p>그래서, 임의의 타입을 일일이 <code>isinstance</code>를 찍어가면서 해야한단 거야? =&gt; No! <a href="https://stackoverflow.com/questions/22151335/implementing-getitem">SOF - use exception handling!</a></p>
-<p>slice 타입을 어떻게 처리하지? <a href="../slice.indices%20-%20python/">slice.indices - python</a></p>
+<p>slice 타입을 어떻게 처리하지? [[slice.indices - python]]</p>
 <p>빙챗한테 <code>__getitem__</code> 어떻게 구현하냐고 물어봤다. 굉장히 만족스러운 답변을 내놓았다. </p>
 <p>The <code>__getitem__</code> method receives a slice object when the object is sliced. You can look at the <code>start</code>, <code>stop</code>, and <code>step</code> members of the slice object to get the components for the slice¹.</p>
 <p>Here's an example implementation of <code>__getitem__</code> that handles both indexing and slicing:</p>

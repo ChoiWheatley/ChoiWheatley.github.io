@@ -224,7 +224,7 @@
                   
 
 
-<p>parent link: <a href="../Segment%20Tree/">Segment Tree</a></p>
+<p>parent link: [[Segment Tree]]</p>
 <hr />
 <h1 id="_1">문제</h1>
 <p>길이가 n인 수열 $a_0, a_1, \cdots, a_{n-1} (0 ≤ a_i ≤ 10^9)$ 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라</p>
@@ -262,7 +262,7 @@
 </code></pre>
 <h1 id="sol1-fail">sol1 [Fail]</h1>
 <p>번갈아가며 더하고 뺀 결과를 트리에 넣고 쿼리가 들어오면 해당 구간에 있는 노드를 더하거나 빼서 리턴한다. 아래의 그림은 Seq = {1,2,3,4,5}일때의 세그먼트 트리이다.</p>
-<p>![[Pasted image 20230216150837.png]]</p>
+<p><img alt="Pasted image 20230216150837.png" src="Pasted image 20230216150837.png" /></p>
 <pre><code class="language-cpp">
 /**add two child value*/
 constexpr static elem_t _do_add(celem_t &amp;left_child, celem_t &amp;right_child,
@@ -372,7 +372,7 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 2. <code>_jagged_sum(0, 2)</code>
 3. <code>_jagged_sum(0, 1)
 4.</code>_jagged_sum(0, 0) =&gt; empty()<code>5.</code>_jagged_sum(1, 1) =&gt; 2<code>6.</code>_jagged_sum(2, 2) =&gt; 3`</p>
-<p>![[Pasted image 20230216144523.png]]</p>
+<p><img alt="Pasted image 20230216144523.png" src="Pasted image 20230216144523.png" /></p>
 <p>따라서 <code>_jagged_sum(0,1) = 2</code> 가 될 것이다. 이제 <code>_jagged_sum(0, 2)</code>를 구해보자.<br />
 <code>left_child = _jagged_sum(0,1) = 2</code><br />
 <code>right_child = _jagged_sum(2,2) = 3</code><br />
@@ -381,7 +381,7 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 <h1 id="sol2-pass">sol2 [Pass]</h1>
 <p>이번엔 아예 홀수번째 원소들의 부분합, 짝수번째 원소들의 부분합을 따로 계산해 저장한 다음 쿼리시 일단 그냥 무지성으로 더한 뒤에 홀수번째에서 짝수번째를 뺄지, 반대로 할지 결정하도록 만들어 보았다.</p>
 <p>Seq = {1,2,3,4,5}일때 예시:<br />
-![[Pasted image 20230216151218.png]]</p>
+<img alt="Pasted image 20230216151218.png" src="Pasted image 20230216151218.png" /></p>
 <pre><code class="language-cpp">constexpr bool _even(uint n) { return n % 2 == 0; }
 constexpr bool _odd(uint n) { return !_even(n); }
 
@@ -487,7 +487,7 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 
 </code></pre>
 <p>마찬가지로 사용자가 <code>jagged_sum(1,3)</code>을 호출했다고 가정하자. 콜 스택 호출 순서는 그대로이므로 또 적지는 않겠다.<br />
-![[Pasted image 20230216150214.png]]</p>
+<img alt="Pasted image 20230216150214.png" src="Pasted image 20230216150214.png" /></p>
 <ul>
 <li><code>sum(0,2) = {2,3}</code> </li>
 <li><code>sum(1,2) = {2,3}</code> </li>

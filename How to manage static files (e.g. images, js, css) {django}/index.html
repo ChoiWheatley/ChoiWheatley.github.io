@@ -229,7 +229,7 @@
 <li><a href="https://docs.djangoproject.com/en/4.2/howto/static-files/">doc.com</a></li>
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/pull/50">관련 bookstore 리포지토리 PR 내용</a></li>
 <li><a href="https://learndjango.com/tutorials/django-static-files-and-templates">learndjango.com</a></li>
-<li><a href="../aws%20s3%20static%20files%20in%20django/">aws s3 static files in django</a></li>
+<li>[[aws s3 static files in django]]</li>
 </ul>
 <hr />
 <ul>
@@ -239,9 +239,7 @@
 </li>
 <li>base.html: <code>{% load static %}</code> &amp; <code>{% static 'js/getCookie.js %}</code>를 사용하여 정적파일을 링크 (이렇게 안하면 라우트 뒤에 src가 붙습니다 ⚠️)</li>
 </ul>
-<blockquote>
-<p>[!note] Your project will probably also have static assets that aren’t tied to a particular app. In addition to using a <code>static/</code> directory inside your apps, you can define a list of directories (<a href="https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STATICFILES_DIRS"><code>STATICFILES_DIRS</code></a>) in your settings file where Django will also look for static files. For example:</p>
-</blockquote>
+<p>!!! note "Your project will probably also have static assets that aren’t tied to a particular app. In addition to using a <code>static/</code> directory inside your apps, you can define a list of directories (<a href="https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STATICFILES_DIRS"><code>STATICFILES_DIRS</code></a>) in your settings file where Django will also look for static files. For example:"</p>
 <pre><code class="language-python">STATICFILES_DIRS = [
     BASE_DIR / &quot;static&quot;,
     &quot;/var/www/static/&quot;,

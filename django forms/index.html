@@ -226,7 +226,7 @@
 
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/forms/">Working with forms {doc}</a></li>
-<li><a href="../form%20errors%7B%20django%20%7D/">form errors{ django }</a></li>
+<li>[[form errors{ django }]]</li>
 <li><code>django.forms</code>를 실제로 활용하고 있는 영상 | https://youtu.be/sMqDJovFO-Y?t=1350</li>
 <li>form, 너의 역할은 무엇이냐<ul>
 <li>정적 웹사이트를 만들어 배포할게 아니라면, 무조건 들춰보게 될 유용한 도구이다. 접속자가 우리 웹에서 활동(글쓰기, 댓글 등)을 하는 여러 유즈케이스를 구현하는데 도움을 줄 것이다.</li>
@@ -240,7 +240,7 @@
 <p>It is <em>possible</em> to write code that does all of this manually, but Django can take care of it all for you.</p>
 </blockquote>
 <ul>
-<li><a href="../django%20internal%20class%20Meta/">django internal class Meta</a>와의 훌륭한 합작으로 커스텀 Model을 폼으로 재창조하는 불편함 없이 이름만 매핑하면 내부 작업을 알아서 수행해준다!!! | <a href="https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/">django.forms.modelforms</a></li>
+<li>[[django internal class Meta]]와의 훌륭한 합작으로 커스텀 Model을 폼으로 재창조하는 불편함 없이 이름만 매핑하면 내부 작업을 알아서 수행해준다!!! | <a href="https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/">django.forms.modelforms</a></li>
 </ul>
 <pre><code class="language-python">from django.forms import ModelForm
  myapp.models import Article
@@ -260,21 +260,29 @@ article = Article.objects.get(pk=1)
 form = ArticleForm(instance=article)
 </code></pre>
 <p><code>fields</code>의 순서를 바꿨더니 실제 폼의 순서도 바뀌더라~~~</p>
-<p><code>fields = ["username", "email", "password1", "password2"]</code><br />
-<img alt="Pasted image 20230601150945.png" src="../assets/Pasted%20image%2020230601150945.png" />{ width="350" } </p>
-<p><code>fields = ["email", "username", "password1", "password2"]</code><br />
-<img alt="Pasted image 20230601151020.png" src="../assets/Pasted%20image%2020230601151020.png" />{ width="350" }</p>
+<p><code>fields = ["username", "email", "password1", "password2"]</code>  </p>
+<figure markdown>
+  ![Pasted image 20230601150945.png](Pasted image 20230601150945.png){ width="350" }
+
+</figure markdown>
+
+<p><code>fields = ["email", "username", "password1", "password2"]</code>  </p>
+<figure markdown>
+  ![Pasted image 20230601151020.png](Pasted image 20230601151020.png){ width="350" }
+
+</figure markdown>
+
 <h1 id="usercreationform">UserCreationForm</h1>
-<p><a href="../UserCreationForm%20%7Bdjango%7D/">UserCreationForm {django}</a></p>
+<p>[[UserCreationForm {django}]]</p>
 <h1 id="forms-workflow">forms workflow</h1>
 <p><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#instantiating-processing-and-rendering-forms">Instantiating, processing, and rendering forms</a></p>
 <ol>
 <li><code>View</code>에서 <code>Form</code> 객체를 생성한다.</li>
-<li><a href="../django%20template%20%7Bcontext%7D/">django template {context}</a> template context에 해당 form을 넘겨준다.</li>
-<li><a href="../django%20template/">django template</a> 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣는다.</li>
+<li>[[django template {context}]] template context에 해당 form을 넘겨준다.</li>
+<li>[[django template]] 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣는다.</li>
 </ol>
 <h1 id="plus-alpha-with-crispy-forms">plus alpha with crispy-forms</h1>
-<p><a href="../django%20crispy%20forms/">django crispy forms</a></p>
+<p>[[django crispy forms]]</p>
 
 
 

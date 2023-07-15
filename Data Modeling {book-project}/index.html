@@ -327,19 +327,21 @@
 <li><strong>대체키(Alternate Key)</strong>: 후보키 중 기본키를 제외한 나머지 키</li>
 <li><strong>기본키(Primary Key)</strong>: 후보키 중 선택된 키. PK가 없는 테이블도 가능.</li>
 <li><strong>외래키(Foreign Key)</strong>: 다른 테이블(Relation)에서 PK로 사용되는 칼럼이 현재 테이블에서 사용되고 있을 때 ==&gt; 테이블 간에 의도적인 중복을 허용하여 테이블을 합치는 연산인 조인 시 유용하게 써먹을 수 있다.<ul>
-<li>![[Drawing 2023-06-14 13.36.57.excalidraw|100%]]</li>
-<li><strong>식별관계(Identifying Relationship)</strong>: 내 테이블의 FK가 PK인 경우</li>
-<li><strong>비식별관계(Non-identifying Relationship)</strong>: 내 테이블의 FK가 일반 칼럼인 경우</li>
-</ul>
-</li>
-<li>참조 무결성 제약조건(Referential Integrity)<ul>
-<li>외래키로 연관 테이블을 검색하면 데이터가 <em>반드시</em> 존재하여야 함.</li>
-<li>삽입, 삭제에 순서가 있어야 한다. 이 순서를 어기면 에러가 발생한다. </li>
-<li>원본 레코드를 삭제하기 위해선 이 테이블을 참조하는 다른 테이블의 레코드를 먼저 삭제해야 한다.</li>
-<li>반대로 외래키를 가지는 테이블이 레코드를 추가하고 싶다면 원본 레코드를 가진 테이블에 레코드를 먼저 추가하여야 한다.</li>
+<li><figure markdown>
+  <img alt="Drawing 2023-06-14 13.36.57.excalidraw" src="Drawing 2023-06-14 13.36.57.excalidraw" />
+<br />
+<figcaption>100%</figcaption></li>
 </ul>
 </li>
 </ul>
+<p></figure markdown>
+    - <strong>식별관계(Identifying Relationship)</strong>: 내 테이블의 FK가 PK인 경우
+    - <strong>비식별관계(Non-identifying Relationship)</strong>: 내 테이블의 FK가 일반 칼럼인 경우
+- 참조 무결성 제약조건(Referential Integrity)
+    - 외래키로 연관 테이블을 검색하면 데이터가 <em>반드시</em> 존재하여야 함.
+    - 삽입, 삭제에 순서가 있어야 한다. 이 순서를 어기면 에러가 발생한다. 
+    - 원본 레코드를 삭제하기 위해선 이 테이블을 참조하는 다른 테이블의 레코드를 먼저 삭제해야 한다.
+    - 반대로 외래키를 가지는 테이블이 레코드를 추가하고 싶다면 원본 레코드를 가진 테이블에 레코드를 먼저 추가하여야 한다.</p>
 <h2 id="_1">조인</h2>
 <ul>
 <li>여러 테이블을 합쳐 큰 테이블로 만드는 연산. 테이블이 나뉘어진 상태에서 원하는 데이터를 찾기 위해선 먼저 테이블을 합쳐야 한다. 왜냐하면 검색을 시작한 테이블에 내가 원하는 데이터가 존재할 거란 보장이 없기 때문이다.</li>
@@ -557,13 +559,13 @@
 <h2 id="cardinality">Cardinality (대응수)</h2>
 <ul>
 <li>1:1<ul>
-<li><img alt="Pasted image 20230614170840.png" src="../assets/Pasted%20image%2020230614170840.png" /></li>
+<li><img alt="Pasted image 20230614170840.png" src="Pasted image 20230614170840.png" /></li>
 <li>하나의 개체가 하나의 개체에 대응</li>
 <li>단일 테이블 내 칼럼 추가</li>
 </ul>
 </li>
 <li>1:N<ul>
-<li><img alt="Pasted image 20230614170851.png" src="../assets/Pasted%20image%2020230614170851.png" /></li>
+<li><img alt="Pasted image 20230614170851.png" src="Pasted image 20230614170851.png" /></li>
 <li>하나의 개체가 0..* 개의 개체에 대응</li>
 <li>2개의 테이블 필요.</li>
 </ul>
@@ -574,14 +576,14 @@
 </ul>
 </li>
 <li>M:N<ul>
-<li><img alt="Pasted image 20230614170910.png" src="../assets/Pasted%20image%2020230614170910.png" /></li>
+<li><img alt="Pasted image 20230614170910.png" src="Pasted image 20230614170910.png" /></li>
 <li>0..<em> 개의 개체가 0..</em> 개의 개체에 대응</li>
 <li>3개의 테이블 필요.</li>
 </ul>
 </li>
 <li>기본적으로 모든 관계는 M:N (다대다) 관계임.<ul>
 <li>Entity -- Relationship -- Entity 이렇게 총 3개의 테이블이 필요함. 아래의 예제는 학생과 교수 사이에 다대다 관계를 <em>강의</em>라는 테이블로 정의한 것을 보여준다. </li>
-<li><img alt="Pasted image 20230614165211.png" src="../assets/Pasted%20image%2020230614165211.png" /></li>
+<li><img alt="Pasted image 20230614165211.png" src="Pasted image 20230614165211.png" /></li>
 <li>M:N -&gt; 1:N 또는 N:1 -&gt; 1:1의 순서로 축소하면서 테이블의 개수가 줄어든다.</li>
 <li>1:1, 1:N/N:1로 축소가 가능한 경우, 중간 관계(강의)를 삭제한 뒤에 <ul>
 <li>1:1인 경우, 엔티티 안에 속성을 직접 추가한다.</li>
@@ -612,20 +614,20 @@
 <li>데이터 중복을 방지하기 위해 사용하는 모델링 기법. </li>
 <li>1정규형 (1NF)<ul>
 <li>칼럼값이 원자값을 가지지 않으면 레코드 분리</li>
-<li><img alt="Pasted image 20230614174946.png" src="../assets/Pasted%20image%2020230614174946.png" /></li>
+<li><img alt="Pasted image 20230614174946.png" src="Pasted image 20230614174946.png" /></li>
 </ul>
 </li>
 <li>2정규형 (2NF)<ul>
 <li>키 칼럼과 나머지 일반 칼럼이 직접적인 연관관계(직접 종속)만 가지도록 테이블을 구성.</li>
 <li>아래의 예시는 복합키(학생번호, 강좌이름)가 성적을 식별하지만 동시에 키의 부분집합인 강좌이름 칼럼이 강의실을 식별하는 상황이라 강의실 테이블을 따로 분리하여 2NF를 만족시킬 수 있다.</li>
-<li><img alt="Pasted image 20230614192239.png" src="../assets/Pasted%20image%2020230614192239.png" /></li>
-<li>![[Pasted image 20230614192248.png]]</li>
+<li><img alt="Pasted image 20230614192239.png" src="Pasted image 20230614192239.png" /></li>
+<li><img alt="Pasted image 20230614192248.png" src="Pasted image 20230614192248.png" /></li>
 </ul>
 </li>
 <li>3정규형 (3NF)<ul>
 <li>일반 컬럼끼리 간접 연관관계 (간접 종속)을 가지고 있다면 테이블을 분리.</li>
 <li>학생번호는 강좌이름을 결정하고 있고, 강좌 이름은 수강료를 결정하고 있다. 간접적으로 학생번호가 수강료를 결정하고 있으므로 테이블을 분리하여야 한다.</li>
-<li>![[Pasted image 20230614193952.png]]</li>
+<li><img alt="Pasted image 20230614193952.png" src="Pasted image 20230614193952.png" /></li>
 </ul>
 </li>
 <li>BCNF 정규형 (Boyce-Codd Normal Form)<ul>

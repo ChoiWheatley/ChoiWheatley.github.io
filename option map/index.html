@@ -222,7 +222,7 @@
 <ul>
 <li>https://doc.rust-lang.org/std/option/enum.Option.html#method.map</li>
 <li>Maps an <code>Option&lt;T&gt;</code> to <code>Option&lt;U&gt;</code> by applying a function to a contained value</li>
-<li>기존 <code>Option</code>을 consume한다는거에 유의. 만약 옵션 타입 내부에 있는 값을 move하지 않으면서 빌려오고 싶다면 <a href="../option%20as_ref/">option as_ref</a> 를 사용하면 된다.</li>
+<li>기존 <code>Option</code>을 consume한다는거에 유의. 만약 옵션 타입 내부에 있는 값을 move하지 않으면서 빌려오고 싶다면 [[option as_ref]] 를 사용하면 된다.</li>
 </ul>
 <p>signature</p>
 <pre><code class="language-rust">pub fn map&lt;U, F&gt;(self, f: F) -&gt; Option&lt;U&gt;
