@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-24T09:26:36
-updated: 2023-07-15T21:33:04
+updated: 2023-07-15T22:43:11
 title: Obsidian으로 블로그 만들기
 ---
 - ["Obsidian+Github Pages" for digital gardeners? {forum}](https://forum.obsidian.md/t/obsidian-github-pages-for-digital-gardeners/2622)
@@ -24,9 +24,9 @@ ___
 # Scraps
 
 - [15 Best wiki sw tools for 2023](https://document360.com/blog/wiki-software/)
-- https://docs.gitbook.com/ GitBook 
+- <https://docs.gitbook.com/> GitBook 
 	- Free, Open Source Service
-- https://js.wiki/
+- <https://js.wiki/>
 	- Free, Open Source 
 - [mdbook](https://rust-lang.github.io/mdBook/)
 	- 마크다운 기반 위키생성 프로그램
@@ -47,3 +47,13 @@ ___
 # MkDocs
 
 [[mkdocs]] 으로 가세요
+
+___
+
+# Digital Garden Plugin
+
+<https://dg-docs.ole.dev/>
+
+허허.. 내가 mkdocs로 뺑이치고 있었는데 그냥 플러그인 자체로 퍼블리싱을 지원하는 녀석이 있었넹... 😅
+
+graph view, back link, search with Ctrl+K, nav bar 등등... 있을 건 다 있다...!
