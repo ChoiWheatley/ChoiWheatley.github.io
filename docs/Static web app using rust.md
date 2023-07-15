@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-16T23:34:42
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: Static web app using rust
 ---
 - https://bluejekyll.github.io/blog/posts/static-web-app-rust/

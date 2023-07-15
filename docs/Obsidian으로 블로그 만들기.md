@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-24T09:26:36
-updated: 2023-07-14T00:27:12
+updated: 2023-07-15T21:33:04
 title: Obsidian으로 블로그 만들기
 ---
 - ["Obsidian+Github Pages" for digital gardeners? {forum}](https://forum.obsidian.md/t/obsidian-github-pages-for-digital-gardeners/2622)
@@ -20,6 +20,7 @@ title: Obsidian으로 블로그 만들기
 - Obsidian -> github -> wikidocs 정적 사이트 형태로 컴파일  -> 깃허브 이슈 형태로 댓글창  -> netlify -> DNS -> 배포
 	- 잠깐만... 이걸 한 번에 진행시켜주는 서비스를 만들 수도 있을 것 같은데? [[Service that deploys user's blog from markdown and media wiki]]
 ___
+
 # Scraps
 
 - [15 Best wiki sw tools for 2023](https://document360.com/blog/wiki-software/)
@@ -42,6 +43,7 @@ Jekyll에도 굉장히 많은 테마가 있고, 어떤 테마는 심지어 백�
 
 아, canvas 적용이 안된다. 일단 당장은 canvas를 무시하게 만들어주자.
 ___
+
 # MkDocs
 
 [[mkdocs]] 으로 가세요

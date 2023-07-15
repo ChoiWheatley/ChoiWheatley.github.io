@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:30:16
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: closures, factory functions (python)
 ---
+
 # Closures, Factory Functions
 
 [What is function? | first-class-object? | closure?](https://shoark7.github.io/programming/python/closure-in-python)
@@ -157,7 +158,8 @@ print(
 ```
 
 ## Decorators are closure!
-[[decorator - python]]
+
+[[decorator - python]]  
 그래서, 위에 작성한 `factorial` 함수에 데코레이터를 붙여 전역변수를 사용하지 않고도 자유변수만으로 메모아이제이션을 수행할 수 있게 되었다. 개쩐다!!!
 
 ```python

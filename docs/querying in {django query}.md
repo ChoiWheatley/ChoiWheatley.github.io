@@ -3,7 +3,7 @@ aliases: 쿼리, 질의, queries, relationships
 tags: 
 description:
 created: 2023-06-20T10:48:13
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: querying in {django query}
 ---
 - [doc](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
@@ -11,6 +11,7 @@ title: querying in {django query}
 # Before you start (Blog, Author, Entry models)
 
 앞으로 모든 예시는 아래의 코드에서 정의한 모델을 기반으로 제공된다.
+
 ```python
 from datetime import date
 
@@ -48,11 +49,13 @@ class Entry(models.Model):
 - `save` 를 해줘야 데이터베이스에 변경내용이 저장된다. 만약 새로운 필드를 생성하자마자 DB에 넣고싶다면 `create`를 사용할 것.
 - `ForeignKey` 필드의 관계는 1:1 관계이므로 단순히 `.`으로 연결하면 된다.
 	- `get` 메서드는 오직 하나의 개체만 가져온다는 것을 보장할 때 사용이 가능하다. | 없을 때 → `DoesNotExist` | 두개 이상일 때 → `MultipleObjectsReturned`
+
 	 ```python
 	e = Entry.objects.get(pk=1)
 	b = Blog.objects.get(name="Choi")
 	e.blog = b
 	```
+
 - `ManyToMany` 필드의 관계는 기본적으로 여러개의 연결이 포함되어 있기 때문에  `filter`나 `all` 따위를 써서  `QuerySet`형태로 얻어와야 한다. | [`objects`](https://docs.djangoproject.com/en/4.2/ref/models/class/#django.db.models.Model.objects)는 모델에 클래스 멤버 형태로 연결돼 있는 `Manager` 인스턴스를 가져온다.
 - **all** `Entry.objects.all()`
 - **filter** `Entry.objects.filter(pub_date__year=2006)`  | `Entry.objects.filter(headline__startswith="What")`
@@ -67,6 +70,7 @@ class Entry(models.Model):
 [docs](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#id4)
 
 SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. `QuerySet`로부터  `filter`, `get`, `exclude` 메서드의 키워드 인자로 들어가는 규칙에 대하여 정의한다. 
+
 ```
 <field>__<lookuptype>=<value>
 ```
@@ -84,10 +88,13 @@ SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. `QuerySet`로부�
 - span relationships
 	- 뿐만 아니라, lookup 자체를 연관 테이블을 JOIN한 칼럼까지 지원한다. 물론 JOIN 연산은 우리가 할 필요 없다.
 	- `Entry`의 연관 테이블인 `Blog`와 조인하여 블로그의 `name` 필드에 접근할 수 있다.
+
 	 ```python
 	Entry.objects.filter(blog__name="Beatles Blog")
 	```
+
 	- 조인의 순서를 거꾸로 해도 된다. 이때 규칙은 클래스명을 소문자로 작성하면 된다.
+
 	```python
 	Blog.objects.filter(entry__authors__name="Choi")
 	```

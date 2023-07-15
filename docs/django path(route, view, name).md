@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T15:21:25
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django path(route, view, name)
 ---
 - https://docs.djangoproject.com/en/4.2/ref/urls/
@@ -22,9 +22,10 @@ urlpatterns = [
 
 > The `route` argument should be a string or [`gettext_lazy()`](https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.translation.gettext_lazy "django.utils.translation.gettext_lazy") (see [Translating URL patterns](https://docs.djangoproject.com/en/4.2/topics/i18n/translation/#translating-urlpatterns)) that contains a URL pattern. The string may contain angle brackets (like `<username>` above) to capture part of the URL and send it as a keyword argument to the view
 
-The `urlpatterns` list routes URLs to views. For more information please see:
+The `urlpatterns` list routes URLs to views. For more information please see:  
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
 	
+
 # Examples:
 
 ## Function views

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T22:17:44
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: Store informations related to User, but not authorization-related {django}
 ---
 - [doc](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#extending-the-existing-user-model)

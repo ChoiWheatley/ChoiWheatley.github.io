@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T17:05:19
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: PATCH {HTTP}
 ---
 - [blog content](https://medium.com/@isuru89/a-better-way-to-implement-http-patch-operation-in-rest-apis-721396ac82bf#68ac)
@@ -32,6 +32,7 @@ PATCH /users
 	- **JSON Pointer**: A string format for identifying a specific value within a JSON document. It is used by all operations in JSON Patch to specify the part of the document to operate on. It is specified in RFC 6901 from the IETF.
 		- `/` 문자로 구분되어진 문자열로, 객체의 속성에 접근하는 `.` 연산과 완전히 일치한다.
 		- 예를 들어 다음과 같은 구조가 있다고 가정하자
+
 		```json
 		{
 			"biscuits": [
@@ -40,6 +41,7 @@ PATCH /users
 			]
 		}
 		```
+
 		그러면 "Digestive"는 `/biscuits/0/name`으로 접근이 가능하고 "Choco"는 `/biscuits/1/name`으로 접근이 가능하여야 한다.
 	- `add`
 		- 리소스가 배열이나 리스트인 경우, 추가 `value`를 삽입하는 연산이다.
@@ -59,11 +61,14 @@ PATCH /users
 	- `test`
 		- 명시한 값이 리소스와 일치하는지 여부를 테스트한다. 테스트를 실패하면 [RFC 6902#Error-Handling](https://datatracker.ietf.org/doc/html/rfc6902#section-5) 와 같이 PATCH 수행을 종료하고 전체 PATCH 연산을 무효화 하여야 한다.
 		- PATCH 메서드는 원자적이다. 하나의 PATCH 요청 안에 여러 "op"가 들어있을 수 있으며, 이 중에 하나의 연산이 실패하게 된다면 PATCH 이전 상태로 돌아와야 한다.
+
 		  ```json
-		[
-			{"op": "replace", "path": "/a/b/c", "value": 42},
-			{"op": "test", "path": "/a/b/c", "value": "C"}, // FAILURE because of [0]
-		] // Whole operation MUST NOT be patched
+
+
+		[  
+			{"op": "replace", "path": "/a/b/c", "value": 42},  
+			{"op": "test", "path": "/a/b/c", "value": "C"}, // FAILURE because of [0]  
+		] // Whole operation MUST NOT be patched  
 		  ```
 
 - 위의 proposal을 누가 이미 구현체로 만들어놓았다. 뭐하는 사람들이지

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-11T13:37:19
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: Building a Rust service with Nix
 ---
 - https://fasterthanli.me/series/building-a-rust-service-with-nix

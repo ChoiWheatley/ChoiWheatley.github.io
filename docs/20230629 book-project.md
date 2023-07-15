@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-29T07:13:37
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230629 book-project
 ---
 - [[drf {django rest framework}]] Serializer에 대하여 먼저 공부.

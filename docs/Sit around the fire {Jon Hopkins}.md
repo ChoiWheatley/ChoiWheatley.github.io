@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T12:51:41
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: Sit around the fire {Jon Hopkins}
 ---
+
 > It's is really time for you to see through the absurdity of your own predicament
 
 바로 지금, 당신만의 생각의 부조리함을 간파해야 할 때입니다.

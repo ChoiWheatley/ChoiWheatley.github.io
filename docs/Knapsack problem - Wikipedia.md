@@ -9,7 +9,7 @@ tags: [" algo/graph  ", algo/graph]
 source: https://en.wikipedia.org/wiki/Knapsack_problem
 author: Contributors to Wikimedia projects
 created: 2023-02-12T12:31:26
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 ---
 
 parent link: [[0011 Algorithms ♾️|algorithms]]

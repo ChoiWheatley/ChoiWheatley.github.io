@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: programming/rust 
 created: 2023-03-11T19:15:24
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: derive attribute
 ---
 <iframe src="https://rust-book.cs.brown.edu/ch05-02-example-structs.html#adding-useful-functionality-with-derived-traits" allow="fullscreen" allowfullscreen="" style="height: 100%; width: 100%; aspect-ratio: 1 / 1;"></iframe>

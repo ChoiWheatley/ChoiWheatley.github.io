@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-25T12:13:32
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230625 book-project
 ---
 - [[reverse를 사용해야 하는 이유 {django}]]

@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-15T09:35:53
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230615 book-project
 ---
 - [[django reverse]] 문제를 해결하는 방법 모색중.

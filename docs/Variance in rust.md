@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-09T21:35:52
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Variance in rust
 ---
 - [TMLL](https://rust-unofficial.github.io/too-many-lists/sixth-variance.html) 에서 타입 가변성과 공변성, 불변성에 대한 토막에 관한 이야기가 나와서 스크랩 한다.

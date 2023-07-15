@@ -3,10 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T21:49:15
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: esc를 눌러 영문자판으로 전환하기
 ---
-[[0090 Bucket Lists 🪣|bucketlist]]
+[[0090 Bucket Lists 🪣|bucketlist]]  
 ![[2023-05-29#^5xnd1z]]
 
 - [v] [[karabiner-elements]] 페이지에서 확인바람.

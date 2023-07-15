@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-30T09:21:16
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: utterances - lightweight comments widget built on GitHub issues
 ---
 - [utterances](https://www.44bits.io/)

@@ -4,7 +4,7 @@ tags:
 description:
 title: mkdocs
 created: 2023-07-14T10:20:59
-updated: 2023-07-14T10:22:39
+updated: 2023-07-15T21:33:04
 ---
 
 # Themes and Plugins

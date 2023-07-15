@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-10T21:53:08
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Rust로 만든 유용한 툴들
 ---
 - https://youtu.be/dFkGNe4oaKk

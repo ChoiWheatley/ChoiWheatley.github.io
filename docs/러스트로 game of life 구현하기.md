@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-16T17:02:38
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: 러스트로 game of life 구현하기
 ---
 - https://yceffort.kr/2022/04/rust-wasm-project-tutorial-2 [[0080 Scraps 📚]]
@@ -18,7 +18,6 @@ title: 러스트로 game of life 구현하기
 - Rust로 컴파일된 WA 모듈을 디버깅 할 수 있다.
 - 프로파일을 통해 프로그램을 더 빠르게 만들 수 있다.
 - `.wasm` 바이너리 파일의 크기를 더 작게, 더 빠르게 만들어 빠른 네트워크 로딩을 달성할 수 있다.
-
 
 # [create-wasm-app](https://github.com/rustwasm/create-wasm-app)
 

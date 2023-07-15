@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-19T15:16:49
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: User authentication 관련 에러 (인증, 인가){django}
 ---
 `NotImplementedError: Django doesn't provide a DB representation for AnonymousUser.` | [#16](https://github.com/ESTsoft-Book-Project/bookstore/issues/16) 

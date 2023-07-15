@@ -3,9 +3,10 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T13:44:57
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.py, urls.py, models.py, forms.py}
 ---
+
 # 프로젝트 생성 및 app 추가
 
 - `django` 패키지 설치 및 초기 프로젝트 마련 | `django-admin startproject <project-name>` 
@@ -16,6 +17,7 @@ title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.p
 	- `users` : 로그인 로그아웃 회원가입, forms 관리, 
 	- `blogtutorial` : admin 전용 유즈케이스 모음
  
+
 # 각 파일의 목적
 
 - **`settings.py`**: 전역상수들을 정의하여 장고 프로젝트의 세팅을 관할하는 곳. 
@@ -45,6 +47,7 @@ title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.p
 	- [[django forms]]
 
 # manage.py 명령어
+
 - [[django migrate]]를 해 준다. | `python manage.py migrate`
 - admin 계정 생성 | `python manage.py createsuperuser`
 - `python manage.py runserver`

@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -21,7 +21,7 @@ parent link: [[0011 Algorithms ♾️]]
 
 # 이진검색트리 red black tree
 
-상태: Not started
+상태: Not started  
 태그: datastructure, graph, tree
 
 Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구현해보자. 이진탐색트리를 먼저 구현하고 스스로 균형을 조절하는 RB-tree (Red-black tree) 트리를 만들어 보겠다.

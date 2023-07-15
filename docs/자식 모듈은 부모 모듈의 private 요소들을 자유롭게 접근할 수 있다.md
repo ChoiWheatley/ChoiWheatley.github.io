@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-27T16:31:39
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다
 ---
 자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다.

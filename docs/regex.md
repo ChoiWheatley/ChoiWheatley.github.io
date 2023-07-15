@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-15T14:07:54
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: regex
 ---
 - [실습 링크](https://regexr.com/5nvc2)
@@ -14,8 +14,8 @@ title: regex
 	- 0개 이거나 1개 이거나
 	- `010-8752-4037` 과 `01087524037`을 모두 검출하고 싶다면
 	- `010?8752?4037` 
-- Anchors `^` & `$`
-		- `^hello` : 처음 만나는 hello
+- Anchors `^` & `$`  
+		- `^hello` : 처음 만나는 hello  
 		- `hello$` : 마지막에 만나는 hello
 - `.` 
 	- all occurences

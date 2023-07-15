@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T13:42:37
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: pip와 requirements.txt로 의존성 관리하기 {python}
 ---
 - `pip freeze > requirements.txt`

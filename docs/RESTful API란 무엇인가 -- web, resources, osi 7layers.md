@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-22T21:41:50
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: RESTful API란 무엇인가 -- web, resources, osi 7layers
 ---
+
 # API란?
 
 Application Programming Interface의 약자로, SW간에 상호작용을 위한 제안된 함수, 핸들 목록을 의미한다. 인터페이스이기 때문에 구현체를 알지 않아도 인터페이스만 안다면 해당 기술을 별 무리없이 사용할 수 있게되어 아주 강력한 추상화를 이루어 낼 수 있다.
@@ -48,23 +49,23 @@ REpresentation State Transfer의 약자로, 무슨 뜻인지 모르겠으니까 
 
 ## 그런 REST API로 괜찮은가 스크랩
 
-REST api가 구현하기 까다로운 이유는 다름아닌 Uniform Interface의 제약조건 때문이다. 단순히 유일한 URI를 만드는 것은 쉽다. 다만 메시지 자체가 **self-descriptive**한지 여부와 **HATEOAS**(헤이티오스)를 준수하는지 여부가 우리의 발목을 잡는다.
+REST api가 구현하기 까다로운 이유는 다름아닌 Uniform Interface의 제약조건 때문이다. 단순히 유일한 URI를 만드는 것은 쉽다. 다만 메시지 자체가 **self-descriptive**한지 여부와 **HATEOAS**(헤이티오스)를 준수하는지 여부가 우리의 발목을 잡는다.  
 ![[fwer23.png]]
-- self-descriptive message
+- self-descriptive message  
 	자기스스로 설명하는 메시지란, HTML 형식을 보면 바로 알 수 있다. 우리가 a태그를 모르면 어딜 찾아가서 확인해야하는지 알고있듯이, SW가 주고받는 문서의 내용을 추론할 수 있어야 한다.
 
 	엥? 그러면 우리도 `hello`같은 태그 만들어서 어떻게 작동할지 명시하면 되는거 아니야? => TRUE. 그래서 위 영상에서 하고자 하는 말은 심지어 JSON파일일지라도 그 key값이 의미하는 바를 추론할 수 있도록 요청 헤더에 [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml)의 참조를 추가하면 자가설명이 가능해진다. 사실 JSON 파싱하는 방법 자체에 대해서도 IANA에 적혀있다고...
 
-- HATEOAS
+- HATEOAS  
 	쉽게 말해 링크를 타고 **들어가는** 일을 앱 단위의 상태변화로 볼 수 있다. HTML은 애초에 하이퍼텍스트이기 때문에 상태변화가 자연스럽게 느껴지지만, 일반 텍스트 에디터를 보면 아무리 그 안에 링크가 적혀있어도 에디터의 상태가 변하지는 않잖아.
 
-REST API는 웹에서 지원하고 있는 HTTP + REST 수준을 정확히 그대로 따라야 하는가?
+REST API는 웹에서 지원하고 있는 HTTP + REST 수준을 정확히 그대로 따라야 하는가?  
 ![[h2o3iruw89efy.png]]
 
-그렇다면 모든 원격 API들은 REST API 제약조건을 준수하여야 하는가?
+그렇다면 모든 원격 API들은 REST API 제약조건을 준수하여야 하는가?  
 ![[9sd93sdsdAS 1.png]]
 
-JSON은 RESTful한가?
+JSON은 RESTful한가?  
 ![[naver d2 - Day1, 2-2. 그런 REST API로 괜찮은가 [RP_f5dMoHFc - 1314x739 - 38m34s].png]]
 
 ## URI? URL?
@@ -78,5 +79,3 @@ JSON은 RESTful한가?
 ![[osi7layers.png]]
 
 ![[스크린샷 2023-05-26 21.27.51.png]]
-
-

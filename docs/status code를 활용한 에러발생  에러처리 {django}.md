@@ -3,10 +3,12 @@ aliases:
 tags: 
 description:
 created: 2023-06-19T14:01:05
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: status code를 활용한 에러발생  에러처리 {django}
 ---
+
 # code snippet from `delete_product`
+
 Code snippet from `products.views.delete_product`
 <iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/523366aa0e8eb61c16cbde90cce28190cbba8883/products/views.py#L62-L76" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
 
@@ -52,7 +54,7 @@ This code indicates that the server has received and is processing the request, 
 
 [`200 OK`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)
 
-The request succeeded. The result meaning of "success" depends on the HTTP method:
+The request succeeded. The result meaning of "success" depends on the HTTP method:  
 해당 요청이 성공했습니다. "성공"의 의미는 HTTP 별로 다릅니다:
 
 - `GET`: The resource has been fetched and transmitted in the message body.
@@ -65,17 +67,17 @@ The request succeeded. The result meaning of "success" depends on the HTTP metho
 
 [`201 Created`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201)
 
-The request succeeded, and a new resource was created as a result. This is typically the response sent after `POST` requests, or some `PUT` requests.
+The request succeeded, and a new resource was created as a result. This is typically the response sent after `POST` requests, or some `PUT` requests.  
 요청이 성공했고, 그 결과로 새 리소스가 생성됐습니다. 주로 `POST` 혹은 `PUT` 메서드에 의한 성공코드로 활용됩니다.
 
 [`202 Accepted`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202)
 
-The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.
+The request has been received but not yet acted upon. It is noncommittal, since there is no way in HTTP to later send an asynchronous response indicating the outcome of the request. It is intended for cases where another process or server handles the request, or for batch processing.  
 요청이 성공적으로 받아들여졌지만 아직 처리되지 않은 상태입니다. HTTP에서는 나중에 요청 결과를 나타내는 비동기 응답을 전송할 방법이 없으므로 *비*커밋 상태입니다. 다른 프로세스나 서버가 요청을 처리할 경우 혹은 배치 프로세스(일괄처리)에서 사용됩니다.
 
 [`204 No Content`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204)
 
-There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.
+There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.  
 이 요청에 대해 전송할 콘텐츠가 없지만 헤더가 유용할 수 있습니다. 사용자 에이전트는 이 리소스에 대해 캐시된 헤더를 새 헤더로 업데이트할 수 있습니다.
 
 ## [Client error responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
@@ -164,7 +166,7 @@ The request was directed at a server that is not able to produce a response. Thi
 
 [`500 Internal Server Error`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500)
 
-The server has encountered a situation it does not know how to handle.
+The server has encountered a situation it does not know how to handle.  
 서버가 다룰 수 없는 문제에 맞닥뜨렸습니다.
 
 [`501 Not Implemented`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501)
@@ -177,7 +179,7 @@ This error response means that the server, while working as a gateway to get a r
 
 [`503 Service Unavailable`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503)
 
-The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent. This response should be used for temporary conditions and the `Retry-After` HTTP header should, if possible, contain the estimated time before the recovery of the service. The webmaster must also take care about the caching-related headers that are sent along with this response, as these temporary condition responses should usually not be cached.
+The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent. This response should be used for temporary conditions and the `Retry-After` HTTP header should, if possible, contain the estimated time before the recovery of the service. The webmaster must also take care about the caching-related headers that are sent along with this response, as these temporary condition responses should usually not be cached.  
 서버가 요청을 처리할 준비가 되지 않았습니다. 일반적인 원인은 유지보수를 위해 서버가 다운되었거나 과부하가 걸린 경우입니다. 이 응답과 함께 문제를 설명하는 사용자 친화적인 페이지가 전송되어야 한다는 점에 유의하세요. 이 응답은 일시적인 상황에 사용해야 하며, 가능하면 `Retry-After` HTTP 헤더에 서비스 복구 전 예상 시간을 포함해야 합니다. 이러한 임시 조건 응답은 일반적으로 캐싱되지 않아야 하므로 웹 마스터는 이 응답과 함께 전송되는 캐싱 관련 헤더에도 주의를 기울여야 합니다.
 
 [`504 Gateway Timeout`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504)

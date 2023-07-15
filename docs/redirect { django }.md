@@ -3,12 +3,13 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T17:12:41
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: redirect { django }
 ---
 - [The Ultimate Guide to Django Redirects {Real Python}](https://realpython.com/django-redirects/)
 - [django.shortcuts.redirect {doc}](https://docs.djangoproject.com/en/4.2/topics/http/shortcuts/#redirect)
 ---
+
 # Why redirection?
 
 - 로그인이 필요한 자원에 접근할 때 명시적으로 로그인 버튼을 누르게 만드는 건 사용자 피로도를 증가시킨다. → 따라서 자동으로 로그인 페이지로 리디렉션을 수행하고 로그인 완료시 본래 페이지로 되돌아가는 방식으로 작동한다면 매끄러울 것이다.

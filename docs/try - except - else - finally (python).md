@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:02:32
-updated: 2023-07-12T10:50:51
+updated: 2023-07-15T21:33:03
 title: try - except - else - finally (python)
 ---
 
@@ -23,7 +23,6 @@ finally:
     # 얘가 존재하는 이유는 예외 발생시에도 무조건 실행하기 때문에
     # 동기화 문제를 해결할 타이밍을 제공할 수 있다.
 ```
-
 
 ```python
 try:
@@ -50,6 +49,5 @@ class FxxxedUpError(Exception):
 
 raise FxxxedUpError
 ```
-
 
 {% endraw %}

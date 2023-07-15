@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-01T09:31:22
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230501 estsoft - python - convention, types, variables, int, float
 ---
 - [오늘자 google colab 주소](https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing)
@@ -18,12 +18,14 @@ title: 20230501 estsoft - python - convention, types, variables, int, float
 	- `isinstance(variable, type)`을 사용하여 변수의 타입을 런타임에 체크할 수 있다.
 	- 속성
 		- 모든 타입은 `class`이며, 그 안에 들어있는 메서드, 매직 메서드, 멤버들을 **속성**이라고 부른다. 이때 사용자는 파이썬 표준 라이브러리 안에 있는 클래스들의 속성을 변경할 수도, 추가할 수도 있다. 권장하지는 않지만 때로 확장이 필요한 경우에 고민해 보면 좋을 것 같다. (래퍼클래스에 매직메서드 구현이면 군침이 도는걸)
+
 		```python
 		class int(int):
 			def _add__(self, a):
 				return 'hello, world!'
 		int('10') + int('10') # 신기하게도 'hello, world'가 나온다!
 		```
+
 - formatting
 	- `print(f'{"hello":<10}')` => 10칸을 사용하여 왼쪽 정렬
 	- `print(f'{"hello":>10}')` => 10칸을 사용하여 오른쪽 정렬
@@ -45,6 +47,7 @@ title: 20230501 estsoft - python - convention, types, variables, int, float
 	- 
 
 ---
+
 # 멘토의 조언
 
 >여러분, 실력자 분들은 어떻게 정리하셔야 할지 잘 모르시겠죠? 그래서 준비해 보았습니다.
@@ -57,7 +60,5 @@ title: 20230501 estsoft - python - convention, types, variables, int, float
 2. 만약 모르는 문법이 없고, 거의 다 자신있다면 문법보다는 부족한 부분을 채워주세요. DB, ERD, 리눅스, AWS, HTTP 등이요. 실습도 해보시고, 여러 자료를 보면서 블로그로 정리해두시면 좋습니다. 역시나 부족한 부분에 수업하는 시간은 꼭 수업을 들으시고, 정리한 것을 확인하시고 복습해보세요.
 
 3. 조금 난이도 있는 알고리즘 문제는 저희 후반부에서도 다루니 조금 기다리셔도 좋습니다. 다만 지금 공부를 하고 싶으시다면 저는 책으로는 "파이썬 알고리즘 인터뷰"를 권해드립니다. 제가 알고리즘 책 중 가장 좋아하는 책이에요. 🙂 상길님이 카카오 코테 출제위원이셨습니다. 유형도 잘 정리가 되어 있고요.
-
-
 
 > Python 책으로는 O'reilly Learning python 책이 정말 잘 나왔어요. 다만 이 책이 초급자 대상으로 나오긴 했으나 초급자에게 권하긴 힘듭니다. 1000페이지씩 상, 하로 나뉘어 있어요. 6판 나오면서 분량도 더 늘었다 들었습니다. O'reilly 시리즈 중 전문가를 위한 파이썬 FLUENT PYTHON도 정말 좋았습니다. 위 책은 페이지부터 압박이라서 한국 서적 중에서는 저는 ‘파이썬 코딩 도장’이 정말 괜찮았어요. 영상강의도 무료로 제공해주고, 텍스트도 웹으로 공개되어 있습니다. ‘점프 투 파이썬’도 유명하긴 한데 저희 수업에서 다루는 내용은 이보다 한 단계 위입니다. 파이썬을 이미 조금 다루실 수 있으신 분은 ‘컴퓨터 사이언스 부트캠프 with 파이썬’이거 보시면 한 단계 업 되실겁니다!

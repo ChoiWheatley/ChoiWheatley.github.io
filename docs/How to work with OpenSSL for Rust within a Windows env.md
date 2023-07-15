@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-22T00:27:12
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: How to work with OpenSSL for Rust within a Windows env
 ---
 - https://stackoverflow.com/questions/55912871/how-to-work-with-openssl-for-rust-within-a-windows-development-environment#61921362
@@ -19,7 +19,7 @@ title: How to work with OpenSSL for Rust within a Windows env
 	5.  run `./vcpkg.exe install openssl:x64-windows-static`
 	6.  run `./vcpkg.exe integrate install`
 	7.  run `set VCPKGRS_DYNAMIC=1` (or simply set it as your environment variable)
-- 추가적으로 `OPENSSL_DIR` 환경변수를 vcpkg 안에 탑재돼 있는 openssl 폴더를 지정했더니 정상적으로 컴파일이 되는 것을 확인했다. [[How to work with OpenSSL for Rust within a Windows env#^sfliedi|screenshot of file explorer]] | [[How to work with OpenSSL for Rust within a Windows env#^sfliedi|screenshot of env editor]]
+- 추가적으로 `OPENSSL_DIR` 환경변수를 vcpkg 안에 탑재돼 있는 openssl 폴더를 지정했더니 정상적으로 컴파일이 되는 것을 확인했다. [[How to work with OpenSSL for Rust within a Windows env#^sfliedi|screenshot of file explorer]] | [[How to work with OpenSSL for Rust within a Windows env#^sfliedi|screenshot of env editor]]  
 	I also had to do `$env:OPENSSL_DIR="<vcpkg>\installed\x64-windows-static"`
 - 이제 WSL에서도 되려나? 아직 안된다. 아마 위에서 설정한 `PATH`를 WSL 환경에도 추가해야 할 것 같아 보인다. [How to set env variable for everyone under my linux system?](https://stackoverflow.com/questions/1641477/how-to-set-environment-variable-for-everyone-under-my-linux-system#1641531)
 	- 안된다! `export OPENSSL_DIR='/mnt/c/vcpkg/installed/x64-windows-static/'` 으로 설정했는데도 안된다. 대신 다른 오류메시지가 나왔다. [[How to work with OpenSSL for Rust within a Windows env#^xm109w|error message]] 
@@ -27,8 +27,9 @@ title: How to work with OpenSSL for Rust within a Windows env
 - PROFIT 💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸💸[[How to work with OpenSSL for Rust within a Windows env#^whf4bg|screenshot]] 
 
 ---
-![[Pasted image 20230422133245.png|400]] ^uvrhun
+![[Pasted image 20230422133245.png|400]] ^uvrhun  
 ![[Pasted image 20230422135041.png|400]]^sfliedi
+
 ```
 error: failed to run custom build command for `openssl-sys v0.9.85`
 
@@ -77,5 +78,5 @@ Caused by:
 thread 'main' panicked at 'OpenSSL libdir at `["/mnt/c/vcpkg/installed/x64-windows-static/lib"]` does not contain the required files to either statically or dynamically link OpenSSL', /home/chltm/.cargo/registry/src/github.com-1ecc6299db9ec823/openssl-sys-0.9.85/build/main.rs:403:13
 ```
 
-^xm109w
+^xm109w  
 ![[Pasted image 20230422222134.png]] ^whf4bg

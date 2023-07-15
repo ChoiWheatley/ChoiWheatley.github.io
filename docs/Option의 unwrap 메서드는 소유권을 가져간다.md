@@ -3,10 +3,11 @@ description:
 aliases: 
 tags: 
 created: 2023-03-17T16:46:11
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Option의 unwrap 메서드는 소유권을 가져간다
 ---
 [unwrap](https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap) 메서드의 함수 시그니처로 `&self` 가 아닌, `self`를 받는다. 그래서 다음 코드는 컴파일 에러를 발생시킨다.
+
 ```rust
 fn get_or_default(arg: &Option<String>) -> String {
 	if arg.is_none() {
@@ -16,7 +17,9 @@ fn get_or_default(arg: &Option<String>) -> String {
 	s.clone()
 }
 ```
+
 `arg: Option<String>`를 빌려온 주제에 `unwrap`으로 String을 Consume 하려고 한다.즉, arg를 훔친것도 모자라 내부상태마저도 바꾸려는 짓을 하는 것이다. 다음은 에러메시지이다.
+
 ```
 error[E0507]: cannot move out of `*arg` which is behind a shared reference
    --> test.rs:7:13

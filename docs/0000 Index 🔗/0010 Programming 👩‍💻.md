@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T16:35:02
+updated: 2023-07-15T21:32:55
 ---
 
 parent link: [[0000 Index 🔗|index]]
@@ -41,17 +41,20 @@ parent link: [[0000 Index 🔗|index]]
 - https://www.44bits.io/
 
 ___
+
 # 학습 플랫폼
 
 - http://www.kocw.net/home/index.do
 - https://www.kmooc.kr/coursera
 - [[개발자가 꼭 알아야할 GitHub 리포지토리 모음]]
 ---
+
 # Utilities
 
 ![[0110 Utility 🔧]]
 
 ---
+
 # Questions
 
 - 구현 중에 갑자기 다른 코드로 갈아엎고 싶다는 충동이 든다. 어떻게 해야할까?

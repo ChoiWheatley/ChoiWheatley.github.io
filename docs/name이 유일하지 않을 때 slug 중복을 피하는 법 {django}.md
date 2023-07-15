@@ -3,10 +3,12 @@ aliases:
 tags: 
 description:
 created: 2023-06-19T13:39:35
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: name이 유일하지 않을 때 slug 중복을 피하는 법 {django}
 ---
+
 # Question
+
   
 안녕하세요! 에러 처리의 일환으로 팀원들이 겪은(겪을) 다양한 에러에 대하여 조사를 진행하고 있습니다. 2023-06-17 진행한 회의에서 book name의 unique를 해제할 시 발생할 slug(handle)의 중복문제를 해결하는 과정에 대하여 해당 스레드의 답글로 달아주시면 감사하겠습니다!
 

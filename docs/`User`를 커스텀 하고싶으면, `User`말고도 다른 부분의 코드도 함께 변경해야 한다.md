@@ -3,10 +3,12 @@ description:
 aliases: 
 tags: 
 created: 2023-06-07T11:13:59
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: "`User`를 커스텀 하고싶으면, `User`말고도 다른 부분의 코드도 함께 변경해야 한다"
 ---
+
 # TL;DR
+
 default `User`를 의존하는 코드
 - forms.py
 	- 커스텀 폼의 `Meta`를 만들어 내가 넣고 싶은 필드만 `fields`에 넣는다. 이건 쉽지.
@@ -14,6 +16,7 @@ default `User`를 의존하는 코드
 	- `django.contrib.auth.UserAdmin` 소스코드를 잘 읽어보면 `form`, `add_form`이라는 멤버가 있 다. 디폴트로 각각 `UserChangeForm`과 `UserCreationForm`을 composite 패턴 형태로 가지고 있는데, 여기에서 내가 오버라이딩한 `username`을 참조하는 것이었다. 따라서 이 멤버들을 오버라이드 하여야 한다.
 
 # Question
+
 > `UserCreationForm` requires `username` field. But I already override `username` with `email`. How can I resolve this error? Error message:
 
 ```
@@ -63,6 +66,7 @@ django.core.exceptions.FieldError: Unknown field(s) (username) specified for Use
 ```
 
 # Answer
+
 To resolve the error, you need to update the `UserCreationForm` to use the `email` field instead of the `username` field. Follow these steps:
 
 1. Create a custom form, `CustomUserCreationForm`, that inherits from `UserCreationForm`.

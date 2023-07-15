@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-18T17:59:47
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: axum service
 ---
 - [into_make_service](https://docs.rs/axum/latest/axum/routing/struct.Router.html#method.into_make_service)

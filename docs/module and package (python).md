@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:17:36
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: module and package (python)
 ---
+
 # Module and Package
 
 현재 폴더에 `test1.py`라는 파일을 생성하였고 `hello` 함수, `Human` 클래스, `name`, `age` 변수를 이쪽에서 임포트 할 수 있다.

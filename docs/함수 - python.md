@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-01T13:06:30
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 함수 - python
 ---
 - 함수
@@ -36,5 +36,5 @@ pow3 = 제곱(3)
 pow3_4 = pow3(4)
 ```
 
-[[closures, factory functions (python)]]
+[[closures, factory functions (python)]]  
 [[generator function - python|generator]]도 클로저이다.

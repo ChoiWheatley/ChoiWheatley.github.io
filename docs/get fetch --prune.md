@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T10:49:23
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: get fetch --prune
 ---
 [SOF](https://stackoverflow.com/questions/38512124/visual-studio-code-remove-branches-deleted-on-github-that-still-show-in-vs-cod)

@@ -3,22 +3,23 @@ description:
 aliases: 
 tags: 
 created: 2023-03-29T20:40:17
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Ord is total order, PartialOrd is partial order
 ---
 - [실험을 진행한 코드](https://github.com/ChoiWheatley/my-first-rust/blob/c55e7e848ccc2eefb0838b4ba44a3d7e86922f07/self_ref/src/step_006_self_ref_cmp.rs)
 - [Ord 문서](https://doc.rust-lang.org/std/cmp/trait.Ord.html)
 - [PartialOrd 문서](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)
-- [전순서, 부분순서 namu](https://namu.wiki/w/%EC%88%9C%EC%84%9C%20%EA%B4%80%EA%B3%84)
-다음 모듈은 `Ord` 트레이트의 속성에 대하여 실험을 진행하는 코드이다.
-복합 구조체 `Node`에 대하여 노드의 어떤 속성을 기준으로 비교를 진행하는지
+- [전순서, 부분순서 namu](https://namu.wiki/w/%EC%88%9C%EC%84%9C%20%EA%B4%80%EA%B3%84)  
+다음 모듈은 `Ord` 트레이트의 속성에 대하여 실험을 진행하는 코드이다.  
+복합 구조체 `Node`에 대하여 노드의 어떤 속성을 기준으로 비교를 진행하는지  
 확인한 결과, 모든 멤버들에 대한 비교를 진행하는 것으로 확인됐다.
 
-[Ord](https://doc.rust-lang.org/std/cmp/trait.Ord.html)의 첫번째 줄에서
+[Ord](https://doc.rust-lang.org/std/cmp/trait.Ord.html)의 첫번째 줄에서  
 이미 다음 글귀를 확인할 수 있었다. (좀 일찍 볼걸..)
 
-> Trait for types that form a **total order**
+> Trait for types that form a **total order**  
 > 전순서 집합을 형성하는 트레이트
+
 ```rust
 mod tutorial {
     use std::collections::BTreeSet;
@@ -87,7 +88,7 @@ mod tutorial {
 
 # 전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.
 
-https://doc.rust-lang.org/std/cmp/trait.Ord.html#how-can-i-implement-ord
+https://doc.rust-lang.org/std/cmp/trait.Ord.html#how-can-i-implement-ord  
 전순서가 아닌 비교 트레이트는 `PartialOrd` 이다. `Ord`를 구현하기 위해선 우선 `PartialOrd` + `Eq` ( + `PartialEq` ) 를 만족하여야 한다. 아래 코드는 height에 대해서만 비교를 수행하는 커스텀 `Ord`를 보여주고 있다.
 
 ```rust

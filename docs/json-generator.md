@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-09T16:51:13
-updated: 2023-07-12T10:47:49
+updated: 2023-07-15T21:33:04
 title: json-generator
 ---
 
@@ -12,6 +12,7 @@ title: json-generator
 - https://json-generator.com/
 - 무작위 JSON을 얼마든지 뽑아낼 수 있게 만들어주는 사이트이다. 완전 개쩐다.
 - 예를 들어서 아래 코드는 모의 회원 데이터를 생성해준다.
+
 ```JSON
 [
   '{{repeat(5, 7)}}',
@@ -26,6 +27,7 @@ title: json-generator
 ```
 
 output:
+
 ```json
 [
   {

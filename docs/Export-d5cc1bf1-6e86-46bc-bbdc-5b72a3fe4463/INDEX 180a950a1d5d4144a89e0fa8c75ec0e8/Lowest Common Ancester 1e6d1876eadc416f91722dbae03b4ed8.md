@@ -5,12 +5,13 @@ tags:
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:30
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8
 ---
+
 # Lowest Common Ancester
 
-상태: 풀이완료
+상태: 풀이완료  
 태그: graph, tree
 
 [영준이의 진짜 BFS - swea](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LnipaDvwDFAXc)

@@ -4,7 +4,7 @@ tags:
 description:
 title: POST와 DELETE의 차이
 created: 2023-06-10T11:41:00
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 ---
 - 멱등성의 차이.
 	- POST가 멱등성이 없다. => 서버의 상태를 계속 변경하다.

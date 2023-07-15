@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T14:10:19
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django internal class Meta
 ---
 - [doc](https://docs.djangoproject.com/en/4.1/ref/models/options/)
@@ -19,4 +19,3 @@ https://docs.djangoproject.com/en/4.1/ref/models/options/
 # Form Meta
 
 https://docs.djangoproject.com/en/4.1/ref/forms/fields/
-

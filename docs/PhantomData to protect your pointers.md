@@ -3,11 +3,11 @@ description:
 aliases: 
 tags: 
 created: 2023-04-09T22:20:22
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: PhantomData to protect your pointers
 ---
 - https://rust-unofficial.github.io/too-many-lists/sixth-variance.html
-- 아.................. 이건 또 뭔데, 빙한테 물어보자...
+- 아.................. 이건 또 뭔데, 빙한테 물어보자...  
 PhantomData is a Rust feature that is used when working with unsafe code. It is used when types or lifetimes are logically associated with a struct, but not actually part of a field. This most commonly occurs with lifetimes. For instance, the Iter for `&'a [T]` is (approximately) defined as follows:
 
 ```rust

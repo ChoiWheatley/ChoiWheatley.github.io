@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-01T13:07:05
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 타입 - python
 ---
 - 변수타입

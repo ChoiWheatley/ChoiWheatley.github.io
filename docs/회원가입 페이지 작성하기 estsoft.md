@@ -3,12 +3,13 @@ description:
 aliases: 
 tags: 
 created: 2023-04-28T09:13:40
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 회원가입 페이지 작성하기 estsoft
 ---
 - [notion assignment requirement](https://paullabworkspace.notion.site/9f94fb9829d74db9b6961484aaf97a8b)
 - [결과물 코드 - join.html](https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/join.html) | [join.css](https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/join.css) |   ![[Pasted image 20230428173142.png]]
 - "HTML/CSS 실습" 이라 적혀있는 헤더는 지금은 무시하고, 가운데 있는 회원가입 파트만 눈여겨 보자.
+
 # what i had learned
 
 - `<fieldset>`과 `<legend>` 

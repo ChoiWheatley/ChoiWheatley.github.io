@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-29T10:26:57
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: getattr, setattr {python}
 ---
 - [docs.org](https://docs.python.org/3/library/functions.html#setattr)

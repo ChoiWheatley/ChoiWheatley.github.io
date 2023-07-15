@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-04T23:42:39
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Ref map can make new Ref for borrowed data
 ---
 - https://doc.rust-lang.org/std/cell/struct.Ref.html#method.map

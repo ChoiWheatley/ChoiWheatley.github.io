@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-30T16:44:39
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 프론트엔드 부트캠프, 엘리스 SW 엔지니어 트랙
 ---
 - [접수 링크](https://elice.training/track/sw?utm_source=vertical&utm_medium=baekjoon&utm_campaign=topbanner_sw5&utm_content=i_sw5_%EB%B9%A0%EB%A5%B8%EC%A0%84%ED%98%95_230327)

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T12:30:27
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: set_password VS update_session_auth_hash {django}
 ---
 - [github issue](https://github.com/ESTsoft-Book-Project/bookstore/issues/15)

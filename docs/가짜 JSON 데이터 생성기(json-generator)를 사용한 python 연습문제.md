@@ -3,13 +3,14 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:03:18
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: 가짜 JSON 데이터 생성기(json-generator)를 사용한 python 연습문제
 ---
 
 [[json-generator]]의 도움을 받아 실제 JSON 형식으로부터 데이터를 추출하는 연습을 해 보는 것이 좋다고 한다. 어쨌든 생성한 회원들의 정보는 다음과 같을 때 
 1. 회원들의 age 평균을 구하라.
 2. 회원들의 남녀 성비를 구하라.
+
 ```python
 data = [
   {

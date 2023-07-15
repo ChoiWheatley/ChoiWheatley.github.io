@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T09:33:14
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort
 ---
+
 # Tree
 
 > Tree는 방향성이 없고 사이클이 없는 그래프를 지칭한다.
@@ -17,15 +18,14 @@ title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion so
 
 ## 트리 구현
 
-
 ![[Pasted image 20230518131309.png|400]]
 
 제네릭 코드를 짜기 위해서 [typing.TypeVar](https://docs.python.org/3/library/typing.html#typing.TypeVar)를 찾아볼 필요가 있다. [[typing.TypeVar (python)]]
 
-
 # LIS (Longest Increasing Subsequence)
-[[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]
-https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다. 
+
+[[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]  
+https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.  
 ^4ygbua
 
 # Sort
@@ -125,7 +125,7 @@ assert sorted(ls) == merge_sort_recur(ls)
 
 ## quick sort
 
-괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 `left + [pivot] + right` 하면 되어서 손도 깔끔하다. 
+괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 `left + [pivot] + right` 하면 되어서 손도 깔끔하다.  
 ![[84c12ea600ff72a816c6672bcbd5e82d.png|100]]
 
 ```python

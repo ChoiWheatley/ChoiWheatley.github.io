@@ -3,7 +3,7 @@ description:
 aliases: 
 tags:
 created: 2023-05-15T15:06:09
-updated: 2023-07-12T10:50:15
+updated: 2023-07-15T21:33:03
 title: re - regex python package
 ---
 
@@ -12,8 +12,8 @@ title: re - regex python package
 
 - [[regex]]
 - [weniv notion link](https://paullabworkspace.notion.site/1c57fc683c33468d95e7a490b6f66c95#d1317f3fd16e4d318cccec4906a3ab49)
-* [regex google colab](https://colab.research.google.com/drive/1MpAPDAHo1CcWa1gB85BkH1CEch3DHXmy?usp=sharing)
-* [ormi-master - regex.ipynb](https://github.com/ChoiWheatley/ormi-master/blob/main/python/regex.ipynb) ==> 여기로 가면 실습결과도 바로 볼 수 있어서...
+- [regex google colab](https://colab.research.google.com/drive/1MpAPDAHo1CcWa1gB85BkH1CEch3DHXmy?usp=sharing)
+- [ormi-master - regex.ipynb](https://github.com/ChoiWheatley/ormi-master/blob/main/python/regex.ipynb) ==> 여기로 가면 실습결과도 바로 볼 수 있어서...
 
 ```python
 # 1
@@ -26,35 +26,35 @@ re.findall(r'([0-9]|10)([SDT])([\*\#]?)', '1S2D*3T')
 
 # 자주 쓰는 re 메서드들
 
-* `compile` : 패턴 컴파일
-* [`match`](https://docs.python.org/3/library/re.html#re.match)
-	* 문자열의 앞 부분이 매치되는가를 체크, 추출
-* [`sub`](https://docs.python.org/3/library/re.html#re.sub)
-	* 매치된 부분을 치환
-* search() : 선두에 한해서 매치하는지를 체크, 추출
-* [`findall`](https://docs.python.org/3/library/re.html#re.findall) : 매치된 부분 모두 리스트 반환
-* [`finditer`](https://docs.python.org/3/library/re.html#re.finditer) : 정규식과 매치되는 모든 문자열(substring)을 반복 가능한 객체로 리턴한다.
-* [`spilt`](https://docs.python.org/3/library/re.html#re.Pattern.split) : 정규표현 패턴으로 문자열을 분할
+- `compile` : 패턴 컴파일
+- [`match`](https://docs.python.org/3/library/re.html#re.match)
+	- 문자열의 앞 부분이 매치되는가를 체크, 추출
+- [`sub`](https://docs.python.org/3/library/re.html#re.sub)
+	- 매치된 부분을 치환
+- search() : 선두에 한해서 매치하는지를 체크, 추출
+- [`findall`](https://docs.python.org/3/library/re.html#re.findall) : 매치된 부분 모두 리스트 반환
+- [`finditer`](https://docs.python.org/3/library/re.html#re.finditer) : 정규식과 매치되는 모든 문자열(substring)을 반복 가능한 객체로 리턴한다.
+- [`spilt`](https://docs.python.org/3/library/re.html#re.Pattern.split) : 정규표현 패턴으로 문자열을 분할
 
-* 반환 객체의 값
-    * group() : 매치된 문자열
-    * groups() : 매치된 문자열 전체
-    * start() : 매치된 문자열의 시작 위치
-    * end() : 매치된 문자열의 끝 위치
-    * span() : 매치된 문자열의 시작과 끝
+- 반환 객체의 값
+    - group() : 매치된 문자열
+    - groups() : 매치된 문자열 전체
+    - start() : 매치된 문자열의 시작 위치
+    - end() : 매치된 문자열의 끝 위치
+    - span() : 매치된 문자열의 시작과 끝
 
-* 컴파일 옵션(플래그)
-    * 사용 예
-	
+- 컴파일 옵션(플래그)
+    - 사용 예
+
     ```python
     re.compile('[a-z]+', re.I)
     ```
-	
-    * `re.DOTALL` or `re.S ` : 줄바꿈 문자까지 모두 매칭
-    * `re.IGNORECASE` or `re.I` : 대소문자 구분하지 않음
-    * `re.MULTILINE` or `re.M` : ^, & 등의 매칭 패턴을 라인마다 적용
-    * `re.VERBOSE` or `re.X` : 아래와 같이 # 으로 주석문을 사용할 수 있음
-	
+
+    - `re.DOTALL` or `re.S ` : 줄바꿈 문자까지 모두 매칭
+    - `re.IGNORECASE` or `re.I` : 대소문자 구분하지 않음
+    - `re.MULTILINE` or `re.M` : ^, & 등의 매칭 패턴을 라인마다 적용
+    - `re.VERBOSE` or `re.X` : 아래와 같이 # 으로 주석문을 사용할 수 있음
+
     ```python
     a = re.compile(r"""\d +  # the integral part
                    \.    # the decimal point
@@ -62,16 +62,16 @@ re.findall(r'([0-9]|10)([SDT])([\*\#]?)', '1S2D*3T')
     b = re.compile(r"\d+\.\d*")
     ```
 
-* tip
-    * 같은 패턴입니다.
-	
+- tip
+    - 같은 패턴입니다.
+
     ```python
     re.compile('\\\\section')
     re.compile(r'\\section')
     ```
-	
-    * {}를 표현하고 싶을 때에는 중괄호 2개, 또는 때에 따라 3개가 필요합니다.
-	
+
+    - {}를 표현하고 싶을 때에는 중괄호 2개, 또는 때에 따라 3개가 필요합니다.
+
     ```ipython
     re.compile(f'{{section}}')
     ```
@@ -86,7 +86,7 @@ regex에서 그룹을 사용하면 인덱싱을 돌릴 수 있다.
 
 # re.sub
 
-[re.sub - doc](https://docs.python.org/3/library/re.html#re.sub) 
+[re.sub - doc](https://docs.python.org/3/library/re.html#re.sub)  
 미국식, 영국식 날짜로 표기하시오
 
 ```
@@ -136,6 +136,7 @@ def solution(my_string):
 ```
 
 list comprehension 활용하여 풀기
+
 ```python
 def solution(my_string):
  	return sum(int(c) for c in my_string if c.isdigit())
@@ -159,6 +160,7 @@ solution(29423)
 https://school.programmers.co.kr/learn/courses/30/lessons/120913
 
 사실 슬라이싱 문법 사용하여 간단하게 풀어도 되지만 `findall`을 사용하여 풀어보자
+
 ```python
 # slicing 사용
 solution = lambda my_str, n: [my_str[l:l + n] for l in range(0, len(my_str), n)]
@@ -243,7 +245,6 @@ After:
 ```
 <h1>Hello world<h1>
 ```
-
 
 ```python
 import re

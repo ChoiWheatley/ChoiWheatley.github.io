@@ -10,7 +10,7 @@ tags:
  - "  "
 date created: Monday, February 27th 2023, 4:40:04 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 ---
 parent link: 
 - [[0011 Algorithms ♾️|algorithms]]
@@ -18,7 +18,9 @@ parent link:
 ---
 - [[병합정렬]]
 - [[퀵정렬]]
+
 # 관련 문제
+
 - [[염라대왕의 이름정렬]]
 - [[사탕 분배]]
 - [[Inversion Counting]]

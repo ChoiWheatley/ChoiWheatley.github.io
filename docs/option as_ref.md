@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-31T21:16:34
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: option as_ref
 ---
 - https://doc.rust-lang.org/std/option/enum.Option.html#method.as_ref
@@ -12,6 +12,7 @@ title: option as_ref
 # example
 
 Calculates the length of an `Option<String>` as an `Option<usize>` without moving the String. The map method takes the self argument by value, consuming the original, so this technique uses as_ref to first take an Option to a reference to the value inside the original.
+
 ```rust
 let text: Option<String> = Some("Hello, world!".to_string());
 // First, cast `Option<String>` to `Option<&String>` with `as_ref`,

@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-27T09:59:37
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230627 book-project
 ---
 - 급한불부터 끄기
@@ -20,6 +20,7 @@ title: 20230627 book-project
 # 2023-06-27T16:17:31 -- S3
 
 [[aws s3 static files in django]]
+
 # TODO
 
 - [ ] 프로필 페이지 비번 없이 삭제되고 수정하기 누르면 그냥 수정됨.  ^u6tdmc

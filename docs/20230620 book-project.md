@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-20T16:03:07
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230620 book-project
 ---
 - [[inventory modeling {book-project}{재고, 장바구니, 구매링크}]]

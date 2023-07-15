@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-14T17:16:42
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: outliner and zoom {bullet list 기반 문서}
 ---
 - [blog](https://luran.me/603)

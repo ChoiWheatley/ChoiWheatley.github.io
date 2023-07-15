@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T15:21:01
-updated: 2023-07-12T10:40:31
+updated: 2023-07-15T21:33:05
 title: django.urls.include(module, namespace)
 ---
 

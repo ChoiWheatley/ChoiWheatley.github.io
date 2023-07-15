@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:09:15
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)
 ---
 
@@ -14,6 +14,7 @@ title: repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)
 	- 나는 메서드 포함하고 싶지 않아 ====> `vars(self)`
 	- 나는 이거 좀 더 이쁘게 출력하고 싶은걸 ====> `pprint.pformat(vars(self))` [pprint doc](https://docs.python.org/3/library/pprint.html#pprint.pformat)
 	- 
+
 ```python
 from pprint import pformat
 

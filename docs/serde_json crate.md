@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-20T23:06:44
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: serde_json crate
 ---
 - https://docs.rs/serde_json/1.0.96/serde_json/

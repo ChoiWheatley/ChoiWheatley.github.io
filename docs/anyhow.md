@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-18T18:14:17
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: anyhow
 ---
 - https://docs.rs/anyhow/1.0.70/anyhow/

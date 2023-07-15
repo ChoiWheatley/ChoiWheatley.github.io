@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-08T11:18:53
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: firefox css uwp style
 ---
 https://github.com/Guerra24/Firefox-UWP-Style

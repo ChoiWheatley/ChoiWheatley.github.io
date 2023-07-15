@@ -3,10 +3,12 @@ aliases: 장바구니, 재고
 tags: 
 description:
 created: 2023-06-20T14:49:30
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: inventory modeling {book-project}{재고, 장바구니, 구매링크}
 ---
+
 # linked issue
+
 - [Cart's Goal](https://github.com/ESTsoft-Book-Project/bookstore/issues/72)
 - [Delete Cart elements on purchase success](https://github.com/ESTsoft-Book-Project/bookstore/issues/105)
 ---
@@ -23,6 +25,7 @@ title: inventory modeling {book-project}{재고, 장바구니, 구매링크}
 - 참고: [[purchase history]] 는 다른 개념이다. proposal에 넣어두면 좋겠다.
 
 # 장바구니팀 + 재고팀 목표
+
 - @최승현
 	- [v] inventory 브랜치를 구현 및 머지 후 장바구니 팀으로
 	- [ ] a 태그 "주문하기"에 POST 요청 추가하기

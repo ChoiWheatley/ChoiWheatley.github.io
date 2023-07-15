@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-25T09:43:25
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: From과 Into Trait를 사용하여 유연한 캐스팅 지원하기
 ---
 - https://www.geeksforgeeks.org/rust-from-and-into-traits/
@@ -23,6 +23,7 @@ fn main() {
 ### 커스텀 From
 
 이건 그냥 생성자잖아
+
 ```rust
 use std::conver::From;
 
@@ -46,6 +47,7 @@ fn main() {
 ### into helper function
 
 `From` 트레이트를 구현한 객체에 한하여 구체적인 타입을 명시한 변수에 할당될 객체를 자동으로 찾아서 `from`을 호출하게 해준다.
+
 ```rust
 // ...
 fn main() {
@@ -58,6 +60,7 @@ fn main() {
 ### Error handling with enum and From trait
 
 트레이트로 아예 타입변환에 대한 메서드를 정의해버렸기 때문에 early return (error propagation operator) `?` 연산자를 사용하여 해당 구문을 실패했을 경우 자동으로 일치하는 타입의 `from` 메서드를 호출하여 에러를 리턴하게 될 것이다.
+
 ```rust
 enum CliError{
 	IoError(io::Error),

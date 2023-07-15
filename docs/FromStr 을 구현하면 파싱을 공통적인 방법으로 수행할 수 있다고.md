@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-25T10:16:38
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: FromStr 을 구현하면 파싱을 공통적인 방법으로 수행할 수 있다고
 ---
 - https://doc.rust-lang.org/std/str/trait.FromStr.html

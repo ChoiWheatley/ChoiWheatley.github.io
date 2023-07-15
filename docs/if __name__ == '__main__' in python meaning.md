@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-02T14:45:33
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: "if __name__ == '__main__' in python meaning"
 ---
 - https://madplay.github.io/post/python-main-function

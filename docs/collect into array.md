@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-07T01:45:54
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: collect into array
 ---
 - https://stackoverflow.com/questions/26757355/how-do-i-collect-into-an-array#26757837

@@ -11,7 +11,7 @@ tags: [" algo/segment_tree  ", algo/segment_tree]
 state: "Pass"
 date created: Tuesday, February 14th 2023, 11:46:49 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 ---
 parent link: [[Segment Tree]]
 
@@ -22,9 +22,9 @@ parent link: [[Segment Tree]]
 길이가 n인 수열 $a_0, a_1, \cdots, a_{n-1} (0 ≤ a_i ≤ 10^9)$ 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라
 
 
-•  `0 i x`    :    $a_i$ 를 x로 바꾼다. $(0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9)$
+-  `0 i x`    :    $a_i$ 를 x로 바꾼다. $(0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9)$
 
-•  `1 l r`    :    $a_i$ (l ≤ i < r) 를 번갈아가며 더하고 뺀 값을 출력한다. (0 ≤ l < r ≤ n)  
+-  `1 l r`    :    $a_i$ (l ≤ i < r) 를 번갈아가며 더하고 뺀 값을 출력한다. (0 ≤ l < r ≤ n)  
                    범위를 만족하는 i의 개수가 홀수일 경우 $a_l - a_{l+1} + a_{l+2}  - \cdots - a_{r-2} + a_{r-1}$ 를 출력하고  
                    범위를 만족하는 i의 개수가 짝수일 경우 $a_l - a_{l+1} + a_{l+2}  - \cdots + a_{r-2} - a_{r-1}$ 를 출력하라.
 
@@ -40,6 +40,7 @@ parent link: [[Segment Tree]]
 각 테스트 케이스마다 1번 쿼리의 결과를 공백으로 구분하여 출력한다.
 
 입력
+
 ```text
 2  
 5 5  
@@ -58,6 +59,7 @@ parent link: [[Segment Tree]]
 ```
 
 출력
+
 ```text
 #1 3 3 9 -3  
 #2 5 5
@@ -175,7 +177,6 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 
 ```
 
-
 인터페이스 `jagged_sum` 을 보자. 만약 사용자가 `jagged_sum(1,3)`을 호출했다고 가정했을 때 콜스택은 다음과 같이 불릴 것이다.
 1. `_jagged_sum(3, 4) => empty()`
 2. `_jagged_sum(0, 2)`
@@ -186,9 +187,9 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 
 ![[Pasted image 20230216144523.png]]
 
-따라서 `_jagged_sum(0,1) = 2` 가 될 것이다. 이제 `_jagged_sum(0, 2)`를 구해보자.
-`left_child = _jagged_sum(0,1) = 2`
-`right_child = _jagged_sum(2,2) = 3` 
+따라서 `_jagged_sum(0,1) = 2` 가 될 것이다. 이제 `_jagged_sum(0, 2)`를 구해보자.  
+`left_child = _jagged_sum(0,1) = 2`  
+`right_child = _jagged_sum(2,2) = 3`  
 `_do_add(left_child, right_child, start: 0, end: 2)` 에서 문제가 터진다. sol1은 언제 더하고 언제 뺄지를 결정하기 위해 start, end 변수를 활용한다. mid - start 가 짝수이면 `left - right`를, 홀수이면 `left + right`를 계산하는 식이다. 하지만 이것은 틀렸다. 직접 종이에 풀었을 때 직관적으로 (1,1)에서 (2,2)를 빼서 -1이 나와야 하지만 사실 `_do_add` 가 봤을 땐 (0,1)과 (2,2)가 들어온 것으로 생각하고 (2,2)에서 (0,1)을 빼게 된다. 따라서 1이 나오게 되는 것이었다. 
 
 최종 계산은 마지막에 진행하기 위해 나는 문제를 처음부터 다시 풀어야만 했다.
@@ -197,9 +198,8 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 
 이번엔 아예 홀수번째 원소들의 부분합, 짝수번째 원소들의 부분합을 따로 계산해 저장한 다음 쿼리시 일단 그냥 무지성으로 더한 뒤에 홀수번째에서 짝수번째를 뺄지, 반대로 할지 결정하도록 만들어 보았다.
 
-Seq = {1,2,3,4,5}일때 예시:
+Seq = {1,2,3,4,5}일때 예시:  
 ![[Pasted image 20230216151218.png]]
-
 
 ```cpp
 constexpr bool _even(uint n) { return n % 2 == 0; }
@@ -307,14 +307,14 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
 
 ```
 
-
-마찬가지로 사용자가 `jagged_sum(1,3)`을 호출했다고 가정하자. 콜 스택 호출 순서는 그대로이므로 또 적지는 않겠다.
+마찬가지로 사용자가 `jagged_sum(1,3)`을 호출했다고 가정하자. 콜 스택 호출 순서는 그대로이므로 또 적지는 않겠다.  
 ![[Pasted image 20230216150214.png]]
 
 - `sum(0,2) = {2,3}` 
 - `sum(1,2) = {2,3}` 
 
 그냥 더하는 것에 불과하기 때문에 노드간에 합은 쉽게 구할 수 있다. 이제 `jagged_sum`의 마지막 줄을 보자. 이제 우린 left가 짝수인지만 확인하면 누구에서 누구를 빼야할지 쉽게 알 수 있다. 위의 예제의 경우 start = 1, 홀수 이므로 sum_odd에서 sum_even를 빼주면 된다. 따라서 2 - 3 = -1이 나오게 된다.
+
 ```cpp
 return _even(left) ? sum_even - sum_odd
 				   : sum_odd - sum_even

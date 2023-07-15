@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-02T00:24:24
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: docker-compose 명령어 모음
 ---
 - [sof](https://stackoverflow.com/questions/36884991/how-to-rebuild-docker-container-in-docker-compose-yml)

@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-04-25T09:26:49
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230425 estsoft - Network, VSCode settings, emmet syntax, meta
 ---
+
 # 쌩기초
 
 - [수업을 시작하기 전 알아야 할 기초 상식](https://paullabworkspace.notion.site/8444faa97f724967b6ee1da374fd0d07)
@@ -28,6 +29,7 @@ title: 20230425 estsoft - Network, VSCode settings, emmet syntax, meta
 - DB == MongoDB, MySQL, ...
 
 ---
+
 # VSCode 환경설정 및 단축키
 
 - https://paullabworkspace.notion.site/VSC-e89ec679f7a44c2882012ec49f164ced
@@ -44,14 +46,17 @@ title: 20230425 estsoft - Network, VSCode settings, emmet syntax, meta
 	- (설치) rainbow csv (추천) : CSV 잘 보이도록
 
 # emmet 문법
+
 https://docs.emmet.io/cheat-sheet/
 - lorem 이거 신기하네
 - [한글입숨](http://hangul.thefron.me/)도 있다. 무의미한 한글로 채워넣는다.
 
 # Github
+
 [[알잘딱 GitHub 핵심개념]]
 
 # 제안
+
 - 고급반 운영할 계획, (ex. 카카오 공채) 질문 리스트 공유하여 쌓아놓고 서로 모의면접도 볼 수 있게끔.
 - 중급자를 위한 자료는 미리 드리려고 한다. 인프런 중급자 파이썬 
 - 모자란거 2%를 채우려고 하지 말고 차라리 다른 98%에 시간을 투자할 것.

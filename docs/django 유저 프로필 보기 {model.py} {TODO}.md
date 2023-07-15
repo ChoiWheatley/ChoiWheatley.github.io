@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-02T13:46:57
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: django 유저 프로필 보기 {model.py} {TODO}
 ---
 [[django Creating custom user model using AbstractUser in django-RestFramework]]
@@ -27,7 +27,7 @@ The field blog.Article.likes was declared with a lazy reference to 'users.user',
 The field blog.Article_likes.user was declared with a lazy reference to 'users.user', but app 'users' isn't installed.
 ```
 
-[DB Queries in Django {doc}](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
+[DB Queries in Django {doc}](https://docs.djangoproject.com/en/4.2/topics/db/queries/)  
 [[django dependency issue 발생 시 AUTH_USER_MODEL이 제대로 박혀있는지 확인하라]]
 
 > Due to limitations of Django’s dynamic dependency feature for swappable models, the model referenced by **AUTH_USER_MODEL** must be created in the first migration of its app (usually called 0001_initial); otherwise, you’ll have dependency issues.

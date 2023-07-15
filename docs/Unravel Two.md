@@ -6,7 +6,7 @@ categories:
  - 2인 협동
 aliases: 
 tags: game/co_op 
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Unravel Two
 ---
 parent link: 

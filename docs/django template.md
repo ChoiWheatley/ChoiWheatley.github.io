@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T11:40:54
-updated: 2023-07-12T10:40:14
+updated: 2023-07-15T21:30:20
 title: django template
 ---
 {% raw %}
@@ -57,7 +57,7 @@ title: django template
 
 # context
 
-[[django template {context}]]로 가세요.
+[[django template {context}]]로 가세요.  
 [[get_context_data, get_queryset { django } { ListView }]]
 
 {% endraw %}

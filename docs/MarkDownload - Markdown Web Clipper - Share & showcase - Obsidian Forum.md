@@ -7,7 +7,7 @@ source: https://forum.obsidian.md/t/markdownload-markdown-web-clipper/173
 author: 
 date created: Sunday, February 12th 2023, 12:31:25 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: MarkDownload - Markdown Web Clipper - Share & showcase - Obsidian Forum
 ---
 

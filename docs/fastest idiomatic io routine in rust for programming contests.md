@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: useful
 created: 2023-03-30T22:07:38
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: fastest idiomatic io routine in rust for programming contests
 ---
 - [src](https://stackoverflow.com/questions/56449027/fastest-idiomatic-i-o-routine-in-rust-for-programming-contests)
@@ -64,8 +64,10 @@ impl<B: BufRead> Scanner<B> {
     }
 }
 ```
+
 - [백준 고인물의 코드](https://www.acmicpc.net/source/35458381)
 	- 특별히 io 속도가 빠를 것처럼 보이지 않는뎅? 다만 `read` 메서드를 제너릭하게 구현함으로써 원하는 타입을 지정만 하면 마치 `cin`처럼 읽을 수 있게 했다는 점이 얻어갈 만 하다.
+
 ```rust
 /* FAST IO */ 
 use std::io::{Read, Write}; 

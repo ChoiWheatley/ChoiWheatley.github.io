@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-11T17:50:52
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: espanso text converter
 ---
 - [doc](https://espanso.org/docs/get-started/)

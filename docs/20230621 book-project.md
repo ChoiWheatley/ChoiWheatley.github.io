@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-21T09:21:06
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230621 book-project
 ---
 - [깃허브 이슈 커밋이나 PR로 자동으로 닫히게 하는 방법 {SOF}](https://stackoverflow.com/questions/60027222/github-how-can-i-close-the-two-issues-with-commit-message)

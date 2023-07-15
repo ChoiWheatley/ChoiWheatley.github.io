@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: english
 created: 2023-03-09T18:51:34
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: admonition
 ---
 책망, 경고, 충고

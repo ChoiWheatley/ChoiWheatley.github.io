@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-07T01:37:01
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: crate ndarray
 ---
 - https://rust-lang-nursery.github.io/rust-cookbook/science/mathematics/linear_algebra.html

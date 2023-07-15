@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-23T20:41:10
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: Login Auth-Token Cookies
 ---
 
@@ -15,5 +15,5 @@ title: Login Auth-Token Cookies
 
 ---
 
-![[Pasted image 20230423204300.png]] ^j5gkbi
+![[Pasted image 20230423204300.png]] ^j5gkbi  
 ![[Pasted image 20230423204824.png]] ^rwj2f7

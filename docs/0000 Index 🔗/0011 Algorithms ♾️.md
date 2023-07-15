@@ -12,11 +12,12 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:32:55
 ---
 parent link: [[0000 Index 🔗]] [[0010 Programming 👩‍💻]] 
 
 ___
+
 # ReadMe
 
 본격적인 포스팅은 [노션](https://choiwheatley.notion.site/180a950a1d5d4144a89e0fa8c75ec0e8?v=bfeb6746135f434b94a0851d1d09e96a)에 올리고 옵시디언은 약간 치트시트같은 느낌으로
@@ -29,7 +30,9 @@ ___
 
 
 ---
+
 # INDEX
+
 - problems
 	- [최강박조 백준](https://www.acmicpc.net/group/5673)
 	- [코드레인저 - ESTsoft 백준](https://www.acmicpc.net/group/17719)
@@ -63,7 +66,9 @@ ___
 - [[two pointer]]
 
 ---
+
 # 문제풀이 회고용
+
 - [[11602 카드게임]] 
 - [[leet_743_network_delay_time -- dijkstra -- graph -- min heap]]
 - [[leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap]]

@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T09:10:31
-updated: 2023-07-12T10:47:02
+updated: 2023-07-15T21:33:04
 title: form errors{ django }
 ---
 

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T17:16:09
-updated: 2023-07-12T10:41:01
+updated: 2023-07-15T21:33:04
 title: get_context_data, get_queryset { django } { ListView }
 ---
 

@@ -3,9 +3,10 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T10:10:41
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: F(), Q() in {django query}
 ---
+
 # `F()`
 
 https://docs.djangoproject.com/en/4.2/ref/models/expressions/#f-expressions
@@ -48,5 +49,3 @@ Poll.objects.get(
     Q(pub_date=date(2005, 5, 2)) | Q(pub_date=date(2005, 5, 6)),
 )
 ```
-
-

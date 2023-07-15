@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T10:31:27
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: python venv 환경설정
 ---
+
 # for UNIX-based systems
 
 1. [pyenv](https://stackoverflow.com/a/59268046/6428901)를 사용하여 사용할 파이썬의 버전을 명시할 수 있음.

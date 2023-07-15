@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:19:29
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: file-io (python)
 ---
+
 # Write File
 
 ```python

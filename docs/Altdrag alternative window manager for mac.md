@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-20T18:17:20
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: Altdrag alternative window manager for mac
 ---
 - [altdrag]()

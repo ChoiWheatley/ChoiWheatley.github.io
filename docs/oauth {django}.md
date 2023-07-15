@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-21T20:39:04
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:04
 title: oauth {django}
 ---
 - [YT](https://www.youtube.com/watch?v=Gk9tsLHMMsM&list=WL&index=1&t=812s)

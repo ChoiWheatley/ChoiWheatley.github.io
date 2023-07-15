@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:32:55
 ---
 
 parent link: [[0000 Index 🔗|index]] [[0010 Programming 👩‍💻]] 
@@ -21,11 +21,13 @@ parent link: [[0000 Index 🔗|index]] [[0010 Programming 👩‍💻]]
 ![[SW 훈련센터 내가 아는대로 나열하기]]
 
 ___
+
 # Active
 
 - [[SSAFY 10기]]
 
 ---
+
 # Ended
 
 -  ~~[펄 어비스 테크 인턴십](https://www.pearlabyss.com/ko-KR/Company/Careers/detail?_jobOpeningNo=309)~~
@@ -53,6 +55,7 @@ ___
 - [[카카오 클라우드 스쿨 3기]]
 
 ___
+
 # Personal Information
 
 - 공군 기수 입대일, 제대일
@@ -73,5 +76,6 @@ ___
 	- https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576
 
 # 진로 관련
-[[채움 HRD 📈]] 로 이동하세요
+
+[[채움 HRD 📈]] 로 이동하세요  
 [[2023-05-14 정민영 교수님의 진로상담]]

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-07T21:39:31
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: Stacked Borrows in rust
 ---
 - https://rust-unofficial.github.io/too-many-lists/fifth-stacked-borrows.html
@@ -12,6 +12,7 @@ title: Stacked Borrows in rust
 - 그래서, Stacked Borrow가 무엇이냐 하면, 가끔 mutable reference aliasing을 시도할 때 볼 수 있는 컴파일 에러가 바로 그 설명을 한다.
 
 다음 코드는 컴파일 에러를 일으킨다.
+
 ```rust
 fn main() {
     let mut data = 10;
@@ -26,6 +27,7 @@ fn main() {
 ```
 
 무엇이 문제인가 보면, `ref2`가 레퍼런스를 아직 반납하지 않았는데 `ref1`이 갑자기 자기 것인 냥 사용하고 있다는 것이었다.
+
 ```
 error[E0503]: cannot use `*ref1` because it was mutably borrowed
  --> src/main.rs:6:5
@@ -40,6 +42,7 @@ error[E0503]: cannot use `*ref1` because it was mutably borrowed
 ```
 
 borrow checker는 여러 reborrowed reference들이 stack의 속성같이 alias 되도록 강제한다. 새로운 alias를 정의한다는 것은 마치 스택에서의 push와 같은 연산을 수행하고, 명시적으로 드랍하지는 않아도 마지막으로 그 alias를 사용한 직후 pop과 같은 연산을 수행한다. 위의 코드를 개념적으로 본다면 다음과 같을 수 있다. 각 블록 안에서는 해당 alias만 사용할 수 있다.
+
 ```rust
 let mut data = 10; {
 	let ref1 = &mut data; { // ref1 borrows data by mutable
@@ -51,7 +54,7 @@ let mut data = 10; {
 
 따라서, 이 컨셉에 따르면 `ref2` 블록 안에서 `ref1`을 사용하고 있기 때문에 마치 스택에 최상단 원소를 제거하지도 않은 채 중간 원소를 사용하는 것으로 바라볼 수 있고, 이는 곧 Stacked Borrow 규칙을 위반한 것이 된다.
 
-> Whatever's at the top of the borrow stack is "live" and knows it's effectively unaliased.
+> Whatever's at the top of the borrow stack is "live" and knows it's effectively unaliased.  
 > 빌린 스택의 꼭대기에 있는 것은 무엇이든지 간에 살아있고, 또한 효율적으로 별칭이 없다는 것을 알고 있습니다. (보장합니다)
 
 # Stacked Borrow가 뭔지는 이제 알겠어, 근데 왜 필요한 건데?
@@ -73,6 +76,7 @@ let mut data = 10; {
 # Shared references cannot be mutated even aliased
 
 한 번 불변으로 변수를 빌렸다면 하위 모든 reborrowed references들 또한 불변이어야 한다. (당연한거 아님?) unsafe pointer들은 그딴거 깡끄리 무시하고 아래처럼 `as *const i32 as *mut i32` 로 다시 가변 원시 포인터로 변환할 수 있는데, 이런 짓 하지 말란거임...
+
 ```rust
 fn main() {
     fn opaque_read(val: &i32) {
@@ -99,6 +103,7 @@ fn main() {
 # Safe pointers are tagged, unsafe ones aren't
 
 아래 코드는 문제를 낳지 않는다. `ptr2` 부터 `ptr5`까지 전부 `*mut i32` 타입인데, 레퍼런스 `ref1`로부터 내려받은 원시 포인터끼리는 빌림규칙이 적용되지 않는다. 따라서 순서를 뒤섞어 놓는다는 일로 MIRI가 불평을 늘어놓지 않는다는 것이다.
+
 ```rust
 fn opaque_read(val: &i32) {
 	println!("{}", val);

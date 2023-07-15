@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-21T11:25:46
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: image(media) 파일을 DB 이외의 로컬 저장소에서 관리하게 만들기 {django}
 ---
 - [Products image #44](https://github.com/ESTsoft-Book-Project/bookstore/pull/44)
@@ -20,6 +20,7 @@ title: image(media) 파일을 DB 이외의 로컬 저장소에서 관리하게 �
 - [[python os.path.join]]
 
 # FileField, ImageField
+
 [Managing files {docs.djangoproject.com}](https://docs.djangoproject.com/en/4.2/topics/files/)
 
 로컬 저장소를 활용하기 위해 장고는 기본적으로 `MEDIA_ROOT`, `MEDIA_URL` 세팅을 사용한다. 저장소에 대한 선택권은 우리에게 있다. [[File storage {django}]]를 확인해보라.
@@ -34,15 +35,19 @@ DB에는 파일이 들어가지 않는다. `FileField`나 `ImageField`의 경우
 파일명이나 파일 위치를 바꾸는 행위, 파일을 수정하는 행위는 반드시 해당 필드의 `save` 메서드 호출을 필요로 한다.
 
 # Static files
+
 [[How to manage static files (e.g. images, js, css) {django}]]로 가세요
 
 # FileReader js object
+
 [[FileReader {js}]]
 
 # File Storage
+
 [File storate {docs.djangoproject.com}](https://docs.djangoproject.com/en/4.2/topics/files/#file-storage)
 
 - [ ] TODO: 읽어볼 것
 
 # Go Further
+
 [[Resource Storage와 Database를 연동하는 방법에 대하여 알아봅니다.]]

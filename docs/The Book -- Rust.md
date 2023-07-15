@@ -4,7 +4,7 @@ tags:
 description:
 title: The Book -- Rust
 created: 2023-04-17T10:30:58
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 ---
 - https://rust-book.cs.brown.edu
 	1. [Getting Started](https://rust-book.cs.brown.edu/ch01-00-getting-started.html)

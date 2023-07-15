@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-09T09:03:04
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230609 estsoft {권택순CTO}
 ---
 - 오늘은 이스트소프트 권택순 CTO 특강이 예정되어있다고 한다. 장고 해야하는데.. 뭐어? 8시간 내내 특강이라고??? 아이고야

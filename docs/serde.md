@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-29T23:32:39
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: serde
 ---
 - https://lib.rs/crates/serde

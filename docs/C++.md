@@ -13,13 +13,14 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
 ---
 
 # Scrapped
+
 - [[lambda는 기본적으로 생성자가 지워져있다.]]
 - [[lambda함수가 일반 함수보다 느리다]]
 - [[stdout precision and fix]]
@@ -44,6 +45,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[vector의 back 이나 end는 비어있을 때 undefined behavior를 발생시킨다]]
 
 ---
+
 # 질문
 
 - C++ 에서 소리소문없이 생성하는 생성자들 (복사 생성자, move 생성자)과 각 생성자에 대응하는 operator=() 연산자 오버로딩을 꼭 해야하는 걸까?

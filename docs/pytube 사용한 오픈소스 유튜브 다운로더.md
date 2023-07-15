@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T21:43:28
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: pytube 사용한 오픈소스 유튜브 다운로더
 ---
 - 진짜 기본적인 코드는 다 만들어놨다. [youtube_downloader_converter](https://github.com/ChoiWheatley/youtube_downloader_converter)

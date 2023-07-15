@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-15T20:21:56
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: python 필수 의존성만 추려내는 방법
 ---
 - [bookstore/issues/29](https://github.com/ESTsoft-Book-Project/bookstore/issues/29)

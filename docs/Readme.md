@@ -8,10 +8,11 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 ---
 
 # .obsidian 동기화
+
 - 필수 플러그인 동기화
 	- [dataview](obsidian://show-plugin?id=dataview)
 	- [remotely-save](obsidian://show-plugin?id=remotely-save)

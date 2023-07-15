@@ -2,7 +2,7 @@
 aliases: 
 tags: 
 created: 2023-06-03T09:56:54
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 description: git, python settings
 title: 20230603 book-project
 ---
@@ -30,7 +30,7 @@ title: 20230603 book-project
 		- createsuperuser
 		- urls.py 안에 
 
-core/env.py 의 목적 https://github.com/ESTsoft-Book-Project/bookstore/blob/main/core/env.py
+core/env.py 의 목적 https://github.com/ESTsoft-Book-Project/bookstore/blob/main/core/env.py  
 	열심히 숨긴 `.env` 파일의 secret_key를 꺼내올 때 사용함. `decouple`을 의존함.
 
 TODO: [[postman]] => 페이지 열 필요 없이 API만 설계할 수 있게끔

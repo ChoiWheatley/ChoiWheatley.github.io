@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-26T15:15:00
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230626 book-project
 ---
 - [[get_object_or_404로 쿼리를 수행한다 {django}]]
@@ -23,7 +23,6 @@ EC2 instance 생성, EC2 내 Postgresql 설치, DB관련 코드 작성
 - vscode를 열어 core/db.py를 만들어서 database 기본 설정 및 연결에 대한 정보를 끌어온다. (`import dj_database_url`)
 	- `.env` 파일에서 `DATABASE_URL` 부분을 `postgresql://<username>:<password>@<ec2-ip-addr>:5432/main` 으로 변경.
 	- settings.py에서 db 연결해주고
-
 
 # 책을 써야지
 

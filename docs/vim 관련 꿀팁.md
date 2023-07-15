@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-27T18:04:38
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: vim 관련 꿀팁
 ---
 - `A;` 마지막 문장에 `;` 삽입하기 | [읽어보기](https://vi.stackexchange.com/questions/4307/multiple-cursors-at-desired-location)
@@ -13,9 +13,10 @@ title: vim 관련 꿀팁
 
 # plugins
 
-- [vim surround](https://github.com/tpope/vim-surround)
+- [vim surround](https://github.com/tpope/vim-surround)  
 	`cs"'` => `"hello"`를 `'hello'`로 바꿔줌.
 
 # 읽을거리
+
 - [[vim indentwise, motions based on indent depts or levels in normal, visual, and operator-pending modes]]
 - [[Easymotion Vim cheatsheat]]

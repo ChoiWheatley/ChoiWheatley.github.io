@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-29T08:03:09
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: REST error message in HTTP Header or Response Body {sof}
 ---
 - [sof](https://stackoverflow.com/questions/13963932/rest-error-message-in-http-header-or-response-body)

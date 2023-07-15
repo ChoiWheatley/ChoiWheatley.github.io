@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-04-24T20:53:42
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 알잘딱 GitHub 핵심개념
 ---
+
 # what i want to learn
 
 - [ ] [[github code review]] ^j3p7rh
@@ -28,12 +29,14 @@ title: 알잘딱 GitHub 핵심개념
 	- `git status`
 	- `git diff`
 	- `git log`
+
 ```
 Untracked → Unmodified → Modefied → Staged
 			|—————— git add ———————→|
 					  | ←——— git commit ——|
 
 ```
+
 - [3.github](https://paullabworkspace.notion.site/3-GitHub-5af717e53119443d9de827abaa710ced)
 	- `git pull` 시 누군가 이미 코드를 수정했을 경우(current branch is *behind* the remote)에 대처방법 [git pull --rebase - wiki](https://www.git-scm.com/docs/git-pull) 
 		- [`git pull --no-rebase`](https://www.git-scm.com/docs/git-pull#Documentation/git-pull.txt---rebasefalsetruemergesinteractive) => 로컬 main과 원격 main을 서로 다른 브랜치로 보고 병합한다.

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-07T11:03:42
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django migration 순서 꼬인경우 {GPT}
 ---
 The error message suggests that there is an inconsistency in the migration history. The `admin.0001_initial` migration is applied before its dependency `users.0001_initial` on the database.

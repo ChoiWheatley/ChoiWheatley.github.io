@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-28T22:46:06
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: fetch api error handling {js}
 ---
 - [sof](https://stackoverflow.com/questions/50330795/fetch-api-error-handling)

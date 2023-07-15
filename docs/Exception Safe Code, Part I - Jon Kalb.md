@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:35:13
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: Exception Safe Code, Part I - Jon Kalb
 ---
 c++에서 exception은 때론 찾기 힘든 버그를 만들어내곤 한다고 들었다. 예를 들어 구글의 코딩 스탠다드에 보면 C++ exception을 사용하지 않는다고 한다. 어떤 코드에서 throw를 한다면 얘를 호출하는 수많은 함수들이 전부 exception saftey를 보장해야 하는 점이 대표적이라고.  

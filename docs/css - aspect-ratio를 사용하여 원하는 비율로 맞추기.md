@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-19T17:35:46
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: css - aspect-ratio를 사용하여 원하는 비율로 맞추기
 ---
 - https://www.w3schools.com/howto/howto_css_aspect_ratio.asp

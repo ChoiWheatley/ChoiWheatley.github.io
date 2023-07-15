@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-01T01:23:28
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: AsRef trait
 ---
 - https://doc.rust-lang.org/std/convert/trait.AsRef.html#tymethod.as_ref

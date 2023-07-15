@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T14:23:21
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django admin site register를 사용하여 유저 정보 확인할 수 있다
 ---
 - [purpose of admin.py {SOF}](https://stackoverflow.com/a/47753254)
@@ -26,4 +26,3 @@ admin.site.register(User, Admin)
 ```
 
 > The admin.py file is used to display your models in the Django admin panel. You can also customize your admin panel.
-

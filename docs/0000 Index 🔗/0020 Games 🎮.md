@@ -8,18 +8,19 @@ aliases:
 tags: game
 date created: Sunday, February 26th 2023, 8:14:43 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:32:55
 ---
 parent link: [[0000 Index 🔗]]
 
 ---
 
 # Games
+
 - [[Borderlands3]]
 - [[terraria]]
 
-
 # TODO
+
 - [ ] [[The case of the golden idol]]
 - [ ] [[Unravel Two]]
 - [ ] [[하이퍼 라이트 브레이커]]

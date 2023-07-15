@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-11T20:55:05
-updated: 2023-07-11T15:21:06
+updated: 2023-07-15T21:33:02
 title: 모든 impl이 extension이고 모든 Trait들이 프로토콜이다
 ---
 swift 언어에서 감명받았던 것 중 하나가 표준 라이브러리의 클래스를 임의로 확장해서 입맛대로 기능을 추가할 수 있었다는 것이었다. 스위프트에서의 키워드 `extension`을 사용하면 예를 들어 RGB 컬러에 대한 데이터를 담는 구조체에 Hue값을 컨트롤 할 수 있게 새로운 메서드를 집어넣을 수 있다.

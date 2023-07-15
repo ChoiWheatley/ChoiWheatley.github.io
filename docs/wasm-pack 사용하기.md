@@ -3,16 +3,15 @@ description:
 aliases: 
 tags: 
 created: 2023-03-16T18:40:57
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: wasm-pack 사용하기
 ---
 parent:
 - [[0013 Rust 🦀]]
-- [[wasm with rust]]
+- [[wasm with rust]]  
 references:
 - [wasm-pack tutorials](https://rustwasm.github.io/docs/wasm-pack/introduction.html) [[0080 Scraps 📚]]
 - [wasm-pack commands](https://rustwasm.github.io/docs/wasm-pack/commands/index.html) 
-
 
 # wasm-pack 으로 새 패키지 생성하기
 
@@ -52,4 +51,3 @@ wasm-pack build -- --features wee-alloc
 [features]
 default = ["console_error_panic_hook", "wee_alloc"]
 ```
-

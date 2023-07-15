@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:32:55
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -13,7 +13,9 @@ title: 0014 Python 🐍
 - [인프런 알고리즘 베스트 10 - 제코베](https://inf.run/qBQP)
 
 ---
+
 # Fast Index
+
 - 강의자료들
 	- [[파이썬_부트캠프_얕은물.pdf]]
 	- [파이썬_부트캠프_깊은물 - google drive](https://drive.google.com/drive/folders/1HdUC_HOL_evEy1ozrOd2OGcSnozYggSJ?usp=share_link)
@@ -54,6 +56,7 @@ title: 0014 Python 🐍
 	- [[파이썬 알고리즘 인터뷰 - 95가지 알고리즘 문제 풀이로 완성하는 코딩테스트]]
 
 ---
+
 # Basics of Python (따로뺌)
 
 - [[타입 - python]]
@@ -72,6 +75,7 @@ title: 0014 Python 🐍
 - [[file-io (python)]]
 
 ---
+
 # Daily Document
 
 - [[20230501 estsoft - python - convention, types, variables, int, float]]
@@ -88,6 +92,7 @@ title: 0014 Python 🐍
 - [[20230519 estsoft - python]]
 
 ---
+
 # 파이썬 특이사항들
 
 - [[파이썬 함수를 호출할 때 인자 순서를 바꿔써도 된다 + default value]]
@@ -101,6 +106,7 @@ title: 0014 Python 🐍
 - [[typing.Iterator]]
 
 ---
+
 # Python Toy Projects
 
 - [[AutoHotKey Alternative Python Key Mapper]]
@@ -110,18 +116,19 @@ title: 0014 Python 🐍
 
 
 ---
+
 # 수준 별 공부방향 - 이호준
 
-초급자
+초급자  
 왕도는 없지만, 효율적으로 공부하는 방법은 있습니다.
 
 1) 강사님 colab 보고 다시 코딩 해보기 
 2) 이해 안되는 것 손코딩 
 3) 개발 블로그에 배운 거 정리 
 4) 깃헙 잔디 심기
-5) 하루 Lv0 2문제 
-(만약 못푸는 문제라면 15분 이상 고민하지 마시고, 답을 손코딩 하는 것을 권합니다.)
-(푼 문제는 깃헙에 잔디를 심기를 부탁드립니다.)
+5) 하루 Lv0 2문제  
+(만약 못푸는 문제라면 15분 이상 고민하지 마시고, 답을 손코딩 하는 것을 권합니다.)  
+(푼 문제는 깃헙에 잔디를 심기를 부탁드립니다.)  
 주말 - Python 얕은물
 
 ---

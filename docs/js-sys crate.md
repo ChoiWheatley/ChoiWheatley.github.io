@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-23T22:53:45
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: js-sys crate
 ---
 - https://crates.io/crates/js-sys

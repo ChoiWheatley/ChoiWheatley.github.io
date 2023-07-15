@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-23T10:57:12
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: map an array of objects to a dictionary {js}
 ---
 - [dev.to](https://dev.to/devtronic/javascript-map-an-array-of-objects-to-a-dictionary-3f42)
@@ -23,6 +23,7 @@ let dictionary = Object.fromEntries(data.map(x => [x.id, x.country]));
 ```
 
 result:
+
 ```js
 {1: "Germany", 2: "Austria", 3: "Switzerland"}
 ```

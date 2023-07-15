@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-06-14T10:42:59
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: drf {django rest framework}
 ---
+
 # INDEX
 
 - [drf page](https://www.django-rest-framework.org/)
@@ -22,6 +23,7 @@ title: drf {django rest framework}
 - Deserialization (역직렬화)
 	- 반대로, dict로 파싱이 된 JSON이나 XML을 받아 다시 복잡한 데이터타입으로 변환하는 일을 맡는다.
  
+
 # Workflow
 
 - Form 클래스를 만들듯이, Serializer를 상속받은 클래스들은 자기만의 **필드**를 가질 수 있다. 필드를 기반으로 (역)직렬화가 진행이 되며, 기능을 몇가지만 추가하면 view에서는 이 Serializer 메서드를 호출하기만 하면 CRUD가 다 된다.

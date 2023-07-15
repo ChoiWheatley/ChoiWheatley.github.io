@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-10T15:08:23
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: github issue, pull request 활용하기
 ---
 - 

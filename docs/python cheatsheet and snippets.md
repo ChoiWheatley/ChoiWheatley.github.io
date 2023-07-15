@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T15:10:40
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: python cheatsheet and snippets
 ---
 
@@ -14,6 +14,7 @@ title: python cheatsheet and snippets
 공유할만한 것들은 [깃허브 OrmiCodeRanger - AlgorithmCheatSheet](https://github.com/OrmiCodeRanger/AlgorithmCheatSheet)에도 올려보자.
 
 # Index
+
 - [[fast io in python]]
 - [[if __name__ == '__main__' in python meaning]]
 - python 프롬프트 열어서 `help` 치면 표준 저시기는 전부 다 나온다.

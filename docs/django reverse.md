@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-07T14:11:36
-updated: 2023-07-12T10:12:52
+updated: 2023-07-15T21:30:20
 title: django reverse
 ---
 {% raw %}
@@ -15,6 +15,7 @@ title: django reverse
 # No Reverse Match 
 
 에러가 나왔을 때 해결해야 할 것들에 대해 정리해보자. 
+
 ```
 django.urls.exceptions.NoReverseMatch: Reverse for 'signin' not found. 'signin' is not a valid view function or pattern name.
 ```

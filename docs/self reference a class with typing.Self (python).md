@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T13:06:04
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: self reference a class with typing.Self (python)
 ---
 - [SOF question - annotate a method that returns Self](https://stackoverflow.com/questions/66526297/python-how-to-type-anotate-a-method-that-returns-self) 

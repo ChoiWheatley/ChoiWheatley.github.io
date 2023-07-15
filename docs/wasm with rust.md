@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-14T23:46:24
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: wasm with rust
 ---
 references:
@@ -18,6 +18,7 @@ references:
 - [ ] [[러스트로 game of life 구현하기]]
 
 ---
+
 # 유용한 정보들
 
 - [[js-sys crate]]

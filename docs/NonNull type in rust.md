@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-09T21:46:25
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:04
 title: NonNull type in rust
 ---
 - https://rust-unofficial.github.io/too-many-lists/sixth-variance.html

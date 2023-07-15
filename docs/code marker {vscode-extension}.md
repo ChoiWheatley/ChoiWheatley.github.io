@@ -3,7 +3,7 @@ description:
 aliases: mark, anchor, heading, markdown
 tags: 
 created: 2023-06-13T09:47:30
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: code marker {vscode-extension}
 ---
 - reference

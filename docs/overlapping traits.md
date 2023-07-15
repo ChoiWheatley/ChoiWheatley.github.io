@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-04T00:25:04
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: overlapping traits
 ---
 - [disambiguating ovelapping traits](https://doc.rust-lang.org/stable/rust-by-example/trait/disambiguating.html)

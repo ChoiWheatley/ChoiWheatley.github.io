@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-08T22:14:56
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: Indexing is opaque
 ---
 https://www.reddit.com/r/rust/comments/ddd7qm/comment/f2ftp47/?utm_source=share&utm_medium=web2x&context=3

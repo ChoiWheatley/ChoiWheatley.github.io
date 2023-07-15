@@ -3,12 +3,13 @@ aliases:
 tags: 
 description:
 created: 2023-07-07T09:17:14
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230707 estsoft architecture 계성혁
 ---
-[[Special_Lecture_-_Architecturing_.pdf]]
+[[Special_Lecture_-_Architecturing_.pdf]]  
 [[Special_Lecture_-_Architecturing_ (1).pdf]]
 ___
+
 # 개요
 
 - 코드가 서비스의 전부가 아님. 인프라를 위한 JVM 튜닝, 데이터베이스 lock 조절 등의 저시기가 이루어짐
@@ -103,6 +104,7 @@ monitoring
 https://haveibeenpwned.com/
 
 # 문제2
+
 ![[Pasted image 20230707140741.png]]
 
 - 
@@ -129,7 +131,7 @@ https://haveibeenpwned.com/
 
 # 문제3
 
-https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/
+https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/  
 ![[Pasted image 20230707140620.png]]
 
 - 부가가치에 대해서는 보상이 안된다는거. → 상품 시스템을 개선해보자.
@@ -183,6 +185,7 @@ https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-
 - 리전 전체의 문제라면 Route53의 정책을 확인
 - 백업리전의 RDS Read Replica를 승격시켜 Read/Write가 가능하도록 만든다.
 ---
+
 # 문제3
 
 ![[Pasted image 20230707150358.png]]
@@ -263,15 +266,15 @@ SNS 서비스의 *뉴스 피드 시스템* 설계. 뉴스피드란, Home에 들�
 - 문제의 복잡성을 줄이기 위해 피드 업로드 API와 읽기 API만 만든다.
 
 ___
-Use Case
+Use Case  
 ![[Pasted image 20230707174433.png]]
 
-Logical Model 
+Logical Model  
 ![[Pasted image 20230707174428.png]]
 
 Component
 - Multi AZ 설계를 해봤다. → 수평적 확장 
-- public subnet에는 EC2를, private subnet에는 보호하여야 할 DB를 넣고.
+- public subnet에는 EC2를, private subnet에는 보호하여야 할 DB를 넣고.  
 ![[Pasted image 20230707174402.png]]
 
 ___
@@ -281,4 +284,3 @@ ___
 	- 개별 사용자의 뉴스피드: 사용자가 근시간 내에 확인할 만할 소식을 올려둠
 		- 뉴스 피드의 반응 (좋아요, 댓글 등)
 	- 메시지 큐: 포스팅 전송작업을 큐잉한다.
-

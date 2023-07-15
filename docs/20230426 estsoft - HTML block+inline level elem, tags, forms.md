@@ -3,20 +3,24 @@ description:
 aliases: 
 tags: 
 created: 2023-04-26T09:06:47
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230426 estsoft - HTML block+inline level elem, tags, forms
 ---
 - [notion site in main site](https://paullabworkspace.notion.site/HTML-CSS-91665f909bd44cb2ad8e6720b9da400e)
 - [notion site for live class - HTML/CSS](https://paullabworkspace.notion.site/HTML-CSS-e59ccad043e84513860c9bf42a7cd49f) ^ylilpg
 - [snippet generator](https://snippet-generator.app/)
+
 # Glossary
+
 - URI
 	- Uniform Resource Identifier: 리소스를 구별하기 위해 만든 식별자.
 	- 스킴으로, 해당 식별자가 담을 수 있는 속성들에 대한 정보를 갖고 있다.
 - URL
 	- Uniform Resource Locator: 리소스를 구별하는 것 뿐만 아니라 해당 리소스에 접근하기 위한 구체적인 정보를 갖고 있다.
 	- URI $\supset$  URL
+
 # Before getting started
+
 - 프론트 쪽에서 HTML,CSS 쪽은 난이도가 높은 작업.
 - 백엔드니까 오직 3일 짧고 굵게 배운다.
 - 폴더이름, 파일이름 컨벤션
@@ -25,7 +29,9 @@ title: 20230426 estsoft - HTML block+inline level elem, tags, forms
 - html validation : https://validator.w3.org
 - empty element : 닫는 태그가 없는 태그 `<br>`
 - comment : `<!-- comment -->`
+
 # HTML standard
+
 - html standard
 	- `! + Tab` 해서 나오는 기본문서 뜯어보기 작성하지 않아도 그냥 브라우저가 대충 띄워주기는 하거든? [[20230426 estsoft - HTML block+inline level elem, tags, forms#^m5z19c]]
 	- `<!DOCTYPE html>` : html 표준문서임을 의미함 하위 호환성 모드가 꺼진다.
@@ -37,7 +43,9 @@ title: 20230426 estsoft - HTML block+inline level elem, tags, forms
 			- `name="viewport"` (얘는 도대체 왜 attr가 name이냐) `content` 속성에 width, height 값을 지정해 줄 수 있음. `content=initial-scale`은 처음 페이지가 로드 될 때 확대 축소 수준을 제어.
 		- `title` 타이틀
 		- `link` 현재 문서와 외부 리소스 (CSS, Font, Favicon)과 연결할 때 사용함. [[20230426 estsoft - HTML block+inline level elem, tags, forms#^jsa6sp]]
+
 # block level & inline level element
+
 - 기본적으로 모든 요소는 네모낳게 생겼다고 가정한다. => block이라고 부르고 이 블럭들이 쌓여 저시기 된다.
 - `div` 태그를 사용하면 저시기가 세로로 작성된다. 세로로 작성되는 녀석은 **블록**요소이다.
 - `span` 태그를 사용하면 저시기가 가로로 작성된다. 가로로 작성되는 녀석은 **인라인** 요소이다.
@@ -49,8 +57,9 @@ title: 20230426 estsoft - HTML block+inline level elem, tags, forms
 	- 블록 $\supset$ 인라인 
 	- 가로로 작성된다는게 컨텐츠의 흐름을 끊지 않는다는 말뜻임. 
 	- CSS를 사용하여 Width, Height 크기를 지정할 수 **없다**. Padding, Border, Margin 속성 중 상하 Margin 속성은 사용할 수 **없다**.
-- [headings map](https://addons.mozilla.org/en-US/firefox/addon/headingsmap/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) 를 사용하면 목차를 볼 수 있다!!! [[20230426 estsoft - HTML block+inline level elem, tags, forms#^84gubn]]
-cheatsheet below
+- [headings map](https://addons.mozilla.org/en-US/firefox/addon/headingsmap/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) 를 사용하면 목차를 볼 수 있다!!! [[20230426 estsoft - HTML block+inline level elem, tags, forms#^84gubn]]  
+cheatsheet below  
+
 |  | block | inline | inline-block |
 | --- | --- | --- | --- |
 | 요소 포함 | 인라인 요소 포함 가능 | 블록 요소 포함 불가(a 태그만 가능) | - | 
@@ -58,10 +67,13 @@ cheatsheet below
 | width, height | O | X | O |
 | padding | O | X | O |
 | margin | O | △ (left,right만 적용 / top,bottom 적용 X) | O |
+
 | border | O   | O   | O   |
-| ------ | --- | --- | --- |
+| ------ | --- | --- | --- 
+|
 
 # Tags
+
 - 다양한 태그가 있지만, 여기에 적는 건 의미가 별로 없는 것 같다. 그때그때 찾아가면서 작성하자. [실습링크](https://github.com/ChoiWheatley/ormi-2023-04-26/blob/3ea3198848a705061d0436b1a6b64ef05a9022d6/002.html) 
 - [`img`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img)
 	- inline, `style="display: block;"` 으로 블록요소처럼 떨어지게 만들 수 있다.
@@ -78,7 +90,9 @@ cheatsheet below
 			- `_self` default, current browsing context
 			- `_blank` new tab
 			- `_parent` parent browsing context of the current one
+
 # Forms
+
 - `form`
 	- 반드시 `<input type="submit">` 태그와 연동이 되어야 제출이 가능하다.
 	- `method`::POST 방식
@@ -141,6 +155,7 @@ cheatsheet below
 
 
 ---
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -157,6 +172,7 @@ cheatsheet below
 ```
 
 ^m5z19c
+
 ```html
 <html>
 <head>
@@ -175,6 +191,7 @@ cheatsheet below
 ```
 
 ^jsa6sp
+
 ```html
 <body>
     nyancat
@@ -185,8 +202,9 @@ cheatsheet below
 </body>
 ```
 
-^6492bd
+^6492bd  
 ![[Pasted image 20230426113227.png]] ^84gubn
+
 ```html
 <input type="button" value="버튼">
 <button type="button">버튼</button>

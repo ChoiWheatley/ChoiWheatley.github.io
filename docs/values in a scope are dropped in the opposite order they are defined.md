@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-02T17:01:18
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: values in a scope are dropped in the opposite order they are defined
 ---
 [[Too Many Linked Lists]] 에서 ch03인 persistent list의 `Drop` 트레이트를 구현하자 오류가 나지 않았던 테스트 코드에서 변수 수명 에러가 나타났다.
@@ -43,4 +43,3 @@ fn iter() {
     |
     = note: values in a scope are dropped in the opposite order they are defined
 ```
-

@@ -3,11 +3,12 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T23:49:51
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: set - python
 ---
 
 # Set
+
 - 중복을 허용하지 않고 순서가 없는 자료형임
 - 이건 진짜로 순서가 없다는거~
 - 인덱싱 지원하지 않는다.

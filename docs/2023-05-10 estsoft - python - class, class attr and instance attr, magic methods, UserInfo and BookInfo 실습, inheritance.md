@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-10T09:17:12
-updated: 2023-07-12T10:46:25
+updated: 2023-07-15T21:30:22
 title: 2023-05-10 estsoft - python - class, class attr and instance attr, magic methods, UserInfo and BookInfo 실습, inheritance
 ---
 {% raw %}
@@ -36,7 +36,7 @@ CPP의 static attribute???
 
 클래스 변수는 클래스 바로 하위에 있는 변수이다. 클래스 변수는 모든 인스턴스가 공유할 수 있다. 따라서 `{{class-name}}.{{class-attr}}` 식으로 접근이 가능하다. 물론 `self.{{class-attr}}`도 가능함. 
 
-문제는.... class attr를 instance attr와 혼동이 생길 우려가 있다는 것이다. 다음 예를 들어보자.
+문제는.... class attr를 instance attr와 혼동이 생길 우려가 있다는 것이다. 다음 예를 들어보자.  
 우리는 별 생각 없이 `Car.maxSpeed`를 변경한 걸로 알겠지만, 사실 엄밀히 따지고 보면 `change_speed` 메서드 안에서 새로운 instance attr인 `speed`를 만들어 저장한 것이 된다. 이것이 문제가 되는 이유는, `Car.maxSpeed`는 300으로 그대로인데, 프로그래밍 할 시점엔 실수하기 매우 쉽다는 것이다. 따라서, class attr를 참조할 땐 반드시 `self`가 아니라 클래스명을 사용하도록 권장한다.
 
 ```python
@@ -182,6 +182,7 @@ print(왕슬라임)
 ```
 
 아래 예제는 클래스를 활용하여 간편하게 html 문서를 만드는 저시기를 설명한다.
+
 ```python
 # 쉽고 중요한 예제!
 
@@ -271,6 +272,7 @@ assert id(Car.move) == id(HybridCar.move)  # ok
 
 - [x] class attr는 같은 id를 같는다는 건 확인. 그렇다면 instance attr는?
 	- 직접 실험해 보았다. 결론부터 말하자면 서로 다른 id를 갖는다. 이유로 말할 것 같으면.......... `Car.__init__`을 상속받는 건 똑같은데, 메서드 내부 블럭은 각자 실행하기 때문인 것으로 보인다.
+
 ```python
 bongbong = HybridCar()
 cybertruck = ElectricCar()

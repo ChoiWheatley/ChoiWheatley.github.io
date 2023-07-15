@@ -3,7 +3,7 @@ aliases:
 tags: read
 description:
 created: 2023-06-21T10:37:19
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: URI는 절대로 변하지 않아야 한다 {w3.org}
 ---
 - [w3.org](https://www.w3.org/Provider/Style/URI)

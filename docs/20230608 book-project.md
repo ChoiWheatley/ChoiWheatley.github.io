@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T09:11:23
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230608 book-project
 ---
 - [[pylint-django {pip} {vscode}]]

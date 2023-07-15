@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-09T21:21:42
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: five terrible horseman of making unsafe Rust collections
 ---
 - [[0013.1 Scrapped 🦀]]

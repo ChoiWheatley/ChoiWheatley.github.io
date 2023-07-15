@@ -3,12 +3,13 @@ aliases:
 tags: 
 description:
 created: 2023-06-28T14:01:49
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230628 book-project
 ---
 [[EC2 Postgresql을 장고 기본 데이터베이스로 활용하기]] 마저 진행하기
 
 # TODO
+
 ![[20230627 book-project#^u6tdmc]]
 
 ## updatepassword

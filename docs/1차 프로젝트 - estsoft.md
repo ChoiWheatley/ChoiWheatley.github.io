@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-26T15:05:22
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 1차 프로젝트 - estsoft
 ---
 - 일정: 
@@ -16,11 +16,11 @@ title: 1차 프로젝트 - estsoft
 - 이번 프로젝트는 인공지능을 API로 다뤄보는 경험 + HTML/CSS/JS에 익숙해지는 경험 + Github과 친숙해지는 경험
 - 가능하면 백엔드 사용하지 않기를 바란다.
 - 후반부에는 코드리뷰가 들어가게 될 것이다. 중간 중간 코드리뷰 신청하면 멘토분들이 코드리뷰 해줌.
-* 주제 : ChatGPT를 이용한 자율주제
-    * 예 : 이력서 자동으로 만들어주는 서비스, 코드를 자동으로 만들어주는 서비스 등을 만들 수 있습니다.
-* repo는 오늘 만드셔서 저희 과제 Notion에 기입해주세요. | [제출링크](https://www.notion.so/5-30-e65d684e4b4c4739a54d3c3796040d3c) 
-* 배포 URL은 별도로 제출하기 직전에 만드시면 됩니다.
-* 우리 전체 과정 : AI 백엔드 과정
+- 주제 : ChatGPT를 이용한 자율주제
+    - 예 : 이력서 자동으로 만들어주는 서비스, 코드를 자동으로 만들어주는 서비스 등을 만들 수 있습니다.
+- repo는 오늘 만드셔서 저희 과제 Notion에 기입해주세요. | [제출링크](https://www.notion.so/5-30-e65d684e4b4c4739a54d3c3796040d3c) 
+- 배포 URL은 별도로 제출하기 직전에 만드시면 됩니다.
+- 우리 전체 과정 : AI 백엔드 과정
     - ChatGPT, 회사에서 개발된 인공지능 모델 등을 활용할 수 있는 백엔드 개발자
 
 # TRPG Game Master
@@ -70,15 +70,15 @@ GPT 프로젝트 토큰제한을 결국 해결하지 못해 다른 주제로 전
     - README.md 파일을 좀 더 정확하게 정리하셔야 프로젝트 흐름 이해와 앞으로의 방향성이 정리되어 작업 실행이 더 수월해 질 것입니다 :)
     - 직접 생성 한 js 파일을 가져오는 script 태그의 경우에는 body 닫기 태그 앞에 위치시키는 것이 좋습니다.
     - 외부 라이브러리를 임포트 하실 경우에 주석을 잘 남겨주세요.
-    - html, css, js 등의 파일을 폴더 별로 구분해서 정리해주세요. root 경로에는 보통 index.html 파일 하나만 두는 경우가 많습니다.
+    - html, css, js 등의 파일을 폴더 별로 구분해서 정리해주세요. root 경로에는 보통 index.html 파일 하나만 두는 경우가 많습니다.  
 HTML, CSS, JavaScript를 배우고 빠르게 적용 잘 하신 것 같습니다~! 전체적인 디테일을 높여주신다는 생각으로 반응형, 화면 구성, 로딩 속도 등을 다시 한 번 살펴주세요 :) 코드도 전체적으로 깔끔하게 잘 정리하셨습니다. 고생하셨어요~!
 
 
 ---
 
-* 참고교안
+- 참고교안
 
-    * 강의 링크 : https://inf.run/qmBd
-    * 교안 링크 : https://paullabkorea.github.io/jupyternotebookblog/tensorflow/deep%20learning/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/2022/10/29/_09_20_%EC%B4%88%EA%B8%89%EC%9E%90%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%86%90%EC%97%90_%EC%9E%A1%ED%9E%88%EB%8A%94_%EB%94%A5%EB%9F%AC%EB%8B%9D.html
+    - 강의 링크 : https://inf.run/qmBd
+    - 교안 링크 : https://paullabkorea.github.io/jupyternotebookblog/tensorflow/deep%20learning/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/2022/10/29/_09_20_%EC%B4%88%EA%B8%89%EC%9E%90%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%86%90%EC%97%90_%EC%9E%A1%ED%9E%88%EB%8A%94_%EB%94%A5%EB%9F%AC%EB%8B%9D.html
 - [개발자를 위한 피그마 기본 활용 방법 - YT](https://youtu.be/1-VXCKmyr9I)
 - [[How to Get Around OpenAI GPT-3 Token Limits {BLOG}]]

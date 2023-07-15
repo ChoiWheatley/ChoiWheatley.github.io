@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-26T21:43:08
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: CSS
 ---
 - [CSS 기본 notion src](https://paullabworkspace.notion.site/CSS-bce6b95b464d4c978b3de1e60eb32d6e)
@@ -11,11 +11,13 @@ title: CSS
 - [CSS 상속 notion src3](https://paullabworkspace.notion.site/CSS-edb06c0a7b0d4a519375a68c2a56d5c7)
 - [CSS selector notion src4](https://paullabworkspace.notion.site/CSS-70052fc35e734f4a86f0d4d4f85090f2)
 - [30분 안에 끝내는 Bootstrap youtube](https://youtu.be/2znzBerWyWU)
+
 ## Structure
-![[image-2.png]] ^nbm2ta
-	- header(selector)
-	- decl block
-	- property
+
+![[image-2.png]] ^nbm2ta  
+	- header(selector)  
+	- decl block  
+	- property  
 	- property value
 - inline style
 - inside `head` tag, separated `style` tag, external style with `link` 
@@ -39,6 +41,7 @@ title: CSS
 	- ![[Pasted image 20230427111746.png]] 
 
 ## Selector
+
 - universal selector `*`
 - type selector => such as tags, elements
 - id selector `#` => has `id` attr, which **MUST** be unique in a whole document
@@ -75,8 +78,8 @@ title: CSS
 		- `::before` 은 CSS 안에 작성한 HTML 문서를 반드시 선택된 요소 **전에** 박아넣는다.
 		- `::after`는 그럼 더 설명 안해도 되겠지? ㅎㅅㅎ
 
-
 ## Selector Priority Rules
+
 - can be overrided => later overwrite prior one
 - can be selected by most specific selector
 	- `*` $\lt$ 
@@ -87,16 +90,18 @@ title: CSS
 - 가중치 점수가 아무리 높더라도 유형 선택자 가중치 법칙을 이길 수 없다.
 
 ## Display Attributes
+
 - can change *block* and *inline* attribute into custom one
 - `block`
 - `inline`
-- `inline-block`
+- `inline-block`  
 ![[Pasted image 20230427143822.png|450]]
 - `flex`
 - `grid`
 - `none` => can be used as modal, menu
 
 ## Units
+
 - `px`
 	- absolute pixels
 - `%`
@@ -110,8 +115,8 @@ title: CSS
 	- [!] `%`는 부모 요소를 기준으로 설정이되기 때문에 `vw`, `vh`와 동일하게 하려면 CSS 상에서 reset을 해야 한다. HOW?
 		-  `body { margin : 0 }`
 
-
 # flex
+
 - [flexbox froggy 플렉스 연습 게임](https://flexboxfroggy.com/#ko)
 - [flex grid 플렉스 시뮬레이터](https://flexngrid.com/)
 - [MDN flex 문서](https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Flexbox)
@@ -121,6 +126,7 @@ title: CSS
 - 주축을 지정한다. (단순히 가로,세로가 아님)
 
 # float
+
 - 신문에서 보면 가끔 그림의 테두리 따라 글씨들이 꽉 채워지는 것을 볼 수 있다. 
 - flow처럼 흐르는 CSS 문서의 규칙을 떠나 별도로 적용이 되는 규칙이며, 인라인 요소가 그 주위를 감싸도록 한다.
 - https://developer.mozilla.org/ko/docs/Web/CSS/float
@@ -131,4 +137,5 @@ title: CSS
 ---
 
 # 개꿀팁
+
 - [[css - aspect-ratio를 사용하여 원하는 비율로 맞추기]]

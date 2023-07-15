@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-24T13:42:49
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:04
 title: Notion API를 기반으로 한 블로그 만들기
 ---
 - 사유: 제 버킷리스트이기도 합니다. 노션을 DB로 사용하는 개인 블로그 만들어서 배포하기!

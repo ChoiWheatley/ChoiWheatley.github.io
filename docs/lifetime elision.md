@@ -3,10 +3,11 @@ description:
 aliases: 
 tags: 
 created: 2023-03-31T23:38:33
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: lifetime elision
 ---
 - https://rust-unofficial.github.io/too-many-lists/second-iter.html
+
 ```rust
 // Only one reference in input, so the output must be derived from that input
 fn foo(&A) -> &B; // sugar for:

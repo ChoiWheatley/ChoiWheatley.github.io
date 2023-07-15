@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T11:25:29
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230605 book-project
 ---
 - [[20230603 book-project|<< 20230603]] [[20230607 book-project|20230607 >>]]
@@ -20,6 +20,7 @@ title: 20230605 book-project
 # 발견한 것들
 
 - django.view.View를 상속한 클래스가 `get` 메서드를 오버라이드 하면 내가 원하는 템플릿파일을 `render` 함수에 담아 리턴할 수 있다.
+
 ```python
 class SignupView(View):
 """HTTP Method callbacks"""

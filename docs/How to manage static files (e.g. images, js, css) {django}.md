@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-20T23:36:29
-updated: 2023-07-12T10:41:16
+updated: 2023-07-15T21:33:04
 title: How to manage static files (e.g. images, js, css) {django}
 ---
 

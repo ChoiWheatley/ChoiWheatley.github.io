@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: english
 created: 2023-03-09T18:57:53
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: impasse
 ---
 교착상태 (=deadlock)

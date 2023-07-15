@@ -3,10 +3,10 @@ aliases:
 tags: 
 description:
 created: 2023-07-07T11:53:33
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: VPC (Virtual Private Cloud)
 ---
-VPC (Virtual Private Cloud)
+VPC (Virtual Private Cloud)  
 https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/what-is-amazon-vpc.html
 
 **Amazon VPC란?**

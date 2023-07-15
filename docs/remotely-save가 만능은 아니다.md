@@ -8,7 +8,7 @@ categories:
 tags: [" obsidian  ", obsidian]
 date created: Sunday, February 26th 2023, 8:14:44 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 ---
 parent link: [[0070 Obsidian 💎|obsidian]]
 

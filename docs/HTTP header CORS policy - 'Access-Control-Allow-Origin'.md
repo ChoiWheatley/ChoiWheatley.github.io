@@ -3,11 +3,12 @@ aliases:
 tags: 
 description:
 created: 2023-07-02T21:53:09
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: "HTTP header CORS policy - 'Access-Control-Allow-Origin'"
 ---
 - [sof](https://stackoverflow.com/questions/28046422/django-cors-headers-not-work)
 - S3 CORS Policy를 일단 다 때려넣어봤다
+
 ```json
 [
     {

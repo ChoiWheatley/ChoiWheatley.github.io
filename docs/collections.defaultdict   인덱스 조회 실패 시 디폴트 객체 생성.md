@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-23T21:28:44
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: collections.defaultdict   인덱스 조회 실패 시 디폴트 객체 생성
 ---
 - https://docs.python.org/3/library/collections.html#collections.defaultdict

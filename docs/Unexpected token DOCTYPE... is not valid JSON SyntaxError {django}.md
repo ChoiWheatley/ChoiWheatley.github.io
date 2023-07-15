@@ -3,9 +3,10 @@ aliases: 에러, 장고, Error
 tags: 
 description:
 created: 2023-06-22T10:08:33
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Unexpected token DOCTYPE... is not valid JSON SyntaxError {django}
 ---
+
 ```
 SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
 ```

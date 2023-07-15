@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-27T16:53:07
-updated: 2023-07-12T10:40:47
+updated: 2023-07-15T21:33:05
 title: django.views.{View, generic.{ListView, DetailView}}
 ---
 
@@ -35,7 +35,6 @@ https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#lis
 
 > While this view is executing, `self.object_list` will contain the list of objects (usually, but not necessarily a queryset) that the view is operating upon.
 
-
 ```html
         {%for object in object_list%}
         <div class="row">
@@ -57,7 +56,7 @@ https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#lis
 
 # generic.DetailView
 
-[DetailView 작성하는 영상](https://youtu.be/sMqDJovFO-Y?t=4993)
+[DetailView 작성하는 영상](https://youtu.be/sMqDJovFO-Y?t=4993)  
 [djangoproject.com -- class based views -- generic display](https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/)
 
 예를 들어 아티클을 보여주고자 할때 어떤 아티클을 보여줄지는 우리의 재량에 달렸다. 이 경우, `urls.py`에 `urlpatterns` 리스트에 `path`를 지정해줄때 `<slug:slug>/` 식의 URI를 제공하여야 한다. 

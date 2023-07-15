@@ -12,7 +12,7 @@ aliases:
  - 스크랩
  - 읽기목록
 tags: book scrap
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:32:55
 title: 0080 Scraps 📚
 ---
 - parent link: [[0000 Index 🔗]]
@@ -21,6 +21,7 @@ title: 0080 Scraps 📚
 
 
 ---
+
 # README
 
 - 읽기 전엔 단순 이 페이지를 링크만 하고 나중에 들어와서 무엇을 읽을까 고민할 때 `Linked Mentions`를 열어 리스트를 확인하자.
@@ -30,6 +31,7 @@ title: 0080 Scraps 📚
 - [WikiDocs](https://wikidocs.net/)라는 곳에서 온라인 무료 책을 다운받아 볼 수 있다. 완전 개꿀
 
 ___
+
 # Pending
 
 - [[무경계 - 켄 윌버]]
@@ -55,6 +57,7 @@ ___
 
 
 ___
+
 # In Progress
 
 - [[The camel has two humps]]
@@ -62,6 +65,7 @@ ___
 - [[Sit around the fire {Jon Hopkins}]]
 
 ___
+
 # Done
 
 - [[불편한 진실을 피하지 말자 - 포프TV]]

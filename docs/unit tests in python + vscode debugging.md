@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-02T13:01:57
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: unit tests in python + vscode debugging
 ---
 - 파이썬이 [[python package]] 에서 아주 골치아픈 일이 발생하리라고는 생각치도 못했다.

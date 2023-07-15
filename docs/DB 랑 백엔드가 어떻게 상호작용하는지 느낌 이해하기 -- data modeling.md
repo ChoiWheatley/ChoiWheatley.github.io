@@ -3,11 +3,11 @@ description:
 aliases: 
 tags: 
 created: 2023-05-26T21:30:57
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: DB 랑 백엔드가 어떻게 상호작용하는지 느낌 이해하기 -- data modeling
 ---
-[What is Data Modeling? - IBM](https://www.ibm.com/topics/data-modeling) | 
-[[django model]]
+[What is Data Modeling? - IBM](https://www.ibm.com/topics/data-modeling) |  
+[[django model]]  
 [[Data Modeling {book-project}]]
 
 # What is Data Modeling?

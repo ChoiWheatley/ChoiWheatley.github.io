@@ -4,7 +4,7 @@ tags:
 description:
 title: diff between const with static in rust
 created: 2023-03-26T21:47:35
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 ---
 In Rust, `const` and `static` are both used to define constants. [The difference between them is that `const` is a compile-time constant while `static` is a runtime constant](https://stackoverflow.com/questions/2216239/what-is-the-difference-between-a-static-and-const-variable)[1](https://stackoverflow.com/questions/2216239/what-is-the-difference-between-a-static-and-const-variable).
 

@@ -3,10 +3,12 @@ description:
 aliases: 
 tags: 
 created: 2023-06-10T08:05:52
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230610 book-project
 ---
+
 # My
+
 한 달도 채 안 됐는데 갑자기 강사님의 집필마감요구에 맞서 일단 대강 써놓기로 결정했다. 대충 목차별로 사람들 나눠서 분업하기로 했는데... 일단 [머리말과 저자소개 {Notion}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed?pvs=4) 노션 페이지에서 확인 바란다. 나의 역할을 정리하면
 
 - [[Data Modeling {book-project}]]
@@ -16,6 +18,7 @@ title: 20230610 book-project
 - 욕심을 좀 더 내자면 [[Github 사용법 {issue}, {pull request}]]
 
 # 회의내용
+
 - 이슈 & PR가 좋았던 이유 | [[github issue, pull request 활용하기]]
 	- 정헌: 디스코드나 다른 연락수단에서 일거리 분배하는 것보다 나은 것 같더라. 깃허브 안에서 일 분배가 끝난다.
 	- 정헌: 생물관련 연구소에서 사무보조로 일한 적 있는데, 퇴사하기 직전에 사람이 없어서 개발자까지 시켰는데, 다들 주변분들이 50세 정도라서 디코, 깃헙을 사용할 줄 모르고, 카톡, 문자를 통해서 주고받더라. 그땐 그게 당연한 줄 알았는데 집필프로젝트에 들어와서 깃헙 써보자 이거 써보자 하니까 바로바로 정리가 되는게 좋은 것 같다.
@@ -62,6 +65,7 @@ title: 20230610 book-project
 - [[github issue, pull request 활용하기]]
 
 # Next
+
 - 일단 책 윤곽부터 [머리말과 저자소개 {NOTION}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed)
 - DRF (django rest framework) | [[drf {django rest framework}]]
 	- 직렬화, 역직렬화, JSON, form 대신에 serializer
@@ -71,4 +75,3 @@ title: 20230610 book-project
 - 결제모델 추가
 - 다양한 유즈케이스 식별 및 구현
 - [[20230613 book-project]] | 2023-06-10T16:00:00
-

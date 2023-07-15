@@ -2,11 +2,13 @@
 aliases: 
 tags: 
 created: 2023-05-20T10:14:11
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 description: book-project의 시작
 title: 공동집필 프로젝트 - estsoft 📕
 ---
+
 # INDEX
+
 - [[0014.1 Django 🎈]]
 - [파이썬을 활용한 RESTful API 개발 기본 {NOTION}](https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4 "https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4")
 - [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]

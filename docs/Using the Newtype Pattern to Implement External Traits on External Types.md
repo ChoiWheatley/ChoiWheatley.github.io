@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-07T13:39:56
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Using the Newtype Pattern to Implement External Traits on External Types
 ---
 - [the book](https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#using-the-newtype-pattern-to-implement-external-traits-on-external-types)
@@ -13,6 +13,7 @@ title: Using the Newtype Pattern to Implement External Traits on External Types
 - 러스트의 확장성에는 제한이 걸려있다. 적어도 트레잇 또는 타입이 현재 크레이트에 있어야만 한다. 그렇지 않은 경우에는 "NewType" 패턴을 사용하여 현재 스코프에 간단한 래퍼 타입을 만드는 것으로 문제 해결이 가능하고, 심지어 zero-cost-abstraction이라서 부담없이 사용할 수 있다.
 
 다음 코드는 컴파일 에러가 발생한다.
+
 ```rust
 impl Ord for [i32; 2] {
 	fn cmp(&self, other: &Self) -> Ordering {
@@ -26,6 +27,7 @@ impl Ord for [i32; 2] {
 ```
 
 컴파일러가 타입 `[i32; 2]`이 foreign이고, 동시에 `Ord` 트레잇 또한 현재 크레이트에 정의되어 있지 않다고 불평을 내고있다.
+
 ```
 error[E0117]: only traits defined in the current crate can be implemented for arbitrary types
  --> src/main.rs:4:5
@@ -46,6 +48,7 @@ For more information about this error, try `rustc --explain E0117`.
 # Newtype Pattern Inspired by Haskell programming language
 
 래퍼타입을 사용하여 foreign type을 현재 크레이트의 타입인냥 사용할 수 있다.
+
 ```rust
 use core::cmp::*;
 #[derive(Eq, PartialEq, PartialOrd)]
@@ -71,6 +74,7 @@ fn main() {
 # Ensure at least one local type is referenced by the `impl`
 
 래퍼타입을 쓰기 싫다면 `From` 트레잇을 구현한 임의의 타입으로 대치할 수 있다. (효용성은 잘 모르겠음)
+
 ```rust
 pub struct Foo; // you define your type in your crate
 
@@ -89,6 +93,7 @@ impl From<Foo> for i32 { // or you use a type from your crate as
 # Define a trait locally and implement that instead
 
 타입을 로컬로 만드는 것이 아닌, 트레잇을 로컬로 만드는 전략이다.
+
 ```rust
 trait Bar {
     fn get(&self) -> usize;

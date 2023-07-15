@@ -3,10 +3,12 @@ description:
 aliases: 
 tags: 
 created: 2023-06-11T18:50:08
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: Data Modeling {book-project}
 ---
+
 # INDEX
+
 - TLDR
 	- Onedrive 2021_1 Database1 수업을 기반으로 정리.
 - 목표
@@ -66,7 +68,9 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 		- 단점: 
 			- 연속적인 검색(range search)에 느리다. => 연결 리스트를 사용하여 보완한다.
 			- 데이터의 추가 패턴에 따라 트리의 모양이 기울어질 수 있다. (skew)
+
 ## Key
+
 - 테이블의 레코드를 검색할 때 하나의 레코드를 구별(식별)할 수 있도록 하는 기준. 유일성 (Unique) 기준을 만족해야 한다.
 - **복합키(Composite Key)**: 하나의 칼럼이나 여러 칼럼을 묶어서 사용가능 (주민번호 + 학번 + 사번)
 - **후보키(Candidate Key)**: 하나의 테이블에 Key가 될 수 있는 칼럼 (유일성 만족하기만 하면 다 후보키임)
@@ -81,13 +85,16 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 	- 삽입, 삭제에 순서가 있어야 한다. 이 순서를 어기면 에러가 발생한다. 
 	- 원본 레코드를 삭제하기 위해선 이 테이블을 참조하는 다른 테이블의 레코드를 먼저 삭제해야 한다.
 	- 반대로 외래키를 가지는 테이블이 레코드를 추가하고 싶다면 원본 레코드를 가진 테이블에 레코드를 먼저 추가하여야 한다.
+
 ## 조인
+
 - 여러 테이블을 합쳐 큰 테이블로 만드는 연산. 테이블이 나뉘어진 상태에서 원하는 데이터를 찾기 위해선 먼저 테이블을 합쳐야 한다. 왜냐하면 검색을 시작한 테이블에 내가 원하는 데이터가 존재할 거란 보장이 없기 때문이다.
 - 조인은 테이블 단위 연산이다. 조인과정에서 테이블 간의 공통칼럼이 있어야 한다. 이를 표준 조인이라고 부른다. 이때 공통칼럼을 외래키라고 부른다.
 
 # RDBMS가 제공하는 연산
 
 ## DML 
+
 - (Data Manipulation Language)
 - selection
 	- 조건에 맞는 레코드 선택
@@ -124,7 +131,9 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 	- group by 연산 수행 시 그룹별 통계값 (count, avg, min, max)을 확인할 때 주로 사용.
 	- `SELECT AVG(salary) as average_sal FROM employees GROUP BY dept_id;`
 	- `HAVING`을 뒤에 넣어 필터를 걸 때 사용할 수 있다.
+
 ## DDL 
+
 - Data Definition Language
 - create database
 - drop database
@@ -139,7 +148,9 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 	- FK
 	- CHECK
 	- DEFAULT
+
 ## DCL 
+
 - (Data Control Language) | [gtg.org](https://www.geeksforgeeks.org/mysql-grant-revoke-privileges/)
 - 루트를 제외한 유저들에게 권한부여하는 명령어 모음
 - 사용자 생성
@@ -198,8 +209,8 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 	- 강한 엔티티 (Strong Entity)
 		- 홀로 존재 가능한 엔티티. (eg, 직원, 학생, 교수)
 		- PK를 가지는 충분한 속성을 가지고 있어야 한다.
-	- 약한 엔티티 (Weak Entity)
-			- 단독으로 존재할 수 없는 엔티티. (eg, 부서, 분반, 강의)
+	- 약한 엔티티 (Weak Entity)  
+			- 단독으로 존재할 수 없는 엔티티. (eg, 부서, 분반, 강의)  
 			- PK를 가지기에는 부족한 속성을 가진다. 따라서 FK를 통해 강한 엔티티에 의존한다.
 - Relationship
 	- 관계는 엔티티가 서로 어떻게 연관되어 있는지를 정의한다. 동사 형태로 나타나며, "학생이 *수강하는* 강의목록", "회사가 *소유하는* 컴퓨터" 등을 예로 들 수 있다.
@@ -218,7 +229,9 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 	- Entity 타입에 상관없이 직사각형으로 표현. Attribute는 Entity 하위에 포함되는 식.
 	- Relationship은 여러 모양의 선으로 표현할 수도 있다. Cardinality 제약조건에 따라 선의 모양이 다르다.
 	- 이 표기법은 Relationship에 Attribute를 명시할 수 없다. 따라서 관계 자체를 엔티티로 승격하여 사용하는 것을 원칙으로 삼는다. 따라서 동사의 이름을 가진 엔티티가 된다. 주로 과거 내역을 추적하고자 할 때 사용되는 기법이다.
+
 ## Cardinality (대응수)
+
 - 1:1
 	- ![[Pasted image 20230614170840.png]]
 	- 하나의 개체가 하나의 개체에 대응
@@ -242,6 +255,7 @@ Relational Data Base Management System의 약자. 우리가 가장 익히 알고
 		- 1:1인 경우, 엔티티 안에 속성을 직접 추가한다.
 		- 1:N/N:1인 경우, 외래키로 엔티티 간 직접 연결한다.
    
+
 ## 식별관계와 비식별 관계
 
 - 식별관계 (Identifying Relationship)

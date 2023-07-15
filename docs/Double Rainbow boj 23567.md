@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-15T13:37:12
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: Double Rainbow boj 23567
 ---
 - boj.kr/23567

@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-19T13:25:48
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230624 까지 진행할 구현사항 {book-project}
 ---
 

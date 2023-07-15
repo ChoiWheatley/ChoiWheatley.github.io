@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-29T23:10:52
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: derivative
 ---
 - https://crates.io/crates/derivative

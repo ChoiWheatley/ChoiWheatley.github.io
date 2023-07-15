@@ -10,12 +10,14 @@ aliases:
 tags: [" index obsidian ", index, obsidian]
 date created: Friday, February 10th 2023, 6:11:21 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:32:55
 ---
 parent link: [[0000 Index 🔗|index]]
 
 ---
+
 # 유용한 정보 모음
+
 - [config 싱크 기능의 부재](https://forum.obsidian.md/t/copy-settings-from-existing-vault-option/11082)
 	- 세팅 싱크를 그냥 `.obsidian` 폴더로 하라는데? [link](https://forum.obsidian.md/t/copy-current-vault-settings-to-new-one/36134/2)
 - [Obsidian Linter](https://github.com/platers/obsidian-linter)
@@ -26,17 +28,20 @@ parent link: [[0000 Index 🔗|index]]
 - [[latex]]
 
 # 플러그인
+
 - [[dataview]]
 - [[MarkDownload - Markdown Web Clipper - Share & showcase - Obsidian Forum|마크다운 웹 클리퍼 - 웹 브라우저 플러그인]]
 - [[outliner and zoom {bullet list 기반 문서}]]
 
 # 옵시디언 튜토리얼
+
 - [[A Guide On Links vs. Tags In Obsidian - Knowledge management - Obsidian Forum|링크 vs 태그]]
 - [[Use Obsidian Like a Pro]]
 - [[A beginner's guide to using the Obsidian Notes application]]
 - [[Quick Tip Footnotes in Obsidian - Obsidian Rocks]]
 
 # 커뮤니티
+
 - [[Has anyone created a bookmarking system in obsidian   ObsidianMD|북마크 관리자로써의 옵시디언]]
 - [[tab reuse on link opening, tab management {Obsidian}]]
 

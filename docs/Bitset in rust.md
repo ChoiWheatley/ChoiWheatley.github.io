@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-26T21:27:41
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: Bitset in rust
 ---
 - moved to notion https://choiwheatley.notion.site/Bitset-in-rust-56ebc5cb130a4fdfb7cdecf9f78b232e

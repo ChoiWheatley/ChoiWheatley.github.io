@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-27T09:26:16
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 백엔드 개발자가 알아야 하는 기초상식 (Basic)
 ---
 [백엔드 개발자가 알아야 하는 기초상식 (Basic)](https://www.developerfastlane.com/blog/things-to-know-for-backend-developer-basic)

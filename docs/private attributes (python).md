@@ -3,11 +3,12 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:12:05
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: private attributes (python)
 ---
 
 클래스 밖에서 **문법적으로** 접근이 불가능한 프라이빗한 변수를 만들 수 있다. 이름 앞에 `__`만 붙이면 끝임.
+
 ```python
 class Car(object):
     __maxSpeed = 300

@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-17T15:55:20
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: Error handling {django} {book-project}
 ---
 - TL;DR

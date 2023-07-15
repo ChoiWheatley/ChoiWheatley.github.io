@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T16:21:43
-updated: 2023-07-12T10:41:32
+updated: 2023-07-15T21:33:03
 title: pk { urlpatterns { path } } {django}
 ---
 
@@ -14,6 +14,7 @@ title: pk { urlpatterns { path } } {django}
 - [Build a blog using django {YT}](https://youtu.be/sMqDJovFO-Y?t=5323)
 	- `url_patterns` > [[django path(route, view, name)|path]] 에 대하여 라우트를 줄 때 `<int:pk>`를 줄 수 있다고 했다. 
 	- 그말은 곧 인자를 하나 더 받겠다는 의미이다. 따라서 장고 템플릿에서 `{% url <name> [args] %}`의 규칙에 따라 인자를 추가하여야 한다. `pk`에는 `object.id`인듯?
+
 	```python
 	# blog > urls.py
 	urlpatterns = [
@@ -26,7 +27,7 @@ title: pk { urlpatterns { path } } {django}
 	    model = Article
 	    template_name = "blog/detail_article.html"
 	```
- 
+
 	```html
 	<!-- blog > templates > blog > index.html -->
 	{% for object in object_list %}
@@ -34,5 +35,5 @@ title: pk { urlpatterns { path } } {django}
 		<a href="{% url 'detail_article' object.id %}" class="btn btn-primary">Read More</a>
 	{% endfor %}
 	```
- 
+
 {% endraw %}

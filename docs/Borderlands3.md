@@ -6,7 +6,7 @@ tags: game
 date created: Sunday, February 12th 2023, 12:31:27 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-12T12:31:27
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: Borderlands3
 ---
 
@@ -14,7 +14,6 @@ title: Borderlands3
 
 - https://docs.google.com/spreadsheets/d/12Yrw_MyLB9RrSnKT_64bXKuNP2PXHhX_3xmjfnwgUiQ/edit#gid=0
 - https://www.lootlemon.com/weapon/unforgiven-bl3
-
 
 # 무기
 
@@ -29,12 +28,10 @@ title: Borderlands3
 	- [ ] https://www.youtube.com/watch?v=G0oO44tjdns
 - [ ] 소울랜더: 소총이… smg 연사력?  거기다 맞출때마다 해골이 발사?
 
-
 # 유물
 
 - [ ] 지식의 진주(DLC): 연속으로 명중에 성공하면 데미지가 1%씩 증가하며 최대 15회 중첩
 - [ ] 
-
 
 # 클래스 모드
 

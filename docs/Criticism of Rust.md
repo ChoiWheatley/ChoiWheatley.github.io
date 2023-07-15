@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-03-26T21:18:18
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: Criticism of Rust
 ---
 - https://blog.logrocket.com/interacting-databases-rust-diesel-vs-sqlx/

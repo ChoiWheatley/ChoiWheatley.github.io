@@ -3,10 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-08T10:38:19
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: Method studio의 비전과 미션, 골 분석
 ---
-- https://www.methodstudios.com/en/
+- https://www.methodstudios.com/en/  
 **
 
 -   WHY

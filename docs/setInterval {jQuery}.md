@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T13:45:01
-updated: 2023-07-11T15:20:18
+updated: 2023-07-15T21:33:03
 title: setInterval {jQuery}
 ---
 - [SOF](https://stackoverflow.com/questions/5484205/call-function-with-setinterval-in-jquery)

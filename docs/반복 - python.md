@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-01T13:06:02
-updated: 2023-07-11T15:20:17
+updated: 2023-07-15T21:33:02
 title: 반복 - python
 ---
 - `for`
@@ -21,10 +21,12 @@ title: 반복 - python
 	- 러스트의 [[enumerate and zip]] 의 enumerate와 같다. 인덱스 순서를 매겨주는 편리한 녀석이다.
 - nested loops
 - tuple unpacking
+
 ```python
 for key, value in some_dict.items():
 	print(f'{key} : {value}') 
 ```
+
 - `in` 문법을 활용하여 순회시, 시퀀스형 자료형은 메서드로 `__iter__` 와 `__next__`를 가지고 있어야 한다. => 커스텀 시퀀스 자료형 만들기도 개꿀
 - [[for-loop in python]]
 - 

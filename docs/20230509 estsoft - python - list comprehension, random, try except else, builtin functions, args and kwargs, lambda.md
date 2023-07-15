@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-09T16:37:46
-updated: 2023-07-12T10:46:36
+updated: 2023-07-15T21:30:22
 title: 20230509 estsoft - python - list comprehension, random, try except else, builtin functions, args and kwargs, lambda
 ---
 {% raw %}
@@ -15,6 +15,7 @@ title: 20230509 estsoft - python - list comprehension, random, try except else, 
 `for` + `append` 보다 속도도 빠르고 가독성도 좋은데 안 쓸이유가 없잖아?
 
 구문:
+
 ```python
 [{{expr}} for {{variable}} in {{iterable}} {{condition}}]
 ```

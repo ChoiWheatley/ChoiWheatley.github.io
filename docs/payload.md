@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-23T20:05:15
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: payload
 ---
 - 복잡한 운송/통신/보안 등에서 통용되는 단어로, 클라이언트가 가장 관심있어할만한 핵심을 페이로드라고 부른다.

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-11T15:12:14
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: PR 코드리뷰 하는 방법
 ---
 1. PR 페이지에 **Fileds changed** 탭을 가보면 **Review changes**라는 버튼이 보인다. 이 버튼을 눌러 커맨트와 함께 코드리뷰를 시작할 수 있다.

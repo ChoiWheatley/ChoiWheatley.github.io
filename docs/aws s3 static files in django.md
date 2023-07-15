@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-01T23:40:57
-updated: 2023-07-12T10:12:31
+updated: 2023-07-15T21:30:21
 title: aws s3 static files in django
 ---
 - [testdriven.io {tutorial}](https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/)
@@ -27,10 +27,12 @@ title: aws s3 static files in django
 		- 어떤 유저에게 어떤 리소스에 대한 어떤 접근을 허용/차단할지 등에 대한 정책임.
 	- ACL (Access Control List) 소유권 활성화 (안해도 돼)
  
+
 # 장고 프로젝트로 돌아와서...
 
 - 의존성 설치하고 settings.py 수정하고, core/env.py 설정하고 
 - settings.py 전역상수 설정 (book-project는 별도의 파일을 빼냈지만 근본은 동일.)
+
  ```python
  from core.env import config
 
@@ -49,8 +51,9 @@ AWS_S3_USE_SSL=True
 DEFAULT_FILE_STORAGE = 'core.storages.backends.MediaStorage'
 STATICFILES_STORAGE = 'core.storages.backends.StaticFileStorage'
  ```
- 
+
  - `DEFAULT_FILE_STORAGE`, `STATICFILES_STORAGE` 를 기본 클래스를 확장한 커스텀 클래스인 `MediaStorage, StaticFileStorage`로 변경한 것을 볼 수 있다. 파일을 들여다보자.
+
 ```python
 from storages.backends.s3boto3 import S3Boto3Storage, S3StaticStorage
 

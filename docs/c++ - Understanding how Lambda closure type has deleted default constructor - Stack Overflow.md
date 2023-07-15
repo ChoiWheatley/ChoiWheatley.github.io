@@ -7,15 +7,15 @@ source: https://stackoverflow.com/questions/32911729/understanding-how-lambda-cl
 author: AntiElephant
 date created: Friday, February 10th 2023, 4:37:18 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: c++ - Understanding how Lambda closure type has deleted default constructor - Stack Overflow
 ---
 
 # c++ - Understanding how Lambda closure type has deleted default constructor - Stack Overflow
 
 > ## Excerpt
-> From 5.1.2 
-  [19] The closure type associated with a lambda-expression has a deleted (8.4.3) default constructor and a deleted
+> From 5.1.2  
+  [19] The closure type associated with a lambda-expression has a deleted (8.4.3) default constructor and a deleted  
   copy assignment operator. It has an implicitly-declared copy const...
 
 ---

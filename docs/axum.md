@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-03-26T21:48:44
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: axum
 ---
+
 # Atomic Memos
 
 - [Rust Axum Full Course - Jeremy Chone](https://www.youtube.com/watch?v=XZtlD_m59sM)
@@ -21,6 +22,7 @@ title: axum
 - [[layer and middleware in axum]]
 
 ---
+
 # Index
 
 - [x] [00:00:00](https://www.youtube.com/watch?v=XZtlD_m59sM&t=0s) - Intro 
@@ -43,4 +45,3 @@ title: axum
 - [ ] [01:12:42](https://www.youtube.com/watch?v=XZtlD_m59sM&t=4362s) - Server Log line
 
 ---
-

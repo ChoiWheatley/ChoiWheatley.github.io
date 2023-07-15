@@ -4,7 +4,7 @@ tags:
 description:
 title: jekyll escaping liquid tags
 created: 2023-07-12T10:17:57
-updated: 2023-07-12T11:25:56
+updated: 2023-07-15T21:33:04
 ---
 https://www.digitalocean.com/community/tutorials/jekyll-escaping-liquid-tags
 

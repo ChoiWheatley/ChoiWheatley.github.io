@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T09:22:04
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: jQuery
 ---
 [jQuery & Ajax {Notion}](https://www.notion.so/jQuery-Ajax-22-5-60ddc1d3731542baa9e888bd5a03dcff)
@@ -23,6 +23,7 @@ title: jQuery
 ### filters
 
 ### effects
+
 - $("p").hide();
 - $("p").show();
 - $("p").toggle();
@@ -32,7 +33,9 @@ title: jQuery
 - $("#div3").fadeIn(3000); // 모달창, 이미지 갤러리 등에서 사용
 
 ### events
+
 - click
+
 ```js
 // JQuery - animate
 // 버튼 클릭했을 때 변화주기
@@ -45,7 +48,9 @@ $('#btn_ani').click(function() {
   }, 'slow');
 });
 ```
+
 - hover
+
 ```js
 //hover - 색 변경하기(호버 되었을 때 yellow, 호버에서 벗어났을 때 blue)
 $("#box").hover(function(){
@@ -54,7 +59,9 @@ $("#box").hover(function(){
   $(this).css("background-color", "blue");
 });
 ```
+
 - mouse event
+
 ```js
 $("#p1").mouseenter(function(){
 	alert("You entered p1!");

@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-23T11:27:23
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:22
 title: 20230523 estsoft javascript
 ---
+
 # 상식
 
 JS 생태계 확장의 주역은 바로 [Node.js](https://nodejs.org/en)이다. JS로 백엔드, 시스템, 게임개발 등을 할 수 있게 되었다. 그 전엔 브라우저에서밖에 돌아가지 않는다!
@@ -26,12 +27,12 @@ webpack: HTML/CSS/JS를 하나의 파일로 묶어준다. 장점: 난독화, 최
 
 `var`는 변수 가리기가 허용된다. (shadowing) 뿐만 아니라 `var`는 선언한 순간 전역변수가 된다.
 
-
 # Type
 
 이거 좀 이상한데
 
 # Instance Method
+
 [[JS instance method]]
 
 ![[Javascript#개꿀팁]]

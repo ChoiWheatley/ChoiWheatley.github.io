@@ -5,7 +5,7 @@ tags:
 date created: Friday, February 10th 2023, 4:37:03 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-10T16:37:03
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: lambda는 기본적으로 생성자가 지워져있다.
 ---
 link: [[C++|c++]]

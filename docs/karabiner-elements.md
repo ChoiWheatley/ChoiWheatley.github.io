@@ -3,7 +3,7 @@ aliases:
 tags: 
 description: 
 created: 2023-06-18T20:39:45
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: karabiner-elements
 ---
 - [docs](https://karabiner-elements.pqrs.org/docs/)

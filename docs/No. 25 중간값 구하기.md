@@ -5,20 +5,23 @@ tags:
 date created: Friday, February 10th 2023, 9:37:24 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-10T21:37:24
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:04
 title: No. 25 중간값 구하기
 ---
 [No. 25 중간값 구하기](https://swexpertacademy.com/main/talk/codeBattle/problemDetail.do?contestProbId=AV-fO0s6ARoDFAXT&categoryId=AYWab_JKjkwDFAQK&categoryType=BATTLE&battleMainPageIndex=1)
 
 ___
+
 # 풀이 
-한시간 고민했지만 문제를 풀 수 없었다. 결국 다른 사람의 풀이를 봤는데...
-![[software - 0 1.jpg]]
+
+한시간 고민했지만 문제를 풀 수 없었다. 결국 다른 사람의 풀이를 봤는데...  
+![[software - 0 1.jpg]]  
 maxheap과 minheap을 양 옆으로 붙여버리면 되는 것이었다. 정확히 말하자면 두 가지 조건을 만족시키게만 만들면 된다.
 1. `maxheap.size == minheap.size`
 2. `maxheap.top < mid && mid < minheap.top`
 
 # Code
+
 ```cpp
 /**
 sorted:

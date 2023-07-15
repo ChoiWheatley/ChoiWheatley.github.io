@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-17T09:32:43
-updated: 2023-07-11T15:21:10
+updated: 2023-07-15T21:30:21
 title: 20230617 book-project
 ---
 오늘 목표
@@ -13,8 +13,8 @@ title: 20230617 book-project
 	- BookHub
 - home.html 내용물
 	- card로 만들자 ==> model image + pdf 다운로드
-	- 그러면 book_list.html은? ==> 그대로 있음.
-[[stripe]]
+	- 그러면 book_list.html은? ==> 그대로 있음.  
+[[stripe]]  
 [[DateTimeField {auto_now_add} {auto_now} {django}]]
 
 - 책 제목 중복되어도 올릴 수 있게 (unique 풀기)
@@ -31,9 +31,11 @@ title: 20230617 book-project
 	- `login_required` 데코레이터를 여러번 썼잖아. 삭제 요청을 할 때 로그인이 필요한 상황이잖아. 이걸 쓰려고 했는데, 응답이 올 때 JsonResponse로 돌아와야 하는데, 자꾸 데코레이터로 인해 의도한 바가 안 나옴. ==> delete는 페이지가 따로 없고 버튼 자체가 fetch를 하지 않는다. 
 
 # 24일까지
+
 [[20230624 까지 진행할 구현사항 {book-project}]]
 
 # 다음은...
+
 - 책 집필한 자기 분야에 대한 브리핑 / 피드백 
 	- 2023-06-19T16:00:00
 - 각자 구현한 저시기에 대한 브리핑 / 피드백

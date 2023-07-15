@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T11:14:02
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django migrate
 ---
 - [real python](https://realpython.com/django-migrations-a-primer/) | DB Migration을 의미함.

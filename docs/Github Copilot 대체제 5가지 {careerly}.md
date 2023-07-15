@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-13T15:03:09
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: Github Copilot 대체제 5가지 {careerly}
 ---
 - [careerly.co.kr](https://careerly.co.kr/comments/85161?utm_campaign=user-share)
@@ -40,4 +40,3 @@ title: Github Copilot 대체제 5가지 {careerly}
 - 에디터에서 바로 모든 코딩 질문을 할 수 있으며, 질문을 코드로 변환해주는 기능도 있습니다. 
 
 https://blog.openreplay.com/five-alternatives-to-github-copilot/
-

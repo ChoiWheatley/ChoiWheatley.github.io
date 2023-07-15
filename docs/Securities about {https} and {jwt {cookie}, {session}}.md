@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-24T08:33:57
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: Securities about {https} and {jwt {cookie}, {session}}
 ---
 
@@ -25,13 +25,16 @@ JWT는 인증/인가(authentication/authorization)의 여러 방법 중 하나�
 JWT는 세 가지의 구조로 이루어져 있습니다. Header, Payload, Signature.
 
 - 헤더에는 알고리즘과 타입으로 이루어져 있습니다. 알고리즘으로는 리소스 서버가 해당 토큰을 만들 때 사용한 알고리즘을 정의하며, HMAC, SHA256, RSA 등을 명시할 수 있습니다. 타입은 "JWT" 고정입니다.
+
 ```json
 {
 	"alg": "SHA256",
 	"typ": "JWT"
 }
 ```
+
 - 페이로드에는 claim이 담겨져 있는 공간입니다. claim이란, 데이터가 의미있는 정보를 담기 위해 필요한 사용자 정보에 대한 선언을 의미합니다. 주로 유저/관리자 식별, 만료일자, 이름 등에 대한 정보가 담겨 있습니다.
+
 ```json
 {
 	"iss": true,
@@ -39,11 +42,13 @@ JWT는 세 가지의 구조로 이루어져 있습니다. Header, Payload, Signa
 	"name": "Choi Wheatley"
 }
 ```
+
 - 시그니처에는 헤더와 페이로드가 유효한지를 검증하기 위해 리소스 서버에서 토큰을 생성할 시에 계산되는 암호문입니다. Base64Url로 인코딩한 header와 payload를 `.`으로 구분한 뒤 리소스 서버가 가지고 있는 비밀 키 (secrete key)로 암호화를 진행합니다. 그 결과값이 곧 시그니처 입니다.
 
 마지막으로 header, payload, signature를  `.`으로 구분한 Base64Url로 인코딩하여 붙인 긴 문자열을 클라이언트에게 반환합니다.
 
 아래는 JWT 토큰을 생성하는 수도코드 입니다.
+
 ```python
 header = {"alg": "HS256", "typ": "JWT"}
 payload = {"iss": true, "admin": true, "name": "Choi Wheatley"}

@@ -3,7 +3,7 @@ description:
 aliases: 커밋 메시지, 깃, 깃허브
 tags: 
 created: 2023-06-03T17:57:26
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:04
 title: git commit message 규칙
 ---
 [git commit message 규칙](https://velog.io/@jiheon/Git-Commit-message-%EA%B7%9C%EC%B9%99) 

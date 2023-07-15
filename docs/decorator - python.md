@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T17:39:04
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: decorator - python
 ---
 
@@ -11,10 +11,11 @@ title: decorator - python
 
 오늘 진도 엄청나게 많이 뺐네
 
-정의:
+정의:  
 	데코레이터는 함수의 기능을 확장하기 위해 만들어졌으며, 페이로드를 정제하는 일, 함수 호출 앞/뒤로 무언가 해야할 일이 있을 때 요긴하게 사용된다.
 
 먼저 실무에서 데코레이터를 어떻게 쓰는지 확인해보자.
+
 ```python
 @login
 def 비밀게시판():
@@ -29,6 +30,7 @@ sum([10, '', '20', '30', None, 'hello'])
 ```
 
 데코레이터는 사실 함수인데, 함수를 인자로 받아 함수를 리턴하는 이상한 녀석이다. 이것도 전략패턴이라고 봐야할까? 얘의 `wrap_func`를 잘 보면 안에서 `func`를 호출하는데 이녀석이 바로 데코레이터를 붙인 함수이다.
+
 ```python
 # Decorator 선언
 def print_hello(func):

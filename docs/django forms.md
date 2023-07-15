@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T13:33:19
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django forms
 ---
 - [Working with forms {doc}](https://docs.djangoproject.com/en/4.2/topics/forms/)
@@ -14,7 +14,7 @@ title: django forms
 	- 렌더링 이전에는 폼에 필요한 데이터들을 정렬한다.
 	- 정렬한 데이터를 가지고 HTML `<form>` 태그 안에 감싸 넣는다.
 	- 사용자 입력을 올바르게 가지고 와서 처리까지 수행한다.
- 
+
 > It is _possible_ to write code that does all of this manually, but Django can take care of it all for you.
 
 - [[django internal class Meta]]와의 훌륭한 합작으로 커스텀 Model을 폼으로 재창조하는 불편함 없이 이름만 매핑하면 내부 작업을 알아서 수행해준다!!! | [django.forms.modelforms](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/)
@@ -40,10 +40,10 @@ form = ArticleForm(instance=article)
 
 `fields`의 순서를 바꿨더니 실제 폼의 순서도 바뀌더라~~~
 
-`fields = ["username", "email", "password1", "password2"]`
+`fields = ["username", "email", "password1", "password2"]`  
 ![[Pasted image 20230601150945.png|350]] 
 
-`fields = ["email", "username", "password1", "password2"]`
+`fields = ["email", "username", "password1", "password2"]`  
 ![[Pasted image 20230601151020.png|350]]
 
 # UserCreationForm
@@ -61,6 +61,3 @@ form = ArticleForm(instance=article)
 # plus alpha with crispy-forms
 
 [[django crispy forms]]
-
-
-

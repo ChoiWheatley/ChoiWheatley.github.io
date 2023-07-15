@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T22:13:43
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: AbstractBaseUser
 ---
 - [real code example {doc}](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#a-full-example)

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T16:53:21
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: POST 요청을 기가막하게 사용하기 { django }
 ---
 - https://youtu.be/sMqDJovFO-Y?t=5853

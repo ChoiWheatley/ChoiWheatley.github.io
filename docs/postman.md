@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-03T17:24:40
-updated: 2023-07-11T15:21:07
+updated: 2023-07-15T21:33:03
 title: postman
 ---
 - https://nhj12311.tistory.com/393
@@ -18,4 +18,3 @@ postman은 API 요청을 웹 브라우저 없이도 날릴 수 있게 만들어�
 - 안배운 다양한 API들 (GraphQL, WebSocket, etc)에 대한 요청도 제공된다.
 - 심지어 요청을 스크립팅할 수도 있다. 
 - 테스팅도 가능하다. 그래서 내가 원한 결과가 나오는지에 대한 테스트코드를 작성하여 배포 전 테스트 단계를 자동적으로 수행할 수 있게 만들 수도 있을 것 같다.
-

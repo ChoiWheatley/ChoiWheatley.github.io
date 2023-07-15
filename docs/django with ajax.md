@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-08T13:29:42
-updated: 2023-07-11T15:21:08
+updated: 2023-07-15T21:33:05
 title: django with ajax
 ---
 - [Django + Ajax Full Tutorial Cource (46min) {YT}](https://youtu.be/h1fKWxs7A2c)

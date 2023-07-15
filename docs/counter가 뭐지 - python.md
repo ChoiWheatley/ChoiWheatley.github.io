@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T14:19:36
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:21
 title: counter가 뭐지 - python
 ---
+
 ```python
 from collections import Counter
 

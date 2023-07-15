@@ -9,7 +9,7 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-07-14T13:06:22
+updated: 2023-07-15T21:32:55
 ---
 parent link: 
 - [[0000 Index 🔗|index]]
@@ -70,7 +70,7 @@ Pending
 	- [[원격접속을 위한 공유기 세팅을 위한 공유기 구매욕구]]
 	- [[ring]]
 - 음악
-	- [[do-re-mi-fa-so-la-ti-do VS Done(Let's Get it)]]
+	- [[do-re-mi-fa-so-la-ti-do VS Done(Let's Get it)]]  
 On Progress
 ---
 

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T17:01:51
-updated: 2023-07-11T15:21:09
+updated: 2023-07-15T21:30:20
 title: django authorization for accessing인가 {mixins.{LoginRequiredMixin, UserPassesTestMixin}}
 ---
 - [Delete Article {YT}](https://youtu.be/sMqDJovFO-Y?t=7364)
