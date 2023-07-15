@@ -19,4 +19,4 @@ theme:
 
 plugins:
   - search
-  - roamlinks
+  - obsidian-support

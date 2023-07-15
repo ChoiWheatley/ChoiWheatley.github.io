@@ -7,10 +7,10 @@ categories:
 aliases: 
  - index
  - 0000
-tags: [index]
+tags: index
 date created: Thursday, February 9th 2023, 11:01:44 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T22:32:08
+updated: 2023-07-15T22:35:26
 ---
 
 parent link: [[Readme]]
