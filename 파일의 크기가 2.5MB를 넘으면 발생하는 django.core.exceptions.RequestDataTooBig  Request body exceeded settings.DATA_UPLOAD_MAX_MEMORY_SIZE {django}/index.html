@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,7 +232,7 @@
 
 <ul>
 <li><a href="https://stackoverflow.com/questions/41408359/requestdatatoobig-request-body-exceeded-settings-data-upload-max-memory-size">SOF 대화</a></li>
-<li>가장 관련이 깊은 문제: [[image(media) 파일을 DB 이외의 로컬 저장소에서 관리하게 만들기 {django}]]</li>
+<li>가장 관련이 깊은 문제: <a href="../image%28media%29%20%ED%8C%8C%EC%9D%BC%EC%9D%84%20DB%20%EC%9D%B4%EC%99%B8%EC%9D%98%20%EB%A1%9C%EC%BB%AC%20%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90%EC%84%9C%20%EA%B4%80%EB%A6%AC%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20%7Bdjango%7D/">image(media) 파일을 DB 이외의 로컬 저장소에서 관리하게 만들기 {django}</a></li>
 </ul>
 
 
@@ -271,5 +282,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

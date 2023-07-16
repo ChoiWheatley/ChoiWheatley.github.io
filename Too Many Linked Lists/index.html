@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,30 +232,30 @@
 
 <ul>
 <li>links<ul>
-<li>[[0013 Rust 🦀]]</li>
-<li>[[0013.1 Scrapped 🦀]]</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0013%20Rust%20%F0%9F%A6%80/">0013 Rust 🦀</a></li>
+<li><a href="../0013.1%20Scrapped%20%F0%9F%A6%80/">0013.1 Scrapped 🦀</a></li>
 </ul>
 </li>
 <li>https://rust-unofficial.github.io/too-many-lists/</li>
 <li>https://github.com/ChoiWheatley/my-first-rust/tree/master/too_many_linked_lists</li>
 <li>배운것들<ul>
-<li>[[rc try_unwrap]]</li>
-<li>[[Persistent Data Structures - Hans Enlin]] </li>
-<li>[[option and_then, map, or_else]]</li>
-<li>[[values in a scope are dropped in the opposite order they are defined]]</li>
-<li>[[thread safety with Arc which violates interior mutability]]</li>
-<li>[[Ref map can make new Ref for borrowed data]]</li>
-<li>[[MIRI - Mid-level Intermediate Representaion Interpreter]]</li>
-<li>[[Stacked Borrows in rust]]</li>
-<li>[[malloc like rust feature]]</li>
+<li><a href="../rc%20try_unwrap/">rc try_unwrap</a></li>
+<li><a href="../Persistent%20Data%20Structures%20-%20Hans%20Enlin/">Persistent Data Structures - Hans Enlin</a> </li>
+<li><a href="../option%20and_then%2C%20map%2C%20or_else/">option and_then, map, or_else</a></li>
+<li><a href="../values%20in%20a%20scope%20are%20dropped%20in%20the%20opposite%20order%20they%20are%20defined/">values in a scope are dropped in the opposite order they are defined</a></li>
+<li><a href="../thread%20safety%20with%20Arc%20which%20violates%20interior%20mutability/">thread safety with Arc which violates interior mutability</a></li>
+<li><a href="../Ref%20map%20can%20make%20new%20Ref%20for%20borrowed%20data/">Ref map can make new Ref for borrowed data</a></li>
+<li><a href="../MIRI%20-%20Mid-level%20Intermediate%20Representaion%20Interpreter/">MIRI - Mid-level Intermediate Representaion Interpreter</a></li>
+<li><a href="../Stacked%20Borrows%20in%20rust/">Stacked Borrows in rust</a></li>
+<li><a href="../malloc%20like%20rust%20feature/">malloc like rust feature</a></li>
 <li>[[unbounded lifetime with ptr as_mut]]</li>
-<li>[[exception safety with rust]]</li>
+<li><a href="../exception%20safety%20with%20rust/">exception safety with rust</a></li>
 <li>[[NonNull can wrap raw pointers with COVARIANT property]]</li>
-<li>[[Extend trait]]</li>
-<li>[[Debug trait and DebugList builder and DebugStruct builder etc]]</li>
-<li>[[compare two iterators]]</li>
-<li>[[Hasher에게 먹이 주기 feed Hasher]]</li>
-<li>[[FromIterator를 구현하면 collect할 수 있다]]</li>
+<li><a href="../Extend%20trait/">Extend trait</a></li>
+<li><a href="../Debug%20trait%20and%20DebugList%20builder%20and%20DebugStruct%20builder%20etc/">Debug trait and DebugList builder and DebugStruct builder etc</a></li>
+<li><a href="../compare%20two%20iterators/">compare two iterators</a></li>
+<li><a href="../Hasher%EC%97%90%EA%B2%8C%20%EB%A8%B9%EC%9D%B4%20%EC%A3%BC%EA%B8%B0%20feed%20Hasher/">Hasher에게 먹이 주기 feed Hasher</a></li>
+<li><a href="../FromIterator%EB%A5%BC%20%EA%B5%AC%ED%98%84%ED%95%98%EB%A9%B4%20collect%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">FromIterator를 구현하면 collect할 수 있다</a></li>
 </ul>
 </li>
 </ul>
@@ -296,5 +307,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

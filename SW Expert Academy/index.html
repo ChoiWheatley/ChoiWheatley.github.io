@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -252,13 +263,13 @@
                   
 
 
-<h1 id="sw-expert-academy">SW Expert Academy</h1>
+<h1 id="sw-expert-academy">SW Expert Academy<a class="headerlink" href="#sw-expert-academy" title="Permanent link">&para;</a></h1>
 <blockquote>
-<h2 id="excerpt">Excerpt</h2>
+<h2 id="excerpt">Excerpt<a class="headerlink" href="#excerpt" title="Permanent link">&para;</a></h2>
 <p>문제는 하루 전 오후 5시에 업데이트, Live 특강은 14:00에 진행.</p>
 </blockquote>
 <hr />
-<h4 id="notice">Notice</h4>
+<h4 id="notice">Notice<a class="headerlink" href="#notice" title="Permanent link">&para;</a></h4>
 <p>[공지] 실전실습 문제풀이 안내 (2/9~2/23)</p>
 <p>조회 1264</p>
 <p>작성일 2023-02-08 10:24</p>
@@ -344,5 +355,5 @@ Live 특강은 당일 업로드 된 문제에 대한 해설 강의로 이루어�
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

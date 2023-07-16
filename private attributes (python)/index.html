@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,20 +231,20 @@
   <h1>private attributes (python)</h1>
 
 <p>클래스 밖에서 <strong>문법적으로</strong> 접근이 불가능한 프라이빗한 변수를 만들 수 있다. 이름 앞에 <code>__</code>만 붙이면 끝임.</p>
-<pre><code class="language-python">class Car(object):
-    __maxSpeed = 300
-    maxPeople = 5
-    def move(self, x):
-        print(x, '의 스피드로 움직이고 있습니다.')
-        print(self.__maxSpeed, '가 최고 속도입니다.')
-    def stop(self):
-        print('멈췄습니다.')
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">__maxSpeed</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">maxPeople</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;의 스피드로 움직이고 있습니다.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__maxSpeed</span><span class="p">,</span> <span class="s1">&#39;가 최고 속도입니다.&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;멈췄습니다.&#39;</span><span class="p">)</span>
 
-k5 = Car()
-k5.move(10)
-# k5.__maxSpeed #error
-k5.maxPeople
-</code></pre>
+<span class="n">k5</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+<span class="n">k5</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># k5.__maxSpeed #error</span>
+<span class="n">k5</span><span class="o">.</span><span class="n">maxPeople</span>
+</code></pre></div>
 
 
 
@@ -282,5 +293,5 @@ k5.maxPeople
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

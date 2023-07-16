@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,33 +235,33 @@
                   
 
 
-<h1 id="2023-06-13">2023-06-13</h1>
-<p>&lt;&lt; [[2023-06-12]] | [[2023-06-14]]&gt;&gt;</p>
+<h1 id="2023-06-13">2023-06-13<a class="headerlink" href="#2023-06-13" title="Permanent link">&para;</a></h1>
+<p>&lt;&lt; <a href="../2023-06-12/">2023-06-12</a> | <a href="../2023-06-14/">2023-06-14</a>&gt;&gt;</p>
 <hr />
-<h1 id="2023-06-13-daily-briefing">📅 2023-06-13 Daily Briefing</h1>
-<h2 id="_1">🎵 오늘의 추천곡</h2>
+<h1 id="2023-06-13-daily-briefing">📅 2023-06-13 Daily Briefing<a class="headerlink" href="#2023-06-13-daily-briefing" title="Permanent link">&para;</a></h1>
+<h2 id="_1">🎵 오늘의 추천곡<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://youtu.be/cuoGpoOVRdA">Singing Bowl - 10 Hour</a> 아 싱잉볼 왜이렇게 취향이지 😍</p>
-<h2 id="_2">🌜 어제는...</h2>
+<h2 id="_2">🌜 어제는...<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>GPT 프로젝트를 100% 완수하는 건 사실 불가능했다. 첫 번째 코드리뷰를 신청하자 100%에서 점점 멀어지는 것을 느꼈기 때문이다.</p>
-<h2 id="_3">🙌 지금은...</h2>
+<h2 id="_3">🙌 지금은...<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>하지만 지금 HTML, CSS, JS할 때가 아니다, 정신 차리고 장고에 몰입하여 또 다른 배움거리들을 머리속에 집어넣자.</p>
 <p>방금 전까지 SW사관학교정글 설명회를 들었다. 큰일이다. 9월 중으로 예상하고 있었는데, 입과가 8월 7일이란다. 뭣이 중헌디?</p>
-<h2 id="_4">🚀 오늘 내가 달성하고자 하는 것들은...</h2>
+<h2 id="_4">🚀 오늘 내가 달성하고자 하는 것들은...<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>DRF를 공부하면서 리팩토링을 진행할까, 데이터모델링에 관해서 더 연구해볼까</p>
-<h2 id="_5">👎 오늘 나에게 닥친 어려움은...</h2>
+<h2 id="_5">👎 오늘 나에게 닥친 어려움은...<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <hr />
-<h1 id="notes">📝 Notes</h1>
+<h1 id="notes">📝 Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
 <ul>
 <li></li>
 </ul>
 <hr />
-<p><img alt="Pending ⌛.canvas" src="Pending ⌛.canvas" /></p>
+<p><a class="glightbox" href="../../0000%20Index%20%F0%9F%94%97/Pending%20%E2%8C%9B.canvas" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pending ⌛.canvas" src="../../0000%20Index%20%F0%9F%94%97/Pending%20%E2%8C%9B.canvas" /></a></p>
 <hr />
-<h1 id="notes-modified-today">Notes modified today</h1>
-<pre><code class="language-dataview">List FROM &quot;&quot; 
+<h1 id="notes-modified-today">Notes modified today<a class="headerlink" href="#notes-modified-today" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>List FROM &quot;&quot; 
 WHERE striptime(date(file.frontmatter.updated)) = date(&quot;2023-06-13&quot;) 
 SORT file.mtime asc
-</code></pre>
+</code></pre></div>
 
 
 
@@ -299,5 +310,5 @@ SORT file.mtime asc
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

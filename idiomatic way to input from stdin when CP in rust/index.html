@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,19 +232,19 @@
 
 <p>CP 종특, 숫자만 입력으로 받고 whitespace로 구분을 하기 때문에 미리 iterator에 map을 하여 모든 라인에 대하여 자동으로 parse하게끔 만들어 놓았다. <code>flat_map</code>인 이유는 빈 문자열을 <em>flatten</em> 해주어 또 한 번의 <code>unwrap</code>의 필요를 제거했기 때문이다.</p>
 <p>아래 코드는 매 라인별 하나의 정수형이 들어올 때를 위한 코드이다.</p>
-<pre><code class="language-rust">let mut lines = io::stdin()
-    .lines()
-    .flat_map(|res_str| res_str.map(|s| s.parse::&lt;usize&gt;().expect(&quot;parse error&quot;)));
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">lines</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">flat_map</span><span class="p">(</span><span class="o">|</span><span class="n">res_str</span><span class="o">|</span><span class="w"> </span><span class="n">res_str</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;parse error&quot;</span><span class="p">)));</span>
+</code></pre></div>
 <p>아래 코드는 매 라인에 하나 이상의 정수형이 들어올 때를 위한 코드이다. <a href="https://doc.rust-lang.org/std/str/struct.SplitAsciiWhitespace.html"><code>split_ascii_whitespace</code></a> 또는 <a href="https://doc.rust-lang.org/std/str/struct.SplitWhitespace.html"><code>split_whitespace</code></a> 는 임의의 whitespace를 기준으로 이터레이트 할 수 있게 만들어준다.</p>
-<pre><code class="language-rust">let mut lines = io::stdin().lines().map(|res_str| {
-    res_str.map(|s| {
-        s.split_ascii_whitespace()
-            .map(|i| i.parse::&lt;i32&gt;().expect(&quot;parse error&quot;))
-            .collect::&lt;Vec&lt;_&gt;&gt;()
-    })
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">lines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span>::<span class="n">stdin</span><span class="p">().</span><span class="n">lines</span><span class="p">().</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">res_str</span><span class="o">|</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">res_str</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">split_ascii_whitespace</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">().</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;parse error&quot;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">collect</span>::<span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;&gt;</span><span class="p">()</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="p">});</span>
+</code></pre></div>
 
 
 
@@ -282,5 +293,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -258,15 +269,15 @@
 <p>장점: pure JS의 번잡스러움을 단칼에 쳐냈다. 하루면 배울 수 있어 매우 효율적임.</p>
 <ul>
 <li><code>$</code> =&gt; 얘 자체가 함수임. 함수 인자로 선택자를 사용한다.</li>
-<li><code>click(fn)</code> =&gt; 누르면 안에 함수를 실행한다. <img alt="Pasted image 20230601093517.png" src="Pasted image 20230601093517.png" /></li>
+<li><code>click(fn)</code> =&gt; 누르면 안에 함수를 실행한다. <a class="glightbox" href="../assets/Pasted%20image%2020230601093517.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230601093517.png" src="../assets/Pasted%20image%2020230601093517.png" /></a></li>
 <li><code>css('color', 'red')</code></li>
 <li><code>html([html 코드])</code> : 걍 HTML 문서를 가져오거나 치환한다.</li>
 <li><code>hide()</code> : 숨기기</li>
 <li><code>val([hello])</code> 값 쓰거나 가져오기</li>
 <li><code>text([value])</code> input 텍스트 쓰거나 가져오기</li>
 </ul>
-<h3 id="filters">filters</h3>
-<h3 id="effects">effects</h3>
+<h3 id="filters">filters<a class="headerlink" href="#filters" title="Permanent link">&para;</a></h3>
+<h3 id="effects">effects<a class="headerlink" href="#effects" title="Permanent link">&para;</a></h3>
 <ul>
 <li>$("p").hide();</li>
 <li>$("p").show();</li>
@@ -276,41 +287,41 @@
 <li>$("#div1").fadeToggle();</li>
 <li>$("#div3").fadeIn(3000); // 모달창, 이미지 갤러리 등에서 사용</li>
 </ul>
-<h3 id="events">events</h3>
+<h3 id="events">events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h3>
 <ul>
 <li>click</li>
 </ul>
-<pre><code class="language-js">// JQuery - animate
-// 버튼 클릭했을 때 변화주기
-// 'slow' 대신 ms 단위로도 줄 수 있습니다.
-$('#btn_ani').click(function() {
-  $('#box').animate({
-    width: '300px',
-    height: '300px',
-    opacity: 1,
-  }, 'slow');
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">// JQuery - animate</span>
+<span class="c1">// 버튼 클릭했을 때 변화주기</span>
+<span class="c1">// &#39;slow&#39; 대신 ms 단위로도 줄 수 있습니다.</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#btn_ani&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#box&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;300px&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;300px&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <ul>
 <li>hover</li>
 </ul>
-<pre><code class="language-js">//hover - 색 변경하기(호버 되었을 때 yellow, 호버에서 벗어났을 때 blue)
-$(&quot;#box&quot;).hover(function(){
-  $(this).css(&quot;background-color&quot;, &quot;yellow&quot;);
-}, function(){
-  $(this).css(&quot;background-color&quot;, &quot;blue&quot;);
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1">//hover - 색 변경하기(호버 되었을 때 yellow, 호버에서 벗어났을 때 blue)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#box&quot;</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;yellow&quot;</span><span class="p">);</span>
+<span class="p">},</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 <ul>
 <li>mouse event</li>
 </ul>
-<pre><code class="language-js">$(&quot;#p1&quot;).mouseenter(function(){
-    alert(&quot;You entered p1!&quot;);
-});
-$(&quot;#p1&quot;).mouseleave(function(){
-    alert(&quot;Bye! You now leaved p1!&quot;);
-});
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#p1&quot;</span><span class="p">).</span><span class="nx">mouseenter</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You entered p1!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#p1&quot;</span><span class="p">).</span><span class="nx">mouseleave</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Bye! You now leaved p1!&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
 
 
 
@@ -359,5 +370,5 @@ $(&quot;#p1&quot;).mouseleave(function(){
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -238,27 +249,27 @@
 </ul>
 </li>
 </ul>
-<h1 id="get_queryset"><code>get_queryset</code></h1>
+<h1 id="get_queryset"><code>get_queryset</code><a class="headerlink" href="#get_queryset" title="Permanent link">&para;</a></h1>
 <p><code>ListView</code>에서 객체의 리스트를 리턴하는 메서드이다. 기본적으로는 <code>objects.all()</code>을 호출하지만 오버라이딩 하여 원하는 결과만을 필터링하거나 exclude 하여 리턴할 수 있다.</p>
-<h1 id="get_context_data"><code>get_context_data</code></h1>
+<h1 id="get_context_data"><code>get_context_data</code><a class="headerlink" href="#get_context_data" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>You will probably be overriding this method often to <strong>add</strong> things to display in your templates</p>
 </blockquote>
 <p>주로 템플릿 컨텍스트(dict)에 원하는 엔트리를 추가하고자 할 때 사용한다.</p>
-<pre><code class="language-python">def get_context_data(self, **kwargs):
-    data = super().get_context_data(**kwargs)
-    data['page_title'] = 'Authors'
-    return data
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;page_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Authors&#39;</span>
+    <span class="k">return</span> <span class="n">data</span>
+</code></pre></div>
 <p><code>pate_title</code>을 사용할 수 있게 되었다</p>
-<pre><code class="language-html">&lt;h1&gt;{{ page_title }}&lt;/h1&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ page_title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-&lt;ul&gt;
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
 {% for author in author_list %}
-    &lt;li&gt;{{ author.name }}&lt;/li&gt;
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ author.name }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 {% endfor %}
-&lt;/ul&gt;
-</code></pre>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>{% endraw %}</p>
 
 
@@ -308,5 +319,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

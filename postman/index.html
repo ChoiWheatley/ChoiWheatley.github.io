@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,7 +240,7 @@
 <li>https://postman.com</li>
 </ul>
 <p>postman은 API 요청을 웹 브라우저 없이도 날릴 수 있게 만들어주는 고마운 도구이다. 특히 백엔드 개발을 할 때 비주얼 요소 (HTML/CSS) 코드를 단 한 줄도 쓰지 않고도 디버깅을 할 수 있게된다. JS 콘솔창을 열어 <code>fetch</code>를 매번 날리느라 수고하지 말고 그냥 postman을 쓰자.</p>
-<h1 id="what-can-i-do">What can I do?</h1>
+<h1 id="what-can-i-do">What can I do?<a class="headerlink" href="#what-can-i-do" title="Permanent link">&para;</a></h1>
 <ul>
 <li>HTTP(S) 요청<ul>
 <li>GET, POST, PATCH, DELETE 등과 같은 메서드를 사용하고 Header 키-밸류 쌍을 지정할 수도 있으며, 심지어 Body도 작성할 수 있다.</li>
@@ -287,5 +298,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

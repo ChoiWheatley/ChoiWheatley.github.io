@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,20 +235,20 @@
                   
 
 
-<h1 id="deep-copy-shallow-copy">Deep Copy &amp; Shallow Copy</h1>
-<pre><code class="language-python"># 얕은복사 =&gt; 0-depth value copy
-l = [[1,2,3],[4,5,6]]
-ll = l[:]
-assert id(l) != id(ll)
-assert id(l[0]) == id(ll[0])
+<h1 id="deep-copy-shallow-copy">Deep Copy &amp; Shallow Copy<a class="headerlink" href="#deep-copy-shallow-copy" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="c1"># 얕은복사 =&gt; 0-depth value copy</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="p">[:]</span>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-# 깊은복사 =&gt; N-depth recursive value copy
-from copy import deepcopy
-l = [[1,2,3],[4,5,6]]
-ll = deepcopy(l)
-assert id(l) != id(ll)
-assert id(l[0]) != id(ll[0])
-</code></pre>
+<span class="c1"># 깊은복사 =&gt; N-depth recursive value copy</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="n">ll</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">ll</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
 
 
 
@@ -286,5 +297,5 @@ assert id(l[0]) != id(ll[0])
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

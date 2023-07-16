@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,116 +232,115 @@
 
 <ul>
 <li>moved to notion https://choiwheatley.notion.site/Bitset-in-rust-56ebc5cb130a4fdfb7cdecf9f78b232e</li>
-<li>parent [[0013 Rust 🦀]]</li>
+<li>parent <a href="../0000%20Index%20%F0%9F%94%97/0013%20Rust%20%F0%9F%A6%80/">0013 Rust 🦀</a></li>
 </ul>
 <hr />
-<p>[[러스트로 game of life 구현하기]]를 진행하면서 enum 벡터를 최적화 할 수 있는 방법으로 어차피 bool 벡터인 셈이므로 비트셋을 사용하는 방법이 좋겠다고 판단하여 구현을 시작하였다.</p>
+<p><a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">러스트로 game of life 구현하기</a>를 진행하면서 enum 벡터를 최적화 할 수 있는 방법으로 어차피 bool 벡터인 셈이므로 비트셋을 사용하는 방법이 좋겠다고 판단하여 구현을 시작하였다.</p>
 <p>C++에서 비트셋을 만들었던 기억이 있으므로 딱 두 가지만 기억하면 된다.
 - <code>bin_number = index / (size_of(element_type) * 8)</code> 
 - <code>bit_number = index % (size_of(element_type) * 8)</code> </p>
-<p>두 파라메터를 구하는 함수 <code>bin_no</code> 와 <code>inner_idx</code> 를 작성하였다. 이거 근데 [[러스트에서 인라인 정의]] 못하나? =&gt; 간접적으로 외부에서 호출되지 않는 private 함수에 대해선 굳이 인라인 할 필요 없다.</p>
-<pre><code class="language-rust">use std::mem::size_of;
+<p>두 파라메터를 구하는 함수 <code>bin_no</code> 와 <code>inner_idx</code> 를 작성하였다. 이거 근데 <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9D%B8%EB%9D%BC%EC%9D%B8%20%EC%A0%95%EC%9D%98/">러스트에서 인라인 정의</a> 못하나? =&gt; 간접적으로 외부에서 호출되지 않는 private 함수에 대해선 굳이 인라인 할 필요 없다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">mem</span>::<span class="n">size_of</span><span class="p">;</span>
 
-fn bin_no(idx: usize) -&gt; usize {
-    idx / (size_of::&lt;usize&gt;() * 8)
-}
+<span class="k">fn</span> <span class="nf">bin_no</span><span class="p">(</span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span>
+<span class="w">    </span><span class="n">idx</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">size_of</span>::<span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
+<span class="p">}</span>
 
-fn inner_idx(idx: usize) -&gt; usize {
-    idx % (size_of::&lt;usize&gt;() * 8)
-}
-</code></pre>
-<p><code>Bitset</code> 타입과 생성자를 정의해보자. 우리가 만들 비트셋은 초기 크기가 고정되어있다. 아직은 배열 크기를 제네릭하게 만드는 방법을 모르니 벡터를 쓰자. [[generic array in rust]]</p>
-<pre><code class="language-rust">pub struct Bitset {
-    bits: Vec&lt;usize&gt;,
-}
+<span class="k">fn</span> <span class="nf">inner_idx</span><span class="p">(</span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span>
+<span class="w">    </span><span class="n">idx</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">size_of</span>::<span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>Bitset</code> 타입과 생성자를 정의해보자. 우리가 만들 비트셋은 초기 크기가 고정되어있다. 아직은 배열 크기를 제네릭하게 만드는 방법을 모르니 벡터를 쓰자. <a href="../generic%20array%20in%20rust/">generic array in rust</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Bitset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">bits</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
 
-impl Bitset {
-    /// creates [false; size] like bitset
-    pub fn with_size(size: usize) -&gt; Self {
-        let size = bin_no(size) + 1; // 혹시 모르니 여유롭게
-        let mut v = Vec::with_capacity(size); // size 아닙니다, capacity 입니다.
-        v.resize(size, 0);
-        Bitset {bits: v}
-    }
+<span class="k">impl</span><span class="w"> </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="sd">/// creates [false; size] like bitset</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">with_size</span><span class="p">(</span><span class="n">size</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bin_no</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 혹시 모르니 여유롭게</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"> </span><span class="c1">// size 아닙니다, capacity 입니다.</span>
+<span class="w">        </span><span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span><span class="n">bits</span>: <span class="nc">v</span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    /// indices의 각 원소들의 인덱스가 true인 새 Bitset를 반환한다.
-    pub fn from_indices(indices: &amp;[usize]) -&gt; Self {
-        let size = bin_no(indices.len()) + 1;
-        let mut v = Vec::with_capacity(size);
-        v.resize(size, 0);  
-        for i in indices.iter().cloned() {
-            *v.get_mut(bin_no(i)).expect(&quot;Index out of bounds&quot;) |= 1 &lt;&lt; inner_idx(i);
-        }
-        Bitset { bits: v }
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="sd">/// indices의 각 원소들의 인덱스가 true인 새 Bitset를 반환한다.</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">from_indices</span><span class="p">(</span><span class="n">indices</span>: <span class="kp">&amp;</span><span class="p">[</span><span class="kt">usize</span><span class="p">])</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bin_no</span><span class="p">(</span><span class="n">indices</span><span class="p">.</span><span class="n">len</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">        </span><span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">indices</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">cloned</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="o">*</span><span class="n">v</span><span class="p">.</span><span class="n">get_mut</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">i</span><span class="p">)).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index out of bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">bits</span>: <span class="nc">v</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>다음은 인덱싱을 활용하여 get, set을 하는 메서드를 정의해보자</p>
-<pre><code class="language-rust">impl Bitset {
-    pub fn get(&amp;self, idx: usize) -&gt; bool {
-        self.bits.get(bin_no(idx))
-            .expect(&quot;Index Out of Bounds&quot;) &gt;&gt; inner_idx(idx) &amp; 0b01 == 1
-    }
-    pub fn set(&amp;mut self, idx: usize) {
-        *self.bits.get_mut(bin_no(idx))
-            .expect(&quot;Index Out of Bounds&quot;) |= 1 &lt;&lt; inner_idx(idx);
-    }
-    pub fn reset(&amp;mut self, idx: usize) {
-        *self.bits.get_mut(bin_no(idx))
-            .expect(&quot;Index Out of Bounds&quot;) &amp;= !(1 &lt;&lt; inner_idx(idx));
-    }
-    pub fn set_to(&amp;mut self, idx: usize, to: bool) {
-        if to {
-            self.set(idx);
-        } else {
-            self.reset(idx);
-        }
-    }
-</code></pre>
-<p>아래는 비트셋 관련 테스트이다. [[러스트로 game of life 구현하기]] 할때 디버깅 용으로 간단하게 테스트 코드를 작성했다. 이때 러스트 모듈 구조에 대한 이해를 덤으로 얻어갔다.
+<div class="highlight"><pre><span></span><code><span class="k">impl</span><span class="w"> </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span>
+<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index Out of Bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mb">0b01</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">set</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">get_mut</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index Out of Bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">reset</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">get_mut</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index Out of Bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">set_to</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">to</span>: <span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>아래는 비트셋 관련 테스트이다. <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EB%A1%9C%20game%20of%20life%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/">러스트로 game of life 구현하기</a> 할때 디버깅 용으로 간단하게 테스트 코드를 작성했다. 이때 러스트 모듈 구조에 대한 이해를 덤으로 얻어갔다.
 1. 유닛 테스트는 테스트 하려는 모듈과 같은 파일 안에서 수행한다.
-2. 테스트 모듈파일 안에 <code>#[cfg(test)] mod tests{}</code> 블럭 안에서 테스트 코드를 작성하면 된다. -- [[자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다]]는 점 기억하고.</p>
-<pre><code class="language-rust">#[cfg(test)]
-mod tests {
-    use super::*;
+2. 테스트 모듈파일 안에 <code>#[cfg(test)] mod tests{}</code> 블럭 안에서 테스트 코드를 작성하면 된다. -- <a href="../%EC%9E%90%EC%8B%9D%20%EB%AA%A8%EB%93%88%EC%9D%80%20%EB%B6%80%EB%AA%A8%20%EB%AA%A8%EB%93%88%EC%9D%98%20private%20%EC%9A%94%EC%86%8C%EB%93%A4%EC%9D%84%20%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C%20%EC%A0%91%EA%B7%BC%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다</a>는 점 기억하고.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#[cfg(test)]</span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
 
-    #[test]
-    fn test_bin_no() {
-        for i in 0..=128 {
-            assert_eq!(i / 32, bin_no(i), &quot;i : {}&quot;, i);
-        }
-    }
+<span class="w">    </span><span class="cp">#[test]</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_bin_no</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..=</span><span class="mi">128</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="n">bin_no</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;i : {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    #[test]
-    fn test_init() {
-        let bs = Bitset::with_size(32);
-        assert_eq!(2, bs.bits.len());
-        for i in 0..32 {
-            assert_eq!(false, bs.get(i), &quot;in index {i}&quot;);
-        }
-        let bs = Bitset::with_size(128);
-        assert_eq!(5, bs.bits.len());
-        for i in 0..128 {
-            assert_eq!(false, bs.get(i), &quot;in index {}&quot;, i);
-        }
-    }
+<span class="w">    </span><span class="cp">#[test]</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span>::<span class="n">with_size</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="mi">32</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;in index {i}&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span>::<span class="n">with_size</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span>
+<span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="mi">128</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;in index {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    #[test]
-    fn test_set_get() {
-        let size = 128;
-        let mut bs = Bitset::with_size(size);
-        for i in 0..size {
-            bs.set(i);
-            assert!(bs.get(i));
-        }
-        for i in (0..size).rev() {
-            bs.reset(i);
-            assert!(!bs.get(i));
-        }
-    }
-}
-
-</code></pre>
+<span class="w">    </span><span class="cp">#[test]</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_set_get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span>::<span class="n">with_size</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">size</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">bs</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="fm">assert!</span><span class="p">(</span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="n">size</span><span class="p">).</span><span class="n">rev</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">bs</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="fm">assert!</span><span class="p">(</span><span class="o">!</span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <p><a href="https://crates.io/crates/fixedbitset">fixedbitset</a> crate를 사용하는 방법도 있다. 하지만 굳이? </p>
 
@@ -381,5 +391,5 @@ mod tests {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

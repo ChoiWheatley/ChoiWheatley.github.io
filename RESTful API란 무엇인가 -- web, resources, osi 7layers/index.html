@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,9 +235,9 @@
                   
 
 
-<h1 id="api">API란?</h1>
+<h1 id="api">API란?<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
 <p>Application Programming Interface의 약자로, SW간에 상호작용을 위한 제안된 함수, 핸들 목록을 의미한다. 인터페이스이기 때문에 구현체를 알지 않아도 인터페이스만 안다면 해당 기술을 별 무리없이 사용할 수 있게되어 아주 강력한 추상화를 이루어 낼 수 있다.</p>
-<h1 id="rest-api">REST API란?</h1>
+<h1 id="rest-api">REST API란?<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h1>
 <p><a href="https://www.yalco.kr/23_rest_api/">yalco - posting</a> | <a href="https://www.ibm.com/topics/rest-apis">IBM - What is a REST API?</a> | <a href="https://blog.hubspot.com/website/uri-vs-url">hubspot.com - URI VS URL</a> | <a href="https://youtu.be/RP_f5dMoHFc">그런 REST API로 괜찮은가</a></p>
 <blockquote>
 <p>하이퍼텍스트를 포함한 Self-descriptive한 메시지의 Uniform Interface를 통해 <strong>리소스</strong>에 접근하는 API</p>
@@ -245,7 +256,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="web">Web?</h2>
+<h2 id="web">Web?<a class="headerlink" href="#web" title="Permanent link">&para;</a></h2>
 <p>인터넷이 발전하던 1990년대, 엔티티 간에 데이터를 공유할 수 있는 방법으로 고안. </p>
 <ul>
 <li>HTML<ul>
@@ -261,16 +272,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="what-are-resources">What are Resources?</h2>
+<h2 id="what-are-resources">What are Resources?<a class="headerlink" href="#what-are-resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li>html 문서</li>
 <li>photo</li>
 <li>txt 파일</li>
 <li>등등</li>
 </ul>
-<h2 id="rest-api_1">그런 REST API로 괜찮은가 스크랩</h2>
+<h2 id="rest-api_1">그런 REST API로 괜찮은가 스크랩<a class="headerlink" href="#rest-api_1" title="Permanent link">&para;</a></h2>
 <p>REST api가 구현하기 까다로운 이유는 다름아닌 Uniform Interface의 제약조건 때문이다. 단순히 유일한 URI를 만드는 것은 쉽다. 다만 메시지 자체가 <strong>self-descriptive</strong>한지 여부와 <strong>HATEOAS</strong>(헤이티오스)를 준수하는지 여부가 우리의 발목을 잡는다.<br />
-<img alt="fwer23.png" src="fwer23.png" />
+<a class="glightbox" href="../assets/fwer23.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fwer23.png" src="../assets/fwer23.png" /></a>
 - self-descriptive message<br />
     자기스스로 설명하는 메시지란, HTML 형식을 보면 바로 알 수 있다. 우리가 a태그를 모르면 어딜 찾아가서 확인해야하는지 알고있듯이, SW가 주고받는 문서의 내용을 추론할 수 있어야 한다.</p>
 <pre><code>엥? 그러면 우리도 `hello`같은 태그 만들어서 어떻게 작동할지 명시하면 되는거 아니야? =&gt; TRUE. 그래서 위 영상에서 하고자 하는 말은 심지어 JSON파일일지라도 그 key값이 의미하는 바를 추론할 수 있도록 요청 헤더에 [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml)의 참조를 추가하면 자가설명이 가능해진다. 사실 JSON 파싱하는 방법 자체에 대해서도 IANA에 적혀있다고...
@@ -280,21 +291,16 @@
     쉽게 말해 링크를 타고 <strong>들어가는</strong> 일을 앱 단위의 상태변화로 볼 수 있다. HTML은 애초에 하이퍼텍스트이기 때문에 상태변화가 자연스럽게 느껴지지만, 일반 텍스트 에디터를 보면 아무리 그 안에 링크가 적혀있어도 에디터의 상태가 변하지는 않잖아.</li>
 </ul>
 <p>REST API는 웹에서 지원하고 있는 HTTP + REST 수준을 정확히 그대로 따라야 하는가?<br />
-<img alt="h2o3iruw89efy.png" src="h2o3iruw89efy.png" /></p>
+<a class="glightbox" href="../assets/h2o3iruw89efy.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="h2o3iruw89efy.png" src="../assets/h2o3iruw89efy.png" /></a></p>
 <p>그렇다면 모든 원격 API들은 REST API 제약조건을 준수하여야 하는가?<br />
-<img alt="9sd93sdsdAS 1.png" src="9sd93sdsdAS 1.png" /></p>
-<p>JSON은 RESTful한가?  </p>
-<figure markdown>
-  ![naver d2 - Day1, 2-2. 그런 REST API로 괜찮은가 [RP_f5dMoHFc - 1314x739 - 38m34s](naver d2 - Day1, 2-2. 그런 REST API로 괜찮은가 [RP_f5dMoHFc - 1314x739 - 38m34s)
-  <figcaption>.png</figcaption>
-</figure markdown>
-
-<h2 id="uri-url">URI? URL?</h2>
-<p>[[URI vs URL]]</p>
-<h1 id="osi-7-layers">OSI 7 Layers</h1>
+<a class="glightbox" href="../assets/9sd93sdsdAS%201.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="9sd93sdsdAS 1.png" src="../assets/9sd93sdsdAS%201.png" /></a></p>
+<p>JSON은 RESTful한가?<br />
+<a class="glightbox" href="../assets/naver%20d2%20-%20Day1%2C%202-2.%20%EA%B7%B8%EB%9F%B0%20REST%20API%EB%A1%9C%20%EA%B4%9C%EC%B0%AE%EC%9D%80%EA%B0%80%20%5BRP_f5dMoHFc%20-%201314x739%20-%2038m34s%5D.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="naver d2 - Day1, 2-2. 그런 REST API로 괜찮은가 [RP_f5dMoHFc - 1314x739 - 38m34s].png" src="../assets/naver%20d2%20-%20Day1%2C%202-2.%20%EA%B7%B8%EB%9F%B0%20REST%20API%EB%A1%9C%20%EA%B4%9C%EC%B0%AE%EC%9D%80%EA%B0%80%20%5BRP_f5dMoHFc%20-%201314x739%20-%2038m34s%5D.png" /></a></p>
+<h2 id="uri-url">URI? URL?<a class="headerlink" href="#uri-url" title="Permanent link">&para;</a></h2>
+<p><a href="../URI%20vs%20URL/">URI vs URL</a></p>
+<h1 id="osi-7-layers">OSI 7 Layers<a class="headerlink" href="#osi-7-layers" title="Permanent link">&para;</a></h1>
 <p><a href="https://1drv.ms/b/s!AgE-lhMulmhxg5UUghoFBc0ThAoxNQ?e=Jtr77T">네트워크 top down aproach overview pdf</a></p>
-<p><img alt="osi7layers.png" src="osi7layers.png" /></p>
-<p><img alt="스크린샷 2023-05-26 21.27.51.png" src="스크린샷 2023-05-26 21.27.51.png" /></p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-26%2021.27.51.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-05-26 21.27.51.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-26%2021.27.51.png" /></a></p>
 
 
 
@@ -343,5 +349,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

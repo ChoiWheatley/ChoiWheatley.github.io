@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,7 +230,7 @@
 
   <h1>불편한 진실을 피하지 말자 - 포프TV</h1>
 
-<p>[[0080 Scraps 📚|스크랩]]</p>
+<p><a href="../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/">스크랩</a></p>
 <p>https://youtu.be/OjZ555nqh0U</p>
 <p>내가 처한 상황을 스스로 알지 못하는 편이 많다. 그런 와중에 누군가로부터 어떤 이야기를 듣자면 불편함을 느끼는 경험이 꽤 있다. 저 아저씨는 그걸 받아들이는 자세와 성장가능성 간에 상관관계가 있다고 보고 있다.  </p>
 <p>베풀었을 때 거기에 감사한 마음을 표현하거나 그 정도는 다르더라도 자기만의 방식으로 다시 베풀어주는 상황에서 거기에 호의를 느낄 수 있다는 것 자체가 ’내가 베풂받고 있구나‘를 똑바로 직시할 수 있다는 것을 의미한다. 어떤 사람은 그런 베풂을 감사하게 되면 져 주고 들어간다는 편견을 가지고 있기 때문에 갖은 수를 써서라도 이유를 대려고 한다.  </p>
@@ -274,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

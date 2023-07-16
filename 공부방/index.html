@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,10 +231,10 @@
   <h1>공부방</h1>
 
 <ul>
-<li>[[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/">0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊</a></li>
 <li>2023-05-16 첫 모임<ul>
 <li>이 채널 안에서 매일 20:00에 모여 공부한 거 브리핑 한다<ul>
-<li>다음 브리핑은 [[2023-05-18 공부방]]</li>
+<li>다음 브리핑은 <a href="../2023-05-18%20%EA%B3%B5%EB%B6%80%EB%B0%A9/">2023-05-18 공부방</a></li>
 </ul>
 </li>
 <li>오르미 본 채널에서 4-6시 사이에 공부할 열의가 있는 사람들을 모은 채널을 만들 필요가 있다고 의견이 나왔다 ==&gt; 영조님이 건의한다고 함.<ul>
@@ -281,5 +292,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

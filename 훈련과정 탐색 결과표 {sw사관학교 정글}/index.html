@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -247,107 +258,107 @@
   <h1>훈련과정 탐색 결과표 {sw사관학교 정글}</h1>
 
 <p>회신 받으면 https://toml.tools/ 에 가서 TOML → JSON 변환한 다음에 https://www.anyjson.in/json-to-table 에 가서 JSON → 표로 변환한 다음에 <code>Ctrl+Shift+c</code> 눌러서 테이블 노드 전체를 캡쳐한 뒤에 김미연 상담사님께 보내드리자</p>
-<pre><code class="language-toml">[&quot;참여 희망 훈련분야&quot;.&quot;응용SW엔지니어링&quot;]
-&quot;NCS세분류&quot; = 20010202
-&quot;KECO세분류&quot; = 1333
+<div class="highlight"><pre><span></span><code><span class="k">[&quot;참여 희망 훈련분야&quot;.&quot;응용SW엔지니어링&quot;]</span>
+<span class="s">&quot;NCS세분류&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20010202</span>
+<span class="s">&quot;KECO세분류&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1333</span>
 
-[&quot;훈련기관&quot;]
-&quot;이름&quot; = &quot;&quot;
-&quot;소재지&quot; = &quot;&quot;
-&quot;연락처&quot; = &quot;&quot;
+<span class="k">[&quot;훈련기관&quot;]</span>
+<span class="s">&quot;이름&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="s">&quot;소재지&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="s">&quot;연락처&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 
-[&quot;훈련과정&quot;]
-&quot;이름&quot; = &quot;SW사관학교 정글&quot;
+<span class="k">[&quot;훈련과정&quot;]</span>
+<span class="s">&quot;이름&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SW사관학교 정글&quot;</span>
 
 
-[&quot;주요 교과목 및 내용&quot;]
-&quot;내용&quot; = [
-    &quot;전산학 지식 학습&quot;,
-    &quot;Red Black Tree, malloc-lab, web server&quot;,
-    &quot;OS Project&quot;,
-    &quot;실전 프로젝트&quot;,
-    &quot;취업활동 및 협력사 지원&quot;,
-]
+<span class="k">[&quot;주요 교과목 및 내용&quot;]</span>
+<span class="s">&quot;내용&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;전산학 지식 학습&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;Red Black Tree, malloc-lab, web server&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;OS Project&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;실전 프로젝트&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;취업활동 및 협력사 지원&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
-[&quot;훈련기간 및 훈련비&quot;]
-&quot;시작&quot; = 2023-08-07
-&quot;종료&quot; = 2023-12-23
-&quot;훈련비&quot; = &quot;₩‎ 3,000,000&quot;
-&quot;본인부담금&quot; = &quot;100%&quot;
+<span class="k">[&quot;훈련기간 및 훈련비&quot;]</span>
+<span class="s">&quot;시작&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2023-08-07</span>
+<span class="s">&quot;종료&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2023-12-23</span>
+<span class="s">&quot;훈련비&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;₩‎ 3,000,000&quot;</span>
+<span class="s">&quot;본인부담금&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;100%&quot;</span>
 
-[&quot;훈련성과&quot;]
-&quot;취업률&quot; = &quot;&quot;
-&quot;수강평&quot; = [
-    &quot;개발자로서 성장하기 위해 어떤 것을 어떻게 공부해야 하는지에 대해 짧은 시간에 집약적으로 배울 수 있는 최고의 교육이었습니다&quot;,
-    &quot;몰입을 돕는 환경과 몰입을 다짐한 동료들을 마주하니, 일생에 이보다 더 몰입해볼 수 있을까싶은 5개월을 보내게 되었습니다&quot;,
-    &quot;개발과 성장에만 집중하는 5개월이었습니다&quot;,
-    &quot;몰입하기 좋은 환경에서 열정과 끈기있는 사람들과 함께한 4~5개월간의 경험이 너무 즐겁고 고마운 기억으로 남아있습니다&quot;,
-    &quot;비록 저는 문과 출신이지만, SW정글 생활에 전혀 걸림돌이 되지 않았습니다. 중요한 건 진심으로 절박하고 간절히 원하는지였습니다. &quot;,
-    &quot;정글은 저에게 인생의 전환점이 되었습니다.&quot;,
-]
+<span class="k">[&quot;훈련성과&quot;]</span>
+<span class="s">&quot;취업률&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="s">&quot;수강평&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;개발자로서 성장하기 위해 어떤 것을 어떻게 공부해야 하는지에 대해 짧은 시간에 집약적으로 배울 수 있는 최고의 교육이었습니다&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;몰입을 돕는 환경과 몰입을 다짐한 동료들을 마주하니, 일생에 이보다 더 몰입해볼 수 있을까싶은 5개월을 보내게 되었습니다&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;개발과 성장에만 집중하는 5개월이었습니다&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;몰입하기 좋은 환경에서 열정과 끈기있는 사람들과 함께한 4~5개월간의 경험이 너무 즐겁고 고마운 기억으로 남아있습니다&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;비록 저는 문과 출신이지만, SW정글 생활에 전혀 걸림돌이 되지 않았습니다. 중요한 건 진심으로 절박하고 간절히 원하는지였습니다. &quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정글은 저에게 인생의 전환점이 되었습니다.&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
-[&quot;수료 후 관련 직업&quot;]
-# NCS 코드 20010202 참고했습니다.
-&quot;직업명&quot; = [
-    &quot;응용SW 개발자&quot;,
-    &quot;웹 개발자&quot;,
-    &quot;컴퓨터 하드웨어 기술자 및 연구원&quot;,
-    &quot;정보통신 관련 관리자&quot;,
-    &quot;통신공학 기술자 및 연구원&quot;,
-    &quot;컴퓨터시스템 설계 및 분석가&quot;,
-    &quot;시스템 소프트웨어 개발자&quot;,
-    &quot;네트워크 시스템 개발자&quot;,
-    &quot;웹 및 멀티미디어 기획자&quot;,
-    &quot;데이터베이스 개발자&quot;,
-    &quot;컴퓨터보안 전문가&quot;,
-    &quot;정보시스템 운영자&quot;
-]
-&quot;요구되는 특성&quot; = [
-    &quot;요구사항 확인&quot;,
-    &quot;데이터 입출력 구현&quot;,
-    &quot;통합 구현&quot;,
-    &quot;정보시스템 이행&quot;,
-    &quot;제품소프트웨어 패키징&quot;,
-    &quot;서버프로그램 구현&quot;,
-    &quot;인터페이스 구현&quot;,
-    &quot;애플리케이션 배포&quot;,
-    &quot;애플리케이션 리팩토링&quot;,
-    &quot;인터페이스 설계&quot;,
-    &quot;애플리케이션 요구사항 분석&quot;,
-    &quot;기능 모델링&quot;,
-    &quot;애플리케이션 설계&quot;,
-    &quot;정적모델 설계&quot;,
-    &quot;동적모델 설계&quot;,
-    &quot;화면 설계&quot;,
-    &quot;화면 구현&quot;,
-    &quot;애플리케이션 테스트 관리&quot;,
-    &quot;애플리케이션 테스트 수행&quot;,
-    &quot;소프트웨어공학 활용&quot;,
-    &quot;소프트웨어개발 방법론 활용&quot;,
-    &quot;프로그래밍 언어 응용&quot;,
-    &quot;프로그래밍 언어 활용&quot;,
-    &quot;응용SW 기초 기술 활용&quot;,
-    &quot;개발자 환경 구축&quot;,
-    &quot;개발 환경 운영 지원&quot;
-]
-&quot;주요업무&quot; = &quot;'요구되는 특성'과 동일&quot;
+<span class="k">[&quot;수료 후 관련 직업&quot;]</span>
+<span class="c1"># NCS 코드 20010202 참고했습니다.</span>
+<span class="s">&quot;직업명&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;응용SW 개발자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;웹 개발자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;컴퓨터 하드웨어 기술자 및 연구원&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정보통신 관련 관리자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;통신공학 기술자 및 연구원&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;컴퓨터시스템 설계 및 분석가&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;시스템 소프트웨어 개발자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;네트워크 시스템 개발자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;웹 및 멀티미디어 기획자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;데이터베이스 개발자&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;컴퓨터보안 전문가&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정보시스템 운영자&quot;</span>
+<span class="p">]</span>
+<span class="s">&quot;요구되는 특성&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;요구사항 확인&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;데이터 입출력 구현&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;통합 구현&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정보시스템 이행&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;제품소프트웨어 패키징&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;서버프로그램 구현&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;인터페이스 구현&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;애플리케이션 배포&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;애플리케이션 리팩토링&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;인터페이스 설계&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;애플리케이션 요구사항 분석&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;기능 모델링&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;애플리케이션 설계&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정적모델 설계&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;동적모델 설계&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;화면 설계&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;화면 구현&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;애플리케이션 테스트 관리&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;애플리케이션 테스트 수행&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;소프트웨어공학 활용&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;소프트웨어개발 방법론 활용&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;프로그래밍 언어 응용&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;프로그래밍 언어 활용&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;응용SW 기초 기술 활용&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;개발자 환경 구축&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;개발 환경 운영 지원&quot;</span>
+<span class="p">]</span>
+<span class="s">&quot;주요업무&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&#39;요구되는 특성&#39;과 동일&quot;</span>
 
-[&quot;관련 자격증&quot;]
-&quot;자격증명&quot; = [
-    &quot;정보통신기술사&quot;,
-    &quot;전자계산기 기능사&quot;,
-    &quot;전자산업기사&quot;,
-    &quot;정보통신 산업기사&quot;,
-    &quot;전자응용기술사&quot;,
-    &quot;전파통신기능사&quot;,
-    &quot;정보통신산업기사&quot;,
-    &quot;전자계산조직응용기사&quot;,
-    &quot;정보관리기술사&quot;
-]
-</code></pre>
-<h2 id="_1">회신 전</h2>
-<p><img alt="스크린샷 2023-07-04 23.12.05.png" src="스크린샷 2023-07-04 23.12.05.png" /></p>
-<h2 id="_2">회신 후</h2>
+<span class="k">[&quot;관련 자격증&quot;]</span>
+<span class="s">&quot;자격증명&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;정보통신기술사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;전자계산기 기능사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;전자산업기사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정보통신 산업기사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;전자응용기술사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;전파통신기능사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정보통신산업기사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;전자계산조직응용기사&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;정보관리기술사&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+<h2 id="_1">회신 전<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-04%2023.12.05.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-07-04 23.12.05.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-04%2023.12.05.png" /></a></p>
+<h2 id="_2">회신 후<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 
 
 
@@ -396,5 +407,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

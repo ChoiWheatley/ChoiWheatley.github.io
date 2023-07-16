@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,18 +235,18 @@
                   
 
 
-<h1 id="question">Question</h1>
+<h1 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h1>
 <p>안녕하세요! 에러 처리의 일환으로 팀원들이 겪은(겪을) 다양한 에러에 대하여 조사를 진행하고 있습니다. 2023-06-17 진행한 회의에서 book name의 unique를 해제할 시 발생할 slug(handle)의 중복문제를 해결하는 과정에 대하여 해당 스레드의 답글로 달아주시면 감사하겠습니다!</p>
 <p>따봉따봉 👍</p>
-<h1 id="answer-by-allen9535">Answer by Allen9535</h1>
+<h1 id="answer-by-allen9535">Answer by Allen9535<a class="headerlink" href="#answer-by-allen9535" title="Permanent link">&para;</a></h1>
 <p>해당 사항에 대해 두 가지 해결책을 생각해 봤습니다.<br />
 첫 번째는 상품에 대한 슬러그를 생성할 때, 상품의 PK를 함께 넣어주는 방식입니다. 현재 모델에는 따로 PK가 설정되어 있지 않아서 그런지 생성된 순서대로 숫자를 매겨 PK로 사용하고 있는 것 같습니다. 한 번 생성된 상품을 삭제하더라도 해당 PK는 결번이 되고요. 그래서 이름과 함께 PK를 사용하면 유니크한 슬러그가 될 것 같습니다.</p>
-<pre><code class="language-python">request_data[&quot;handle&quot;] = slugify(f&quot;{request_data['name']}-{request_data['user']}&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">request_data</span><span class="p">[</span><span class="s2">&quot;handle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">request_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">request_data</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>해당 코드로 생성된 슬러그: teseuteucaeg17-15</p>
 <p>두 번째는 uuid를 활용하는 것입니다. 슬러그의 길이가 길어진다는 단점(16자리)은 있지만, 나름의 규칙에 의해 유니크한 슬러그를 만들 수 있다는 장점이 있다고 생각합니다. 파이썬에서 기본 제공하는 uuid 모듈에는 uuid1(), uuid3(), uuid4(), uuid5() 라는 네 가지 함수가 있고, 각각 다른 방식으로 uuid를 생성해 준다고 합니다. | <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">wiki.org</a> | <a href="https://docs.python.org/3/library/uuid.html">docs.python.org</a></p>
-<pre><code class="language-python">request_data[&quot;handle&quot;] = slugify(f&quot;{uuid.uuid5(uuid.NAMESPACE_URL, request_data['name'])}&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">request_data</span><span class="p">[</span><span class="s2">&quot;handle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid5</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">NAMESPACE_URL</span><span class="p">,</span><span class="w"> </span><span class="n">request_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 <p>해당 코드로 생성된 슬러그: daadf289-29b0-5faf-946e-8ca97947c50e</p>
 <ul>
 <li>파이썬에서 제공하는 uuid 모듈의 함수 종류<ul>
@@ -294,5 +305,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

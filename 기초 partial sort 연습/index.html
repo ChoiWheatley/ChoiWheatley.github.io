@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,7 +233,7 @@
 <p>문제<br />
 <a href="https://swexpertacademy.com/main/talk/codeBattle/problemDetail.do?contestProbId=AXsEXxxqe7sDFARX&amp;categoryId=AYWab_JKjkwDFAQK&amp;categoryType=BATTLE&amp;battleMainPageIndex=1">no22. 기초 partial sort 연습</a></p>
 <p>해설<br />
-    [[Pro 사전문제 - 기초 Partial Sort 연습]]<br />
+<a href="../Pro%20%EC%82%AC%EC%A0%84%EB%AC%B8%EC%A0%9C%20-%20%EA%B8%B0%EC%B4%88%20Partial%20Sort%20%EC%97%B0%EC%8A%B5/">Pro 사전문제 - 기초 Partial Sort 연습</a><br />
     설명에 따르면 삽입정렬, 힙정렬이 가장 유효한 해답이 된다고 한다.<br />
     삽입정렬은 이미 정렬이 완료된 부분과 정렬이 덜된 부분을 나누어 생각하기 때문에 그때그때 새로운 데이터가 들어올 때 정렬하는 데 강점을 보인다.<br />
     내가 푼 방식인 힙정렬은 힙 속성을 만족하는 트리를 만드는데 로그의 시간이 걸리고 최소/최대값을 구하는데 단지 1번의 참조만 하면 되기 때문에 아주 유용하다.</p>
@@ -274,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

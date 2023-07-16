@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -228,11 +239,11 @@
 <ul>
 <li><a href="https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R#scrollTo=V6GhAqHXUW0h&amp;line=9&amp;uniqifier=1">최승현의 구글 콜랩 링크</a></li>
 </ul>
-<h1 id="list-comprehension">List Comprehension</h1>
+<h1 id="list-comprehension">List Comprehension<a class="headerlink" href="#list-comprehension" title="Permanent link">&para;</a></h1>
 <p><code>for</code> + <code>append</code> 보다 속도도 빠르고 가독성도 좋은데 안 쓸이유가 없잖아?</p>
 <p>구문:</p>
-<pre><code class="language-python">[{{expr}} for {{variable}} in {{iterable}} {{condition}}]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">[{{</span><span class="n">expr</span><span class="p">}}</span> <span class="k">for</span> <span class="p">{{</span><span class="n">variable</span><span class="p">}}</span> <span class="ow">in</span> <span class="p">{{</span><span class="n">iterable</span><span class="p">}}</span> <span class="p">{{</span><span class="n">condition</span><span class="p">}}]</span>
+</code></pre></div>
 <ul>
 <li>condition쪽은 옵션이다. 필터링 할 때 아주 유용함.</li>
 <li>cartesian product를 얼마나 할 지는 잘 모르겠으나, </li>
@@ -286,5 +297,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

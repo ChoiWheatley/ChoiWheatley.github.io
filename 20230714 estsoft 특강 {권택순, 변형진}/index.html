@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,15 +235,15 @@
                   
 
 
-<h1 id="_1">오늘은...</h1>
+<h1 id="_1">오늘은...<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>이스트소프트는 얼굴을 생성하고 대본으로부터 목소리를 생성하여 템플릿 동영상에서 얼굴만 대체하는 방식으로 ai 앵커를 만들었다.</p>
-<h1 id="estsoft-tech-deep-learning-language-models">변형진 ESTsoft Tech 센터장 Deep Learning Language Models</h1>
+<h1 id="estsoft-tech-deep-learning-language-models">변형진 ESTsoft Tech 센터장 Deep Learning Language Models<a class="headerlink" href="#estsoft-tech-deep-learning-language-models" title="Permanent link">&para;</a></h1>
 <p>LLM 기본 원리 이해하고 gpt를 직접 사용해보기로 한다.</p>
 <p>키오스크 안에서 동작하는 GPT 연동 AI 휴먼을 만들어봤다.</p>
-<pre><code class="language-mermaid">graph LR;
+<div class="highlight"><pre><span></span><code>graph LR;
     NLP --&gt; NLU;
     NLP --&gt; NLG;
-</code></pre>
+</code></pre></div>
 <ul>
 <li>NLU<ul>
 <li>Natural Language Understanding</li>
@@ -294,5 +305,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

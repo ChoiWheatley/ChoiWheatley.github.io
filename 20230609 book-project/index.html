@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,8 +231,8 @@
   <h1>20230609 book-project</h1>
 
 <ul>
-<li>[[django with ajax]]부터 이어서 진행한다. ajax로 뭘 할 지 몰라서 아예 <a href="https://github.com/ESTsoft-Book-Project/bookstore/issues/17">이슈</a>를 만들어 관리하기로 했다.</li>
-<li>[[PATCH {HTTP}]]<ul>
+<li><a href="../django%20with%20ajax/">django with ajax</a>부터 이어서 진행한다. ajax로 뭘 할 지 몰라서 아예 <a href="https://github.com/ESTsoft-Book-Project/bookstore/issues/17">이슈</a>를 만들어 관리하기로 했다.</li>
+<li><a href="../PATCH%20%7BHTTP%7D/">PATCH {HTTP}</a><ul>
 <li><code>&lt;domain&gt;/users/profile</code> 엔드포인트를 관리하는 <code>profile</code> GET 함수는 일단 <code>HttpResponse</code>를 리턴한다. 하지만 그 안에 ajax 코드가 있는데, 걔가 "replace", "remove"를 서버에 요청한다.</li>
 </ul>
 </li>
@@ -274,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

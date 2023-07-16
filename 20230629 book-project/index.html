@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -63,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#book-project" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -225,15 +236,15 @@
 
 
 <ul>
-<li>[[drf {django rest framework}]] Serializer에 대하여 먼저 공부.</li>
-<li>[[REST error message in HTTP Header or Response Body {sof}]]</li>
+<li><a href="../drf%20%7Bdjango%20rest%20framework%7D/">drf {django rest framework}</a> Serializer에 대하여 먼저 공부.</li>
+<li><a href="../REST%20error%20message%20in%20HTTP%20Header%20or%20Response%20Body%20%7Bsof%7D/">REST error message in HTTP Header or Response Body {sof}</a></li>
 <li><code>logout</code> 메서드를 안 쓰고 <code>delete_user</code>에 리디렉션을 <code>window.location.href</code>로 보냈더니 로그아웃을 안 하던데?</li>
-<li>[[getattr, setattr {python}]]</li>
-<li>[[drf 에서 redirect url에 대한 정보를 ViewSet에 담는법 {drf}]]</li>
-<li>[[업무로직을 프론트에서 짜야합니까, 백엔드에서 짜야합니까]]</li>
-<li>[[response.headers.get(Content-Type) {js}]]</li>
+<li><a href="../getattr%2C%20setattr%20%7Bpython%7D/">getattr, setattr {python}</a></li>
+<li><a href="../drf%20%EC%97%90%EC%84%9C%20redirect%20url%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20ViewSet%EC%97%90%20%EB%8B%B4%EB%8A%94%EB%B2%95%20%7Bdrf%7D/">drf 에서 redirect url에 대한 정보를 ViewSet에 담는법 {drf}</a></li>
+<li><a href="../%EC%97%85%EB%AC%B4%EB%A1%9C%EC%A7%81%EC%9D%84%20%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%A7%9C%EC%95%BC%ED%95%A9%EB%8B%88%EA%B9%8C%2C%20%EB%B0%B1%EC%97%94%EB%93%9C%EC%97%90%EC%84%9C%20%EC%A7%9C%EC%95%BC%ED%95%A9%EB%8B%88%EA%B9%8C/">업무로직을 프론트에서 짜야합니까, 백엔드에서 짜야합니까</a></li>
+<li><a href="../response.headers.get%28Content-Type%29%20%7Bjs%7D/">response.headers.get(Content-Type) {js}</a></li>
 </ul>
-<h1 id="book-project">[[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|집필]] 피드백</h1>
+<h1 id="_1"><a href="../%EC%A3%BC%EB%8B%88%EC%96%B4%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%2C%20%EA%B7%B8%20%EC%9D%B4%EC%83%81%EC%9C%BC%EB%A1%9C%20%F0%9F%9A%80%7Bbook-project%7D/">집필</a> 피드백<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>전체적으로 좀 안보인다. 너무 빽빽함<ul>
 <li>이게뭘 말하고 하는건지 바로 </li>
@@ -245,7 +256,7 @@
 <li>한 페이지가 비는 것들이 많다.</li>
 <li>[ ] 에러처리 관련 내용 채우자</li>
 </ul>
-<h1 id="_1">구현 피드백</h1>
+<h1 id="_2">구현 피드백<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
 <li>cart<ul>
 <li>[ ] 체크가 0개일때 주문하기 버튼을 비활성화</li>
@@ -302,5 +313,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,10 +237,10 @@
 
 <ul>
 <li><a href="https://paullabworkspace.notion.site/9f94fb9829d74db9b6961484aaf97a8b">notion assignment requirement</a></li>
-<li><a href="https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/join.html">결과물 코드 - join.html</a> | <a href="https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/join.css">join.css</a> |   <img alt="Pasted image 20230428173142.png" src="Pasted image 20230428173142.png" /></li>
+<li><a href="https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/join.html">결과물 코드 - join.html</a> | <a href="https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/join.css">join.css</a> |   <a class="glightbox" href="../assets/Pasted%20image%2020230428173142.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230428173142.png" src="../assets/Pasted%20image%2020230428173142.png" /></a></li>
 <li>"HTML/CSS 실습" 이라 적혀있는 헤더는 지금은 무시하고, 가운데 있는 회원가입 파트만 눈여겨 보자.</li>
 </ul>
-<h1 id="what-i-had-learned">what i had learned</h1>
+<h1 id="what-i-had-learned">what i had learned<a class="headerlink" href="#what-i-had-learned" title="Permanent link">&para;</a></h1>
 <ul>
 <li><code>&lt;fieldset&gt;</code>과 <code>&lt;legend&gt;</code> <ul>
 <li>여러가지 필드를 묶어서 <code>&lt;fieldset&gt;</code>을 제공하고, 그 제목 태그를<code>&lt;legend&gt;</code> 라고 부른다. </li>
@@ -287,5 +298,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

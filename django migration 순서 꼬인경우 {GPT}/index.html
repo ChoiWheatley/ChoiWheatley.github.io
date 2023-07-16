@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -235,20 +246,20 @@
 <p>Run the following command to fake the initial migration for the <code>users</code> app:</p>
 </li>
 </ol>
-<p><code>bash
-   python manage.py migrate users --fake-initial</code></p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>migrate<span class="w"> </span>users<span class="w"> </span>--fake-initial
+</code></pre></div>
 <p>This command will mark the initial migration for the <code>users</code> app as applied without actually running the migration.</p>
 <ol>
 <li>Run the following command to apply the migrations for the <code>users</code> app:</li>
 </ol>
-<p><code>bash
-   python manage.py migrate users</code></p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>migrate<span class="w"> </span>users
+</code></pre></div>
 <p>This will apply any remaining migrations for the <code>users</code> app.</p>
 <ol>
 <li>Finally, run the following command to apply the migrations for the <code>admin</code> app:</li>
 </ol>
-<p><code>bash
-   python manage.py migrate admin</code></p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>manage.py<span class="w"> </span>migrate<span class="w"> </span>admin
+</code></pre></div>
 <p>This will apply any remaining migrations for the <code>admin</code> app.</p>
 <p>By following these steps, you should be able to resolve the inconsistency in the migration history and apply the migrations for both the <code>users</code> and <code>admin</code> apps successfully.</p>
 
@@ -299,5 +310,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

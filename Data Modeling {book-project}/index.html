@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,7 +235,7 @@
                   
 
 
-<h1 id="index">INDEX</h1>
+<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
 <ul>
 <li>TLDR<ul>
 <li>Onedrive 2021_1 Database1 수업을 기반으로 정리.</li>
@@ -250,7 +261,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="rdbms">RDBMS의 기본</h1>
+<h1 id="rdbms">RDBMS의 기본<a class="headerlink" href="#rdbms" title="Permanent link">&para;</a></h1>
 <p>Relational Data Base Management System의 약자. 우리가 가장 익히 알고 있는 RDBMS에는 정형 데이터 처리 도구인 SQL family가 있다.</p>
 <ul>
 <li>필드란<ul>
@@ -319,7 +330,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="key">Key</h2>
+<h2 id="key">Key<a class="headerlink" href="#key" title="Permanent link">&para;</a></h2>
 <ul>
 <li>테이블의 레코드를 검색할 때 하나의 레코드를 구별(식별)할 수 있도록 하는 기준. 유일성 (Unique) 기준을 만족해야 한다.</li>
 <li><strong>복합키(Composite Key)</strong>: 하나의 칼럼이나 여러 칼럼을 묶어서 사용가능 (주민번호 + 학번 + 사번)</li>
@@ -327,28 +338,26 @@
 <li><strong>대체키(Alternate Key)</strong>: 후보키 중 기본키를 제외한 나머지 키</li>
 <li><strong>기본키(Primary Key)</strong>: 후보키 중 선택된 키. PK가 없는 테이블도 가능.</li>
 <li><strong>외래키(Foreign Key)</strong>: 다른 테이블(Relation)에서 PK로 사용되는 칼럼이 현재 테이블에서 사용되고 있을 때 ==&gt; 테이블 간에 의도적인 중복을 허용하여 테이블을 합치는 연산인 조인 시 유용하게 써먹을 수 있다.<ul>
-<li><figure markdown>
-  <img alt="Drawing 2023-06-14 13.36.57.excalidraw" src="Drawing 2023-06-14 13.36.57.excalidraw" />
-<br />
-<figcaption>100%</figcaption></li>
+<li>![[Drawing 2023-06-14 13.36.57.excalidraw|100%]]</li>
+<li><strong>식별관계(Identifying Relationship)</strong>: 내 테이블의 FK가 PK인 경우</li>
+<li><strong>비식별관계(Non-identifying Relationship)</strong>: 내 테이블의 FK가 일반 칼럼인 경우</li>
+</ul>
+</li>
+<li>참조 무결성 제약조건(Referential Integrity)<ul>
+<li>외래키로 연관 테이블을 검색하면 데이터가 <em>반드시</em> 존재하여야 함.</li>
+<li>삽입, 삭제에 순서가 있어야 한다. 이 순서를 어기면 에러가 발생한다. </li>
+<li>원본 레코드를 삭제하기 위해선 이 테이블을 참조하는 다른 테이블의 레코드를 먼저 삭제해야 한다.</li>
+<li>반대로 외래키를 가지는 테이블이 레코드를 추가하고 싶다면 원본 레코드를 가진 테이블에 레코드를 먼저 추가하여야 한다.</li>
 </ul>
 </li>
 </ul>
-<p></figure markdown>
-    - <strong>식별관계(Identifying Relationship)</strong>: 내 테이블의 FK가 PK인 경우
-    - <strong>비식별관계(Non-identifying Relationship)</strong>: 내 테이블의 FK가 일반 칼럼인 경우
-- 참조 무결성 제약조건(Referential Integrity)
-    - 외래키로 연관 테이블을 검색하면 데이터가 <em>반드시</em> 존재하여야 함.
-    - 삽입, 삭제에 순서가 있어야 한다. 이 순서를 어기면 에러가 발생한다. 
-    - 원본 레코드를 삭제하기 위해선 이 테이블을 참조하는 다른 테이블의 레코드를 먼저 삭제해야 한다.
-    - 반대로 외래키를 가지는 테이블이 레코드를 추가하고 싶다면 원본 레코드를 가진 테이블에 레코드를 먼저 추가하여야 한다.</p>
-<h2 id="_1">조인</h2>
+<h2 id="_1">조인<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>여러 테이블을 합쳐 큰 테이블로 만드는 연산. 테이블이 나뉘어진 상태에서 원하는 데이터를 찾기 위해선 먼저 테이블을 합쳐야 한다. 왜냐하면 검색을 시작한 테이블에 내가 원하는 데이터가 존재할 거란 보장이 없기 때문이다.</li>
 <li>조인은 테이블 단위 연산이다. 조인과정에서 테이블 간의 공통칼럼이 있어야 한다. 이를 표준 조인이라고 부른다. 이때 공통칼럼을 외래키라고 부른다.</li>
 </ul>
-<h1 id="rdbms_1">RDBMS가 제공하는 연산</h1>
-<h2 id="dml">DML</h2>
+<h1 id="rdbms_1">RDBMS가 제공하는 연산<a class="headerlink" href="#rdbms_1" title="Permanent link">&para;</a></h1>
+<h2 id="dml">DML<a class="headerlink" href="#dml" title="Permanent link">&para;</a></h2>
 <ul>
 <li>(Data Manipulation Language)</li>
 <li>selection<ul>
@@ -409,7 +418,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="ddl">DDL</h2>
+<h2 id="ddl">DDL<a class="headerlink" href="#ddl" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Data Definition Language</li>
 <li>create database</li>
@@ -428,7 +437,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="dcl">DCL</h2>
+<h2 id="dcl">DCL<a class="headerlink" href="#dcl" title="Permanent link">&para;</a></h2>
 <ul>
 <li>(Data Control Language) | <a href="https://www.geeksforgeeks.org/mysql-grant-revoke-privileges/">gtg.org</a></li>
 <li>루트를 제외한 유저들에게 권한부여하는 명령어 모음</li>
@@ -459,7 +468,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_2">트랜잭션</h1>
+<h1 id="_2">트랜잭션<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
 <li>RDBMS의 간판기능<ul>
 <li>트랜잭션의 모든 제약조건 (ACID)를 만족<ul>
@@ -486,7 +495,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_3">데이터 모델링</h1>
+<h1 id="_3">데이터 모델링<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
 <p>| <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">wiki.org</a> | <a href="https://lifreeblog.tistory.com/70">blog</a> |</p>
 <ul>
 <li>정의<ul>
@@ -556,16 +565,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="cardinality">Cardinality (대응수)</h2>
+<h2 id="cardinality">Cardinality (대응수)<a class="headerlink" href="#cardinality" title="Permanent link">&para;</a></h2>
 <ul>
 <li>1:1<ul>
-<li><img alt="Pasted image 20230614170840.png" src="Pasted image 20230614170840.png" /></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230614170840.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614170840.png" src="../assets/Pasted%20image%2020230614170840.png" /></a></li>
 <li>하나의 개체가 하나의 개체에 대응</li>
 <li>단일 테이블 내 칼럼 추가</li>
 </ul>
 </li>
 <li>1:N<ul>
-<li><img alt="Pasted image 20230614170851.png" src="Pasted image 20230614170851.png" /></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230614170851.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614170851.png" src="../assets/Pasted%20image%2020230614170851.png" /></a></li>
 <li>하나의 개체가 0..* 개의 개체에 대응</li>
 <li>2개의 테이블 필요.</li>
 </ul>
@@ -576,14 +585,14 @@
 </ul>
 </li>
 <li>M:N<ul>
-<li><img alt="Pasted image 20230614170910.png" src="Pasted image 20230614170910.png" /></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230614170910.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614170910.png" src="../assets/Pasted%20image%2020230614170910.png" /></a></li>
 <li>0..<em> 개의 개체가 0..</em> 개의 개체에 대응</li>
 <li>3개의 테이블 필요.</li>
 </ul>
 </li>
 <li>기본적으로 모든 관계는 M:N (다대다) 관계임.<ul>
 <li>Entity -- Relationship -- Entity 이렇게 총 3개의 테이블이 필요함. 아래의 예제는 학생과 교수 사이에 다대다 관계를 <em>강의</em>라는 테이블로 정의한 것을 보여준다. </li>
-<li><img alt="Pasted image 20230614165211.png" src="Pasted image 20230614165211.png" /></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230614165211.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614165211.png" src="../assets/Pasted%20image%2020230614165211.png" /></a></li>
 <li>M:N -&gt; 1:N 또는 N:1 -&gt; 1:1의 순서로 축소하면서 테이블의 개수가 줄어든다.</li>
 <li>1:1, 1:N/N:1로 축소가 가능한 경우, 중간 관계(강의)를 삭제한 뒤에 <ul>
 <li>1:1인 경우, 엔티티 안에 속성을 직접 추가한다.</li>
@@ -593,7 +602,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_4">식별관계와 비식별 관계</h2>
+<h2 id="_4">식별관계와 비식별 관계<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>식별관계 (Identifying Relationship)<ul>
 <li>강한 엔티티와 약한 엔티티 사이의 관계. </li>
@@ -608,26 +617,26 @@
 </ul>
 </li>
 </ul>
-<h1 id="_5">정규화</h1>
+<h1 id="_5">정규화<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
 <p>| <a href="https://mangkyu.tistory.com/110">blog</a> |</p>
 <ul>
 <li>데이터 중복을 방지하기 위해 사용하는 모델링 기법. </li>
 <li>1정규형 (1NF)<ul>
 <li>칼럼값이 원자값을 가지지 않으면 레코드 분리</li>
-<li><img alt="Pasted image 20230614174946.png" src="Pasted image 20230614174946.png" /></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230614174946.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614174946.png" src="../assets/Pasted%20image%2020230614174946.png" /></a></li>
 </ul>
 </li>
 <li>2정규형 (2NF)<ul>
 <li>키 칼럼과 나머지 일반 칼럼이 직접적인 연관관계(직접 종속)만 가지도록 테이블을 구성.</li>
 <li>아래의 예시는 복합키(학생번호, 강좌이름)가 성적을 식별하지만 동시에 키의 부분집합인 강좌이름 칼럼이 강의실을 식별하는 상황이라 강의실 테이블을 따로 분리하여 2NF를 만족시킬 수 있다.</li>
-<li><img alt="Pasted image 20230614192239.png" src="Pasted image 20230614192239.png" /></li>
-<li><img alt="Pasted image 20230614192248.png" src="Pasted image 20230614192248.png" /></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230614192239.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614192239.png" src="../assets/Pasted%20image%2020230614192239.png" /></a></li>
+<li>![[Pasted image 20230614192248.png]]</li>
 </ul>
 </li>
 <li>3정규형 (3NF)<ul>
 <li>일반 컬럼끼리 간접 연관관계 (간접 종속)을 가지고 있다면 테이블을 분리.</li>
 <li>학생번호는 강좌이름을 결정하고 있고, 강좌 이름은 수강료를 결정하고 있다. 간접적으로 학생번호가 수강료를 결정하고 있으므로 테이블을 분리하여야 한다.</li>
-<li><img alt="Pasted image 20230614193952.png" src="Pasted image 20230614193952.png" /></li>
+<li>![[Pasted image 20230614193952.png]]</li>
 </ul>
 </li>
 <li>BCNF 정규형 (Boyce-Codd Normal Form)<ul>
@@ -635,7 +644,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="n1-problem">N+1 Problem</h1>
+<h1 id="n1-problem">N+1 Problem<a class="headerlink" href="#n1-problem" title="Permanent link">&para;</a></h1>
 <p>ORM의 문제점: 쿼리가 필요한 것보다 많이 요청된다.</p>
 <p>지금 테이블에 연관 칼럼이 없을 경우 조인 연산을 수행한다. ORM은 <code>user.orders...</code>이런 식으로 자연스럽게 작성하게 되는데, 구현체 입장에서는 없는 칼럼 하나당 SELECT 쿼리를 날린다. 문제는 주문개수가 100개라면 단순히 연관 테이블의 멤버를 찾기 위해 100번의 추가적인 쿼리를 날려야 하게 된다. </p>
 <p>사전에 필요한 테이블에 대한 내용까지 조인을 수행시켜놓는다. 앞으로의 ORM 요청에 대하여 조인한 테이블을 기준으로 찾으면 된다. (캐시잖아..!)</p>
@@ -687,5 +696,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

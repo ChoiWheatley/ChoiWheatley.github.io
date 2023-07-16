@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,47 +235,47 @@
 <li><a href="https://docs.djangoproject.com/en/4.2/ref/urls/#django.urls.include">django.urls.include {doc}</a></li>
 <li>모듈이름을 인자로 받는다. 타 모듈을 임포트 할 필요 없이 <code>urls.py</code>를 가지고 있는 장고앱을 명시만 하면 알아서 연결해주는듯.</li>
 </ul>
-<p>[[0014.1 Django 🎈]]예제를 가져와보자.</p>
-<pre><code class="language-python"># blogtutorial/ursl.py ==&gt; Root application
-urlpatterns = [
-    path(&quot;admin/&quot;, admin.site.urls),
-    path(&quot;&quot;, include(&quot;blog.urls&quot;)),
-    path(&quot;accounts/&quot;, include(&quot;users.urls&quot;)),
-]
-</code></pre>
-<pre><code class="language-python"># blog/urls.py ==&gt; for base templates and articles
-urlpatterns = [
-    # root path =&gt; blog/templates/blog/index.html
-    # {% url 'index' %} will lead user index.html
-    path(&quot;&quot;, Index.as_view(), name=&quot;index&quot;),
-    path(&quot;tinymce/&quot;, include(&quot;tinymce.urls&quot;)),
-    path(&quot;&lt;int:pk&gt;/&quot;, DetailArticleView.as_view(), name=&quot;detail_article&quot;),
-    path(&quot;&lt;int:pk&gt;/like&quot;, LikeArticle.as_view(), name=&quot;like_article&quot;),
-]
-</code></pre>
-<pre><code class="language-python"># users/urls.py ==&gt; pages for login/out/register
-urlpatterns = [
-    path(
-        &quot;login/&quot;,
-        auth_views.LoginView.as_view(template_name=&quot;users/login.html&quot;),
-        name=&quot;login&quot;,
-    ),
-    path(
-        &quot;logout/&quot;,
-        auth_views.LogoutView.as_view(template_name=&quot;users/logout.html&quot;),
-        name=&quot;logout&quot;,
-    ),
-    path(&quot;register/&quot;, RegisterView.as_view(), name=&quot;register&quot;),
-]
-</code></pre>
-<pre><code class="language-python"># env/lib/python3.11/site-packages/tinymce/urls.py ==&gt; pip로 설치했던 tinymce
-urlpatterns = [
-    path(&quot;spellchecker/&quot;, views.spell_check, name=&quot;tinymce-spellcheck&quot;),
-    path(&quot;flatpages_link_list/&quot;, views.flatpages_link_list, name=&quot;tinymce-linklist&quot;),
-    path(&quot;compressor/&quot;, views.compressor, name=&quot;tinymce-compressor&quot;),
-    path(&quot;filebrowser/&quot;, views.filebrowser, name=&quot;tinymce-filebrowser&quot;),
-]
-</code></pre>
+<p><a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a>예제를 가져와보자.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># blogtutorial/ursl.py ==&gt; Root application</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;admin/&quot;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;blog.urls&quot;</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;accounts/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;users.urls&quot;</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># blog/urls.py ==&gt; for base templates and articles</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># root path =&gt; blog/templates/blog/index.html</span>
+    <span class="c1"># {% url &#39;index&#39; %} will lead user index.html</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">Index</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;tinymce/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;tinymce.urls&quot;</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&lt;int:pk&gt;/&quot;</span><span class="p">,</span> <span class="n">DetailArticleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;detail_article&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&lt;int:pk&gt;/like&quot;</span><span class="p">,</span> <span class="n">LikeArticle</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;like_article&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># users/urls.py ==&gt; pages for login/out/register</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span>
+        <span class="s2">&quot;login/&quot;</span><span class="p">,</span>
+        <span class="n">auth_views</span><span class="o">.</span><span class="n">LoginView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">template_name</span><span class="o">=</span><span class="s2">&quot;users/login.html&quot;</span><span class="p">),</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;login&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span>
+        <span class="s2">&quot;logout/&quot;</span><span class="p">,</span>
+        <span class="n">auth_views</span><span class="o">.</span><span class="n">LogoutView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">template_name</span><span class="o">=</span><span class="s2">&quot;users/logout.html&quot;</span><span class="p">),</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;logout&quot;</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;register/&quot;</span><span class="p">,</span> <span class="n">RegisterView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;register&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># env/lib/python3.11/site-packages/tinymce/urls.py ==&gt; pip로 설치했던 tinymce</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;spellchecker/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">spell_check</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tinymce-spellcheck&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;flatpages_link_list/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">flatpages_link_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tinymce-linklist&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;compressor/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">compressor</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tinymce-compressor&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;filebrowser/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">filebrowser</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tinymce-filebrowser&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
 <p>{% endraw %}</p>
 
 
@@ -314,5 +325,5 @@ urlpatterns = [
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

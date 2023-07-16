@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,7 +235,7 @@
                   
 
 
-<h1 id="themes-and-plugins">Themes and Plugins</h1>
+<h1 id="themes-and-plugins">Themes and Plugins<a class="headerlink" href="#themes-and-plugins" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://github.com/squidfunk/mkdocs-material">mkdocs material</a> 테마</li>
 <li><a href="https://github.com/mkdocs/catalog">mkdocs/catalog</a> mkdocs 플러그인, 테마 모음집<ul>
@@ -236,6 +247,7 @@
 <li>GitHub Page를 위한 리포 안에 실제 문서들이 들어있는 서브모듈을 담아놨다.</li>
 </ul>
 </li>
+<li><a href="../obsidian-support%20%7Bsupports%20excalidraw%2C%20wikilinks%7D/">obsidian-support {supports excalidraw, wikilinks}</a></li>
 </ul>
 <p>repo 이름을 <code>GITHUB_USERNAME.github.io</code>로 지으면 그 자체가 하나의 깃허브 페이지가 되는구나. 이 사실을 잘 파악하면 md전용 리포에 푸시 이벤트가 발생했을 때 배포전용 리포에 <code>gh-deploy</code>하도록 자동화 할 수 있을 것 같다.</p>
 
@@ -286,5 +298,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

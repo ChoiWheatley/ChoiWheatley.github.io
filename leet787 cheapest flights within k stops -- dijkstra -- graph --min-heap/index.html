@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -230,7 +241,7 @@
 <li>notice: 책에 있는 코드로는 더 이상 ACCEPT가 나오지 않는다. 다음 링크를 참조하여 더 효율적인 코드에 대한 토론을 확인해보자.<br />
     https://github.com/onlybooks/algorithm-interview/issues/104</li>
 </ul>
-<h1 id="commit-logs">Commit Logs</h1>
+<h1 id="commit-logs">Commit Logs<a class="headerlink" href="#commit-logs" title="Permanent link">&para;</a></h1>
 <ol>
 <li>
 <p><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/e09b612d77e88350a3d216ef709e71a0f435b237/leet787.py">DEAD END</a><br />
@@ -262,7 +273,7 @@
 <li><code>dist</code>: 박상길코드의 그 <code>dist</code>와 성격이 다르다. 얘는 모든 버텍스의 <code>weight</code>와 <code>depth</code>를 저장한다. </li>
 <li><code>queue</code> 안에 이웃 노드를 추가하는 조건문이 변경됐다.<ol>
 <li>이전에는 각 노드가 갖고 있던 <code>k</code>(남은 depth)만 비교하고 최소비용 판별은 <code>heapq</code>가 알아서 하게 만들었다. </li>
-<li>현재 코드는 weight의 합이 더 유리한지, ==OR== depth가 더 유리한지 판별 후 push한다.</li>
+<li>현재 코드는 weight의 합이 더 유리한지, <mark>OR</mark> depth가 더 유리한지 판별 후 push한다.</li>
 </ol>
 </li>
 </ol>
@@ -316,5 +327,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

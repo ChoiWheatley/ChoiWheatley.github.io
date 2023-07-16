@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,25 +235,25 @@
 <li>아.................. 이건 또 뭔데, 빙한테 물어보자...<br />
 PhantomData is a Rust feature that is used when working with unsafe code. It is used when types or lifetimes are logically associated with a struct, but not actually part of a field. This most commonly occurs with lifetimes. For instance, the Iter for <code>&amp;'a [T]</code> is (approximately) defined as follows:</li>
 </ul>
-<pre><code class="language-rust">struct Iter&lt;'a, T: 'a&gt; {
-    ptr: *const T,
-    end: *const T,
-    _marker: PhantomData&lt;&amp;'a T&gt;,
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Iter</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">T</span>: <span class="o">&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ptr</span>: <span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="p">,</span>
+<span class="w">    </span><span class="n">end</span>: <span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="p">,</span>
+<span class="w">    </span><span class="n">_marker</span>: <span class="nc">PhantomData</span><span class="o">&lt;&amp;&#39;</span><span class="na">a</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Here, <code>_marker</code> is a field of type <code>PhantomData&lt;&amp;'a T&gt;</code>. The purpose of this field is to indicate that this struct has an associated lifetime <code>'a</code>, even though it doesn’t actually contain any references with that lifetime.</p>
 <p>Another important example is Vec, which is (approximately) defined as follows:</p>
-<pre><code class="language-rust">#![allow(unused)]
-fn main() {
-    struct Vec&lt;T&gt; {
-        data: *const T,
-        // *const for variance!
-        len: usize,
-        cap: usize,
-        _marker: PhantomData&lt;&amp;'a [T]&gt;,
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="cp">#![allow(unused)]</span>
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">data</span>: <span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// *const for variance!</span>
+<span class="w">        </span><span class="n">len</span>: <span class="kt">usize</span><span class="p">,</span>
+<span class="w">        </span><span class="n">cap</span>: <span class="kt">usize</span><span class="p">,</span>
+<span class="w">        </span><span class="n">_marker</span>: <span class="nc">PhantomData</span><span class="o">&lt;&amp;&#39;</span><span class="na">a</span><span class="w"> </span><span class="p">[</span><span class="n">T</span><span class="p">]</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Here, <code>_marker</code> is a field of type <code>PhantomData&lt;&amp;'a [T]&gt;</code>. <a href="https://doc.rust-lang.org/nomicon/phantom-data.html">The purpose of this field is to indicate that this struct has an associated lifetime <code>'a</code>, even though it doesn’t actually contain any references with that lifetime.</a><a href="https://doc.rust-lang.org/nomicon/phantom-data.html">1</a><a href="https://doc.rust-lang.org/beta/core/marker/struct.PhantomData.html">2</a></p>
 <p>I hope this helps! Let me know if you have any more questions.</p>
 
@@ -293,5 +304,5 @@ fn main() {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

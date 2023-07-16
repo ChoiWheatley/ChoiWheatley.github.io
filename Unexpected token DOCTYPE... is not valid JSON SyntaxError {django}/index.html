@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,8 +230,8 @@
 
   <h1>Unexpected token DOCTYPE... is not valid JSON SyntaxError {django}</h1>
 
-<pre><code>SyntaxError: Unexpected token '&lt;', &quot;&lt;!DOCTYPE &quot;... is not valid JSON
-</code></pre>
+<div class="highlight"><pre><span></span><code>SyntaxError: Unexpected token &#39;&lt;&#39;, &quot;&lt;!DOCTYPE &quot;... is not valid JSON
+</code></pre></div>
 <ul>
 <li>원인: JSON을 필요로 하는데 갑자기 뜬금없이 html이 날아왔다.<ul>
 <li><code>render</code>함수를 생각없이 썼을수도 있다.</li>
@@ -229,7 +240,7 @@
 </li>
 </ul>
 <p>결국 html파일이 날아온 것이기 때문에 개발자도구의 Network 탭에서 해당 응답의 내용을 확인할 수 있고, 미리보기도 가능하다.</p>
-<p><img alt="Pasted image 20230622101114.png" src="Pasted image 20230622101114.png" /></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230622101114.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230622101114.png" src="../assets/Pasted%20image%2020230622101114.png" /></a></p>
 
 
 
@@ -278,5 +289,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

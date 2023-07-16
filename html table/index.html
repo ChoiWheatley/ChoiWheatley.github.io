@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -211,21 +222,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#zo77kz" class="md-nav__link">
-     ^zo77kz
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -245,7 +241,7 @@
 <li>tr : row</li>
 <li>th : header : 테이블의 행,열, 제목</li>
 <li>td: table data</li>
-<li>colspan : 셀 병합 [[html table#^kgf9w8]] <ul>
+<li>colspan : 셀 병합 <a href="./#kgf9w8">html table#^kgf9w8</a> <ul>
 <li><code>&lt;th colspan="3"&gt;Something&lt;/th&gt;</code> =&gt; 현재 커서로부터 3개의 열을 병합한 열을 만든다.</li>
 </ul>
 </li>
@@ -257,14 +253,14 @@
 <li>thead : 머리글 (표 상단에 있는 줄)</li>
 <li>tbody : 몸통</li>
 <li>tfoot : 바닥글 (표 하단에 있는 줄)</li>
-<li>colgroup : 열 그룹 (여러개의 열을 감싸는 요소) [[html table#^u8ukv6]]<ul>
+<li>colgroup : 열 그룹 (여러개의 열을 감싸는 요소) <a href="./#u8ukv6">html table#^u8ukv6</a><ul>
 <li>사용할만한 데가 CSS 스타일링 밖에 없는데</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="table">table 마저 이어서</h1>
+<h1 id="table">table 마저 이어서<a class="headerlink" href="#table" title="Permanent link">&para;</a></h1>
 <ul>
 <li>[!] <code>&lt;thead&gt;</code> 와 <code>&lt;th&gt;</code>와의 차이점에 대해서 말하세욧<ul>
 <li>가독성 차이에 불과.</li>
@@ -275,13 +271,12 @@
 <li><code>&lt;tr&gt;</code>이 대신하고 있잖아.</li>
 </ul>
 </li>
-<li><code>colspan</code>, <code>rowspan</code> attr들은 <code>&lt;th&gt;</code>와 <code>&lt;td&gt;</code> 모두 적용 가능하다. <figure markdown>
-  <img alt="Pasted image 20230427100240.png" src="Pasted image 20230427100240.png" />{ width="400" }</li>
+<li><code>colspan</code>, <code>rowspan</code> attr들은 <code>&lt;th&gt;</code>와 <code>&lt;td&gt;</code> 모두 적용 가능하다. ![[Pasted image 20230427100240.png|400]] ^zo77kz</li>
 </ul>
-<h2 id="zo77kz"></figure markdown> ^zo77kz</h2>
-<p><img alt="image.png" src="image.png" /> ^armjxj<br />
-<img alt="스크린샷 2023-04-26 21.13.18.png" src="스크린샷 2023-04-26 21.13.18.png" /> ^kgf9w8</p>
-<p><img alt="스크린샷 2023-04-26 21.37.25.png" src="스크린샷 2023-04-26 21.37.25.png" /> ^u8ukv6</p>
+<hr />
+<p>![[image.png]] ^armjxj<br />
+<a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.13.18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-04-26 21.13.18.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.13.18.png" /></a> ^kgf9w8</p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.37.25.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-04-26 21.37.25.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.37.25.png" /></a> ^u8ukv6</p>
 
 
 
@@ -330,5 +325,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

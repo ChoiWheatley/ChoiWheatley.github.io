@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,7 +230,7 @@
 
   <h1>Segment Tree 연습문제 1</h1>
 
-<p>parent link: [[Segment Tree]]</p>
+<p>parent link: <a href="../Segment%20Tree/">Segment Tree</a></p>
 <hr />
 <p>길이가 n인 수열 $a_0, a_1, \cdots, a_{n-1}$ $(0 ≤ a_i ≤ 10^9)$ 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라</p>
 <p>-  <code>0 i x</code>    :    ai 를 x로 바꾼다. ($0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9$)</p>
@@ -234,7 +245,7 @@
 <p><strong>[출력]</strong><br />
 각 테스트 케이스마다 1번 쿼리의 결과를 공백으로 구분하여 출력한다.</p>
 <p>입력</p>
-<pre><code>2  
+<div class="highlight"><pre><span></span><code>2  
 5 5  
 1 2 3 4 5  
 1 0 5  
@@ -248,11 +259,11 @@
 0 0 5  
 0 2 5  
 1 0 3
-</code></pre>
+</code></pre></div>
 <p>출력</p>
-<pre><code>#1 4 2 8 7  
+<div class="highlight"><pre><span></span><code>#1 4 2 8 7  
 #2 10 0
-</code></pre>
+</code></pre></div>
 
 
 
@@ -301,5 +312,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

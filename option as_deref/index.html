@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,16 +233,16 @@
 <ul>
 <li>https://doc.rust-lang.org/std/option/enum.Option.html#method.as_deref</li>
 <li>Converts from <code>Option&lt;T&gt;</code> or <code>&amp;Option&lt;T&gt;</code> to <code>Option&lt;&amp;T::Target&gt;</code>.</li>
-<li>Creates a new one with a reference to the original one, additionally coercing the contents via [[Deref trait]]<br />
+<li>Creates a new one with a reference to the original one, additionally coercing the contents via <a href="../Deref%20trait/">Deref trait</a><br />
 이거 없었으면 한 번 옵션을 unwrap 하거나 map 하는 과정을 겪어야 하는데 내부 타입만을 빌린 타입으로 바꿔주니까 유용하네~</li>
 </ul>
-<pre><code class="language-rust">struct Node(i32);
-let original = Node(1);
-let option_box_node: Option&lt;Box&lt;Node&gt;&gt; = Some(Box::new(original));
-let option_borrowed: Option&lt;&amp;Node&gt; = option_box_node.as_ref().map(|e| &amp;**e); // same as below
-let option_borrowed: Option&lt;&amp;Node&gt; = option_box_node.as_ref().map::&lt;&amp;Node, _&gt;(|e| e); // same as below
-let option_borrowed: Option&lt;&amp;Node&gt; = option_box_node.as_deref();
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Node</span><span class="p">(</span><span class="kt">i32</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">original</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">option_box_node</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">Box</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">original</span><span class="p">));</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">option_borrowed</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">option_box_node</span><span class="p">.</span><span class="n">as_ref</span><span class="p">().</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="w"> </span><span class="o">&amp;**</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="c1">// same as below</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">option_borrowed</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">option_box_node</span><span class="p">.</span><span class="n">as_ref</span><span class="p">().</span><span class="n">map</span>::<span class="o">&lt;&amp;</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="o">&gt;</span><span class="p">(</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="c1">// same as below</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">option_borrowed</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">option_box_node</span><span class="p">.</span><span class="n">as_deref</span><span class="p">();</span>
+</code></pre></div>
 <p><code>as_ref()</code> 와의 차이점을 명확하게 인지하고 가자. 얘는 <code>&amp;</code> 를 붙여주는 녀석이다.</p>
 
 
@@ -281,5 +292,5 @@ let option_borrowed: Option&lt;&amp;Node&gt; = option_box_node.as_deref();
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

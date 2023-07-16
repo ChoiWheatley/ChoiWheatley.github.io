@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,7 +233,7 @@
 <ul>
 <li>https://www.catch.co.kr/micropage/kblife/</li>
 <li><a href="https://choiwheatley.notion.site/KB-2023-479771ed30aa417799246ef67f9e2893">노션에 예상답변들</a></li>
-<li>[[0012 Career 💼]]</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0012%20Career%20%F0%9F%92%BC/">0012 Career 💼</a></li>
 <li>접수기간<ul>
 <li>2023-03-28</li>
 <li>2023-04-09T23:00:00</li>
@@ -283,5 +294,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

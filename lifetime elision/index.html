@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,18 +233,18 @@
 <ul>
 <li>https://rust-unofficial.github.io/too-many-lists/second-iter.html</li>
 </ul>
-<pre><code class="language-rust">// Only one reference in input, so the output must be derived from that input
-fn foo(&amp;A) -&gt; &amp;B; // sugar for:
-fn foo&lt;'a&gt;(&amp;'a A) -&gt; &amp;'a B;
+<div class="highlight"><pre><span></span><code><span class="c1">// Only one reference in input, so the output must be derived from that input</span>
+<span class="k">fn</span> <span class="nf">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="nc">B</span><span class="p">;</span><span class="w"> </span><span class="c1">// sugar for:</span>
+<span class="k">fn</span> <span class="nf">foo</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;&#39;</span><span class="na">a</span><span class="w"> </span><span class="n">A</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="o">&#39;</span><span class="na">a</span> <span class="nc">B</span><span class="p">;</span>
 
-// Many inputs, assume they're all independent
-fn foo(&amp;A, &amp;B, &amp;C); // sugar for:
-fn foo&lt;'a, 'b, 'c&gt;(&amp;'a A, &amp;'b B, &amp;'c C);
+<span class="c1">// Many inputs, assume they&#39;re all independent</span>
+<span class="k">fn</span> <span class="nf">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">C</span><span class="p">);</span><span class="w"> </span><span class="c1">// sugar for:</span>
+<span class="k">fn</span> <span class="nf">foo</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">b</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">c</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;&#39;</span><span class="na">a</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;&#39;</span><span class="na">b</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;&#39;</span><span class="na">c</span><span class="w"> </span><span class="n">C</span><span class="p">);</span>
 
-// Methods, assume all output lifetimes are derived from `self`
-fn foo(&amp;self, &amp;B, &amp;C) -&gt; &amp;D; // sugar for:
-fn foo&lt;'a, 'b, 'c&gt;(&amp;'a self, &amp;'b B, &amp;'c C) -&gt; &amp;'a D;
-</code></pre>
+<span class="c1">// Methods, assume all output lifetimes are derived from `self`</span>
+<span class="k">fn</span> <span class="nf">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">C</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="nc">D</span><span class="p">;</span><span class="w"> </span><span class="c1">// sugar for:</span>
+<span class="k">fn</span> <span class="nf">foo</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">b</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">c</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;&#39;</span><span class="na">a</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;&#39;</span><span class="na">b</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;&#39;</span><span class="na">c</span><span class="w"> </span><span class="n">C</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="o">&#39;</span><span class="na">a</span> <span class="nc">D</span><span class="p">;</span>
+</code></pre></div>
 
 
 
@@ -282,5 +293,5 @@ fn foo&lt;'a, 'b, 'c&gt;(&amp;'a self, &amp;'b B, &amp;'c C) -&gt; &amp;'a D;
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

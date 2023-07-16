@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,10 +235,10 @@
                   
 
 
-<h1 id="match-case">match case</h1>
+<h1 id="match-case">match case<a class="headerlink" href="#match-case" title="Permanent link">&para;</a></h1>
 <p>rust에서 아주 파워풀한 match 키워드의 냄새가 폴폴 난다. </p>
 <ul>
-<li><a href="https://rust-book.cs.brown.edu/ch18-03-pattern-syntax.html#multiple-patterns">Rust - Pattern Syntax</a> | [[Multiple Patterns and match guards]]</li>
+<li><a href="https://rust-book.cs.brown.edu/ch18-03-pattern-syntax.html#multiple-patterns">Rust - Pattern Syntax</a> | <a href="../Multiple%20Patterns%20and%20match%20guards/">Multiple Patterns and match guards</a></li>
 <li><a href="https://peps.python.org/pep-0636/">PEP 636 - Match Case Tutorials in Python</a></li>
 <li><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/blob/a005d108a359d242d421217bae8b5c912b204fc3/ex27447.py">백준 27447 문제풀이 코드 참고</a></li>
 </ul>
@@ -236,60 +247,60 @@
 2. 구체적인 값을 필터링 할 수 있다. 심지어 그 필터링 자체를 or 연산을 하여 유연하게 대응할 수 있다. 심지어!! 그 필터링 결과를 <code>as</code> 키워드를 사용하여 캡처할 수도 있다.<br />
 3. wildcard <code>_</code>를 사용하여 사용하지 않는 케이스를 건너뛸 수도 있다.<br />
 4. 패턴 뒤에 <code>if</code>를 붙여 캡처 변수에 조건을 걸 수 있다.</p>
-<pre><code class="language-python"># 튜플을 분해하여 각각의 원소에 바인드(캡처) 할 수 있다 =&gt; Capture Patterns
-numbers = (2, 4, 8, 16, 32)
-match numbers:
-    case (first, second, third, fourth, fifth):
-        print(f'some numbers: {first}, {second}, {third}, {fourth}, {fifth}')
+<div class="highlight"><pre><span></span><code><span class="c1"># 튜플을 분해하여 각각의 원소에 바인드(캡처) 할 수 있다 =&gt; Capture Patterns</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="k">match</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">case</span> <span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">third</span><span class="p">,</span> <span class="n">fourth</span><span class="p">,</span> <span class="n">fifth</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;some numbers: </span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">second</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">third</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">fourth</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">fifth</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-# 구체적인 값을 필터링하여 처리할 수 있다 =&gt; Literal Patterns
-# 거기에 더해 wildcard `_`를 사용하여 exhaustive pattern matching을 활용!
-def http_error(status):
-    match status:
-        case 400:
-            return &quot;Bad request&quot;
-        case 404:
-            return &quot;Not found&quot;
-        case 418:
-            return &quot;I'm a teapot&quot;
-        case _:
-            return &quot;Something's wrong with the Internet&quot;
-print(http_error(400))
+<span class="c1"># 구체적인 값을 필터링하여 처리할 수 있다 =&gt; Literal Patterns</span>
+<span class="c1"># 거기에 더해 wildcard `_`를 사용하여 exhaustive pattern matching을 활용!</span>
+<span class="k">def</span> <span class="nf">http_error</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">400</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Bad request&quot;</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Not found&quot;</span>
+        <span class="k">case</span> <span class="mi">418</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;I&#39;m a teapot&quot;</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Something&#39;s wrong with the Internet&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">http_error</span><span class="p">(</span><span class="mi">400</span><span class="p">))</span>
 
-# Pattern에 `or` 연산을 사용하여 유연하게 대응하는 모습
-def http_error2(status):
-    match status:
-        case 401 | 403 | 404:
-            return &quot;Not allowed&quot;
-        case _:
-            return &quot;Something's wrong with the Internet&quot;
+<span class="c1"># Pattern에 `or` 연산을 사용하여 유연하게 대응하는 모습</span>
+<span class="k">def</span> <span class="nf">http_error2</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">case</span> <span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Not allowed&quot;</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Something&#39;s wrong with the Internet&quot;</span>
 
-print(http_error2(403))
+<span class="nb">print</span><span class="p">(</span><span class="n">http_error2</span><span class="p">(</span><span class="mi">403</span><span class="p">))</span>
 
-# Pattern에 `as` 키워드를 사용하여 저시기를 캡처하는 모습
-def http_error3(status):
-    match status:
-        case (401 | 403 | 404) as code:
-            return f&quot;Not allowed: {code}&quot;
-        case _:
-            return &quot;Something's wrong with the Internet&quot;
-print(http_error3(403))
+<span class="c1"># Pattern에 `as` 키워드를 사용하여 저시기를 캡처하는 모습</span>
+<span class="k">def</span> <span class="nf">http_error3</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">status</span><span class="p">:</span>
+        <span class="k">case</span> <span class="p">(</span><span class="mi">401</span> <span class="o">|</span> <span class="mi">403</span> <span class="o">|</span> <span class="mi">404</span><span class="p">)</span> <span class="k">as</span> <span class="n">code</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Not allowed: </span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Something&#39;s wrong with the Internet&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">http_error3</span><span class="p">(</span><span class="mi">403</span><span class="p">))</span>
 
-# Pattern에 아예 `if` 조건을 달 수 있다 예를 들어 `or` 연산을 너무 많이 붙여야 
-# 할 경우, 아예 검사식을 따로 추가하는 것을 고려할 수 있다.
-available_direction = [&quot;left&quot;, &quot;right&quot;]
-def command_parse(command):
-    match command.split():
-        case [&quot;go&quot;, direction] if direction in available_direction:
-            return f&quot;let's go {direction}!&quot;
-        case [&quot;go&quot;, _]:
-            return f&quot;Sorry, you can't go that way&quot;
-        case _:
-            return f&quot;Unknown command&quot;
-print(command_parse(&quot;go left&quot;))
-print(command_parse(&quot;go down&quot;))
-print(command_parse(&quot;hello, world&quot;))
-</code></pre>
+<span class="c1"># Pattern에 아예 `if` 조건을 달 수 있다 예를 들어 `or` 연산을 너무 많이 붙여야 </span>
+<span class="c1"># 할 경우, 아예 검사식을 따로 추가하는 것을 고려할 수 있다.</span>
+<span class="n">available_direction</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">command_parse</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+    <span class="k">match</span> <span class="n">command</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="k">case</span> <span class="p">[</span><span class="s2">&quot;go&quot;</span><span class="p">,</span> <span class="n">direction</span><span class="p">]</span> <span class="k">if</span> <span class="n">direction</span> <span class="ow">in</span> <span class="n">available_direction</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;let&#39;s go </span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s2">!&quot;</span>
+        <span class="k">case</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;go&quot;</span><span class="p">,</span> <span class="k">_</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Sorry, you can&#39;t go that way&quot;</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Unknown command&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">command_parse</span><span class="p">(</span><span class="s2">&quot;go left&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">command_parse</span><span class="p">(</span><span class="s2">&quot;go down&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">command_parse</span><span class="p">(</span><span class="s2">&quot;hello, world&quot;</span><span class="p">))</span>
+</code></pre></div>
 
 
 
@@ -338,5 +349,5 @@ print(command_parse(&quot;hello, world&quot;))
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

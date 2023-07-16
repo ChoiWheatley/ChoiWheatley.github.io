@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -239,21 +250,23 @@
                   
 
 
-<p>[[Special_Lecture_-<em>Architecturing</em>.pdf]]<br />
+<p><a href="../Special_Lecture_-_Architecturing_.pdf">Special_Lecture_-<em>Architecturing</em>.pdf</a><br />
 [[Special_Lecture_-<em>Architecturing</em> (1).pdf]]</p>
 <hr />
-<h1 id="_1">개요</h1>
+<h1 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>코드가 서비스의 전부가 아님. 인프라를 위한 JVM 튜닝, 데이터베이스 lock 조절 등의 저시기가 이루어짐</li>
 <li>Time To Market 시간을 줄이는 법 = 패키지에 의존한다. → 레거시의 동산에 온 것을 환영합니다. <ul>
 <li>레거시 시스템을 뒤엎고 새로 개발하는 것은 용기가 필요하다. 따라서 아키텍처링의 핵심은 현상황에 맞는 최선의 문제해결전략을 수립.</li>
 </ul>
 </li>
-<li>[[VPC (Virtual Private Cloud)]]</li>
+<li><a href="../VPC%20%28Virtual%20Private%20Cloud%29/">VPC (Virtual Private Cloud)</a></li>
 </ul>
-<h2 id="monitoring">monitoring</h2>
+<h2 id="monitoring">monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
 <p>서비스가 운영되고 있는 각종 상황들을 확인하는 행위의 전반을 의미. ex) 한문철 TV</p>
-<p>!!! note "Zero Trust 기반 이중화 서비스"</p>
+<blockquote>
+<p>[!note] Zero Trust 기반 이중화 서비스</p>
+</blockquote>
 <p>믿을건 아무것도 없다. 서로가 서로를 감시하는 시스템이었으면 카카오 데이터센터 정보유실이 일어나지 않았을 것.</p>
 <p>이상치 (전조)를 파악할 수 있는 여러가지 지표들이 있다.</p>
 <ul>
@@ -285,7 +298,7 @@
 </li>
 </ul>
 <hr />
-<h1 id="1">문제1</h1>
+<h1 id="1">문제1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
 <p>쇼핑몰 서비스에서 평일 오후 2시에 특가 상품 판매를 시작했는데, 이용자들이 접속하지 못해 상품 구매를 하지 못하고 있다는 불만이 발생.</p>
 <ul>
 <li>소비자들이 Time-out 페이지를 마주하고 있다.</li>
@@ -323,8 +336,10 @@
 <p>머야, 답정너였잖아</p>
 <p>서버가 외부 요청을 처리하기 위해선 충분한 자원 (CPU, Memory)이 필요하다. 요청 하나당 특정 규모의 CPU, Memory 사용량을 소모한다.</p>
 <p>외부 요청이 증가하면 당연하게도 CPU와 Memory 소모량이 늘어난다. ==&gt; 높은 CPU 점유율을 볼 수 있다. 자원부족은 곧 외부요청의 처리가 밀린다. ==&gt; 응답지연시간이 늘어난다 ==&gt; Timeout 횟수가 증가한다.</p>
-<p>!!! quote "서버의 자원 규모를 늘려야 한다"</p>
-<h2 id="_2">해결: 수직적 확장과 수평적 확장</h2>
+<blockquote>
+<p>[!quote] 서버의 자원 규모를 늘려야 한다</p>
+</blockquote>
+<h2 id="_2">해결: 수직적 확장과 수평적 확장<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>수직적 확장 (Scale Up) = 서버 자체의 성능을 증대 <ul>
 <li>서버의 Downtime이 필요함.</li>
@@ -363,8 +378,8 @@
 </li>
 </ul>
 <p>https://haveibeenpwned.com/</p>
-<h1 id="2">문제2</h1>
-<p><img alt="Pasted image 20230707140741.png" src="Pasted image 20230707140741.png" /></p>
+<h1 id="2">문제2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230707140741.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707140741.png" src="../assets/Pasted%20image%2020230707140741.png" /></a></p>
 <ul>
 <li></li>
 <li>버스트밸런스를 사용하면 초당 입출력 처리량 제한을 늘릴 수 있다.</li>
@@ -400,9 +415,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="3">문제3</h1>
+<h1 id="3">문제3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
 <p>https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/<br />
-<img alt="Pasted image 20230707140620.png" src="Pasted image 20230707140620.png" /></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230707140620.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707140620.png" src="../assets/Pasted%20image%2020230707140620.png" /></a></p>
 <ul>
 <li>부가가치에 대해서는 보상이 안된다는거. → 상품 시스템을 개선해보자.</li>
 <li>리전<ul>
@@ -460,10 +475,10 @@
 - 리전 전체의 문제라면 Route53의 정책을 확인
 - 백업리전의 RDS Read Replica를 승격시켜 Read/Write가 가능하도록 만든다.</p>
 <hr />
-<h1 id="3_1">문제3</h1>
-<p><img alt="Pasted image 20230707150358.png" src="Pasted image 20230707150358.png" /></p>
+<h1 id="3_1">문제3<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230707150358.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707150358.png" src="../assets/Pasted%20image%2020230707150358.png" /></a></p>
 <hr />
-<p><img alt="Pasted image 20230707150452.png" src="Pasted image 20230707150452.png" /></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230707150452.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707150452.png" src="../assets/Pasted%20image%2020230707150452.png" /></a></p>
 <hr />
 <p>HINT: <strong>Data</strong>에 어떤 문제가 있을까요?</p>
 <ul>
@@ -545,9 +560,9 @@
 </li>
 </ul>
 <hr />
-<h1 id="_3">프로젝트 아키텍처링 실전 설계</h1>
+<h1 id="_3">프로젝트 아키텍처링 실전 설계<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
 <p>SNS 서비스의 <em>뉴스 피드 시스템</em> 설계. 뉴스피드란, Home에 들어가면 보이는 게시글들을 뉴스피드라고 한다. 친구, 나와 친구인 사람, 팔로우중인 사람 (글, 사진, 영상, 링크)</p>
-<h2 id="_4">요구사항</h2>
+<h2 id="_4">요구사항<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>플랫폼<ul>
 <li>모바일 &amp; 웹 둘 다 지원</li>
@@ -571,18 +586,18 @@
 </ul>
 </li>
 </ul>
-<p>==HINT==
+<p><mark>HINT</mark>
 - 어떤 데이터들이 필요한지, 어떤 기능이 어떤 데이터를 참고하는지, 데이터들을 각각 어디에 저장할지
 - 문제의 복잡성을 줄이기 위해 피드 업로드 API와 읽기 API만 만든다.</p>
 <hr />
 <p>Use Case<br />
-<img alt="Pasted image 20230707174433.png" src="Pasted image 20230707174433.png" /></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230707174433.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707174433.png" src="../assets/Pasted%20image%2020230707174433.png" /></a></p>
 <p>Logical Model<br />
-<img alt="Pasted image 20230707174428.png" src="Pasted image 20230707174428.png" /></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230707174428.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707174428.png" src="../assets/Pasted%20image%2020230707174428.png" /></a></p>
 <p>Component
 - Multi AZ 설계를 해봤다. → 수평적 확장 
 - public subnet에는 EC2를, private subnet에는 보호하여야 할 DB를 넣고.<br />
-<img alt="Pasted image 20230707174402.png" src="Pasted image 20230707174402.png" /></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230707174402.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707174402.png" src="../assets/Pasted%20image%2020230707174402.png" /></a></p>
 <hr />
 <ul>
 <li>Feedback: 별도의 로드밸런서를 사용하는 것처럼 보였으나 하나가 있었으면 좋겠다.</li>
@@ -644,5 +659,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

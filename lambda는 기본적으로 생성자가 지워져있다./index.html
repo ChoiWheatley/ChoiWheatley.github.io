@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,21 +230,30 @@
 
   <h1>lambda는 기본적으로 생성자가 지워져있다.</h1>
 
-<p>link: [[C++|c++]]</p>
+<p>link: <a href="../C%2B%2B/">c++</a></p>
 <hr />
-<p>[[c++ - Understanding how Lambda closure type has deleted default constructor - Stack Overflow|Understanding how Lambda closure type has deleted default constructor]]</p>
+<p><a href="../c%2B%2B%20-%20Understanding%20how%20Lambda%20closure%20type%20has%20deleted%20default%20constructor%20-%20Stack%20Overflow/">Understanding how Lambda closure type has deleted default constructor</a></p>
 <p>https://en.cppreference.com/w/cpp/language/lambda 에 따르면...</p>
 <blockquote>
-<p>Closure types are not <a href="https://en.cppreference.com/w/cpp/named_req/DefaultConstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>. Closure types have no default constructor. [^1]</p>
+<p>Closure types are not <a href="https://en.cppreference.com/w/cpp/named_req/DefaultConstructible" title="cpp/named req/DefaultConstructible">DefaultConstructible</a>. Closure types have no default constructor. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 </blockquote>
 <p>클로저 타입은 기본 생성자가 "없"습니다.</p>
 <blockquote>
-<p>If no captures are specified, the closure type has a defaulted default constructor. Otherwise, it has no default constructor (this includes the case when there is a capture-default, even if it does not actually capture anything). [^2]</p>
+<p>If no captures are specified, the closure type has a defaulted default constructor. Otherwise, it has no default constructor (this includes the case when there is a capture-default, even if it does not actually capture anything). <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></p>
 </blockquote>
 <p>클로저 타입에 캡쳐가 하나도 없다면, 기본 생성자를 가질 수 있습니다.</p>
 <hr />
-<p>[^1]: until c++20
-[^2]: since c++20</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>until c++20&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>since c++20&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -282,5 +302,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

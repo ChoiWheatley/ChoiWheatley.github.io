@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,11 +235,11 @@
                   
 
 
-<p><img alt="머리 - canvas view.canvas" src="머리 - canvas view.canvas" /><br />
+<p>![[머리 - canvas view.canvas]]<br />
 깡 메모장에다가 사진파일을 넣는 기분이라 캔버스로 옮겼다.</p>
 <p>2023-04-22T21:58:05 여기에는 그럼 스크랩한 머리 관련 영상들 저장소로 써야징</p>
 <hr />
-<h1 id="scrapped">Scrapped</h1>
+<h1 id="scrapped">Scrapped<a class="headerlink" href="#scrapped" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://youtu.be/tsj-OKvkyiM">남자 장발 셀프  스타일링 / 묶음머리, 슬릭백, 모자 스타일링</a><ul>
 <li>오일 바를때 중간에 바르지 말고 겉으로 노출시킬 부분에만 발라주는거</li>
@@ -288,5 +299,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

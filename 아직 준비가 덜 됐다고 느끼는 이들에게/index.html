@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,7 +230,7 @@
 
   <h1>아직 준비가 덜 됐다고 느끼는 이들에게</h1>
 
-<p><img alt="Pasted image 20230313220930.png" src="Pasted image 20230313220930.png" /></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230313220930.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230313220930.png" src="../assets/Pasted%20image%2020230313220930.png" /></a></p>
 <blockquote>
 <p>준비를 모두 마치고 나서 시작한다는 말은 운전석에 앉아 동네 신호등 전체가 동시엥 파란불로 바뀔 때까지 마냥 대기하는 것과 같다.</p>
 </blockquote>
@@ -271,5 +282,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

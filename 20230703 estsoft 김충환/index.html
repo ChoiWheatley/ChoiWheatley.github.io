@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,7 +238,7 @@
 <ul>
 <li>으어졸려</li>
 </ul>
-<h1 id="xp-extreme-programming">XP (eXtreme Programming)</h1>
+<h1 id="xp-extreme-programming">XP (eXtreme Programming)<a class="headerlink" href="#xp-extreme-programming" title="Permanent link">&para;</a></h1>
 <ul>
 <li>아이스 브레이킹 - Job Crafting<ul>
 <li>자신의 업무를 스스로 변화시켜 의미있고 행복한 활동으로 바꾸는 것</li>
@@ -259,7 +270,7 @@
 <li>직원 교체시에도 인간적인 교류를 통하여 책임을 받아들이도록 격려 받는다.</li>
 <li>[?] 코드보다 테스트를 먼저 작성하라고?</li>
 </ul>
-<h1 id="xp-5">XP의 5가지 핵심 가치</h1>
+<h1 id="xp-5">XP의 5가지 핵심 가치<a class="headerlink" href="#xp-5" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>의사소통</strong><ul>
 <li>팀 개발을 하게되면 대부분 의사소통 문제가 발생하게 된다. 문제를 공통적으로 인지, 문제반복을 잡고, 문제가 감추어진 것을 드러내라.</li>
@@ -298,7 +309,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="xp-12">XP의 12가지 원칙</h1>
+<h1 id="xp-12">XP의 12가지 원칙<a class="headerlink" href="#xp-12" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>인간</strong>답게 개발해라. 안정감, 소속감, 확장, 친밀감, </li>
 <li><strong>경제성</strong>의 원칙에 따라 모든 것들에는 돈이 오간다.</li>
@@ -316,19 +327,19 @@
 </ul>
 <p>결론</p>
 <p>원칙을 이용하면 실천방법을 더 잘 이해할 수 있다. 적합한 실천법이 없다면 위의 원칙을 활용한 새로운 실천법을 고안하라. 우리는 <em>야생학습</em>을 해야만 하는 상황에 놓여있다. SW 개발의 모든 면을 다 담을 수 있는 올라운드 실천방법의 목록은 존재하지 않는다.</p>
-<h1 id="xp-101">XP 실천방법 (도서 '애자일 101' 참고)</h1>
-<p><img alt="애자일 101.pdf" src="../%EC%95%A0%EC%9E%90%EC%9D%BC%20101.pdf" /><br />
+<h1 id="xp-101">XP 실천방법 (도서 '애자일 101' 참고)<a class="headerlink" href="#xp-101" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="../%EC%95%A0%EC%9E%90%EC%9D%BC%20101.pdf" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="애자일 101.pdf" src="../%EC%95%A0%EC%9E%90%EC%9D%BC%20101.pdf" /></a><br />
 무엇을 배우게 될까?<br />
 현장고객, 사용자스토리, 릴리즈 계획, 짝 프로그래밍, CI, 속도, 팀방 꾸미기 , 활기찬 작업, 스토리, TDD, 일주일별 주기, 10분 빌드, 점진적 설계</p>
-<h2 id="_1">짝 프로그래밍</h2>
-<h2 id="ci">CI</h2>
+<h2 id="_1">짝 프로그래밍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="ci">CI<a class="headerlink" href="#ci" title="Permanent link">&para;</a></h2>
 <ul>
 <li>소스코드, DB 스크립트, 코드 검사, 빌드, 자동화 테스트를 가능하면 자주 통합하는 실천법. SW 항상성을 검증하는 거임.</li>
 <li>데브옵스 조직을 따로 갖는 경우가 있더라. CI 담당자는 프로젝트에 맞는 자동화 환경을 구성하고 관리한다. 팀원은 통합빌드가 실패하면 이를 빠르게 고치고 실패원인을 팀원들이게알린다.</li>
 <li>모든 과정을 자동화하는 것이 중요. 신규 프로젝트일수록 더더욱 중요도가 높아진다.</li>
 <li>통합빌드를 하면 상태의 모니터링이 가능해진다.</li>
 </ul>
-<h2 id="_2">공간</h2>
+<h2 id="_2">공간<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>팀이 한 방에 모이도록 하는 한자리.
 - <strong>가청성</strong> 의자를 돌리는 일 없이 다른 사람과 대화
 - <strong>가시성</strong> 작업 현황판이 눈에 항상 보이게끔
@@ -336,7 +347,7 @@
     - 개발자와 제품 책임자가 한 자리에 있지 않도록
     - 관리자는 수시로 개발팀이 성장할 수 있도록 기다려라.
 - 야근 없는 팀</p>
-<h2 id="_3">시간</h2>
+<h2 id="_3">시간<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>일주일 주기</li>
 <li>분기별 주기<ul>
@@ -345,7 +356,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_4">지속적 통합</h2>
+<h2 id="_4">지속적 통합<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>10분 빌드<ul>
 <li>빌드에 10분보다 오래 걸리게 되면 빌드 실행 횟수가 줄며, 피드백 받을 기회를 놓치게 된다.</li>
@@ -358,14 +369,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="tdd">TDD</h2>
+<h2 id="tdd">TDD<a class="headerlink" href="#tdd" title="Permanent link">&para;</a></h2>
 <ul>
 <li>자동화된 테스트를 먼저 작성하고 테스트를 통과할 만큼의 코드를 작성한 뒤 가독성을 높이고 중복을 제거하기 위해 코드를 리팩토링하라.</li>
 <li>기존 코드에 TDD를 도입하는 건 끔찍하게 어렵다.</li>
 <li>전담 테스터로 구성된 팀이 있어야 하다.</li>
 <li>수작업 테스트 과정에서의 낭비시간을 줄이는 것. 테스트 세팅을 위한 유틸리티를 만들어 부트스트랩 하기.</li>
 </ul>
-<h2 id="_5">점증적(점진적) 설계</h2>
+<h2 id="_5">점증적(점진적) 설계<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>처음부터 완전한 설계를 만들고 고치지 못하게 만드는 것과는 큰 차이. <ul>
 <li>리팩토링으로 회사가 망한 사례가 실제로 많다. (Lotus 123의 예시)</li>
@@ -377,7 +388,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="xp">XP 보조 실천방법 (확장)</h2>
+<h2 id="xp">XP 보조 실천방법 (확장)<a class="headerlink" href="#xp" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>높은 수준의 코드 공동 소유</strong><ul>
 <li>모든 코드에 대한 이해도가 높기 때문에 다른 구성원이 남의 코드베이스에 쉽게 접근할 수 있다. </li>
@@ -389,7 +400,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_6">제약이론 (도서 이름이기도 함.)</h1>
+<h1 id="_6">제약이론 (도서 이름이기도 함.)<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
 <p>https://zdnet.co.kr/view/?no=00000039153790</p>
 <p>휴게소에서 고속도로로 합류하는 상황을 보면 엄청난 <strong>병목</strong>이 걸리는 것을 알 수 있다. 행군도 그렇다. 아이러니하게도 가장 속도가 느린 병사에게 드럼을 치게 한다. 가장 속도가 느린 병사와 앞 병사 사이에 일정한 간격을 둔다. 이 친구의 속도를 계속 일정하게 유지하게 만든다.</p>
 <blockquote>
@@ -399,7 +410,7 @@
 <blockquote>
 <p>미래로부터 현재를 바꾸고, 현재로부터 현재를 바꾸고, 과거로부터 현재를 바꾸어 시간을 내 편으로 만든다. - 카이젠 저니</p>
 </blockquote>
-<h1 id="_7">애자일 회고 (도서)</h1>
+<h1 id="_7">애자일 회고 (도서)<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
 <ul>
 <li><strong>애자일이란?</strong> 반복적이고 점차적으로 가치를 높이는 것</li>
 <li><strong>회고란?</strong> 팀이 정해진 기간 동안 해왔던 일에 대해 돌아보기.</li>
@@ -441,17 +452,17 @@
 <li><a href="https://www.funretrospectives.com/category/futurespective/" title="https://www.funretrospectives.com/category/futurespective/">https://www.funretrospectives.com/category/futurespective/</a></li>
 <li><a href="https://www.atlassian.com/team-playbook/plays?" title="https://www.atlassian.com/team-playbook/plays?">https://www.atlassian.com/team-playbook/plays?</a></li>
 <li><a href="https://www.marimba.team/kr/blog/how-to-make-retrospectives-more-fun/">화이트보드 모양의 회고 템플릿</a></li>
-<li>[[회고예시]]</li>
+<li><a href="../%ED%9A%8C%EA%B3%A0%EC%98%88%EC%8B%9C/">회고예시</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="_8">다음 시간에는...</h1>
+<h1 id="_8">다음 시간에는...<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
 <ul>
 <li>OKR이 매우 중요하다고 생각하다. </li>
 <li>성공의 피라미드 &amp; 만다라트 재구성</li>
 <li>QNA 진행할거임</li>
 </ul>
-<p><img alt="Pasted image 20230703114535.png" src="Pasted image 20230703114535.png" /></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230703114535.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230703114535.png" src="../assets/Pasted%20image%2020230703114535.png" /></a></p>
 
 
 
@@ -500,5 +511,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

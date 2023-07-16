@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,7 +235,7 @@
                   
 
 
-<h1 id="_1">쌩기초</h1>
+<h1 id="_1">쌩기초<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://paullabworkspace.notion.site/8444faa97f724967b6ee1da374fd0d07">수업을 시작하기 전 알아야 할 기초 상식</a></li>
 <li><a href="https://1drv.ms/f/s!AgE-lhMulmhxg5RBWrSyNkKMQvgsnw?e=8fpSKZ">숭실 2021-2학기 Network 수업 원드라이브</a> ^x5b0l8</li>
@@ -253,7 +264,7 @@
 <li>DB == MongoDB, MySQL, ...</li>
 </ul>
 <hr />
-<h1 id="vscode">VSCode 환경설정 및 단축키</h1>
+<h1 id="vscode">VSCode 환경설정 및 단축키<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>https://paullabworkspace.notion.site/VSC-e89ec679f7a44c2882012ec49f164ced</p>
@@ -277,13 +288,13 @@
 </ul>
 </li>
 </ul>
-<h1 id="emmet">emmet 문법</h1>
+<h1 id="emmet">emmet 문법<a class="headerlink" href="#emmet" title="Permanent link">&para;</a></h1>
 <p>https://docs.emmet.io/cheat-sheet/
 - lorem 이거 신기하네
 - <a href="http://hangul.thefron.me/">한글입숨</a>도 있다. 무의미한 한글로 채워넣는다.</p>
-<h1 id="github">Github</h1>
-<p>[[알잘딱 GitHub 핵심개념]]</p>
-<h1 id="_2">제안</h1>
+<h1 id="github">Github<a class="headerlink" href="#github" title="Permanent link">&para;</a></h1>
+<p><a href="../%EC%95%8C%EC%9E%98%EB%94%B1%20GitHub%20%ED%95%B5%EC%8B%AC%EA%B0%9C%EB%85%90/">알잘딱 GitHub 핵심개념</a></p>
+<h1 id="_2">제안<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
 <li>고급반 운영할 계획, (ex. 카카오 공채) 질문 리스트 공유하여 쌓아놓고 서로 모의면접도 볼 수 있게끔.</li>
 <li>중급자를 위한 자료는 미리 드리려고 한다. 인프런 중급자 파이썬 </li>
@@ -337,5 +348,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

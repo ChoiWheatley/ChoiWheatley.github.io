@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -246,14 +257,14 @@
 
   <h1>updating in {django query}</h1>
 
-<h2 id="_1">업데이트할 객체를 변수에 저장하여 각 필드에 접근하는 방법</h2>
-<pre><code class="language-python">post = Post.objects.get(pk=pk)
-post.title = 'new title'
-post.save()
-</code></pre>
-<h2 id="_2">업데이트 할 객체에 직접 접근하는 방법</h2>
-<pre><code class="language-python">Post.objects.get(pk=pk).update(content='new content')
-</code></pre>
+<h2 id="_1">업데이트할 객체를 변수에 저장하여 각 필드에 접근하는 방법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+<span class="n">post</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;new title&#39;</span>
+<span class="n">post</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="_2">업데이트 할 객체에 직접 접근하는 방법<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;new content&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -302,5 +313,5 @@ post.save()
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,7 +232,7 @@
 
 <ul>
 <li><a href="https://brunch.co.kr/@analysisman/11">src</a></li>
-<li>[[0070 Obsidian 💎|obsidian]]</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0070%20Obsidian%20%F0%9F%92%8E/">obsidian</a></li>
 <li>입력 중심이 아닌, 출력 중심의 글쓰기를 권장한다.</li>
 <li>PARA 라고 부르는 다단 캐시구조를 따라한 방식이 있었다. 첫번째 글자부터 중요도가 한 칸씩 낮아진다. 우리는 어디에서 왔는지에 따라 노트를 분류하는 것이 아니라, 내가 당장 써야 하는 것을 우선으로 노트를 모아야 한다.</li>
 <li>CODE 라고 부르는 생각 정리 시스템이 있었다. 기억이 잘 안난다. 다시 읽어봐야 함. 다만 마지막 E는 확실히 알겠는데, Express의 약자로, 표현하기 단계였다. 노트는 저장하는 것에 집중할 것이 아니라 인출할 것에 집중하여야 한다. 따라서 쉽게 검색이 되어야 하고, 연관 노트와 거리가 가까워야 하며, 검색범위를 넓혔을 때 우연히 얻어걸릴 기회가 많아야 한다.</li>
@@ -275,5 +286,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -250,43 +261,43 @@
 <li><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/commit/b95f48beb847fb2a962932d6f90eacdefc70aeb3">비트셋 사용한 파이썬 코드 - 백준 27447 주문은 토기입니까?</a></li>
 </ul>
 <p>일단 클래스 및 구현체부터 살펴보자.</p>
-<pre><code class="language-python">MAX_DAY = 1_000_000
-BIT_CNT = 32
-BIN_CNT = MAX_DAY // BIT_CNT
+<div class="highlight"><pre><span></span><code><span class="n">MAX_DAY</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<span class="n">BIT_CNT</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">BIN_CNT</span> <span class="o">=</span> <span class="n">MAX_DAY</span> <span class="o">//</span> <span class="n">BIT_CNT</span>
 
 
-def bin_no(idx) -&gt; int:
-    return idx // BIN_CNT
+<span class="k">def</span> <span class="nf">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">idx</span> <span class="o">//</span> <span class="n">BIN_CNT</span>
 
 
-def bit_no(idx) -&gt; int:
-    return idx % BIN_CNT
+<span class="k">def</span> <span class="nf">bit_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">BIN_CNT</span>
 
 
-class Bitset:
-    def __init__(self):
-        self.bits = [0 for _ in range(BIN_CNT + 1)]
+<span class="k">class</span> <span class="nc">Bitset</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bits</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">BIN_CNT</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 
-    def test(self, idx) -&gt; bool:
-        return self.bits[bin_no(idx)] &gt;&gt; bit_no(idx) &amp; 1 == 1
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bits</span><span class="p">[</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span> <span class="o">&gt;&gt;</span> <span class="n">bit_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
 
-    def set(self, idx):
-        self.bits[bin_no(idx)] |= (1 &lt;&lt; bit_no(idx))
+    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bits</span><span class="p">[</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
 
-    def reset(self, idx):
-        self.bits[bin_no(idx)] &amp;= ~(1 &lt;&lt; bit_no(idx))
-</code></pre>
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bits</span><span class="p">[</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+</code></pre></div>
 <p>직접 비트셋을 구현한 것을 보면 알 수 있겠지만, 파이썬에선 별도의 비트셋 객체가 없다. 물론 <code>pip</code>를 사용하여 외부 패키지(<a href="https://pypi.org/project/BitSet/">BitSet</a>, <a href="https://pypi.org/project/BitVector/">BitVector</a>) 을 사용할 수 있겠지만, 이러면 코딩테스트에서 문제를 풀 수가 없다!</p>
-<h2 id="why-bitset">WHY Bitset?</h2>
+<h2 id="why-bitset">WHY Bitset?<a class="headerlink" href="#why-bitset" title="Permanent link">&para;</a></h2>
 <p>비트셋을 사용하는 이유, 특히 코딩테스트에서 사용하는 이유는 가뜩이나 메모리를 많이 잡수시는 파이썬, 메모리를 조금이라도 아끼기 위해서이다. 예를 들어 <code>bool</code> 타입 리스트를 만들어 어떤 인덱스를 방문했는지 여부를 저장하는 <code>visited</code> 객체를 만든다고 가정해보자.</p>
-<pre><code class="language-python">visited = [False for _ in range(1_000_000)]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)]</span>
+</code></pre></div>
 <p>뭐 이렇게 만들어서 원하는 인덱스에 방문할 때마다 <code>True</code>로 바꿔주면 좋겠다만... 엄청난 진실이 우리를 마주하고 있다.</p>
 <blockquote>
 <p><a href="https://pypi.org/project/BitVector/">Booleans are subtype of integers</a></p>
 </blockquote>
 <p>불리언 타입은 정수의 하위타입이다. 정수타입은 기본적으로 32비트일 것이므로(아마도) 오직 참과 거짓만을 표현하는 데 무려 31개의 비트를 낭비하는 것이다. </p>
-<h2 id="how-bitset">How Bitset?</h2>
+<h2 id="how-bitset">How Bitset?<a class="headerlink" href="#how-bitset" title="Permanent link">&para;</a></h2>
 <p>내가 구현한 비트셋 연산은 C++에서 제공하는 <a href="https://pypi.org/project/BitVector/">bitset</a>의 시그니처를 많이 가져왔다. 
 - <code>test</code> ==&gt; 주어진 인덱스가 참인지 판별
 - <code>set</code> ==&gt; 주어진 인덱스를 True로 설정
@@ -344,5 +355,5 @@ class Bitset:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

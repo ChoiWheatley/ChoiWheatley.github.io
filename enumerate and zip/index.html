@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,23 +235,23 @@
 <li><a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.zip">iterator::zip</a></li>
 <li><code>enumerate</code>는 이터레이션을 진행할 때 자동으로 카운트를 세 주는 간편한 녀석이다.</li>
 </ul>
-<pre><code class="language-rust">let a = ['a', 'b', 'c'];
-let iter = a.iter().enumerate();
-assert_eq!(iter.next(), Some((0usize, &amp;'a')));
-assert_eq!(iter.next(), Some((1usize, &amp;'b')));
-assert_eq!(iter.next(), Some((2usize, &amp;'c')));
-assert_eq!(iter.next(), None);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">enumerate</span><span class="p">();</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">((</span><span class="mi">0</span><span class="k">usize</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="sc">&#39;a&#39;</span><span class="p">)));</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">((</span><span class="mi">1</span><span class="k">usize</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="sc">&#39;b&#39;</span><span class="p">)));</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">((</span><span class="mi">2</span><span class="k">usize</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="sc">&#39;c&#39;</span><span class="p">)));</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">None</span><span class="p">);</span>
+</code></pre></div>
 <ul>
 <li>하지만 튜플의 첫번째 원소는 항상 <code>usize</code> 고정이고, 뭐 나중에 캐스팅 해도 되긴 하지만 굳이 다른 타입으로 바꿔쓰고 싶다면 <code>zip</code> 을 사용하라고 한다. 그런데 약간의 실수를 저질렀다. <code>a.zip(b)</code> 이므로 <code>(a의 원소, b의 원소)</code> 순이 당연한 걸 반대로 적어놓고 있었던 것이다!</li>
 </ul>
-<pre><code class="language-rust">let a = ['a', 'b', 'c'];
-let iter = a.iter().zip(0i32..); // lazy evaluation의 위대함
-assert_eq!(iter.next(), Some((&amp;'a', 0i32))); // 순서 유의!!
-assert_eq!(iter.next(), Some((&amp;'b', 1i32)));
-assert_eq!(iter.next(), Some((&amp;'c', 2i32)));
-assert_eq!(iter.next(), None);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">zip</span><span class="p">(</span><span class="mi">0</span><span class="k">i32</span><span class="o">..</span><span class="p">);</span><span class="w"> </span><span class="c1">// lazy evaluation의 위대함</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">((</span><span class="o">&amp;</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="k">i32</span><span class="p">)));</span><span class="w"> </span><span class="c1">// 순서 유의!!</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">((</span><span class="o">&amp;</span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="k">i32</span><span class="p">)));</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">((</span><span class="o">&amp;</span><span class="sc">&#39;c&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="k">i32</span><span class="p">)));</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">(),</span><span class="w"> </span><span class="nb">None</span><span class="p">);</span>
+</code></pre></div>
 
 
 
@@ -289,5 +300,5 @@ assert_eq!(iter.next(), None);
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

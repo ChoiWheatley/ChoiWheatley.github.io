@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,14 +230,14 @@
 
   <h1>typing.cast은 타입체커에게 정보를 제공한다 - python</h1>
 
-<p>[[type hint cheatsheet]]</p>
+<p><a href="../type%20hint%20cheatsheet/">type hint cheatsheet</a></p>
 <iframe src="https://docs.python.org/3/library/typing.html" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
 
 <p>cast는 타입체크를 전혀 하지 않는구나...</p>
-<pre><code class="language-python">some_none_value = None
-node = cast(Node, some_none_value)
-node.data # Runtime error
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">some_none_value</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">node</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Node</span><span class="p">,</span> <span class="n">some_none_value</span><span class="p">)</span>
+<span class="n">node</span><span class="o">.</span><span class="n">data</span> <span class="c1"># Runtime error</span>
+</code></pre></div>
 
 
 
@@ -275,5 +286,5 @@ node.data # Runtime error
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

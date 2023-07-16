@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -239,66 +250,66 @@
                   
 
 
-<h1 id="comparing-result-with-enum-in-python">Comparing result with enum in python</h1>
+<h1 id="comparing-result-with-enum-in-python">Comparing result with enum in python<a class="headerlink" href="#comparing-result-with-enum-in-python" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/commit/b95f48beb847fb2a962932d6f90eacdefc70aeb3">enum 사용한 파이썬 코드 - 백준 27447 주문은 토기입니까?</a> </li>
 </ul>
-<pre><code class="language-python">from enum import Enum, auto
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">auto</span>
 
-class Cmp(Enum):
-    Less = auto()
-    Greater = auto()
-    Equal = auto()
+<span class="k">class</span> <span class="nc">Cmp</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">Less</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">Greater</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">Equal</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
 
-def compare(lhs, rhs) -&gt; Cmp:
-    if lhs &lt; rhs:
-        return Cmp.Less
-    if rhs &lt; lhs:
-        return Cmp.Greater
-    return Cmp.Equal
-</code></pre>
+<span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Cmp</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">lhs</span> <span class="o">&lt;</span> <span class="n">rhs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span>
+    <span class="k">if</span> <span class="n">rhs</span> <span class="o">&lt;</span> <span class="n">lhs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Greater</span>
+    <span class="k">return</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Equal</span>
+</code></pre></div>
 <p>러스트에서 <a href="https://users.rust-lang.org/t/greater-than-less-than-in-a-match-block/63399/5">다음과 같은 코드</a>를 본 나는 파이썬에도 똑같이 적용할 수 있을 것 같았다. 일단 파이썬에는 당연하겠지만 <code>Compare</code> enum은 존재하지 않을 것 같아 직접 만들었다. <code>auto</code>는 굳이 구체적인 숫자를 붙이기 싫을 때 사용하는거다.</p>
 <p>중요한 건 <code>compare</code>이다. 이 함수가 두 객체를 직접 비교하여 <code>Cmp</code> 오브젝트를 리턴하는 역할을 가지고 있다.</p>
-<h2 id="but-why">But... Why?</h2>
+<h2 id="but-why">But... Why?<a class="headerlink" href="#but-why" title="Permanent link">&para;</a></h2>
 <p>백준 27447 문제를 풀면서 이건 <code>match</code>로 풀면 딱이겠다고 생각하며 발상한거라서 해당 문제풀이 코드 일부를 아래에 기술한다.</p>
-<pre><code class="language-python">for day in range(last_time + 1):
-    delta_time = 1 &lt;&lt; 31
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">last_time</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">delta_time</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">31</span>
 
-    if len(schedule) &gt; 0:
-        delta_time = schedule[0] - day
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">schedule</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">delta_time</span> <span class="o">=</span> <span class="n">schedule</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">day</span>
 
-    match (bitset.test(day),        # does customer come?
-           compare(delta_time, M),  # is it right time to brew a coffee?
-           bowl_cnt &gt; 0,            # is empty bowl remains?
-           coffee_cnt &gt; 0):         # is coffee ready?
+    <span class="k">match</span> <span class="p">(</span><span class="n">bitset</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">day</span><span class="p">),</span>        <span class="c1"># does customer come?</span>
+           <span class="n">compare</span><span class="p">(</span><span class="n">delta_time</span><span class="p">,</span> <span class="n">M</span><span class="p">),</span>  <span class="c1"># is it right time to brew a coffee?</span>
+           <span class="n">bowl_cnt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>            <span class="c1"># is empty bowl remains?</span>
+           <span class="n">coffee_cnt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>         <span class="c1"># is coffee ready?</span>
 
-        case (True, _, _, True):
-            # 사람이 와 있고 커피가 준비가 돼 있으면 서빙한다.
-            coffee_cnt -= 1
+        <span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="k">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="c1"># 사람이 와 있고 커피가 준비가 돼 있으면 서빙한다.</span>
+            <span class="n">coffee_cnt</span> <span class="o">-=</span> <span class="mi">1</span>
 
-        case (True, _, _, False):
-            # Customer says, no coffee?? It's terrible!!!
-            return False
+        <span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="k">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="c1"># Customer says, no coffee?? It&#39;s terrible!!!</span>
+            <span class="k">return</span> <span class="kc">False</span>
 
-        case (False, Cmp.Greater, _, _):
-            # 사람이 아직 안 와 있고, 커피 우릴 시간이 아직 안 돼 있으면 일단
-            # 그릇부터 만들어 놓는다.
-            bowl_cnt += 1
+        <span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Greater</span><span class="p">,</span> <span class="k">_</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+            <span class="c1"># 사람이 아직 안 와 있고, 커피 우릴 시간이 아직 안 돼 있으면 일단</span>
+            <span class="c1"># 그릇부터 만들어 놓는다.</span>
+            <span class="n">bowl_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
 
-        case (False, Cmp.Less | Cmp.Equal, False, _):
-            # 사람이 아직 안 와 있고, 커피 우릴 시간이 적당한데 그릇이 없으면
-            # 일단 그릇부터 만들어 놓는다.
-            bowl_cnt += 1
+        <span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span> <span class="o">|</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Equal</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="k">_</span><span class="p">):</span>
+            <span class="c1"># 사람이 아직 안 와 있고, 커피 우릴 시간이 적당한데 그릇이 없으면</span>
+            <span class="c1"># 일단 그릇부터 만들어 놓는다.</span>
+            <span class="n">bowl_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
 
-        case (False, Cmp.Less | Cmp.Equal, True, _):
-            # 커피를 우린다. (그릇을 커피로 변환한다)
-            coffee_cnt += 1
-            bowl_cnt -= 1
-            schedule.popleft()
+        <span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span> <span class="o">|</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Equal</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="k">_</span><span class="p">):</span>
+            <span class="c1"># 커피를 우린다. (그릇을 커피로 변환한다)</span>
+            <span class="n">coffee_cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">bowl_cnt</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">schedule</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
 
-        case _:
-            raise RuntimeError('Unknown arm has detected!')
-</code></pre>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Unknown arm has detected!&#39;</span><span class="p">)</span>
+</code></pre></div>
 <p><code>compare</code> 함수 덕분에 <code>delta_time</code>과 <code>M</code> 사이의 관계를 조금 더 유연하고 좋은 가독성으로 표현할 수 있게 되었다. 만약에 <code>match</code> 구문이나 <code>Compare</code> 없었다면 <code>if</code>문으로 가득 도배된 코드를 보게 되었을 것이다. </p>
 <p>내가 <code>match</code>구문을 좋아하는 이유가 바로 여기에 있다. <code>match</code> 관련 문서에서 자세히 다루겠지만 일단 다중 <code>if</code>문의 지옥으로부터 빠져나올 수 있다는 것 만으로 충분히 가치가 있다.</p>
 
@@ -349,5 +360,5 @@ def compare(lhs, rhs) -&gt; Cmp:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

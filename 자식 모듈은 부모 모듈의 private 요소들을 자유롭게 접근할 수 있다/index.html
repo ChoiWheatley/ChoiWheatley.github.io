@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,18 +235,18 @@
 <blockquote>
 <p>Rust chose to have the module system function this way so that hiding inner implementation details is the default. <a href="https://rust-book.cs.brown.edu/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">link</a></p>
 </blockquote>
-<pre><code class="language-rust">// src/foo.rs
-fn run() { }
+<div class="highlight"><pre><span></span><code><span class="c1">// src/foo.rs</span>
+<span class="k">fn</span> <span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test_run() {
-        run();
-    }
-}
-</code></pre>
+<span class="cp">#[cfg(test)]</span>
+<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="w">    </span><span class="cp">#[test]</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">test_run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">run</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>다만 상대주소 (마치 디렉토리 시스템에서 <code>..</code> 과 같이)를 적용하기 위해서 <code>super</code> 키워드를 사용하여야 한다. <code>super</code> 사용을 줄이기 위해 <code>use</code> 키워드를 사용할 수 있고.</p>
 
 
@@ -285,5 +296,5 @@ mod tests {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

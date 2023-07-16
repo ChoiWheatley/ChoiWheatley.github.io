@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -239,7 +250,7 @@
 
   <h1>관심직업 찾기</h1>
 
-<h2 id="-">- [?] 지금당장 지원할 것이 아닌, 채용공고를 내걸지 않은 회사라던가 현재로써 아득한 기업도 적어도 되는지?</h2>
+<h2 id="-">- [?] 지금당장 지원할 것이 아닌, 채용공고를 내걸지 않은 회사라던가 현재로써 아득한 기업도 적어도 되는지?<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
 <ol>
 <li>직종 or 기업: <a href="https://gccompany.career.greetinghr.com/o/76415">여기어때 백엔드 엔지니어</a><ol>
 <li>근무내용: 숙박플랫폼개발 부문, 서비스 진입부터 예약 페이지 진입 전까지의 업무를 담당</li>
@@ -322,5 +333,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

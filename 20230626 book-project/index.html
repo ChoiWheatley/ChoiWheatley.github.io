@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -232,7 +243,7 @@
 <li>profile 페이지에서 아무것도 수정하지 않은 채 수정하기 버튼을 눌러도 PATCH 요청이 날아간다.</li>
 <li>signout </li>
 </ul>
-<h1 id="_1">오늘은</h1>
+<h1 id="_1">오늘은<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>EC2 instance 생성, EC2 내 Postgresql 설치, DB관련 코드 작성</p>
 <ul>
 <li>@김영민 의 라이브 코딩쇼를 보고 나중에 각자 EC2 구축할거임. TODO: 관련 문서 요청할 것.</li>
@@ -244,8 +255,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="_2">책을 써야지</h1>
-<p>[[Securities about {https} and {jwt {cookie}, {session}}]]</p>
+<h1 id="_2">책을 써야지<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p><a href="../Securities%20about%20%7Bhttps%7D%20and%20%7Bjwt%20%7Bcookie%7D%2C%20%7Bsession%7D%7D/">Securities about {https} and {jwt {cookie}, {session}}</a></p>
 
 
 
@@ -294,5 +305,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

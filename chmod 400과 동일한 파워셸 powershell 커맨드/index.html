@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,10 +231,10 @@
   <h1>chmod 400과 동일한 파워셸 powershell 커맨드</h1>
 
 <p>https://www.youtube.com/watch?v=P1erVo5X3Bs</p>
-<pre><code class="language-powershell">icacls.exe filename /reset
-icacls.exe filename /grant:r &quot;$($env:username):(r)&quot;
-icacls.exe filename /inheritance:r
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">icacls</span><span class="p">.</span><span class="n">exe</span> <span class="n">filename</span> <span class="p">/</span><span class="n">reset</span>
+<span class="n">icacls</span><span class="p">.</span><span class="n">exe</span> <span class="n">filename</span> <span class="p">/</span><span class="n">grant</span><span class="p">:</span><span class="nb">r </span><span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$env:username</span><span class="p">)</span><span class="s2">:(r)&quot;</span>
+<span class="n">icacls</span><span class="p">.</span><span class="n">exe</span> <span class="n">filename</span> <span class="p">/</span><span class="n">inheritance</span><span class="p">:</span><span class="nb">r</span>
+</code></pre></div>
 
 
 
@@ -272,5 +283,5 @@ icacls.exe filename /inheritance:r
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

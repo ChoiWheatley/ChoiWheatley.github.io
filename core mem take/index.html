@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,7 +234,7 @@
 <li><a href="https://doc.rust-lang.org/nightly/core/mem/fn.take.html"><code>take</code></a></li>
 <li>Replaces <code>dest</code> with the default value of <code>T</code>, returning the previous <code>dest</code> value</li>
 <li>말 그대로 변수가 가지고 있던 값을 훔치고 원래 있던 자리엔 기본값으로 채워넣겠다는거네.</li>
-<li>[[option take]] 메서드를 사용하면 <code>Option</code> 타입 변수가 가지고 있던 값을 훔치는 것이 가능하다!</li>
+<li><a href="../option%20take/">option take</a> 메서드를 사용하면 <code>Option</code> 타입 변수가 가지고 있던 값을 훔치는 것이 가능하다!</li>
 </ul>
 
 
@@ -273,5 +284,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

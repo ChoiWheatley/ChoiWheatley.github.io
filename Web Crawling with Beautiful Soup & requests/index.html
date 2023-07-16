@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,53 +238,53 @@
 <ul>
 <li><a href="https://inf.run/sxmp">인프런 30분 요약강좌 시리즈 시즌2 -- 여기에 웹 크롤링 관련 내용이 있다</a></li>
 </ul>
-<h1 id="sw-beautifulsoup">SW 정글 과제로 공부한 BeautifulSoup</h1>
+<h1 id="sw-beautifulsoup">SW 정글 과제로 공부한 BeautifulSoup<a class="headerlink" href="#sw-beautifulsoup" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://choiwheatley.notion.site/Ch3-DBMS-Python-mongoDB-8e1e9c269abb4cabbab7006f69c61146">노션에 정리해놓은 파이썬 + DBMS 소스에 BeautifulSoup가 있다</a> </li>
 <li>아쉽게도 네이버 영화 PC 서비스 페이지가 종료되어 아래 코드는 제대로 동작하지 않는다.</li>
 </ul>
-<pre><code class="language-python">import requests
-from bs4 import BeautifulSoup
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-# 타겟 URL을 읽어 HTML을 받아오고,
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
-data = requests.get(
-    'https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&amp;date=20200303', headers=headers)
+<span class="c1"># 타겟 URL을 읽어 HTML을 받아오고,</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36&#39;</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&amp;date=20200303&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
-# HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦
-# soup라는 변수에 &quot;파싱 용이해진 html&quot; 이 담긴 상태가 됨
-# 이제 코딩을 통해 필요한 부분을 추출.
-soup = BeautifulSoup(data.text, 'html.parser')
-print(soup)  # HTML을 받아온 것 확인
+<span class="c1"># HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦</span>
+<span class="c1"># soup라는 변수에 &quot;파싱 용이해진 html&quot; 이 담긴 상태가 됨</span>
+<span class="c1"># 이제 코딩을 통해 필요한 부분을 추출.</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>  <span class="c1"># HTML을 받아온 것 확인</span>
 
-# select를 이용하여 tr들을 불러오기
-movies = soup.select('#old_content &gt; table &gt; tbody &gt; tr')
-print(len(movies))
+<span class="c1"># select를 이용하여 tr들을 불러오기</span>
+<span class="n">movies</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;#old_content &gt; table &gt; tbody &gt; tr&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">movies</span><span class="p">))</span>
 
-for movie in movies:
-    print(movie)
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
 
-# 각 영화에서 영화제목이 적혀있는 a 태그를 select_one()으로 찾아본다.
-for movie in movies:
-    a_tag = movie.select_one('td.title &gt; div &gt; a')
-    print(a_tag)
+<span class="c1"># 각 영화에서 영화제목이 적혀있는 a 태그를 select_one()으로 찾아본다.</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
+    <span class="n">a_tag</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">&#39;td.title &gt; div &gt; a&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a_tag</span><span class="p">)</span>
 
-# 그 중 내용이 있는 경우에만 텍스트를 프린트한다.
-print(&quot;print ac, a_tag, point&quot;)
-for movie in movies:
-    ac = movie.select_one('td.ac &gt; img')
-    a_tag = movie.select_one('div.tit5 &gt; a')
-    point = movie.select_one('td.point')
-    if (ac is not None and
-        a_tag is not None and
-            point is not None):
-        print(ac.attrs['alt'], a_tag.text, point.text)
-</code></pre>
-<h1 id="00121-estsoft-1">[[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊|오르미]] 크롤링 과제</h1>
+<span class="c1"># 그 중 내용이 있는 경우에만 텍스트를 프린트한다.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;print ac, a_tag, point&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
+    <span class="n">ac</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">&#39;td.ac &gt; img&#39;</span><span class="p">)</span>
+    <span class="n">a_tag</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">&#39;div.tit5 &gt; a&#39;</span><span class="p">)</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">movie</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">&#39;td.point&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ac</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+        <span class="n">a_tag</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+            <span class="n">point</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">],</span> <span class="n">a_tag</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="_1"><a href="../0000%20Index%20%F0%9F%94%97/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/">오르미</a> 크롤링 과제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>문제:<br />
     제주코딩베이스캠프 연구원에 2019.09.24 ~ 2019.10.23 까지 거래된 거래 총량을 구해주세요. 데이터 링크는 https://paullab.co.kr/stock.html 입니다.</p>
-<h2 id="_1">요구사항 파악</h2>
+<h2 id="_2">요구사항 파악<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>이제 진짜 일을 해보자. 문제 조건을 먼저 파악해보자.</p>
 <ol>
 <li>크롤링 연습용 페이지에 html 소스를 요청하여 </li>
@@ -281,52 +292,51 @@ for movie in movies:
 <li>주어진 구간의 날짜 (2019-09-24 ~ 2019-10-23)의 데이터를 쿼리하여</li>
 <li>거래량 속성의 합을 구하여라</li>
 </ol>
-<p><img alt="Pasted image 20230515173343.png" src="Pasted image 20230515173343.png" /></p>
-<pre><code class="language-python">import requests
-from bs4 import BeautifulSoup
-from datetime import date
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230515173343.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230515173343.png" src="../assets/Pasted%20image%2020230515173343.png" /></a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
-from_date = date.fromisoformat('2019-09-24')
-to_date = date.fromisoformat('2019-10-23')
+<span class="n">from_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2019-09-24&#39;</span><span class="p">)</span>
+<span class="n">to_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="s1">&#39;2019-10-23&#39;</span><span class="p">)</span>
 
-headers = {
-    'User-Agent': 'Chrome/113.0.5672.93'
-}
-# Get html content
-data = requests.get('https://paullab.co.kr/stock.html', headers=headers)
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Chrome/113.0.5672.93&#39;</span>
+<span class="p">}</span>
+<span class="c1"># Get html content</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://paullab.co.kr/stock.html&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
-# 검색이 용이한 상태로 만들어주는 파서 `BeautifulSoup`의 도움을 받자
-soup = BeautifulSoup(data.text, 'html.parser')
+<span class="c1"># 검색이 용이한 상태로 만들어주는 파서 `BeautifulSoup`의 도움을 받자</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
 
-# CSS select 구문을 사용하여 html 요소들을 분석할 수 있다.
-researchers = soup.select('#제주코딩베이스캠프연구원 ~ .table &gt; tbody &gt; tr')
+<span class="c1"># CSS select 구문을 사용하여 html 요소들을 분석할 수 있다.</span>
+<span class="n">researchers</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;#제주코딩베이스캠프연구원 ~ .table &gt; tbody &gt; tr&#39;</span><span class="p">)</span>
 
-head = researchers[0].select('tr &gt; [scope=&quot;col&quot;]')
-head = [h.text for h in head]
-# print(head)
+<span class="n">head</span> <span class="o">=</span> <span class="n">researchers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;tr &gt; [scope=&quot;col&quot;]&#39;</span><span class="p">)</span>
+<span class="n">head</span> <span class="o">=</span> <span class="p">[</span><span class="n">h</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">head</span><span class="p">]</span>
+<span class="c1"># print(head)</span>
 
-table = []
+<span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
 
-for row in researchers[1:]:
-    row = [r.text.strip().replace(',', '') for r in row.select('tr&gt;td&gt;span')]
-    data = dict()
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">researchers</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;tr&gt;td&gt;span&#39;</span><span class="p">)]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
-    for idx, value in enumerate(row):
-        key = head[idx]
-        match key:
-            case '날짜':
-                data[key] = date.fromisoformat(value.replace('.', '-'))
-            case _:
-                data[key] = int(value)
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="k">match</span> <span class="n">key</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s1">&#39;날짜&#39;</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
-    table.append(data)
+    <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 
-print(f'''{from_date}와 {to_date} 사이의 거래량 속성의 합은 {
-      sum(map(lambda x: x['거래량'], table))
-} 입니다.''')
-
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span><span class="si">{</span><span class="n">from_date</span><span class="si">}</span><span class="s1">와 </span><span class="si">{</span><span class="n">to_date</span><span class="si">}</span><span class="s1"> 사이의 거래량 속성의 합은 </span><span class="si">{</span>
+<span class="w">      </span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;거래량&#39;</span><span class="p">],</span><span class="w"> </span><span class="n">table</span><span class="p">))</span>
+<span class="si">}</span><span class="s1"> 입니다.&#39;&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -375,5 +385,5 @@ print(f'''{from_date}와 {to_date} 사이의 거래량 속성의 합은 {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

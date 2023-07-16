@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -253,21 +264,21 @@
 
   <h1>pylint-django {pip} {vscode}</h1>
 
-<p>[[0014 Python 🐍#Fast Index]]에 적어놓자.</p>
+<p><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/#fast-index">0014 Python 🐍#Fast Index</a>에 적어놓자.</p>
 <p>이 문서는 pip를 사용하여 pylint, pylint-django를 설치하고 vscode 내에서 이를 연결하고 다른사람과 동일한 린트옵션을 가져갈 수 있는 방법에 대해 설명합니다. | <a href="https://code.visualstudio.com/docs/python/linting">Linting Python in Visual Studio Code {doc}</a> | <a href="https://pypi.org/project/pylint-django/">pylint-django {pip}</a> | <a href="https://pypi.org/project/pylint/">pylint {pip}</a> |</p>
-<h2 id="enable-linting">Enable linting</h2>
+<h2 id="enable-linting">Enable linting<a class="headerlink" href="#enable-linting" title="Permanent link">&para;</a></h2>
 <p>vscode 커맨드 팔레트 (<code>Ctrl+Shift+P</code>)를 열어 <strong>Python: Select Linter</strong>를 치면 현재 파이썬 환경 (로컬 환경 or venv 환경)에 알아서 <code>pylint</code>를 설치해 준다고 합니다. 완전개꿀. </p>
 <p>만약 설치 프롬프트가 뜨지 않거나 자동으로 설치하도록 만들어주지 않는다면 <code>pip install pylint</code>를 직접 커맨드에 쳐서 설치하면 됩니다.</p>
-<h2 id="linting-settings">Linting settings</h2>
+<h2 id="linting-settings">Linting settings<a class="headerlink" href="#linting-settings" title="Permanent link">&para;</a></h2>
 <p>필수적인것으로 보이는 놈들만 적습니다. <code>Ctrl+,</code>를 눌러 나오는 환경설정의 검색창에 대충 <code>python lint</code> 까지만 적으면 나오는 목록에서 추렸습니다.
 - <code>Python &gt; Linting: Enabled</code> =&gt; 기본으로 꺼져있는데 켜주세요. 
 - <code>Python &gt; Linting: Lint On Save</code> =&gt; 기본으로 켜져있기는 한데 확인해주세요.
 - <code>Python &gt; Linting: Pylint Args</code> =&gt; pylint 관련 옵션을 더 추가할 수 있습니다. 좀 있다 이 부분을 건들일 겁니다.</p>
-<h2 id="install-pylint-django">Install <code>pylint-django</code></h2>
+<h2 id="install-pylint-django">Install <code>pylint-django</code><a class="headerlink" href="#install-pylint-django" title="Permanent link">&para;</a></h2>
 <p><code>pip install pylint-django</code>를 실행하여 설치하시면 됩니다. 다시 vscode로 돌아와 <code>Pylint Args</code>부분에 다음 내용을 추가해주세요.</p>
-<pre><code>--load-plugins=pylint_django
-</code></pre>
-<p><img alt="Pasted image 20230608102050.png" src="Pasted image 20230608102050.png" /></p>
+<div class="highlight"><pre><span></span><code>--load-plugins=pylint_django
+</code></pre></div>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230608102050.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230608102050.png" src="../assets/Pasted%20image%2020230608102050.png" /></a></p>
 
 
 
@@ -316,5 +327,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

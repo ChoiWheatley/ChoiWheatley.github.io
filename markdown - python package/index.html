@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,39 +230,38 @@
 
   <h1>markdown - python package</h1>
 
-<pre><code class="language-python">import markdown
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">markdown</span>
 
 
-def convert_markdown_to_html(markdown_text):
-    &quot;&quot;&quot;마크다운 텍스트를 HTML 문서로 변환합니다.
+<span class="k">def</span> <span class="nf">convert_markdown_to_html</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;마크다운 텍스트를 HTML 문서로 변환합니다.</span>
 
-    Args:
-      markdown_text: 변환할 마크다운 텍스트입니다.
+<span class="sd">    Args:</span>
+<span class="sd">      markdown_text: 변환할 마크다운 텍스트입니다.</span>
 
-    Returns:
-      변환된 HTML 문서입니다.
-    &quot;&quot;&quot;
+<span class="sd">    Returns:</span>
+<span class="sd">      변환된 HTML 문서입니다.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-    return markdown.markdown(markdown_text)
+    <span class="k">return</span> <span class="n">markdown</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">)</span>
 
 
-if __name__ == &quot;__main__&quot;:
-    markdown_text = &quot;&quot;&quot;
-    # This is a heading
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">markdown_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    # This is a heading</span>
 
-    This is some text.
+<span class="s2">    This is some text.</span>
 
-    * This is a bulleted list item.
-    * This is another bulleted list item.
+<span class="s2">    * This is a bulleted list item.</span>
+<span class="s2">    * This is another bulleted list item.</span>
 
-    Here is a link: [Google](https://www.google.com).
-    &quot;&quot;&quot;
+<span class="s2">    Here is a link: [Google](https://www.google.com).</span>
+<span class="s2">    &quot;&quot;&quot;</span>
 
-    html_text = convert_markdown_to_html(markdown_text)
+    <span class="n">html_text</span> <span class="o">=</span> <span class="n">convert_markdown_to_html</span><span class="p">(</span><span class="n">markdown_text</span><span class="p">)</span>
 
-    print(html_text)
-
-</code></pre>
+    <span class="nb">print</span><span class="p">(</span><span class="n">html_text</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -300,5 +310,5 @@ if __name__ == &quot;__main__&quot;:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

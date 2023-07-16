@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,57 +235,56 @@
                   
 
 
-<h1 id="write-file">Write File</h1>
-<pre><code class="language-python">f = open(&quot;python.txt&quot;, &quot;w&quot;)
+<h1 id="write-file">Write File<a class="headerlink" href="#write-file" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;python.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
 
-s = &quot;hello\nworld&quot;
-f.write(s)
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hello</span><span class="se">\n</span><span class="s2">world&quot;</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 
-f.close()
-</code></pre>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 <p>연습문제: 두 리스트를 활용하여 JSON 파일을 하나 만들어보라.</p>
-<pre><code class="language-python">data1 = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]
-data2 = [10, 20, 30]
+<div class="highlight"><pre><span></span><code><span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 
-# https://stackoverflow.com/a/3229493
-
-
-def pretty(d):
-    cnt = len(d)
-    ret = &quot;{\n&quot;
-    for key, value in d.items():
-        ret += '\t&quot;' + str(key) + '&quot;: '
-        ret += str(value) + (&quot;,&quot; if cnt &gt; 1 else &quot;&quot;) + &quot;\n&quot;
-        cnt -= 1
-    ret += &quot;}&quot;
-    return ret
+<span class="c1"># https://stackoverflow.com/a/3229493</span>
 
 
-res = dict(zip(data1, data2))
+<span class="k">def</span> <span class="nf">pretty</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;{</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&quot;&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;&quot;: &#39;</span>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;,&quot;</span> <span class="k">if</span> <span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">cnt</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="s2">&quot;}&quot;</span>
+    <span class="k">return</span> <span class="n">ret</span>
 
-print(pretty(res))
 
-f = open(&quot;data.json&quot;, &quot;w&quot;)
-f.write(pretty(res))
-f.close()
+<span class="n">res</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">))</span>
 
-</code></pre>
-<pre><code class="language-python"># 사실 json.dump 쓰면 되지롱~~
-import json
+<span class="nb">print</span><span class="p">(</span><span class="n">pretty</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
 
-f = open(&quot;data2.json&quot;, &quot;w&quot;)
-json.dump(dict(zip(data1, data2)), f, indent=&quot;\t&quot;)
-f.close()
-</code></pre>
-<h1 id="read-file">Read File</h1>
-<pre><code class="language-python">for line in open(&quot;python.txt&quot;, &quot;r&quot;).readlines():
-    print(line, end=&quot;&quot;)
-f.close()
-</code></pre>
-<h1 id="with">파일 열기와 닫기를 동시에 <code>with</code></h1>
-<pre><code class="language-python">with open('test.txt', 'w') as f:
-    f.write('Life is too short, you need python')
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pretty</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># 사실 json.dump 쓰면 되지롱~~</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data2.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)),</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h1 id="read-file">Read File<a class="headerlink" href="#read-file" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;python.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h1 id="with">파일 열기와 닫기를 동시에 <code>with</code><a class="headerlink" href="#with" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Life is too short, you need python&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -323,5 +333,5 @@ f.close()
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

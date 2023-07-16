@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -211,6 +222,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dictionary-iteration-and-unpacking" class="md-nav__link">
+    Dictionary Iteration and Unpacking
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -224,7 +250,7 @@
                   
 
 
-<h1 id="dictionary">Dictionary</h1>
+<h1 id="dictionary">Dictionary<a class="headerlink" href="#dictionary" title="Permanent link">&para;</a></h1>
 <ul>
 <li>하나만 알아두고 가자 <code>{}</code> =&gt; dictionary, <code>{10}</code> =&gt; set</li>
 <li>순서가 없는 자료형, 순서를 보장하지 않는다(<code>ver &lt;3.6</code>). 현재, dictionary는 순서를 보장한다(<code>ver &gt;= 3.6</code>)</li>
@@ -235,44 +261,44 @@
 <ul>
 <li>list of tuple을 넣어도 된다. </li>
 </ul>
-<p><code>python
-another_d = dict([('one', '하나'), ('two', '둘'), ('three', '셋')])</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">another_d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;하나&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;둘&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;셋&#39;</span><span class="p">)])</span>
+</code></pre></div>
 </li>
 <li>
 <p>C-family의 <code>switch</code> 처럼 구현하기</p>
-<p>```python</p>
-<h1 id="python-ver-310">python ver &lt;3.10</h1>
-<p>def switch(day):
-    return {
-        1 : '월요일',
-        2 : '화요일',
-        3 : '수요일',
-        4 : '목요일',
-        5 : '금요일',
-        6 : '토요일',
-        7 : '일요일',
-    }[day]</p>
-<p>switch(7)
-```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># python ver &lt;3.10</span>
+<span class="k">def</span> <span class="nf">switch</span><span class="p">(</span><span class="n">day</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;월요일&#39;</span><span class="p">,</span>
+        <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;화요일&#39;</span><span class="p">,</span>
+        <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;수요일&#39;</span><span class="p">,</span>
+        <span class="mi">4</span> <span class="p">:</span> <span class="s1">&#39;목요일&#39;</span><span class="p">,</span>
+        <span class="mi">5</span> <span class="p">:</span> <span class="s1">&#39;금요일&#39;</span><span class="p">,</span>
+        <span class="mi">6</span> <span class="p">:</span> <span class="s1">&#39;토요일&#39;</span><span class="p">,</span>
+        <span class="mi">7</span> <span class="p">:</span> <span class="s1">&#39;일요일&#39;</span><span class="p">,</span>
+    <span class="p">}[</span><span class="n">day</span><span class="p">]</span>
+
+<span class="n">switch</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p><code>fromkeys</code> 메서드는 시퀀스형 자료를 입력받아 새 <code>dict</code>를 만들어준다. 근데 <code>key</code>만 만들어주고 <code>value</code>는 <code>None</code>임. </p>
 </li>
 </ul>
-<h2 id="dictionary-iteration-and-unpacking">Dictionary Iteration and Unpacking</h2>
+<h2 id="dictionary-iteration-and-unpacking">Dictionary Iteration and Unpacking<a class="headerlink" href="#dictionary-iteration-and-unpacking" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>items</code> 메서드를 사용하면 key-value 쌍을 모두 받아볼 수 있다. 이때, unpacking 문법을 활용하여 튜플을 받는 대신에 튜플 내용을 분해하여 데이터를 가져올 수 있는 문법이 있다.</li>
 </ul>
-<pre><code class="language-python">for key, value in d.items():
-    print(f'key: {key}, value: {value}')
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">, value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>unpacking을 활용한 swap</li>
 </ul>
-<pre><code class="language-python">a = 10
-b = 15
-a, b = b, a
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</code></pre></div>
 
 
 
@@ -321,5 +347,5 @@ a, b = b, a
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

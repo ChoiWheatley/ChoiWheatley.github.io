@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,8 +233,8 @@
 <ul>
 <li>https://doc.rust-lang.org/nightly/core/mem/fn.swap.html</li>
 <li>Swaps the values at two mutable locations, without deinitializing either one.</li>
-<li>if you want to swap with a default or dummy value, see [[core mem take]].</li>
-<li>if you want to swap with a passed value, returning the old value, see [[core mem replace]].</li>
+<li>if you want to swap with a default or dummy value, see <a href="../core%20mem%20take/">core mem take</a>.</li>
+<li>if you want to swap with a passed value, returning the old value, see <a href="../core%20mem%20replace/">core mem replace</a>.</li>
 <li>두 가변 변수의 위치를 사악 바꿔준다. 내부적으로 unsafe블록을 사용하지만 다른 아티팩트가 없기 때문에 안전하다.</li>
 </ul>
 
@@ -274,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

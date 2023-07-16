@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,25 +231,25 @@
   <h1>Option의 unwrap 메서드는 소유권을 가져간다</h1>
 
 <p><a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap">unwrap</a> 메서드의 함수 시그니처로 <code>&amp;self</code> 가 아닌, <code>self</code>를 받는다. 그래서 다음 코드는 컴파일 에러를 발생시킨다.</p>
-<pre><code class="language-rust">fn get_or_default(arg: &amp;Option&lt;String&gt;) -&gt; String {
-    if arg.is_none() {
-        return String::new();
-    }
-    let s = arg.unwrap();
-    s.clone()
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">get_or_default</span><span class="p">(</span><span class="n">arg</span>: <span class="kp">&amp;</span><span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">arg</span><span class="p">.</span><span class="n">is_none</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arg</span><span class="p">.</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><code>arg: Option&lt;String&gt;</code>를 빌려온 주제에 <code>unwrap</code>으로 String을 Consume 하려고 한다.즉, arg를 훔친것도 모자라 내부상태마저도 바꾸려는 짓을 하는 것이다. 다음은 에러메시지이다.</p>
-<pre><code>error[E0507]: cannot move out of `*arg` which is behind a shared reference
+<div class="highlight"><pre><span></span><code>error[E0507]: cannot move out of `*arg` which is behind a shared reference
    --&gt; test.rs:7:13
     |
 7   |     let s = arg.unwrap();
     |             ^^^^--------
     |             |   |
     |             |   `*arg` moved due to this method call
-    |             help: consider calling `.as_ref()` or `.as_mut()` to borrow the type's contents
+    |             help: consider calling `.as_ref()` or `.as_mut()` to borrow the type&#39;s contents
     |             move occurs because `*arg` has type `Option&lt;String&gt;`, which does not implement the `Copy` trait
-</code></pre>
+</code></pre></div>
 <p>그렇다면 Option타입이 들고있는 값을 조심스럽게 빌릴 수는 없을까? note 에서 보여주다시피 <code>.as_ref()</code> 또는 <code>.as_mut()</code>를 사용하면 된다. <code>Option&lt;T&gt;</code> 를 <code>Option&lt;&amp;T&gt;</code> 로 바꿔주기 때문에 unwrap을 하거나 map 등의 작업을 해도 consume 하지 않는다.</p>
 
 
@@ -288,5 +299,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

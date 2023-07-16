@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,14 +235,14 @@
                   
 
 
-<h1 id="index">INDEX</h1>
+<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
 <ul>
-<li>[[querying in {django query}]]</li>
-<li>[[creating in {django query}]]</li>
-<li>[[updating in {django query}]]</li>
-<li>[[F(), Q() in {django query}]]</li>
-<li>[[참조와 역참조]]</li>
-<li>[[select_related, prefetch_related {django query}]]</li>
+<li><a href="../querying%20in%20%7Bdjango%20query%7D/">querying in {django query}</a></li>
+<li><a href="../creating%20in%20%7Bdjango%20query%7D/">creating in {django query}</a></li>
+<li><a href="../updating%20in%20%7Bdjango%20query%7D/">updating in {django query}</a></li>
+<li><a href="../F%28%29%2C%20Q%28%29%20in%20%7Bdjango%20query%7D/">F(), Q() in {django query}</a></li>
+<li><a href="../%EC%B0%B8%EC%A1%B0%EC%99%80%20%EC%97%AD%EC%B0%B8%EC%A1%B0/">참조와 역참조</a></li>
+<li><a href="../select_related%2C%20prefetch_related%20%7Bdjango%20query%7D/">select_related, prefetch_related {django query}</a></li>
 </ul>
 
 
@@ -281,5 +292,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

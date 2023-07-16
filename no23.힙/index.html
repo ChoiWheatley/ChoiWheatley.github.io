@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,157 +235,157 @@
                   
 
 
-<h1 id="_1">문제 링크</h1>
+<h1 id="_1">문제 링크<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p><a href="https://swexpertacademy.com/main/talk/codeBattle/problemDetail.do?contestProbId=AV-Tj7ya3jYDFAXr&amp;categoryId=AYWab_JKjkwDFAQK&amp;categoryType=BATTLE&amp;battleMainPageIndex=1">no23.힙</a></p>
-<h1 id="_2">풀이</h1>
-<p>사실 [[Heap]] 문제와 완전 동일하다... 같은 문제를 한번 더 푸는 것으로 문제풀이 시간을 단축해보고자 했다.</p>
+<h1 id="_2">풀이<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>사실 <a href="../Heap/">Heap</a> 문제와 완전 동일하다... 같은 문제를 한번 더 푸는 것으로 문제풀이 시간을 단축해보고자 했다.</p>
 <blockquote>
 <p>solution.hpp</p>
 </blockquote>
-<pre><code class="language-cpp">#ifndef SOLUTION
-#define SOLUTION
+<div class="highlight"><pre><span></span><code><span class="cp">#ifndef SOLUTION</span>
+<span class="cp">#define SOLUTION</span>
 
-#include &lt;array&gt;
-#include &lt;cstddef&gt;
-using std::array;
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="p">;</span>
 
-enum class State { Ok, Err };
+<span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Ok</span><span class="p">,</span><span class="w"> </span><span class="n">Err</span><span class="w"> </span><span class="p">};</span>
 
-template &lt;typename T&gt; struct Result {
-  T retval;
-  State state;
-};
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Result</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">retval</span><span class="p">;</span>
+<span class="w">  </span><span class="n">State</span><span class="w"> </span><span class="n">state</span><span class="p">;</span>
+<span class="p">};</span>
 
-template &lt;typename T, class LessEq&gt; class Heap {
-public:
-  constexpr static size_t MAX_N = 100'001;
-  constexpr static size_t START = 1;
-  constexpr static size_t parent(size_t idx) { return idx &gt;&gt; 1; }
-  constexpr static size_t left(size_t idx) { return idx &lt;&lt; 1; }
-  constexpr static size_t right(size_t idx) { return (idx &lt;&lt; 1) | 1; }
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">LessEq</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Heap</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">MAX_N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100&#39;001</span><span class="p">;</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">parent</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">left</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">right</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-  explicit Heap() = default;
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">Heap</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
 
-  auto insert(T item) noexcept -&gt; bool {
-    if (m_size &gt;= MAX_N - 1) {
-      return false;
-    }
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">item</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_size</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">MAX_N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    m_size++;
-    m_data[m_size] = item;
+<span class="w">    </span><span class="n">m_size</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">m_data</span><span class="p">[</span><span class="n">m_size</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
 
-    // bubble up
-    for (size_t idx = m_size;                                            //
-         parent(idx) &gt; 0 &amp;&amp; m_less_eq(m_data[parent(idx)], m_data[idx]); //
-         idx = parent(idx)) {
-      std::swap(m_data[parent(idx)], m_data[idx]);
-    }
+<span class="w">    </span><span class="c1">// bubble up</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_size</span><span class="p">;</span><span class="w">                                            </span><span class="c1">//</span>
+<span class="w">         </span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m_less_eq</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">]);</span><span class="w"> </span><span class="c1">//</span>
+<span class="w">         </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    return true;
-  }
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  auto pop() noexcept -&gt; bool {
-    if (empty()) {
-      return false;
-    }
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">pop</span><span class="p">()</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    m_data[START] = m_data[m_size];
-    m_data[m_size] = T{};
-    m_size--;
+<span class="w">    </span><span class="n">m_data</span><span class="p">[</span><span class="n">START</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">m_size</span><span class="p">];</span>
+<span class="w">    </span><span class="n">m_data</span><span class="p">[</span><span class="n">m_size</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">m_size</span><span class="o">--</span><span class="p">;</span>
 
-    for (size_t idx = START; left(idx) &lt;= m_size;) {
-      size_t child_idx = left(idx);
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">START</span><span class="p">;</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">m_size</span><span class="p">;)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">size_t</span><span class="w"> </span><span class="n">child_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
 
-      if (left(idx) &lt; m_size &amp;&amp; // l,r 모두 확인해야함.
-          m_less_eq(m_data[left(idx)], m_data[right(idx)])) {
-        child_idx = right(idx);
-      }
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="c1">// l,r 모두 확인해야함.</span>
+<span class="w">          </span><span class="n">m_less_eq</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">right</span><span class="p">(</span><span class="n">idx</span><span class="p">)]))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">child_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
 
-      // parent, child 확인해야함.
-      if (m_less_eq(m_data[idx], m_data[child_idx])) {
-        std::swap(m_data[idx], m_data[child_idx]);
-      } else {
-        break;
-      }
+<span class="w">      </span><span class="c1">// parent, child 확인해야함.</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_less_eq</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">child_idx</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">child_idx</span><span class="p">]);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
 
-      idx = child_idx;
-    }
+<span class="w">      </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child_idx</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-    return true;
-  }
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  auto peek() const noexcept -&gt; Result&lt;T&gt; {
-    if (empty()) {
-      return Result&lt;T&gt;{T(), State::Err};
-    }
-    return Result&lt;T&gt;{m_data[START], State::Ok};
-  }
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">peek</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">{</span><span class="n">T</span><span class="p">(),</span><span class="w"> </span><span class="n">State</span><span class="o">::</span><span class="n">Err</span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">{</span><span class="n">m_data</span><span class="p">[</span><span class="n">START</span><span class="p">],</span><span class="w"> </span><span class="n">State</span><span class="o">::</span><span class="n">Ok</span><span class="p">};</span>
+<span class="w">  </span><span class="p">}</span>
 
-  auto empty() const noexcept -&gt; bool { return m_size == 0; }
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-private:
-  array&lt;T, MAX_N&gt; m_data;
-  size_t m_size = 0;
-  LessEq m_less_eq{};
-};
+<span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="n">array</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_N</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_data</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">LessEq</span><span class="w"> </span><span class="n">m_less_eq</span><span class="p">{};</span>
+<span class="p">};</span>
 
-#endif
-</code></pre>
+<span class="cp">#endif</span>
+</code></pre></div>
 <blockquote>
 <p>main.cc</p>
 </blockquote>
-<pre><code class="language-cpp">#include &quot;solution.hpp&quot;
-#include &lt;cstdint&gt;
-#include &lt;cstdio&gt;
-#include &lt;ios&gt;
-#include &lt;iostream&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;solution.hpp&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdio&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ios&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
-struct LessEq {
-  auto operator()(int a, int b) const { return a &lt; b; }
-};
+<span class="k">struct</span><span class="w"> </span><span class="nc">LessEq</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="k">operator</span><span class="p">()(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
 
-int main(void) {
-  std::ios::sync_with_stdio(false);
-  std::cin.tie(nullptr);
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
 
-  freopen(&quot;sample_input-4.txt&quot;, &quot;r&quot;, stdin);
+<span class="w">  </span><span class="n">freopen</span><span class="p">(</span><span class="s">&quot;sample_input-4.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stdin</span><span class="p">);</span>
 
-  size_t t = 0;
-  std::cin &gt;&gt; t;
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
 
-  for (size_t tc = 1; tc &lt;= t; ++tc) {
-    Heap&lt;int, LessEq&gt; heap{};
-    size_t n = 0;
-    std::cin &gt;&gt; n;
-    std::cout &lt;&lt; &quot;#&quot; &lt;&lt; tc &lt;&lt; &quot; &quot;;
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">tc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">tc</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">tc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Heap</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">LessEq</span><span class="o">&gt;</span><span class="w"> </span><span class="n">heap</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;#&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tc</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
 
-    while (n-- &gt; 0) {
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-      size_t instruction = 0;
-      std::cin &gt;&gt; instruction;
+<span class="w">      </span><span class="kt">size_t</span><span class="w"> </span><span class="n">instruction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">instruction</span><span class="p">;</span>
 
-      if (instruction == 1) {
-        int item;
-        std::cin &gt;&gt; item;
-        heap.insert(item);
-      } else if (instruction == 2) {
-        auto item = heap.peek();
-        heap.pop();
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instruction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<span class="w">        </span><span class="n">heap</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instruction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="p">.</span><span class="n">peek</span><span class="p">();</span>
+<span class="w">        </span><span class="n">heap</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
 
-        if (item.state == State::Err) {
-          std::cout &lt;&lt; &quot;-1 &quot;;
-        } else {
-          std::cout &lt;&lt; item.retval &lt;&lt; &quot; &quot;;
-        }
-      }
-    }
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">state</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">State</span><span class="o">::</span><span class="n">Err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;-1 &quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">retval</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 
-    std::cout &lt;&lt; &quot;\n&quot;;
-  }
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return 0;
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -423,5 +434,5 @@ int main(void) {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

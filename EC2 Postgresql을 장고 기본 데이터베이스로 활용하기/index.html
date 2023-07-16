@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,9 +235,9 @@
                   
 
 
-<p>[[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project]] 진행하면서 거의 마지막 페이즈에 도달하였다. 물론 치명적인 버그가 발생한 상태라 그걸 먼저 해결해야 하지만, 결국 오눌 16시부터는 postgresql + S3까지 나갈 것이기 때문에 미리 준비를 해놓아야 한다.</p>
+<p><a href="../%EC%A3%BC%EB%8B%88%EC%96%B4%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%2C%20%EA%B7%B8%20%EC%9D%B4%EC%83%81%EC%9C%BC%EB%A1%9C%20%F0%9F%9A%80%7Bbook-project%7D/">book-project</a> 진행하면서 거의 마지막 페이즈에 도달하였다. 물론 치명적인 버그가 발생한 상태라 그걸 먼저 해결해야 하지만, 결국 오눌 16시부터는 postgresql + S3까지 나갈 것이기 때문에 미리 준비를 해놓아야 한다.</p>
 <p>참고한 블로그: https://velog.io/@iankimdev/EC2</p>
-<h1 id="ec2">ec2</h1>
+<h1 id="ec2">ec2<a class="headerlink" href="#ec2" title="Permanent link">&para;</a></h1>
 <ul>
 <li>ubuntu를 EC2에 띄우는 건 생략함</li>
 <li>build-essential, postgresql을 설치한다.</li>
@@ -239,13 +250,12 @@
 <ul>
 <li>어차피 우리가 유저를 제한할 게 아니라서, 모든 IP로 들어오는 모든 유저가 적당한 비밀번호 암호화 알고리즘을 사용하기만 하면 모든 데이터베이스에 대한 접근을 허용하도록 만들어주자.</li>
 </ul>
-<p>```</p>
-<h1 id="type-database-user-address-method">TYPE DATABASE USER ADDRESS    METHOD</h1>
-<h1 id="ipv4-local-connections">IPv4 local connections:</h1>
-<p>host all      all  0.0.0.0/0  md5</p>
-<h1 id="ipv6-local-connections">IPv6 local connections:</h1>
-<p>host all      all  ::/0       md5
-```</p>
+<div class="highlight"><pre><span></span><code># TYPE DATABASE USER ADDRESS    METHOD
+# IPv4 local connections:
+  host all      all  0.0.0.0/0  md5
+# IPv6 local connections:
+  host all      all  ::/0       md5
+</code></pre></div>
 </li>
 <li>
 <p>postgresql 계정 추가</p>
@@ -257,7 +267,7 @@
 </li>
 <li></li>
 </ul>
-<h1 id="django">django</h1>
+<h1 id="django">django<a class="headerlink" href="#django" title="Permanent link">&para;</a></h1>
 <p>장고에서 기본으로 사용하던 sqlite를 버리고 ec2의 postgresql을 사용하는 코드를 작성해보자. </p>
 <ul>
 <li>
@@ -277,7 +287,8 @@
 <li>core/db.py</li>
 <li>decouple_config로 <code>.env</code> 파일 안에 들어있는 <code>DATABASE_URL</code>을 사용하는 파일이다. <code>DATABASE_URL</code>은 아래와 같은 형식을 갖는다. <a href="https://pypi.org/project/dj-database-url/#url-schema">url schema</a></li>
 </ul>
-<p><code>postgres://USER:PASSWORD@HOST:PORT/DBNAME</code></p>
+<div class="highlight"><pre><span></span><code>postgres://USER:PASSWORD@HOST:PORT/DBNAME   
+</code></pre></div>
 </li>
 <li>
 <p>된건가? 아니 그런데 자꾸 <code>libpq.so.5</code> 공유라이브러리가 없다는데?</p>
@@ -336,5 +347,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

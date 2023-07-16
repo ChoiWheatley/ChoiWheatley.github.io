@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,8 +237,8 @@
 
 <p>https://github.com/iankimdev/e-commerce<br />
 <a href="https://velog.io/@iankimdev">iankimdev - velog</a></p>
-<h1 id="_1">설명</h1>
-<p>김영민 [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]] 학우분 한명이 수업시간 + a를 할애하여 만든 Dalle 기반 쇼핑 플랫폼이다. openai-api 접목시켜 사이트 내에서 생성형 이미지를 바로 만들어낼 수 있는것도 멋지고 이미 결제 시스템도 붙여놓았다는 사실에 엄청난 영감을 얻었다.</p>
+<h1 id="_1">설명<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>김영민 <a href="../0000%20Index%20%F0%9F%94%97/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/">0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊</a> 학우분 한명이 수업시간 + a를 할애하여 만든 Dalle 기반 쇼핑 플랫폼이다. openai-api 접목시켜 사이트 내에서 생성형 이미지를 바로 만들어낼 수 있는것도 멋지고 이미 결제 시스템도 붙여놓았다는 사실에 엄청난 영감을 얻었다.</p>
 
 
 
@@ -276,5 +287,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

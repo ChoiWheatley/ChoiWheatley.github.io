@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,7 +233,7 @@
 <ul>
 <li>https://doc.rust-lang.org/std/convert/trait.AsRef.html#tymethod.as_ref</li>
 <li>어떤 타입의 변수를 레퍼런스로 만들 때 사용</li>
-<li>빌리는 거랑 무슨 상관이냐? [[Borrow trait]] 트레이트 함수명만 다르지 결국 <code>&amp;</code> 붙이는 건 동일한데???</li>
+<li>빌리는 거랑 무슨 상관이냐? <a href="../Borrow%20trait/">Borrow trait</a> 트레이트 함수명만 다르지 결국 <code>&amp;</code> 붙이는 건 동일한데???</li>
 <li><a href="https://doc.rust-lang.org/std/convert/trait.AsMut.html">AsMut trait</a>도 결국은 똑같구만 </li>
 </ul>
 
@@ -273,5 +284,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

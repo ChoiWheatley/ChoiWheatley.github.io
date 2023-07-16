@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,24 +230,24 @@
 
   <h1>values in a scope are dropped in the opposite order they are defined</h1>
 
-<p>[[Too Many Linked Lists]] 에서 ch03인 persistent list의 <code>Drop</code> 트레이트를 구현하자 오류가 나지 않았던 테스트 코드에서 변수 수명 에러가 나타났다.</p>
-<pre><code class="language-rust">#[test]
-fn iter() {
-    let mut list = List::new();
-    let queue = &quot;Hello, world!&quot;.chars().collect::&lt;Vec&lt;_&gt;&gt;();
-    queue.iter().for_each(|c| { // queue does not live long enough
-        list = list.prepend(c);
-    });
-    let answer_iter = queue.iter().rev();
-    let list_iter = list.iter();
-    assert!(list_iter
-        .zip(answer_iter)
-        .all(|(&amp;list, answer)| list == answer));
-}
-</code></pre>
+<p><a href="../Too%20Many%20Linked%20Lists/">Too Many Linked Lists</a> 에서 ch03인 persistent list의 <code>Drop</code> 트레이트를 구현하자 오류가 나지 않았던 테스트 코드에서 변수 수명 에러가 나타났다.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#[test]</span>
+<span class="k">fn</span> <span class="nf">iter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span>::<span class="n">new</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">.</span><span class="n">chars</span><span class="p">().</span><span class="n">collect</span>::<span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">queue</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">for_each</span><span class="p">(</span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// queue does not live long enough</span>
+<span class="w">        </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">prepend</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">answer_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">rev</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">list_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="n">iter</span><span class="p">();</span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">list_iter</span>
+<span class="w">        </span><span class="p">.</span><span class="n">zip</span><span class="p">(</span><span class="n">answer_iter</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="o">|</span><span class="p">(</span><span class="o">&amp;</span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">answer</span><span class="p">)</span><span class="o">|</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">answer</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>그 말은 즉슨, <code>queue</code>에 의존하는 <code>list</code>가 <code>queue</code>가 드롭이 된 뒤에도 살아있기 때문에 발생한 문제인 것이었다. drop은 별도로 명시하지 않는 한 블럭의 마지막에 가서 일어날 것이고, drop은 정의된 반대 순서로 진행되기 때문에 <code>list</code> 를 <code>queue</code> 보다 먼저 정의한 이 코드에 따라서 컴파일러는 <code>queue</code>를 먼저 삭제하려고 할 것이고, 이로 인해 변수 수명 이슈가 발생한 것이다!!!</p>
 <p>수정은 매우 EZ하다. 단지 <code>queue</code>정의문을 <code>list</code> 보다 위에 써주면 해결된다.</p>
-<pre><code>   error[E0597]: `queue` does not live long enough
+<div class="highlight"><pre><span></span><code>   error[E0597]: `queue` does not live long enough
    --&gt; too_many_linked_lists/src/ch03_persistent_stack.rs:124:9
     |
 124 |         queue.iter().for_each(|c| {
@@ -249,7 +260,7 @@ fn iter() {
     |     borrow might be used here, when `list` is dropped and runs the `Drop` code for type `ch03_persistent_stack::List`
     |
     = note: values in a scope are dropped in the opposite order they are defined
-</code></pre>
+</code></pre></div>
 
 
 
@@ -298,5 +309,5 @@ fn iter() {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

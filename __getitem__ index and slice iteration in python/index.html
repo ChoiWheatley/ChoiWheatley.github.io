@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,28 +240,27 @@
 <li><a href="https://docs.python.org/3/reference/datamodel.html#object.__getitem__"><code>object.__getitem__</code> python documentation</a><br />
 커스텀 링크드 리스트를 만들다가 발생한 문제 브리핑.</li>
 </ul>
-<h1 id="what-is-getitem">What is getitem</h1>
+<h1 id="what-is-getitem">What is getitem<a class="headerlink" href="#what-is-getitem" title="Permanent link">&para;</a></h1>
 <p>아래와 같이 마지막 원소를 제외한 나머지를 순회하면서 <code>ret</code>에 문자열을 끼워넣고 싶었는데 안된다고 한다. 자세히 들여다보니 <code>__getitem__</code> 던더함수가 없다고 나오네.</p>
-<pre><code class="language-python">
-class LinkedList:
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
 
-    def __init__(self):
-        init = Node(0, None)
-        self.head = init
-        self.tail = init
-        self.count = 0
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">init</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">init</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">init</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 
-    # ... 중략
+    <span class="c1"># ... 중략</span>
 
-    def __str__(self):
-        cur = self.head.next
-        ret = &quot;[ &quot;
-        for elem in self[0:-1]:
-            ret += str(elem) + &quot;, &quot;
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="s2">&quot;[ &quot;</span>
+        <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">ret</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
 
-        ret += &quot; ]&quot;
-        return ret
-</code></pre>
+        <span class="n">ret</span> <span class="o">+=</span> <span class="s2">&quot; ]&quot;</span>
+        <span class="k">return</span> <span class="n">ret</span>
+</code></pre></div>
 <p><code>__str__</code> 메서드 안에 <code>self[0:-1]</code> 구문에서 문제가 터지고 말았다.</p>
 <p>두 브라켓 사이에 별에 별 걸 다 집어넣어본 경험이 있는 우리는... 이제 그 실체를 마주할 때가 되었다.</p>
 <blockquote>
@@ -262,24 +272,24 @@ class LinkedList:
 <li>문자열 (매핑을 위하여)</li>
 <li>임의의 객체</li>
 </ol>
-<h1 id="implementing-getitem">Implementing getitem</h1>
+<h1 id="implementing-getitem">Implementing getitem<a class="headerlink" href="#implementing-getitem" title="Permanent link">&para;</a></h1>
 <p>그래서, 임의의 타입을 일일이 <code>isinstance</code>를 찍어가면서 해야한단 거야? =&gt; No! <a href="https://stackoverflow.com/questions/22151335/implementing-getitem">SOF - use exception handling!</a></p>
-<p>slice 타입을 어떻게 처리하지? [[slice.indices - python]]</p>
+<p>slice 타입을 어떻게 처리하지? <a href="../slice.indices%20-%20python/">slice.indices - python</a></p>
 <p>빙챗한테 <code>__getitem__</code> 어떻게 구현하냐고 물어봤다. 굉장히 만족스러운 답변을 내놓았다. </p>
 <p>The <code>__getitem__</code> method receives a slice object when the object is sliced. You can look at the <code>start</code>, <code>stop</code>, and <code>step</code> members of the slice object to get the components for the slice¹.</p>
 <p>Here's an example implementation of <code>__getitem__</code> that handles both indexing and slicing:</p>
-<pre><code class="language-python">class MyClass:
-    def __init__(self, data):
-        self.data = data
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
 
-    def __getitem__(self, index):
-        # 아래 보면 `isinstance`를 사용하는게 가독성에 더 좋을지도
-        if isinstance(index, slice):
-            start, stop, step = index.indices(len(self.data))
-            return [self.data[i] for i in range(start, stop, step)]
-        else:
-            return self.data[index]
-</code></pre>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="c1"># 아래 보면 `isinstance`를 사용하는게 가독성에 더 좋을지도</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+            <span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+            <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</code></pre></div>
 <p>This implementation checks if the <code>index</code> parameter passed to <code>__getitem__</code> is a slice object. If it is, it uses the <code>indices</code> method of the slice object to get the start, stop and step values for the slice. It then uses a list comprehension to return a new list containing the sliced data. If <code>index</code> is not a slice object, it simply returns the element at that index in the data.</p>
 <p>Source: Conversation with Bing, 5/17/2023<br />
 (1) python - Implementing slicing in <strong>getitem</strong> - Stack Overflow. https://stackoverflow.com/questions/2936863/implementing-slicing-in-getitem.<br />
@@ -334,5 +344,5 @@ class LinkedList:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

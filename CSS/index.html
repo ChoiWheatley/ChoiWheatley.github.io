@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -293,8 +304,8 @@
 <li><a href="https://paullabworkspace.notion.site/CSS-70052fc35e734f4a86f0d4d4f85090f2">CSS selector notion src4</a></li>
 <li><a href="https://youtu.be/2znzBerWyWU">30분 안에 끝내는 Bootstrap youtube</a></li>
 </ul>
-<h2 id="structure">Structure</h2>
-<p><img alt="image-2.png" src="image-2.png" /> ^nbm2ta<br />
+<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../assets/image-2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image-2.png" src="../assets/image-2.png" /></a> ^nbm2ta<br />
     - header(selector)<br />
     - decl block<br />
     - property<br />
@@ -318,11 +329,11 @@
 <li>[?] <code>background</code>와 <code>background-color</code>의 차이가 무엇인가요?<ul>
 <li><code>background</code> $\supset$ <code>background-color</code> </li>
 <li>그래서 background만 설정하면 내가 따로 뭘 적지 않아도 추가적인 스타일이 로드된다.  </li>
-<li><img alt="Pasted image 20230427111746.png" src="Pasted image 20230427111746.png" /> </li>
+<li>![[Pasted image 20230427111746.png]] </li>
 </ul>
 </li>
 </ul>
-<h2 id="selector">Selector</h2>
+<h2 id="selector">Selector<a class="headerlink" href="#selector" title="Permanent link">&para;</a></h2>
 <ul>
 <li>universal selector <code>*</code></li>
 <li>type selector =&gt; such as tags, elements</li>
@@ -374,7 +385,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="selector-priority-rules">Selector Priority Rules</h2>
+<h2 id="selector-priority-rules">Selector Priority Rules<a class="headerlink" href="#selector-priority-rules" title="Permanent link">&para;</a></h2>
 <ul>
 <li>can be overrided =&gt; later overwrite prior one</li>
 <li>can be selected by most specific selector<ul>
@@ -387,23 +398,18 @@
 </li>
 <li>가중치 점수가 아무리 높더라도 유형 선택자 가중치 법칙을 이길 수 없다.</li>
 </ul>
-<h2 id="display-attributes">Display Attributes</h2>
+<h2 id="display-attributes">Display Attributes<a class="headerlink" href="#display-attributes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>can change <em>block</em> and <em>inline</em> attribute into custom one</li>
 <li><code>block</code></li>
 <li><code>inline</code></li>
-<li><code>inline-block</code>  </li>
-</ul>
-<figure markdown>
-  ![Pasted image 20230427143822.png](Pasted image 20230427143822.png){ width="450" }
-
-</figure markdown>
-<ul>
+<li><code>inline-block</code><br />
+<a class="glightbox" href="../assets/Pasted%20image%2020230427143822.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230427143822.png" src="../assets/Pasted%20image%2020230427143822.png" width="450" /></a></li>
 <li><code>flex</code></li>
 <li><code>grid</code></li>
 <li><code>none</code> =&gt; can be used as modal, menu</li>
 </ul>
-<h2 id="units">Units</h2>
+<h2 id="units">Units<a class="headerlink" href="#units" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>px</code><ul>
 <li>absolute pixels</li>
@@ -414,7 +420,7 @@
 </ul>
 </li>
 <li><code>em</code><ul>
-<li>parent로부터 받은 상속받은 요소의 ==글자크기== 를 기준</li>
+<li>parent로부터 받은 상속받은 요소의 <mark>글자크기</mark> 를 기준</li>
 </ul>
 </li>
 <li><code>rem</code><ul>
@@ -430,17 +436,17 @@
 </ul>
 </li>
 </ul>
-<h1 id="flex">flex</h1>
+<h1 id="flex">flex<a class="headerlink" href="#flex" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://flexboxfroggy.com/#ko">flexbox froggy 플렉스 연습 게임</a></li>
 <li><a href="https://flexngrid.com/">flex grid 플렉스 시뮬레이터</a></li>
 <li><a href="https://developer.mozilla.org/ko/docs/Learn/CSS/CSS_layout/Flexbox">MDN flex 문서</a></li>
-<li>[[회원가입 페이지 작성하기 estsoft]] 를 수행하다가 <code>legend</code>와 <code>fieldset</code>이 아주 이상했다. 이 문제를 해결해 줄 수 있는 녀석이 바로 <code>flex</code>이다.</li>
+<li><a href="../%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0%20estsoft/">회원가입 페이지 작성하기 estsoft</a> 를 수행하다가 <code>legend</code>와 <code>fieldset</code>이 아주 이상했다. 이 문제를 해결해 줄 수 있는 녀석이 바로 <code>flex</code>이다.</li>
 <li>자식요소(<code>flex-item</code>)들이 컨테이너(<code>flex-container</code>) 안 공간을 <em>알아서</em> 배치하게 만들어준다.</li>
 <li>화면이 좁아지면 가로로 배치되던 요소들이 세로로 배치되는걸 의미</li>
 <li>주축을 지정한다. (단순히 가로,세로가 아님)</li>
 </ul>
-<h1 id="float">float</h1>
+<h1 id="float">float<a class="headerlink" href="#float" title="Permanent link">&para;</a></h1>
 <ul>
 <li>신문에서 보면 가끔 그림의 테두리 따라 글씨들이 꽉 채워지는 것을 볼 수 있다. </li>
 <li>flow처럼 흐르는 CSS 문서의 규칙을 떠나 별도로 적용이 되는 규칙이며, 인라인 요소가 그 주위를 감싸도록 한다.</li>
@@ -448,9 +454,9 @@
 <li>문제는, 화면 크기조절을 할 시에 화면 깨짐이 빈번하다고 주의를 주었다.</li>
 </ul>
 <hr />
-<h1 id="_1">개꿀팁</h1>
+<h1 id="_1">개꿀팁<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>[[css - aspect-ratio를 사용하여 원하는 비율로 맞추기]]</li>
+<li><a href="../css%20-%20aspect-ratio%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC%20%EC%9B%90%ED%95%98%EB%8A%94%20%EB%B9%84%EC%9C%A8%EB%A1%9C%20%EB%A7%9E%EC%B6%94%EA%B8%B0/">css - aspect-ratio를 사용하여 원하는 비율로 맞추기</a></li>
 </ul>
 
 
@@ -500,5 +506,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,9 +236,9 @@
 
 
 <p><a href="https://www.ibm.com/topics/data-modeling">What is Data Modeling? - IBM</a> |<br />
-[[django model]]<br />
-[[Data Modeling {book-project}]]</p>
-<h1 id="what-is-data-modeling">What is Data Modeling?</h1>
+<a href="../django%20model/">django model</a><br />
+<a href="../Data%20Modeling%20%7Bbook-project%7D/">Data Modeling {book-project}</a></p>
+<h1 id="what-is-data-modeling">What is Data Modeling?<a class="headerlink" href="#what-is-data-modeling" title="Permanent link">&para;</a></h1>
 <p>데이터 모델링은 비즈니스 로직에 부합하는 자료구조를 설계하여 데이터와 구조 사이의 뚜렷한 연결다리를 놓는일. 또한 다른 데이터타입들과의 관계를 정의하여 그룹화를 수행할 수 있다.</p>
 <p>데이터 모델링은 그 추상화 정도에 따라 Conceptual Data Model -&gt; Logical Data Model -&gt; Physical Data Model 순으로 이어지는데</p>
 <ol>
@@ -235,7 +246,7 @@
 <li>Logical Data Model은 엔티티로부터 데이터 속성을 추출하게 된다. 데이터 타입, 데이터가 필요한 공간의 크기, 엔티티를 식별하기 위한 관계 등을 알게 된다.</li>
 <li>Physical Data Model은 Database의 Table을 생성하기 위한 스키마 작성에 돌입하게 된다.</li>
 </ol>
-<h1 id="glossary">Glossary</h1>
+<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <ul>
 <li>ER Diagram == Entity Relationships Diagram</li>
 <li>Foreign Key and Primary Key</li>
@@ -293,5 +304,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

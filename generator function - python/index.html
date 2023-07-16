@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,66 +235,66 @@
                   
 
 
-<p>[[2023-05-11 estsoft - python - inheritance, linked-list, method-overriding, MRO, private-member, iterator, generator, module, file-io, excel]]
+<p><a href="../2023-05-11%20estsoft%20-%20python%20-%20inheritance%2C%20linked-list%2C%20method-overriding%2C%20MRO%2C%20private-member%2C%20iterator%2C%20generator%2C%20module%2C%20file-io%2C%20excel/">2023-05-11 estsoft - python - inheritance, linked-list, method-overriding, MRO, private-member, iterator, generator, module, file-io, excel</a>
 - https://realpython.com/introduction-to-python-generators/</p>
-<h1 id="generator-function-generates-iterator-like-control-block">Generator function generates iterator-like control block</h1>
+<h1 id="generator-function-generates-iterator-like-control-block">Generator function generates iterator-like control block<a class="headerlink" href="#generator-function-generates-iterator-like-control-block" title="Permanent link">&para;</a></h1>
 <p><code>yield</code> 문법이 나온다. <code>yield</code> 키워드를 가지고 있는 함수를 generator function이라고 부른다. 함수를 suspend 하고 <code>generator</code> 객체를 리턴하는 역할을 가지고 있다. 따라서 함수의 상태가 어딘가 저장이 되고 재호출이 되기를 기다린다. 해당 함수가 외부에서 다시 호출이 되면 <code>yield</code> 이후 문장들을 다시 실행하기 시작한다. </p>
 <p><code>yield</code>를 사용하여 리턴한 <code>yield</code> 객체로부터 데이터 뽑아내려면 <code>next</code> 내장 함수를 사용하자. 완전 이터레이터와 사용방법이 동일하지? </p>
-<pre><code class="language-python">def my_yield():
-    print('&lt;my_yield&gt; before yield')
-    yield 1
-    print('&lt;my_yield&gt; after yielding 1')
-    yield 2
-    print('&lt;my_yield&gt; after yielding 2')
-    yield 3
-    print('&lt;my_yield&gt; after yielding 3')
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_yield</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;my_yield&gt; before yield&#39;</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;my_yield&gt; after yielding 1&#39;</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;my_yield&gt; after yielding 2&#39;</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;my_yield&gt; after yielding 3&#39;</span><span class="p">)</span>
 
-generated = my_yield()
-print(next(generated))  # 1
-print(next(generated))  # 2
-print(next(generated))  # 3
-print(next(generated))  # raise StopIteration
-</code></pre>
+<span class="n">generated</span> <span class="o">=</span> <span class="n">my_yield</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">generated</span><span class="p">))</span>  <span class="c1"># 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">generated</span><span class="p">))</span>  <span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">generated</span><span class="p">))</span>  <span class="c1"># 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">generated</span><span class="p">))</span>  <span class="c1"># raise StopIteration</span>
+</code></pre></div>
 <p><code>my_yield</code> 함수에 대한 호출은 마치 리스트로부터 <code>iter</code>를 호출한 것 마냥 새로운 제너레이터 객체를 리턴하는 것 같다. 그래서 멍청하게 <code>my_yield</code>를 여러 번 호출했다가 잠깐 멘붕에 빠졌다.</p>
-<pre><code class="language-python">print(next(my_yield()))  # 1 
-print(next(my_yield()))  # 1 
-print(next(my_yield()))  # 1 
-print(next(my_yield()))  # 1 
-print(next(my_yield()))  # 1 
-print(next(my_yield()))  # 1 
-...
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_yield</span><span class="p">()))</span>  <span class="c1"># 1 </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_yield</span><span class="p">()))</span>  <span class="c1"># 1 </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_yield</span><span class="p">()))</span>  <span class="c1"># 1 </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_yield</span><span class="p">()))</span>  <span class="c1"># 1 </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_yield</span><span class="p">()))</span>  <span class="c1"># 1 </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">my_yield</span><span class="p">()))</span>  <span class="c1"># 1 </span>
+<span class="o">...</span>
+</code></pre></div>
 <p>나중에 멀티스레딩과 네트워크 프로그래밍과 함께 하면 복잡하게 얽혀 고오급 프로그래머가 될 수 있다.</p>
 <p>아래 코드는 무한루프에 걸린다.</p>
-<pre><code class="language-python">def gen():
-    count = 0
-    while True:
-        yield count
-        count += 1
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">gen</span><span class="p">():</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-for i in gen():
-    print(i)
-</code></pre>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
 <p>아래 코드는 무한한 짝수 정수를 게으르게 다루는 법에 대한 스니펫이다. <code>gen()</code>은 분명히 무한하지만 <code>zip</code>과 함께 사용하여 바운딩이 된다!</p>
-<pre><code class="language-python">def gen():
-    count = 0
-    while True:
-        yield count
-        count += 2
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">gen</span><span class="p">():</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">2</span>
 
 
-l = [10, 20, 30, 40, 50]
-print(list(zip(l, gen())))
-</code></pre>
-<p>[[type hint cheatsheet]]에 따르면, 제너레이터 함수의 리턴값은 그냥 <code>Iterator</code>라고 한다.</p>
-<pre><code class="language-python"># A generator function that yields ints is secretly just a function that
-# returns an iterator of ints, so that's how we annotate it
-def gen(n: int) -&gt; Iterator[int]:
-    i = 0
-    while i &lt; n:
-        yield i
-        i += 1
-</code></pre>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">gen</span><span class="p">())))</span>
+</code></pre></div>
+<p><a href="../type%20hint%20cheatsheet/">type hint cheatsheet</a>에 따르면, 제너레이터 함수의 리턴값은 그냥 <code>Iterator</code>라고 한다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># A generator function that yields ints is secretly just a function that</span>
+<span class="c1"># returns an iterator of ints, so that&#39;s how we annotate it</span>
+<span class="k">def</span> <span class="nf">gen</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
 <ul>
 <li>[ ] TODO: read</li>
 <li><a href="https://realpython.com/introduction-to-python-generators/#building-generators-with-generator-expressions">Generator Expressions</a>부터 읽기 시작하자.</li>
@@ -336,5 +347,5 @@ def gen(n: int) -&gt; Iterator[int]:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

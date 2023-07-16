@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,18 +233,17 @@
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/db/examples/one_to_one/">doc</a></li>
 <li>
-<p>[?] [[ForeignKey {django}]]와의 차이점이 뭐냐? 나는 ForeignKey가 곧 1:1 관계인 줄로만 알았는데?</p>
+<p>[?] <a href="../ForeignKey%20%7Bdjango%7D/">ForeignKey {django}</a>와의 차이점이 뭐냐? 나는 ForeignKey가 곧 1:1 관계인 줄로만 알았는데?</p>
 <ul>
 <li><code>ForeignKey</code>는 0가 가능하고, <code>OneToOneField</code>는 엔트리 생성시 반드시 명시해야한다.</li>
 </ul>
-<p>```python
-    restaurant = Restaurant(
-        place=Place(name="승현이네", address="원인재로 14"), 
-        serves_hot_dogs=True, 
-        serves_pizza=False)</p>
-<pre><code>restaurant.place # 승현이네
-</code></pre>
-<p>```</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">restaurant</span> <span class="o">=</span> <span class="n">Restaurant</span><span class="p">(</span>
+        <span class="n">place</span><span class="o">=</span><span class="n">Place</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;승현이네&quot;</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s2">&quot;원인재로 14&quot;</span><span class="p">),</span> 
+        <span class="n">serves_hot_dogs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+        <span class="n">serves_pizza</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">restaurant</span><span class="o">.</span><span class="n">place</span> <span class="c1"># 승현이네</span>
+</code></pre></div>
 <ul>
 <li>물론 반대방향으로는 1:1 관계를 만들 의무는 없기 때문에 <code>ObjectDoesNotExist</code> 에러가 발생할 여지가 있다는거. → <code>hasattr</code> 를 사용하여 에러처리 가능</li>
 </ul>
@@ -290,5 +300,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

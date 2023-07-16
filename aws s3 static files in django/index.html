@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -228,7 +239,7 @@
 <li><a href="https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/">testdriven.io {tutorial}</a></li>
 <li><a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/ManageCorsUsing.html">CORS 구성 - Amazon Simple Storage Service {amz}</a></li>
 <li><a href="https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-CORS-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-%F0%9F%91%8F">🌐 악명 높은 CORS 개념 &amp; 해결법 - 정리 끝판왕 👏 {inpa}</a></li>
-<li>[[HTTP header CORS policy - 'Access-Control-Allow-Origin']]</li>
+<li><a href="../HTTP%20header%20CORS%20policy%20-%20%27Access-Control-Allow-Origin%27/">HTTP header CORS policy - 'Access-Control-Allow-Origin'</a></li>
 <li><a href="https://velog.io/@iankimdev/Docker-%EC%84%A4%EC%A0%95">Docker 설정 {ian}</a></li>
 <li><a href="https://velog.io/@iankimdev/S3">S3 {ian}</a></li>
 <li><a href="https://velog.io/@iankimdev/EC2">EC2 {ian}</a></li>
@@ -252,7 +263,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_1">장고 프로젝트로 돌아와서...</h1>
+<h1 id="_1">장고 프로젝트로 돌아와서...<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>의존성 설치하고 settings.py 수정하고, core/env.py 설정하고 </li>
 <li>settings.py 전역상수 설정 (book-project는 별도의 파일을 빼냈지만 근본은 동일.)</li>
@@ -273,14 +284,13 @@ STATICFILES_STORAGE = 'core.storages.backends.StaticFileStorage'
 <ul>
 <li><code>DEFAULT_FILE_STORAGE</code>, <code>STATICFILES_STORAGE</code> 를 기본 클래스를 확장한 커스텀 클래스인 <code>MediaStorage, StaticFileStorage</code>로 변경한 것을 볼 수 있다. 파일을 들여다보자.</li>
 </ul>
-<pre><code class="language-python">from storages.backends.s3boto3 import S3Boto3Storage, S3StaticStorage
-
-class MediaStorage(S3Boto3Storage):
-    location = &quot;media&quot;
-
-class StaticFileStorage(S3StaticStorage):
-    location = &quot;static&quot;
-</code></pre>
+<p>```python
+from storages.backends.s3boto3 import S3Boto3Storage, S3StaticStorage</p>
+<p>class MediaStorage(S3Boto3Storage):
+    location = "media"</p>
+<p>class StaticFileStorage(S3StaticStorage):
+    location = "static"
+```</p>
 <p>{% raw %}</p>
 <ul>
 <li>장고 템플릿 js 파일 로케이션을 <code>{% static 'js/____.js' %}</code> 식으로 변경 </li>
@@ -335,5 +345,5 @@ class StaticFileStorage(S3StaticStorage):
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

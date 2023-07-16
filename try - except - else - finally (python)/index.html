@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,37 +236,37 @@
 
 
 <p>{% raw %}</p>
-<h1 id="exception-handling">Exception Handling</h1>
-<pre><code class="language-python">try:
-    # 예외가 발생할 가능성이 있는 코드
-except {{option: specific error type}}:
-    # 예외 발생 시 처리할 코드
-else:
-    # 예외 미 발생 시 처리할 코드
-finally:
-    # 예외고 뭐고 무조건 실행할 코드
-    # 얘가 존재하는 이유는 예외 발생시에도 무조건 실행하기 때문에
-    # 동기화 문제를 해결할 타이밍을 제공할 수 있다.
-</code></pre>
-<pre><code class="language-python">try:
-    i = 1
-    j = 0
-    x = i / j
-except:
-    print(&quot;divide by zero error&quot;)
-else:
-    print(x)
-</code></pre>
-<h1 id="custom-error">Custom Error</h1>
+<h1 id="exception-handling">Exception Handling<a class="headerlink" href="#exception-handling" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># 예외가 발생할 가능성이 있는 코드</span>
+<span class="k">except</span> <span class="p">{{</span><span class="n">option</span><span class="p">:</span> <span class="n">specific</span> <span class="n">error</span> <span class="nb">type</span><span class="p">}}:</span>
+    <span class="c1"># 예외 발생 시 처리할 코드</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># 예외 미 발생 시 처리할 코드</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># 예외고 뭐고 무조건 실행할 코드</span>
+    <span class="c1"># 얘가 존재하는 이유는 예외 발생시에도 무조건 실행하기 때문에</span>
+    <span class="c1"># 동기화 문제를 해결할 타이밍을 제공할 수 있다.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">j</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;divide by zero error&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="custom-error">Custom Error<a class="headerlink" href="#custom-error" title="Permanent link">&para;</a></h1>
 <p>간단하다. <code>Exception</code> 클래스를 상속하는 클래스를 구현하면 된다. 그리고 <code>__init__</code>에서 부모 클래스의 attr를 참조하는 <code>super</code> 얘가 뭐지 쨌든 를 사용하여 <code>super().__init__("Message")</code> 이런 식으로 메시지를 추가할 수 있다.</p>
 <p><a href="https://www.geeksforgeeks.org/python-super/">super</a>: Return a proxy object which represents the parent's class</p>
-<pre><code class="language-python">class FxxxedUpError(Exception):
-    def __init__(self):
-        super().__init__(&quot;Hey, you are gonna be fired soon 💀💀💀&quot;)
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">FxxxedUpError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;Hey, you are gonna be fired soon 💀💀💀&quot;</span><span class="p">)</span>
 
 
-raise FxxxedUpError
-</code></pre>
+<span class="k">raise</span> <span class="n">FxxxedUpError</span>
+</code></pre></div>
 <p>{% endraw %}</p>
 
 
@@ -305,5 +316,5 @@ raise FxxxedUpError
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

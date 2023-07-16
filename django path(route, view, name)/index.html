@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -257,37 +268,37 @@
 <li>https://docs.djangoproject.com/en/4.2/ref/urls/</li>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/http/urls/#how-django-processes-a-request">How Django processes a request {doc}</a></li>
 </ul>
-<pre><code class="language-python">urlpatterns = [
-    path(&quot;index/&quot;, views.index, name=&quot;main-view&quot;),
-    path(&quot;bio/&lt;username&gt;/&quot;, views.bio, name=&quot;bio&quot;),
-    path(&quot;articles/&lt;slug:title&gt;/&quot;, views.article, name=&quot;article-detail&quot;),
-    path(&quot;articles/&lt;slug:title&gt;/&lt;int:section&gt;/&quot;, views.section, name=&quot;article-section&quot;),
-    path(&quot;blog/&quot;, include(&quot;blog.urls&quot;)),
-    ...,
-]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;index/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;main-view&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;bio/&lt;username&gt;/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">bio</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bio&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;articles/&lt;slug:title&gt;/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">article</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;article-detail&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;articles/&lt;slug:title&gt;/&lt;int:section&gt;/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">section</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;article-section&quot;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;blog/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;blog.urls&quot;</span><span class="p">)),</span>
+    <span class="o">...</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
 <blockquote>
 <p>The <code>route</code> argument should be a string or <a href="https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.translation.gettext_lazy" title="django.utils.translation.gettext_lazy"><code>gettext_lazy()</code></a> (see <a href="https://docs.djangoproject.com/en/4.2/topics/i18n/translation/#translating-urlpatterns">Translating URL patterns</a>) that contains a URL pattern. The string may contain angle brackets (like <code>&lt;username&gt;</code> above) to capture part of the URL and send it as a keyword argument to the view</p>
 </blockquote>
 <p>The <code>urlpatterns</code> list routes URLs to views. For more information please see:<br />
     https://docs.djangoproject.com/en/4.2/topics/http/urls/</p>
-<h1 id="examples">Examples:</h1>
-<h2 id="function-views">Function views</h2>
+<h1 id="examples">Examples:<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<h2 id="function-views">Function views<a class="headerlink" href="#function-views" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Add an import:  <code>from my_app import views</code></li>
 <li>Add a URL to urlpatterns:  <code>path('', views.home, name='home')</code></li>
 </ol>
-<h2 id="class-based-views">Class-based views</h2>
+<h2 id="class-based-views">Class-based views<a class="headerlink" href="#class-based-views" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Add an import:  <code>from other_app.views import Home</code></li>
 <li>Add a URL to urlpatterns:  <code>path('', Home.as_view(), name='home')</code></li>
 </ol>
-<h2 id="including-another-urlconf">Including another URLconf</h2>
+<h2 id="including-another-urlconf">Including another URLconf<a class="headerlink" href="#including-another-urlconf" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Import the include() function: <code>from django.urls import include, path</code></li>
 <li>Add a URL to urlpatterns:  <code>path('blog/', include('blog.urls'))</code></li>
 </ol>
-<p>그래서, [[django.urls.include(module, namespace)]]가 뭡니까?</p>
+<p>그래서, <a href="../django.urls.include%28module%2C%20namespace%29/">django.urls.include(module, namespace)</a>가 뭡니까?</p>
 
 
 
@@ -336,5 +347,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

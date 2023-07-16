@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,9 +235,9 @@
 <li>unsafe 코드를 작성할 때 발생할 수 있는 undefined behaviour를 사전에 잡아줄 수 있는 실험적인 미들웨어.</li>
 <li>설치방법은 다음과 같다.</li>
 </ul>
-<pre><code class="language-bash">rustup +nightly component add miri
-cargo +nightly miri test
-</code></pre>
+<div class="highlight"><pre><span></span><code>rustup<span class="w"> </span>+nightly<span class="w"> </span>component<span class="w"> </span>add<span class="w"> </span>miri
+cargo<span class="w"> </span>+nightly<span class="w"> </span>miri<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
 
 
 
@@ -275,5 +286,5 @@ cargo +nightly miri test
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

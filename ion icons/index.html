@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,7 +232,7 @@
 
 <ul>
 <li><a href="https://ionic.io/ionicons">ionic.io</a></li>
-<li>https://youtu.be/sMqDJovFO-Y?t=6977 | [[0014.1 Django 🎈]] 따라하기 세션에서 아이콘을 사용하는 모습을 볼 수 있다.</li>
+<li>https://youtu.be/sMqDJovFO-Y?t=6977 | <a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a> 따라하기 세션에서 아이콘을 사용하는 모습을 볼 수 있다.</li>
 <li>아 얘는 JS를 사용하여 비동기로 아이콘 라이브러리에 접근하여 붙여넣는 그런 일을 하는구나</li>
 </ul>
 
@@ -272,5 +283,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

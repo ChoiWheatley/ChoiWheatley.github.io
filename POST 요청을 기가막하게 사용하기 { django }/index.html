@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,7 +234,7 @@
 <li>https://youtu.be/sMqDJovFO-Y?t=5853</li>
 <li>위의 방법은 아주 단순하다. <code>blog/&lt;int:pk&gt;/like</code>리소스를 클라이언트가 POST 요청하면 서버는 해당 아티클에 대한 몇가지 판단 (유저유효성 검사, 유저가 이미 해당 아티클에 좋아요를 눌렀는지 여부 등)을 진행한 뒤 Article 모델의 <code>liked</code>상태를 변경한다.</li>
 <li>그리고 나서 아주 기가막히게도, <code>redirect</code>를 한다...! <ul>
-<li>[[redirect { django }]]</li>
+<li><a href="../redirect%20%7B%20django%20%7D/">redirect { django }</a></li>
 </ul>
 </li>
 </ul>
@@ -275,5 +286,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

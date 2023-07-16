@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,19 +237,19 @@
 
 <p>{% raw %}</p>
 <ul>
-<li>[[regex]]</li>
+<li><a href="../regex/">regex</a></li>
 <li><a href="https://paullabworkspace.notion.site/1c57fc683c33468d95e7a490b6f66c95#d1317f3fd16e4d318cccec4906a3ab49">weniv notion link</a></li>
 <li><a href="https://colab.research.google.com/drive/1MpAPDAHo1CcWa1gB85BkH1CEch3DHXmy?usp=sharing">regex google colab</a></li>
 <li><a href="https://github.com/ChoiWheatley/ormi-master/blob/main/python/regex.ipynb">ormi-master - regex.ipynb</a> ==&gt; 여기로 가면 실습결과도 바로 볼 수 있어서...</li>
 </ul>
-<pre><code class="language-python"># 1
-p = re.compile(r'([0-9]|10)([SDT])([\*\#]?)')
-p.findall('1S2D*3T')
+<div class="highlight"><pre><span></span><code><span class="c1"># 1</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([0-9]|10)([SDT])([\*\#]?)&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;1S2D*3T&#39;</span><span class="p">)</span>
 
-# 2
-re.findall(r'([0-9]|10)([SDT])([\*\#]?)', '1S2D*3T')
-</code></pre>
-<h1 id="re">자주 쓰는 re 메서드들</h1>
+<span class="c1"># 2</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([0-9]|10)([SDT])([\*\#]?)&#39;</span><span class="p">,</span> <span class="s1">&#39;1S2D*3T&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="re">자주 쓰는 re 메서드들<a class="headerlink" href="#re" title="Permanent link">&para;</a></h1>
 <ul>
 <li><code>compile</code> : 패턴 컴파일</li>
 <li><a href="https://docs.python.org/3/library/re.html#re.match"><code>match</code></a><ul>
@@ -270,295 +281,295 @@ re.findall(r'([0-9]|10)([SDT])([\*\#]?)', '1S2D*3T')
 <ul>
 <li>사용 예</li>
 </ul>
-<p><code>python
-re.compile('[a-z]+', re.I)</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;[a-z]+&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><code>re.DOTALL</code> or <code>re.S</code> : 줄바꿈 문자까지 모두 매칭</li>
 <li><code>re.IGNORECASE</code> or <code>re.I</code> : 대소문자 구분하지 않음</li>
 <li><code>re.MULTILINE</code> or <code>re.M</code> : ^, &amp; 등의 매칭 패턴을 라인마다 적용</li>
 <li><code>re.VERBOSE</code> or <code>re.X</code> : 아래와 같이 # 으로 주석문을 사용할 수 있음</li>
 </ul>
-<p><code>python
-a = re.compile(r"""\d +  # the integral part
-               \.    # the decimal point
-               \d *  # some fractional digits""", re.X)
-b = re.compile(r"\d+\.\d*")</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\d +  # the integral part</span>
+<span class="s2">               \.    # the decimal point</span>
+<span class="s2">               \d *  # some fractional digits&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+\.\d*&quot;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
 <p>tip</p>
 <ul>
 <li>같은 패턴입니다.</li>
 </ul>
-<p><code>python
-re.compile('\\\\section')
-re.compile(r'\\section')</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">section&#39;</span><span class="p">)</span>
+<span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">section&#39;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>{}를 표현하고 싶을 때에는 중괄호 2개, 또는 때에 따라 3개가 필요합니다.</li>
 </ul>
-<p><code>ipython
-re.compile(f'{{section}}')</code></p>
+<div class="highlight"><pre><span></span><code>re.compile(f&#39;{{section}}&#39;)
+</code></pre></div>
 </li>
 </ul>
-<h1 id="regroup">re.group</h1>
+<h1 id="regroup">re.group<a class="headerlink" href="#regroup" title="Permanent link">&para;</a></h1>
 <p>https://docs.python.org/3/library/re.html#re.Match.group</p>
 <p>regex에서 그룹을 사용하면 인덱싱을 돌릴 수 있다. </p>
 <blockquote>
 <p>If the regular expression uses the <code>(?P&lt;name&gt;...)</code> syntax, the groupN arguments may also be strings identifying groups by their group name.</p>
 </blockquote>
-<h1 id="resub">re.sub</h1>
+<h1 id="resub">re.sub<a class="headerlink" href="#resub" title="Permanent link">&para;</a></h1>
 <p><a href="https://docs.python.org/3/library/re.html#re.sub">re.sub - doc</a><br />
 미국식, 영국식 날짜로 표기하시오</p>
-<pre><code>입력: '2023/05/16'
-출력1: '05/16/2023' 미국식 날짜 표기 월 -&gt; 일 -&gt; 년 순임...
-출력2: '16/05/0223' 영국식 날짜 표기 일 -&gt; 월 -&gt; 년 순임...
-</code></pre>
-<h2 id="regex">regex 그룹에 변수명을 붙일 수 있다...'</h2>
+<div class="highlight"><pre><span></span><code>입력: &#39;2023/05/16&#39;
+출력1: &#39;05/16/2023&#39; 미국식 날짜 표기 월 -&gt; 일 -&gt; 년 순임...
+출력2: &#39;16/05/0223&#39; 영국식 날짜 표기 일 -&gt; 월 -&gt; 년 순임...
+</code></pre></div>
+<h2 id="regex">regex 그룹에 변수명을 붙일 수 있다...'<a class="headerlink" href="#regex" title="Permanent link">&para;</a></h2>
 <p><code>(?P&lt;VARNAME&gt;PATTERN)</code> 으로 그룹을 선언하면 <code>sub</code>을 사용할 때 해당 그룹을 맞춰갈 수 있다.</p>
-<pre><code class="language-python">import re
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-# regex 그룹에 변수명을 붙일 수 있다... 바로 '?P&lt;var-name&gt;'
-pattern = r'(?P&lt;year&gt;[0-9]{4})/(?P&lt;month&gt;[0-9]{2})/(?P&lt;day&gt;[0-9]{2})'
-r = re.compile(pattern)
-strings = '''2023/05/16
-1997/09/26
-1968/10/06
-1973/05/20
-1999/06/19'''
-print(r.findall(strings))
+<span class="c1"># regex 그룹에 변수명을 붙일 수 있다... 바로 &#39;?P&lt;var-name&gt;&#39;</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(?P&lt;year&gt;[0-9]</span><span class="si">{4}</span><span class="s1">)/(?P&lt;month&gt;[0-9]</span><span class="si">{2}</span><span class="s1">)/(?P&lt;day&gt;[0-9]</span><span class="si">{2}</span><span class="s1">)&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+<span class="n">strings</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;2023/05/16</span>
+<span class="s1">1997/09/26</span>
+<span class="s1">1968/10/06</span>
+<span class="s1">1973/05/20</span>
+<span class="s1">1999/06/19&#39;&#39;&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">strings</span><span class="p">))</span>
 
-print('\n미국식 날짜표기\n')
-for s in strings.split('\n'):
-    print(r.sub(r'\g&lt;month&gt;/\g&lt;day&gt;/\g&lt;year&gt;', s)) 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">미국식 날짜표기</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\g&lt;month&gt;/\g&lt;day&gt;/\g&lt;year&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span> 
 
-print('\n영국식 날짜표기\n')
-for s in strings.split('\n'):
-    print(r.sub(r'\g&lt;day&gt;/\g&lt;month&gt;/\g&lt;year&gt;', s))
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">영국식 날짜표기</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strings</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\g&lt;day&gt;/\g&lt;month&gt;/\g&lt;year&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
 
 
-# 연습문제
+<span class="c1"># 연습문제</span>
 
-- [숨어있는 숫자의 덧셈](https://school.programmers.co.kr/learn/courses/30/lessons/120851)
+<span class="o">-</span> <span class="p">[</span><span class="n">숨어있는</span> <span class="n">숫자의</span> <span class="n">덧셈</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">school</span><span class="o">.</span><span class="n">programmers</span><span class="o">.</span><span class="n">co</span><span class="o">.</span><span class="n">kr</span><span class="o">/</span><span class="n">learn</span><span class="o">/</span><span class="n">courses</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="n">lessons</span><span class="o">/</span><span class="mi">120851</span><span class="p">)</span>
 
-loop + `str.isdigit` 활용하여 풀기
-```python
-def solution(my_string):
-    ret = 0
-    for c in my_string:
-        if c.isdigit():
-            ret += int(c)
-    return ret
-</code></pre>
+<span class="n">loop</span> <span class="o">+</span> <span class="err">`</span><span class="nb">str</span><span class="o">.</span><span class="n">isdigit</span><span class="err">`</span> <span class="n">활용하여</span> <span class="n">풀기</span>
+<span class="err">```</span><span class="n">python</span>
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">my_string</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">ret</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</code></pre></div>
 <p>list comprehension 활용하여 풀기</p>
-<pre><code class="language-python">def solution(my_string):
-    return sum(int(c) for c in my_string if c.isdigit())
-</code></pre>
-<h1 id="refindall">re.findall</h1>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">my_string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
+</code></pre></div>
+<h1 id="refindall">re.findall<a class="headerlink" href="#refindall" title="Permanent link">&para;</a></h1>
 <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120891">369 게임</a></p>
 <p>주어진 숫자 안에 있는 3, 6, 9의 숫자를 세시오.</p>
-<pre><code class="language-python">import re
-solution = lambda order: len(re.findall('[369]', str(order)))
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">order</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[369]&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">order</span><span class="p">)))</span>
 
-solution(29423)
-</code></pre>
-<h2 id="_1">연습문제: 잘라서 배열로 저장하기</h2>
+<span class="n">solution</span><span class="p">(</span><span class="mi">29423</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_1">연습문제: 잘라서 배열로 저장하기<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>https://school.programmers.co.kr/learn/courses/30/lessons/120913</p>
 <p>사실 슬라이싱 문법 사용하여 간단하게 풀어도 되지만 <code>findall</code>을 사용하여 풀어보자</p>
-<pre><code class="language-python"># slicing 사용
-solution = lambda my_str, n: [my_str[l:l + n] for l in range(0, len(my_str), n)]
-solution('abc1Addfggg4556b', 6)
-</code></pre>
-<pre><code class="language-python">import re
-# re.findall 사용
-# python에서 {를 넣기 위해선 {{를 사용하여야 합니다
-solution = lambda my_str, n: re.findall(f'.{{1,{n}}}', my_str)
-solution('abc1Addfggg4556b', 6)
-</code></pre>
-<h2 id="_2">연습문제: 영어가 싫어요</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># slicing 사용</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">my_str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="p">[</span><span class="n">my_str</span><span class="p">[</span><span class="n">l</span><span class="p">:</span><span class="n">l</span> <span class="o">+</span> <span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_str</span><span class="p">),</span> <span class="n">n</span><span class="p">)]</span>
+<span class="n">solution</span><span class="p">(</span><span class="s1">&#39;abc1Addfggg4556b&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># re.findall 사용</span>
+<span class="c1"># python에서 {를 넣기 위해선 {{를 사용하여야 합니다</span>
+<span class="n">solution</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">my_str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;.</span><span class="se">{{</span><span class="s1">1,</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="se">}}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_str</span><span class="p">)</span>
+<span class="n">solution</span><span class="p">(</span><span class="s1">&#39;abc1Addfggg4556b&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_2">연습문제: 영어가 싫어요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>https://school.programmers.co.kr/learn/courses/30/lessons/120894</p>
-<pre><code class="language-python">import re
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-pair = {
-    'one':   '1',
-    'two':   '2',
-    'three': '3',
-    'four':  '4',
-    'five':  '5',
-    'six':   '6',
-    'seven': '7',
-    'eight': '8',
-    'nine':  '9',
-    'zero':  '0',
-}
+<span class="n">pair</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;one&#39;</span><span class="p">:</span>   <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;two&#39;</span><span class="p">:</span>   <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;four&#39;</span><span class="p">:</span>  <span class="s1">&#39;4&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;five&#39;</span><span class="p">:</span>  <span class="s1">&#39;5&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;six&#39;</span><span class="p">:</span>   <span class="s1">&#39;6&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;seven&#39;</span><span class="p">:</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;eight&#39;</span><span class="p">:</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nine&#39;</span><span class="p">:</span>  <span class="s1">&#39;9&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;zero&#39;</span><span class="p">:</span>  <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-def solution(numbers):
-    return int(
-        ''.join(
-            pair[i] for i in re.findall(
-                r'(zero|one|two|three|four|five|six|seven|eight|nine)', numbers))
-    )
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">pair</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span>
+                <span class="sa">r</span><span class="s1">&#39;(zero|one|two|three|four|five|six|seven|eight|nine)&#39;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+    <span class="p">)</span>
 
-solution('onetwothreefourfivesixseveneightnine')
-</code></pre>
-<h2 id="_3">연습문제: 암호문</h2>
+<span class="n">solution</span><span class="p">(</span><span class="s1">&#39;onetwothreefourfivesixseveneightnine&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_3">연습문제: 암호문<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>https://pyalgo.co.kr/?page=2#</p>
-<pre><code class="language-python">import re
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-def solution(string):
-    sum_ = sum(int(x) for x in re.findall(r'[rev](10|[1-9])', string))
-    sum_ = str(sum_)
-    return f'{sum_[0]}월 {sum_[1]}일'
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">sum_</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[rev](10|[1-9])&#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">))</span>
+    <span class="n">sum_</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sum_</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sum_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">월 </span><span class="si">{</span><span class="n">sum_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">일&#39;</span>
 
-solution('a10b9r10ce33uab8wc918v2cv11v10')
-</code></pre>
-<h1 id="resplit">re.split</h1>
+<span class="n">solution</span><span class="p">(</span><span class="s1">&#39;a10b9r10ce33uab8wc918v2cv11v10&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="resplit">re.split<a class="headerlink" href="#resplit" title="Permanent link">&para;</a></h1>
 <p>정규표현 패턴으로 문자열을 분할한다. <code>str.split</code>과 같음</p>
-<pre><code class="language-python">import re
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-s = '010 8752!4037'
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;010 8752!4037&#39;</span>
 
-re.split(r'[ !]', s)
-</code></pre>
-<h1 id="markdown-html">연습문제: Markdown 문법을 Html 문법으로</h1>
+<span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ !]&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="markdown-html">연습문제: Markdown 문법을 Html 문법으로<a class="headerlink" href="#markdown-html" title="Permanent link">&para;</a></h1>
 <p>Before:</p>
-<pre><code># Hello world
-</code></pre>
+<div class="highlight"><pre><span></span><code># Hello world
+</code></pre></div>
 <p>After:</p>
-<pre><code>&lt;h1&gt;Hello world&lt;h1&gt;
-</code></pre>
-<pre><code class="language-python">import re
+<div class="highlight"><pre><span></span><code>&lt;h1&gt;Hello world&lt;h1&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
-text = '''
-# This is a heading
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1"># This is a heading</span>
 
-## This is a subheading
+<span class="s1">## This is a subheading</span>
 
-* This is an unordered list item
-* This is another unordered list item
+<span class="s1">* This is an unordered list item</span>
+<span class="s1">* This is another unordered list item</span>
 
-**This is bold text**
+<span class="s1">**This is bold text**</span>
 
-_This is italic text_
+<span class="s1">_This is italic text_</span>
 
-`This is code`
-'''
-
-
-def markdown_to_html(text):
-    &quot;&quot;&quot;
-    마크다운 텍스트를 HTML 문서로 변환합니다.
-
-    Args:
-        text: 변환할 마크다운 텍스트.
-
-    Returns:
-        변환된 HTML 문서.
-    &quot;&quot;&quot;
-
-    # 마크다운을 HTML로 변환하기 위한 정규식 패턴 목록입니다.
-    substitution_pairs = [
-        (r'^# (.*)', r'&lt;h1&gt;\1&lt;h1&gt;'),
-        (r'^## (.*)', r'&lt;h2&gt;\1&lt;h2&gt;'),
-        (r'^### (.*)', r'&lt;h3&gt;\1&lt;h3&gt;'),
-        (r'^#### (.*)', r'&lt;h4&gt;\1&lt;h4&gt;'),
-        (r'^\* (.*)', r'&lt;ul&gt;&lt;li&gt;\1&lt;/li&gt;&lt;/ul&gt;'),
-        (r'^\- (.*)', r'&lt;ol&gt;&lt;li&gt;\1&lt;/li&gt;&lt;/ol&gt;'),
-        # (r'**(.*)**', r'&lt;strong&gt;\1&lt;/strong&gt;'),  # 문제가 있는듯
-        (r'_(.*)_', r'&lt;em&gt;\1&lt;/em&gt;'),
-        (r'`(.*)`', r'&lt;code&gt;\1&lt;/code&gt;'),
-    ]
-
-    # 정규식 패턴을 사용하여 마크다운을 HTML로 변환합니다.
-    for pat, repl in substitution_pairs:
-        text = re.sub(pat, repl, text)   
-
-    return text
+<span class="s1">`This is code`</span>
+<span class="s1">&#39;&#39;&#39;</span>
 
 
-# HTML을 출력합니다.
-print(markdown_to_html(text))
-</code></pre>
-<h2 id="md-html">다른 사람들의 개쩌는 MD -&gt; HTML 코드</h2>
-<pre><code class="language-python"># 바름님 코드
-import re
+<span class="k">def</span> <span class="nf">markdown_to_html</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    마크다운 텍스트를 HTML 문서로 변환합니다.</span>
 
-def md_to_html(text):
-    # 토글
-    text = re.sub(r'(&gt;+) (.*)', r'&lt;blockquote&gt;\1 \2&lt;/blockquote&gt;', text)
-    # 헤딩
-    text = re.sub(r'### (.*)', r'&lt;h3&gt;\1&lt;/h3&gt;', text)
-    text = re.sub(r'## (.*)', r'&lt;h2&gt;\1&lt;/h2&gt;', text)
-    text = re.sub(r'# (.*)', r'&lt;h1&gt;\1&lt;/h1&gt;', text)
-    # 코드블럭
-    if re.match('\t?```', text):
-        text = re.sub(r'^\t?```.*', r'&lt;pre&gt;&lt;code&gt;', text)
-        text = re.sub(r'\t?```$', r'&lt;/code&gt;&lt;/pre&gt;', text)
-    text = re.sub(r'\t?`(.*)`', r'&lt;pre&gt;&lt;code&gt;\1&lt;/code&gt;&lt;/pre&gt;', text)
-    # 볼드
-    text = re.sub(r'[\*_]{2}(.*)[\*_]{2}', r'&lt;strong&gt;\1&lt;/strong&gt;', text)
-    # 이탤릭
-    text = re.sub(r'[\*_]{1}(.*)[\*_]{1}', r'&lt;em&gt;\1&lt;/em&gt;', text)
-    # 취소선
-    text = re.sub(r'~~(.*)~~', r'&lt;del&gt;\1&lt;/del&gt;', text)
-    # 이미지
-    text = re.sub(r'!\[(.*)]\((.*)\)', r'&lt;div&gt;&lt;img src = &quot;\2&quot; alt:=&quot;\1&quot; width = &quot;100&quot;&gt;&lt;/div&gt;', text)
-    # 링크
-    text = re.sub(r'\[(.*)]\((.*)\)', r'&lt;div&gt;&lt;a href = &quot;\2&quot;&gt;\1&lt;/a&gt;&lt;/div&gt;', text)
-    # 순서 없는 리스트
-    if re.match(r'[ \t]*[\*-]+[ \t]+', text):
-        text = re.sub(r'^[ \t]*[\*-]+[ \t]+(.+)', r'&lt;ul&gt;\n&lt;li&gt;\1&lt;/li&gt;', text)
-        text = re.sub(r'[ \t]*[\*-]+[ \t]+(.+)', r'&lt;li&gt;\1&lt;/li&gt;', text)
-        text += '&lt;/ul&gt;'
-    # 순서 있는 리스트
-    if re.match(r'[ \t]*\d+\.', text):
-        text = re.sub(r'^[ \t]*\d+\.[ \t]+(.+)', r'&lt;ol&gt;\n&lt;li&gt;\1&lt;/li&gt;', text)
-        text = re.sub(r'[ \t]*\d+\.[ \t]+(.+)', r'&lt;li&gt;\1&lt;/li&gt;', text)
-        text += '&lt;/ol&gt;'
-    return text
+<span class="sd">    Args:</span>
+<span class="sd">        text: 변환할 마크다운 텍스트.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        변환된 HTML 문서.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># 마크다운을 HTML로 변환하기 위한 정규식 패턴 목록입니다.</span>
+    <span class="n">substitution_pairs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^# (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h1&gt;\1&lt;h1&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^## (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h2&gt;\1&lt;h2&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^### (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h3&gt;\1&lt;h3&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^#### (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h4&gt;\1&lt;h4&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\* (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;ul&gt;&lt;li&gt;\1&lt;/li&gt;&lt;/ul&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\- (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;ol&gt;&lt;li&gt;\1&lt;/li&gt;&lt;/ol&gt;&#39;</span><span class="p">),</span>
+        <span class="c1"># (r&#39;**(.*)**&#39;, r&#39;&lt;strong&gt;\1&lt;/strong&gt;&#39;),  # 문제가 있는듯</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;_(.*)_&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;em&gt;\1&lt;/em&gt;&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;`(.*)`&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;code&gt;\1&lt;/code&gt;&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="c1"># 정규식 패턴을 사용하여 마크다운을 HTML로 변환합니다.</span>
+    <span class="k">for</span> <span class="n">pat</span><span class="p">,</span> <span class="n">repl</span> <span class="ow">in</span> <span class="n">substitution_pairs</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>   
+
+    <span class="k">return</span> <span class="n">text</span>
 
 
-name = 'markdown'
+<span class="c1"># HTML을 출력합니다.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">markdown_to_html</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="md-html">다른 사람들의 개쩌는 MD -&gt; HTML 코드<a class="headerlink" href="#md-html" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 바름님 코드</span>
+<span class="kn">import</span> <span class="nn">re</span>
 
-f1 = open(f'{name}.md', 'r' ,encoding='UTF8')
-f2 =  open(f'{name}.html', 'w' ,encoding='UTF8')
-text = f1.readlines()
-temp = ''
-flag = 0
-for i in text:
-    # 여러줄짜리 코드블럭 처리
-    if re.match('\t?```', i):
-        temp += i
-        if flag == 1:
-            f2.write(md_to_html(temp))
-            temp, flag = '', 0   
-        flag = 1
-        continue
-    if flag == 1:
-        temp += i
-        continue
-    # 순서있는 리스트 처리
-    if re.match(r'[ \t]*\d+\.', i):
-        temp += i
-        flag = 2
-        continue
-    if flag == 2:
-        f2.write(md_to_html(temp))
-        temp = ''
-    # 순서없는 리스트 처리
-    if re.match(r'[ \t]*[\*-]+[ \t]+', i):
-        temp += i
-        flag = 3
-        continue
-    if flag == 3:
-        f2.write(md_to_html(temp))
-        temp = ''
-    #특이사항없을시
-    f2.write(md_to_html(i))
+<span class="k">def</span> <span class="nf">md_to_html</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="c1"># 토글</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(&gt;+) (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;blockquote&gt;\1 \2&lt;/blockquote&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 헤딩</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;### (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h3&gt;\1&lt;/h3&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;## (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h2&gt;\1&lt;/h2&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;# (.*)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;h1&gt;\1&lt;/h1&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 코드블럭</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">?```&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\t?```.*&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;pre&gt;&lt;code&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\t?```$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;/code&gt;&lt;/pre&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\t?`(.*)`&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;pre&gt;&lt;code&gt;\1&lt;/code&gt;&lt;/pre&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 볼드</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\*_]</span><span class="si">{2}</span><span class="s1">(.*)[\*_]</span><span class="si">{2}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;strong&gt;\1&lt;/strong&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 이탤릭</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\*_]</span><span class="si">{1}</span><span class="s1">(.*)[\*_]</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;em&gt;\1&lt;/em&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 취소선</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;~~(.*)~~&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;del&gt;\1&lt;/del&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 이미지</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;!\[(.*)]\((.*)\)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;div&gt;&lt;img src = &quot;\2&quot; alt:=&quot;\1&quot; width = &quot;100&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 링크</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[(.*)]\((.*)\)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;div&gt;&lt;a href = &quot;\2&quot;&gt;\1&lt;/a&gt;&lt;/div&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># 순서 없는 리스트</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t]*[\*-]+[ \t]+&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^[ \t]*[\*-]+[ \t]+(.+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;ul&gt;\n&lt;li&gt;\1&lt;/li&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t]*[\*-]+[ \t]+(.+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;li&gt;\1&lt;/li&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/ul&gt;&#39;</span>
+    <span class="c1"># 순서 있는 리스트</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t]*\d+\.&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^[ \t]*\d+\.[ \t]+(.+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;ol&gt;\n&lt;li&gt;\1&lt;/li&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t]*\d+\.[ \t]+(.+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;li&gt;\1&lt;/li&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/ol&gt;&#39;</span>
+    <span class="k">return</span> <span class="n">text</span>
 
-f1.close()
-f2.close()
-</code></pre>
-<h2 id="markdown">파이썬 모듈 <code>markdown</code>을 활용</h2>
-<p>[[markdown - python package]]</p>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;markdown&#39;</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">.md&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span> <span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span>  <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span> <span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;UTF8&#39;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="c1"># 여러줄짜리 코드블럭 처리</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">?```&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">md_to_html</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+            <span class="n">temp</span><span class="p">,</span> <span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">0</span>   
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">continue</span>
+    <span class="c1"># 순서있는 리스트 처리</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t]*\d+\.&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">md_to_html</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="c1"># 순서없는 리스트 처리</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ \t]*[\*-]+[ \t]+&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">md_to_html</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="c1">#특이사항없을시</span>
+    <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">md_to_html</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">f1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">f2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="markdown">파이썬 모듈 <code>markdown</code>을 활용<a class="headerlink" href="#markdown" title="Permanent link">&para;</a></h2>
+<p><a href="../markdown%20-%20python%20package/">markdown - python package</a></p>
 <p>{% endraw %}</p>
 
 
@@ -608,5 +619,5 @@ f2.close()
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

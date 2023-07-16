@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,22 +240,22 @@
 <a href="https://docs.python.org/3/library/os.path.html">docs.python.org</a></p>
 <p><code>{BASE_DIR}/media</code> 디렉토리를 지정하기 위해선 어떻게 해야할까?</p>
 <p><code>os.path.join(BASE_DIR, 'media')</code> 하면 된다. 하드코딩하는 것과는 전혀 다른 개념인가보다. 아, 플랫폼 별로 path를 명시하는게 달라서 저렇게 쓰는거구나!</p>
-<h1 id="_1">자주 쓰는 예시</h1>
+<h1 id="_1">자주 쓰는 예시<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>실행파일의 절대경로를 알아내기</li>
 </ul>
-<pre><code class="language-python">os.path.join(os.path.abspath(os.path.dirname(__file__)), &quot;file.py&quot;)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)),</span> <span class="s2">&quot;file.py&quot;</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li>현재 디렉토리 (CWD) 알아내기</li>
 </ul>
-<pre><code class="language-python">os.getcwd(), &quot;file.py&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;file.py&quot;</span>
+</code></pre></div>
 <ul>
 <li>리스트를 경로로 만들기</li>
 </ul>
-<pre><code class="language-python">os.path.join(*[&quot;C:\\&quot;, &quot;Users&quot;, &quot;chltm&quot;, &quot;workspace&quot;, &quot;bookstore&quot;])
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Users&quot;</span><span class="p">,</span> <span class="s2">&quot;chltm&quot;</span><span class="p">,</span> <span class="s2">&quot;workspace&quot;</span><span class="p">,</span> <span class="s2">&quot;bookstore&quot;</span><span class="p">])</span>
+</code></pre></div>
 
 
 
@@ -293,5 +304,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

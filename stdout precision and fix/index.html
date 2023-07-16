@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,10 +238,10 @@
 <li><code>std::hexfloat</code> 플래그는 16진수 소수점으로 표현한다.</li>
 <li>기본적으로, <code>std::defaultfloat</code> 플래그가 활성화 되어있으며, 일정 기준치를 넘으면 자동으로 <code>std::scientific</code>으로 전환되는 건가보다. (정확히 몇자리부터 바뀌는지 안나옴)</li>
 </ul>
-<pre><code class="language-cpp">cout.precision(6); // 소수 6자리까지 표현
-cout &lt;&lt; std::fixed &lt;&lt; // 무조건 고정소수점으로만 표현
-    answer &lt;&lt; &quot;\n;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">cout</span><span class="p">.</span><span class="n">precision</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// 소수 6자리까지 표현</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">fixed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="c1">// 무조건 고정소수점으로만 표현</span>
+<span class="w">    </span><span class="n">answer</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">;</span>
+</code></pre></div>
 
 
 
@@ -279,5 +290,5 @@ cout &lt;&lt; std::fixed &lt;&lt; // 무조건 고정소수점으로만 표현
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

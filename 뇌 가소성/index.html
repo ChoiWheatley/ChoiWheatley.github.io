@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,7 +233,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h8rhb8eOFiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <p>인간은 다양한 환경에 적응하고 생존하고 또 잘 살기 위해 스스로를 변형이 용이한 존재로 만들었다. 20세기에만 해도 대부분의 신경회로는 어릴때 얼추 완성이 되고 새로운 경험이나 학습에 의해 조금씩 수정되는 정도로 여겨져 왔다. 하지만 환경과 본인의 의지에 의해 스스로의 회로를 바꿀 수 있고, 이는 행동과 인지의 변화로 이어진다.</p>
 <hr />
-<p>[[신경가소성 - 위키백과, 우리 모두의 백과사전]]</p>
+<p><a href="../%EC%8B%A0%EA%B2%BD%EA%B0%80%EC%86%8C%EC%84%B1%20-%20%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%2C%20%EC%9A%B0%EB%A6%AC%20%EB%AA%A8%EB%91%90%EC%9D%98%20%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84/">신경가소성 - 위키백과, 우리 모두의 백과사전</a></p>
 
 
 
@@ -271,5 +282,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

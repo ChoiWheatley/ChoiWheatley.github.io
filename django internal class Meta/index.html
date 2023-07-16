@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -231,9 +242,9 @@
 <blockquote>
 <p>Model metadata is “anything that’s not a field”, such as ordering options (<a href="https://docs.djangoproject.com/en/4.1/ref/models/options/#django.db.models.Options.ordering" title="django.db.models.Options.ordering"><code>ordering</code></a>), database table name (<a href="https://docs.djangoproject.com/en/4.1/ref/models/options/#django.db.models.Options.db_table" title="django.db.models.Options.db_table"><code>db_table</code></a>), or human-readable singular and plural names (<a href="https://docs.djangoproject.com/en/4.1/ref/models/options/#django.db.models.Options.verbose_name" title="django.db.models.Options.verbose_name"><code>verbose_name</code></a> and <a href="https://docs.djangoproject.com/en/4.1/ref/models/options/#django.db.models.Options.verbose_name_plural" title="django.db.models.Options.verbose_name_plural"><code>verbose_name_plural</code></a>). None are required, and adding <code>class Meta</code> to a model is completely optional.</p>
 </blockquote>
-<h1 id="model-meta">Model Meta</h1>
+<h1 id="model-meta">Model Meta<a class="headerlink" href="#model-meta" title="Permanent link">&para;</a></h1>
 <p>https://docs.djangoproject.com/en/4.1/ref/models/options/</p>
-<h1 id="form-meta">Form Meta</h1>
+<h1 id="form-meta">Form Meta<a class="headerlink" href="#form-meta" title="Permanent link">&para;</a></h1>
 <p>https://docs.djangoproject.com/en/4.1/ref/forms/fields/</p>
 
 
@@ -283,5 +294,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

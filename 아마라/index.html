@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -244,14 +255,14 @@
                   
 
 
-<h2 id="-">- <a href="https://m.ruliweb.com/game/85162/read/9426630">스킬관련 선호도 및 평가</a></h2>
-<h1 id="_1">페이즈저커 아마라</h1>
+<h2 id="-">- <a href="https://m.ruliweb.com/game/85162/read/9426630">스킬관련 선호도 및 평가</a><a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h1 id="_1">페이즈저커 아마라<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iTLIAE7heiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <ul>
-<li>스킬트리 <img alt="1553215487.png" src="1553215487.png" /></li>
+<li>스킬트리 <a class="glightbox" href="../assets/1553215487.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="1553215487.png" src="../assets/1553215487.png" /></a></li>
 <li>만렙달성시 스킬트리 </li>
-<li><img alt="45674574af67x6.png" src="45674574af67x6.png" /></li>
+<li><a class="glightbox" href="../assets/45674574af67x6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="45674574af67x6.png" src="../assets/45674574af67x6.png" /></a></li>
 <li></li>
 </ul>
 
@@ -302,5 +313,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

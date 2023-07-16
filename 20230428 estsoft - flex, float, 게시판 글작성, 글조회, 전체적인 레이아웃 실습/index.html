@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,12 +231,12 @@
   <h1>20230428 estsoft - flex, float, 게시판 글작성, 글조회, 전체적인 레이아웃 실습</h1>
 
 <ul>
-<li>[[20230427 estsoft - html table, css basics]]</li>
-<li>[[css]]</li>
-<li>[[CSS#flex]] </li>
-<li>[[CSS#float]]</li>
-<li>[[회원가입 페이지 작성하기 estsoft]]</li>
-<li>[[chat page 작성하기 estsoft]]</li>
+<li><a href="../20230427%20estsoft%20-%20html%20table%2C%20css%20basics/">20230427 estsoft - html table, css basics</a></li>
+<li><a href="../CSS/">css</a></li>
+<li><a href="../CSS/#flex">CSS#flex</a> </li>
+<li><a href="../CSS/#float">CSS#float</a></li>
+<li><a href="../%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0%20estsoft/">회원가입 페이지 작성하기 estsoft</a></li>
+<li><a href="../chat%20page%20%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0%20estsoft/">chat page 작성하기 estsoft</a></li>
 <li></li>
 </ul>
 
@@ -276,5 +287,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

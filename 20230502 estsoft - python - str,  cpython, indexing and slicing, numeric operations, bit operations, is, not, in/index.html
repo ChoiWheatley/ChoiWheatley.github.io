@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -228,7 +239,7 @@
 <li><a href="https://colab.research.google.com/drive/1IRa8nYwM2HtkzlNJGBlavWK96kffytm_?usp=sharing#scrollTo=E1nDm4EOyOxg">멘토님의 실시간 노트북</a></li>
 <li><a href="https://colab.research.google.com/drive/1MLH1EUy3nmKQXPMjn5K5-FStLzh5HV5J?usp=sharing">별로 안 적은 구글 콜랩</a></li>
 </ul>
-<h1 id="str">str</h1>
+<h1 id="str">str<a class="headerlink" href="#str" title="Permanent link">&para;</a></h1>
 <ul>
 <li><code>lower</code>, <code>upper</code> </li>
 <li><code>find</code>, <code>index</code> =&gt; 모두 인자로 온 문자열 값과 일치하는 첫번째 인덱스를 리턴. 두 메서드의 차이점이라면 <code>find</code>는 일치하지 않는다면 -1을 리턴하고 <code>index</code>는 <code>ValueError</code> 에러를 발생시킨다.</li>
@@ -243,15 +254,15 @@
 </li>
 <li>
 <p>list comprehension</p>
-<p><code>python
-num = "12,3,1423,53,43,556,2,1"
-numbered_list = [int(i) for i in num.split(',')]</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="s2">&quot;12,3,1423,53,43,556,2,1&quot;</span>
+<span class="n">numbered_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">num</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)]</span>
+</code></pre></div>
 </li>
 <li>
 <p><code>map</code> 잠깐 핥아가셨네 사실 list comprehension은 아래처럼 쓸 수도 있다.</p>
-<p><code>python
-num = "12,3,1423,53,43,556,2,1"
-numbered_list = list(map(int, num.split(','))</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">num</span> <span class="o">=</span> <span class="s2">&quot;12,3,1423,53,43,556,2,1&quot;</span>
+<span class="n">numbered_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">num</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+</code></pre></div>
 </li>
 <li>
 <p><code>join(self, iterable)</code> =&gt;자기자신을 구분자로 <code>iterable</code>을 순회하며 하나의 문자열로 만든다.</p>
@@ -260,72 +271,72 @@ numbered_list = list(map(int, num.split(','))</code></p>
 </ul>
 </li>
 </ul>
-<pre><code class="language-python"># 퀴즈
-# 숫자만 모두 더하라!
-num = &quot;123abc913sldkf&quot;
-result = sum(map(int, filter(lambda x: x.isnumeric(), num)))
-print(result)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># 퀴즈</span>
+<span class="c1"># 숫자만 모두 더하라!</span>
+<span class="n">num</span> <span class="o">=</span> <span class="s2">&quot;123abc913sldkf&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">(),</span> <span class="n">num</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
 <ul>
 <li><code>rjust(self, width, fillchar=' ')</code> =&gt; 오른쪽 정렬</li>
 <li><code>ljust(self, width, fillchar=' ')</code> =&gt; 왼쪽 정렬</li>
 <li><code>center(self, width, fillchar=' ')</code> =&gt; 가운데 정렬</li>
 <li><code>maketranse(self, ...)</code> =&gt; <code>str.translate(self, table)</code>에 필요한 <code>table</code>을 만드는데, 얘는 <code>replace</code>이긴 하지만 table에 있는 다양한 녀석들을 매핑하여 저시기 할 수 있다.</li>
 </ul>
-<h1 id="indexing-and-slicing">indexing and slicing</h1>
+<h1 id="indexing-and-slicing">indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permanent link">&para;</a></h1>
 <p>슬라이스 결과는 <code>slice</code> 객체이다. 내부적으로 <code>slice()</code> 내장함수를 호출한다.</p>
-<pre><code class="language-python">a[start:stop]  # items start through stop-1
-a[start:]      # items start through the rest of the array
-a[:stop]       # items from the beginning through stop-1
-a[:]           # a copy of the whole array
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>  <span class="c1"># items start through stop-1</span>
+<span class="n">a</span><span class="p">[</span><span class="n">start</span><span class="p">:]</span>      <span class="c1"># items start through the rest of the array</span>
+<span class="n">a</span><span class="p">[:</span><span class="n">stop</span><span class="p">]</span>       <span class="c1"># items from the beginning through stop-1</span>
+<span class="n">a</span><span class="p">[:]</span>           <span class="c1"># a copy of the whole array</span>
 
-a[start:stop:step] # start through not past stop, by step
+<span class="n">a</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">:</span><span class="n">step</span><span class="p">]</span> <span class="c1"># start through not past stop, by step</span>
 
-# start and stop may be a negative number
-a[-1]    # last item in the array
-a[-2:]   # last two items in the array
-a[:-2]   # everything except the last two items
+<span class="c1"># start and stop may be a negative number</span>
+<span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># last item in the array</span>
+<span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>   <span class="c1"># last two items in the array</span>
+<span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>   <span class="c1"># everything except the last two items</span>
 
-# steps can be a negative number
-a[::-1]    # all items in the array, reversed
-a[1::-1]   # the first two items, reversed
-a[:-3:-1]  # the last two items, reversed
-a[-3::-1]  # everything except the last two items, reversed
-</code></pre>
-<h1 id="numeric-operation">numeric operation</h1>
-<pre><code class="language-python">a = 10
-b = 3
+<span class="c1"># steps can be a negative number</span>
+<span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>    <span class="c1"># all items in the array, reversed</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># the first two items, reversed</span>
+<span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># the last two items, reversed</span>
+<span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># everything except the last two items, reversed</span>
+</code></pre></div>
+<h1 id="numeric-operation">numeric operation<a class="headerlink" href="#numeric-operation" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 
-print(f'10 + 3 == {a + b}')
-print(f'10 - 3 == {a - b}')
-print(f'10 / 3 == {a / b}')
-print(f'10 // 3 == {a // b}') # 몫만 나옵니다.(정수만요!)
-print(f'10 * 3 == {a * b}')
-print(f'10 ** 3 == {a ** b}')
-print(f'10 % 3 == {a % b}') # 나머지
-</code></pre>
-<h1 id="is-not">is, not</h1>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 + 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 - 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 / 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 // 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 몫만 나옵니다.(정수만요!)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 * 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 ** 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 % 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 나머지</span>
+</code></pre></div>
+<h1 id="is-not">is, not<a class="headerlink" href="#is-not" title="Permanent link">&para;</a></h1>
 <p><code>is</code>는 <code>==</code> 과 다르게 객체의 <code>id</code>를 보고 비교한다. 그래서 다음과 같은 이상한 현상을 발견할 수 있다.</p>
-<pre><code class="language-python">a = 256
-b = 256
-assert a is b
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+</code></pre></div>
 <p>-5부터 256까지는 기본 공간에 저장되어있는 수를 가리킨다고 했지?</p>
-<pre><code class="language-python">a = 9999
-b = 9999
-assert a is not b
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">9999</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9999</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>
+</code></pre></div>
 <p>리스트는 언제나 항상 다르다.</p>
-<pre><code class="language-python">a = [1, 2, 3]
-b = [1, 2, 3]
-assert a == b
-assert a is not b
-</code></pre>
-<h1 id="member-operator-in">member operator in</h1>
-<pre><code class="language-python">assert not 'a' in 'hello, world'
-assert 'a' in ['a', 'b']
-assert 10 in {'a':10, 'b':20}.values()
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+<span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>
+</code></pre></div>
+<h1 id="member-operator-in">member operator in<a class="headerlink" href="#member-operator-in" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">assert</span> <span class="ow">not</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;hello, world&#39;</span>
+<span class="k">assert</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="mi">10</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -374,5 +385,5 @@ assert 10 in {'a':10, 'b':20}.values()
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

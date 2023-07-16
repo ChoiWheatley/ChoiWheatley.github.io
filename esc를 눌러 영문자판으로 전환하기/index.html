@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,16 +235,12 @@
                   
 
 
-<p>[[0090 Bucket Lists 🪣|bucketlist]]  </p>
-<figure markdown>
-  ![2023-05-29#](2023-05-29#)
-  <figcaption>5xnd1z</figcaption>
-</figure markdown>
-
+<p><a href="../0000%20Index%20%F0%9F%94%97/0090%20Bucket%20Lists%20%F0%9F%AA%A3/">bucketlist</a><br />
+<a class="glightbox" href="../Daily%20Notes/2023-05-29/#5xnd1z" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="2023-05-29#^5xnd1z" src="../Daily%20Notes/2023-05-29/#5xnd1z" /></a></p>
 <ul>
-<li>[v] [[karabiner-elements]] 페이지에서 확인바람.</li>
+<li>[v] <a href="../karabiner-elements/">karabiner-elements</a> 페이지에서 확인바람.</li>
 </ul>
-<h1 id="_1">추가생각: 타이핑을 멈춘 뒤 시간 지나면 알아서 영문자판으로 전환하기</h1>
+<h1 id="_1">추가생각: 타이핑을 멈춘 뒤 시간 지나면 알아서 영문자판으로 전환하기<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>디폴트가 영문자판인거고,  한글로는 항상 임시로 사용하는 방식을 도입한다면?</p>
 
 
@@ -283,5 +290,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

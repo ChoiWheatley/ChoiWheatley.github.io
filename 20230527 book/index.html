@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -265,8 +276,8 @@
 </li>
 </ul>
 <p>아래는 영민님이 프젝 위주로 책을 집필하려고 할 때 염두한 유즈케이스 기반 목차이다.</p>
-<h1 id="api">—————필수 API—————</h1>
-<h2 id="api_1">API : 유저 관리</h2>
+<h1 id="api">—————필수 API—————<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+<h2 id="api_1">API : 유저 관리<a class="headerlink" href="#api_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>회원 가입 API: 새로운 유저를 등록하는 API에 대해 설명하고, 필요한 정보와 요청 방식 등을 소개합니다.</li>
 <li>로그인 및 인증 API: 유저의 인증과 로그인 절차를 처리하는 API에 대해 설명하고, 효율적인 인증 방법과 보안 관련 주의사항을 언급합니다.</li>
@@ -274,7 +285,7 @@
 <li>비밀번호 재설정 API: 유저가 비밀번호를 재설정할 수 있는 API에 대해 안내하고, 이를 위한 절차와 보안 사항을 다룹니다.</li>
 <li>유저 검색 및 필터링 API: 특정 조건에 따라 유저를 검색하고 필터링하는 API를 설명하고, 쿼리 파라미터 등의 활용 방법을 제시합니다.</li>
 </ul>
-<h2 id="api_2">API : 도서 목록 관리</h2>
+<h2 id="api_2">API : 도서 목록 관리<a class="headerlink" href="#api_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>도서 목록 조회 API: 도서 목록을 조회하는 API의 구현 방법과 검색, 정렬, 페이징 등의 기능을 포함한 유용한 옵션에 대해 설명합니다.</li>
 <li>도서 상세 정보 API: 특정 도서의 상세 정보를 조회하는 API에 대해 다루며, 관련된 데이터와 연결된 다른 리소스에 대한 링크 제공 방법을 소개합니다.</li>
@@ -288,34 +299,34 @@
 <li>주문 조회: 고객이 자신의 주문 기록을 조회하는 기능을 제공합니다.</li>
 <li>주문 취소: 고객이 이미 생성한 주문을 취소하는 기능을 제공합니다.</li>
 </ul>
-<h2 id="api_3">API : 결제 처리</h2>
+<h2 id="api_3">API : 결제 처리<a class="headerlink" href="#api_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>결제 요청: 고객이 주문에 대한 결제를 요청하고 결제 수단을 선택하는 기능을 제공합니다.</li>
 <li>결제 상태 확인: 결제의 성공 여부 및 상태를 확인하는 기능을 제공합니다.</li>
 </ul>
-<h1 id="api_4">—————선택 API—————</h1>
-<h2 id="api_5">API : 리뷰관리</h2>
+<h1 id="api_4">—————선택 API—————<a class="headerlink" href="#api_4" title="Permanent link">&para;</a></h1>
+<h2 id="api_5">API : 리뷰관리<a class="headerlink" href="#api_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>리뷰 작성: 고객이 구매한 상품에 대한 리뷰를 작성하는 기능을 제공합니다.</li>
 <li>리뷰 조회: 상품에 대한 리뷰를 조회하는 기능을 제공합니다.</li>
 </ul>
-<h2 id="api_6">API : 장바구니 관리</h2>
+<h2 id="api_6">API : 장바구니 관리<a class="headerlink" href="#api_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>장바구니에 상품 추가: 고객이 상품을 장바구니에 추가하는 기능을 제공합니다.</li>
 <li>장바구니 조회: 고객이 장바구니에 담긴 상품 목록을 조회하는 기능을 제공합니다.</li>
 <li>장바구니 수정: 고객이 장바구니에 담긴 상품 수량을 수정하거나 상품을 제거하는 기능을 제공합니다.</li>
 </ul>
-<h2 id="api_7">API : 배송관리</h2>
+<h2 id="api_7">API : 배송관리<a class="headerlink" href="#api_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li>배송 정보 조회: 고객이 주문한 상품의 배송 상태 및 정보를 조회하는 기능을 제공합니다.</li>
 <li>배송지 변경: 고객이 주문한 상품의 배송지 정보를 변경하는 기능을 제공합니다.</li>
 </ul>
-<h2 id="api_8">API : 할인 및 쿠폰 관리</h2>
+<h2 id="api_8">API : 할인 및 쿠폰 관리<a class="headerlink" href="#api_8" title="Permanent link">&para;</a></h2>
 <ul>
 <li>할인 정보 조회: 현재 진행 중인 할인 정보를 조회하는 기능을 제공합니다.</li>
 <li>쿠폰 발급 및 사용: 고객에게 쿠폰을 발급하고 쿠폰을 주문에 적용하는 기능을 제공합니다.</li>
 </ul>
-<h1 id="_1">나의 생각 및 질문</h1>
+<h1 id="_1">나의 생각 및 질문<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>RESTful하기 위해 DELETE메서드를 사용하려면 ajax 사용해야 한다는게 무슨 말인지 모르겠습니다. self-descriptive하기 위함이라는 것 까지만 이해함. <ul>
 <li>예를 들어 <code>DELETE</code> 메서드의 경우, html에 form 태그로 보낼 수 없다. (<code>POST</code>는 가능함) 그래서 JS 구문이 필요한거고, 이를 비동기적으로 해결해주는 녀석이 바로 ajax인 것.</li>
@@ -337,19 +348,19 @@
 </ol>
 </li>
 </ul>
-<h1 id="chat-gpt-api">Chat GPT API 명세 노션 페이지를 보면서</h1>
+<h1 id="chat-gpt-api">Chat GPT API 명세 노션 페이지를 보면서<a class="headerlink" href="#chat-gpt-api" title="Permanent link">&para;</a></h1>
 <p>전체가 js로 이루어지고 있는 프로젝트가 있는데, ajax 사용예시를 보여준다.<br />
 ajax는 비동기 통신으로, 비슷한 예로 axios, fetch가 있다. =&gt; 한 화면에서 서버에 통신하면 JS에서 불러오는거.<br />
 장고의 뷰는 컨트롤러를 겸한다.</p>
-<h1 id="rest">취업하면 매일보는게 REST임</h1>
+<h1 id="rest">취업하면 매일보는게 REST임<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h1>
 <p>카카오에서 로직을 설계해놓으면 우리 서버에 요청하고 리스폰스 할 수 있게 만들어주기 위해서. </p>
-<h1 id="db">그다음으로 할게 DB설계</h1>
+<h1 id="db">그다음으로 할게 DB설계<a class="headerlink" href="#db" title="Permanent link">&para;</a></h1>
 <ul>
 <li>[?] DB설계도 REST 안에 있다? 아, CRUD요청이 포함되어 있으니까. DB ⊂ REST인 셈이네</li>
 </ul>
-<h1 id="gpt">GPT를 면접대비용으로 쓰다니</h1>
+<h1 id="gpt">GPT를 면접대비용으로 쓰다니<a class="headerlink" href="#gpt" title="Permanent link">&para;</a></h1>
 <p>내가 면접관, GPT가 지원자.</p>
-<h1 id="_2">결론</h1>
+<h1 id="_2">결론<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <p>평일에 세팅을 해놓고 주말에 같이 동일한 코드를 봐 가면서 API 설계를 진행해보자. </p>
 <p>{% endraw %}</p>
 
@@ -400,5 +411,5 @@ ajax는 비동기 통신으로, 비슷한 예로 axios, fetch가 있다. =&gt; �
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

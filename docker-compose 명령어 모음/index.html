@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,21 +233,20 @@
 <ul>
 <li><a href="https://stackoverflow.com/questions/36884991/how-to-rebuild-docker-container-in-docker-compose-yml">sof</a></li>
 </ul>
-<pre><code class="language-shell">docker-compose up -d # run all services in the background
-docker-compose stop nginx # stop only one. but it is still running !!!
-docker-compose build --no-cache nginx 
-docker-compose up -d --no-deps # link nginx to other services
-
-</code></pre>
-<pre><code>Options:
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span><span class="c1"># run all services in the background</span>
+docker-compose<span class="w"> </span>stop<span class="w"> </span>nginx<span class="w"> </span><span class="c1"># stop only one. but it is still running !!!</span>
+docker-compose<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>nginx<span class="w"> </span>
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--no-deps<span class="w"> </span><span class="c1"># link nginx to other services</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Options:
     -d, --detach        Detached mode: Run containers in the background,
                         print new container names. Incompatible with
                         --abort-on-container-exit.
-    --no-deps           Don't start linked services.
+    --no-deps           Don&#39;t start linked services.
     --force-recreate    Recreate containers even if their configuration
-                        and image haven't changed.
+                        and image haven&#39;t changed.
     --build             Build images before starting containers.
-</code></pre>
+</code></pre></div>
 
 
 
@@ -285,5 +295,5 @@ docker-compose up -d --no-deps # link nginx to other services
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

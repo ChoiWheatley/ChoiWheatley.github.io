@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,11 +236,11 @@
 
 
 <ul>
-<li>https://yceffort.kr/2022/04/rust-wasm-project-tutorial-2 [[0080 Scraps 📚]]</li>
-<li><a href="https://rustwasm.github.io/docs/book/game-of-life/setup.html">rustwasm game-of-life tutorial</a> [[0080 Scraps 📚]]</li>
+<li>https://yceffort.kr/2022/04/rust-wasm-project-tutorial-2 <a href="../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/">0080 Scraps 📚</a></li>
+<li><a href="https://rustwasm.github.io/docs/book/game-of-life/setup.html">rustwasm game-of-life tutorial</a> <a href="../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/">0080 Scraps 📚</a></li>
 <li>move to notion https://choiwheatley.notion.site/game-of-life-e379dd1fbf1644dd9997f1c9731c4f00</li>
 </ul>
-<h1 id="what-will-i-learn">What will I learn?</h1>
+<h1 id="what-will-i-learn">What will I learn?<a class="headerlink" href="#what-will-i-learn" title="Permanent link">&para;</a></h1>
 <ul>
 <li>러스트 코드를 WA로 컴파일하는 방법을 터득한다.</li>
 <li>Rust, WA, JS, HTML, CSS를 사용하며 폴리글랏 프로그램을 개발할 수 있다.</li>
@@ -238,25 +249,25 @@
 <li>프로파일을 통해 프로그램을 더 빠르게 만들 수 있다.</li>
 <li><code>.wasm</code> 바이너리 파일의 크기를 더 작게, 더 빠르게 만들어 빠른 네트워크 로딩을 달성할 수 있다.</li>
 </ul>
-<h1 id="create-wasm-app"><a href="https://github.com/rustwasm/create-wasm-app">create-wasm-app</a></h1>
+<h1 id="create-wasm-app"><a href="https://github.com/rustwasm/create-wasm-app">create-wasm-app</a><a class="headerlink" href="#create-wasm-app" title="Permanent link">&para;</a></h1>
 <p>rustwasm 패키지를 webpack에 담가주는 템플릿. 단순히 내가 배포하려는 패키지 루트에서 다음 명령어를 실행하면 된다.</p>
-<pre><code class="language-sh">npm init wasm-app www
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>init<span class="w"> </span>wasm-app<span class="w"> </span>www
+</code></pre></div>
 <p>incremental build를 위해서 사전 작업을 수행했다. <code>www/package.json</code> 파일에 루트 폴더의 wasm 바이너리가 들어있는 폴더를 의존하도록 만들었다.</p>
-<pre><code class="language-json">...
-&quot;dependencies&quot;: {
-    &quot;game-of-life-wasm&quot;: &quot;file:../pkg&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">...</span>
+<span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;game-of-life-wasm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file:../pkg&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>그리고 <code>index.js</code> 파일에 placeholder로 달려있던 임포트 구문을 자연스럽게 <code>game-of-life-wasm</code> 으로 바꾸어 주었다.</p>
-<pre><code class="language-js">import * as wasm from &quot;game-of-the-life-wasm&quot;;
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">wasm</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;game-of-the-life-wasm&quot;</span><span class="p">;</span>
 
-wasm.greet();
-</code></pre>
+<span class="nx">wasm</span><span class="p">.</span><span class="nx">greet</span><span class="p">();</span>
+</code></pre></div>
 <p><code>npm install</code>, <code>npm run start</code> 명령으로 간단하게 웹을 띄울 수 있다.</p>
-<p><img alt="Pasted image 20230316230116.png" src="Pasted image 20230316230116.png" /></p>
-<h1 id="interfacing-rust-and-js">Interfacing Rust and JS</h1>
-<p>WA는 단지 선형 메모리 공간을 JS에게 제공할 뿐이다. WA는 반대로 JS가 점유하는 힙 영역의 공간을 참조할 수 없다. 상당히 제약적인 것이다! JS는 오직 WA의 배열버퍼(<code>u8</code>, <code>i32</code>, <code>f64</code>, 등)만 가지고 WA의 메모리 공간을 참조할 수 있다. WA 함수는 오직 스칼라 값들만 리턴할 수 있다. WA는 JS의 전역 객체를 참조할 수 있다고 한다. [[js-sys crate]]를 이용하면 된다고..</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230316230116.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230316230116.png" src="../assets/Pasted%20image%2020230316230116.png" /></a></p>
+<h1 id="interfacing-rust-and-js">Interfacing Rust and JS<a class="headerlink" href="#interfacing-rust-and-js" title="Permanent link">&para;</a></h1>
+<p>WA는 단지 선형 메모리 공간을 JS에게 제공할 뿐이다. WA는 반대로 JS가 점유하는 힙 영역의 공간을 참조할 수 없다. 상당히 제약적인 것이다! JS는 오직 WA의 배열버퍼(<code>u8</code>, <code>i32</code>, <code>f64</code>, 등)만 가지고 WA의 메모리 공간을 참조할 수 있다. WA 함수는 오직 스칼라 값들만 리턴할 수 있다. WA는 JS의 전역 객체를 참조할 수 있다고 한다. <a href="../js-sys%20crate/">js-sys crate</a>를 이용하면 된다고..</p>
 <p><code>wasm_bindgen</code> 특성은 복합 구조체를 두 경계 간에 넘나들게 만들어주는 공통적인 이해관계를 제공해 준다. Rust 구조체를 Boxing 하고, 그 포인터를 JS 클래스에 래핑하여 유용하게 만들어주기도 하고 JS 객체의 테이블 인덱스로 만들어주기도 한다. </p>
 <ol>
 <li>불필요한 복사는 오버헤드를 일으킨다. =&gt; WA 선형메모리의 데이터를 복사하는 일을 줄여라!</li>
@@ -265,9 +276,9 @@ wasm.greet();
 </ol>
 </li>
 </ol>
-<h1 id="game-of-life">Game of life를 구현하기 위한 인터페이스</h1>
+<h1 id="game-of-life">Game of life를 구현하기 위한 인터페이스<a class="headerlink" href="#game-of-life" title="Permanent link">&para;</a></h1>
 <p>2D Universe는 일차원 배열로 길게 만들 수 있다. 다음과 같이. </p>
-<p><img alt="Pasted image 20230323184722.png" src="Pasted image 20230323184722.png" /></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230323184722.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230323184722.png" src="../assets/Pasted%20image%2020230323184722.png" /></a></p>
 <p>처음 방식은 <code>std::fmt::Display for Universe</code> 를 구현함으로써 단순 텍스트로 변환된 결과를 리턴해 볼 것이다.</p>
 
 
@@ -317,5 +328,5 @@ wasm.greet();
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

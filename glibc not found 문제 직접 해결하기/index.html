@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,26 +233,26 @@
 <ul>
 <li>https://sosal.kr/1065</li>
 </ul>
-<pre><code class="language-bash">mkdir ~/glibc_install; cd ~/glibc_install 
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>~/glibc_install<span class="p">;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/glibc_install<span class="w"> </span>
 
-wget http://ftp.gnu.org/gnu/glibc/glibc-2.14.tar.gz
+wget<span class="w"> </span>http://ftp.gnu.org/gnu/glibc/glibc-2.14.tar.gz
 
-tar zxvf glibc-2.14.tar.gz
+tar<span class="w"> </span>zxvf<span class="w"> </span>glibc-2.14.tar.gz
 
-cd glibc-2.14
+<span class="nb">cd</span><span class="w"> </span>glibc-2.14
 
-mkdir build
+mkdir<span class="w"> </span>build
 
-cd build
+<span class="nb">cd</span><span class="w"> </span>build
 
-../configure --prefix=/opt/glibc-2.14
+../configure<span class="w"> </span>--prefix<span class="o">=</span>/opt/glibc-2.14
 
-make -j4
+make<span class="w"> </span>-j4
 
-sudo make install
+sudo<span class="w"> </span>make<span class="w"> </span>install
 
-export LD_LIBRARY_PATH=/opt/glibc-2.14/lib
-</code></pre>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/opt/glibc-2.14/lib
+</code></pre></div>
 <p>위 설명은 glibc_2.14 버전인데</p>
 <p>http://ftp.gnu.org/gnu/glibc/ 에서 원하는 버전에 맞춰서</p>
 <p>위 커맨드를 입력하면 해결됨.</p>
@@ -293,5 +304,5 @@ export LD_LIBRARY_PATH=/opt/glibc-2.14/lib
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,7 +232,7 @@
 
 <p><a href="https://www.geeksforgeeks.org/method-resolution-order-in-python-inheritance/">https://www.geeksforgeeks.org/method-resolution-order-in-python-inheritance/</a></p>
 <p>그거아시져, 마름모꼴로 생긴 상속관계에서 최하단의 클래스가 어느 부모의 attr를 따라야 하는지 충돌이 발생하는 경우 아주 곤란해진다고.  </p>
-<p>[[다중상속.excalidraw]]</p>
+<p>![[다중상속.excalidraw]]</p>
 <p>하지만 파이썬에서는 아주 이상한 방식으로 다중상속 문제점을 해결했고, (좋은 건지는 모르겠지만) 다중상속이 허용된다. 바로 MRO (Method Resolution Order)에 근거한 원칙에 의해 다중상속이 들어가 있더라도 메서드 이름을 찾아가는 데 가장 가까운 관계의 클래스 우선 탐색한다.</p>
 <p><code>mro</code>는 <code>object</code>의 메서드로, 출력해보면 나의 모든 조상을 리스트의 형태로 출력한다. 그래서 attr 충돌 발생시 <code>mro</code>의 왼쪽에서부터 가장 가까운 클래스의 attr를 따라갈 수 있다...</p>
 
@@ -272,5 +283,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

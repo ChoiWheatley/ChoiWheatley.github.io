@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,17 +235,17 @@
                   
 
 
-<h1 id="what-i-want-to-learn">what i want to learn</h1>
+<h1 id="what-i-want-to-learn">what i want to learn<a class="headerlink" href="#what-i-want-to-learn" title="Permanent link">&para;</a></h1>
 <ul>
 <li>[ ] [[github code review]] ^j3p7rh</li>
-<li>[x] [[git submodule 개념 잡기]] ^cevrke</li>
+<li>[x] <a href="../git%20submodule%20%EA%B0%9C%EB%85%90%20%EC%9E%A1%EA%B8%B0/">git submodule 개념 잡기</a> ^cevrke</li>
 <li>[ ] </li>
 </ul>
 <hr />
 <ul>
 <li>https://paullabworkspace.notion.site/GitHub-435ec8074bcf4353afb947f601a030df</li>
 <li>github pages 생성 <ul>
-<li>정적 웹 사이트 호스팅 서비스인 pages를 생성할 수 있다.<img alt="스크린샷 2023-04-24 21.03.57.png" src="스크린샷 2023-04-24 21.03.57.png" /></li>
+<li>정적 웹 사이트 호스팅 서비스인 pages를 생성할 수 있다.<a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-24%2021.03.57.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-04-24 21.03.57.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-24%2021.03.57.png" /></a></li>
 <li>아무 리파지토리 생성하여 settings &gt; pages &gt; branch 설정하고 새로고침 몇 번만 하면 <em>Your site is live at https://choiwheatley.github.io/my-first-pages/</em> 라고 뜨는데, 이때 해당 링크 따라 들어가면 된다. 참고로 저 Hello, world! 뜨는 건 그냥 <code>html boilerplate</code>라고 검색하여 나온 첫 번째 코드를 복붙한 것이다.</li>
 </ul>
 </li>
@@ -246,22 +257,19 @@
 </li>
 <li><a href="https://learngitbranching.js.org/">learn git branching with visual tutorial</a> </li>
 <li><a href="https://paullabworkspace.notion.site/2-Git-560d34629faf4d4cb19ad0462bbb4dc7">2.git</a><ul>
-<li><figure markdown>
-  <img alt="Pasted image 20230424212219.png" src="Pasted image 20230424212219.png" />{ width="450" }</li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230424212219.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230424212219.png" src="../assets/Pasted%20image%2020230424212219.png" width="450" /></a></li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git status</code></li>
+<li><code>git diff</code></li>
+<li><code>git log</code></li>
 </ul>
 </li>
 </ul>
-<p></figure markdown>
-    - <code>git add</code>
-    - <code>git commit</code>
-    - <code>git status</code>
-    - <code>git diff</code>
-    - <code>git log</code></p>
-<pre><code>Untracked → Unmodified → Modefied → Staged
+<div class="highlight"><pre><span></span><code>Untracked → Unmodified → Modefied → Staged
             |—————— git add ———————→|
                       | ←——— git commit ——|
-
-</code></pre>
+</code></pre></div>
 <ul>
 <li><a href="https://paullabworkspace.notion.site/3-GitHub-5af717e53119443d9de827abaa710ced">3.github</a><ul>
 <li><code>git pull</code> 시 누군가 이미 코드를 수정했을 경우(current branch is <em>behind</em> the remote)에 대처방법 <a href="https://www.git-scm.com/docs/git-pull">git pull --rebase - wiki</a> <ul>
@@ -342,5 +350,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

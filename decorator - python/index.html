@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,132 +235,132 @@
                   
 
 
-<h1 id="decorator">Decorator</h1>
+<h1 id="decorator">Decorator<a class="headerlink" href="#decorator" title="Permanent link">&para;</a></h1>
 <p>오늘 진도 엄청나게 많이 뺐네</p>
 <p>정의:<br />
     데코레이터는 함수의 기능을 확장하기 위해 만들어졌으며, 페이로드를 정제하는 일, 함수 호출 앞/뒤로 무언가 해야할 일이 있을 때 요긴하게 사용된다.</p>
 <p>먼저 실무에서 데코레이터를 어떻게 쓰는지 확인해보자.</p>
-<pre><code class="language-python">@login
-def 비밀게시판():
-    &quot;&quot;&quot;
-    함수를 실행하기 전에 로그인 여부를 조사한다.
-    &quot;&quot;&quot;
-    return render()
+<div class="highlight"><pre><span></span><code><span class="nd">@login</span>
+<span class="k">def</span> <span class="nf">비밀게시판</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    함수를 실행하기 전에 로그인 여부를 조사한다.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">()</span>
 
-@preprocess
-sum([10, '', '20', '30', None, 'hello'])
-# 숫자만 정제하여 `sum`에게 넘겨주는 일을 `@preprecess`가 하게 된다.
-</code></pre>
+<span class="nd">@preprocess</span>
+<span class="nb">sum</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">])</span>
+<span class="c1"># 숫자만 정제하여 `sum`에게 넘겨주는 일을 `@preprecess`가 하게 된다.</span>
+</code></pre></div>
 <p>데코레이터는 사실 함수인데, 함수를 인자로 받아 함수를 리턴하는 이상한 녀석이다. 이것도 전략패턴이라고 봐야할까? 얘의 <code>wrap_func</code>를 잘 보면 안에서 <code>func</code>를 호출하는데 이녀석이 바로 데코레이터를 붙인 함수이다.</p>
-<pre><code class="language-python"># Decorator 선언
-def print_hello(func):
-    def wrap_func():
-        print(&quot;func &lt;&lt;print_hello&gt;&gt;::&lt;&lt;wrap_func&gt;&gt;&quot;)
-        func()
-    return wrap_func
+<div class="highlight"><pre><span></span><code><span class="c1"># Decorator 선언</span>
+<span class="k">def</span> <span class="nf">print_hello</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap_func</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func &lt;&lt;print_hello&gt;&gt;::&lt;&lt;wrap_func&gt;&gt;&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrap_func</span>
 
-# Decorator 호출
-@print_hello
-def func1():
-    print('inside &lt;&lt;func1&gt;&gt;')
+<span class="c1"># Decorator 호출</span>
+<span class="nd">@print_hello</span>
+<span class="k">def</span> <span class="nf">func1</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;inside &lt;&lt;func1&gt;&gt;&#39;</span><span class="p">)</span>
 
-func1()
+<span class="n">func1</span><span class="p">()</span>
 
-# Decorator 없이도 못할 건 없는데...
-def func2():
-    print('func &lt;&lt;func2&gt;&gt;')
+<span class="c1"># Decorator 없이도 못할 건 없는데...</span>
+<span class="k">def</span> <span class="nf">func2</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;func &lt;&lt;func2&gt;&gt;&#39;</span><span class="p">)</span>
 
-print_hello(func2)()
-</code></pre>
+<span class="n">print_hello</span><span class="p">(</span><span class="n">func2</span><span class="p">)()</span>
+</code></pre></div>
 <p>데코레이터에도 인자가 들어갈 수 있다.</p>
-<pre><code class="language-python"># 데코레이터에 argument를 넣는 방법
-def deco1(name):
-    def deco2(func):
-        def wrapper():
-            print(&quot;decorator1&quot;)
-            func()
+<div class="highlight"><pre><span></span><code><span class="c1"># 데코레이터에 argument를 넣는 방법</span>
+<span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;decorator1&quot;</span><span class="p">)</span>
+            <span class="n">func</span><span class="p">()</span>
 
-        return wrapper
+        <span class="k">return</span> <span class="n">wrapper</span>
 
-    return deco2
-
-
-# 데코레이터를 여러 개 지정
-@deco1(&quot;hojun&quot;)
-def hello():
-    print(&quot;hello&quot;)
+    <span class="k">return</span> <span class="n">deco2</span>
 
 
-hello()
+<span class="c1"># 데코레이터를 여러 개 지정</span>
+<span class="nd">@deco1</span><span class="p">(</span><span class="s2">&quot;hojun&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 
 
-# 2중 decorator
-def decorator1(func):
-    def wrapper():
-        print(f&quot;deco1 &gt; wrapper &gt; func : {id(func)}&quot;)
-        func()
-
-    print(f&quot;deco1 &gt; wrapper : {id(wrapper)}&quot;)
-    return wrapper
+<span class="n">hello</span><span class="p">()</span>
 
 
-def decorator2(func):
-    def wrapper():
-        print(f&quot;deco2 &gt; wrapper &gt; func : {id(func)}&quot;)
-        func()
+<span class="c1"># 2중 decorator</span>
+<span class="k">def</span> <span class="nf">decorator1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;deco1 &gt; wrapper &gt; func : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
 
-    print(f&quot;deco2 &gt; wrapper : {id(wrapper)}&quot;)
-    return wrapper
-
-
-# 데코레이터를 여러 개 지정
-@decorator1
-@decorator2
-def hello():
-    print(&quot;hello&quot;)
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;deco1 &gt; wrapper : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">wrapper</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
 
 
-hello()
-</code></pre>
+<span class="k">def</span> <span class="nf">decorator2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;deco2 &gt; wrapper &gt; func : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;deco2 &gt; wrapper : </span><span class="si">{</span><span class="nb">id</span><span class="p">(</span><span class="n">wrapper</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="c1"># 데코레이터를 여러 개 지정</span>
+<span class="nd">@decorator1</span>
+<span class="nd">@decorator2</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+
+
+<span class="n">hello</span><span class="p">()</span>
+</code></pre></div>
 <p>아래는 전처리를 수행하는 데코레이터에 대한 스니펫이다.</p>
-<pre><code class="language-python">def 전처리(func):
-    def wrap_func(iterable):
-        return func(list(map(int, iterable)))
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">전처리</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap_func</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">iterable</span><span class="p">)))</span>
 
-    return wrap_func
-
-
-@전처리
-def 평균(l):
-    return sum(l) / len(l)
+    <span class="k">return</span> <span class="n">wrap_func</span>
 
 
-평균([&quot;1&quot;, 2, 3, &quot;4&quot;])
-</code></pre>
-<h1 id="list">실습 : list 전처리</h1>
-<pre><code class="language-python"># 데코레이터 실습 문제
-# 다음 값이 들어갔을 때, 숫자만 모두 더하는 코드를 완성하세요.
-ls = [&quot;10&quot;, True, False, &quot;21&quot;, 0, 10, 20]
+<span class="nd">@전처리</span>
+<span class="k">def</span> <span class="nf">평균</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 
 
-def 전처리(func):
-    def wrap_func(iterable):
-        iterable = map(int, filter(lambda x: type(x) is int, iterable))
-        return func(iterable)
-
-    return wrap_func
-
-
-@전처리
-def custom_sum(l):
-    return sum(l)
+<span class="n">평균</span><span class="p">([</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">])</span>
+</code></pre></div>
+<h1 id="list">실습 : list 전처리<a class="headerlink" href="#list" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="c1"># 데코레이터 실습 문제</span>
+<span class="c1"># 다음 값이 들어갔을 때, 숫자만 모두 더하는 코드를 완성하세요.</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;21&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
 
 
-print(custom_sum(ls))
+<span class="k">def</span> <span class="nf">전처리</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap_func</span><span class="p">(</span><span class="n">iterable</span><span class="p">):</span>
+        <span class="n">iterable</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">,</span> <span class="n">iterable</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
 
-assert isinstance(True, int)
-assert isinstance(False, int)
-</code></pre>
+    <span class="k">return</span> <span class="n">wrap_func</span>
+
+
+<span class="nd">@전처리</span>
+<span class="k">def</span> <span class="nf">custom_sum</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">custom_sum</span><span class="p">(</span><span class="n">ls</span><span class="p">))</span>
+
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -398,5 +409,5 @@ assert isinstance(False, int)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

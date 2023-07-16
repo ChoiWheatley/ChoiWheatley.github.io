@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -232,78 +243,78 @@
 <li>러스트의 확장성에는 제한이 걸려있다. 적어도 트레잇 또는 타입이 현재 크레이트에 있어야만 한다. 그렇지 않은 경우에는 "NewType" 패턴을 사용하여 현재 스코프에 간단한 래퍼 타입을 만드는 것으로 문제 해결이 가능하고, 심지어 zero-cost-abstraction이라서 부담없이 사용할 수 있다.</li>
 </ul>
 <p>다음 코드는 컴파일 에러가 발생한다.</p>
-<pre><code class="language-rust">impl Ord for [i32; 2] {
-    fn cmp(&amp;self, other: &amp;Self) -&gt; Ordering {
-        if self[0] == other[0] {
-            self[1].cmp(&amp;other[1])
-        } else {
-            self[0].cmp(&amp;other[0])
-        }
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">impl</span><span class="w"> </span><span class="nb">Ord</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="p">[</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span>: <span class="kp">&amp;</span><span class="nc">Self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Ordering</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="bp">self</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">other</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">other</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>컴파일러가 타입 <code>[i32; 2]</code>이 foreign이고, 동시에 <code>Ord</code> 트레잇 또한 현재 크레이트에 정의되어 있지 않다고 불평을 내고있다.</p>
-<pre><code>error[E0117]: only traits defined in the current crate can be implemented for arbitrary types
+<div class="highlight"><pre><span></span><code>error[E0117]: only traits defined in the current crate can be implemented for arbitrary types
  --&gt; src/main.rs:4:5
   |
 4 |     impl Ord for [i32; 2] {
   |     ^^^^^^^^^^^^^--------
   |     |            |
   |     |            this is not defined in the current crate because arrays are always foreign
-  |     impl doesn't use only types from inside the current crate
+  |     impl doesn&#39;t use only types from inside the current crate
   |
   = note: define and implement a trait or new type instead
 
 For more information about this error, try `rustc --explain E0117`.
-</code></pre>
+</code></pre></div>
 <p>해결방법은 다양하다. 하나씩 핥아보고 가자.</p>
-<h1 id="newtype-pattern-inspired-by-haskell-programming-language">Newtype Pattern Inspired by Haskell programming language</h1>
+<h1 id="newtype-pattern-inspired-by-haskell-programming-language">Newtype Pattern Inspired by Haskell programming language<a class="headerlink" href="#newtype-pattern-inspired-by-haskell-programming-language" title="Permanent link">&para;</a></h1>
 <p>래퍼타입을 사용하여 foreign type을 현재 크레이트의 타입인냥 사용할 수 있다.</p>
-<pre><code class="language-rust">use core::cmp::*;
-#[derive(Eq, PartialEq, PartialOrd)]
-struct Wrapper([i32; 2]);
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">core</span>::<span class="n">cmp</span>::<span class="o">*</span><span class="p">;</span>
+<span class="cp">#[derive(Eq, PartialEq, PartialOrd)]</span>
+<span class="k">struct</span> <span class="nc">Wrapper</span><span class="p">([</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="mi">2</span><span class="p">]);</span>
 
-impl Ord for Wrapper {
-    fn cmp(&amp;self, other: &amp;Self) -&gt; Ordering {
-        if self.0[0] == other.0[0] {
-            self.0[1].cmp(&amp;other.0[1])
-        } else {
-            self.0[0].cmp(&amp;other.0[0])
-        }
-    }
-}
-fn main() {
-    let lhs = [1, 2];
-    let rhs = [3, 4];
-    assert!(Wrapper(lhs) &lt; Wrapper(rhs));
-    assert!(lhs &lt; rhs); // 기본적으로 배열끼린 비교가 가능했구나
-}
-</code></pre>
-<h1 id="ensure-at-least-one-local-type-is-referenced-by-the-impl">Ensure at least one local type is referenced by the <code>impl</code></h1>
+<span class="k">impl</span><span class="w"> </span><span class="nb">Ord</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Wrapper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span>: <span class="kp">&amp;</span><span class="nc">Self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Ordering</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">other</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">other</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">Wrapper</span><span class="p">(</span><span class="n">lhs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Wrapper</span><span class="p">(</span><span class="n">rhs</span><span class="p">));</span>
+<span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">lhs</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 기본적으로 배열끼린 비교가 가능했구나</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="ensure-at-least-one-local-type-is-referenced-by-the-impl">Ensure at least one local type is referenced by the <code>impl</code><a class="headerlink" href="#ensure-at-least-one-local-type-is-referenced-by-the-impl" title="Permanent link">&para;</a></h1>
 <p>래퍼타입을 쓰기 싫다면 <code>From</code> 트레잇을 구현한 임의의 타입으로 대치할 수 있다. (효용성은 잘 모르겠음)</p>
-<pre><code class="language-rust">pub struct Foo; // you define your type in your crate
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Foo</span><span class="p">;</span><span class="w"> </span><span class="c1">// you define your type in your crate</span>
 
-impl Drop for Foo { // and you can implement the trait on it!
-    // code of trait implementation here
-}
+<span class="k">impl</span><span class="w"> </span><span class="nb">Drop</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// and you can implement the trait on it!</span>
+<span class="w">    </span><span class="c1">// code of trait implementation here</span>
+<span class="p">}</span>
 
-impl From&lt;Foo&gt; for i32 { // or you use a type from your crate as
-                         // a type parameter
-    fn from(i: Foo) -&gt; i32 {
-        0
-    }
-}
-</code></pre>
-<h1 id="define-a-trait-locally-and-implement-that-instead">Define a trait locally and implement that instead</h1>
+<span class="k">impl</span><span class="w"> </span><span class="nb">From</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// or you use a type from your crate as</span>
+<span class="w">                         </span><span class="c1">// a type parameter</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">from</span><span class="p">(</span><span class="n">i</span>: <span class="nc">Foo</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span>
+<span class="w">        </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="define-a-trait-locally-and-implement-that-instead">Define a trait locally and implement that instead<a class="headerlink" href="#define-a-trait-locally-and-implement-that-instead" title="Permanent link">&para;</a></h1>
 <p>타입을 로컬로 만드는 것이 아닌, 트레잇을 로컬로 만드는 전략이다.</p>
-<pre><code class="language-rust">trait Bar {
-    fn get(&amp;self) -&gt; usize;
-}
+<div class="highlight"><pre><span></span><code><span class="k">trait</span><span class="w"> </span><span class="n">Bar</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span><span class="p">;</span>
+<span class="p">}</span>
 
-impl Bar for u32 {
-    fn get(&amp;self) -&gt; usize { 0 }
-}
-</code></pre>
+<span class="k">impl</span><span class="w"> </span><span class="n">Bar</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="kt">u32</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -352,5 +363,5 @@ impl Bar for u32 {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -261,7 +272,7 @@
 
 
 <p>{% raw %}</p>
-<h1 id="class">Class</h1>
+<h1 id="class">Class<a class="headerlink" href="#class" title="Permanent link">&para;</a></h1>
 <p><a href="https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R#scrollTo=O7GLsOcjCaXC&amp;line=19&amp;uniqifier=1">구글콜랩 링크</a></p>
 <ul>
 <li>
@@ -298,233 +309,232 @@
 <p><code>self</code> 라는 키워드가 모든 메서드의 첫 파라미터에 들어간다.</p>
 </li>
 </ul>
-<h2 id="class-attribute-and-instance-attribute">Class attribute and Instance attribute</h2>
+<h2 id="class-attribute-and-instance-attribute">Class attribute and Instance attribute<a class="headerlink" href="#class-attribute-and-instance-attribute" title="Permanent link">&para;</a></h2>
 <p>CPP의 static attribute???</p>
 <p>클래스 변수는 클래스 바로 하위에 있는 변수이다. 클래스 변수는 모든 인스턴스가 공유할 수 있다. 따라서 <code>{{class-name}}.{{class-attr}}</code> 식으로 접근이 가능하다. 물론 <code>self.{{class-attr}}</code>도 가능함. </p>
 <p>문제는.... class attr를 instance attr와 혼동이 생길 우려가 있다는 것이다. 다음 예를 들어보자.<br />
 우리는 별 생각 없이 <code>Car.maxSpeed</code>를 변경한 걸로 알겠지만, 사실 엄밀히 따지고 보면 <code>change_speed</code> 메서드 안에서 새로운 instance attr인 <code>speed</code>를 만들어 저장한 것이 된다. 이것이 문제가 되는 이유는, <code>Car.maxSpeed</code>는 300으로 그대로인데, 프로그래밍 할 시점엔 실수하기 매우 쉽다는 것이다. 따라서, class attr를 참조할 땐 반드시 <code>self</code>가 아니라 클래스명을 사용하도록 권장한다.</p>
-<pre><code class="language-python">class Car:
-    maxSpeed = 300
-    maxPeople = 5
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="n">maxSpeed</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">maxPeople</span> <span class="o">=</span> <span class="mi">5</span>
 
-    def add_kinds(self, name):
-        self.kinds.append(name)
+    <span class="k">def</span> <span class="nf">add_kinds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kinds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-    def change_speed(self, speed):
-        self.speed = speed # 💥💥💥💥💥💥💥💥💥💥💥💥
+    <span class="k">def</span> <span class="nf">change_speed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span> <span class="c1"># 💥💥💥💥💥💥💥💥💥💥💥💥</span>
 
-k5 = Car()
-k3 = Car()
+<span class="n">k5</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
+<span class="n">k3</span> <span class="o">=</span> <span class="n">Car</span><span class="p">()</span>
 
-k5.add_kinds('k5')
-k3.add_kinds('k3')
-k5.change_speed(500)
-k3.change_speed(250)
-</code></pre>
+<span class="n">k5</span><span class="o">.</span><span class="n">add_kinds</span><span class="p">(</span><span class="s1">&#39;k5&#39;</span><span class="p">)</span>
+<span class="n">k3</span><span class="o">.</span><span class="n">add_kinds</span><span class="p">(</span><span class="s1">&#39;k3&#39;</span><span class="p">)</span>
+<span class="n">k5</span><span class="o">.</span><span class="n">change_speed</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">k3</span><span class="o">.</span><span class="n">change_speed</span><span class="p">(</span><span class="mi">250</span><span class="p">)</span>
+</code></pre></div>
 <p>class attr를 instance attr와 혼동하지 않고 사용하는 아래의 코드이다. <code>User</code> 인스턴스가 추가될 때마다 <code>User.count</code>가 증가하여 각자 고유한 <code>id</code> instance attr를 가지는 것을 볼 수 있다.</p>
-<pre><code class="language-python">class User:
-    count = 0
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 
-    def __init__(self):
-        self.id = User.count
-        User.count += 1
-</code></pre>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">count</span>
+        <span class="n">User</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
 <p>몹과 유저를 만들어 서로 공격하게 만들어보자. </p>
-<pre><code class="language-python">class User(object):
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    def __init__(self, 이름, 공격력, 체력, 마력, 크기_넓이, 크기_높이, x, y):
-        self.name = 이름
-        self.power = 공격력
-        self.hp = 체력
-        self.mp = 마력
-        self.width = 크기_넓이
-        self.height = 크기_높이
-        self.x = x
-        self.y = y
-        self.alive = True
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">이름</span><span class="p">,</span> <span class="n">공격력</span><span class="p">,</span> <span class="n">체력</span><span class="p">,</span> <span class="n">마력</span><span class="p">,</span> <span class="n">크기_넓이</span><span class="p">,</span> <span class="n">크기_높이</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">이름</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="n">공격력</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">체력</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mp</span> <span class="o">=</span> <span class="n">마력</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">크기_넓이</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">크기_높이</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alive</span> <span class="o">=</span> <span class="kc">True</span>
 
-    def take_damage(self, other):
-        if self.hp &lt; 0:
-            print(f'DEBUG ---&gt; {self.name} has already died.')
-            pass
-        self.hp -= other.power
-        print(f'DEBUG ---&gt; {other.name} attacks {self.name}. {self.name}.hp is now {self.hp}')
-        if self.hp &lt; 0:
-            self.alive = False
-            print(f'DEBUG ---&gt; {self.name} died by {other.name}')
+    <span class="k">def</span> <span class="nf">take_damage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DEBUG ---&gt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has already died.&#39;</span><span class="p">)</span>
+            <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">-=</span> <span class="n">other</span><span class="o">.</span><span class="n">power</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DEBUG ---&gt; </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> attacks </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">.hp is now </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alive</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DEBUG ---&gt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> died by </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-    def attack(self, other):
-        other.take_damage(self)
-
-
-
-class Mob(object):
-    def __init__(self, 이름, 공격력, 체력, 마력, 크기_넓이, 크기_높이, 아이템확률, x, y):
-        self.name = 이름
-        self.power = 공격력
-        self.hp = 체력
-        self.mp = 마력
-        self.width = 크기_넓이
-        self.height = 크기_높이
-        self.dropRate = 아이템확률
-        self.x = x
-        self.y = y
+    <span class="k">def</span> <span class="nf">attack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="n">other</span><span class="o">.</span><span class="n">take_damage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 
-    def __repr__(self):
-        return f&quot;&quot;&quot;{{
-    name: {self.name}        
-    power: {self.power}
-    hp: {self.hp}
-    mp: {self.mp}
-    width: {self.width}
-    height: {self.height}
-    dropRate: {self.dropRate}
-    x: {self.x}
-    y: {self.y}
-}}
-&quot;&quot;&quot;
+
+<span class="k">class</span> <span class="nc">Mob</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">이름</span><span class="p">,</span> <span class="n">공격력</span><span class="p">,</span> <span class="n">체력</span><span class="p">,</span> <span class="n">마력</span><span class="p">,</span> <span class="n">크기_넓이</span><span class="p">,</span> <span class="n">크기_높이</span><span class="p">,</span> <span class="n">아이템확률</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">이름</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="n">공격력</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">체력</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mp</span> <span class="o">=</span> <span class="n">마력</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">크기_넓이</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">크기_높이</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dropRate</span> <span class="o">=</span> <span class="n">아이템확률</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 
 
-    def attack(self, user):
-        user.take_damage(self)
-
-    def take_damage(self, other):
-        if self.hp &lt; 0:
-            print(f'DEBUG ---&gt; {self.name} has already died.')
-            pass
-        self.hp -= other.power
-        print(f'DEBUG ---&gt; {other.name} attacks {self.name}. {self.name}.hp is now {self.hp}')
-        if self.hp &lt; 0:
-            self.alive = False
-            print(f'DEBUG ---&gt; {self.name} died by {other.name}')
-
-
-class Slime(Mob):
-    &quot;&quot;&quot;
-    아직은 상속에 대하여 배우지 않았지만, 써보는 건 공짜잖아?
-    &quot;&quot;&quot;
-
-    def __add__(self, other):
-        if isinstance(other, Slime):
-            return Slime(f'왕{self.name + other.name}', self.power + other.power, 
-                         self.hp + other.hp, 
-                         self.mp, 
-                         self.width + other.width,
-                         self.height + other.height,
-                         self.dropRate,
-                         self.x,
-                         self.y)
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="se">{{</span>
+<span class="s2">    name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">        </span>
+<span class="s2">    power: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="si">}</span>
+<span class="s2">    hp: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hp</span><span class="si">}</span>
+<span class="s2">    mp: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mp</span><span class="si">}</span>
+<span class="s2">    width: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="si">}</span>
+<span class="s2">    height: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="si">}</span>
+<span class="s2">    dropRate: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dropRate</span><span class="si">}</span>
+<span class="s2">    x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span>
+<span class="s2">    y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span>
+<span class="se">}}</span>
+<span class="s2">&quot;&quot;&quot;</span>
 
 
-슬라임 = Slime('슬라임', 1, 10, 10, 2, 2, 100, 0, 0)
-오크 = Mob('오크', 10, 10, 10, 2, 2, 80, 0, 0)
-고블린 = Mob('고블린', 100, 10, 10, 2, 2, 60, 0, 0)
-드래곤 = Mob('드래곤', 1000, 10, 10, 2, 2, 40, 0, 0)
-해골 = Mob('해골', 10000, 10, 10, 2, 2, 1, 0, 0)
+    <span class="k">def</span> <span class="nf">attack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+        <span class="n">user</span><span class="o">.</span><span class="n">take_damage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-licat = User('licat', 9, 30, 15, 10, 10, 0, 0)
-mura = User('mura', 10, 35, 0, 10, 10, 0, 0)
+    <span class="k">def</span> <span class="nf">take_damage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DEBUG ---&gt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> has already died.&#39;</span><span class="p">)</span>
+            <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">-=</span> <span class="n">other</span><span class="o">.</span><span class="n">power</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DEBUG ---&gt; </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> attacks </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">.hp is now </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alive</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DEBUG ---&gt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> died by </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-슬라임.attack(licat)
-해골.attack(mura)
 
-licat.attack(슬라임)
+<span class="k">class</span> <span class="nc">Slime</span><span class="p">(</span><span class="n">Mob</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    아직은 상속에 대하여 배우지 않았지만, 써보는 건 공짜잖아?</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Slime</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Slime</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;왕</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">power</span><span class="p">,</span> 
+                         <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">hp</span><span class="p">,</span> 
+                         <span class="bp">self</span><span class="o">.</span><span class="n">mp</span><span class="p">,</span> 
+                         <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                         <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+                         <span class="bp">self</span><span class="o">.</span><span class="n">dropRate</span><span class="p">,</span>
+                         <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                         <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 
 
-슬라임2 = Slime('슬라임', 1, 10, 10, 2,2,100, 0,0)
-왕슬라임 = 슬라임 + 슬라임2
+<span class="n">슬라임</span> <span class="o">=</span> <span class="n">Slime</span><span class="p">(</span><span class="s1">&#39;슬라임&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">오크</span> <span class="o">=</span> <span class="n">Mob</span><span class="p">(</span><span class="s1">&#39;오크&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">고블린</span> <span class="o">=</span> <span class="n">Mob</span><span class="p">(</span><span class="s1">&#39;고블린&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">드래곤</span> <span class="o">=</span> <span class="n">Mob</span><span class="p">(</span><span class="s1">&#39;드래곤&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">해골</span> <span class="o">=</span> <span class="n">Mob</span><span class="p">(</span><span class="s1">&#39;해골&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-print(왕슬라임)
-</code></pre>
+<span class="n">licat</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">&#39;licat&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mura</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">&#39;mura&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">슬라임</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">licat</span><span class="p">)</span>
+<span class="n">해골</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">mura</span><span class="p">)</span>
+
+<span class="n">licat</span><span class="o">.</span><span class="n">attack</span><span class="p">(</span><span class="n">슬라임</span><span class="p">)</span>
+
+
+<span class="n">슬라임2</span> <span class="o">=</span> <span class="n">Slime</span><span class="p">(</span><span class="s1">&#39;슬라임&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">왕슬라임</span> <span class="o">=</span> <span class="n">슬라임</span> <span class="o">+</span> <span class="n">슬라임2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">왕슬라임</span><span class="p">)</span>
+</code></pre></div>
 <p>아래 예제는 클래스를 활용하여 간편하게 html 문서를 만드는 저시기를 설명한다.</p>
-<pre><code class="language-python"># 쉽고 중요한 예제!
+<div class="highlight"><pre><span></span><code><span class="c1"># 쉽고 중요한 예제!</span>
 
-class BlogFactory(object):
-    dataset = []
+<span class="k">class</span> <span class="nc">BlogFactory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="p">[]</span>
 
-    def __init__(self, 제목, 내용, 조회수, 글쓴이, 생성날짜):
-        self.title = 제목
-        self.content = 내용
-        self.count = 조회수
-        self.writer = 글쓴이
-        self.create_date = 생성날짜
-        BlogFactory.dataset.append(self)
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">제목</span><span class="p">,</span> <span class="n">내용</span><span class="p">,</span> <span class="n">조회수</span><span class="p">,</span> <span class="n">글쓴이</span><span class="p">,</span> <span class="n">생성날짜</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">제목</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">내용</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="n">조회수</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">글쓴이</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_date</span> <span class="o">=</span> <span class="n">생성날짜</span>
+        <span class="n">BlogFactory</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-게시글1 = BlogFactory(
-    '오늘 제주의 날씨',
-    '오늘 제주의 날씨는 참 좋네요! 블라블라',
-    '0',
-    '이호준',
-    '2023/05/10',
-    )
+<span class="n">게시글1</span> <span class="o">=</span> <span class="n">BlogFactory</span><span class="p">(</span>
+    <span class="s1">&#39;오늘 제주의 날씨&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;오늘 제주의 날씨는 참 좋네요! 블라블라&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;이호준&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2023/05/10&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
 
-게시글2 = BlogFactory(
-        '오늘 부산의 날씨',
-        '오늘 부산의 날씨는 참 좋네요! 블라블라',
-        '1000000',
-        '김재현',
-        '2023/05/10',
-    )
+<span class="n">게시글2</span> <span class="o">=</span> <span class="n">BlogFactory</span><span class="p">(</span>
+        <span class="s1">&#39;오늘 부산의 날씨&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;오늘 부산의 날씨는 참 좋네요! 블라블라&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;1000000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;김재현&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;2023/05/10&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
 
-게시글3 = BlogFactory(
-        '오늘 강원의 날씨',
-        '오늘 강원의 날씨는 참 좋네요! 블라블라',
-        '10000',
-        '범남궁',
-        '2023/05/10',
-    )
+<span class="n">게시글3</span> <span class="o">=</span> <span class="n">BlogFactory</span><span class="p">(</span>
+        <span class="s1">&#39;오늘 강원의 날씨&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;오늘 강원의 날씨는 참 좋네요! 블라블라&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;10000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;범남궁&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;2023/05/10&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
 
 
-for i in BlogFactory.dataset:
-    print(f'&lt;h2&gt;{i.title}&lt;/h2&gt;')
-    print(f'\t&lt;p&gt;{i.content}&lt;/p&gt;')
-    print(f'\t&lt;p&gt;{i.writer}&lt;/p&gt;')
-    print(f'\t&lt;p&gt;{i.count}&lt;/p&gt;')
-    print(f'\t&lt;p&gt;{i.create_date}&lt;/p&gt;')
-
-</code></pre>
-<h2 id="magic-methods">Magic methods</h2>
-<p>[[magic methods (python)]]</p>
-<h2 id="userinfo-bookinfo">UserInfo, BookInfo 실습</h2>
-<p>[[repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)]]</p>
-<h2 id="inheritance">Inheritance</h2>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">BlogFactory</span><span class="o">.</span><span class="n">dataset</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;h2&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/h2&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;p&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;p&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">writer</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;p&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;p&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">create_date</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="magic-methods">Magic methods<a class="headerlink" href="#magic-methods" title="Permanent link">&para;</a></h2>
+<p><a href="../magic%20methods%20%28python%29/">magic methods (python)</a></p>
+<h2 id="userinfo-bookinfo">UserInfo, BookInfo 실습<a class="headerlink" href="#userinfo-bookinfo" title="Permanent link">&para;</a></h2>
+<p><a href="../repr%2C%20dir%2C%20vars%2C%20pprint.pformat%20%2B%20UserInfo%20and%20BookInfo%20%EC%8B%A4%EC%8A%B5%20%28python%29/">repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)</a></p>
+<h2 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h2>
 <p>python의 상속체계는 여타 언어들의 상속과 비슷해 보인다.</p>
-<pre><code class="language-python">class Car(object):
-    maxSpeed = 300
-    maxPeople = 5
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">maxSpeed</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">maxPeople</span> <span class="o">=</span> <span class="mi">5</span>
 
-    def __init__(self):
-        self.option = ['aircon', 'fly', 'wheel', 'nuc']
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">option</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;aircon&#39;</span><span class="p">,</span> <span class="s1">&#39;fly&#39;</span><span class="p">,</span> <span class="s1">&#39;wheel&#39;</span><span class="p">,</span> <span class="s1">&#39;nuc&#39;</span><span class="p">]</span>
 
-    def move(self, x):
-        print(x, '의 스피드로 달리고 있습니다.')
-    def stop(self):
-        print('멈췄습니다.')
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;의 스피드로 달리고 있습니다.&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;멈췄습니다.&#39;</span><span class="p">)</span>
 
-class HybridCar(Car):
-    battery = 1000
-    batteryKM = 300
+<span class="k">class</span> <span class="nc">HybridCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+    <span class="n">battery</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">batteryKM</span> <span class="o">=</span> <span class="mi">300</span>
 
-class ElectricCar(HybridCar):
-    battery = 2000
-    batteryKM = 600
+<span class="k">class</span> <span class="nc">ElectricCar</span><span class="p">(</span><span class="n">HybridCar</span><span class="p">):</span>
+    <span class="n">battery</span> <span class="o">=</span> <span class="mi">2000</span>
+    <span class="n">batteryKM</span> <span class="o">=</span> <span class="mi">600</span>
 
-# print(set(dir(Car)) - set(dir(object)))
+<span class="c1"># print(set(dir(Car)) - set(dir(object)))</span>
 
-assert id(Car.maxSpeed) == id(HybridCar.maxSpeed)  # ok
-assert id(Car.move) == id(HybridCar.move)  # ok
-</code></pre>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">Car</span><span class="o">.</span><span class="n">maxSpeed</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">HybridCar</span><span class="o">.</span><span class="n">maxSpeed</span><span class="p">)</span>  <span class="c1"># ok</span>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">Car</span><span class="o">.</span><span class="n">move</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">HybridCar</span><span class="o">.</span><span class="n">move</span><span class="p">)</span>  <span class="c1"># ok</span>
+</code></pre></div>
 <ul>
 <li>[x] class attr는 같은 id를 같는다는 건 확인. 그렇다면 instance attr는?<ul>
 <li>직접 실험해 보았다. 결론부터 말하자면 서로 다른 id를 갖는다. 이유로 말할 것 같으면.......... <code>Car.__init__</code>을 상속받는 건 똑같은데, 메서드 내부 블럭은 각자 실행하기 때문인 것으로 보인다.</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">bongbong = HybridCar()
-cybertruck = ElectricCar()
-assert id(bongbong.option) != id(cybertruck.option)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">bongbong</span> <span class="o">=</span> <span class="n">HybridCar</span><span class="p">()</span>
+<span class="n">cybertruck</span> <span class="o">=</span> <span class="n">ElectricCar</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">bongbong</span><span class="o">.</span><span class="n">option</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">cybertruck</span><span class="o">.</span><span class="n">option</span><span class="p">)</span>
+</code></pre></div>
 <p>{% endraw %}</p>
 
 
@@ -574,5 +584,5 @@ assert id(bongbong.option) != id(cybertruck.option)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

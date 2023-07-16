@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,22 +238,22 @@
 <ul>
 <li>https://dev.to/turbaszek/flat-map-in-python-3g98</li>
 </ul>
-<h1 id="tldr">TL;DR</h1>
+<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h1>
 <p>double list comprehension with 10_000 * 10 class objects =&gt; 4.5945 ms</p>
-<pre><code class="language-python">flat_map = lambda f, xs: [y for ys in xs for y in f(ys)]
+<div class="highlight"><pre><span></span><code><span class="n">flat_map</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">xs</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">ys</span> <span class="ow">in</span> <span class="n">xs</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">ys</span><span class="p">)]</span>
 
-ls = [[1, 2, 3], [4, 5, 6]]
-flat_map(lambda ys: ys, ls)
+<span class="n">ls</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ys</span><span class="p">:</span> <span class="n">ys</span><span class="p">,</span> <span class="n">ls</span><span class="p">)</span>
 
-ls = ['a,b,c', 'd,e,f', 'g,h,i', 'j,k,l']
-flat_map(lambda ys: ys.split(','), ls)
-</code></pre>
+<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a,b,c&#39;</span><span class="p">,</span> <span class="s1">&#39;d,e,f&#39;</span><span class="p">,</span> <span class="s1">&#39;g,h,i&#39;</span><span class="p">,</span> <span class="s1">&#39;j,k,l&#39;</span><span class="p">]</span>
+<span class="n">flat_map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">ys</span><span class="p">:</span> <span class="n">ys</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">),</span> <span class="n">ls</span><span class="p">)</span>
+</code></pre></div>
 <p><code>for</code> and <code>extend</code> with 10_000 * 10 class objects =&gt; 2.7347ms</p>
-<pre><code class="language-python">def flat_map(f, xs):
-    ys = []
-    return yskofor x in xs:
-    ys.extend(f(x))
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">flat_map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xs</span><span class="p">):</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="n">yskofor</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
+    <span class="n">ys</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div>
 
 
 
@@ -291,5 +302,5 @@ flat_map(lambda ys: ys.split(','), ls)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

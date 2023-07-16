@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,9 +236,9 @@
 
 
 <p>https://www.digitalocean.com/community/tutorials/jekyll-escaping-liquid-tags</p>
-<p>가끔 liquid 문법을 옵시디언에 적어야 할 때가 있다. 이 문법은 꽤나 공통적이기 때문에 [[django reverse]]와 같이 대놓고 그 문법을 작성한 경우 jekyll build 시에 문법오류로 뻗게된다.</p>
+<p>가끔 liquid 문법을 옵시디언에 적어야 할 때가 있다. 이 문법은 꽤나 공통적이기 때문에 <a href="../django%20reverse/">django reverse</a>와 같이 대놓고 그 문법을 작성한 경우 jekyll build 시에 문법오류로 뻗게된다.</p>
 <p>이 문제를 방지하고자 문법무시 기능이 있는데 그것이 바로 <code>{% raw %}</code>, <code>{% endraw %}</code> 쌍이다.</p>
-<h1 id="_1">그런데,</h1>
+<h1 id="_1">그런데,<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>그러면 매번 파일에 저 쌍을 파일에 추가하여야 한다는 것이 매우 성가시다. 따라서 기본적으로 <code>_notes</code> 폴더 안에 있는 파일들은 liquid 문법을 적용하지 않도록 설정을 바꿀 필요가 있었다. </p>
 <ul>
 <li>https://talk.jekyllrb.com/t/any-way-to-exclude-files-directories-from-liquid-processing/6282</li>
@@ -285,5 +296,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

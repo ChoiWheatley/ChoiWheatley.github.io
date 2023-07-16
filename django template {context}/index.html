@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,27 +233,27 @@
 <ul>
 <li><a href="https://stackoverflow.com/questions/20957388/what-is-a-context-in-django#:~:text=A%20context%20is%20a%20variable%20name%20-%3E%20variable,specify%20the%20variables%20in%20each%20render%20%28%29%20call.">What is a context in django {SOF}</a></li>
 <li>https://docs.djangoproject.com/en/4.2/ref/templates/api/#django.template.Context</li>
-<li>Context를 사용하면 장고 템플릿 파일에서 변수를 정의할 수 있다. 다만, <code>render</code>에게 해당 컨텍스트를 인수로 전달하여야 한다. | [[django render]]<ul>
-<li>꼭 <code>render</code>에게 전달할 필요는 없고, <code>View</code>클래스가 <code>get_context_data</code>라는 메서드를 구현하여 내가 추가하고 싶은 변수를 dict 안에 추가하면 된다. | [[get_context_data, get_queryset { django } { ListView }]]</li>
+<li>Context를 사용하면 장고 템플릿 파일에서 변수를 정의할 수 있다. 다만, <code>render</code>에게 해당 컨텍스트를 인수로 전달하여야 한다. | <a href="../django%20render/">django render</a><ul>
+<li>꼭 <code>render</code>에게 전달할 필요는 없고, <code>View</code>클래스가 <code>get_context_data</code>라는 메서드를 구현하여 내가 추가하고 싶은 변수를 dict 안에 추가하면 된다. | <a href="../get_context_data%2C%20get_queryset%20%7B%20django%20%7D%20%7B%20ListView%20%7D/">get_context_data, get_queryset { django } { ListView }</a></li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">lass DetailArticleView(DetailView):
-    model = Article
-    template_name = &quot;blog/detail_article.html&quot;
+<div class="highlight"><pre><span></span><code><span class="n">lass</span> <span class="n">DetailArticleView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Article</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;blog/detail_article.html&quot;</span>
 
-    def get_context_data(self, **kwargs: Any) -&gt; Dict[str, Any]:
-        &quot;&quot;&quot;let's override this method to add more template context 'liked_by_user'&quot;&quot;&quot;
-        context = super(DetailArticleView, self).get_context_data(**kwargs)
-        article = Article.objects.get(id=self.kwargs.get(&quot;pk&quot;))
+    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;let&#39;s override this method to add more template context &#39;liked_by_user&#39;&quot;&quot;&quot;</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">DetailArticleView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pk&quot;</span><span class="p">))</span>
 
-        context[&quot;liked_by_user&quot;] = False
+        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;liked_by_user&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 
-        if article.likes.filter(pk=self.request.user.id).exists():
-            context[&quot;liked_by_user&quot;] = True
+        <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">likes</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="n">context</span><span class="p">[</span><span class="s2">&quot;liked_by_user&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
-        return context
-</code></pre>
+        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div>
 <ul>
 <li><code>self.object</code>의 정체는 무엇인가? | <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-single-object/">SingleObjectMixin {doc}</a> 에서 가지고 있는 필드인데, 템플릿에서도 쓰이는 걸 보면 어딘가 중요한 놈인 것 같다. | 참고로 <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-multiple-object/">MultipleObjectMixin {doc}</a>에서는 <code>self.object_list</code>가 쓰인다.</li>
 <li><code>self.object(_list)</code>와 <code>self.get_context_data()</code>와의 차이점을 잘 모르겠다...</li>
@@ -295,5 +306,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

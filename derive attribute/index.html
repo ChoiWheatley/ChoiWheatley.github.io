@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,8 +238,8 @@
 <li><code>Debug</code> 트레잇을 구현하기</li>
 </ol>
 <p>1번의 경우, <code>println!("{}")</code> 안의 {} 안에 해당 인스턴스가 들어갈시, 내가 원하는 결과물을 출력하도록 만들어주고, 2번의 경우 오로지 디버그 옵션으로 빌드하였을 때에만 <code>println!("{:?}")</code> 안의 <code>{:?}</code> 안에 해당 인스턴스가 들어갈시, member들을 자동으로 읽어 출력해주는 기능을 제공한다.</p>
-<pre><code>add `#[derive(Debug)]` to `Rectangle` or manually `impl Debug for Rectangle`
-</code></pre>
+<div class="highlight"><pre><span></span><code>add `#[derive(Debug)]` to `Rectangle` or manually `impl Debug for Rectangle`
+</code></pre></div>
 <p>2번을 활용하고 싶으면 위의 메시지를 참고하여 간단하게 <code>Debug</code> 특성을 상속받으면 된다. Voila!</p>
 
 
@@ -278,5 +289,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

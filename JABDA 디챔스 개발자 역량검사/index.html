@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -244,7 +255,7 @@
 <li>디챔스 응시 페이지에서 응시</li>
 <li><a href="https://www.jobda.im/phs/test">개발자 역량검사화 개발 구현 능력 검사 연습링크</a></li>
 </ul>
-<h1 id="_1">역량검사</h1>
+<h1 id="_1">역량검사<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>9개의 과제</li>
 <li>42분동안 진행</li>
@@ -252,8 +263,8 @@
 <li>원하는 과제부터 응시할 수 있음. </li>
 <li>맥북으로 해야겠는데</li>
 </ul>
-<h1 id="_2">개발구현능력 검사</h1>
-<h2 id="-">- 오직 크롬만</h2>
+<h1 id="_2">개발구현능력 검사<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h2 id="-">- 오직 크롬만<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
 
 
 
@@ -302,5 +313,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

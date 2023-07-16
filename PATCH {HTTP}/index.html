@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,25 +237,25 @@
 
 <ul>
 <li><a href="https://medium.com/@isuru89/a-better-way-to-implement-http-patch-operation-in-rest-apis-721396ac82bf#68ac">blog content</a></li>
-<li>[[PUT is idempotent, PATCH isn't]]</li>
+<li><a href="../PUT%20is%20idempotent%2C%20PATCH%20isn%27t/">PUT is idempotent, PATCH isn't</a></li>
 <li>HTTP PATCH 메서드와 함께 사용되는 JSON 규칙이다. PATCH 메서드는 리소스의 일부 필드를 변경하는 용도로 사용한다. </li>
 <li>RESTful한 PATCH operation들을 공식으로 지원한다. <code>add, remove, replace, move, copy, test</code>가 있다. | <a href="https://datatracker.ietf.org/doc/html/rfc6902">RFC 6901 {proposal}</a></li>
 </ul>
 <blockquote>
 <p>Note that, the header<code>Content-Type</code> should be set to <code>application/json-patch+json</code> media type to indicate that it accepts a set of patch operations, <em>but it’s not mandatory</em>. You can have it as <code>application/json</code> and still, it will work.</p>
 </blockquote>
-<pre><code class="language-http">PATCH /users
+<div class="highlight"><pre><span></span><code><span class="err">PATCH /users</span>
 
-[  
-    { &quot;op&quot;: &quot;test&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: &quot;foo&quot; },  
-    { &quot;op&quot;: &quot;remove&quot;, &quot;path&quot;: &quot;/a/b/c&quot; },  
-    { &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: [ &quot;foo&quot;, &quot;bar&quot; ] },  
-    { &quot;op&quot;: &quot;replace&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: 42 },  
-    { &quot;op&quot;: &quot;move&quot;, &quot;from&quot;: &quot;/a/b/c&quot;, &quot;path&quot;: &quot;/a/b/d&quot; },  
-    { &quot;op&quot;: &quot;copy&quot;, &quot;from&quot;: &quot;/a/b/d&quot;, &quot;path&quot;: &quot;/a/b/e&quot; }  
-]
-</code></pre>
-<h1 id="rfc-6901">RFC 6901</h1>
+<span class="err">[  </span>
+<span class="err">    { &quot;op&quot;: &quot;test&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: &quot;foo&quot; },  </span>
+<span class="err">    { &quot;op&quot;: &quot;remove&quot;, &quot;path&quot;: &quot;/a/b/c&quot; },  </span>
+<span class="err">    { &quot;op&quot;: &quot;add&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: [ &quot;foo&quot;, &quot;bar&quot; ] },  </span>
+<span class="err">    { &quot;op&quot;: &quot;replace&quot;, &quot;path&quot;: &quot;/a/b/c&quot;, &quot;value&quot;: 42 },  </span>
+<span class="err">    { &quot;op&quot;: &quot;move&quot;, &quot;from&quot;: &quot;/a/b/c&quot;, &quot;path&quot;: &quot;/a/b/d&quot; },  </span>
+<span class="err">    { &quot;op&quot;: &quot;copy&quot;, &quot;from&quot;: &quot;/a/b/d&quot;, &quot;path&quot;: &quot;/a/b/e&quot; }  </span>
+<span class="err">]</span>
+</code></pre></div>
+<h1 id="rfc-6901">RFC 6901<a class="headerlink" href="#rfc-6901" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>https://jsonpatch.com</p>
@@ -255,13 +266,13 @@
 <li><code>/</code> 문자로 구분되어진 문자열로, 객체의 속성에 접근하는 <code>.</code> 연산과 완전히 일치한다.</li>
 <li>예를 들어 다음과 같은 구조가 있다고 가정하자</li>
 </ul>
-<p><code>json
-{
-    "biscuits": [
-        {"name": "Digestive"},
-        {"name": "Choco"},
-    ]
-}</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;biscuits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Digestive&quot;</span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Choco&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>그러면 "Digestive"는 <code>/biscuits/0/name</code>으로 접근이 가능하고 "Choco"는 <code>/biscuits/1/name</code>으로 접근이 가능하여야 한다.
     - <code>add</code>
 - 리소스가 배열이나 리스트인 경우, 추가 <code>value</code>를 삽입하는 연산이다.
@@ -296,7 +307,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="issue">issue에 대한 응답</h1>
+<h1 id="issue">issue에 대한 응답<a class="headerlink" href="#issue" title="Permanent link">&para;</a></h1>
 <p>아래는 PATCH 요청에 대하여 <code>jsonpatch</code> 모듈로 파싱, 유저 프로파일을 수정하는 코드 스니펫이 들어있는 이슈 대화 목록이다.</p>
 <p><a href="https://github.com/ESTsoft-Book-Project/bookstore/issues/20">bookstores/issues/20</a></p>
 <p>정리하자면,</p>
@@ -354,5 +365,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

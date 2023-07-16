@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,7 +237,7 @@
 
 <p>가식에 대해서 어떻게 생각하시는지? 가짜 공감, 가짜 위로에 식상함을 느끼고 있는데 과연 사람들과의 관계를 유지하기 위해서 억지로라도 공감해야 하는걸까? 케이스 바이 케이스라면 가식이 필요한 사람이랑 가식이 필요없는 사람이 나뉘기라도 하는건가? </p>
 <p>요즘 내 자신이 자꾸 가식적이 되가는 것 같아 두려워. 그렇다고 뇌에 필터링 없이 자기 생각을 쏟아내기만 하는 사람이 되고 싶지도 않고. </p>
-<h1 id="_1">소재가떨어졌을때를대비하기위한질문목록</h1>
+<h1 id="_1">소재가떨어졌을때를대비하기위한질문목록<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 
 
 
@@ -275,5 +286,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

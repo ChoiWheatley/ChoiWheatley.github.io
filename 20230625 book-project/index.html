@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,8 +231,8 @@
   <h1>20230625 book-project</h1>
 
 <ul>
-<li>[[reverse를 사용해야 하는 이유 {django}]]</li>
-<li>[[PUT이 필요한 부분 book-project {refactoring}]]</li>
+<li><a href="../reverse%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%20%7Bdjango%7D/">reverse를 사용해야 하는 이유 {django}</a></li>
+<li><a href="../PUT%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EB%B6%80%EB%B6%84%20book-project%20%7Brefactoring%7D/">PUT이 필요한 부분 book-project {refactoring}</a></li>
 <li>이름을 좀 더 semantic하게...<ul>
 <li><code>cart_list</code> =&gt; render<ul>
 <li><code>carts/view</code></li>
@@ -293,5 +304,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -302,7 +313,7 @@
                   
 
 
-<h1 id="scrum">scrum</h1>
+<h1 id="scrum">scrum<a class="headerlink" href="#scrum" title="Permanent link">&para;</a></h1>
 <p>scrum roles (이해관계자) 기반 팀 구성 시에는 Pig와 Chicken 두 타입으로 나뉠 수 있다. 이게 무슨 소리냐? Ham-N-Egg 라는 유명한(?) 밈이 있는데, 돼지타입은 자기 살을 도려내어야 하고, 닭은 알만 낳는거잖아. 닭은 상대적으로 쉽게 말할 수 있지. 
 - Ham-N-Egg
     - Chicken = involved (단지 관련)
@@ -310,7 +321,7 @@
 - Wings-N-Ribs
     - Chicken == Pig == committed
 - </p>
-<h2 id="scrum-5-principles">scrum 5 principles</h2>
+<h2 id="scrum-5-principles">scrum 5 principles<a class="headerlink" href="#scrum-5-principles" title="Permanent link">&para;</a></h2>
 <ul>
 <li>용기<ul>
 <li>설득에 대한 필요성</li>
@@ -350,7 +361,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="1">1. 제품 백로그 만들기</h2>
+<h2 id="1">1. 제품 백로그 만들기<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>백로그</p>
@@ -367,7 +378,7 @@
 <li>타겟층을 "페르소나"라는 해당 타겟층을 대표화,구체화 하는 가상의 인물을 만든다.</li>
 <li>스토리 포인트 산정으로 예상소요시간을 구한다.</li>
 </ul>
-<h2 id="2">2. 스프린트 계획준비단계</h2>
+<h2 id="2">2. 스프린트 계획준비단계<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>제품 백 로그 하나 당 제품 책임자가 한 명씩 붙는다.<ul>
 <li>이 백로그는 어떤 것을 의미하는건지에 따라 팀이 얼마나 헌신해야 하는지, 언제까지 해야 하는지에 대한 범위, 추정치, 중요도를 협상하게 된다.</li>
@@ -386,7 +397,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="3">3. 스프린트 계획 수립하기 ⭐️</h2>
+<h2 id="3">3. 스프린트 계획 수립하기 ⭐️<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>산출물<ul>
 <li>스프린트 목표</li>
@@ -427,18 +438,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="4">4. 각 단계마다 스프린트 알리기</h2>
+<h2 id="4">4. 각 단계마다 스프린트 알리기<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>스프린트가 한 둘이 아니겠지, 사내 게시판에 이를 올려서 일정과 부서, 인력을 알려준다.</p>
-<h2 id="5">5. 스프린트 백로그 만들기</h2>
+<h2 id="5">5. 스프린트 백로그 만들기<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>제품 백로그 → 스프린트 백로그</p>
-<h2 id="6">6. 일일 스크럼 진행하기</h2>
+<h2 id="6">6. 일일 스크럼 진행하기<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>15분 스탠딩 전체 참여</li>
 <li>작업 현황판 업데이트하기</li>
 <li>지각자 다루기</li>
 <li>'오늘 할 일을 모르는 사람' 문제 다루기 → 코칭</li>
 </ul>
-<h2 id="7">7. 스프린트 데모 회의</h2>
+<h2 id="7">7. 스프린트 데모 회의<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <p>결과를 데모, 고객이 와서 본다. </p>
 <ul>
 <li>스프린트 검토 체크리스트<ul>
@@ -450,7 +461,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="8">8. 스프린트 회고</h2>
+<h2 id="8">8. 스프린트 회고<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://engineering-skcc.github.io/agile-quickguide/Agile-QuickGuide14-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8%ED%9A%8C%EA%B3%A0/">SK C&amp;C 예시</a><ul>
 <li>회고기법</li>
@@ -458,9 +469,9 @@
 </ul>
 </li>
 </ul>
-<h2 id="9-lab-day">9. Lab Day</h2>
+<h2 id="9-lab-day">9. Lab Day<a class="headerlink" href="#9-lab-day" title="Permanent link">&para;</a></h2>
 <p>커피챗, 휴식시간,</p>
-<h1 id="jira">JIRA 실습</h1>
+<h1 id="jira">JIRA 실습<a class="headerlink" href="#jira" title="Permanent link">&para;</a></h1>
 
 
 
@@ -509,5 +520,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

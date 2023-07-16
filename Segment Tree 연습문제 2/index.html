@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,9 +235,9 @@
                   
 
 
-<p>parent link: [[Segment Tree]]</p>
+<p>parent link: <a href="../Segment%20Tree/">Segment Tree</a></p>
 <hr />
-<h1 id="_1">문제</h1>
+<h1 id="_1">문제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>길이가 n인 수열 $a_0, a_1, \cdots, a_{n-1} (0 ≤ a_i ≤ 10^9)$ 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라</p>
 <p>-  <code>0 i x</code>    :    $a_i$ 를 x로 바꾼다. $(0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9)$</p>
 <p>-  <code>1 l r</code>    :    $a_i$ (l ≤ i &lt; r) 를 번갈아가며 더하고 뺀 값을 출력한다. (0 ≤ l &lt; r ≤ n)<br />
@@ -241,7 +252,7 @@
 <p><strong>[출력]</strong><br />
 각 테스트 케이스마다 1번 쿼리의 결과를 공백으로 구분하여 출력한다.</p>
 <p>입력</p>
-<pre><code class="language-text">2  
+<div class="highlight"><pre><span></span><code>2  
 5 5  
 1 2 3 4 5  
 1 0 5  
@@ -255,247 +266,244 @@
 0 0 5  
 0 2 5  
 1 0 3
-</code></pre>
+</code></pre></div>
 <p>출력</p>
-<pre><code class="language-text">#1 3 3 9 -3  
+<div class="highlight"><pre><span></span><code>#1 3 3 9 -3  
 #2 5 5
-</code></pre>
-<h1 id="sol1-fail">sol1 [Fail]</h1>
+</code></pre></div>
+<h1 id="sol1-fail">sol1 [Fail]<a class="headerlink" href="#sol1-fail" title="Permanent link">&para;</a></h1>
 <p>번갈아가며 더하고 뺀 결과를 트리에 넣고 쿼리가 들어오면 해당 구간에 있는 노드를 더하거나 빼서 리턴한다. 아래의 그림은 Seq = {1,2,3,4,5}일때의 세그먼트 트리이다.</p>
-<p><img alt="Pasted image 20230216150837.png" src="Pasted image 20230216150837.png" /></p>
-<pre><code class="language-cpp">
-/**add two child value*/
-constexpr static elem_t _do_add(celem_t &amp;left_child, celem_t &amp;right_child,
-                                cuint start, cuint end) {
-  cuint mid = (start + end) / 2;
-  if ((mid - start) % 2 == 0) {
-    // even
-    return left_child - right_child;
-  } else {
-    // odd
-    return left_child + right_child;
-  }
-}
+<p>![[Pasted image 20230216150837.png]]</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**add two child value*/</span>
+<span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">elem_t</span><span class="w"> </span><span class="nf">_do_add</span><span class="p">(</span><span class="n">celem_t</span><span class="w"> </span><span class="o">&amp;</span><span class="n">left_child</span><span class="p">,</span><span class="w"> </span><span class="n">celem_t</span><span class="w"> </span><span class="o">&amp;</span><span class="n">right_child</span><span class="p">,</span>
+<span class="w">                                </span><span class="n">cuint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">cuint</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// even</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">left_child</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">right_child</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// odd</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">left_child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">right_child</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-static Box&lt;celem_t&gt; _jagged_sum(Arr const &amp;tree, cuint left, cuint right, //
-                                uint node, uint start, uint end) {
-  if (right &lt; start || end &lt; left) { // invalid range
-    return Box&lt;celem_t&gt;::empty();
-  }
-  if (left &lt;= start &amp;&amp; end &lt;= right) { // perfect range
-    return Box&lt;celem_t&gt;(tree[node]);
-  }
-  // 두 노드에 걸쳐있는 경우
-  uint mid = (start + end) / 2;
-  auto left_child = _jagged_sum(tree, left, right, _left(node), start, mid);
-  auto right_child = _jagged_sum(tree, left, right, _right(node), mid + 1, end);
-  // merge
-  if (left_child.contains &amp;&amp; right_child.contains) {
+<span class="k">static</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">celem_t</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_jagged_sum</span><span class="p">(</span><span class="n">Arr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="c1">//</span>
+<span class="w">                                </span><span class="n">uint</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">left</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// invalid range</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">celem_t</span><span class="o">&gt;::</span><span class="n">empty</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// perfect range</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">celem_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// 두 노드에 걸쳐있는 경우</span>
+<span class="w">  </span><span class="n">uint</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">left_child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_jagged_sum</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">right_child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_jagged_sum</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// merge</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left_child</span><span class="p">.</span><span class="n">contains</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">right_child</span><span class="p">.</span><span class="n">contains</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    return Box&lt;celem_t&gt;(
-        _do_add(left_child.get(), right_child.get(), start, end));
-  } else if (!left_child.contains &amp;&amp; !right_child.contains) {
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">celem_t</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">        </span><span class="n">_do_add</span><span class="p">(</span><span class="n">left_child</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">right_child</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">));</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">left_child</span><span class="p">.</span><span class="n">contains</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">right_child</span><span class="p">.</span><span class="n">contains</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    return Box&lt;celem_t&gt;::empty();
-  } else {
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Box</span><span class="o">&lt;</span><span class="n">celem_t</span><span class="o">&gt;::</span><span class="n">empty</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
 
-    return left_child.contains ? left_child : right_child;
-  }
-}
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">left_child</span><span class="p">.</span><span class="n">contains</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">left_child</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">right_child</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-/**
-@breif: 재귀적으로 tree를 초기화.
-@param:
-  - data: 원본 배열
-  - n: 원본 배열의 크기
-  - node: tree의 노드의 인덱스
-  - start: tree의 범위 시작 - inclusive
-  - end: tree의 범위 끝 - inclusive
-*/
-static void _init(Arr const &amp;data, Arr &amp;tree, uint node, uint start, uint end) {
-  if (start == end) { // leaf node
-    tree[node] = data[start];
-    return;
-  }
-  // recursive
-  auto mid = (start + end) / 2;
-  _init(data, tree, _left(node), start, mid);
-  _init(data, tree, _right(node), mid + 1, end);
-  // set current node
-  tree[node] = _do_add(tree[_left(node)], tree[_right(node)], start, end);
-}
+<span class="cm">/**</span>
+<span class="cm">@breif: 재귀적으로 tree를 초기화.</span>
+<span class="cm">@param:</span>
+<span class="cm">  - data: 원본 배열</span>
+<span class="cm">  - n: 원본 배열의 크기</span>
+<span class="cm">  - node: tree의 노드의 인덱스</span>
+<span class="cm">  - start: tree의 범위 시작 - inclusive</span>
+<span class="cm">  - end: tree의 범위 끝 - inclusive</span>
+<span class="cm">*/</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">_init</span><span class="p">(</span><span class="n">Arr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Arr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// leaf node</span>
+<span class="w">    </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">];</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// recursive</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">  </span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// set current node</span>
+<span class="w">  </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_do_add</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">)],</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">)],</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="p">}</span>
 
-/**
-@breif: 재귀적으로 업데이트를 수행하며 연관 노드들을 같이 수정한다.
-*/
-static void _update(Arr &amp;tree, cuint idx, celem_t value, uint node, //
-                    uint start, uint end) {
-  if (idx &lt; start || end &lt; idx) { // idx는 이 노드에 없다.
-    return;
-  }
-  if (start == end) { // leaf node
-    tree[node] = value;
-    return;
-  }
-  uint mid = (start + end) / 2;
+<span class="cm">/**</span>
+<span class="cm">@breif: 재귀적으로 업데이트를 수행하며 연관 노드들을 같이 수정한다.</span>
+<span class="cm">*/</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">_update</span><span class="p">(</span><span class="n">Arr</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">celem_t</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="c1">//</span>
+<span class="w">                    </span><span class="n">uint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// idx는 이 노드에 없다.</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// leaf node</span>
+<span class="w">    </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">uint</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
-  // idx가 포함된 구간을 가지고 있는 자식노드만 순회하면 된다.
-  _update(tree, idx, value, _left(node), start, mid);
-  _update(tree, idx, value, _right(node), mid + 1, end);
+<span class="w">  </span><span class="c1">// idx가 포함된 구간을 가지고 있는 자식노드만 순회하면 된다.</span>
+<span class="w">  </span><span class="n">_update</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">  </span><span class="n">_update</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
 
-  // 현재 노드에 가해질 변화 적용
-  tree[node] = _do_add(tree[_left(node)], tree[_right(node)], start, end);
-}
+<span class="w">  </span><span class="c1">// 현재 노드에 가해질 변화 적용</span>
+<span class="w">  </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_do_add</span><span class="p">(</span><span class="n">tree</span><span class="p">[</span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">)],</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">)],</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="p">}</span>
 
-/**INTERFACES*/
+<span class="cm">/**INTERFACES*/</span>
 
-/**data를 세그먼트 트리로 변환한다.*/
-inline void init(Arr const &amp;data, cuint n) { _init(data, _tree, 1, 0, n - 1); }
+<span class="cm">/**data를 세그먼트 트리로 변환한다.*/</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">init</span><span class="p">(</span><span class="n">Arr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">_tree</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
 
-/**data[idx] := value */
-inline void update(cuint idx, celem_t value, cuint n) {
-  _update(_tree, idx, value, 1, 0, n - 1);
-}
+<span class="cm">/**data[idx] := value */</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">update</span><span class="p">(</span><span class="n">cuint</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">celem_t</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">_update</span><span class="p">(</span><span class="n">_tree</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
 
-/**
-@breif:
-  [left, right-1] 범위의 i에 대하여 a_i를 번갈아가며 더하고 뺀 값을 출력한다.
-*/
-inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
-  return _jagged_sum(_tree, left_inclusive, right_exclusive - 1, 1, 0, n - 1)
-      .get();
-}
-
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm">@breif:</span>
+<span class="cm">  [left, right-1] 범위의 i에 대하여 a_i를 번갈아가며 더하고 뺀 값을 출력한다.</span>
+<span class="cm">*/</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">elem_t</span><span class="w"> </span><span class="n">jagged_sum</span><span class="p">(</span><span class="n">cuint</span><span class="w"> </span><span class="n">left_inclusive</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">right_exclusive</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">_jagged_sum</span><span class="p">(</span><span class="n">_tree</span><span class="p">,</span><span class="w"> </span><span class="n">left_inclusive</span><span class="p">,</span><span class="w"> </span><span class="n">right_exclusive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>인터페이스 <code>jagged_sum</code> 을 보자. 만약 사용자가 <code>jagged_sum(1,3)</code>을 호출했다고 가정했을 때 콜스택은 다음과 같이 불릴 것이다.
 1. <code>_jagged_sum(3, 4) =&gt; empty()</code>
 2. <code>_jagged_sum(0, 2)</code>
 3. <code>_jagged_sum(0, 1)
 4.</code>_jagged_sum(0, 0) =&gt; empty()<code>5.</code>_jagged_sum(1, 1) =&gt; 2<code>6.</code>_jagged_sum(2, 2) =&gt; 3`</p>
-<p><img alt="Pasted image 20230216144523.png" src="Pasted image 20230216144523.png" /></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230216144523.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230216144523.png" src="../assets/Pasted%20image%2020230216144523.png" /></a></p>
 <p>따라서 <code>_jagged_sum(0,1) = 2</code> 가 될 것이다. 이제 <code>_jagged_sum(0, 2)</code>를 구해보자.<br />
 <code>left_child = _jagged_sum(0,1) = 2</code><br />
 <code>right_child = _jagged_sum(2,2) = 3</code><br />
 <code>_do_add(left_child, right_child, start: 0, end: 2)</code> 에서 문제가 터진다. sol1은 언제 더하고 언제 뺄지를 결정하기 위해 start, end 변수를 활용한다. mid - start 가 짝수이면 <code>left - right</code>를, 홀수이면 <code>left + right</code>를 계산하는 식이다. 하지만 이것은 틀렸다. 직접 종이에 풀었을 때 직관적으로 (1,1)에서 (2,2)를 빼서 -1이 나와야 하지만 사실 <code>_do_add</code> 가 봤을 땐 (0,1)과 (2,2)가 들어온 것으로 생각하고 (2,2)에서 (0,1)을 빼게 된다. 따라서 1이 나오게 되는 것이었다. </p>
 <p>최종 계산은 마지막에 진행하기 위해 나는 문제를 처음부터 다시 풀어야만 했다.</p>
-<h1 id="sol2-pass">sol2 [Pass]</h1>
+<h1 id="sol2-pass">sol2 [Pass]<a class="headerlink" href="#sol2-pass" title="Permanent link">&para;</a></h1>
 <p>이번엔 아예 홀수번째 원소들의 부분합, 짝수번째 원소들의 부분합을 따로 계산해 저장한 다음 쿼리시 일단 그냥 무지성으로 더한 뒤에 홀수번째에서 짝수번째를 뺄지, 반대로 할지 결정하도록 만들어 보았다.</p>
 <p>Seq = {1,2,3,4,5}일때 예시:<br />
-<img alt="Pasted image 20230216151218.png" src="Pasted image 20230216151218.png" /></p>
-<pre><code class="language-cpp">constexpr bool _even(uint n) { return n % 2 == 0; }
-constexpr bool _odd(uint n) { return !_even(n); }
+<a class="glightbox" href="../assets/Pasted%20image%2020230216151218.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230216151218.png" src="../assets/Pasted%20image%2020230216151218.png" /></a></p>
+<div class="highlight"><pre><span></span><code><span class="k">constexpr</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">_even</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="k">constexpr</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">_odd</span><span class="p">(</span><span class="n">uint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">_even</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
 
-struct Node {
-  elem_t sum_odd{};
-  elem_t sum_even{};
-  constexpr explicit Node(elem_t sum_odd, elem_t sum_even)
-      : sum_odd{sum_odd}, sum_even{sum_even} {}
-  constexpr Node() = default;
-  constexpr static Node even(elem_t elem) { return Node(0, elem); }
-  constexpr static Node odd(elem_t elem) { return Node(elem, 0); }
-};
-inline Node operator+(Node const &amp;lhs, Node const &amp;rhs) {
-  return Node(lhs.sum_odd + rhs.sum_odd, lhs.sum_even + rhs.sum_even);
-}
-inline Node operator-(Node const &amp;rhs) {
-  return Node(-rhs.sum_odd, -rhs.sum_even);
-}
-inline Node operator-(Node const &amp;lhs, Node const &amp;rhs) { return lhs + (-rhs); }
-inline bool operator==(Node const &amp;lhs, Node const &amp;rhs) {
-  return lhs.sum_odd == rhs.sum_odd &amp;&amp; lhs.sum_even == rhs.sum_even;
-}
+<span class="k">struct</span><span class="w"> </span><span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">elem_t</span><span class="w"> </span><span class="n">sum_odd</span><span class="p">{};</span>
+<span class="w">  </span><span class="n">elem_t</span><span class="w"> </span><span class="n">sum_even</span><span class="p">{};</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">explicit</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">elem_t</span><span class="w"> </span><span class="n">sum_odd</span><span class="p">,</span><span class="w"> </span><span class="n">elem_t</span><span class="w"> </span><span class="n">sum_even</span><span class="p">)</span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">sum_odd</span><span class="p">{</span><span class="n">sum_odd</span><span class="p">},</span><span class="w"> </span><span class="n">sum_even</span><span class="p">{</span><span class="n">sum_even</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="n">Node</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">even</span><span class="p">(</span><span class="n">elem_t</span><span class="w"> </span><span class="n">elem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">elem</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">constexpr</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">odd</span><span class="p">(</span><span class="n">elem_t</span><span class="w"> </span><span class="n">elem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="n">lhs</span><span class="p">.</span><span class="n">sum_odd</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">sum_odd</span><span class="p">,</span><span class="w"> </span><span class="n">lhs</span><span class="p">.</span><span class="n">sum_even</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">sum_even</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="o">-</span><span class="n">rhs</span><span class="p">.</span><span class="n">sum_odd</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">rhs</span><span class="p">.</span><span class="n">sum_even</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">lhs</span><span class="p">.</span><span class="n">sum_odd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">sum_odd</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">lhs</span><span class="p">.</span><span class="n">sum_even</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rhs</span><span class="p">.</span><span class="n">sum_even</span><span class="p">;</span>
+<span class="p">}</span>
 
-template &lt;typename T&gt; using Arr = std::array&lt;T, LEN&gt;;
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">Arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">LEN</span><span class="o">&gt;</span><span class="p">;</span>
 
-static Arr&lt;Node&gt; _tree;
+<span class="k">static</span><span class="w"> </span><span class="n">Arr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_tree</span><span class="p">;</span>
 
-/**INTERNALS*/
+<span class="cm">/**INTERNALS*/</span>
 
-/**
-tree를 세그먼트 트리 구조로 초기화 한다.
-*/
-static void _init(std::array&lt;elem_t, N&gt; const &amp;data, Arr&lt;Node&gt; &amp;tree, uint node,
-                  uint start, uint end) {
-  if (start == end) { // leaf node
-    tree[node] =
-        _even(start) ? Node::even(data[start]) : Node::odd(data[start]);
-    return;
-  }
-  auto mid = (start + end) / 2;
-  _init(data, tree, _left(node), start, mid);
-  _init(data, tree, _right(node), mid + 1, end);
-  // merge two children
-  tree[node] = tree[_left(node)] + tree[_right(node)];
-}
+<span class="cm">/**</span>
+<span class="cm">tree를 세그먼트 트리 구조로 초기화 한다.</span>
+<span class="cm">*/</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">_init</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">Arr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">uint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// leaf node</span>
+<span class="w">    </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">_even</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Node</span><span class="o">::</span><span class="n">even</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">])</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="o">::</span><span class="n">odd</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">start</span><span class="p">]);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">  </span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// merge two children</span>
+<span class="w">  </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">)]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">)];</span>
+<span class="p">}</span>
 
-static void _update(Arr&lt;Node&gt; &amp;tree, cuint idx, celem_t value, uint node,
-                    uint start, uint end) {
-  if (idx &lt; start || end &lt; idx) { // wrong node
-    return;
-  }
-  if (start == idx &amp;&amp; end == idx) { // leaf node
-    tree[node] = _even(start) ? Node::even(value) : Node::odd(value);
-    return;
-  }
-  auto mid = (start + end) / 2;
-  _update(tree, idx, value, _left(node), start, mid);
-  _update(tree, idx, value, _right(node), mid + 1, end);
-  // merge
-  tree[node] = tree[_left(node)] + tree[_right(node)];
-}
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">_update</span><span class="p">(</span><span class="n">Arr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">celem_t</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
+<span class="w">                    </span><span class="n">uint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">idx</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// wrong node</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// leaf node</span>
+<span class="w">    </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_even</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Node</span><span class="o">::</span><span class="n">even</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Node</span><span class="o">::</span><span class="n">odd</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">_update</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">  </span><span class="n">_update</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// merge</span>
+<span class="w">  </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">)]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">)];</span>
+<span class="p">}</span>
 
-/**
-여기에서는 단순히 노드들을 더한 결과를 리턴한다.
-*/
-static Node _sum(Arr&lt;Node&gt; const &amp;tree, cuint left, cuint right, uint node,
-                 uint start, uint end) {
-  if (end &lt; left || right &lt; start) { // wrong node
-    return Node(0, 0);
-  }
-  if (left &lt;= start &amp;&amp; end &lt;= right) { // node inside the range
-    return tree[node];
-  }
-  // overlapped range
-  auto mid = (start + end) / 2;
-  Node left_child = _sum(tree, left, right, _left(node), start, mid);
-  Node right_child = _sum(tree, left, right, _right(node), mid + 1, end);
-  return left_child + right_child;
-}
+<span class="cm">/**</span>
+<span class="cm">여기에서는 단순히 노드들을 더한 결과를 리턴한다.</span>
+<span class="cm">*/</span>
+<span class="k">static</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="nf">_sum</span><span class="p">(</span><span class="n">Arr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">uint</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">uint</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// wrong node</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Node</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// node inside the range</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tree</span><span class="p">[</span><span class="n">node</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// overlapped range</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">left_child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_sum</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">_left</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span>
+<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">right_child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_sum</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">_right</span><span class="p">(</span><span class="n">node</span><span class="p">),</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">left_child</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">right_child</span><span class="p">;</span>
+<span class="p">}</span>
 
-/**INTERFACES*/
+<span class="cm">/**INTERFACES*/</span>
 
-/**data를 세그먼트 트리로 변환한다.*/
-inline void init(std::array&lt;elem_t, N&gt; const &amp;data, cuint n) {
-  _tree.fill(Node());
-  _init(data, _tree, 1, 0, n - 1);
-}
+<span class="cm">/**data를 세그먼트 트리로 변환한다.*/</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">_tree</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span><span class="n">Node</span><span class="p">());</span>
+<span class="w">  </span><span class="n">_init</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">_tree</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
 
-/**data[idx] := value */
-inline void update(cuint idx, celem_t value, cuint n) {
-  _update(_tree, idx, value, 1, 0, n - 1);
-}
+<span class="cm">/**data[idx] := value */</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">cuint</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">celem_t</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">_update</span><span class="p">(</span><span class="n">_tree</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
 
-/**
-@breif:
-  [left, right-1] 범위의 i에 대하여 a_i를 번갈아가며 더하고 뺀 값을 출력한다.
-*/
-inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
-  Node sum = _sum(_tree, left_inclusive, right_exclusive - 1, 1, 0, n - 1);
-  return _even(left_inclusive) ? sum.sum_even - sum.sum_odd
-                               : sum.sum_odd - sum.sum_even;
-}
-
-</code></pre>
+<span class="cm">/**</span>
+<span class="cm">@breif:</span>
+<span class="cm">  [left, right-1] 범위의 i에 대하여 a_i를 번갈아가며 더하고 뺀 값을 출력한다.</span>
+<span class="cm">*/</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">elem_t</span><span class="w"> </span><span class="nf">jagged_sum</span><span class="p">(</span><span class="n">cuint</span><span class="w"> </span><span class="n">left_inclusive</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">right_exclusive</span><span class="p">,</span><span class="w"> </span><span class="n">cuint</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Node</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_sum</span><span class="p">(</span><span class="n">_tree</span><span class="p">,</span><span class="w"> </span><span class="n">left_inclusive</span><span class="p">,</span><span class="w"> </span><span class="n">right_exclusive</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">_even</span><span class="p">(</span><span class="n">left_inclusive</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span><span class="n">sum_even</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span><span class="n">sum_odd</span>
+<span class="w">                               </span><span class="o">:</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span><span class="n">sum_odd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum</span><span class="p">.</span><span class="n">sum_even</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>마찬가지로 사용자가 <code>jagged_sum(1,3)</code>을 호출했다고 가정하자. 콜 스택 호출 순서는 그대로이므로 또 적지는 않겠다.<br />
-<img alt="Pasted image 20230216150214.png" src="Pasted image 20230216150214.png" /></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230216150214.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230216150214.png" src="../assets/Pasted%20image%2020230216150214.png" /></a></p>
 <ul>
 <li><code>sum(0,2) = {2,3}</code> </li>
 <li><code>sum(1,2) = {2,3}</code> </li>
 </ul>
 <p>그냥 더하는 것에 불과하기 때문에 노드간에 합은 쉽게 구할 수 있다. 이제 <code>jagged_sum</code>의 마지막 줄을 보자. 이제 우린 left가 짝수인지만 확인하면 누구에서 누구를 빼야할지 쉽게 알 수 있다. 위의 예제의 경우 start = 1, 홀수 이므로 sum_odd에서 sum_even를 빼주면 된다. 따라서 2 - 3 = -1이 나오게 된다.</p>
-<pre><code class="language-cpp">return _even(left) ? sum_even - sum_odd
-                   : sum_odd - sum_even
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">_even</span><span class="p">(</span><span class="n">left</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">sum_even</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum_odd</span>
+<span class="w">                   </span><span class="o">:</span><span class="w"> </span><span class="n">sum_odd</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">sum_even</span>
+</code></pre></div>
 
 
 
@@ -544,5 +552,5 @@ inline elem_t jagged_sum(cuint left_inclusive, cuint right_exclusive, cuint n) {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

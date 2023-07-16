@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,7 +233,7 @@
 <ul>
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/pull/124">도커 관련 PR</a><ul>
 <li>보니까 DB랑 S3에 의존성이 있더라구 그래서 이틀 전에 한거에 @이광호 님이 하신 S3 설정을 참고할 수밖에 없겠다...</li>
-<li><img alt="20230627 book-project#2023-06-27T16 17 31 -- S3" src="20230627 book-project#2023-06-27T16 17 31 -- S3" /></li>
+<li><a class="glightbox" href="../20230627%20book-project/#2023-06-27t16-17-31----s3" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="20230627 book-project#2023-06-27T16 17 31 -- S3" src="../20230627%20book-project/#2023-06-27t16-17-31----s3" /></a></li>
 </ul>
 </li>
 <li><a href="https://youtu.be/EK6iYRCIjYs">생활코딩 - 도커 컴포즈</a></li>
@@ -278,5 +289,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

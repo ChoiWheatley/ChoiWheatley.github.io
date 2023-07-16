@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,13 +235,13 @@
 </ul>
 <p>python에는 구조체가 없다. 아쉬운 사실이고, 구조체처럼 쓰기 위해선 <code>__init__</code> 메서드 안에 필드를 집어넣고 입맛에 따라 <code>__repr__</code>(format to string), <code>__lt__</code>, <code>__le__</code>, <code>__gt__</code>, <code>__ge__</code>(compare), <code>__hash__</code>(hash), 등등을 <strong>직접</strong> 구현해 주어야 한다는 귀찮음이 존재한다. 이것을 깔끔하게 추상화시켜주는 모듈이 바로 <code>dataclasses</code>이다. 얘는 너무나도 굉장하고 개쩔어서 마치 rust의 derive 문법처럼 내가 원하는 속성을 지정하기만 하면 알아서 위의 magic method들을 생성해준다!</p>
 <p>아래는 비교연산을 지원하는 커스텀 클래스이다.</p>
-<pre><code class="language-python">@dataclass(order=True)
-class Ord(Generic[T]):
-    &quot;&quot;&quot;Custom comparable class&quot;&quot;&quot;
+<div class="highlight"><pre><span></span><code><span class="nd">@dataclass</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Ord</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom comparable class&quot;&quot;&quot;</span>
 
-    key: T = field(compare=True)
-    value: Any = field(compare=False)
-</code></pre>
+    <span class="n">key</span><span class="p">:</span> <span class="n">T</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">compare</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">compare</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -279,5 +290,5 @@ class Ord(Generic[T]):
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

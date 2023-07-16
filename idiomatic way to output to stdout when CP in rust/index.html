@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,18 +231,18 @@
   <h1>idiomatic way to output to stdout when CP in rust</h1>
 
 <p>만약 출력해야 할 양이 많은 경우, 어느정도 상한이 정해져 있는 경우 <a href="https://doc.rust-lang.org/std/io/struct.BufWriter.html"><code>BufWriter</code></a>를 사용해 볼 수 있다.</p>
-<pre><code class="language-rust">let mut output = io::BufWriter::with_capacity(CAPACITY, io::stdout());
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span>::<span class="n">BufWriter</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">CAPACITY</span><span class="p">,</span><span class="w"> </span><span class="n">io</span>::<span class="n">stdout</span><span class="p">());</span>
 
-write!(output, &quot;{}\n&quot;i)?;
-</code></pre>
+<span class="fm">write!</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;{}</span><span class="se">\n</span><span class="s">&quot;</span><span class="n">i</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+</code></pre></div>
 <p><a href="https://www.acmicpc.net/source/55270815">이 사람</a> 코드를 보아하니, 별도의 아웃풋 버퍼에 집어넣는게 아니라 걍 문자열에다 처박아 넣기도 한다. <code>output</code>에 계속 append가 이루어지는 걸로 보면, 정확히 어느정도 크기의 버퍼인지 알 수 없는 경우 이렇게 써도 뭐 나쁘지 않을 것 같다. 물론 버퍼 플러쉬가 일어나지 않아 무한히 많은 데이터를 출력할 땐 문제가 생기겠지만...</p>
-<pre><code class="language-rust">let mut output = String::new();
-for _ in 0..t {
-    let n = input();
-    writeln!(output, &quot;{} {}&quot;, fibonacci[n].0, fibonacci[n].1).unwrap();
-}
-println!(&quot;{output}&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">();</span>
+<span class="w">    </span><span class="fm">writeln!</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;{} {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">[</span><span class="n">n</span><span class="p">].</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">fibonacci</span><span class="p">[</span><span class="n">n</span><span class="p">].</span><span class="mi">1</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{output}&quot;</span><span class="p">);</span>
+</code></pre></div>
 
 
 
@@ -280,5 +291,5 @@ println!(&quot;{output}&quot;);
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

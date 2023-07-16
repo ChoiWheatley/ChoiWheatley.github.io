@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,16 +235,16 @@
                   
 
 
-<h1 id="index">INDEX</h1>
+<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://www.django-rest-framework.org/">drf page</a></li>
 </ul>
-<h1 id="keywords">Keywords</h1>
+<h1 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permanent link">&para;</a></h1>
 <ul>
 <li>throttles {drf}</li>
-<li>[[internalization with i18n {drf}]]</li>
+<li><a href="../internalization%20with%20i18n%20%7Bdrf%7D/">internalization with i18n {drf}</a></li>
 </ul>
-<h1 id="glossary">Glossary</h1>
+<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Serialization (직렬화)<ul>
 <li>복잡한 데이터타입 (쿼리셋, 모델 객체)을 먼저 파이썬 내장 dict로 변환하는 일을 말한다. 이렇게 하는 이유는 dict는 JSON이나 XML과 같은 형식을 준수하기 쉽기 때문이다.</li>
@@ -244,7 +255,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="workflow">Workflow</h1>
+<h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Form 클래스를 만들듯이, Serializer를 상속받은 클래스들은 자기만의 <strong>필드</strong>를 가질 수 있다. 필드를 기반으로 (역)직렬화가 진행이 되며, 기능을 몇가지만 추가하면 view에서는 이 Serializer 메서드를 호출하기만 하면 CRUD가 다 된다.</li>
 <li><strong><code>create</code>, <code>update</code></strong> 등을 오버라이드하여 Serializer 객체의 상태를 실제 모델에 적용시킬 수 있다. 이름처럼, 새로운 레코드를 추가할 수도 있고, 기존의 인스턴스를 수정할 수도 있다.</li>
@@ -253,7 +264,7 @@
 </ul>
 </li>
 <li>Serializer는 다양한 <strong>예외</strong>클래스도 가지고 있다. 예를 들어 <code>ValidationError</code>는 발생 시 400 응답을 리턴한다.</li>
-<li><code>Serializer.save</code> 메서드는 <code>Model.save</code>와는 전혀 다르다. 객체 인스턴스를 리턴하는 것이지, 모델에 적용하는 명령이 아니라는 것이다. ~~왜 이따위로 만들었지~~ <a href="https://stackoverflow.com/questions/45100515/what-is-the-different-between-save-create-and-update-in-django-rest-fram">save, create, update의 차이점 {sof}</a></li>
+<li><code>Serializer.save</code> 메서드는 <code>Model.save</code>와는 전혀 다르다. 객체 인스턴스를 리턴하는 것이지, 모델에 적용하는 명령이 아니라는 것이다. <del>왜 이따위로 만들었지</del> <a href="https://stackoverflow.com/questions/45100515/what-is-the-different-between-save-create-and-update-in-django-rest-fram">save, create, update의 차이점 {sof}</a></li>
 <li></li>
 </ul>
 
@@ -304,5 +315,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

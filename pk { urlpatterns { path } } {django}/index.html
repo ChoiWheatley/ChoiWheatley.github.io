@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -61,11 +72,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#blog-urlspy" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -208,8 +214,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -224,35 +228,37 @@
                   
 
 
+  <h1>pk { urlpatterns { path } } {django}</h1>
+
 <p>{% raw %}</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/62804254/what-is-the-difference-between-intpk-and-pk">What is difference between <code>&lt;int:pk&gt;</code> and <code>&lt;pk&gt;</code> {SOF}</a><ul>
-<li><code>&lt;pk&gt;</code> 보다는 <code>&lt;int:pk&gt;</code>를 선호하는 편이 좋다. [[django urlpatterns and url convert]]에 따르면 타입을 붙이면 언제나 string으로 들어오는 URL 요청으로부터 regex를 사용하여 파싱을 하게 된다고 한다. 그 결과, 구체적인 url patterns케이스를 작성할 수 있으며, 심지어 같은 path의 계층 일부에 타입을 부과하면 장고가 혼동할 여지를 줄일 수 있다.</li>
+<li><code>&lt;pk&gt;</code> 보다는 <code>&lt;int:pk&gt;</code>를 선호하는 편이 좋다. <a href="../django%20urlpatterns%20and%20url%20convert/">django urlpatterns and url convert</a>에 따르면 타입을 붙이면 언제나 string으로 들어오는 URL 요청으로부터 regex를 사용하여 파싱을 하게 된다고 한다. 그 결과, 구체적인 url patterns케이스를 작성할 수 있으며, 심지어 같은 path의 계층 일부에 타입을 부과하면 장고가 혼동할 여지를 줄일 수 있다.</li>
 </ul>
 </li>
 <li>
 <p><a href="https://youtu.be/sMqDJovFO-Y?t=5323">Build a blog using django {YT}</a></p>
 <ul>
-<li><code>url_patterns</code> &gt; [[django path(route, view, name)|path]] 에 대하여 라우트를 줄 때 <code>&lt;int:pk&gt;</code>를 줄 수 있다고 했다. </li>
+<li><code>url_patterns</code> &gt; <a href="../django%20path%28route%2C%20view%2C%20name%29/">path</a> 에 대하여 라우트를 줄 때 <code>&lt;int:pk&gt;</code>를 줄 수 있다고 했다. </li>
 <li>그말은 곧 인자를 하나 더 받겠다는 의미이다. 따라서 장고 템플릿에서 <code>{% url &lt;name&gt; [args] %}</code>의 규칙에 따라 인자를 추가하여야 한다. <code>pk</code>에는 <code>object.id</code>인듯?</li>
 </ul>
-<p>```python</p>
-<h1 id="blog-urlspy">blog &gt; urls.py</h1>
-<p>urlpatterns = [
-    path("<int:pk>/", DetailArticleView.as_view(), name="detail_article"),
-    ...
-]</p>
-<h1 id="blog-viewpy">blog &gt; view.py</h1>
-<p>class DetailArticleView(DetailView):
-    model = Article
-    template_name = "blog/detail_article.html"
-```</p>
-<p><code>html
-&lt;!-- blog &gt; templates &gt; blog &gt; index.html --&gt;
+<div class="highlight"><pre><span></span><code><span class="c1"># blog &gt; urls.py</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&lt;int:pk&gt;/&quot;</span><span class="p">,</span> <span class="n">DetailArticleView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;detail_article&quot;</span><span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+
+<span class="c1"># blog &gt; view.py</span>
+<span class="k">class</span> <span class="nc">DetailArticleView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Article</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;blog/detail_article.html&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- blog &gt; templates &gt; blog &gt; index.html --&gt;</span>
 {% for object in object_list %}
     ...
-    &lt;a href="{% url 'detail_article' object.id %}" class="btn btn-primary"&gt;Read More&lt;/a&gt;
-{% endfor %}</code></p>
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;detail_article&#39; object.id %}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Read More<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% endfor %}
+</code></pre></div>
 </li>
 </ul>
 <p>{% endraw %}</p>
@@ -304,5 +310,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,46 +234,46 @@
 <li>https://doc.rust-lang.org/std/str/trait.FromStr.html</li>
 </ul>
 <p>예를 들어 우리가 <code>"(1,2)"</code> 를 제공하면 <code>Point</code> 객체를 알아서 파싱해서 리턴해주는 함수를 만든다고 가정하자. </p>
-<pre><code class="language-rust">struct Point { x: i32, y: i32, }
-struct ParsePointError;
-fn parse_to_point(s: &amp;str) -&gt; Result&lt;Point, ParsePointError&gt; {
-    // ...
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
+<span class="k">struct</span> <span class="nc">ParsePointError</span><span class="p">;</span>
+<span class="k">fn</span> <span class="nf">parse_to_point</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">ParsePointError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>뭐 이렇게 해도 세상이 멸망하는 정도는 아니지만 std 의 다양한 응용을 활용할 수 없다는 문제가 있다. 따라서 문자열로부터 객체를 파싱해야 할 일이 있을 땐 <code>FromStr</code> 트레이트를 구현하도록 하자.</p>
-<pre><code class="language-rust">use std::str::FromStr;
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="kt">str</span>::<span class="n">FromStr</span><span class="p">;</span>
 
-#[derive(Debug, PartialEq)]
-struct Point { x: i32, y: i32, }
+<span class="cp">#[derive(Debug, PartialEq)]</span>
+<span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
 
-#[derive(Debug, PartialEq, Eq)]
-struct ParsePointError;
+<span class="cp">#[derive(Debug, PartialEq, Eq)]</span>
+<span class="k">struct</span> <span class="nc">ParsePointError</span><span class="p">;</span>
 
-impl FromStr for Point {
-    type Err = ParsePointError;
+<span class="k">impl</span><span class="w"> </span><span class="n">FromStr</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">type</span> <span class="nb">Err</span> <span class="o">=</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">;</span>
 
-    fn from_str(s: &amp;str) -&gt; Result&lt;Self, Self::Err&gt; {
-        let (x, y) = s
-            .strip_prefix('(')
-            .and_then(|s| s.strip_suffix(')')
-            .and_then(|s| s.split_once(','))
-            .ok_or(ParsePointError)?;
-        let x_fromstr: i32 = x.parse().map_err(|_| ParsePointError)?;
-        let y_fromstr: i32 = y.parse().map_err(|_| ParsePointError)?;
-        Ok(Point {x: x_fromstr, y: y_fromstr})
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">from_str</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="bp">Self</span><span class="p">,</span><span class="w"> </span><span class="bp">Self</span>::<span class="nb">Err</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
+<span class="w">            </span><span class="p">.</span><span class="n">strip_prefix</span><span class="p">(</span><span class="sc">&#39;(&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">and_then</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">strip_suffix</span><span class="p">(</span><span class="sc">&#39;)&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">and_then</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">split_once</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">ok_or</span><span class="p">(</span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">x_fromstr</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">y_fromstr</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="n">x</span>: <span class="nc">x_fromstr</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="nc">y_fromstr</span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>사용할 수 있는 편의 함수들이 이젠 널리고 널렸다. 다음 코드를 보자</p>
-<pre><code class="language-rust">fn main() {
-    let expected = Ok(Point {x: 1, y: 2});
-    let fromstr = &quot;(1,2)&quot;;
-    // Explicit call
-    assert_eq!(Point::from_str(&amp;fromstr), expected);
-    // Implicit calls
-    assert_eq!(fromstr.parse(), expected);
-    assert_eq!(fromstr.parse::&lt;Point&gt;(), expected);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="n">x</span>: <span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mi">2</span><span class="p">});</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fromstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;(1,2)&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Explicit call</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">Point</span>::<span class="n">from_str</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fromstr</span><span class="p">),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Implicit calls</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">fromstr</span><span class="p">.</span><span class="n">parse</span><span class="p">(),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">fromstr</span><span class="p">.</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">(),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
+</code></pre></div>
 
 
 
@@ -311,5 +322,5 @@ impl FromStr for Point {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

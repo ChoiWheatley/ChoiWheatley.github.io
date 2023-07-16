@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,11 +237,11 @@
 
 <p>https://softeer.ai/challenge/certification/detail.do?idx=2914</p>
 <hr />
-<h1 id="_1">알아둬야 할 사항들</h1>
+<h1 id="_1">알아둬야 할 사항들<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>일정 <ul>
 <li>평가일정: 2023년 3월 7일 화요일 17:00 ~ 20:00<br />
-- ~~접수 기간: 2023년 2월 21일(화) 09:00부터 ~ 3월 5일(일) 23:00까지~~</li>
+- <del>접수 기간: 2023년 2월 21일(화) 09:00부터 ~ 3월 5일(일) 23:00까지</del></li>
 </ul>
 </li>
 <li>세부사항<ul>
@@ -311,5 +322,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

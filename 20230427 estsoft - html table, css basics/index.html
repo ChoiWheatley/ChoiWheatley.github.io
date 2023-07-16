@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,8 +236,8 @@
 
 
 <ul>
-<li>[[20230425 estsoft - Network, VSCode settings, emmet syntax, meta]]</li>
-<li>[[20230428 estsoft - flex, float, 게시판 글작성, 글조회, 전체적인 레이아웃 실습]]</li>
+<li><a href="../20230425%20estsoft%20-%20Network%2C%20VSCode%20settings%2C%20emmet%20syntax%2C%20meta/">20230425 estsoft - Network, VSCode settings, emmet syntax, meta</a></li>
+<li><a href="../20230428%20estsoft%20-%20flex%2C%20float%2C%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EA%B8%80%EC%9E%91%EC%84%B1%2C%20%EA%B8%80%EC%A1%B0%ED%9A%8C%2C%20%EC%A0%84%EC%B2%B4%EC%A0%81%EC%9D%B8%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%20%EC%8B%A4%EC%8A%B5/">20230428 estsoft - flex, float, 게시판 글작성, 글조회, 전체적인 레이아웃 실습</a></li>
 <li><a href="https://paullabworkspace.notion.site/form-3f361bf0b1124734beb9ef58d35de936#a4907574d4d849fabf5ba74680bbb262">notion src</a> select 단부터 시작</li>
 <li><code>&lt;select&gt;</code> 옵션 메뉴 제공</li>
 <li><code>&lt;option&gt;</code><ul>
@@ -243,15 +254,15 @@
 </ul>
 </li>
 </ul>
-<h1 id="html-table">HTML Table부터</h1>
+<h1 id="html-table">HTML Table부터<a class="headerlink" href="#html-table" title="Permanent link">&para;</a></h1>
 <ul>
-<li>[[html table]]</li>
-<li>[[게시판 페이지 만들기 estsoft]]</li>
+<li><a href="../html%20table/">html table</a></li>
+<li><a href="../%EA%B2%8C%EC%8B%9C%ED%8C%90%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20estsoft/">게시판 페이지 만들기 estsoft</a></li>
 </ul>
-<h1 id="css">css</h1>
+<h1 id="css">css<a class="headerlink" href="#css" title="Permanent link">&para;</a></h1>
 <ul>
-<li>[[CSS]]</li>
-<li>[[로그인 페이지 만들기 estsoft]]</li>
+<li><a href="../CSS/">CSS</a></li>
+<li><a href="../%EB%A1%9C%EA%B7%B8%EC%9D%B8%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20estsoft/">로그인 페이지 만들기 estsoft</a></li>
 </ul>
 
 
@@ -301,5 +312,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

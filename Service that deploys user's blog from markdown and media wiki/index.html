@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,7 +231,7 @@
   <h1>Service that deploys user's blog from markdown and media wiki</h1>
 
 <ul>
-<li>[[Obsidian으로 블로그 만들기]]를 생각하면서 일종의 파이프라인이 있다는 것을 파악했다. 만약 이 단계를 모두 건너뛰어 단지 옵시디언(혹은 미디어위키 <code>[[]]</code> 레퍼런스 형식을 사용하는 어떤 것이던) 파일이 담긴 리포지토리의 링크만 던져주면 알아서 HEAD를 기반으로 정적 웹사이트를 호스팅까지 해주는 것이다.</li>
+<li><a href="../Obsidian%EC%9C%BC%EB%A1%9C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">Obsidian으로 블로그 만들기</a>를 생각하면서 일종의 파이프라인이 있다는 것을 파악했다. 만약 이 단계를 모두 건너뛰어 단지 옵시디언(혹은 미디어위키 <code>[](&lt;#&gt;)</code> 레퍼런스 형식을 사용하는 어떤 것이던) 파일이 담긴 리포지토리의 링크만 던져주면 알아서 HEAD를 기반으로 정적 웹사이트를 호스팅까지 해주는 것이다.</li>
 </ul>
 
 
@@ -270,5 +281,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

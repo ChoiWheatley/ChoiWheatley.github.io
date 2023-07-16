@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,9 +231,9 @@
   <h1>20230603 book-project</h1>
 
 <ul>
-<li>[[0014.1 Django 🎈]]</li>
-<li>[[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]</li>
-<li>[[git commit message 규칙]]</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a></li>
+<li><a href="../%EC%A3%BC%EB%8B%88%EC%96%B4%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%2C%20%EA%B7%B8%20%EC%9D%B4%EC%83%81%EC%9C%BC%EB%A1%9C%20%F0%9F%9A%80%7Bbook-project%7D/">주니어 백엔드 개발자, 그 이상으로 🚀{book-project}</a></li>
+<li><a href="../git%20commit%20message%20%EA%B7%9C%EC%B9%99/">git commit message 규칙</a></li>
 <li>오늘은 세팅만 하다가 끝날듯. 뭔가 엄청나게 더딘데? 어디에서 막히는지, 세팅을 어떻게 하는지, 플랫폼 별로 어떻게 진행하면 되는지 설명할 필요가 있어보인다.<ul>
 <li>가상환경<ul>
 <li>파이썬 설치는 되어있다고 가정함. python version 3.11.3</li>
@@ -231,7 +242,7 @@
 <li>vscode 인터프리터 설정</li>
 <li>패키지<ul>
 <li>decouple</li>
-<li>~~pip-tools~~</li>
+<li><del>pip-tools</del></li>
 <li><code>django==4.2</code></li>
 <li><code>python-decouple</code> =&gt; secret_key 를 다른 파일(<code>core/.env</code> 파일)로 옮기고 구분하기 쉽게 이름을 바꾸고 이걸 내 본 서버에 들여오는 역할을 수행함.</li>
 </ul>
@@ -256,7 +267,7 @@
 </ul>
 <p>core/env.py 의 목적 https://github.com/ESTsoft-Book-Project/bookstore/blob/main/core/env.py<br />
     열심히 숨긴 <code>.env</code> 파일의 secret_key를 꺼내올 때 사용함. <code>decouple</code>을 의존함.</p>
-<p>TODO: [[postman]] =&gt; 페이지 열 필요 없이 API만 설계할 수 있게끔</p>
+<p>TODO: <a href="../postman/">postman</a> =&gt; 페이지 열 필요 없이 API만 설계할 수 있게끔</p>
 <p>static 도 나중에 gitignore 해주어야 한다.</p>
 <p>TODO: PR하는 방법 평일에 강의.</p>
 <p>form.save() 의 역할이 뭐지?</p>
@@ -308,5 +319,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

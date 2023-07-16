@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,7 +240,7 @@
 <li><a href="https://paullabworkspace.notion.site/HTML-CSS-e59ccad043e84513860c9bf42a7cd49f">notion site for live class - HTML/CSS</a> ^ylilpg</li>
 <li><a href="https://snippet-generator.app/">snippet generator</a></li>
 </ul>
-<h1 id="glossary">Glossary</h1>
+<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <ul>
 <li>URI<ul>
 <li>Uniform Resource Identifier: 리소스를 구별하기 위해 만든 식별자.</li>
@@ -242,7 +253,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="before-getting-started">Before getting started</h1>
+<h1 id="before-getting-started">Before getting started<a class="headerlink" href="#before-getting-started" title="Permanent link">&para;</a></h1>
 <ul>
 <li>프론트 쪽에서 HTML,CSS 쪽은 난이도가 높은 작업.</li>
 <li>백엔드니까 오직 3일 짧고 굵게 배운다.</li>
@@ -255,10 +266,10 @@
 <li>empty element : 닫는 태그가 없는 태그 <code>&lt;br&gt;</code></li>
 <li>comment : <code>&lt;!-- comment --&gt;</code></li>
 </ul>
-<h1 id="html-standard">HTML standard</h1>
+<h1 id="html-standard">HTML standard<a class="headerlink" href="#html-standard" title="Permanent link">&para;</a></h1>
 <ul>
 <li>html standard<ul>
-<li><code>! + Tab</code> 해서 나오는 기본문서 뜯어보기 작성하지 않아도 그냥 브라우저가 대충 띄워주기는 하거든? [[20230426 estsoft - HTML block+inline level elem, tags, forms#^m5z19c]]</li>
+<li><code>! + Tab</code> 해서 나오는 기본문서 뜯어보기 작성하지 않아도 그냥 브라우저가 대충 띄워주기는 하거든? <a href="./#m5z19c">20230426 estsoft - HTML block+inline level elem, tags, forms#^m5z19c</a></li>
 <li><code>&lt;!DOCTYPE html&gt;</code> : html 표준문서임을 의미함 하위 호환성 모드가 꺼진다.</li>
 <li><code>&lt;html lang="en"&gt;</code> 이걸보고 가끔 크롬이 번역할거냐고 물어본다. 우리나라는 <code>ko-KR</code> 이지롱</li>
 <li><code>head</code> 메타데이터를 담는다.<ul>
@@ -269,18 +280,18 @@
 </ul>
 </li>
 <li><code>title</code> 타이틀</li>
-<li><code>link</code> 현재 문서와 외부 리소스 (CSS, Font, Favicon)과 연결할 때 사용함. [[20230426 estsoft - HTML block+inline level elem, tags, forms#^jsa6sp]]</li>
+<li><code>link</code> 현재 문서와 외부 리소스 (CSS, Font, Favicon)과 연결할 때 사용함. <a href="./#jsa6sp">20230426 estsoft - HTML block+inline level elem, tags, forms#^jsa6sp</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="block-level-inline-level-element">block level &amp; inline level element</h1>
+<h1 id="block-level-inline-level-element">block level &amp; inline level element<a class="headerlink" href="#block-level-inline-level-element" title="Permanent link">&para;</a></h1>
 <ul>
 <li>기본적으로 모든 요소는 네모낳게 생겼다고 가정한다. =&gt; block이라고 부르고 이 블럭들이 쌓여 저시기 된다.</li>
 <li><code>div</code> 태그를 사용하면 저시기가 세로로 작성된다. 세로로 작성되는 녀석은 <strong>블록</strong>요소이다.</li>
 <li><code>span</code> 태그를 사용하면 저시기가 가로로 작성된다. 가로로 작성되는 녀석은 <strong>인라인</strong> 요소이다.</li>
-<li>Block element [[20230426 estsoft - HTML block+inline level elem, tags, forms#^6492bd]]<ul>
+<li>Block element <a href="./#6492bd">20230426 estsoft - HTML block+inline level elem, tags, forms#^6492bd</a><ul>
 <li>가능한 부모의 모든 너비를 차지하게 된다. </li>
 <li>블록 요소 안에 인라인 요소는 들어갈 수 있지만 인라인 요소 안에 블록 요소가 들어갈 수 없다. 예외적으로 <code>&lt;a&gt;</code>  인라인 요소는 태그는 인라인 안에 블록 요소 중첩이 가능함.</li>
 <li>CSS를 사용하여 width, height 크기를 지정할 수 있고 Padding, Border, Margin 속성을 사용할 수 있다. </li>
@@ -292,7 +303,7 @@
 <li>CSS를 사용하여 Width, Height 크기를 지정할 수 <strong>없다</strong>. Padding, Border, Margin 속성 중 상하 Margin 속성은 사용할 수 <strong>없다</strong>.</li>
 </ul>
 </li>
-<li><a href="https://addons.mozilla.org/en-US/firefox/addon/headingsmap/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search">headings map</a> 를 사용하면 목차를 볼 수 있다!!! [[20230426 estsoft - HTML block+inline level elem, tags, forms#^84gubn]]<br />
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/headingsmap/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search">headings map</a> 를 사용하면 목차를 볼 수 있다!!! <a href="./#84gubn">20230426 estsoft - HTML block+inline level elem, tags, forms#^84gubn</a><br />
 cheatsheet below  </li>
 </ul>
 <table>
@@ -355,7 +366,7 @@ cheatsheet below  </li>
 </tr>
 </tbody>
 </table>
-<h1 id="tags">Tags</h1>
+<h1 id="tags">Tags<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h1>
 <ul>
 <li>다양한 태그가 있지만, 여기에 적는 건 의미가 별로 없는 것 같다. 그때그때 찾아가면서 작성하자. <a href="https://github.com/ChoiWheatley/ormi-2023-04-26/blob/3ea3198848a705061d0436b1a6b64ef05a9022d6/002.html">실습링크</a> </li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img"><code>img</code></a><ul>
@@ -384,7 +395,7 @@ cheatsheet below  </li>
 </ul>
 </li>
 </ul>
-<h1 id="forms">Forms</h1>
+<h1 id="forms">Forms<a class="headerlink" href="#forms" title="Permanent link">&para;</a></h1>
 <ul>
 <li><code>form</code><ul>
 <li>반드시 <code>&lt;input type="submit"&gt;</code> 태그와 연동이 되어야 제출이 가능하다.</li>
@@ -471,54 +482,54 @@ cheatsheet below  </li>
 </ul>
 </li>
 <li>않이... <code>&lt;button type"button"&gt;</code>이랑 <code>&lt;input type="button"&gt;</code> 은 뭐임... 뭘 써야하냐?? <ul>
-<li><code>&lt;button type="button"&gt;</code>을 선호한다. <code>input</code> 태그는 빈 요소라서 텍스트밖에 지정할 수 없다. 자율도에 있어서 button 태그가 더 좋다. [[20230426 estsoft - HTML block+inline level elem, tags, forms#^y743qo]]</li>
+<li><code>&lt;button type="button"&gt;</code>을 선호한다. <code>input</code> 태그는 빈 요소라서 텍스트밖에 지정할 수 없다. 자율도에 있어서 button 태그가 더 좋다. <a href="./#y743qo">20230426 estsoft - HTML block+inline level elem, tags, forms#^y743qo</a></li>
 </ul>
 </li>
 </ul>
 <hr />
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>^m5z19c</p>
-<pre><code class="language-html">&lt;html&gt;
-&lt;head&gt;
-  &lt;!-- 스타일 시트 링크 --&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- 스타일 시트 링크 --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
 
-    &lt;!-- 폰트 링크 --&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;font.ttf&quot;&gt;
+    <span class="cm">&lt;!-- 폰트 링크 --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;font.ttf&quot;</span><span class="p">&gt;</span>
 
-    &lt;!-- 파비콘 링크 --&gt;
-  &lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot;&gt; 
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+    <span class="cm">&lt;!-- 파비콘 링크 --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;shortcut icon&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;favicon.ico&quot;</span><span class="p">&gt;</span> 
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>^jsa6sp</p>
-<pre><code class="language-html">&lt;body&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     nyancat
-    &lt;div&gt;div는 &lt;/div&gt;
-    &lt;div&gt;세로로&lt;/div&gt;
-    &lt;div&gt;쌓입니다.&lt;/div&gt;
-    &lt;span&gt;스판은&lt;/span&gt; &lt;span&gt;가로로&lt;/span&gt; &lt;span&gt;쌓입니다.&lt;/span&gt;
-&lt;/body&gt;
-</code></pre>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>div는 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>세로로<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>쌓입니다.<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>스판은<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>가로로<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>쌓입니다.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>^6492bd<br />
-<img alt="Pasted image 20230426113227.png" src="Pasted image 20230426113227.png" /> ^84gubn</p>
-<pre><code class="language-html">&lt;input type=&quot;button&quot; value=&quot;버튼&quot;&gt;
-&lt;button type=&quot;button&quot;&gt;버튼&lt;/button&gt;
-</code></pre>
+<a class="glightbox" href="../assets/Pasted%20image%2020230426113227.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230426113227.png" src="../assets/Pasted%20image%2020230426113227.png" /></a> ^84gubn</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;버튼&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span><span class="p">&gt;</span>버튼<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
 <p>^y743qo</p>
 
 
@@ -568,5 +579,5 @@ cheatsheet below  </li>
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

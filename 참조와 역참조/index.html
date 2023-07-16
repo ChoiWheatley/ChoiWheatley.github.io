@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,11 +230,11 @@
 
   <h1>참조와 역참조</h1>
 
-<pre><code class="language-mermaid">flowchart LR
+<div class="highlight"><pre><span></span><code>flowchart LR
 
 Post -- 참조 --&gt; Comment
 Comment -- 역참조 --&gt; Post
-</code></pre>
+</code></pre></div>
 <ul>
 <li>참조: <code>comment.post.id</code></li>
 <li>역참조: <code>post.comment_set.all()</code><ul>
@@ -232,10 +243,10 @@ Comment -- 역참조 --&gt; Post
 </li>
 <li>Foreign Key를 Comment가 가지고 있기 때문에 Comment의 객체를 사용하여 Post를 참조할 수 있다는 것은 잘 알고 있는 사실이다.</li>
 <li>Post를 가지고도 거꾸로 참조관계를 추적할 수 있지롱~ Post 객체 하나에 여러 Comment 객체가 달릴 수 있으니까 <code>QuerySet</code>을 요청할 수 있다.</li>
-<li><img alt="스크린샷 2023-07-06 09.15.52.png" src="스크린샷 2023-07-06 09.15.52.png" /></li>
+<li><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-06%2009.15.52.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-07-06 09.15.52.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-06%2009.15.52.png" /></a></li>
 </ul>
 <hr />
-<p>[[select_related, prefetch_related {django query}]]</p>
+<p><a href="../select_related%2C%20prefetch_related%20%7Bdjango%20query%7D/">select_related, prefetch_related {django query}</a></p>
 
 
 
@@ -284,5 +295,5 @@ Comment -- 역참조 --&gt; Post
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

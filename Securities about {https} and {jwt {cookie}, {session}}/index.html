@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -246,11 +257,11 @@
 
   <h1>Securities about {https} and {jwt {cookie}, {session}}</h1>
 
-<h2 id="https">HTTPS</h2>
+<h2 id="https">HTTPS<a class="headerlink" href="#https" title="Permanent link">&para;</a></h2>
 <p>SSL/TLS(Secure Sockets Layer/Transfer Layer Security)라고 불리우는 암호체계를 사용하여 민감한 정보를 암호화/복호화 하는 기술입니다. 비대칭키를 사용하기 때문에 Public Key를 사용해 암호화한 본문은 Private Key를 가지고 있는 사람만이 복호화 할 수 있습니다.</p>
 <p>wireshark, nmap과 같은 소프트웨어를 사용하면 패킷을 통해 헤더, 본문을 읽어볼 수 있게됩니다. 심지어 통신을 가로채 본문에 악성코드나 광고를 삽입할 수도 있게 되는데, 평문이 오갈 경우, 이를 막을 방법이 없게 됩니다. </p>
 <p>따라서 많은 웹사이트는 HTTPS를 사용하여 자신의 웹 서비스를 호스팅하고 있습니다. HTTPS는 웹 서버가 신뢰할 수 있는 공인된 기관이 발급하는 디지털 증명서인 SSL/TLS Certificate를 사용해야 합니다. 웹 서버의 도메인, 회사 정보, 공개 키 등을 공인 기관에 제출하고 검증하는 절차를 거쳐야 합니다.</p>
-<h2 id="json-web-token">JSON Web Token</h2>
+<h2 id="json-web-token">JSON Web Token<a class="headerlink" href="#json-web-token" title="Permanent link">&para;</a></h2>
 <ul>
 <li>https://en.wikipedia.org/wiki/JSON_Web_Token</li>
 <li>https://jwt.io/introduction</li>
@@ -260,35 +271,35 @@
 <ul>
 <li>헤더에는 알고리즘과 타입으로 이루어져 있습니다. 알고리즘으로는 리소스 서버가 해당 토큰을 만들 때 사용한 알고리즘을 정의하며, HMAC, SHA256, RSA 등을 명시할 수 있습니다. 타입은 "JWT" 고정입니다.</li>
 </ul>
-<pre><code class="language-json">{
-    &quot;alg&quot;: &quot;SHA256&quot;,
-    &quot;typ&quot;: &quot;JWT&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHA256&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>페이로드에는 claim이 담겨져 있는 공간입니다. claim이란, 데이터가 의미있는 정보를 담기 위해 필요한 사용자 정보에 대한 선언을 의미합니다. 주로 유저/관리자 식별, 만료일자, 이름 등에 대한 정보가 담겨 있습니다.</li>
 </ul>
-<pre><code class="language-json">{
-    &quot;iss&quot;: true,
-    &quot;admin&quot;: true,
-    &quot;name&quot;: &quot;Choi Wheatley&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Choi Wheatley&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>시그니처에는 헤더와 페이로드가 유효한지를 검증하기 위해 리소스 서버에서 토큰을 생성할 시에 계산되는 암호문입니다. Base64Url로 인코딩한 header와 payload를 <code>.</code>으로 구분한 뒤 리소스 서버가 가지고 있는 비밀 키 (secrete key)로 암호화를 진행합니다. 그 결과값이 곧 시그니처 입니다.</li>
 </ul>
 <p>마지막으로 header, payload, signature를  <code>.</code>으로 구분한 Base64Url로 인코딩하여 붙인 긴 문자열을 클라이언트에게 반환합니다.</p>
 <p>아래는 JWT 토큰을 생성하는 수도코드 입니다.</p>
-<pre><code class="language-python">header = {&quot;alg&quot;: &quot;HS256&quot;, &quot;typ&quot;: &quot;JWT&quot;}
-payload = {&quot;iss&quot;: true, &quot;admin&quot;: true, &quot;name&quot;: &quot;Choi Wheatley&quot;}
-signature = HMACSHA256(
-    base64UrlEncode(header) + &quot;.&quot; +
-    base64UrlEncode(payload)
-)
-token = base64UrlEncode(header) + '.' +
-    base64UrlEncode(payload) + '.' +
-    base64UrlEncode(signature)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;alg&quot;</span><span class="p">:</span> <span class="s2">&quot;HS256&quot;</span><span class="p">,</span> <span class="s2">&quot;typ&quot;</span><span class="p">:</span> <span class="s2">&quot;JWT&quot;</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;iss&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;admin&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Choi Wheatley&quot;</span><span class="p">}</span>
+<span class="n">signature</span> <span class="o">=</span> <span class="n">HMACSHA256</span><span class="p">(</span>
+    <span class="n">base64UrlEncode</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span>
+    <span class="n">base64UrlEncode</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">base64UrlEncode</span><span class="p">(</span><span class="n">header</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span>
+    <span class="n">base64UrlEncode</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span>
+    <span class="n">base64UrlEncode</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+</code></pre></div>
 <hr />
 <p>이 아래는 집필 프로젝트 외적으로 다루는 공간임
 - <a href="https://youtu.be/H6lpFRpyl14">얄코 HTTPS와 대칭키, 비대칭키</a>
@@ -344,5 +355,5 @@ token = base64UrlEncode(header) + '.' +
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

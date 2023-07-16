@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,29 +235,29 @@
 <li>fetch를 사용해 받은 response가 JSON인지, HTML인지 판별할 수 있는 방법을 알아냈다. 바로 <code>Content-Type</code>을 이용하는 것이다. 이것은 대놓고 나와있지 않아서 찾기가 매우 힘들었다. 하지만 근성의 최승현! 😅 아래의 스니펫이 바로 response가 어떤 타입인지 해석하는 저시기이다.</li>
 <li>참고할 것: <code>res.json()</code>, <code>res.text()</code> 를 호출하는 행위는 <code>res</code> 안의 상태를 바꾸기 때문에 최대 한 번밖에 호출할 수 없다.</li>
 </ul>
-<pre><code class="language-js">function errorHandle(res) {
-    const contentType = res.headers.get(&quot;Content-Type&quot;).split(&quot;;&quot;)[0];
-    if (contentType === &quot;text/html&quot;) {
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">errorHandle</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">contentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">contentType</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;text/html&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-      res.text().then(html =&gt; {
-        document.body.innerHTML = html;
-      });
+<span class="w">      </span><span class="nx">res</span><span class="p">.</span><span class="nx">text</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">html</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">html</span><span class="p">;</span>
+<span class="w">      </span><span class="p">});</span>
 
-    } else if (contentType === &quot;application/json&quot;) {
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">contentType</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-      res.json().then(error =&gt; {
-          alert(error.message);
+<span class="w">      </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">alert</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
 
-        }).catch((e) =&gt; {
-          alert(&quot;JSON 파싱 에러! 콘솔창을 확인하세요.&quot;);
-          console.log(e);
-        })
-    } else {
-      alert(&quot;알 수 없는 에러! 콘솔창을 확인하세요.&quot;);
-      console.log(e);
-    }
-}
-</code></pre>
+<span class="w">        </span><span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;JSON 파싱 에러! 콘솔창을 확인하세요.&quot;</span><span class="p">);</span>
+<span class="w">          </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;알 수 없는 에러! 콘솔창을 확인하세요.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -295,5 +306,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

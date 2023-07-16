@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,24 +236,24 @@
 
 
 <ul>
-<li>[[self reference a class with typing.Self (python)]]</li>
-<li>[[typing.Optional and type union in python]]</li>
-<li>[[understanding python dataclasses]]</li>
+<li><a href="../self%20reference%20a%20class%20with%20typing.Self%20%28python%29/">self reference a class with typing.Self (python)</a></li>
+<li><a href="../typing.Optional%20and%20type%20union%20in%20python/">typing.Optional and type union in python</a></li>
+<li><a href="../understanding%20python%20dataclasses/">understanding python dataclasses</a></li>
 <li>[[python collections]]<ul>
-<li>[[counter가 뭐지 - python]]</li>
-<li>[[deque in python]]</li>
+<li><a href="../counter%EA%B0%80%20%EB%AD%90%EC%A7%80%20-%20python/">counter가 뭐지 - python</a></li>
+<li><a href="../deque%20in%20python/">deque in python</a></li>
 </ul>
 </li>
 <li>[[timeit - python]]</li>
-<li>[[<strong>getitem</strong> index and slice iteration in python]]</li>
+<li><a href="../__getitem__%20index%20and%20slice%20iteration%20in%20python/"><strong>getitem</strong> index and slice iteration in python</a></li>
 <li><a href="https://inf.run/qBQP">인프런 알고리즘 베스트 10 - 제코베</a></li>
 <li>[[combinations in python]]</li>
-<li>[[Python Type Hints - How to Narrow Types with isinstance, assert, and literal]]</li>
-<li>[[typing.cast은 타입체커에게 정보를 제공한다 - python]]</li>
+<li><a href="../Python%20Type%20Hints%20-%20How%20to%20Narrow%20Types%20with%20isinstance%2C%20assert%2C%20and%20literal/">Python Type Hints - How to Narrow Types with isinstance, assert, and literal</a></li>
+<li><a href="../typing.cast%EC%9D%80%20%ED%83%80%EC%9E%85%EC%B2%B4%EC%BB%A4%EC%97%90%EA%B2%8C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20%EC%A0%9C%EA%B3%B5%ED%95%9C%EB%8B%A4%20-%20python/">typing.cast은 타입체커에게 정보를 제공한다 - python</a></li>
 </ul>
-<h1 id="_1">아무래도</h1>
+<h1 id="_1">아무래도<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>위니브 깃허브에 있는 모든 파이썬 치트시트를 선행학습을 해놓는 편이 좋겠다. 그래야 "아 이거 알아"하고 다시 무시할 수 있게. ^jnuy86</p>
-<h1 id="todays-advanced">Today's advanced 문제</h1>
+<h1 id="todays-advanced">Today's advanced 문제<a class="headerlink" href="#todays-advanced" title="Permanent link">&para;</a></h1>
 <ul>
 <li>advanced 문제 : linked list 추가 기능 구현</li>
 <li>https://school.programmers.co.kr/learn/courses/30/lessons/120906</li>
@@ -299,5 +310,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

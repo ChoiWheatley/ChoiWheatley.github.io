@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -250,47 +261,47 @@
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/issues/29">bookstore/issues/29</a></li>
 </ul>
 <p><a href="https://betterdatascience.com/python-pipreqs/#:~:text=Pipreqs%20works%20by%20scanning%20all.py%20files%20in%20a,a%20Python%20project%20folder%2C%20simply%20run%20this%20command%3A">pipreqs</a>는 프로젝트의 모든 <code>.py</code> 파일을 읽은 뒤 실제로 필요한 의존성만을 출력한다고 합니다.</p>
-<h2 id="_1">설치법</h2>
-<pre><code class="language-shell">pip install pipreqs
-</code></pre>
-<h2 id="_2">사용법</h2>
-<pre><code class="language-shell">pipreqs - Generate pip requirements.txt file based on imports
+<h2 id="_1">설치법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pipreqs
+</code></pre></div>
+<h2 id="_2">사용법<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pipreqs<span class="w"> </span>-<span class="w"> </span>Generate<span class="w"> </span>pip<span class="w"> </span>requirements.txt<span class="w"> </span>file<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>imports
 
 Usage:
-    pipreqs [options] [&lt;path&gt;]
+<span class="w">    </span>pipreqs<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>&lt;path&gt;<span class="o">]</span>
 
 Arguments:
-    &lt;path&gt;                The path to the directory containing the application
-                          files for which a requirements file should be
-                          generated (defaults to the current working
-                          directory).
+<span class="w">    </span>&lt;path&gt;<span class="w">                </span>The<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>containing<span class="w"> </span>the<span class="w"> </span>application
+<span class="w">                          </span>files<span class="w"> </span><span class="k">for</span><span class="w"> </span>which<span class="w"> </span>a<span class="w"> </span>requirements<span class="w"> </span>file<span class="w"> </span>should<span class="w"> </span>be
+<span class="w">                          </span>generated<span class="w"> </span><span class="o">(</span>defaults<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>working
+<span class="w">                          </span>directory<span class="o">)</span>.
 
 Options:
-    --use-local           Use ONLY local package info instead of querying PyPI.
-    --pypi-server &lt;url&gt;   Use custom PyPi server.
-    --proxy &lt;url&gt;         Use Proxy, parameter will be passed to requests
-                          library. You can also just set the environments
-                          parameter in your terminal:
-                          $ export HTTP_PROXY=&quot;http://10.10.1.10:3128&quot;
-                          $ export HTTPS_PROXY=&quot;https://10.10.1.10:1080&quot;
-    --debug               Print debug information
-    --ignore &lt;dirs&gt;...    Ignore extra directories, each separated by a comma
-    --no-follow-links     Do not follow symbolic links in the project
-    --encoding &lt;charset&gt;  Use encoding parameter for file open
-    --savepath &lt;file&gt;     Save the list of requirements in the given file
-    --print               Output the list of requirements in the standard
-                          output
-    --force               Overwrite existing requirements.txt
-    --diff &lt;file&gt;         Compare modules in requirements.txt to project
-                          imports
-    --clean &lt;file&gt;        Clean up requirements.txt by removing modules
-                          that are not imported in project
-    --mode &lt;scheme&gt;       Enables dynamic versioning with &lt;compat&gt;,
-                          &lt;gt&gt; or &lt;non-pin&gt; schemes.
-                          &lt;compat&gt; | e.g. Flask~=1.1.2
-                          &lt;gt&gt;     | e.g. Flask&gt;=1.1.2
-                          &lt;no-pin&gt; | e.g. Flask
-</code></pre>
+<span class="w">    </span>--use-local<span class="w">           </span>Use<span class="w"> </span>ONLY<span class="w"> </span><span class="nb">local</span><span class="w"> </span>package<span class="w"> </span>info<span class="w"> </span>instead<span class="w"> </span>of<span class="w"> </span>querying<span class="w"> </span>PyPI.
+<span class="w">    </span>--pypi-server<span class="w"> </span>&lt;url&gt;<span class="w">   </span>Use<span class="w"> </span>custom<span class="w"> </span>PyPi<span class="w"> </span>server.
+<span class="w">    </span>--proxy<span class="w"> </span>&lt;url&gt;<span class="w">         </span>Use<span class="w"> </span>Proxy,<span class="w"> </span>parameter<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>passed<span class="w"> </span>to<span class="w"> </span>requests
+<span class="w">                          </span>library.<span class="w"> </span>You<span class="w"> </span>can<span class="w"> </span>also<span class="w"> </span>just<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>environments
+<span class="w">                          </span>parameter<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>terminal:
+<span class="w">                          </span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">HTTP_PROXY</span><span class="o">=</span><span class="s2">&quot;http://10.10.1.10:3128&quot;</span>
+<span class="w">                          </span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">HTTPS_PROXY</span><span class="o">=</span><span class="s2">&quot;https://10.10.1.10:1080&quot;</span>
+<span class="w">    </span>--debug<span class="w">               </span>Print<span class="w"> </span>debug<span class="w"> </span>information
+<span class="w">    </span>--ignore<span class="w"> </span>&lt;dirs&gt;...<span class="w">    </span>Ignore<span class="w"> </span>extra<span class="w"> </span>directories,<span class="w"> </span>each<span class="w"> </span>separated<span class="w"> </span>by<span class="w"> </span>a<span class="w"> </span>comma
+<span class="w">    </span>--no-follow-links<span class="w">     </span>Do<span class="w"> </span>not<span class="w"> </span>follow<span class="w"> </span>symbolic<span class="w"> </span>links<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>project
+<span class="w">    </span>--encoding<span class="w"> </span>&lt;charset&gt;<span class="w">  </span>Use<span class="w"> </span>encoding<span class="w"> </span>parameter<span class="w"> </span><span class="k">for</span><span class="w"> </span>file<span class="w"> </span>open
+<span class="w">    </span>--savepath<span class="w"> </span>&lt;file&gt;<span class="w">     </span>Save<span class="w"> </span>the<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>requirements<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>given<span class="w"> </span>file
+<span class="w">    </span>--print<span class="w">               </span>Output<span class="w"> </span>the<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>requirements<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>standard
+<span class="w">                          </span>output
+<span class="w">    </span>--force<span class="w">               </span>Overwrite<span class="w"> </span>existing<span class="w"> </span>requirements.txt
+<span class="w">    </span>--diff<span class="w"> </span>&lt;file&gt;<span class="w">         </span>Compare<span class="w"> </span>modules<span class="w"> </span><span class="k">in</span><span class="w"> </span>requirements.txt<span class="w"> </span>to<span class="w"> </span>project
+<span class="w">                          </span>imports
+<span class="w">    </span>--clean<span class="w"> </span>&lt;file&gt;<span class="w">        </span>Clean<span class="w"> </span>up<span class="w"> </span>requirements.txt<span class="w"> </span>by<span class="w"> </span>removing<span class="w"> </span>modules
+<span class="w">                          </span>that<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>imported<span class="w"> </span><span class="k">in</span><span class="w"> </span>project
+<span class="w">    </span>--mode<span class="w"> </span>&lt;scheme&gt;<span class="w">       </span>Enables<span class="w"> </span>dynamic<span class="w"> </span>versioning<span class="w"> </span>with<span class="w"> </span>&lt;compat&gt;,
+<span class="w">                          </span>&lt;gt&gt;<span class="w"> </span>or<span class="w"> </span>&lt;non-pin&gt;<span class="w"> </span>schemes.
+<span class="w">                          </span>&lt;compat&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>e.g.<span class="w"> </span>Flask~<span class="o">=</span><span class="m">1</span>.1.2
+<span class="w">                          </span>&lt;gt&gt;<span class="w">     </span><span class="p">|</span><span class="w"> </span>e.g.<span class="w"> </span>Flask&gt;<span class="o">=</span><span class="m">1</span>.1.2
+<span class="w">                          </span>&lt;no-pin&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>e.g.<span class="w"> </span>Flask
+</code></pre></div>
 
 
 
@@ -339,5 +350,5 @@ Options:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

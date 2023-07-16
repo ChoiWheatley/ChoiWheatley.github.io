@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -228,15 +239,22 @@
 <li>1학기만 진행하고 바로 취업할 것, 2학기 프로젝트는 어찌됐건 팀원과 싸운다.</li>
 <li>1학기 커리큘럼: 자바2주 HTML+CSS 1주 알고2주 jpa2주 알고2주 스프링3주 뷰3주</li>
 <li>백수 시절에 미리미리 저것들을 공부해야 적응한다. 메모메모</li>
-<li>[[OKKY 개발자 커뮤니티]] 에서 싸피 관련 정보 확인할 것</li>
+<li><a href="../OKKY%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EC%BB%A4%EB%AE%A4%EB%8B%88%ED%8B%B0/">OKKY 개발자 커뮤니티</a> 에서 싸피 관련 정보 확인할 것</li>
 </ul>
-<h1 id="11">11기 모집일정</h1>
+<h1 id="11">11기 모집일정<a class="headerlink" href="#11" title="Permanent link">&para;</a></h1>
 <p>미정이지만 작년기준 5,6 월에 뽑는다. [[2023-02-07]] 기준으로 3개월 가량 남은 셈.<br />
-[[삼성 싸피(ssafy) 8기,9기 취준생들의 점프대 준비방법과 오해하면 안 되는 점]] [^1]</p>
+<a href="../%EC%82%BC%EC%84%B1%20%EC%8B%B8%ED%94%BC%28ssafy%29%208%EA%B8%B0%2C9%EA%B8%B0%20%EC%B7%A8%EC%A4%80%EC%83%9D%EB%93%A4%EC%9D%98%20%EC%A0%90%ED%94%84%EB%8C%80%20%EC%A4%80%EB%B9%84%EB%B0%A9%EB%B2%95%EA%B3%BC%20%EC%98%A4%ED%95%B4%ED%95%98%EB%A9%B4%20%EC%95%88%20%EB%90%98%EB%8A%94%20%EC%A0%90/">삼성 싸피(ssafy) 8기,9기 취준생들의 점프대 준비방법과 오해하면 안 되는 점</a> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
 <hr />
 <p>tags:<br />
 links: [[0005 Active 💡]]</p>
-<p>[^1]: 비전공자 기준이기 때문에 GSAT 설명이 되어있다. 전공자는 코테.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>비전공자 기준이기 때문에 GSAT 설명이 되어있다. 전공자는 코테.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -285,5 +303,5 @@ links: [[0005 Active 💡]]</p>
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

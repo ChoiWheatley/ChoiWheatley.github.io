@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,13 +235,12 @@
                   
 
 
-<p>links: [[Borderlands3]], [[0020 Games 🎮|game]]</p>
+<p>links: <a href="../Borderlands3/">Borderlands3</a>, <a href="../0000%20Index%20%F0%9F%94%97/0020%20Games%20%F0%9F%8E%AE/">game</a></p>
 <p><a href="https://www.lootlemon.com/class/fl4k#xxxx_000000000000_0000000000000_000000000000_00000000000000">스킬트리 링크</a><br />
-<img alt="Pasted image 20230209012343.png" src="Pasted image 20230209012343.png" /><br />
+<a class="glightbox" href="../assets/Pasted%20image%2020230209012343.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230209012343.png" src="../assets/Pasted%20image%2020230209012343.png" /></a><br />
 한 쌍의 송곳니: 투사체를 한번에 많이 발사하는 (x5같이) 무기나 바주카 같은 무기 효율이 좋지 못하다. 확률적으로 '한 발'만을 추가해 주니 단발 + 연사 무기와 더 잘 어울린다. 마찬가지로 헌터 스킬트리의 메가보어도 치명타를 자주 터뜨리기 좋은 연발무기가 추천이 될듯.</p>
-<p><img alt="Pasted image 20230209014534.png" src="Pasted image 20230209014534.png" /><br />
-알아두면 좋은게, 안개 속 게릴라(왼쪽 위 핑크색 원)은 연사형 무기를 사용할 때가 더 이득이라고. 그러면 단발형 무기를 많이 쓸 땐 <code>내 서커스는 아니야</code> 스킬강화를 선택하면 펫이 모든 적의 주위를 끄는 방식으로 생존력을 높힐 수 있겠다.</p>
-<h1 id="_1">무기추천</h1>
+<p>알아두면 좋은게, 안개 속 게릴라(왼쪽 위 핑크색 원)은 연사형 무기를 사용할 때가 더 이득이라고. 그러면 단발형 무기를 많이 쓸 땐 <code>내 서커스는 아니야</code> 스킬강화를 선택하면 펫이 모든 적의 주위를 끄는 방식으로 생존력을 높힐 수 있겠다.</p>
+<h1 id="_1">무기추천<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0UcJJOmDOn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
@@ -280,5 +290,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

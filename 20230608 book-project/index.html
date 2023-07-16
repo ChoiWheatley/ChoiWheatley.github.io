@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,14 +231,14 @@
   <h1>20230608 book-project</h1>
 
 <ul>
-<li>[[pylint-django {pip} {vscode}]]</li>
-<li>[[black formatter {python} {vscode}]]</li>
-<li>[[get fetch --prune]]</li>
-<li>[[set_password VS update_session_auth_hash {django}]]</li>
-<li>[[django authorization for accessing인가 {mixins.{LoginRequiredMixin, UserPassesTestMixin}}]]</li>
-<li>[[django with ajax]]<ul>
-<li>[[PUT is idempotent, PATCH isn't]]</li>
-<li>[[ajax로 patch 요청 보내기]]</li>
+<li><a href="../pylint-django%20%7Bpip%7D%20%7Bvscode%7D/">pylint-django {pip} {vscode}</a></li>
+<li><a href="../black%20formatter%20%7Bpython%7D%20%7Bvscode%7D/">black formatter {python} {vscode}</a></li>
+<li><a href="../get%20fetch%20--prune/">get fetch --prune</a></li>
+<li><a href="../set_password%20VS%20update_session_auth_hash%20%7Bdjango%7D/">set_password VS update_session_auth_hash {django}</a></li>
+<li><a href="../django%20authorization%20for%20accessing%EC%9D%B8%EA%B0%80%20%7Bmixins.%7BLoginRequiredMixin%2C%20UserPassesTestMixin%7D%7D/">django authorization for accessing인가 {mixins.{LoginRequiredMixin, UserPassesTestMixin}}</a></li>
+<li><a href="../django%20with%20ajax/">django with ajax</a><ul>
+<li><a href="../PUT%20is%20idempotent%2C%20PATCH%20isn%27t/">PUT is idempotent, PATCH isn't</a></li>
+<li><a href="../ajax%EB%A1%9C%20patch%20%EC%9A%94%EC%B2%AD%20%EB%B3%B4%EB%82%B4%EA%B8%B0/">ajax로 patch 요청 보내기</a></li>
 </ul>
 </li>
 </ul>
@@ -279,5 +290,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

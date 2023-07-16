@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,7 +234,7 @@
 <li><a href="https://doc.rust-lang.org/stable/rust-by-example/trait/disambiguating.html">disambiguating ovelapping traits</a></li>
 <li><a href="https://users.rust-lang.org/t/multiple-from-implementation-overlapping/62635">bad case of implementing From trait</a></li>
 <li><a href="https://stackoverflow.com/questions/39159226/conflicting-implementations-of-trait-in-rust/66537661#66537661">another example of conflicting impl</a></li>
-<li>rust는 [[오버로딩이 없다]]. 그런데 가끔 트레잇을 구현하다 보면 동일한 함수 이름에 서로 다른 시그니처가 중복되는 경우가 있다. 그러면 코딩 인생 망함</li>
+<li>rust는 <a href="../%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9%EC%9D%B4%20%EC%97%86%EB%8B%A4/">오버로딩이 없다</a>. 그런데 가끔 트레잇을 구현하다 보면 동일한 함수 이름에 서로 다른 시그니처가 중복되는 경우가 있다. 그러면 코딩 인생 망함</li>
 <li>이해가 잘 안되는데, 함수 중복의 케이스가 꼬이고 꼬여있어서...</li>
 </ul>
 
@@ -274,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,14 +231,14 @@
   <h1>django model</h1>
 
 <ul>
-<li>[[OneToOneField {django}]]</li>
-<li>[[ManyToManyField {django}]]</li>
-<li>[[ForeignKey {django}]]<ul>
-<li>[[django model.ForeignKey.on_delete]]</li>
+<li><a href="../OneToOneField%20%7Bdjango%7D/">OneToOneField {django}</a></li>
+<li><a href="../ManyToManyField%20%7Bdjango%7D/">ManyToManyField {django}</a></li>
+<li><a href="../ForeignKey%20%7Bdjango%7D/">ForeignKey {django}</a><ul>
+<li><a href="../django%20model.ForeignKey.on_delete/">django model.ForeignKey.on_delete</a></li>
 </ul>
 </li>
-<li>[[django admin site register를 사용하여 유저 정보 확인할 수 있다]]</li>
-<li>[[querying in {django query}|queries]]</li>
+<li><a href="../django%20admin%20site%20register%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC%20%EC%9C%A0%EC%A0%80%20%EC%A0%95%EB%B3%B4%20%ED%99%95%EC%9D%B8%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">django admin site register를 사용하여 유저 정보 확인할 수 있다</a></li>
+<li><a href="../querying%20in%20%7Bdjango%20query%7D/">queries</a></li>
 </ul>
 
 
@@ -277,5 +288,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

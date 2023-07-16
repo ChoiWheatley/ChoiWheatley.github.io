@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,8 +236,8 @@
 
 
 <p><code>JOIN</code> 고도화에 사용되는 함수들. 단일 쿼리에서 계속 <code>JOIN</code>을 수행하면 비효율적이므로 미리 조인을 시켜놓은 결과를 객체로 반환한다.</p>
-<h1 id="select_related"><code>select_related</code></h1>
-<p>JOIN을 하는 타이밍이 DB상에서 이루어진다. 따라서 [[참조와 역참조]] 에서 다룬 JOIN이 이루어지는 위치에 따라 생각해보면... DB에서 JOIN을 하니까 정참조로는 <code>ForiegnKey</code>, <code>OneToOne</code> 모두 가능했지만, 역참조는 <code>OneToOne</code>만이 가능하다. 왜? 아직 파이썬 메모리 안에 대응수에 대한 정보가 없을 때 (N:M, 1:N) 오직 DB 쿼리만으로 역참조에 대한 정보가 어렵기 때문이다.</p>
+<h1 id="select_related"><code>select_related</code><a class="headerlink" href="#select_related" title="Permanent link">&para;</a></h1>
+<p>JOIN을 하는 타이밍이 DB상에서 이루어진다. 따라서 <a href="../%EC%B0%B8%EC%A1%B0%EC%99%80%20%EC%97%AD%EC%B0%B8%EC%A1%B0/">참조와 역참조</a> 에서 다룬 JOIN이 이루어지는 위치에 따라 생각해보면... DB에서 JOIN을 하니까 정참조로는 <code>ForiegnKey</code>, <code>OneToOne</code> 모두 가능했지만, 역참조는 <code>OneToOne</code>만이 가능하다. 왜? 아직 파이썬 메모리 안에 대응수에 대한 정보가 없을 때 (N:M, 1:N) 오직 DB 쿼리만으로 역참조에 대한 정보가 어렵기 때문이다.</p>
 <ul>
 <li>정참조<ul>
 <li><code>ForeignKey</code></li>
@@ -238,8 +249,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="prefetch_related"><code>prefetch_related</code></h1>
-<p>JOIN할 대상을 먼저 가져온 뒤 파이썬 상에서 JOIN이 이루어진다. 따라서 [[참조와 역참조]]에서 다룬 JOIN이 이루어지는 위치에 따라 생각해보면... 이미 테이블이 파이썬 메모리 안에 다 들어와 있기 때문에 역참조가 <code>select_related</code>보다 훨씬 유연한 편이다. </p>
+<h1 id="prefetch_related"><code>prefetch_related</code><a class="headerlink" href="#prefetch_related" title="Permanent link">&para;</a></h1>
+<p>JOIN할 대상을 먼저 가져온 뒤 파이썬 상에서 JOIN이 이루어진다. 따라서 <a href="../%EC%B0%B8%EC%A1%B0%EC%99%80%20%EC%97%AD%EC%B0%B8%EC%A1%B0/">참조와 역참조</a>에서 다룬 JOIN이 이루어지는 위치에 따라 생각해보면... 이미 테이블이 파이썬 메모리 안에 다 들어와 있기 때문에 역참조가 <code>select_related</code>보다 훨씬 유연한 편이다. </p>
 <ul>
 <li>정참조<ul>
 <li><code>ForeignKey</code></li>
@@ -252,7 +263,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_1">성능비교</h1>
+<h1 id="_1">성능비교<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 
 
 
@@ -301,5 +312,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,7 +232,7 @@
 
 <ul>
 <li><a href="https://docs.rs/axum/latest/axum/routing/struct.Router.html#method.into_make_service">into_make_service</a></li>
-<li>router 혼자만으로 서비스를 <code>serve</code>할 수 없다. 반드시 <code>Server</code> 객체에게 넘겨주어야 <code>serve</code>가 가능하다. [[hyper Server]]</li>
+<li>router 혼자만으로 서비스를 <code>serve</code>할 수 없다. 반드시 <code>Server</code> 객체에게 넘겨주어야 <code>serve</code>가 가능하다. <a href="../hyper%20Server/">hyper Server</a></li>
 <li><code>Server</code> 객체는 그렇다면 전역객체인가? 싱글톤처럼 사용하면 되는걸까?</li>
 </ul>
 
@@ -272,5 +283,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

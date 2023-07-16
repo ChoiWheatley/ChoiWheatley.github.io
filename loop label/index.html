@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,14 +231,14 @@
   <h1>loop label</h1>
 
 <p>기본적으로 <code>break</code> 나 <code>continue</code> 구문은 가장 안쪽의 반복문에 연관이 있지만 이것을 명시적으로 바꿀 수 있다.</p>
-<pre><code class="language-rust">'L1: loop {
-    'L2: loop {
-        'L3: loop{
-            break 'L1;
-        }
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="o">&#39;</span><span class="na">L1</span>: <span class="nc">loop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">&#39;</span><span class="na">L2</span>: <span class="nc">loop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">&#39;</span><span class="na">L3</span>: <span class="nc">loop</span><span class="p">{</span>
+<span class="w">            </span><span class="k">break</span><span class="w"> </span><span class="nl">&#39;L1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -276,5 +287,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

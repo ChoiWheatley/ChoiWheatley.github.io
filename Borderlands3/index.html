@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,12 +235,12 @@
                   
 
 
-<h1 id="_1">장비 총망라</h1>
+<h1 id="_1">장비 총망라<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
 <li>https://docs.google.com/spreadsheets/d/12Yrw_MyLB9RrSnKT_64bXKuNP2PXHhX_3xmjfnwgUiQ/edit#gid=0</li>
 <li>https://www.lootlemon.com/weapon/unforgiven-bl3</li>
 </ul>
-<h1 id="_2">무기</h1>
+<h1 id="_2">무기<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <ul>
 <li>[ ] 명징성: 치명타시 점착폭탄 생성  <ul>
 <li>[ ] https://www.youtube.com/watch?v=wrWThl-0cBI</li>
@@ -248,17 +259,17 @@
 </li>
 <li>[ ] 소울랜더: 소총이… smg 연사력?  거기다 맞출때마다 해골이 발사?</li>
 </ul>
-<h1 id="_3">유물</h1>
+<h1 id="_3">유물<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
 <ul>
 <li>[ ] 지식의 진주(DLC): 연속으로 명중에 성공하면 데미지가 1%씩 증가하며 최대 15회 중첩</li>
 <li>[ ] </li>
 </ul>
-<h1 id="_4">클래스 모드</h1>
+<h1 id="_4">클래스 모드<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
 <ul>
 <li>[ ] DE4DEYE: 체력이 75%이상인 적에게 데미지 추가</li>
 </ul>
-<p><img alt="플랙" src="플랙" /></p>
-<p><img alt="아마라" src="아마라" /></p>
+<p><a class="glightbox" href="../%ED%94%8C%EB%9E%99/" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="플랙" src="../%ED%94%8C%EB%9E%99/" /></a></p>
+<p><a class="glightbox" href="../%EC%95%84%EB%A7%88%EB%9D%BC/" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="아마라" src="../%EC%95%84%EB%A7%88%EB%9D%BC/" /></a></p>
 
 
 
@@ -307,5 +318,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,12 +240,12 @@
 <li><a href="https://www.webforefront.com/django/designprinciples.html">Don't Repeat Yourself (DRY principle)</a></li>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/http/urls/#reverse-resolution-of-urls">Reverse resolution of URLs {docs.com}</a></li>
 </ul>
-<h1 id="tldr">TL;DR</h1>
+<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h1>
 <ul>
 <li>reverse는 URL 하드코딩을 피할 수 있는 좋은 도구이다.</li>
 <li>DRY 메커니즘을 사용하면 URL을 교체하는 것과 업무로직을 분리할 수 있다.</li>
 </ul>
-<h1 id="_1">번역</h1>
+<h1 id="_1">번역<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>Django 프로젝트에서 작업할 때 일반적으로 필요한 것은 생성된 콘텐츠(뷰 및 자산 URL, 사용자에게 표시되는 URL 등)에 임베드하거나 서버 측의 탐색 흐름(리디렉션 등)을 처리하기 위해 최종 형식의 URL을 가져오는 것입니다.</p>
 <p>이러한 URL을 하드코딩하는 것은 피하는 것이 좋습니다(힘들고 확장성이 떨어지며 오류가 발생하기 쉬운 전략). URLconf에서 설명하는 설계와 평행한 URL을 생성하기 위해 임시 메커니즘을 고안하는 것도 마찬가지로 위험하며, 시간이 지남에 따라 부실해지는 URL을 생성할 수 있습니다.</p>
 <p>즉, 필요한 것은 DRY 메커니즘입니다. 이 메커니즘을 사용하면 프로젝트 소스 코드를 모두 검토하여 오래된 URL을 검색하고 교체할 필요 없이 URL 디자인을 발전시킬 수 있다는 장점이 있습니다.</p>
@@ -295,5 +306,5 @@ Django 모델 인스턴스의 URL 처리와 관련된 상위 수준 코드에서
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

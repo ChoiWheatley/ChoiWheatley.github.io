@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,154 +237,154 @@
     - 나는 메서드 포함하고 싶지 않아 ====&gt; <code>vars(self)</code>
     - 나는 이거 좀 더 이쁘게 출력하고 싶은걸 ====&gt; <code>pprint.pformat(vars(self))</code> <a href="https://docs.python.org/3/library/pprint.html#pprint.pformat">pprint doc</a>
     - </p>
-<pre><code class="language-python">from pprint import pformat
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pformat</span>
 
-class UserInfo(object):
+<span class="k">class</span> <span class="nc">UserInfo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    def __init__(self, infos):
-        self.id = infos['id']
-        self.name = infos['name']
-        self.age = infos['age']
-        self.gender = infos['gender']
-        self.book_ids = infos['book_ids']
-        self.library = infos['library']
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">infos</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">book_ids</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;book_ids&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">library</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;library&#39;</span><span class="p">]</span>
 
-    def __repr__(self):
-        return pformat(vars(self))
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pformat</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
-    def borrow(self, book_id):
-        self.library.borrow(self.id, book_id)
+    <span class="k">def</span> <span class="nf">borrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">library</span><span class="o">.</span><span class="n">borrow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">book_id</span><span class="p">)</span>
 
-    def return_book(self, book_id):
-        self.library.return_book(self.id, book_id)
+    <span class="k">def</span> <span class="nf">return_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">library</span><span class="o">.</span><span class="n">return_book</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">book_id</span><span class="p">)</span>
 
-    def do_borrow(self, book_id):
-        self.book_ids.append(book_id)
+    <span class="k">def</span> <span class="nf">do_borrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">book_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
 
-    def do_return_book(self, book_id):
-        self.book_ids.remove(book_id)
+    <span class="k">def</span> <span class="nf">do_return_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">book_ids</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
 
-    def show_books(self):
-        print('\n====BEGIN &lt;&lt;show_books&gt;&gt;====')
-        for book_id in self.book_ids:
-            print(f'{self.library.query_book(book_id)}')        
-        print('====END &lt;&lt;show_books&gt;&gt;====\n')
-
-
-
-class BookInfo(object):
-
-    def __init__(self, infos):
-        self.id = infos['id']
-        self.name = infos['name']
-        self.author = infos['author']
-        self.publisher = infos['publisher']
-        self.isbn = infos['isbn']
-        self.tldr = infos['tldr']
-        self.borrowed = False
-
-    def __repr__(self):
-        return pformat(vars(self))
-
-    def is_borrowed(self):
-        return self.borrowed
-
-
-class Library(object):
-
-    def __init__(self, books = [], users = []):
-        self.books = books
-        self.users = set(users)
-
-        for book in books:
-            book.borrowed = False
-
-    def add_books(self, books):
-        for book in books:
-            book.borrowed = False
-            self.books.append(book)
-
-    def add_users(self, users):
-        for user in users:
-            self.users.add(user)
-
-    def query_book(self, book_id):
-        for book in self.books:
-            if book.id == book_id:
-                return book
-        return None
-
-    def query_user(self, user_id):
-        for user in self.users:
-            if user.id == user_id:
-                return user
-        return None
-
-    def borrow(self, user_id, book_id):
-        user = self.query_user(user_id)
-        book = self.query_book(book_id)
-
-        if user is not None and book is not None:
-            user.do_borrow(book_id)
-            book.borrowed = True
-
-    def return_book(self, user_id, book_id):
-        user = self.query_user(user_id)
-        book = self.query_book(book_id)
-
-        if user is not None and book is not None:
-            user.do_return_book(book_id)
-            book.borrowed = False
+    <span class="k">def</span> <span class="nf">show_books</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">====BEGIN &lt;&lt;show_books&gt;&gt;====&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">book_ids</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">library</span><span class="o">.</span><span class="n">query_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;====END &lt;&lt;show_books&gt;&gt;====</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
 
 
-Java의_정석 = BookInfo({
-    'id': 0,
-    'name': 'Java의 정석',
-    'author': '남궁 성',
-    'publisher': '도우출판',
-    'isbn': 'ajsfjwei23',
-    'tldr': '자바의 참맛!' ,
-})
+<span class="k">class</span> <span class="nc">BookInfo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-컴퓨터_비전 = BookInfo({
-    'id': 1,
-    'name': '컴퓨터 비전',
-    'author': '오일석',
-    'publisher': '한빛아카데미',
-    'isbn': 'sjk3uwe89fd',
-    'tldr': '한 권으로 꿰뚫는 컴퓨터 비전 핵심 알고리즘' ,
-})
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">infos</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">publisher</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;publisher&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">isbn</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;isbn&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tldr</span> <span class="o">=</span> <span class="n">infos</span><span class="p">[</span><span class="s1">&#39;tldr&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">borrowed</span> <span class="o">=</span> <span class="kc">False</span>
 
-연수도서관 = Library()
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pformat</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
-choi = UserInfo({
-    'id' : 20160339,
-    'name' : '최승현',
-    'age' : 26,
-    'gender': 'male',
-    'book_ids': [],
-    'library': 연수도서관
-})
+    <span class="k">def</span> <span class="nf">is_borrowed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">borrowed</span>
 
-연수도서관.add_books([Java의_정석, 컴퓨터_비전])
-연수도서관.add_users([choi, ])
 
-print(f'current state of choi: {choi}\n')
-choi.show_books()
+<span class="k">class</span> <span class="nc">Library</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-choi.borrow(0)
-choi.show_books()
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">books</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">users</span> <span class="o">=</span> <span class="p">[]):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="n">books</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
 
-choi.borrow(1)
-choi.show_books()
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">borrowed</span> <span class="o">=</span> <span class="kc">False</span>
 
-choi.return_book(0)
-choi.show_books()
+    <span class="k">def</span> <span class="nf">add_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">books</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">borrowed</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
 
-choi.return_book(1)
-choi.show_books()
-</code></pre>
+    <span class="k">def</span> <span class="nf">add_users</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">users</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">query_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">book</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">book_id</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">book</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">query_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">user_id</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">user</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">borrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+        <span class="n">book</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">book</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">user</span><span class="o">.</span><span class="n">do_borrow</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">borrowed</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">return_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">book_id</span><span class="p">):</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+        <span class="n">book</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">book</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">user</span><span class="o">.</span><span class="n">do_return_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
+            <span class="n">book</span><span class="o">.</span><span class="n">borrowed</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+
+<span class="n">Java의_정석</span> <span class="o">=</span> <span class="n">BookInfo</span><span class="p">({</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Java의 정석&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;남궁 성&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;publisher&#39;</span><span class="p">:</span> <span class="s1">&#39;도우출판&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;isbn&#39;</span><span class="p">:</span> <span class="s1">&#39;ajsfjwei23&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tldr&#39;</span><span class="p">:</span> <span class="s1">&#39;자바의 참맛!&#39;</span> <span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">컴퓨터_비전</span> <span class="o">=</span> <span class="n">BookInfo</span><span class="p">({</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;컴퓨터 비전&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;오일석&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;publisher&#39;</span><span class="p">:</span> <span class="s1">&#39;한빛아카데미&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;isbn&#39;</span><span class="p">:</span> <span class="s1">&#39;sjk3uwe89fd&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;tldr&#39;</span><span class="p">:</span> <span class="s1">&#39;한 권으로 꿰뚫는 컴퓨터 비전 핵심 알고리즘&#39;</span> <span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">연수도서관</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
+
+<span class="n">choi</span> <span class="o">=</span> <span class="n">UserInfo</span><span class="p">({</span>
+    <span class="s1">&#39;id&#39;</span> <span class="p">:</span> <span class="mi">20160339</span><span class="p">,</span>
+    <span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;최승현&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;age&#39;</span> <span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+    <span class="s1">&#39;gender&#39;</span><span class="p">:</span> <span class="s1">&#39;male&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;book_ids&#39;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s1">&#39;library&#39;</span><span class="p">:</span> <span class="n">연수도서관</span>
+<span class="p">})</span>
+
+<span class="n">연수도서관</span><span class="o">.</span><span class="n">add_books</span><span class="p">([</span><span class="n">Java의_정석</span><span class="p">,</span> <span class="n">컴퓨터_비전</span><span class="p">])</span>
+<span class="n">연수도서관</span><span class="o">.</span><span class="n">add_users</span><span class="p">([</span><span class="n">choi</span><span class="p">,</span> <span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;current state of choi: </span><span class="si">{</span><span class="n">choi</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">choi</span><span class="o">.</span><span class="n">show_books</span><span class="p">()</span>
+
+<span class="n">choi</span><span class="o">.</span><span class="n">borrow</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">choi</span><span class="o">.</span><span class="n">show_books</span><span class="p">()</span>
+
+<span class="n">choi</span><span class="o">.</span><span class="n">borrow</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">choi</span><span class="o">.</span><span class="n">show_books</span><span class="p">()</span>
+
+<span class="n">choi</span><span class="o">.</span><span class="n">return_book</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">choi</span><span class="o">.</span><span class="n">show_books</span><span class="p">()</span>
+
+<span class="n">choi</span><span class="o">.</span><span class="n">return_book</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">choi</span><span class="o">.</span><span class="n">show_books</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -422,5 +433,5 @@ choi.show_books()
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

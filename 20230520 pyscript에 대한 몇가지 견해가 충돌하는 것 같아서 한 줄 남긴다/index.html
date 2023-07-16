@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,7 +230,7 @@
 
   <h1>20230520 pyscript에 대한 몇가지 견해가 충돌하는 것 같아서 한 줄 남긴다</h1>
 
-<p>[[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]] 진행하면서 강사님이 [[pyscript]] 빨아주는 자세와 김영민씨의 극혐하는 자세가 충돌하는 일이 있었다. (물론 진짜로 충돌한 건 아니지만)</p>
+<p><a href="../%EC%A3%BC%EB%8B%88%EC%96%B4%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%2C%20%EA%B7%B8%20%EC%9D%B4%EC%83%81%EC%9C%BC%EB%A1%9C%20%F0%9F%9A%80%7Bbook-project%7D/">주니어 백엔드 개발자, 그 이상으로 🚀{book-project}</a> 진행하면서 강사님이 <a href="../pyscript/">pyscript</a> 빨아주는 자세와 김영민씨의 극혐하는 자세가 충돌하는 일이 있었다. (물론 진짜로 충돌한 건 아니지만)</p>
 
 
 
@@ -268,5 +279,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

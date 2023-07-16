@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,14 +231,14 @@
   <h1>SSAFY 10기</h1>
 
 <ul>
-<li>[[SSAFY 꿀팁]]</li>
-<li>[[삼성 싸피(ssafy) 8기,9기 취준생들의 점프대 준비방법과 오해하면 안 되는 점]]</li>
+<li><a href="../SSAFY%20%EA%BF%80%ED%8C%81/">SSAFY 꿀팁</a></li>
+<li><a href="../%EC%82%BC%EC%84%B1%20%EC%8B%B8%ED%94%BC%28ssafy%29%208%EA%B8%B0%2C9%EA%B8%B0%20%EC%B7%A8%EC%A4%80%EC%83%9D%EB%93%A4%EC%9D%98%20%EC%A0%90%ED%94%84%EB%8C%80%20%EC%A4%80%EB%B9%84%EB%B0%A9%EB%B2%95%EA%B3%BC%20%EC%98%A4%ED%95%B4%ED%95%98%EB%A9%B4%20%EC%95%88%20%EB%90%98%EB%8A%94%20%EC%A0%90/">삼성 싸피(ssafy) 8기,9기 취준생들의 점프대 준비방법과 오해하면 안 되는 점</a></li>
 <li>일정<ul>
 <li>SW 적성진단: 5월 21일 예정, 5월 14일 사전 오리엔테이션</li>
 <li>에세이: 5월 9일 ~ 5월 20일</li>
 </ul>
 </li>
-<li><img alt="vlcsnap-2023-05-08-08h21m43s462.png" src="vlcsnap-2023-05-08-08h21m43s462.png" /></li>
+<li><a class="glightbox" href="../assets/vlcsnap-2023-05-08-08h21m43s462.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="vlcsnap-2023-05-08-08h21m43s462.png" src="../assets/vlcsnap-2023-05-08-08h21m43s462.png" /></a></li>
 </ul>
 
 
@@ -277,5 +288,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

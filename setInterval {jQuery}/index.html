@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,18 +238,18 @@
 <ul>
 <li><a href="https://stackoverflow.com/questions/5484205/call-function-with-setinterval-in-jquery">SOF</a></li>
 </ul>
-<h1 id="answer">Answer</h1>
+<h1 id="answer">Answer<a class="headerlink" href="#answer" title="Permanent link">&para;</a></h1>
 <p>To write the best code, you "should" use the latter approach, with a function reference:</p>
-<pre><code class="language-javascript">var refreshId = setInterval(function() {}, 5000);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">refreshId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+</code></pre></div>
 <p>or</p>
-<pre><code class="language-javascript">function test() {}
-var refreshId = setInterval(test, 5000);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">test</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">refreshId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">test</span><span class="p">,</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+</code></pre></div>
 <p>but your approach of</p>
-<pre><code class="language-javascript">function test() {}
-var refreshId = setInterval(&quot;test()&quot;, 5000);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">test</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">refreshId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setInterval</span><span class="p">(</span><span class="s2">&quot;test()&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5000</span><span class="p">);</span>
+</code></pre></div>
 <p>is basically valid, too (as long as <code>test()</code> is global).</p>
 <p>Note that there is no such thing really as "in jQuery". You're still writing the Javascript language; you're just using some pre-made functions that are the jQuery library.</p>
 
@@ -289,5 +300,5 @@ var refreshId = setInterval(&quot;test()&quot;, 5000);
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

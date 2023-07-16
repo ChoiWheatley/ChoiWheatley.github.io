@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -239,9 +250,9 @@
                   
 
 
-<h1 id="c-understanding-how-lambda-closure-type-has-deleted-default-constructor-stack-overflow">c++ - Understanding how Lambda closure type has deleted default constructor - Stack Overflow</h1>
+<h1 id="c-understanding-how-lambda-closure-type-has-deleted-default-constructor-stack-overflow">c++ - Understanding how Lambda closure type has deleted default constructor - Stack Overflow<a class="headerlink" href="#c-understanding-how-lambda-closure-type-has-deleted-default-constructor-stack-overflow" title="Permanent link">&para;</a></h1>
 <blockquote>
-<h2 id="excerpt">Excerpt</h2>
+<h2 id="excerpt">Excerpt<a class="headerlink" href="#excerpt" title="Permanent link">&para;</a></h2>
 <p>From 5.1.2<br />
   [19] The closure type associated with a lambda-expression has a deleted (8.4.3) default constructor and a deleted<br />
   copy assignment operator. It has an implicitly-declared copy const...</p>
@@ -252,27 +263,27 @@
 <p>[19] The closure type associated with a lambda-expression <strong>has a deleted (8.4.3) default constructor</strong> and a deleted copy assignment operator. It has an implicitly-declared copy constructor (12.8) and may have an implicitlydeclared move constructor (12.8). [ Note: The copy/move constructor is implicitly defined in the same way as any other implicitly declared copy/move constructor would be implicitly defined. —end note ]</p>
 </blockquote>
 <p>I'm reading through C++ Primer 14.8.1 which explains lambda expressions being translated by the compiler in to an unnamed object of an unnamed class. How is it I can I define objects of lambda functions which do not contain a lambda capture, if the default constructor is deleted?</p>
-<pre><code class="language-c++"> auto g = [](){};
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](){};</span>
+</code></pre></div>
 <p>Is this not conceptually the same as...</p>
-<pre><code class="language-c++"> class lambdaClass{
- public:
-      lambdaClass() = delete;
-      lambdaClass&amp; operator=(const lambdaClass&amp;) = delete;
-      void operator()(){ }
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">lambdaClass</span><span class="p">{</span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="w">      </span><span class="n">lambdaClass</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+<span class="w">      </span><span class="n">lambdaClass</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lambdaClass</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">void</span><span class="w"> </span><span class="nf">operator</span><span class="p">()(){</span><span class="w"> </span><span class="p">}</span>
 
-      //copy/move constructor and destructor implicitly defined
-};
+<span class="w">      </span><span class="c1">//copy/move constructor and destructor implicitly defined</span>
+<span class="p">};</span>
 
-auto g = lambdaClass(); //would be an error since default is deleted.
-</code></pre>
+<span class="k">auto</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lambdaClass</span><span class="p">();</span><span class="w"> </span><span class="c1">//would be an error since default is deleted.</span>
+</code></pre></div>
 <p>If there was a capture then a constructor <em>other</em> than the default constructor would be defined and it would be okay to initialise objects of such (as long as a parameter was passed). But if there is no capture and the default constructor is deleted, it doesn't seem consistent conceptually that a lambda class object can be created.</p>
 <p>Edit: Hmm, maybe the conception that the lambda class creates constructors depending on its lambda captures is unfounded despite this being how it's described in C++ Primer (I can find no quote of it in the standard), because the following code does not work even though I would expect it to conceptually:</p>
-<pre><code class="language-c++">int sz = 2;
-auto a = [sz](){ return sz;};
-decltype(a) b(10); //compiler error
-decltype(a) b = a; //all good though
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">sz</span><span class="p">](){</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">sz</span><span class="p">;};</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">//compiler error</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">//all good though</span>
+</code></pre></div>
 
 
 
@@ -321,5 +332,5 @@ decltype(a) b = a; //all good though
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

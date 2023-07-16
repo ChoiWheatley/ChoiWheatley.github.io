@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -238,18 +249,18 @@
 </ul>
 </li>
 <li><code>enumerate</code><ul>
-<li>러스트의 [[enumerate and zip]] 의 enumerate와 같다. 인덱스 순서를 매겨주는 편리한 녀석이다.</li>
+<li>러스트의 <a href="../enumerate%20and%20zip/">enumerate and zip</a> 의 enumerate와 같다. 인덱스 순서를 매겨주는 편리한 녀석이다.</li>
 </ul>
 </li>
 <li>nested loops</li>
 <li>tuple unpacking</li>
 </ul>
-<pre><code class="language-python">for key, value in some_dict.items():
-    print(f'{key} : {value}') 
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">some_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</code></pre></div>
 <ul>
 <li><code>in</code> 문법을 활용하여 순회시, 시퀀스형 자료형은 메서드로 <code>__iter__</code> 와 <code>__next__</code>를 가지고 있어야 한다. =&gt; 커스텀 시퀀스 자료형 만들기도 개꿀</li>
-<li>[[for-loop in python]]</li>
+<li><a href="../for-loop%20in%20python/">for-loop in python</a></li>
 <li></li>
 </ul>
 
@@ -300,5 +311,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

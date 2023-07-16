@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,7 +240,7 @@
 <li><a href="https://docs.djangoproject.com/en/4.2/howto/static-files/">doc.com</a></li>
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/pull/50">관련 bookstore 리포지토리 PR 내용</a></li>
 <li><a href="https://learndjango.com/tutorials/django-static-files-and-templates">learndjango.com</a></li>
-<li>[[aws s3 static files in django]]</li>
+<li><a href="../aws%20s3%20static%20files%20in%20django/">aws s3 static files in django</a></li>
 </ul>
 <hr />
 <ul>
@@ -239,26 +250,28 @@
 </li>
 <li>base.html: <code>{% load static %}</code> &amp; <code>{% static 'js/getCookie.js %}</code>를 사용하여 정적파일을 링크 (이렇게 안하면 라우트 뒤에 src가 붙습니다 ⚠️)</li>
 </ul>
-<p>!!! note "Your project will probably also have static assets that aren’t tied to a particular app. In addition to using a <code>static/</code> directory inside your apps, you can define a list of directories (<a href="https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STATICFILES_DIRS"><code>STATICFILES_DIRS</code></a>) in your settings file where Django will also look for static files. For example:"</p>
-<pre><code class="language-python">STATICFILES_DIRS = [
-    BASE_DIR / &quot;static&quot;,
-    &quot;/var/www/static/&quot;,
-]
-</code></pre>
-<h1 id="static"><code>static()</code></h1>
+<blockquote>
+<p>[!note] Your project will probably also have static assets that aren’t tied to a particular app. In addition to using a <code>static/</code> directory inside your apps, you can define a list of directories (<a href="https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-STATICFILES_DIRS"><code>STATICFILES_DIRS</code></a>) in your settings file where Django will also look for static files. For example:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">STATICFILES_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;/var/www/static/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+<h1 id="static"><code>static()</code><a class="headerlink" href="#static" title="Permanent link">&para;</a></h1>
 <p><a href="https://docs.djangoproject.com/en/3.2/ref/urls/#static">docs.com</a></p>
 <blockquote>
 <p>Helper function to return a URL pattern for serving files in <strong>debug</strong> mode:</p>
 </blockquote>
 <p>이상한 코드를 보았다. https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/core/urls.py#L23-L29</p>
 <p><code>urlpatterns</code> 뒤에 <code>static()</code>을 <code>+</code> 연산으로 이어붙인 것 같은데, 이건 도대체 뭐냐?</p>
-<pre><code class="language-python">from django.conf import settings
-from django.conf.urls.static import static
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>
 
-urlpatterns = [
-    # ... the rest of your URLconf goes here ...
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-</code></pre>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ... the rest of your URLconf goes here ...</span>
+<span class="p">]</span> <span class="o">+</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
+</code></pre></div>
 <p>{% endraw %}</p>
 
 
@@ -308,5 +321,5 @@ urlpatterns = [
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

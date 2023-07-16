@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -219,8 +230,8 @@
 
   <h1>나는 이 세상이다. 내 육체는 나의 극히 일부분에 불과하다.</h1>
 
-<p>[[0031 Emotions 🤔|emotion]]</p>
-<p>뭔가 [[무경계 - 켄 윌버|무경계]] 책을 읽으면서 나온 말 같은데</p>
+<p><a href="../0000%20Index%20%F0%9F%94%97/0031%20Emotions%20%F0%9F%A4%94/">emotion</a></p>
+<p>뭔가 <a href="../%EB%AC%B4%EA%B2%BD%EA%B3%84%20-%20%EC%BC%84%20%EC%9C%8C%EB%B2%84/">무경계</a> 책을 읽으면서 나온 말 같은데</p>
 
 
 
@@ -269,5 +280,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -221,30 +232,30 @@
 
 <ul>
 <li>Framework<ul>
-<li>[[bevy]]</li>
-<li>[[rocket]]</li>
-<li>[[axum]]</li>
-<li>[[warp]]</li>
-<li>[[tokio]]</li>
+<li><a href="../bevy/">bevy</a></li>
+<li><a href="../rocket/">rocket</a></li>
+<li><a href="../axum/">axum</a></li>
+<li><a href="../warp/">warp</a></li>
+<li><a href="../tokio/">tokio</a></li>
 </ul>
 </li>
 <li>Tools<ul>
-<li>[[derivative]]</li>
-<li>[[ouroboros]]</li>
-<li>[[serde]]</li>
-<li>[[itertools rust crate]]</li>
-<li>[[quickcheck]]</li>
-<li>[[walkdir]]</li>
-<li>[[rustube 유튜브 다운로더]]</li>
+<li><a href="../derivative/">derivative</a></li>
+<li><a href="../ouroboros/">ouroboros</a></li>
+<li><a href="../serde/">serde</a></li>
+<li><a href="../itertools%20rust%20crate/">itertools rust crate</a></li>
+<li><a href="../quickcheck/">quickcheck</a></li>
+<li><a href="../walkdir/">walkdir</a></li>
+<li><a href="../rustube%20%EC%9C%A0%ED%8A%9C%EB%B8%8C%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%8D%94/">rustube 유튜브 다운로더</a></li>
 </ul>
 </li>
 <li>wasm<ul>
-<li>[[wasm-pack]]</li>
-<li>[[web_sys]]</li>
+<li><a href="../wasm-pack/">wasm-pack</a></li>
+<li><a href="../web_sys/">web_sys</a></li>
 </ul>
 </li>
 <li>simple<ul>
-<li>[[anyhow]]</li>
+<li><a href="../anyhow/">anyhow</a></li>
 </ul>
 </li>
 </ul>
@@ -296,5 +307,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

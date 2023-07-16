@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,24 +231,24 @@
   <h1>0110 Utility 🔧</h1>
 
 <ul>
-<li>[[prime numbers]]</li>
-<li>[[online c++ compiler]]</li>
-<li>[[Easymotion Vim cheatsheat]]</li>
-<li>[[무료 도메인 네임서버 DNS]]</li>
+<li><a href="../../prime%20numbers/">prime numbers</a></li>
+<li><a href="../../online%20c%2B%2B%20compiler/">online c++ compiler</a></li>
+<li><a href="../../Easymotion%20Vim%20cheatsheat/">Easymotion Vim cheatsheat</a></li>
+<li><a href="../../%EB%AC%B4%EB%A3%8C%20%EB%8F%84%EB%A9%94%EC%9D%B8%20%EB%84%A4%EC%9E%84%EC%84%9C%EB%B2%84%20DNS/">무료 도메인 네임서버 DNS</a></li>
 <li>ubuntu<ul>
-<li>[[ubuntu 20.04 etc apt sources.list]]</li>
+<li><a href="../../ubuntu%2020.04%20etc%20apt%20sources.list/">ubuntu 20.04 etc apt sources.list</a></li>
 </ul>
 </li>
 <li>documents<ul>
-<li>[[웹에서 바로 서명 만들기 with glosign]]</li>
+<li><a href="../../%EC%9B%B9%EC%97%90%EC%84%9C%20%EB%B0%94%EB%A1%9C%20%EC%84%9C%EB%AA%85%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20with%20glosign/">웹에서 바로 서명 만들기 with glosign</a></li>
 </ul>
 </li>
-<li>[[regex]]</li>
-<li>[[latex to unicode converter]]</li>
-<li>[[espanso text converter]]</li>
-<li>[[karabiner-elements]]</li>
-<li>[[utterances - lightweight comments widget built on GitHub issues]]</li>
-<li>[[gtop, elegant top for cli]]</li>
+<li><a href="../../regex/">regex</a></li>
+<li><a href="../../latex%20to%20unicode%20converter/">latex to unicode converter</a></li>
+<li><a href="../../espanso%20text%20converter/">espanso text converter</a></li>
+<li><a href="../../karabiner-elements/">karabiner-elements</a></li>
+<li><a href="../../utterances%20-%20lightweight%20comments%20widget%20built%20on%20GitHub%20issues/">utterances - lightweight comments widget built on GitHub issues</a></li>
+<li><a href="../../gtop%2C%20elegant%20top%20for%20cli/">gtop, elegant top for cli</a></li>
 </ul>
 
 
@@ -287,5 +298,5 @@
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

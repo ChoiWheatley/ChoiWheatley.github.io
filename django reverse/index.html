@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,10 +240,10 @@
 - <code>redirect(reverse("users:signup"))</code>: 엔드포인트를 추적한다.
 - <code>redirect("users:signup")</code>: URL 패턴 이름을 사용하여 리디렉션.
 - reverse를 가능하게 하기 위해선 필요한 조건이 있었는데 뭐더라? 전역변수에 뭘 할당했던 것 같은데</p>
-<h1 id="no-reverse-match">No Reverse Match</h1>
+<h1 id="no-reverse-match">No Reverse Match<a class="headerlink" href="#no-reverse-match" title="Permanent link">&para;</a></h1>
 <p>에러가 나왔을 때 해결해야 할 것들에 대해 정리해보자. </p>
-<pre><code>django.urls.exceptions.NoReverseMatch: Reverse for 'signin' not found. 'signin' is not a valid view function or pattern name.
-</code></pre>
+<div class="highlight"><pre><span></span><code>django.urls.exceptions.NoReverseMatch: Reverse for &#39;signin&#39; not found. &#39;signin&#39; is not a valid view function or pattern name.
+</code></pre></div>
 <ol>
 <li>템플릿을 제대로 작성했나?<ol>
 <li><code>{% url '&lt;app-name&gt;:&lt;url-name&gt;'%}</code>을 제대로 작성했나? 실수로 <code>&lt;app-name&gt;/&lt;url-name&gt;</code> 이런 식으로 쓰거나 하면 위의 에러가 발생한다.</li>
@@ -240,10 +251,10 @@
 </li>
 <li>urls.py를 코어에서 제대로 연결했나?<ol>
 <li>코어 <code>urlpatterns</code>에 명시가 제대로 됐는지 확인하라.</li>
-<li>특히, <code>include</code> 문법을 사용할 땐 해당 앱의 <code>urls.py</code> 전역변수에 <code>app_name</code>을 지정해 주어야 한다. | [[django.urls.include(module, namespace)]]</li>
+<li>특히, <code>include</code> 문법을 사용할 땐 해당 앱의 <code>urls.py</code> 전역변수에 <code>app_name</code>을 지정해 주어야 한다. | <a href="../django.urls.include%28module%2C%20namespace%29/">django.urls.include(module, namespace)</a></li>
 </ol>
 </li>
-<li><code>reverse</code>의 인자를 제대로 작성했나? | [[django reverse]]<ol>
+<li><code>reverse</code>의 인자를 제대로 작성했나? | <a href="./">django reverse</a><ol>
 <li>reverse 인자도 마찬가지로 <code>:</code> 구분자를 사용한다는거.</li>
 </ol>
 </li>
@@ -297,5 +308,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

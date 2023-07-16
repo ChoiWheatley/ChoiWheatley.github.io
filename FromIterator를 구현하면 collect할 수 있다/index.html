@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,11 +234,11 @@
 <li>https://doc.rust-lang.org/std/iter/trait.FromIterator.html</li>
 <li>냠냠</li>
 </ul>
-<pre><code class="language-rust">pub trait FromIterator&lt;A&gt;: Sized {
-    fn from_iter&lt;T&gt;(iter: T) -&gt; Self
-    where T: IntoIterator&lt;Item = A&gt;;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="n">FromIterator</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span>: <span class="nb">Sized</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">from_iter</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">iter</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span>
+<span class="w">    </span><span class="k">where</span><span class="w"> </span><span class="n">T</span>: <span class="nb">IntoIterator</span><span class="o">&lt;</span><span class="n">Item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 <ul>
 <li>함수 시그니처를 보면 알 수 있듯이, 어떤 Iterable한 인자가 들어오면 해당 타입으로 변환을 할 수 있다. </li>
 </ul>
@@ -288,5 +299,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

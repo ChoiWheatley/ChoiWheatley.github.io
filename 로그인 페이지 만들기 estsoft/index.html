@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,11 +237,11 @@
 
 <ul>
 <li>결과물</li>
-<li><img alt="Pasted image 20230428212459.png" src="Pasted image 20230428212459.png" /></li>
+<li>![[Pasted image 20230428212459.png]]</li>
 <li><a href="https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/login.html">login.html</a></li>
 <li><a href="https://github.com/ChoiWheatley/ormi-master/blob/main/ormi-2023-04-28/layout/style.css">style.css</a></li>
 </ul>
-<h1 id="what-i-have-learned">what i have learned</h1>
+<h1 id="what-i-have-learned">what i have learned<a class="headerlink" href="#what-i-have-learned" title="Permanent link">&para;</a></h1>
 <ul>
 <li>css에서 <code>margin: auto</code>를 주면 해당 축으로 부모요소의 정 중앙에 디비잡게 된다.</li>
 <li>css <code>display: inline-block</code> 하게 되면 블럭속성을 가진 요소를 좌,우로 병치할 수 있게 된다. 아이디, 비밀번호가 <code>&lt;label&gt;</code> 태그인데, 저렇게 속성을 주어서 저시기 되었다.</li>
@@ -284,5 +295,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

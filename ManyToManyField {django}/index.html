@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -239,11 +250,11 @@
 </ul>
 </li>
 <li>쿼리<ul>
-<li>M2M 필드의 <code>all</code>, <code>get</code>, <code>filter</code>를 모두 사용 가능하다. [[querying in {django query}]]</li>
+<li>M2M 필드의 <code>all</code>, <code>get</code>, <code>filter</code>를 모두 사용 가능하다. <a href="../querying%20in%20%7Bdjango%20query%7D/">querying in {django query}</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="in-book-project">in book-project...</h1>
+<h1 id="in-book-project">in book-project...<a class="headerlink" href="#in-book-project" title="Permanent link">&para;</a></h1>
 <p>우리 프로젝트에서는 User가 여러권의 책을 구매할 수 있고, 또 책 한 권은 여러 User가 구매할 수 있다. 하지만 우리는 그 내역을 <code>Purchase</code>라는 모델로 관리하고 있고, 따라서 우리는 M2M 필드를 사용하기 보다는 세 개의 테이블을 활용한 <code>ManyToOne</code> 필드를 사용하는 방법밖에 없겠다. </p>
 
 
@@ -293,5 +304,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

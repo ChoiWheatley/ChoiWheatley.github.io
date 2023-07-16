@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -227,7 +238,7 @@
 <li><code>Cmd + M, D</code> : 셀 삭제</li>
 <li><code>Option + Enter</code>: 셀 실행하고 다음 셀 저시기 하기</li>
 <li><code>Cmd + M, M</code> : 마크다운 기반 텍스트 블록 만들기</li>
-<li>[[google colab - shortcuts]]</li>
+<li><a href="../google%20colab%20-%20shortcuts/">google colab - shortcuts</a></li>
 </ul>
 </li>
 <li><strong>셀에 연결</strong> 기능을 활용하면 프라이빗 모드에서도 해당 노트북 컨텐츠를 확인하고 실행까지 할 수 있다. (다만 수정은 안된다)</li>
@@ -236,17 +247,17 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">from google.colab import drive
-drive.mount('/content/mountdrive') # 저시기 하려는 노트북 내부 파일 시스템의 경로를 지정
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/mountdrive&#39;</span><span class="p">)</span> <span class="c1"># 저시기 하려는 노트북 내부 파일 시스템의 경로를 지정</span>
+</code></pre></div>
 <ul>
 <li>_<ul>
-<li>~~마운트를 위해선 auth 코드가 필요하다. 따라서 노트북이 안내하는 링크를 따라 들어가 로그인 한 뒤, 뱉어내는 코드를 복붙하면 된다.~~</li>
+<li><del>마운트를 위해선 auth 코드가 필요하다. 따라서 노트북이 안내하는 링크를 따라 들어가 로그인 한 뒤, 뱉어내는 코드를 복붙하면 된다.</del></li>
 <li>이제는 auth 코드를 붙여넣을 필요 없이 자동으로 저시기 해주넹</li>
 </ul>
 </li>
 <li><strong>Linux command</strong>를 그냥 사용할 수 있다. 주피터노트북에서는 <code>!</code>를 쳐야 실행이 됐는데, 구글콜랩은 조금 더 간단하다.</li>
-<li>[[0014 Python 🐍]] 과 연결됩니다.</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a> 과 연결됩니다.</li>
 <li></li>
 </ul>
 
@@ -297,5 +308,5 @@ drive.mount('/content/mountdrive') # 저시기 하려는 노트북 내부 파일
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

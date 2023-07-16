@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,7 +236,7 @@
 
 
 <p>{% raw %}</p>
-<h1 id="view">View</h1>
+<h1 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h1>
 <p>https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view</p>
 <ul>
 <li>attr<ul>
@@ -238,41 +249,41 @@
 </li>
 </ul>
 <p><code>urls.py</code>에서 내가 리스닝을 할 요청과 그에 대한 콜백함수를 호출하는데 사용. </p>
-<pre><code class="language-python">urlpatterns = [
-    path(&quot;mine/&quot;, MyView.as_view(), name=&quot;my-view&quot;),
-]
-</code></pre>
-<h1 id="genericlistview">generic.ListView</h1>
+<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;mine/&quot;</span><span class="p">,</span> <span class="n">MyView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my-view&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
+<h1 id="genericlistview">generic.ListView<a class="headerlink" href="#genericlistview" title="Permanent link">&para;</a></h1>
 <p>https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview</p>
-<p>객체의 리스트를 표현하는 제네릭 뷰. 따라서 [[django template]]에서 순회를 돌 수 있다.</p>
+<p>객체의 리스트를 표현하는 제네릭 뷰. 따라서 <a href="../django%20template/">django template</a>에서 순회를 돌 수 있다.</p>
 <blockquote>
 <p>While this view is executing, <code>self.object_list</code> will contain the list of objects (usually, but not necessarily a queryset) that the view is operating upon.</p>
 </blockquote>
-<pre><code class="language-html">        {%for object in object_list%}
-        &lt;div class=&quot;row&quot;&gt;
-            &lt;div class=&quot;mx-md-auto mt-5 mb-5&quot;&gt;
-                &lt;h3 class=&quot;fw-bold&quot;&gt;{{object.title}}&lt;/h3&gt;
-                &lt;p class=&quot;text-muted&quot;&gt;{{object.date}}&lt;/p&gt;
-                &lt;p class=&quot;text-muted&quot;&gt;Posted by {{object.author.username}}&lt;/p&gt;
+<div class="highlight"><pre><span></span><code>        {%for object in object_list%}
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mx-md-auto mt-5 mb-5&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fw-bold&quot;</span><span class="p">&gt;</span>{{object.title}}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>{{object.date}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>Posted by {{object.author.username}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
                 {%if object.likes.count == 1%}
-                    &lt;div class=&quot;text-muted&quot;&gt;{{object.likes.count}} person likes this post&lt;/div&gt;
+                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>{{object.likes.count}} person likes this post<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
                 {%else%}
-                    &lt;div class=&quot;text-muted&quot;&gt;{{object.likes.count}} people likes this post&lt;/div&gt;
+                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>{{object.likes.count}} people likes this post<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
                 {%endif%}
-            &lt;/div&gt;
-        &lt;/div&gt;
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         {%endfor%}
-</code></pre>
+</code></pre></div>
 <p><code>{% for object in object_list %}</code> 의 <code>object_list</code>가 서로 연결된다!</p>
-<h1 id="genericdetailview">generic.DetailView</h1>
+<h1 id="genericdetailview">generic.DetailView<a class="headerlink" href="#genericdetailview" title="Permanent link">&para;</a></h1>
 <p><a href="https://youtu.be/sMqDJovFO-Y?t=4993">DetailView 작성하는 영상</a><br />
 <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/">djangoproject.com -- class based views -- generic display</a></p>
 <p>예를 들어 아티클을 보여주고자 할때 어떤 아티클을 보여줄지는 우리의 재량에 달렸다. 이 경우, <code>urls.py</code>에 <code>urlpatterns</code> 리스트에 <code>path</code>를 지정해줄때 <code>&lt;slug:slug&gt;/</code> 식의 URI를 제공하여야 한다. </p>
 <p>uri예시: <code>posts/&lt;int:pk&gt;/</code> </p>
 <p>자세한 활용예시는 위의 링크 따라가서 보세요.</p>
 <p>템플릿에서 <code>{% url 'detail_article' %}</code> 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==&gt; 그냥 <code>object.id</code>를 'detail_article' 뒤에 추가해버리니까 되네???? 😲</p>
-<p>[[slug가 뭐냐]]</p>
-<h1 id="httprequest">파라미터에 있던 HttpRequest</h1>
+<p><a href="../slug%EA%B0%80%20%EB%AD%90%EB%83%90/">slug가 뭐냐</a></p>
+<h1 id="httprequest">파라미터에 있던 HttpRequest<a class="headerlink" href="#httprequest" title="Permanent link">&para;</a></h1>
 <p>https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest</p>
 <ul>
 <li>scheme</li>
@@ -339,5 +350,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,38 +237,38 @@
 
 <p>{% raw %}</p>
 <ul>
-<li>parent: [[django forms]]</li>
+<li>parent: <a href="../django%20forms/">django forms</a></li>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-form-error-messages">docs - Rendering form error messages</a></li>
 <li><a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#django.forms.Form.errors">docs - Form.errors</a></li>
 <li><code>form.is_valid()</code>가 실패했을 때 기본적으로 추가되는 에러메시지 말고도 내가 에러를 폼에 넣어서 <strong>자동으로</strong> 렌더링 시킬 수 있다나 뭐라나.</li>
 </ul>
-<h1 id="rendering-fields-manually"><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">Rendering fields manually</a></h1>
+<h1 id="rendering-fields-manually"><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">Rendering fields manually</a><a class="headerlink" href="#rendering-fields-manually" title="Permanent link">&para;</a></h1>
 <p>폼의 멤버를 참조할 수 있구만. <code>{{ form.name_of_field }}</code> 에러는 그 뒤에 <code>errors</code>를 붙이기만 하면 된다. <code>{{ form.name_of_field.errors }}</code> 또는 <code>{{ form.non_field_errors }}</code></p>
-<pre><code class="language-python">{{ form.non_field_errors }}
-&lt;div class=&quot;fieldWrapper&quot;&gt;
-    {{ form.subject.errors }}
-    &lt;label for=&quot;{{ form.subject.id_for_label }}&quot;&gt;Email subject:&lt;/label&gt;
-    {{ form.subject }}
-&lt;/div&gt;
-&lt;div class=&quot;fieldWrapper&quot;&gt;
-    {{ form.message.errors }}
-    &lt;label for=&quot;{{ form.message.id_for_label }}&quot;&gt;Your message:&lt;/label&gt;
-    {{ form.message }}
-&lt;/div&gt;
-&lt;div class=&quot;fieldWrapper&quot;&gt;
-    {{ form.sender.errors }}
-    &lt;label for=&quot;{{ form.sender.id_for_label }}&quot;&gt;Your email address:&lt;/label&gt;
-    {{ form.sender }}
-&lt;/div&gt;
-&lt;div class=&quot;fieldWrapper&quot;&gt;
-    {{ form.cc_myself.errors }}
-    &lt;label for=&quot;{{ form.cc_myself.id_for_label }}&quot;&gt;CC yourself?&lt;/label&gt;
-    {{ form.cc_myself }}
-&lt;/div&gt;
-</code></pre>
-<h1 id="formadd_error"><a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#django.forms.Form.add_error">Form.add_error()</a></h1>
-<pre><code class="language-python">Form.add_error(field, error)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">non_field_errors</span> <span class="p">}}</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;fieldWrapper&quot;</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">subject</span><span class="o">.</span><span class="n">errors</span> <span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;{{ form.subject.id_for_label }}&quot;</span><span class="o">&gt;</span><span class="n">Email</span> <span class="n">subject</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">subject</span> <span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;fieldWrapper&quot;</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">errors</span> <span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;{{ form.message.id_for_label }}&quot;</span><span class="o">&gt;</span><span class="n">Your</span> <span class="n">message</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">message</span> <span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;fieldWrapper&quot;</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">sender</span><span class="o">.</span><span class="n">errors</span> <span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;{{ form.sender.id_for_label }}&quot;</span><span class="o">&gt;</span><span class="n">Your</span> <span class="n">email</span> <span class="n">address</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">sender</span> <span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;fieldWrapper&quot;</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">cc_myself</span><span class="o">.</span><span class="n">errors</span> <span class="p">}}</span>
+    <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">&quot;{{ form.cc_myself.id_for_label }}&quot;</span><span class="o">&gt;</span><span class="n">CC</span> <span class="n">yourself</span><span class="err">?</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+    <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">cc_myself</span> <span class="p">}}</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</code></pre></div>
+<h1 id="formadd_error"><a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#django.forms.Form.add_error">Form.add_error()</a><a class="headerlink" href="#formadd_error" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="n">Form</span><span class="o">.</span><span class="n">add_error</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</code></pre></div>
 <p>구체적인 필드와 에러를 추가할 수 있다. 필드 자리에 <code>None</code>이 들어가면 자동으로 <code>non_field_errors</code> 안에 들어간다.</p>
 <p>{% endraw %}</p>
 
@@ -308,5 +319,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

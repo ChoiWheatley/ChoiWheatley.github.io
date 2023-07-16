@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,19 +233,19 @@
 <ul>
 <li>https://doc.rust-lang.org/std/option/enum.Option.html#method.map</li>
 <li>Maps an <code>Option&lt;T&gt;</code> to <code>Option&lt;U&gt;</code> by applying a function to a contained value</li>
-<li>기존 <code>Option</code>을 consume한다는거에 유의. 만약 옵션 타입 내부에 있는 값을 move하지 않으면서 빌려오고 싶다면 [[option as_ref]] 를 사용하면 된다.</li>
+<li>기존 <code>Option</code>을 consume한다는거에 유의. 만약 옵션 타입 내부에 있는 값을 move하지 않으면서 빌려오고 싶다면 <a href="../option%20as_ref/">option as_ref</a> 를 사용하면 된다.</li>
 </ul>
 <p>signature</p>
-<pre><code class="language-rust">pub fn map&lt;U, F&gt;(self, f: F) -&gt; Option&lt;U&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">map</span><span class="o">&lt;</span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span>: <span class="nc">F</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;</span>
+</code></pre></div>
 <p>example<br />
 Calculates the length of an <code>Option&lt;String&gt;</code> as an <code>Option&lt;usize&gt;</code>, consuming the original:</p>
-<pre><code class="language-rust">let maybe_some_string = Some(String::from(&quot;Hello, World!&quot;));
-// `Option::map` takes self *by value*, consuming `maybe_some_string`
-let maybe_some_len = maybe_some_string.map(|s| s.len());
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">maybe_some_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">));</span>
+<span class="c1">// `Option::map` takes self *by value*, consuming `maybe_some_string`</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">maybe_some_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">maybe_some_string</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
 
-assert_eq!(maybe_some_len, Some(13));
-</code></pre>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">maybe_some_len</span><span class="p">,</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="mi">13</span><span class="p">));</span>
+</code></pre></div>
 
 
 
@@ -283,5 +294,5 @@ assert_eq!(maybe_some_len, Some(13));
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

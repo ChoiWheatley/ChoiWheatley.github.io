@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,40 +233,40 @@
 <ul>
 <li>https://doc.rust-lang.org/nightly/core/mem/fn.replace.html</li>
 <li>Moves <code>src</code> into the referenced <code>dest</code>, returning the previous <code>dest</code> value.</li>
-<li>If you want to replace the values of two variables, see [[core mem swap]]</li>
-<li>If you want to replace with a default value, see [[core mem take]] .</li>
+<li>If you want to replace the values of two variables, see <a href="../core%20mem%20swap/">core mem swap</a></li>
+<li>If you want to replace with a default value, see <a href="../core%20mem%20take/">core mem take</a> .</li>
 <li><code>replace</code> allows consumption of a struct field by replacing it with another value.</li>
 </ul>
 <p>내부 구현을 보자</p>
-<pre><code class="language-rust">pub const fn replace&lt;T&gt;(dest: &amp;mut T, src: T) -&gt; T {
-    // SAFETY: We read from `dest` but directly write `src` into it afterwards,
-    // such that the old value is not duplicated. Nothing is dropped and
-    // nothing here can panic.
-    unsafe {
-        let result = ptr::read(dest);
-        ptr::write(dest, src);
-        result
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">fn</span> <span class="nf">replace</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">dest</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">src</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">T</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// SAFETY: We read from `dest` but directly write `src` into it afterwards,</span>
+<span class="w">    </span><span class="c1">// such that the old value is not duplicated. Nothing is dropped and</span>
+<span class="w">    </span><span class="c1">// nothing here can panic.</span>
+<span class="w">    </span><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ptr</span>::<span class="n">read</span><span class="p">(</span><span class="n">dest</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ptr</span>::<span class="n">write</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span><span class="w"> </span><span class="n">src</span><span class="p">);</span>
+<span class="w">        </span><span class="n">result</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><code>replace</code>를 사용하면 누가봐도 당연하지만 컴파일러가 싫어하는 코드를 안전하게 작성할 수 있다.</p>
-<pre><code class="language-rust">use std::mem;
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">mem</span><span class="p">;</span>
 
-struct Buffer&lt;T&gt;(Vec&lt;T&gt;);
+<span class="k">struct</span> <span class="nc">Buffer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">);</span>
 
-impl&lt;T&gt; Buffer&lt;T&gt; {
-    /// This is not ok,
-    /// error: cannot move out of dereference of `&amp;mut` pointer
-    fn replace_index(&amp;mut self, i: usize, v: T) -&gt; T {
-        let t = self.0[i];
-        self.0[i] = v;
-    }
-    /// This is Ok
-    fn replace_index(&amp;mut self, i: usize, v: T) -&gt; T {
-        mem::replace(&amp;mut self.0[i], v)
-    }
-}
-</code></pre>
+<span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Buffer</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="sd">/// This is not ok,</span>
+<span class="w">    </span><span class="sd">/// error: cannot move out of dereference of `&amp;mut` pointer</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">replace_index</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">v</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">T</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="sd">/// This is Ok</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">replace_index</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">v</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">T</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">mem</span>::<span class="n">replace</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="mi">0</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -304,5 +315,5 @@ impl&lt;T&gt; Buffer&lt;T&gt; {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

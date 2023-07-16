@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,7 +231,7 @@
   <h1>20230530 JS</h1>
 
 <p><a href="https://github.com/weniv/BackendOrmi/blob/main/JavaScript/%EB%B3%B5%EC%8A%B5.md">JS DeepDive 4000줄이나 되는 복습용 총체</a>
-- 웹의 ~~3~~ 4대 요소
+- 웹의 <del>3</del> 4대 요소
     - HTML
     - CSS
     - JS
@@ -235,6 +246,7 @@
     - <code>??</code>: nullish 병합 연산자: 값이 없으면 그 뒤에 오는 값을 집어넣어.
     - <code>typeof</code>: 현업에서는 별도의 타입체크 함수를 만들어 쓴다는거. 왜냐면 별에별게 다 <code>Object</code>로 튀어나와서...</p>
 <pre><code>    ```js
+
     ```
 
 - 관계 연산자 `in`: 키만 가지고 판단한다는거 주의
@@ -267,18 +279,18 @@
 <ul>
 <li>객체 자체는 iterable하지 않다. 그러니까 파이썬처럼 <code>of</code> 문법을 사용하여 작성하는게 불가. <code>in</code> 문법을 사용하여 키값을 순회한다면 가능. </li>
 </ul>
-<p>```js
-myObject = {
-  지역이름: "전국", // key : value(2개의 집합을 가리켜 객체 프로퍼티)
-  확진자수: 24889,
-  격리해제수: 23030,
-  사망자수: 438,
-  십만명당발생율: 48.0,
-};</p>
-<p>for (const k in myObject) {
-  console.log(<code>(${k}: ${myObject[k]})</code>);
-}
-```</p>
+<div class="highlight"><pre><span></span><code><span class="nx">myObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">지역이름</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;전국&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// key : value(2개의 집합을 가리켜 객체 프로퍼티)</span>
+<span class="w">  </span><span class="nx">확진자수</span><span class="o">:</span><span class="w"> </span><span class="mf">24889</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">격리해제수</span><span class="o">:</span><span class="w"> </span><span class="mf">23030</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">사망자수</span><span class="o">:</span><span class="w"> </span><span class="mf">438</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">십만명당발생율</span><span class="o">:</span><span class="w"> </span><span class="mf">48.0</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">k</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">myObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`(</span><span class="si">${</span><span class="nx">k</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">myObject</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span><span class="si">}</span><span class="sb">)`</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
 <p>Map: object</p>
@@ -300,27 +312,27 @@ myObject = {
 <li>try - catch - finally 도 자바와 똑같</li>
 <li>전개구문 (spread)</li>
 </ul>
-<p>```js
-function f(...x){
-    return x;
-}</p>
-<p>f(1, 2, 3, 4, 5)
-```</p>
-<p><code>js
-let arr1 = [1, 2, 3, 4];
-let arr2 = [10, 20, 30, 40];
-let arr3 = [100, ...arr1, 200, ...arr2, 300]
-let arr4 = [100, arr1, 200, arr2, 300]
-console.log(arr3)
-Math.max(...arr3);
-let [a, b, c, ...d] = [10, 20, 30, 40, 50, 60, 70]</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">f</span><span class="p">(...</span><span class="nx">x</span><span class="p">){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">f</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">arr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">arr2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">arr3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">arr1</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">arr2</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">]</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">arr4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="nx">arr1</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="nx">arr2</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr3</span><span class="p">)</span>
+<span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">arr3</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">d</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="mf">40</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="mf">70</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
 <p>구조분해할당 (destructuring, unpacking)</p>
-<p><code>js
-for (let [[i, j], k] of [[[1, 2], 2], [[1, 2], 4]]) {
-    console.log(i, j);
-}</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="p">[[</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">],</span><span class="w"> </span><span class="nx">k</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="p">[[[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="p">[[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">],</span><span class="w"> </span><span class="mf">4</span><span class="p">]])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">j</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
 <p>Fetch</p>
@@ -330,14 +342,14 @@ for (let [[i, j], k] of [[[1, 2], 2], [[1, 2], 4]]) {
 <li><code>response.json()</code>, <code>response.text()</code>, <code>response.blob()</code></li>
 <li>then then then... 구문을 사용하기 싫으면 fetch 앞에 <code>await</code>를 사용하면 response를 가져올 수 있다.</li>
 </ul>
-<p><code>``js
-async function printjson() {
-  const response = await fetch(</code>http://test.api.weniv.co.kr/mall`);
-  const json = await response.json();</p>
-<p>console.log(json);
-}
-printjson();
-```</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">printjson</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`http://test.api.weniv.co.kr/mall`</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">printjson</span><span class="p">();</span>
+</code></pre></div>
 </li>
 <li>
 <p>DOM</p>
@@ -395,5 +407,5 @@ printjson();
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

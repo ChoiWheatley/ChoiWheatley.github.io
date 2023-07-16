@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -264,49 +275,49 @@
 2. <code>__iter__</code>는 반드시 <code>__next__</code> 매직 메서드를 구현한 객체를 리턴하여야 한다.
 3. <code>__next__</code> 메서드는 컨테이너의 끝에 도달하는 등 순회가 끝났을 때 반드시 <code>StopIteration</code> 에러를 일으켜야만 한다.</p>
 <p>예제로 <code>range</code> 비스무리한 커스텀 이터레이터를 만들어보자.</p>
-<pre><code class="language-python">class MyIterator:
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyIterator</span><span class="p">:</span>
 
-    def __init__(self, stop):
-        self.currentValue = 0
-        self.stop = stop
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentValue</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop</span> <span class="o">=</span> <span class="n">stop</span>
 
-    def __iter__(self):
-        return self
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
 
-    def __next__(self):
-        if self.currentValue &gt;= self.stop:
-            raise StopIteration
-        result = self.currentValue
-        self.currentValue += 1
-        return result
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentValue</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">currentValue</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">currentValue</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">result</span>
 
-my_iterator = MyIterator(5)
+<span class="n">my_iterator</span> <span class="o">=</span> <span class="n">MyIterator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-for i in my_iterator:
-    print(i)
-</code></pre>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_iterator</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
 <p>under the hood...
 1. <code>for</code>가 <code>__iter__</code>를 호출한다. 내부적으로 초기화 작업을 수행한다.
 2. 순회를 하면서 <code>__next__</code>를 호출한다. 이때 이터레이터는 내부 상태를 바꾸는 작업을 수행한다.</p>
-<h3 id="iter-next-builtin-functions"><code>iter</code>, <code>next</code> builtin functions</h3>
+<h3 id="iter-next-builtin-functions"><code>iter</code>, <code>next</code> builtin functions<a class="headerlink" href="#iter-next-builtin-functions" title="Permanent link">&para;</a></h3>
 <p>그냥 <code>iter</code> 는 <code>__iter__</code>를 실행시켜 이터레이터 오브젝트를 반환받고, <code>next</code>는 이터레이터의 상태를 변화시고 결과값을 받아낸다.</p>
-<pre><code class="language-python">my_iterator = MyIterator(5)
-it = iter(my_iterator)
-print(it)
-print(next(it))  # 0
-print(next(it))  # 1
-print(next(it))  # 2
-print(next(it))  # 3
-print(next(it))  # 4
-print(next(it))  # raise StopIteration
-</code></pre>
-<h3 id="unpacking-iterators">Unpacking Iterators</h3>
+<div class="highlight"><pre><span></span><code><span class="n">my_iterator</span> <span class="o">=</span> <span class="n">MyIterator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">my_iterator</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># raise StopIteration</span>
+</code></pre></div>
+<h3 id="unpacking-iterators">Unpacking Iterators<a class="headerlink" href="#unpacking-iterators" title="Permanent link">&para;</a></h3>
 <p>순회를 굳이 하지 않고, 몇개의 원소들을 임의로 분해(혹은 언팩)할 수 있다. 이건 좀 좋은데?</p>
-<pre><code class="language-python">a, b, c, d, e = MyIterator(5)
-print(a, b, c, d, e)
-</code></pre>
-<h3 id="generator-which-generates-iterator-like-control-block">Generator which generates iterator-like control block</h3>
-<p>[[generator function - python]]으로 옮겨감</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">MyIterator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="generator-which-generates-iterator-like-control-block">Generator which generates iterator-like control block<a class="headerlink" href="#generator-which-generates-iterator-like-control-block" title="Permanent link">&para;</a></h3>
+<p><a href="../generator%20function%20-%20python/">generator function - python</a>으로 옮겨감</p>
 
 
 
@@ -355,5 +366,5 @@ print(a, b, c, d, e)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

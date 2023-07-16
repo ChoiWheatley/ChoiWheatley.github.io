@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,14 +235,15 @@
 <li>파이썬 환경 내에서 모든 것은 모듈이다. 이 중에서 <code>__init__.py</code> 파일을 가지고 있는 폴더를 패키지라고 부르는데, 이 패키지도 모듈의 일종이다. </li>
 <li>
 <p>어떤 패키지의 모듈을 import 하게 되면 암묵적으로 <code>__init__.py</code> 스크립트가 실행된다. 물론 내용물이 없어도 상관은 없다.</p>
-<p><code>parent/
+<div class="highlight"><pre><span></span><code>parent/
 __init__.py
 one/
     __init__.py
 two/
     __init__.py
 three/
-    __init__.py</code></p>
+    __init__.py
+</code></pre></div>
 </li>
 </ul>
 
@@ -282,5 +294,5 @@ three/
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

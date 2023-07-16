@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,80 +235,79 @@
 <li>https://rust-book.cs.brown.edu/ch18-03-pattern-syntax.html#extra-conditionals-with-match-guards</li>
 </ul>
 <p>Multiple patterns with <code>|</code></p>
-<pre><code class="language-rust">let x = 1;
-match x { 
-    1 | 2 =&gt; println!(&quot;one or two&quot;), 
-    3 =&gt; println!(&quot;three&quot;), 
-    _ =&gt; println!(&quot;anything&quot;), 
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">match</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;one or two&quot;</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="mi">3</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;anything&quot;</span><span class="p">),</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div>
 <p>with <code>..=</code> syntax</p>
-<pre><code class="language-rust">let x = 5;
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 
-match x {
-    1..=5 =&gt; println!(&quot;one through five&quot;),
-    _ =&gt; println!(&quot;something else&quot;),
-}
-
-</code></pre>
+<span class="k">match</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="mi">1</span><span class="o">..=</span><span class="mi">5</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;one through five&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;something else&quot;</span><span class="p">),</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>tuple을 분해하는 건 이미 알고있지</p>
-<pre><code class="language-rust">let x = (10, 'A');
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">);</span>
 
-match x {
-    (num, alpha) =&gt; println!(&quot;num: {}, alpha: {}&quot;, num, alpha),
-    _ =&gt; println!(&quot;something else&quot;),
-}
-</code></pre>
+<span class="k">match</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;num: {}, alpha: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">),</span>
+<span class="w">    </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;something else&quot;</span><span class="p">),</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>하지만 struct를 분해할 수도 있다는 건 몰랐을걸?</p>
-<pre><code class="language-rust">struct Point {
-    x: i32,
-    y: i32,
-}
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span>
+<span class="p">}</span>
 
-fn main() {
-    let p = Point { x: 0, y: 7 };
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mi">7</span><span class="w"> </span><span class="p">};</span>
 
-    let Point { x: a, y: b } = p;
-    assert_eq!(0, a);
-    assert_eq!(7, b);
-    match p { 
-        Point { x, y: 0 } =&gt; println!(&quot;On the x axis at {}&quot;, x), 
-        Point { x: 0, y } =&gt; println!(&quot;On the y axis at {}&quot;, y), 
-        Point { x, y } =&gt; println!(&quot;On neither axis: ({}, {})&quot;, x, y), 
-    }
-}
-</code></pre>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="nc">a</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="nc">b</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mi">0</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;On the x axis at {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;On the y axis at {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">),</span><span class="w"> </span>
+<span class="w">        </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;On neither axis: ({}, {})&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>match guard를 사용하면 추가적인 조건을 걸 수가 있지롱</p>
-<pre><code class="language-rust">let num = Some(4);
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
-match num {
-    Some(x) if x % 2 == 0 =&gt; println!(&quot;The number {} is even&quot;, x),
-    Some(x) =&gt; println!(&quot;The number {} is odd&quot;, x),
-    None =&gt; (),
-}
-</code></pre>
+<span class="k">match</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The number {} is even&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">),</span>
+<span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;The number {} is odd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">),</span>
+<span class="w">    </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(),</span>
+<span class="p">}</span>
+</code></pre></div>
 <p><code>@</code> bindings 를 사용하면 match guard 안에서 변수를 할당할 수 있지렁</p>
-<pre><code class="language-rust">enum Message {
-    Hello {id: i32},
-}
-let msg = Message::Hello{id: 5};
-match msg {
-    Message::Hello { id } if id &gt;=3 &amp;&amp; id &lt;= 7 =&gt; 
-        println!(&quot;Found an id in range: {}&quot;, id),
-    Message::Hello { id } =&gt; println!(&quot;Found some other id: {}&quot;, id),
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">Message</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Hello</span><span class="w"> </span><span class="p">{</span><span class="n">id</span>: <span class="kt">i32</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Message</span>::<span class="n">Hello</span><span class="p">{</span><span class="n">id</span>: <span class="mi">5</span><span class="p">};</span>
+<span class="k">match</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Message</span>::<span class="n">Hello</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;=</span><span class="mi">3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Found an id in range: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Message</span>::<span class="n">Hello</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Found some other id: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>이렇게 쓰지말고 아래처럼 쓰면 좀 더 깔끔하쥬</p>
-<pre><code class="language-rust">enum Message {
-    Hello {id: i32},
-}
-let msg = Message::Hello{id: 5};
-match msg {
-    Message::Hello {id: _id @ 3..=7} =&gt;
-        println!(&quot;Found an id in range: {}&quot;, _id),
-    Message::Hello { id } =&gt; println!(&quot;Found some other id: {}&quot;, id),
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">Message</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Hello</span><span class="w"> </span><span class="p">{</span><span class="n">id</span>: <span class="kt">i32</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Message</span>::<span class="n">Hello</span><span class="p">{</span><span class="n">id</span>: <span class="mi">5</span><span class="p">};</span>
+<span class="k">match</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Message</span>::<span class="n">Hello</span><span class="w"> </span><span class="p">{</span><span class="n">id</span>: <span class="nc">_id</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="mi">3</span><span class="o">..=</span><span class="mi">7</span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Found an id in range: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_id</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Message</span>::<span class="n">Hello</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Found some other id: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">),</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -346,5 +356,5 @@ match msg {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

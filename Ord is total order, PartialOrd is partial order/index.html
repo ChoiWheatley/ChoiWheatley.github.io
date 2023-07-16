@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -254,101 +265,100 @@
 <p>Trait for types that form a <strong>total order</strong><br />
 전순서 집합을 형성하는 트레이트</p>
 </blockquote>
-<pre><code class="language-rust">mod tutorial {
-    use std::collections::BTreeSet;
-    #[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]
-    struct Node {
-        name: String,
-        id: u32,
-    }
-    #[cfg(test)]
-    mod tests {
-        use super::*;
-        #[test]
-        fn run() {
-            let mut holder: BTreeSet&lt;&amp;Node&gt; = BTreeSet::new();
-            let nodes = [
-                Node {
-                    name: &quot;n1&quot;.to_owned(),
-                    id: 1,
-                },
-                Node {
-                    name: &quot;n2&quot;.to_owned(),
-                    id: 2,
-                },
-                Node {
-                    name: &quot;n3&quot;.to_owned(),
-                    id: 3,
-                },
-            ];
-            nodes.iter().for_each(|each| {
-                holder.insert(each);
-            });
+<div class="highlight"><pre><span></span><code><span class="k">mod</span> <span class="nn">tutorial</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">BTreeSet</span><span class="p">;</span>
+<span class="w">    </span><span class="cp">#[derive(PartialEq, Eq, PartialOrd, Ord, Debug)]</span>
+<span class="w">    </span><span class="k">struct</span> <span class="nc">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">name</span>: <span class="nb">String</span><span class="p">,</span>
+<span class="w">        </span><span class="n">id</span>: <span class="kt">u32</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="cp">#[cfg(test)]</span>
+<span class="w">    </span><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="w">        </span><span class="cp">#[test]</span>
+<span class="w">        </span><span class="k">fn</span> <span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">holder</span>: <span class="nc">BTreeSet</span><span class="o">&lt;&amp;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BTreeSet</span>::<span class="n">new</span><span class="p">();</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="n">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">name</span>: <span class="s">&quot;n1&quot;</span><span class="p">.</span><span class="n">to_owned</span><span class="p">(),</span>
+<span class="w">                    </span><span class="n">id</span>: <span class="mi">1</span><span class="p">,</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="n">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">name</span>: <span class="s">&quot;n2&quot;</span><span class="p">.</span><span class="n">to_owned</span><span class="p">(),</span>
+<span class="w">                    </span><span class="n">id</span>: <span class="mi">2</span><span class="p">,</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="n">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">name</span>: <span class="s">&quot;n3&quot;</span><span class="p">.</span><span class="n">to_owned</span><span class="p">(),</span>
+<span class="w">                    </span><span class="n">id</span>: <span class="mi">3</span><span class="p">,</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">];</span>
+<span class="w">            </span><span class="n">nodes</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">for_each</span><span class="p">(</span><span class="o">|</span><span class="n">each</span><span class="o">|</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">holder</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">each</span><span class="p">);</span>
+<span class="w">            </span><span class="p">});</span>
 
-            assert_eq!(3, holder.len());
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">holder</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
 
-            // what if we insert same `name` node in holder?
-            let dup1 = Node {
-                name: &quot;n1&quot;.to_owned(),
-                id: 123124,
-            };
-            holder.insert(&amp;dup1);
+<span class="w">            </span><span class="c1">// what if we insert same `name` node in holder?</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">dup1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span>: <span class="s">&quot;n1&quot;</span><span class="p">.</span><span class="n">to_owned</span><span class="p">(),</span>
+<span class="w">                </span><span class="n">id</span>: <span class="mi">123124</span><span class="p">,</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">            </span><span class="n">holder</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dup1</span><span class="p">);</span>
 
-            assert_eq!(4, holder.len()); // Ok
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">holder</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"> </span><span class="c1">// Ok</span>
 
-            // what if we insert same `id` node in holder?
-            let dup2 = Node {
-                name: &quot;dup2&quot;.to_owned(),
-                id: 2,
-            };
-            holder.insert(&amp;dup2);
+<span class="w">            </span><span class="c1">// what if we insert same `id` node in holder?</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">dup2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span>: <span class="s">&quot;dup2&quot;</span><span class="p">.</span><span class="n">to_owned</span><span class="p">(),</span>
+<span class="w">                </span><span class="n">id</span>: <span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">            </span><span class="n">holder</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dup2</span><span class="p">);</span>
 
-            assert_eq!(5, holder.len());
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">holder</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
 
-            // what if we insert same both `name` and `id` in holder?
-            let dup3 = Node {
-                name: &quot;n3&quot;.to_owned(),
-                id: 3,
-            };
-            holder.insert(&amp;dup3);
+<span class="w">            </span><span class="c1">// what if we insert same both `name` and `id` in holder?</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="n">dup3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">name</span>: <span class="s">&quot;n3&quot;</span><span class="p">.</span><span class="n">to_owned</span><span class="p">(),</span>
+<span class="w">                </span><span class="n">id</span>: <span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">            </span><span class="n">holder</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="n">dup3</span><span class="p">);</span>
 
-            assert_eq!(5, holder.len()); // didn't inserted!!
-        }
-    }
-}
-
-</code></pre>
-<h1 id="ord">전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.</h1>
+<span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">holder</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w"> </span><span class="c1">// didn&#39;t inserted!!</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="ord">전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.<a class="headerlink" href="#ord" title="Permanent link">&para;</a></h1>
 <p>https://doc.rust-lang.org/std/cmp/trait.Ord.html#how-can-i-implement-ord<br />
 전순서가 아닌 비교 트레이트는 <code>PartialOrd</code> 이다. <code>Ord</code>를 구현하기 위해선 우선 <code>PartialOrd</code> + <code>Eq</code> ( + <code>PartialEq</code> ) 를 만족하여야 한다. 아래 코드는 height에 대해서만 비교를 수행하는 커스텀 <code>Ord</code>를 보여주고 있다.</p>
-<pre><code class="language-rust">use std::cmp::Ordering;
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span>
 
-#[derive(Eq)]
-struct Person {
-    id: u32,
-    name: String,
-    height: u32,
-}
+<span class="cp">#[derive(Eq)]</span>
+<span class="k">struct</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">id</span>: <span class="kt">u32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span>: <span class="nb">String</span><span class="p">,</span>
+<span class="w">    </span><span class="n">height</span>: <span class="kt">u32</span><span class="p">,</span>
+<span class="p">}</span>
 
-impl Ord for Person {
-    fn cmp(&amp;self, other: &amp;Self) -&gt; Ordering {
-        self.height.cmp(&amp;other.height)
-    }
-}
+<span class="k">impl</span><span class="w"> </span><span class="nb">Ord</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span>: <span class="kp">&amp;</span><span class="nc">Self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Ordering</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">height</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">other</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-impl PartialOrd for Person {
-    fn partial_cmp(&amp;self, other: &amp;Self) -&gt; Option&lt;Ordering&gt; {
-        Some(self.cmp(other))
-    }
-}
+<span class="k">impl</span><span class="w"> </span><span class="nb">PartialOrd</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">partial_cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span>: <span class="kp">&amp;</span><span class="nc">Self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;</span><span class="n">Ordering</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">other</span><span class="p">))</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-impl PartialEq for Person {
-    fn eq(&amp;self, other: &amp;Self) -&gt; bool {
-        self.height == other.height
-    }
-}
-</code></pre>
-<h2 id="partialord">비교가능 여부도 알 수 있는 PartialOrd</h2>
+<span class="k">impl</span><span class="w"> </span><span class="nb">PartialEq</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">eq</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span>: <span class="kp">&amp;</span><span class="nc">Self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span>
+<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">height</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="partialord">비교가능 여부도 알 수 있는 PartialOrd<a class="headerlink" href="#partialord" title="Permanent link">&para;</a></h2>
 <p>여기에서 <code>PartialOrd</code> 인터페이스 <code>partial_cmp</code>의 리턴형이 옵션인 이유에 대해 알게 되었다. 다음 <a href="https://rust-lang.github.io/rust-clippy/master/index.html#neg_cmp_op_on_partial_ord">clippy - neg_cmp_on_partial_ord</a> 문서에서 <code>partial_cmp</code>는 세가지 기본 비교연산(<code>Eq</code>, <code>Less</code>, <code>Greater</code>) 외에도 한 가지 연산을 더 수행할 수 있는데, 바로 <strong>비교가능</strong>인지 여부이다. 만약 두 연산자가 말이 안되는 경우( divide by zero )로 인해 비교자체가 불가능한 경우 <code>None</code>을 리턴하고, 이외엔 <code>Some(Ordering)</code> 을 리턴한다.</p>
 
 
@@ -398,5 +408,5 @@ impl PartialEq for Person {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -260,18 +271,18 @@
                   
 
 
-<h1 id="quick-tip-footnotes-in-obsidian-obsidian-rocks">Quick Tip: Footnotes in Obsidian - Obsidian Rocks</h1>
+<h1 id="quick-tip-footnotes-in-obsidian-obsidian-rocks">Quick Tip: Footnotes in Obsidian - Obsidian Rocks<a class="headerlink" href="#quick-tip-footnotes-in-obsidian-obsidian-rocks" title="Permanent link">&para;</a></h1>
 <blockquote>
-<h2 id="excerpt">Excerpt</h2>
+<h2 id="excerpt">Excerpt<a class="headerlink" href="#excerpt" title="Permanent link">&para;</a></h2>
 <p>Footnotes in Obsidian are great, but a little too difficult to use. Find out how to effectively make use of footnotes in Obsidian.</p>
 </blockquote>
 <hr />
 <p>For a little while now I’ve been using footnotes in Obsidian. I think they’re a bit of a “hidden feature”. They’re <a href="https://help.obsidian.md/How+to/Format+your+notes#Footnotes">in the documentation</a>, but for some reason I rarely see people use them.</p>
 <p>When writing in Obsidian, I make heavy use of internal links. I believe that links are one of Obsidian’s superpowers, so I use them as much as I can. And when I use internal links, I almost always prefer footnotes to any other style of links.</p>
 <p>Does that surprise you? Let me explain why.</p>
-<h2 id="why-do-i-like-footnotes">Why do I like footnotes?</h2>
+<h2 id="why-do-i-like-footnotes">Why do I like footnotes?<a class="headerlink" href="#why-do-i-like-footnotes" title="Permanent link">&para;</a></h2>
 <p>I try to title most of my notes as statements. For example, I have a note titled “Ted Talks are dangerously eloquent”. Here’s the entire contents of that note:</p>
-<pre><code># Ted Talks are dangerously eloquent
+<div class="highlight"><pre><span></span><code># Ted Talks are dangerously eloquent
 
 Or, as [[Hamlet]] would say, “full of sound and fury, signifying nothing”.
 
@@ -284,12 +295,12 @@ They make us feel good without really improving us. [^1]
 [^1]: [[Human Rites]] p80
 
 [^2]: https://www.youtube.com/watch?v=8S0FDjFBj8o
-</code></pre>
+</code></pre></div>
 <p>There’s a chance I might want to link to that note directly from another note. Perhaps I’m writing about the dangers of eloquence, in which case it might be natural to state directly that [[Ted Talks are dangerously eloquent]].</p>
 <p>But that often isn’t the case. Oftentimes I want to link to a specific idea but word it differently than the title of the note. I might say “Eloquence is a slippery slope, [^1]” and add a <em>footnote</em> to the Ted Talk note.</p>
 <p>This allows your ideas to flow out of you more naturally, and you don’t have to worry about restructuring your note to fit previous modes of thought.</p>
 <p>I also use inline links in Obsidian, such as `[[Hamlet]]` above. But usually only for notes with one or two-word titles, such as a book title or the name of a person. When referencing an idea, I almost always use footnotes.</p>
-<h2 id="the-downsides-to-footnotes-in-obsidian">The downsides to footnotes in Obsidian</h2>
+<h2 id="the-downsides-to-footnotes-in-obsidian">The downsides to footnotes in Obsidian<a class="headerlink" href="#the-downsides-to-footnotes-in-obsidian" title="Permanent link">&para;</a></h2>
 <p>The problem with footnotes: they’re a pain in the neck to type.</p>
 <p>I initially dealt with this by adding footnotes in a template, and inserting that template to a note whenever I wanted to add a footnote. This works, but it’s less than ideal. By default, I added <em>five</em> footnotes to my template, but I rarely use all five, which leaves me with the busy work of removing all my unused footnotes from old notes. Plus it requires a few keystrokes to insert a template. Too much work!</p>
 <p>Then I discovered the <a href="https://github.com/akaalias/obsidian-footnotes">Obsidian Footnotes plugin</a>.</p>
@@ -298,7 +309,7 @@ They make us feel good without really improving us. [^1]
 <blockquote>
 <p>Note: if you’re new to plugins, see our <a href="https://obsidian.rocks/how-to-use-community-plugins-in-obsidian/">guide on community plugins</a>.</p>
 </blockquote>
-<h2 id="in-conclusion">In Conclusion</h2>
+<h2 id="in-conclusion">In Conclusion<a class="headerlink" href="#in-conclusion" title="Permanent link">&para;</a></h2>
 <p>Footnotes come with a lot of benefits in Obsidian. I would suggest trying them out, along with the plugin. They’re concise, they’re unobtrusive, and they allow you to structure your notes in a way that’s easy to understand and navigate. Even better, when you’re working on a tricky concept, they make it easier to stay in “flow” while still documenting your work.</p>
 <p>So next time you’re writing in Obsidian, consider using footnotes. I think you’ll find they’re a valuable tool for structuring your thoughts and organizing your ideas.</p>
 <p>We won't send you spam. Unsubscribe at any time.</p>
@@ -350,5 +361,5 @@ They make us feel good without really improving us. [^1]
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

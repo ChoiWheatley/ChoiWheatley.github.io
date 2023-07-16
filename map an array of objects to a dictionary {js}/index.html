@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,21 +233,21 @@
 <ul>
 <li><a href="https://dev.to/devtronic/javascript-map-an-array-of-objects-to-a-dictionary-3f42">dev.to</a></li>
 </ul>
-<pre><code class="language-js">let data = [
-  {id: 1, country: 'Germany', population: 83623528},
-  {id: 2, country: 'Austria', population: 8975552},
-  {id: 3, country: 'Switzerland', population: 8616571}
-];
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">population</span><span class="o">:</span><span class="w"> </span><span class="mf">83623528</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Austria&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">population</span><span class="o">:</span><span class="w"> </span><span class="mf">8975552</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Switzerland&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">population</span><span class="o">:</span><span class="w"> </span><span class="mf">8616571</span><span class="p">}</span>
+<span class="p">];</span>
 
-// First Try
-let dictionary = Object.assign({}, ...data.map((x) =&gt; ({[x.id]: x.country})));
+<span class="c1">// First Try</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span><span class="w"> </span><span class="p">...</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({[</span><span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">country</span><span class="p">})));</span>
 
-// Second Try
-let dictionary = Object.fromEntries(data.map(x =&gt; [x.id, x.country]));
-</code></pre>
+<span class="c1">// Second Try</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">x</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">.</span><span class="nx">country</span><span class="p">]));</span>
+</code></pre></div>
 <p>result:</p>
-<pre><code class="language-js">{1: &quot;Germany&quot;, 2: &quot;Austria&quot;, 3: &quot;Switzerland&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="mf">1</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Austria&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Switzerland&quot;</span><span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -285,5 +296,5 @@ let dictionary = Object.fromEntries(data.map(x =&gt; [x.id, x.country]));
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

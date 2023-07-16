@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,7 +231,7 @@
   <h1>업무로직을 프론트에서 짜야합니까, 백엔드에서 짜야합니까</h1>
 
 <ul>
-<li>[[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project]]를 진행하면서 DRF를 도입하는 순간 나의 앞에 너무 많은 선택지가 있어서 고통스러웠다. 가능한 경우의 수는 정말 많았지만 정말 RESTful하고 업무로직이 제대로 기술되어있는 코드를 작성하기 위해서 필요한 것들에 대한 이해가 한참 부족하다.</li>
+<li><a href="../%EC%A3%BC%EB%8B%88%EC%96%B4%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%2C%20%EA%B7%B8%20%EC%9D%B4%EC%83%81%EC%9C%BC%EB%A1%9C%20%F0%9F%9A%80%7Bbook-project%7D/">book-project</a>를 진행하면서 DRF를 도입하는 순간 나의 앞에 너무 많은 선택지가 있어서 고통스러웠다. 가능한 경우의 수는 정말 많았지만 정말 RESTful하고 업무로직이 제대로 기술되어있는 코드를 작성하기 위해서 필요한 것들에 대한 이해가 한참 부족하다.</li>
 <li>지금 나는 백엔드에서 status, message, redirect_url 등 전체적인 업무에 필요한 대부분의 데이터를 Serializer에 담아서 보낸다. 그런데 사실 프론트 입장에서 보면 status만 보면 되거든. 이미 기술된 404 Not Found 에러와 같이 해당 코드를 보고 알아서 에러 메시지를 alert하면 될텐데, 굳이 백엔드가 이래라 저래라 하는 것이 보다보니 불편하기도 하다.</li>
 </ul>
 
@@ -271,5 +282,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,8 +237,8 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-shell">git submodule add &lt;repository-link&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>add<span class="w"> </span>&lt;repository-link&gt;
+</code></pre></div>
 <ul>
 <li></li>
 <li><a href="https://github.com/ChoiWheatley/ormi-2023-04-26/tree/3ea3198848a705061d0436b1a6b64ef05a9022d6">ormi-master</a> 에 서브모듈 여러개를 만들어 링크시켜놓았다. 신기한게, 서브모듈을 커밋하고 푸시했을지라도, 자동으로 부모 리포가 서브모듈의 <code>main</code> 브랜치를 알아서 가리키지 않는 것으로 보인다. 따라서 그때그때 부모리포에서도 커밋 및 푸시를 진행해야 했다. <ul>
@@ -285,5 +296,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

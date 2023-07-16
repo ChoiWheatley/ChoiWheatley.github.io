@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,8 +235,8 @@
 2. <code>--clear</code> : 매번 화면을 초기화 하여 
 3. <code>--watch src/</code> : src 폴더를 감시하며
 4. <code>--exec run</code> : <code>cargo run</code> 을 매번 호출한다.</p>
-<pre><code class="language-shell">cargo watch -q -c -w src/ -x run
-</code></pre>
+<div class="highlight"><pre><span></span><code>cargo<span class="w"> </span>watch<span class="w"> </span>-q<span class="w"> </span>-c<span class="w"> </span>-w<span class="w"> </span>src/<span class="w"> </span>-x<span class="w"> </span>run
+</code></pre></div>
 
 
 
@@ -274,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -228,28 +239,28 @@
 - min
 - sorted</p>
 <p>재사용이 필요해 보이는 건 함수를 선언하고, 일회성으로 끝날 것 같으면 람다를 사용하라.</p>
-<pre><code class="language-python">### 아래의 익명함수들은 calculator가 카운팅을 하게 된다. 따라서 여러번 재사용이 가능하다. 
-calculator = [
-    lambda x, y: x + y,
-    lambda x, y: x - y,
-    lambda x, y: x * y,
-    lambda x, y: x / y,
-]
+<div class="highlight"><pre><span></span><code><span class="c1">### 아래의 익명함수들은 calculator가 카운팅을 하게 된다. 따라서 여러번 재사용이 가능하다. </span>
+<span class="n">calculator</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">,</span>
+<span class="p">]</span>
 
-for calc in calculator:
-    print(f'calc result between 1, 2 is {calc(1, 2)}')
-</code></pre>
-<pre><code class="language-python">def f():
-    return lambda x, y: x + y
+<span class="k">for</span> <span class="n">calc</span> <span class="ow">in</span> <span class="n">calculator</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;calc result between 1, 2 is </span><span class="si">{</span><span class="n">calc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-print(f()(1, 2))
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">()(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 
-# 람다를 클로저로 사용할 수도 있다.
-def ff():
-    return lambda x: lambda y: x + y
+<span class="c1"># 람다를 클로저로 사용할 수도 있다.</span>
+<span class="k">def</span> <span class="nf">ff</span><span class="p">():</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-print(ff()(1)(2))
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">ff</span><span class="p">()(</span><span class="mi">1</span><span class="p">)(</span><span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
 
 
 
@@ -298,5 +309,5 @@ print(ff()(1)(2))
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

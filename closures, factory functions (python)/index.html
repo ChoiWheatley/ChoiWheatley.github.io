@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -246,7 +257,7 @@
                   
 
 
-<h1 id="closures-factory-functions">Closures, Factory Functions</h1>
+<h1 id="closures-factory-functions">Closures, Factory Functions<a class="headerlink" href="#closures-factory-functions" title="Permanent link">&para;</a></h1>
 <p><a href="https://shoark7.github.io/programming/python/closure-in-python">What is function? | first-class-object? | closure?</a></p>
 <p>파이썬에서 함수는 일급객체(First Class Object)이다. 일급객체의 필요조건 세가지는 다음과 같다.</p>
 <ol>
@@ -254,20 +265,20 @@
 <li>함수의 반환값으로 전달이 될 수 있어야 한다.</li>
 <li>수정이 되고 할당이 될 수 있다.</li>
 </ol>
-<pre><code class="language-python">def delegator(fn, *args):
-    # 2. 함수의 반환값으로 전달
-    return fn(*args)
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">delegator</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># 2. 함수의 반환값으로 전달</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 
-def add(a, b):
-    return a + b
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 
-my_add = add  # 3. 수정이 되거나 할당이 될 수 있다.
+<span class="n">my_add</span> <span class="o">=</span> <span class="n">add</span>  <span class="c1"># 3. 수정이 되거나 할당이 될 수 있다.</span>
 
-# 1. 함수의 인자로 전달
-delegator(my_add, 1, 2)
-</code></pre>
+<span class="c1"># 1. 함수의 인자로 전달</span>
+<span class="n">delegator</span><span class="p">(</span><span class="n">my_add</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 <p>클로저는 다음 세 가지 조건을 만족하는 <em>함수</em>를 지칭한다.</p>
 <ol>
 <li>함수 안에 함수여야 한다. 즉, nested function</li>
@@ -277,63 +288,62 @@ delegator(my_add, 1, 2)
 <p>❓뭔데이거</p>
 <p>신기하다...! 클로저가 <code>factorial</code>과 <code>square</code> 별로 각자의 <code>cache</code>를 가지고 있다. 함수 호출을 하여 리턴을 받아냈음에도 <code>in_cache</code>의 상태가 초기화 되지 않았다.</p>
 <p>웃긴건, 중간에 클로저 자체를 <code>del</code> 내장함수를 사용해 삭제해 버려도 새로운 클로저를 생성하지 못할 뿐이지, 이전에 생성했던 클로저와 내부상태는 아직도 메모리에 상주해 있다.</p>
-<pre><code class="language-python">def in_cache(func):
-    cache = {}
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">in_cache</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
 
-    def wrapper(n):
-        print(f&quot;DEBUG ---&gt; n: {n}, cache: {cache}&quot;)
-        if n in cache:
-            print(&quot;DEBUG ---&gt; CACHE HIT&quot;)
-            return cache[n]
-        else:
-            print(&quot;DEBUG ---&gt; CACHE MISS&quot;)
-            cache[n] = func(n)
-            return cache[n]
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DEBUG ---&gt; n: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, cache: </span><span class="si">{</span><span class="n">cache</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">cache</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEBUG ---&gt; CACHE HIT&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DEBUG ---&gt; CACHE MISS&quot;</span><span class="p">)</span>
+            <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
 
-    return wrapper
-
-
-def factorial(n):
-    ret = 1
-    for i in range(1, n + 1):
-        ret *= i
-    return ret
+    <span class="k">return</span> <span class="n">wrapper</span>
 
 
-def square(n):
-    return n**2
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">ret</span>
 
 
-# without using decorator, let's use closure then!
-factorial = in_cache(factorial)
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
 
-factorial(3)
-factorial(5)
-factorial(10)
-factorial(15)
-factorial(15)
-factorial(15)
 
-# Create new closure
-square = in_cache(square)
-square(3)
-square(5)
-square(10)
-square(15)
-square(15)
-square(15)
+<span class="c1"># without using decorator, let&#39;s use closure then!</span>
+<span class="n">factorial</span> <span class="o">=</span> <span class="n">in_cache</span><span class="p">(</span><span class="n">factorial</span><span class="p">)</span>
 
-# prev closure still remains valid!
-factorial(15)
-square(15)
+<span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 
-# What if we literally **kill** `in_cache`??? Had prev closures affected???
-# del(in_cache)  # commented because I'm using `in_cache` below
-# factorial(15)
-# square(15)
+<span class="c1"># Create new closure</span>
+<span class="n">square</span> <span class="o">=</span> <span class="n">in_cache</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 
-</code></pre>
-<h2 id="closure-magic-member"><strong>closure</strong> magic member(?)</h2>
+<span class="c1"># prev closure still remains valid!</span>
+<span class="n">factorial</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">square</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># What if we literally **kill** `in_cache`??? Had prev closures affected???</span>
+<span class="c1"># del(in_cache)  # commented because I&#39;m using `in_cache` below</span>
+<span class="c1"># factorial(15)</span>
+<span class="c1"># square(15)</span>
+</code></pre></div>
+<h2 id="closure-magic-member"><strong>closure</strong> magic member(?)<a class="headerlink" href="#closure-magic-member" title="Permanent link">&para;</a></h2>
 <p>모든 함수(클로저 포함)는 <code>__closure__</code> 변수를 자동으로 가지고 있다. 이 친구는 클로저가 참조하고 있는 enclosing scope의 상태를 tuple 형태로 보관하고 있다. <code>__closure__</code> 원소는 <code>cell</code>로, 실제 값을 가리키고 있는 일종의 포인터 개념인 것 같다. 아직 잘 모르겠음.</p>
 <ul>
 <li><a href="https://stackoverflow.com/a/23830790">stackoverflow의 답변</a></li>
@@ -345,75 +355,73 @@ square(15)
 <li><code>__closure__.cell_contents</code></li>
 <li>클로저의 자유 변수들의 컨텐츠를 저장</li>
 </ul>
-<pre><code class="language-python">def times_mult(n):
-    a = [&quot;a&quot;]
-    b = 2
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">times_mult</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 
-    def mult(x):
-        a.append(&quot;b&quot;)
-        b
-        return n * x
+    <span class="k">def</span> <span class="nf">mult</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+        <span class="n">b</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">x</span>
 
-    return mult
+    <span class="k">return</span> <span class="n">mult</span>
 
 
-print(f&quot;times_mult keep those local vars : {times_mult.__code__.co_cellvars}&quot;)
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;times_mult keep those local vars : </span><span class="si">{</span><span class="n">times_mult</span><span class="o">.</span><span class="vm">__code__</span><span class="o">.</span><span class="n">co_cellvars</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-times3 = times_mult(3)
-print(&quot;times3, a closure that is instantiated from `times_mult` has free vars.&quot;)
-print(&quot;free vars are INDEPENDENT from `times_mult`. so this attr still alives!&quot;)
-print(times3.__code__.co_freevars, &quot;\n&quot;)
+<span class="n">times3</span> <span class="o">=</span> <span class="n">times_mult</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;times3, a closure that is instantiated from `times_mult` has free vars.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;free vars are INDEPENDENT from `times_mult`. so this attr still alives!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times3</span><span class="o">.</span><span class="vm">__code__</span><span class="o">.</span><span class="n">co_freevars</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-print(
-    f&quot;__closure__ attr gives tule of `cell` objects: \n{times3.__closure__}\n&quot;)
-print(f&quot;__closure__ object can be unpacked via `cell_contents`:&quot;)
-print(f&quot;cell_contents: {[e.cell_contents for e in times3.__closure__]}&quot;)
-print(times3(4))
-print(f&quot;cell_contents: {[e.cell_contents for e in times3.__closure__]}&quot;)
-print(times3(5))
-print(f&quot;cell_contents: {[e.cell_contents for e in times3.__closure__]}&quot;)
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;__closure__ attr gives tule of `cell` objects: </span><span class="se">\n</span><span class="si">{</span><span class="n">times3</span><span class="o">.</span><span class="vm">__closure__</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;__closure__ object can be unpacked via `cell_contents`:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cell_contents: </span><span class="si">{</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">cell_contents</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">times3</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times3</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cell_contents: </span><span class="si">{</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">cell_contents</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">times3</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">times3</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cell_contents: </span><span class="si">{</span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">cell_contents</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">times3</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-print(&quot;\nwe can combine free vars with name and its content!&quot;)
-print(
-    pretty(
-        {
-            v: c.cell_contents
-            for v, c in zip(times3.__code__.co_freevars, times3.__closure__)
-        }
-    )
-)
-
-</code></pre>
-<h2 id="decorators-are-closure">Decorators are closure!</h2>
-<p>[[decorator - python]]<br />
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">we can combine free vars with name and its content!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="n">pretty</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="n">v</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">cell_contents</span>
+            <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">times3</span><span class="o">.</span><span class="vm">__code__</span><span class="o">.</span><span class="n">co_freevars</span><span class="p">,</span> <span class="n">times3</span><span class="o">.</span><span class="vm">__closure__</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="decorators-are-closure">Decorators are closure!<a class="headerlink" href="#decorators-are-closure" title="Permanent link">&para;</a></h2>
+<p><a href="../decorator%20-%20python/">decorator - python</a><br />
 그래서, 위에 작성한 <code>factorial</code> 함수에 데코레이터를 붙여 전역변수를 사용하지 않고도 자유변수만으로 메모아이제이션을 수행할 수 있게 되었다. 개쩐다!!!</p>
-<pre><code class="language-python">@in_cache
-def factorial2(n):
-    if n &lt;= 1:
-        return 1
-    return n * factorial2(n - 1)
+<div class="highlight"><pre><span></span><code><span class="nd">@in_cache</span>
+<span class="k">def</span> <span class="nf">factorial2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial2</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 
-factorial2(3)
-factorial2(3)
-factorial2(4)
-factorial2(10)
-factorial2(9)
-
-</code></pre>
+<span class="n">factorial2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">factorial2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">factorial2</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">factorial2</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">factorial2</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
 <p>더군다나, <code>in_cache</code>는 그 자체로 구체적인 사항을 가진 클로저가 하나도 없기 때문에(오직 메모아이제이션만) 다른 알고리즘을 구현한 함수에서도 아주 간편하게 메모아이제이션을 사용하도록 그 저시기를 바꿀 수 있다.</p>
-<pre><code class="language-python">@in_cache
-def sum_zero_to(n):
-    if n &lt; 1:
-        return 0
-    return n + sum_zero_to(n - 1)
+<div class="highlight"><pre><span></span><code><span class="nd">@in_cache</span>
+<span class="k">def</span> <span class="nf">sum_zero_to</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">sum_zero_to</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 
-sum_zero_to(5)
-sum_zero_to(5)
-sum_zero_to(10)
-sum_zero_to(9)
-</code></pre>
+<span class="n">sum_zero_to</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sum_zero_to</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sum_zero_to</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">sum_zero_to</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -462,5 +470,5 @@ sum_zero_to(9)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

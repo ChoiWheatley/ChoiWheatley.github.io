@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,18 +231,18 @@
   <h1>vector init with size, not capacity</h1>
 
 <p>평화로운 어느날, 최승현은 코드를 이렇게 짰다.</p>
-<pre><code class="language-rust">let mut v = Vec::with_capacity(size);
-v.resize(size, 0);
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
 <p><code>cargo clippy</code>를 친 최승현은 소스라치게 놀라고 말았다. 더 좋은 방법이 있었기 때문이다!</p>
-<pre><code>  --&gt; src/bitset.rs:23:9
+<div class="highlight"><pre><span></span><code>  --&gt; src/bitset.rs:23:9
    |
 22 |         let mut v = Vec::with_capacity(size);
    |                     ------------------------ help: consider replace allocation with: `vec![0; size]`
 23 |         v.resize(size, 0);
    |         ^^^^^^^^^^^^^^^^^
    |
-</code></pre>
+</code></pre></div>
 
 
 
@@ -280,5 +291,5 @@ v.resize(size, 0);
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

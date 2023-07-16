@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -232,7 +243,7 @@
 <p>[[django PermissionsMixin의 역할이 뭐지]]</p>
 </li>
 </ul>
-<h1 id="model">Model 관련 에러</h1>
+<h1 id="model">Model 관련 에러<a class="headerlink" href="#model" title="Permanent link">&para;</a></h1>
 <ul>
 <li>
 <p>아직도 <code>users-model</code> 브랜치에서 에러를 고치지 못했다. 원인을 파악하자.</p>
@@ -243,13 +254,13 @@
 raise FieldError(message)
 django.core.exceptions.FieldError: Unknown field(s) (username) specified for User</code></p>
 <ul>
-<li>[[<code>User</code>를 커스텀 하고싶으면, <code>User</code>말고도 다른 부분의 코드도 함께 변경해야 한다]]. 디폴트 User의 멤버를 기대하고 있기 때문이다. 그것은 바로 <code>username</code>. |<ul>
+<li><a href="./User를 커스텀 하고싶으면, User말고도 다른 부분의 코드도 함께 변경해야 한다.md"><code>User</code>를 커스텀 하고싶으면, <code>User</code>말고도 다른 부분의 코드도 함께 변경해야 한다</a>. 디폴트 User의 멤버를 기대하고 있기 때문이다. 그것은 바로 <code>username</code>. |<ul>
 <li><code>forms.py</code></li>
 <li><code>admin.py</code></li>
 </ul>
 </li>
-<li>migration 순서가 꼬이면 <code>raise InconsistentMigrationHistory</code>가 발생한다. <code>****.0001_initial</code> 을 의존하는 다른 <code>&amp;&amp;&amp;&amp;.0001_initial</code>가 존재하기 전에 migrate를 해서 그렇다. 이 문제를 해소하기 위해선 일단 <code>db.sqlite</code> 파일을 백업하던가 폭파시키던가 하고, 꼬인 앱의 <code>migration</code>를 지운다. 그리고 <code>makemigrations</code> → <code>migrate</code> 명령을 수행하면 된다. | [[django migration 순서 꼬인경우 {GPT}]]</li>
-<li>[[django reverse]]</li>
+<li>migration 순서가 꼬이면 <code>raise InconsistentMigrationHistory</code>가 발생한다. <code>****.0001_initial</code> 을 의존하는 다른 <code>&amp;&amp;&amp;&amp;.0001_initial</code>가 존재하기 전에 migrate를 해서 그렇다. 이 문제를 해소하기 위해선 일단 <code>db.sqlite</code> 파일을 백업하던가 폭파시키던가 하고, 꼬인 앱의 <code>migration</code>를 지운다. 그리고 <code>makemigrations</code> → <code>migrate</code> 명령을 수행하면 된다. | <a href="../django%20migration%20%EC%88%9C%EC%84%9C%20%EA%BC%AC%EC%9D%B8%EA%B2%BD%EC%9A%B0%20%7BGPT%7D/">django migration 순서 꼬인경우 {GPT}</a></li>
+<li><a href="../django%20reverse/">django reverse</a></li>
 </ul>
 </li>
 </ul>
@@ -301,5 +312,5 @@ django.core.exceptions.FieldError: Unknown field(s) (username) specified for Use
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,16 +234,9 @@
 <p>C++에 [[lowerbound|lower_bound]]가 있다면 파이썬에는 <code>bisect.bisect_left</code>가 있다. 그럼 <code>upper_bound</code>는? <code>bisect.bisect_right</code> 바보야 😲</p>
 <p>이분탐색은 그 자체로 너무 많은 곳에 활용이 되고 있어서 실전 위주로 정리를 해보겠다. 흠흠</p>
 <p>아래는 [[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]를 파이썬으로 구현한 코드이다. 확실히 엄청나게 간결하다.</p>
-<figure markdown>
-  ![20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#](20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#)
-  <figcaption>4ygbua</figcaption>
-</figure markdown>
-
+<p><a class="glightbox" href="../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/#4ygbua" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#^4ygbua" src="../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/#4ygbua" /></a></p>
 <p>아래는 삽입정렬을 <code>bisect_left</code>를 활용하여 푼 코드이다. 부분정렬리스트인데, 이분탐색을 안할 이유가 없잖아?</p>
-<figure markdown>
-  ![20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#](20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#)
-  <figcaption>fyzoll</figcaption>
-</figure markdown>
+<p><a class="glightbox" href="../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/#fyzoll" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#^fyzoll" src="../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/#fyzoll" /></a></p>
 
 
 
@@ -281,5 +285,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

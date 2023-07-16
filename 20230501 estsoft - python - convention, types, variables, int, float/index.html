@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -230,9 +241,9 @@
 </ul>
 </li>
 <li><a href="https://colab.research.google.com/drive/1IRa8nYwM2HtkzlNJGBlavWK96kffytm_?usp=sharing">오늘자 멘토님 google colab 주소</a></li>
-<li>[[0014 Python 🐍]]</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a></li>
 <li>알고리즘, 디버깅 챕터를 제외한 모든 강의는 google colab에서 진행할 예정.</li>
-<li>[[google colab|google colab 자체 단축키 등등]]</li>
+<li><a href="../google%20colab/">google colab 자체 단축키 등등</a></li>
 <li><a href="https://google.github.io/styleguide/pyguide.html">google python coding convention</a></li>
 <li>
 <p>types</p>
@@ -244,11 +255,11 @@
 <ul>
 <li>모든 타입은 <code>class</code>이며, 그 안에 들어있는 메서드, 매직 메서드, 멤버들을 <strong>속성</strong>이라고 부른다. 이때 사용자는 파이썬 표준 라이브러리 안에 있는 클래스들의 속성을 변경할 수도, 추가할 수도 있다. 권장하지는 않지만 때로 확장이 필요한 경우에 고민해 보면 좋을 것 같다. (래퍼클래스에 매직메서드 구현이면 군침이 도는걸)</li>
 </ul>
-<p><code>python
-class int(int):
-    def _add__(self, a):
-        return 'hello, world!'
-int('10') + int('10') # 신기하게도 'hello, world'가 나온다!</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">int</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;hello, world!&#39;</span>
+<span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span> <span class="c1"># 신기하게도 &#39;hello, world&#39;가 나온다!</span>
+</code></pre></div>
 </li>
 </ul>
 </li>
@@ -288,13 +299,13 @@ int('10') + int('10') # 신기하게도 'hello, world'가 나온다!</code></p>
 </li>
 </ul>
 <hr />
-<h1 id="_1">멘토의 조언</h1>
+<h1 id="_1">멘토의 조언<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>여러분, 실력자 분들은 어떻게 정리하셔야 할지 잘 모르시겠죠? 그래서 준비해 보았습니다.</p>
 </blockquote>
 <ol>
 <li>
-<p>우선 아래 Lv0코드를 보면서 모르는 문법이나, 활용하는 문법에서 모르는 것이 있는지 한 번 체크해보세요.(https://github.com/paullabkorea/programmersLv0) [[fast io in python]]</p>
+<p>우선 아래 Lv0코드를 보면서 모르는 문법이나, 활용하는 문법에서 모르는 것이 있는지 한 번 체크해보세요.(https://github.com/paullabkorea/programmersLv0) <a href="../fast%20io%20in%20python/">fast io in python</a></p>
 <ol>
 <li>모르는 것이 있으시면 한 번 정리 부탁드립니다. 예를 들어 collections나 itertools나 functools, re 정규표현식 같은 것이요. </li>
 <li>우리 수업에 해당 수업이 들어 있습니다. 예를 들어 정규표현식이 부족하시다면 정규표현식 수업에는 꼭 수업을 들으시고, 정리한 것을 확인하시고 복습해보세요.</li>
@@ -359,5 +370,5 @@ int('10') + int('10') # 신기하게도 'hello, world'가 나온다!</code></p>
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

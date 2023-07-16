@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -355,19 +366,19 @@
                   
 
 
-<h1 id="a-guide-on-links-vs-tags-in-obsidian-knowledge-management-obsidian-forum">A Guide On Links vs. Tags In Obsidian - Knowledge management - Obsidian Forum</h1>
+<h1 id="a-guide-on-links-vs-tags-in-obsidian-knowledge-management-obsidian-forum">A Guide On Links vs. Tags In Obsidian - Knowledge management - Obsidian Forum<a class="headerlink" href="#a-guide-on-links-vs-tags-in-obsidian-knowledge-management-obsidian-forum" title="Permanent link">&para;</a></h1>
 <blockquote>
-<h2 id="excerpt">Excerpt</h2>
+<h2 id="excerpt">Excerpt<a class="headerlink" href="#excerpt" title="Permanent link">&para;</a></h2>
 <p>The question “should I use tags or links” is asked regularly in the Obsidian discord.  The prevailing answer seems to be “Well, it depends on what you want to do” or “There’s no correct answer”. Of course, this being the community it is, those are usually followed by helpful people digging into the specifics of the situation. But also, sometimes, the questioner just disappears, and I find myself wondering if they’ve given up over what might well appear to be a non-answer.  Either way, it seems t...</p>
 </blockquote>
 <hr />
 <p>The question “should I use tags or links” is asked regularly in the Obsidian discord.</p>
 <p>The prevailing answer seems to be “Well, it depends on what you want to do” or “There’s no correct answer”. Of course, this being the community it is, those are usually followed by helpful people digging into the specifics of the situation. But also, sometimes, the questioner just disappears, and I find myself wondering if they’ve given up over what might well appear to be a non-answer.</p>
 <p>Either way, it seems to me like it might be beneficial for us to have a standard response to this question, so I’ve tried to build one. However, I hope this document will continue to be updated (here or elsewhere) with the input of the whole community, so if I have missed relevant [factual] differences between links and tags (or made other errors), please call them out in the thread so I can update this!</p>
-<h2 id="should-i-use-tags-or-links"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#should-i-use-tags-or-links-1"></a>Should I Use Tags Or Links?</h2>
+<h2 id="should-i-use-tags-or-links"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#should-i-use-tags-or-links-1"></a>Should I Use Tags Or Links?<a class="headerlink" href="#should-i-use-tags-or-links" title="Permanent link">&para;</a></h2>
 <p>Hello! Wondering about the nature of tags or links in Obsidian is very common!</p>
 <p>The reality is, there isn’t one single answer to this question, but this article is intended to help you understand why one or the other might be better for your situation. We will lay out the facts regarding how tags and links work, so you can make the decision that suits you best.</p>
-<h2 id="tags-and-links-arent-actually-that-different"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-and-links-arent-actually-that-different-2"></a>Tags and Links Aren’t Actually That Different</h2>
+<h2 id="tags-and-links-arent-actually-that-different"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-and-links-arent-actually-that-different-2"></a>Tags and Links Aren’t Actually That Different<a class="headerlink" href="#tags-and-links-arent-actually-that-different" title="Permanent link">&para;</a></h2>
 <p>In Obsidian, tags are actually a kind of link!</p>
 <p>What Obsidian calls a link can be defined as: “A connection from one note to another note”.</p>
 <p>In Obsidian, a tag is: “A connection from a note to an idea”.</p>
@@ -377,40 +388,40 @@
 <li>You don’t actually have to choose between tags and links for organization! They’re complimentary, and we’ll go over why in the next sections.</li>
 <li>You can’t go <em>very</em> wrong in whichever path you choose. The two ideas are so similar that there is almost always a way to make tags or links work <em>mostly</em> like the other. In other words: you can achieve nearly all the same functionality with either tags or links… <strong>the differences are almost entirely a matter of convenience!</strong></li>
 </ol>
-<h2 id="tags-and-links-arent-equal-either"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-and-links-arent-equal-either-3"></a>Tags and Links Aren’t Equal, Either</h2>
+<h2 id="tags-and-links-arent-equal-either"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-and-links-arent-equal-either-3"></a>Tags and Links Aren’t Equal, Either<a class="headerlink" href="#tags-and-links-arent-equal-either" title="Permanent link">&para;</a></h2>
 <p>But tags and links aren’t exactly the same, either, and those matters of convenience can become significant over time. Here is a list of factual differences between the two:</p>
-<h3 id="links-auto-refactor-by-default-and-tags-do-not"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#links-auto-refactor-by-default-and-tags-do-not-4"></a>Links auto-refactor by default, and tags do not</h3>
+<h3 id="links-auto-refactor-by-default-and-tags-do-not"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#links-auto-refactor-by-default-and-tags-do-not-4"></a>Links auto-refactor by default, and tags do not<a class="headerlink" href="#links-auto-refactor-by-default-and-tags-do-not" title="Permanent link">&para;</a></h3>
 <p>This is a big one!</p>
 <p>When you change the name of a file within Obsidian, <em>all</em> links to that folder will automatically change to be pointing to the right place.</p>
 <p>Changing tag names through the entire vault requires the help of a plugin (such as <a href="https://github.com/pjeby/tag-wrangler">GitHub - pjeby/tag-wrangler: Rename, merge, toggle, and search tags from the Obsidian tag pane 189</a>), or a risky find-and-replace procedure.</p>
-<h3 id="click-behavior-is-very-different-for-tags-and-links"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#click-behavior-is-very-different-for-tags-and-links-5"></a>Click behavior is very different for tags and links</h3>
+<h3 id="click-behavior-is-very-different-for-tags-and-links"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#click-behavior-is-very-different-for-tags-and-links-5"></a>Click behavior is very different for tags and links<a class="headerlink" href="#click-behavior-is-very-different-for-tags-and-links" title="Permanent link">&para;</a></h3>
 <p>Clicking on a tag will open a search for all files that contain that tag.</p>
 <p>Clicking on a link will either:</p>
 <ul>
 <li>Open the file the link is pointing to.</li>
 <li>Create the file the link is pointing to, if it does not already exist.</li>
 </ul>
-<h3 id="tags-are-implicitly-counters"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-are-implicitly-counters-6"></a>Tags are implicitly counters</h3>
+<h3 id="tags-are-implicitly-counters"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-are-implicitly-counters-6"></a>Tags are implicitly counters<a class="headerlink" href="#tags-are-implicitly-counters" title="Permanent link">&para;</a></h3>
 <p>Instances of each tag are automatically counted up by the Obsidian tag pane! This means that ever tag automatically is also a visual counter of how often that tag appears in your vault.</p>
-<h3 id="tags-can-be-hierarchical"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-can-be-hierarchical-7"></a>Tags can be hierarchical</h3>
+<h3 id="tags-can-be-hierarchical"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-can-be-hierarchical-7"></a>Tags can be hierarchical<a class="headerlink" href="#tags-can-be-hierarchical" title="Permanent link">&para;</a></h3>
 <p><code>#level 1/level 2/level 3</code> is a valid tag!</p>
 <p>Tags are effectively a “virtual file system”, meaning they can be organized into a tree just like folders, except without the rigid properties of on-disk folders.</p>
-<h3 id="links-can-have-aliases"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#links-can-have-aliases-8"></a>Links can have aliases</h3>
+<h3 id="links-can-have-aliases"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#links-can-have-aliases-8"></a>Links can have aliases<a class="headerlink" href="#links-can-have-aliases" title="Permanent link">&para;</a></h3>
 <p>A link can have multiple “names”, in the format of <code>[[A Note Name|An Alias To The Note Name]]</code>. This can be handy, and is not something tags can do.</p>
-<h3 id="tags-can-be-defined-in-front-matter"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-can-be-defined-in-front-matter-9"></a>Tags can be defined in front-matter</h3>
+<h3 id="tags-can-be-defined-in-front-matter"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#tags-can-be-defined-in-front-matter-9"></a>Tags can be defined in front-matter<a class="headerlink" href="#tags-can-be-defined-in-front-matter" title="Permanent link">&para;</a></h3>
 <p>Tags can be defined at the top of a note, something like:</p>
-<pre><code>---
+<div class="highlight"><pre><span></span><code>---
 tags: [writing/blog, ideas, blog/status/draft]
 ---
-</code></pre>
+</code></pre></div>
 <p>This can be a useful way of adding organization to a note in an invisible way. While links must always be written out in text, front-matter can be hidden in Obsidian.</p>
-<h2 id="introduction-to-higher-order-notes"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#introduction-to-higher-order-notes-10"></a>Introduction To “Higher-Order Notes”</h2>
+<h2 id="introduction-to-higher-order-notes"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#introduction-to-higher-order-notes-10"></a>Introduction To “Higher-Order Notes”<a class="headerlink" href="#introduction-to-higher-order-notes" title="Permanent link">&para;</a></h2>
 <p>If you want to organize using links, then eventually you are going to encounter the idea of a “higher-order note”.</p>
 <p>You might have heard the term “MoC” used around the Obsidian community. This stands for “map of content”, and they are a kind of “higher-order notes”. A higher-order note is any note that exists to help you navigate to other notes. The naming isn’t 100% agreed on, so don’t let that confuse you. “Indexes”, “MoCs”, “Higher-Order Notes”… They’re all pretty similar.</p>
-<h3 id="what-problem-do-these-solve"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#what-problem-do-these-solve-11"></a>What problem do these solve?</h3>
+<h3 id="what-problem-do-these-solve"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#what-problem-do-these-solve-11"></a>What problem do these solve?<a class="headerlink" href="#what-problem-do-these-solve" title="Permanent link">&para;</a></h3>
 <p>HONs solve the problem of navigation between groups of notes <em>without</em> the necessity of using tags. A HON fulfills the same function as a tag: A connection from a file to an idea. A HON is what would happen if, when you clicked on a tag, a note opened representing that tag.</p>
 <p>HONs are objectively more functional than tags, as they have all the power of a note, including the ability to have their own tags, <em>but that doesn’t mean they are necessarily “better”.</em></p>
-<h4 id="hon-potential-benefits"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#hon-potential-benefits-12"></a>HON Potential Benefits</h4>
+<h4 id="hon-potential-benefits"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#hon-potential-benefits-12"></a>HON Potential Benefits<a class="headerlink" href="#hon-potential-benefits" title="Permanent link">&para;</a></h4>
 <p>A HON:</p>
 <ul>
 <li>Can easily show different “lenses” of data, with the same links displayed in different orders. (Within an “animals” HON you might have “Animals that lay eggs” right alongside a list of “Animals that give live birth”).</li>
@@ -420,7 +431,7 @@ tags: [writing/blog, ideas, blog/status/draft]
 </li>
 <li>Can easily contain notes, explaining why the links are the way they are, as opposed to tags which are fully static.</li>
 </ul>
-<h4 id="hon-potential-downsides"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#hon-potential-downsides-13"></a>HON Potential Downsides</h4>
+<h4 id="hon-potential-downsides"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#hon-potential-downsides-13"></a>HON Potential Downsides<a class="headerlink" href="#hon-potential-downsides" title="Permanent link">&para;</a></h4>
 <p>A HON:</p>
 <ul>
 <li>Is more complex than a tag, which might require additional, unnecessary maintenance.</li>
@@ -428,7 +439,7 @@ tags: [writing/blog, ideas, blog/status/draft]
 <li>Must be backed by an actual file on the file system.</li>
 <li>Does not automatically get a counter of any kind.</li>
 </ul>
-<h2 id="summary"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#summary-14"></a>Summary</h2>
+<h2 id="summary"><a href="https://forum.obsidian.md/t/a-guide-on-links-vs-tags-in-obsidian/28231#summary-14"></a>Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>I hope this article has given you a good, basic understanding of how tags and links fundamentally work within Obsidian. There is no reason you need to choose just one or the other! You can mix and match easily, using the unique features of each to benefit your desired workflows.</p>
 <p>I also help it gives you a little bit more of a sense of peace going into starting your Obsidian journey, knowing that this isn’t a “choose the wrong path and screw everything up” kind of choice. It’ll be fine, no matter what!</p>
 <p>Good luck, and have fun making your notes awesome!</p>
@@ -480,5 +491,5 @@ tags: [writing/blog, ideas, blog/status/draft]
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -225,12 +236,12 @@
 </ul>
 </li>
 <li>Index<ul>
-<li>[[User authentication 관련 에러 (인증, 인가){django}]]</li>
-<li>[[20230607 book-project#Model 관련 에러|모델 및 마이그레이션 에러 ]]</li>
-<li>[[django reverse#No Reverse Match|<code>NoReverseMatch</code> 에러]]</li>
-<li>[[status code를 활용한 에러발생  에러처리 {django}]] | [[20230617 book-project#^wcz9fm]]</li>
-<li>[[name이 유일하지 않을 때 slug 중복을 피하는 법 {django}]] | [[20230617 book-project#^i33sll]]</li>
-<li>[[Unexpected token DOCTYPE... is not valid JSON SyntaxError {django}]]</li>
+<li><a href="../User%20authentication%20%EA%B4%80%EB%A0%A8%20%EC%97%90%EB%9F%AC%20%28%EC%9D%B8%EC%A6%9D%2C%20%EC%9D%B8%EA%B0%80%29%7Bdjango%7D/">User authentication 관련 에러 (인증, 인가){django}</a></li>
+<li><a href="../20230607%20book-project/#model-관련-에러">모델 및 마이그레이션 에러 </a></li>
+<li><a href="../django%20reverse/#no-reverse-match"><code>NoReverseMatch</code> 에러</a></li>
+<li><a href="../status%20code%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EC%97%90%EB%9F%AC%EB%B0%9C%EC%83%9D%20%20%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%AC%20%7Bdjango%7D/">status code를 활용한 에러발생  에러처리 {django}</a> | <a href="../20230617%20book-project/#wcz9fm">20230617 book-project#^wcz9fm</a></li>
+<li><a href="../name%EC%9D%B4%20%EC%9C%A0%EC%9D%BC%ED%95%98%EC%A7%80%20%EC%95%8A%EC%9D%84%20%EB%95%8C%20slug%20%EC%A4%91%EB%B3%B5%EC%9D%84%20%ED%94%BC%ED%95%98%EB%8A%94%20%EB%B2%95%20%7Bdjango%7D/">name이 유일하지 않을 때 slug 중복을 피하는 법 {django}</a> | <a href="../20230617%20book-project/#i33sll">20230617 book-project#^i33sll</a></li>
+<li><a href="../Unexpected%20token%20DOCTYPE...%20is%20not%20valid%20JSON%20SyntaxError%20%7Bdjango%7D/">Unexpected token DOCTYPE... is not valid JSON SyntaxError {django}</a></li>
 <li>git 관련 에러처리<ul>
 <li>병합 충돌</li>
 <li>rebase (...)</li>
@@ -288,5 +299,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

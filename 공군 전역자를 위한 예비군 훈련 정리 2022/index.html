@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -229,11 +240,11 @@
 <p>학생예비군, 직장예비군은 연차 상관없이 1~6년차 모두 8시간만 훈련함 (ㄹㅇ 개꿀인듯..)</p>
 <p>아래는 일반적인 경우 예비군임</p>
 <p>[1~4년차 : 무조건 2박3일 입영]</p>
-<h1 id="_1">동원지정</h1>
+<h1 id="_1">동원지정<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>집 근처 비행단으로 우선배정하나, 인원이 안맞으면 저년차부터 아예 타지역으로 갈 수 있음</p>
 <p>예컨대 서울살면 보통 성남 15비,수원 10비로 배정되는게 일반적이나, 인원이 넘치면 청주 17비 충주 19비 같은 곳으로 튕기기도 함</p>
 <p>3,4년차는 웬만하면 집 근처 비행단으로 걸림</p>
-<h1 id="_2">동원미지정</h1>
+<h1 id="_2">동원미지정<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <p>대전 기준으로 위에 살면 수원 10비에서 , 아래에 살면 진주 교육사에서 훈련받음</p>
 <p>공군은 동미참이라고 해서 육군처럼 8시간 x 4일 훈련하는거 없음...ㅠ</p>
 <p>5~6년차 : 이때부터 타군과 동일 (기본훈련 8시간 + 향방작계 6시간 x 2회 )</p>
@@ -289,5 +300,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

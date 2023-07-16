@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,17 +235,17 @@
                   
 
 
-<h1 id="tldr">TL;DR</h1>
+<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h1>
 <p>default <code>User</code>를 의존하는 코드
 - forms.py
     - 커스텀 폼의 <code>Meta</code>를 만들어 내가 넣고 싶은 필드만 <code>fields</code>에 넣는다. 이건 쉽지.
 - admin.py
     - <code>django.contrib.auth.UserAdmin</code> 소스코드를 잘 읽어보면 <code>form</code>, <code>add_form</code>이라는 멤버가 있 다. 디폴트로 각각 <code>UserChangeForm</code>과 <code>UserCreationForm</code>을 composite 패턴 형태로 가지고 있는데, 여기에서 내가 오버라이딩한 <code>username</code>을 참조하는 것이었다. 따라서 이 멤버들을 오버라이드 하여야 한다.</p>
-<h1 id="question">Question</h1>
+<h1 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><code>UserCreationForm</code> requires <code>username</code> field. But I already override <code>username</code> with <code>email</code>. How can I resolve this error? Error message:</p>
 </blockquote>
-<pre><code>Watching for file changes with StatReloader
+<div class="highlight"><pre><span></span><code>Watching for file changes with StatReloader
 Exception in thread django-main-thread:
 Traceback (most recent call last):
   File &quot;/home/linuxbrew/.linuxbrew/opt/python@3.11/lib/python3.11/threading.py&quot;, line 1038, in _bootstrap_inner
@@ -277,33 +288,33 @@ Traceback (most recent call last):
   File &quot;/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/forms/models.py&quot;, line 321, in __new__
     raise FieldError(message)
 django.core.exceptions.FieldError: Unknown field(s) (username) specified for User
-</code></pre>
-<h1 id="answer">Answer</h1>
+</code></pre></div>
+<h1 id="answer">Answer<a class="headerlink" href="#answer" title="Permanent link">&para;</a></h1>
 <p>To resolve the error, you need to update the <code>UserCreationForm</code> to use the <code>email</code> field instead of the <code>username</code> field. Follow these steps:</p>
 <ol>
 <li>Create a custom form, <code>CustomUserCreationForm</code>, that inherits from <code>UserCreationForm</code>.</li>
 </ol>
-<pre><code class="language-python">from django.contrib.auth.forms import UserCreationForm
-from .models import User
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.auth.forms</span> <span class="kn">import</span> <span class="n">UserCreationForm</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">User</span>
 
-class CustomUserCreationForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = User
-        fields = ('email',)
-</code></pre>
+<span class="k">class</span> <span class="nc">CustomUserCreationForm</span><span class="p">(</span><span class="n">UserCreationForm</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="n">UserCreationForm</span><span class="o">.</span><span class="n">Meta</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,)</span>
+</code></pre></div>
 <ol>
 <li>In your <code>admin.py</code> file, import and use the <code>CustomUserCreationForm</code> in the <code>add_form</code> field of the <code>UserAdmin</code> class.</li>
 </ol>
-<pre><code class="language-python">from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User
-from .forms import CustomUserCreationForm
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.admin</span> <span class="kn">import</span> <span class="n">UserAdmin</span> <span class="k">as</span> <span class="n">BaseUserAdmin</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">CustomUserCreationForm</span>
 
-class UserAdmin(BaseUserAdmin):
-    add_form = CustomUserCreationForm
+<span class="k">class</span> <span class="nc">UserAdmin</span><span class="p">(</span><span class="n">BaseUserAdmin</span><span class="p">):</span>
+    <span class="n">add_form</span> <span class="o">=</span> <span class="n">CustomUserCreationForm</span>
 
-admin.site.register(User, UserAdmin)
-</code></pre>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">UserAdmin</span><span class="p">)</span>
+</code></pre></div>
 <p>By doing this, you're specifying the <code>CustomUserCreationForm</code> as the form to be used when adding a user in the Django admin. This form only includes the <code>email</code> field, allowing you to create a user without the <code>username</code> field while still maintaining the uniqueness constraint on the <code>username</code> field.</p>
 
 
@@ -353,5 +364,5 @@ admin.site.register(User, UserAdmin)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

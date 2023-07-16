@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,32 +235,32 @@
                   
 
 
-<h1 id="2023-06-02">2023-06-02</h1>
+<h1 id="2023-06-02">2023-06-02<a class="headerlink" href="#2023-06-02" title="Permanent link">&para;</a></h1>
 <p>&lt;&lt; [[2023-06-01]] | [[2023-06-03]]&gt;&gt;</p>
 <hr />
-<h1 id="2023-06-02-daily-briefing">📅 2023-06-02 Daily Briefing</h1>
-<h2 id="_1">🎵 오늘의 추천곡</h2>
+<h1 id="2023-06-02-daily-briefing">📅 2023-06-02 Daily Briefing<a class="headerlink" href="#2023-06-02-daily-briefing" title="Permanent link">&para;</a></h1>
+<h2 id="_1">🎵 오늘의 추천곡<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://youtu.be/P1Z0z6AHX5w">싱잉볼 3h 32m</a> | 요가, 명상, 잘때 챙겨듣는 곡입니다.</p>
-<h2 id="_2">🌜 어제는...</h2>
+<h2 id="_2">🌜 어제는...<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>시작은 스몰토크였지만 끝은 딥토크였다. 만족스러운 동창생들과의 만남을 뒤로 하고 다시 현실로 돌아오자.</p>
-<h2 id="_3">🙌 지금은...</h2>
+<h2 id="_3">🙌 지금은...<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>데이터 모델링에서 한계를 느끼고 있다. 커스텀 유저 클래스를 만들었는데 장고에서 자동으로 만들어주는 필드가 서로 충돌한다고 한다. 해결방법을 고민하고 있다.</p>
-<h2 id="_4">🚀 오늘 내가 달성하고자 하는 것들은...</h2>
+<h2 id="_4">🚀 오늘 내가 달성하고자 하는 것들은...<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>내일 오전중에 집필 프로젝트가 진행되는데 나는 적어도 유저 프로필 페이지 만큼은 만들어놓고 싶다. 따라서 오늘밤은 장고 블로그 프로젝트에 올인한다.</p>
-<h2 id="_5">👎 오늘 나에게 닥친 어려움은...</h2>
+<h2 id="_5">👎 오늘 나에게 닥친 어려움은...<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <hr />
-<h1 id="notes">📝 Notes</h1>
+<h1 id="notes">📝 Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h1>
 <ul>
 <li></li>
 </ul>
 <hr />
-<p><img alt="Pending ⌛.canvas" src="Pending ⌛.canvas" /></p>
+<p><a class="glightbox" href="../../0000%20Index%20%F0%9F%94%97/Pending%20%E2%8C%9B.canvas" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pending ⌛.canvas" src="../../0000%20Index%20%F0%9F%94%97/Pending%20%E2%8C%9B.canvas" /></a></p>
 <hr />
-<h1 id="notes-modified-today">Notes modified today</h1>
-<pre><code class="language-dataview">List FROM &quot;&quot; 
+<h1 id="notes-modified-today">Notes modified today<a class="headerlink" href="#notes-modified-today" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>List FROM &quot;&quot; 
 WHERE striptime(date(file.frontmatter.updated)) = date(&quot;2023-06-02&quot;) 
 SORT file.mtime asc
-</code></pre>
+</code></pre></div>
 
 
 
@@ -298,5 +309,5 @@ SORT file.mtime asc
       <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

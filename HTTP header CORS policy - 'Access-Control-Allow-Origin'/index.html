@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,54 +234,53 @@
 <li><a href="https://stackoverflow.com/questions/28046422/django-cors-headers-not-work">sof</a></li>
 <li>S3 CORS Policy를 일단 다 때려넣어봤다</li>
 </ul>
-<pre><code class="language-json">[
-    {
-        &quot;AllowedHeaders&quot;: [
-            &quot;*&quot;
-        ],
-        &quot;AllowedMethods&quot;: [
-            &quot;HEAD&quot;,
-            &quot;PUT&quot;,
-            &quot;GET&quot;,
-            &quot;POST&quot;,
-            &quot;DELETE&quot;
-        ],
-        &quot;AllowedOrigins&quot;: [
-            &quot;*&quot;
-        ],
-        &quot;ExposeHeaders&quot;: [
-            &quot;x-amz-request-id&quot;,
-            &quot;x-amz-server-side-encryption&quot;,
-            &quot;x-amz-version-id&quot;,
-            &quot;Content-Length&quot;,
-            &quot;Content-Type&quot;,
-            &quot;Connection&quot;,
-            &quot;Date&quot;,
-            &quot;ETag&quot;,
-            &quot;x-amz-delete-marker&quot;
-        ]
-    }
-]
-</code></pre>
-<p>그리고 미들웨어를 하나 만들었다. ~~django-cors-headers는 쓰레기다~~ 다음 미들웨어는 모든 response 헤더에 <code>Acess-Control-Allow-Headers</code>를 추가한다.</p>
-<pre><code class="language-python">from django import http
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;AllowedHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;*&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;AllowedMethods&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;HEAD&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;PUT&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;DELETE&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;AllowedOrigins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;*&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;ExposeHeaders&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;x-amz-request-id&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;x-amz-server-side-encryption&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;x-amz-version-id&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;Content-Length&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;Content-Type&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;Connection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;ETag&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;x-amz-delete-marker&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>그리고 미들웨어를 하나 만들었다. <del>django-cors-headers는 쓰레기다</del> 다음 미들웨어는 모든 response 헤더에 <code>Acess-Control-Allow-Headers</code>를 추가한다.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">http</span>
 
-class CorsMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
+<span class="k">class</span> <span class="nc">CorsMiddleware</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">get_response</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_response</span> <span class="o">=</span> <span class="n">get_response</span>
 
-    def __call__(self, request):
-        response = self.get_response(request)
-        if (request.method == &quot;OPTIONS&quot;  and &quot;HTTP_ACCESS_CONTROL_REQUEST_METHOD&quot; in request.META):
-            response = http.HttpResponse()
-            response[&quot;Content-Length&quot;] = &quot;0&quot;
-            response[&quot;Access-Control-Max-Age&quot;] = 86400
-        response[&quot;Access-Control-Allow-Origin&quot;] = &quot;*&quot;
-        response[&quot;Access-Control-Allow-Methods&quot;] = &quot;DELETE, GET, OPTIONS, PATCH, POST, PUT&quot;
-        response[&quot;Access-Control-Allow-Headers&quot;] = &quot;accept, accept-encoding, authorization, content-type, dnt, origin, user-agent, x-csrftoken, x-requested-with&quot;
-        return response
-
-</code></pre>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_response</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;OPTIONS&quot;</span>  <span class="ow">and</span> <span class="s2">&quot;HTTP_ACCESS_CONTROL_REQUEST_METHOD&quot;</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">HttpResponse</span><span class="p">()</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Content-Length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Access-Control-Max-Age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">86400</span>
+        <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Access-Control-Allow-Origin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
+        <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Access-Control-Allow-Methods&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;DELETE, GET, OPTIONS, PATCH, POST, PUT&quot;</span>
+        <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Access-Control-Allow-Headers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;accept, accept-encoding, authorization, content-type, dnt, origin, user-agent, x-csrftoken, x-requested-with&quot;</span>
+        <span class="k">return</span> <span class="n">response</span>
+</code></pre></div>
 
 
 
@@ -319,5 +329,5 @@ class CorsMiddleware:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

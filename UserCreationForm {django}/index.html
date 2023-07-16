@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,14 +231,14 @@
   <h1>UserCreationForm {django}</h1>
 
 <ul>
-<li>[[django forms]]</li>
+<li><a href="../django%20forms/">django forms</a></li>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/auth/default/">Using the Django authentication system {doc}</a><ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/ref/contrib/auth/#django.contrib.auth.models.User">models.User {doc}</a></li>
 <li>장고의 인증(authentication) 시스템은 인가(authorization)시스템과 결합되어있다. <code>User</code> 객체는 확장이 용이한 기본적인 형태의 인증 시스템으로, 회원가입, 로그인 절차와 밀접한 연관을 갖고 있다.</li>
 <li>username, password, email, first_name, last_name 외에도 많은 attribute들이 있지만 걔네들은 다 옵셔널임.</li>
 </ul>
 </li>
-<li><a href="https://docs.djangoproject.com/en/4.1/topics/auth/default/#django.contrib.auth.forms.UserCreationForm">forms.UserCreationForm {doc}</a> | [[django forms]]<ul>
+<li><a href="https://docs.djangoproject.com/en/4.1/topics/auth/default/#django.contrib.auth.forms.UserCreationForm">forms.UserCreationForm {doc}</a> | <a href="../django%20forms/">django forms</a><ul>
 <li>세개의 필드를 가지고 있다. username, password1, password2</li>
 <li>추가하고 싶은 필드가 있으면... 뭐 그냥 상속하면 된다. 그래서 아래 코드의 <code>UserRegisterForm</code>의 필드로 <code>email</code>이 들어있는거다.<ul>
 <li>심지어 email 필드에 대한 기본정의조차 장고에서 제공해준다... | <code>forms.EmailField</code></li>
@@ -236,22 +247,22 @@
 </ul>
 </li>
 </ul>
-<p>[[0014.1 Django 🎈]]에서 회원가입 폼을 만들 때 사용한 클래스를 한 번 보자. 이메일은 기본으로 제공이 안되어 내가 추가한 걸 볼 수 있는데, <code>Meta</code> 얘는 도대체 뭐냐?</p>
-<pre><code class="language-python">from django import forms
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+<p><a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a>에서 회원가입 폼을 만들 때 사용한 클래스를 한 번 보자. 이메일은 기본으로 제공이 안되어 내가 추가한 걸 볼 수 있는데, <code>Meta</code> 얘는 도대체 뭐냐?</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.forms</span> <span class="kn">import</span> <span class="n">UserCreationForm</span>
 
 
-class UserRegisterForm(UserCreationForm):
-    &quot;&quot;&quot;pre-built user registration forms.... SICK!&quot;&quot;&quot;
-    email = forms.EmailField()
+<span class="k">class</span> <span class="nc">UserRegisterForm</span><span class="p">(</span><span class="n">UserCreationForm</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;pre-built user registration forms.... SICK!&quot;&quot;&quot;</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">EmailField</span><span class="p">()</span>
 
-    class Meta:
-        &quot;&quot;&quot;details&quot;&quot;&quot;
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
-</code></pre>
-<p><img alt="django internal class Meta" src="django internal class Meta" /></p>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;details&quot;&quot;&quot;</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;password1&#39;</span><span class="p">,</span> <span class="s1">&#39;password2&#39;</span><span class="p">]</span>
+</code></pre></div>
+<p><a class="glightbox" href="../django%20internal%20class%20Meta/" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="django internal class Meta" src="../django%20internal%20class%20Meta/" /></a></p>
 
 
 
@@ -300,5 +311,5 @@ class UserRegisterForm(UserCreationForm):
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

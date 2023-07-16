@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -222,7 +233,7 @@
 <ul>
 <li>https://doc.rust-lang.org/book/ch15-02-deref.html</li>
 <li>https://doc.rust-lang.org/std/ops/trait.Deref.html#more-on-deref-coercion</li>
-<li>그냥 단순 <code>*</code> 연산을 수행해 주는 녀석인 줄로만 알았는데 [[option as_deref]] 에서 실험을 해 보니까 연쇄적으로 deref를 해주는 것 같다.</li>
+<li>그냥 단순 <code>*</code> 연산을 수행해 주는 녀석인 줄로만 알았는데 <a href="../option%20as_deref/">option as_deref</a> 에서 실험을 해 보니까 연쇄적으로 deref를 해주는 것 같다.</li>
 </ul>
 
 
@@ -272,5 +283,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

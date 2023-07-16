@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -220,49 +231,49 @@
   <h1>No. 24 - 보급로</h1>
 
 <p>{% raw %}</p>
-<p>parent link: [[Heap]] [[SW Expert Academy|swea]]</p>
+<p>parent link: <a href="../Heap/">Heap</a> <a href="../SW%20Expert%20Academy/">swea</a></p>
 <hr />
 <p><a href="https://swexpertacademy.com/main/talk/codeBattle/problemDetail.do?contestProbId=AV15QRX6APsCFAYD&amp;categoryId=AYWab_JKjkwDFAQK&amp;categoryType=BATTLE&amp;battleMainPageIndex=1">No. 24 [S/W 문제해결 응용] 4일차 - 보급로</a></p>
 <p>priority_queue로는 못 풀었고, BFS + memoization으로 풀었다. 일반 queue를 사용하여 visited를 대체한 <code>g_costs</code> 변수를 활용하여 push 조건을 걸었다. 이러면 비록 다녀간 노드일지라도 더 효율적인 방법이 존재하면 갱신하고 push하는 식으로 작동한다.</p>
-<pre><code class="language-cpp">static int N = 0;
-/**visited를 대신하는 전역변수. [i][j]보다 작은 경우 pq에 넣는다.*/
-static Arr&lt;Arr&lt;int&gt;&gt; g_costs{{{MAX_INT}}};
-/**말 그대로 input데이터*/
-static Arr&lt;Arr&lt;int&gt;&gt; g_data;
-constexpr auto four_ways = {
-    idx_t(-1, 0), // up
-    idx_t(0, 1),  // right
-    idx_t(1, 0),  // down
-    idx_t(0, -1), // left
-};
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="cm">/**visited를 대신하는 전역변수. [i][j]보다 작은 경우 pq에 넣는다.*/</span>
+<span class="k">static</span><span class="w"> </span><span class="n">Arr</span><span class="o">&lt;</span><span class="n">Arr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">g_costs</span><span class="p">{{{</span><span class="n">MAX_INT</span><span class="p">}}};</span>
+<span class="cm">/**말 그대로 input데이터*/</span>
+<span class="k">static</span><span class="w"> </span><span class="n">Arr</span><span class="o">&lt;</span><span class="n">Arr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">g_data</span><span class="p">;</span>
+<span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">four_ways</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">idx_t</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="c1">// up</span>
+<span class="w">    </span><span class="n">idx_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w">  </span><span class="c1">// right</span>
+<span class="w">    </span><span class="n">idx_t</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w">  </span><span class="c1">// down</span>
+<span class="w">    </span><span class="n">idx_t</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">),</span><span class="w"> </span><span class="c1">// left</span>
+<span class="p">};</span>
 
-inline int solution(int n, array&lt;array&lt;int, MAX_N&gt;, MAX_N&gt; &amp;&amp;arr2d) {
-  init(n, std::move(arr2d));
-  auto q = queue&lt;idx_t&gt;();
+<span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">solution</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">&lt;</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_N</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_N</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">arr2d</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">init</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">arr2d</span><span class="p">));</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="o">&lt;</span><span class="n">idx_t</span><span class="o">&gt;</span><span class="p">();</span>
 
-  q.push(idx_t{0, 0});
+<span class="w">  </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">idx_t</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span>
 
-  while (!q.empty()) {
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 
-    idx_t cur = q.front();
-    q.pop();
-    for (idx_t delta : four_ways) {
-      if (out_of_bounds(delta + cur, n)) {
-        continue;
-      }
-      auto next = delta + cur;
-      int next_cost = get(g_costs, cur) + get(g_data, next);
-      // not visited OR 더 적은 비용으로 갈 수 있는 경우
-      if (get(g_costs, next) &gt; next_cost) {
-        get(g_costs, next) = next_cost;
-        q.push(next);
-      }
-    }
-  }
+<span class="w">    </span><span class="n">idx_t</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="w">    </span><span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">idx_t</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">four_ways</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">out_of_bounds</span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cur</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">      </span><span class="k">auto</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cur</span><span class="p">;</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">next_cost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get</span><span class="p">(</span><span class="n">g_costs</span><span class="p">,</span><span class="w"> </span><span class="n">cur</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">get</span><span class="p">(</span><span class="n">g_data</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="p">);</span>
+<span class="w">      </span><span class="c1">// not visited OR 더 적은 비용으로 갈 수 있는 경우</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">get</span><span class="p">(</span><span class="n">g_costs</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">next_cost</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">get</span><span class="p">(</span><span class="n">g_costs</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next_cost</span><span class="p">;</span>
+<span class="w">        </span><span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">next</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  return g_costs[n - 1][n - 1];
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">g_costs</span><span class="p">[</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">][</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>priority queue(max heap)를 사용하면 50ms 정도의 시간으로 풀 수 있을 것 같은데... 어떻게 풀어야 할지 잘 모르겠다.</p>
 <p>{% endraw %}</p>
 
@@ -313,5 +324,5 @@ inline int solution(int n, array&lt;array&lt;int, MAX_N&gt;, MAX_N&gt; &amp;&amp
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

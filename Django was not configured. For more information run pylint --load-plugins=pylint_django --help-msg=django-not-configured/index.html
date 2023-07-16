@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -223,13 +234,13 @@
 <li><a href="https://stackoverflow.com/questions/65761250/pylint-django-raising-error-about-django-not-being-configured-when-thats-not-th">해결법 {SOF}</a></li>
 </ul>
 <p>Add the <code>--django-settings-module</code> argument the VS Code settings:</p>
-<pre><code class="language-json">  {
-    &quot;python.linting.pylintArgs&quot;: [
-        [...]
-        &quot;--django-settings-module=&lt;mainapp&gt;.settings&quot;,
-    ]
-  }
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;python.linting.pylintArgs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
+<span class="w">        </span><span class="s2">&quot;--django-settings-module=&lt;mainapp&gt;.settings&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
 <p>Change <code>&lt;mainapp&gt;</code> to be your main app directory. For example, if your <code>settings.py</code> was in <code>sweetstuff/settings.py</code> then the argument value would be <code>sweetstuff.settings</code>. This is the same format as you would import the settings module from inside a Python module or the Django shell.</p>
 
 
@@ -279,5 +290,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

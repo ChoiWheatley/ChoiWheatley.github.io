@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -232,8 +243,8 @@ $$</p>
 <li>함수 정의 <code>fn function(...){...}</code> 은 Statement이다.</li>
 <li><code>let</code> 구문은 Statement이다. =&gt; C는 변수 할당 결과가 또 다른 변수에 들어갈 수 있다는 차이점이 있다. <code>x = y = 6</code> </li>
 </ul>
-<p><code>rust
-let x = (let y = 6); // Compile Error</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// Compile Error</span>
+</code></pre></div>
 <ul>
 <li>문장 마지막에 붙는 세미콜론 <code>;</code> 는 해당 문장을 Statement로 만든다.</li>
 </ul>
@@ -246,21 +257,21 @@ let x = (let y = 6); // Compile Error</code></p>
 <li>매크로를 호출하는 것은 Expression이다.</li>
 <li><code>{}</code> 는 Expression이다.</li>
 </ul>
-<p><code>rust
-let x = { let y = 6; y }; // Ok x &lt;- 6</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// Ok x &lt;- 6</span>
+</code></pre></div>
 <ul>
 <li>if 문은 Expression이다.</li>
 <li>세미콜론 <code>;</code> 이 붙지 않은 문장은 Expression이다.</li>
 <li><code>break</code> 뒤에 오는 표현은 Expression이다. 따라서, 반복문은 Expression이 될 수 있다.</li>
 </ul>
-<p><code>rust
-let mut counter = 10;
-let something = loop {
-    counter += 1;
-    if counter == 10 {
-        break counter * 2; // loop가 `counter * 2` 를 평가하게 된다.
-    }
-}; // 이 loop가 expression임을 알려준다.</code></p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">something</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">break</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// loop가 `counter * 2` 를 평가하게 된다.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span><span class="w"> </span><span class="c1">// 이 loop가 expression임을 알려준다.</span>
+</code></pre></div>
 <ul>
 <li></li>
 </ul>
@@ -316,5 +327,5 @@ let something = loop {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

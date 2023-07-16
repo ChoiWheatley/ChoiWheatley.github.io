@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,13 +235,13 @@
                   
 
 
-<h1 id="build-your-vault-as-a-database">Build your vault as a database</h1>
+<h1 id="build-your-vault-as-a-database">Build your vault as a database<a class="headerlink" href="#build-your-vault-as-a-database" title="Permanent link">&para;</a></h1>
 <p>https://medium.com/@estebanthi/obsidian-dataview-build-your-vault-as-a-database-fb3920f8cd79</p>
-<h1 id="doc">Doc</h1>
+<h1 id="doc">Doc<a class="headerlink" href="#doc" title="Permanent link">&para;</a></h1>
 <p>https://blacksmithgu.github.io/obsidian-dataview/ </p>
-<h1 id="introduction-to-dataview">Introduction to Dataview</h1>
+<h1 id="introduction-to-dataview">Introduction to Dataview<a class="headerlink" href="#introduction-to-dataview" title="Permanent link">&para;</a></h1>
 <p>https://www.youtube.com/watch?v=sEgzrRNkgsE</p>
-<h1 id="snippets">Snippets</h1>
+<h1 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&para;</a></h1>
 <p>https://forum.obsidian.md/t/dataviewjs-snippet-showcase/17847</p>
 
 
@@ -280,5 +291,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

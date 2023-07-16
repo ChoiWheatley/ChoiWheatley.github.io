@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,14 +235,14 @@
 <li>정답! False</li>
 <li>현재로썬 커스텀 비교자를 정의할 수 없다. 따라서 별도의 Ord를 정의하는 래퍼 구조체를 정의하여야 한다...</li>
 </ul>
-<pre><code class="language-rust">struct Wrapper(Wrapped);
-impl Ord&lt;Wrapped&gt; for Wrapper {
-    fn cmp(&amp;self, other: &amp;Self) -&gt; Ordering {}
-}
-impl From&lt;Wrapped&gt; for Wrapper {
-    fn from(value: Wrapped) -&gt; Self {}
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Wrapper</span><span class="p">(</span><span class="n">Wrapped</span><span class="p">);</span>
+<span class="k">impl</span><span class="w"> </span><span class="nb">Ord</span><span class="o">&lt;</span><span class="n">Wrapped</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Wrapper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">other</span>: <span class="kp">&amp;</span><span class="nc">Self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Ordering</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+<span class="k">impl</span><span class="w"> </span><span class="nb">From</span><span class="o">&lt;</span><span class="n">Wrapped</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Wrapper</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span> <span class="nf">from</span><span class="p">(</span><span class="n">value</span>: <span class="nc">Wrapped</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -280,5 +291,5 @@ impl From&lt;Wrapped&gt; for Wrapper {
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

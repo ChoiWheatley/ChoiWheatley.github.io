@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,52 +237,52 @@
 
 <p><a href="https://swexpertacademy.com/main/talk/codeBattle/problemDetail.do?contestProbId=AV-fO0s6ARoDFAXT&amp;categoryId=AYWab_JKjkwDFAQK&amp;categoryType=BATTLE&amp;battleMainPageIndex=1">No. 25 중간값 구하기</a></p>
 <hr />
-<h1 id="_1">풀이</h1>
+<h1 id="_1">풀이<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>한시간 고민했지만 문제를 풀 수 없었다. 결국 다른 사람의 풀이를 봤는데...<br />
-<img alt="software - 0 1.jpg" src="software - 0 1.jpg" /><br />
+<a class="glightbox" href="../assets/software%20-%200%201.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="software - 0 1.jpg" src="../assets/software%20-%200%201.jpg" /></a><br />
 maxheap과 minheap을 양 옆으로 붙여버리면 되는 것이었다. 정확히 말하자면 두 가지 조건을 만족시키게만 만들면 된다.
 1. <code>maxheap.size == minheap.size</code>
 2. <code>maxheap.top &lt; mid &amp;&amp; mid &lt; minheap.top</code></p>
-<h1 id="code">Code</h1>
-<pre><code class="language-cpp">/**
-sorted:
+<h1 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm">sorted:</span>
 
-1,2,3,4,5,6,7,8,9
-........^
-maxheap...minheap
+<span class="cm">1,2,3,4,5,6,7,8,9</span>
+<span class="cm">........^</span>
+<span class="cm">maxheap...minheap</span>
 
-언제나
-mid &lt; minheap.front() &amp;&amp; maxheap.front() &lt; mid &amp;&amp;
-minheap.size() == maxheap.size()를 만족한다.
-*/
-class Solution {
+<span class="cm">언제나</span>
+<span class="cm">mid &lt; minheap.front() &amp;&amp; maxheap.front() &lt; mid &amp;&amp;</span>
+<span class="cm">minheap.size() == maxheap.size()를 만족한다.</span>
+<span class="cm">*/</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
 
-  priority_queue&lt;elem_t, vector&lt;elem_t&gt;, less&lt;elem_t&gt;&gt; m_maxheap{};
-  priority_queue&lt;elem_t, vector&lt;elem_t&gt;, greater&lt;elem_t&gt;&gt; m_minheap{};
-  elem_t m_mid;
+<span class="w">  </span><span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">less</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m_maxheap</span><span class="p">{};</span>
+<span class="w">  </span><span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">greater</span><span class="o">&lt;</span><span class="n">elem_t</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m_minheap</span><span class="p">{};</span>
+<span class="w">  </span><span class="n">elem_t</span><span class="w"> </span><span class="n">m_mid</span><span class="p">;</span>
 
-public:
-  explicit Solution(elem_t mid) : m_mid{mid} {}
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">Solution</span><span class="p">(</span><span class="n">elem_t</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_mid</span><span class="p">{</span><span class="n">mid</span><span class="p">}</span><span class="w"> </span><span class="p">{}</span>
 
-  /**add1, add2를 추가한 뒤 중간값을 리턴한다.*/
-  elem_t add(elem_t add1, elem_t add2) {
-    m_mid &lt; add1 ? m_minheap.push(add1) : m_maxheap.push(add1);
-    m_mid &lt; add2 ? m_minheap.push(add2) : m_maxheap.push(add2);
-    // minheap, maxheap의 size를 맞춤과 동시에 mid를 수정한다.
-    while (m_minheap.size() &lt; m_maxheap.size()) {
-      m_minheap.push(m_mid);
-      m_mid = m_maxheap.top();
-      m_maxheap.pop();
-    }
-    while (m_maxheap.size() &lt; m_minheap.size()) {
-      m_maxheap.push(m_mid);
-      m_mid = m_minheap.top();
-      m_minheap.pop();
-    }
-    return m_mid;
-  }
-};
-</code></pre>
+<span class="w">  </span><span class="cm">/**add1, add2를 추가한 뒤 중간값을 리턴한다.*/</span>
+<span class="w">  </span><span class="n">elem_t</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="n">elem_t</span><span class="w"> </span><span class="n">add1</span><span class="p">,</span><span class="w"> </span><span class="n">elem_t</span><span class="w"> </span><span class="n">add2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">m_mid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">add1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">m_minheap</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">add1</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">add1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">m_mid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">add2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">m_minheap</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">add2</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">add2</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// minheap, maxheap의 size를 맞춤과 동시에 mid를 수정한다.</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m_minheap</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">m_minheap</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m_mid</span><span class="p">);</span>
+<span class="w">      </span><span class="n">m_mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+<span class="w">      </span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_minheap</span><span class="p">.</span><span class="n">size</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">m_maxheap</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">m_mid</span><span class="p">);</span>
+<span class="w">      </span><span class="n">m_mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_minheap</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+<span class="w">      </span><span class="n">m_minheap</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_mid</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
 
 
 
@@ -320,5 +331,5 @@ public:
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,28 +235,28 @@
                   
 
 
-<h1 id="module-and-package">Module and Package</h1>
+<h1 id="module-and-package">Module and Package<a class="headerlink" href="#module-and-package" title="Permanent link">&para;</a></h1>
 <p>현재 폴더에 <code>test1.py</code>라는 파일을 생성하였고 <code>hello</code> 함수, <code>Human</code> 클래스, <code>name</code>, <code>age</code> 변수를 이쪽에서 임포트 할 수 있다.</p>
-<pre><code class="language-python">import test1
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">test1</span>
 
-test1.name
-</code></pre>
+<span class="n">test1</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div>
 <p><code>import</code>는 모듈이름이나 폴더나 다 들어갈 수 있다</p>
-<pre><code class="language-python">`import`는 모듈이름이나 폴더나 다 들어갈 수 있다
+<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="n">import</span><span class="err">`</span><span class="n">는</span> <span class="n">모듈이름이나</span> <span class="n">폴더나</span> <span class="n">다</span> <span class="n">들어갈</span> <span class="n">수</span> <span class="n">있다</span>
 
-from one.two import three
+<span class="kn">from</span> <span class="nn">one.two</span> <span class="kn">import</span> <span class="n">three</span>
 
-print(three.name)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">three</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
 <p><code>as</code> 를 사용하여 약칭을 사용할 수도 있다.</p>
-<pre><code class="language-python">`as` 를 사용하여 약칭을 사용할 수도 있다.
+<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="k">as</span><span class="err">`</span> <span class="n">를</span> <span class="n">사용하여</span> <span class="n">약칭을</span> <span class="n">사용할</span> <span class="n">수도</span> <span class="n">있다</span><span class="o">.</span>
 
-import test2 as test1
-import pandas as p
-import numpy as n
+<span class="kn">import</span> <span class="nn">test2</span> <span class="k">as</span> <span class="nn">test1</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">p</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">n</span>
 
-print(test1.name)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="n">test1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -294,5 +305,5 @@ print(test1.name)
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

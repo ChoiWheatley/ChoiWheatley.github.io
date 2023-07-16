@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -244,15 +255,15 @@
 <li><a href="https://stackoverflow.com/a/50040689/21369350">questions about deriving traits in stack overflow</a></li>
 <li><a href="https://stackoverflow.com/a/47966422/21369350">뭐라고? trait가 trait를 상속할 수 있다고? stack overflow</a></li>
 </ul>
-<pre><code class="language-rust">trait A {}
-trait B: A {}
-struct S;
-impl B for S {}
-impl A for S {} // separately implement both B and A
+<div class="highlight"><pre><span></span><code><span class="k">trait</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{}</span>
+<span class="k">trait</span><span class="w"> </span><span class="n">B</span>: <span class="nc">A</span><span class="w"> </span><span class="p">{}</span>
+<span class="k">struct</span> <span class="nc">S</span><span class="p">;</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">{}</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// separately implement both B and A</span>
 
-let x: &amp;B = &amp;S;
-</code></pre>
-<h2 id="-rust-is-not-an-oop-which-cannot-upcast-to-base-type">- <a href="https://stackoverflow.com/questions/28632968/why-doesnt-rust-support-trait-object-upcasting">Rust is not an OOP, which cannot upcast to base type</a></h2>
+<span class="kd">let</span><span class="w"> </span><span class="n">x</span>: <span class="kp">&amp;</span><span class="nc">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">S</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="-rust-is-not-an-oop-which-cannot-upcast-to-base-type">- <a href="https://stackoverflow.com/questions/28632968/why-doesnt-rust-support-trait-object-upcasting">Rust is not an OOP, which cannot upcast to base type</a><a class="headerlink" href="#-rust-is-not-an-oop-which-cannot-upcast-to-base-type" title="Permanent link">&para;</a></h2>
 
 
 
@@ -301,5 +312,5 @@ let x: &amp;B = &amp;S;
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

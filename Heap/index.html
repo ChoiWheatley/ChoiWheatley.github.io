@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -224,21 +235,21 @@
                   
 
 
-<p>parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]</p>
+<p>parent link: <a href="../0000%20Index%20%F0%9F%94%97/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/">algorithms</a> <a href="../SW%20Expert%20Academy/">swea</a></p>
 <hr />
-<h1 id="_1">관련 문제 링크</h1>
+<h1 id="_1">관련 문제 링크<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ul>
-<li>[x] [[no23.힙]]</li>
-<li>[x] [[기초 partial sort 연습]]<ul>
-<li>[x] [[Pro 사전문제 - 기초 Partial Sort 연습]]</li>
+<li>[x] <a href="../no23.%ED%9E%99/">no23.힙</a></li>
+<li>[x] <a href="../%EA%B8%B0%EC%B4%88%20partial%20sort%20%EC%97%B0%EC%8A%B5/">기초 partial sort 연습</a><ul>
+<li>[x] <a href="../Pro%20%EC%82%AC%EC%A0%84%EB%AC%B8%EC%A0%9C%20-%20%EA%B8%B0%EC%B4%88%20Partial%20Sort%20%EC%97%B0%EC%8A%B5/">Pro 사전문제 - 기초 Partial Sort 연습</a></li>
 </ul>
 </li>
-<li>[x] [[No. 24 - 보급로]]</li>
-<li>[x] [[No. 25 중간값 구하기]]</li>
-<li>[ ] [[No. 27 Social Media]]</li>
+<li>[x] <a href="../No.%2024%20-%20%EB%B3%B4%EA%B8%89%EB%A1%9C/">No. 24 - 보급로</a></li>
+<li>[x] <a href="../No.%2025%20%EC%A4%91%EA%B0%84%EA%B0%92%20%EA%B5%AC%ED%95%98%EA%B8%B0/">No. 25 중간값 구하기</a></li>
+<li>[ ] <a href="../No.%2027%20Social%20Media/">No. 27 Social Media</a></li>
 </ul>
 <hr />
-<h1 id="_2">개요</h1>
+<h1 id="_2">개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <p>complete binary tree로, 배열로 구현하면 자식노드는 본인 인덱스의 두배가 된다. 빠르게 구현하는 것이 목적이므로 0번 노드를 일부러 사용하지 않는것도 도움이 된다. </p>
 <p>0부터 시작하는 경우
 - 부모의 인덱스 : <code>(i-1) / 2</code>  또는 <code>(i-1) &gt;&gt; 1</code>
@@ -250,68 +261,66 @@
 - 오른쪽 자식의 인덱스 : <code>i * 2 + 1</code>  또는 <code>i &lt;&lt; 1 | 1</code></p>
 <p>Max heap: 루트가 가장 큼. 부모 key &gt; 자식 key<br />
 Min heap: 루트가 가장 작음. 부모 key &lt; 자식 key</p>
-<p>~~참고 : Key 중복은 허용하지 않음.~~<br />
+<p><del>참고 : Key 중복은 허용하지 않음.</del><br />
 2023-02-10 21:53 수정: 중복 허용함 <a href="https://en.wikipedia.org/wiki/Heap_%28data_structure%29">wiki</a></p>
-<h1 id="insert">insert</h1>
+<h1 id="insert">insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h1>
 <p>마지막 노드에 추가 후 부모와의 비교를 하며 <strong>bubble up</strong></p>
-<pre><code class="language-cpp">  auto insert(T &amp;&amp;data) {
-    if (m_top &gt;= N - 1) {
-      throw std::out_of_range{&quot;heap is full(&quot; + std::to_string(N) + &quot; size)&quot;};
-    }
-    // push to top
-    m_top++;
-    m_data.at(m_top) = std::move(data);
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">insert</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_top</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span><span class="p">{</span><span class="s">&quot;heap is full(&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; size)&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// push to top</span>
+<span class="w">    </span><span class="n">m_top</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">m_data</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">m_top</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
 
-    // bubble up
-    for (size_t idx = m_top;
-         parent(idx) &gt; 0 &amp;&amp; //
-         m_less_than(m_data[parent(idx)], m_data[idx]);) {
-      std::swap(m_data[parent(idx)], m_data[idx]);
-      idx = parent(idx);
-    }
-  }
-
-</code></pre>
-<h1 id="delete">delete</h1>
+<span class="w">    </span><span class="c1">// bubble up</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_top</span><span class="p">;</span>
+<span class="w">         </span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="c1">//</span>
+<span class="w">         </span><span class="n">m_less_than</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">]);)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">]);</span>
+<span class="w">      </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<h1 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h1>
 <p>오직 루트만을 삭제할 수 있음. 루트 삭제 후 마지막 노드를 루트에 올려넣고 자식과 비교하며 더 큰 값 (min heap일 경우 더 작은 값)과 비교하며 <strong>bubble down</strong></p>
-<pre><code class="language-cpp">  void pop() noexcept {
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">pop</span><span class="p">()</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span>
 
-    if (empty())
-      return;
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">empty</span><span class="p">())</span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span>
 
-    // push last element
-    m_data[START] = std::move(m_data[m_top]);
-    m_data[m_top] = T{};
-    m_top--;
+<span class="w">    </span><span class="c1">// push last element</span>
+<span class="w">    </span><span class="n">m_data</span><span class="p">[</span><span class="n">START</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">m_top</span><span class="p">]);</span>
+<span class="w">    </span><span class="n">m_data</span><span class="p">[</span><span class="n">m_top</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">m_top</span><span class="o">--</span><span class="p">;</span>
 
-    for (size_t idx = 1; left(idx) &lt;= m_top;) {
-      size_t next_idx = 0;
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">m_top</span><span class="p">;)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">size_t</span><span class="w"> </span><span class="n">next_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-      // find next index
-      if (left(idx) == m_top) {
-        next_idx = left(idx);
-      } else {
-        auto const &amp;left_one = m_data[left(idx)];
-        auto const &amp;right_one = m_data[right(idx)];
-        if (m_less_than(left_one, right_one)) {
-          next_idx = right(idx);
-        } else {
-          next_idx = left(idx);
-        }
-      }
+<span class="w">      </span><span class="c1">// find next index</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_top</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">next_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">left_one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">right_one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">right</span><span class="p">(</span><span class="n">idx</span><span class="p">)];</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_less_than</span><span class="p">(</span><span class="n">left_one</span><span class="p">,</span><span class="w"> </span><span class="n">right_one</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">next_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">next_idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
 
-      // bubble down
-      if (m_less_than(m_data[idx], m_data[next_idx])) {
-        std::swap(m_data[idx], m_data[next_idx]);
-      } else {
-        break;
-      }
+<span class="w">      </span><span class="c1">// bubble down</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_less_than</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">next_idx</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="n">m_data</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span><span class="w"> </span><span class="n">m_data</span><span class="p">[</span><span class="n">next_idx</span><span class="p">]);</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
 
-      idx = next_idx;
-    }
-  }
-
-</code></pre>
+<span class="w">      </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next_idx</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
 <p>pop이 구현하는데 꽤나 고생했다. left, right 인덱스가 자꾸 예상을 벗어난 위치에 도달했기 때문. 
 1. 첫번째 for문에서 <code>left(idx) &lt;= m_top</code> : 다음의 경우의 수가 가능하다.
     1. <code>left(idx) == m_top</code> : 오직 왼쪽 자식으로만 내려갈 수 있다.
@@ -365,5 +374,5 @@ Min heap: 루트가 가장 작음. 부모 key &lt; 자식 key</p>
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

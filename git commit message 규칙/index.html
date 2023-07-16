@@ -48,7 +48,18 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -226,7 +237,7 @@
 
 <p><a href="https://velog.io/@jiheon/Git-Commit-message-%EA%B7%9C%EC%B9%99">git commit message 규칙</a> </p>
 <p>아래 내용은 블로그 글을 그냥 가져온거임 </p>
-<h1 id="commit-message-7">Commit message 7가지 규칙</h1>
+<h1 id="commit-message-7">Commit message 7가지 규칙<a class="headerlink" href="#commit-message-7" title="Permanent link">&para;</a></h1>
 <ol>
 <li>제목과 본문을 한 줄 띄어 구분</li>
 <li>제목은 50자 이내</li>
@@ -236,16 +247,16 @@
 <li>본문의 각 행은 72자 이내 (줄바꿈 사용)</li>
 <li>본문은 어떻게 보다 무엇을, 왜에 대하여 설명</li>
 </ol>
-<h1 id="commit-message">Commit message 구조</h1>
+<h1 id="commit-message">Commit message 구조<a class="headerlink" href="#commit-message" title="Permanent link">&para;</a></h1>
 <p>기본적으로 commit message 는 제목, 본문, 꼬리말로 구성합니다.<br />
 제목은 필수사항이며, 본문과 꼬리말은 선택사항입니다.</p>
-<pre><code class="language-null">&lt;type&gt;: &lt;subject&gt;
+<div class="highlight"><pre><span></span><code>&lt;type&gt;: &lt;subject&gt;
 
 &lt;body&gt;
 
 &lt;footer&gt;
-</code></pre>
-<h2 id="type">Type</h2>
+</code></pre></div>
+<h2 id="type">Type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h2>
 <ul>
 <li>feat : 새로운 기능 추가, 기존의 기능을 요구 사항에 맞추어 수정</li>
 <li>fix : 기능에 대한 버그 수정</li>
@@ -258,14 +269,14 @@
 <li>test : 테스트 코드 추가/수정</li>
 <li>release : 버전 릴리즈</li>
 </ul>
-<h2 id="subject">Subject</h2>
+<h2 id="subject">Subject<a class="headerlink" href="#subject" title="Permanent link">&para;</a></h2>
 <p>Type 과 함께 헤더를 구성합니다. 예를들어, 로그인 API 를 추가했다면 다음과 같이 구성할 수 있습니다.</p>
 <p><code>ex) feat: Add login api</code></p>
-<h2 id="body">Body</h2>
+<h2 id="body">Body<a class="headerlink" href="#body" title="Permanent link">&para;</a></h2>
 <p>헤더로 표현이 가능하다면 생략이 가능합니다. 아닌 경우에는 자세한 내용을 함께 적어 본문을 구성합니다.</p>
-<h2 id="footer">Footer</h2>
+<h2 id="footer">Footer<a class="headerlink" href="#footer" title="Permanent link">&para;</a></h2>
 <p>어떠한 이슈에 대한 commit 인지 issue number 를 포함합니다. 위의 좋은 예시에서는 <code>(#1)</code> 처럼 포함시켰습니다. 그리고 <code>close #1</code> 처럼 close 를 통해 해당 이슈를 닫는 방법도 있습니다.</p>
-<h1 id="references">References</h1>
+<h1 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h1>
 <ul>
 <li><a href="https://beomseok95.tistory.com/328">좋은 커밋 메세지 작성하기위한 규칙들</a></li>
 <li><a href="https://blog.munilive.com/posts/my-git-commit-guide.html">Git Commit Message Style Guide - 개인/팀을 위한 커밋 메시지 스타일 가이드</a></li>
@@ -318,5 +329,5 @@
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
