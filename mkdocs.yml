@@ -17,11 +17,41 @@ theme:
     - navigation.path
     - navigation.top
 
+# Extensions
+markdown_extensions:
+  # admonition
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+  # image link
+  - md_in_html
+  - attr_list
+
+  # content tab
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # Caret, Mark & Tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # footnotes
+  - footnotes
+
+  # general
+  - toc:
+      permalink: true
+
 plugins:
+  - glightbox
   - search
-  - obsidian-support
-  - kroki:
-      FencePrefix: "kroki-"
+  - roamlinks
+  # - obsidian-support
+  # - kroki:
+  #     FencePrefix: "kroki-"
   - exclude:
       glob:
         - "**/*.excalidraw.md"

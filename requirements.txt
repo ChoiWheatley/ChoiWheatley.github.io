@@ -1,5 +1,7 @@
 mkdocs
 mkdocs-material
+mkdocs-glightbox
+mkdocs-roamlinks-plugin
 mkdocs-obsidian-support-plugin
 mkdocs-backlinks
 mkdocs-exclude

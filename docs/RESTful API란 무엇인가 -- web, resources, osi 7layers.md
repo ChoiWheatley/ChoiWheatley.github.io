@@ -76,6 +76,5 @@ JSON은 RESTful한가?
 
 [네트워크 top down aproach overview pdf](https://1drv.ms/b/s!AgE-lhMulmhxg5UUghoFBc0ThAoxNQ?e=Jtr77T)
 
-![[osi7layers.png]]
 
 ![[스크린샷 2023-05-26 21.27.51.png]]
