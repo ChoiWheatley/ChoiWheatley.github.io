@@ -230,11 +230,10 @@
 
   <h1>참조와 역참조</h1>
 
-<div class="highlight"><pre><span></span><code>flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
 Post -- 참조 --&gt; Comment
-Comment -- 역참조 --&gt; Post
-</code></pre></div>
+Comment -- 역참조 --&gt; Post</code></pre>
 <ul>
 <li>참조: <code>comment.post.id</code></li>
 <li>역참조: <code>post.comment_set.all()</code><ul>
