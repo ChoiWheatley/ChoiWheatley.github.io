@@ -3,8 +3,8 @@ description:
 aliases: 
 tags: 
 created: 2023-05-26T15:05:22
-updated: 2023-07-15T21:30:22
-title: 1차 프로젝트 - estsoft
+updated: 2023-07-17T14:22:55
+title: 1차 프로젝트 - estsoft {HTML-CSS-JS}
 ---
 - 일정: 
 	- 2023-05-30 ~ 2023-06-13 => 구현
@@ -36,8 +36,8 @@ title: 1차 프로젝트 - estsoft
 
 # Meditation Centre
 
-- repository: https://github.com/ChoiWheatley/ormi-project-1
-- deploy: https://choiwheatley.github.io/ormi-project-1/
+- repository: <https://github.com/ChoiWheatley/ormi-project-1>
+- deploy: <https://choiwheatley.github.io/ormi-project-1/>
 
 GPT 프로젝트 토큰제한을 결국 해결하지 못해 다른 주제로 전환했다. 그래도 리퀘스트 자체는 쉬우니까.. JS쪽과 HTML + Tailwind를 대충 잘 써보자.
 
@@ -78,7 +78,7 @@ HTML, CSS, JavaScript를 배우고 빠르게 적용 잘 하신 것 같습니다~
 
 - 참고교안
 
-    - 강의 링크 : https://inf.run/qmBd
-    - 교안 링크 : https://paullabkorea.github.io/jupyternotebookblog/tensorflow/deep%20learning/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/2022/10/29/_09_20_%EC%B4%88%EA%B8%89%EC%9E%90%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%86%90%EC%97%90_%EC%9E%A1%ED%9E%88%EB%8A%94_%EB%94%A5%EB%9F%AC%EB%8B%9D.html
+    - 강의 링크 : <https://inf.run/qmBd>
+    - 교안 링크 : <https://paullabkorea.github.io/jupyternotebookblog/tensorflow/deep%20learning/%EC%84%A0%ED%98%95%ED%9A%8C%EA%B7%80/2022/10/29/_09_20_%EC%B4%88%EA%B8%89%EC%9E%90%EB%A5%BC_%EC%9C%84%ED%95%9C_%EC%86%90%EC%97%90_%EC%9E%A1%ED%9E%88%EB%8A%94_%EB%94%A5%EB%9F%AC%EB%8B%9D.html>
 - [개발자를 위한 피그마 기본 활용 방법 - YT](https://youtu.be/1-VXCKmyr9I)
 - [[How to Get Around OpenAI GPT-3 Token Limits {BLOG}]]
