@@ -3,11 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T11:40:54
-updated: 2023-07-15T21:30:20
+updated: 2023-07-18T23:16:56
 title: django template
 ---
-{% raw %}
-- https://docs.djangoproject.com/en/4.2/ref/templates/language/
+- <https://docs.djangoproject.com/en/4.2/ref/templates/language/>
 - django template != Jinja2
 
 ```html
@@ -60,4 +59,8 @@ title: django template
 [[django template {context}]]로 가세요.  
 [[get_context_data, get_queryset { django } { ListView }]]
 
-{% endraw %}
+# Configuration in `settings.py`
+
+<https://docs.djangoproject.com/en/4.2/topics/templates/#configuration>
+
+템플릿 파일을 저장하는 별도의 위치를 정의하고 싶다면 settings.py의 `TEMPLATES` 속성을 건들이자!

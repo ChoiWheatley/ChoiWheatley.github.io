@@ -3,11 +3,10 @@ aliases:
 tags: 
 description:
 created: 2023-06-20T23:36:29
-updated: 2023-07-15T21:33:04
+updated: 2023-07-18T23:09:17
 title: How to manage static files (e.g. images, js, css) {django}
 ---
 
-{% raw %}
 
 - [doc.com](https://docs.djangoproject.com/en/4.2/howto/static-files/)
 - [관련 bookstore 리포지토리 PR 내용](https://github.com/ESTsoft-Book-Project/bookstore/pull/50)
@@ -33,7 +32,7 @@ STATICFILES_DIRS = [
 
 > Helper function to return a URL pattern for serving files in **debug** mode:
 
-이상한 코드를 보았다. https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/core/urls.py#L23-L29
+이상한 코드를 보았다. <https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/core/urls.py#L23-L29>
 
 `urlpatterns` 뒤에 `static()`을 `+` 연산으로 이어붙인 것 같은데, 이건 도대체 뭐냐?
 
@@ -45,5 +44,3 @@ urlpatterns = [
     # ... the rest of your URLconf goes here ...
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
-
-{% endraw %}
