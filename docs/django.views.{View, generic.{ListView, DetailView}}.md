@@ -3,16 +3,13 @@ description:
 aliases: 
 tags: 
 created: 2023-05-27T16:53:07
-updated: 2023-07-15T21:33:05
+updated: 2023-07-18T23:03:56
 title: django.views.{View, generic.{ListView, DetailView}}
 ---
 
-
-{% raw %}
-
 # View
 
-https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view
+<https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view>
 
 - attr
 	- `http_method_names`: `['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
@@ -27,9 +24,9 @@ urlpatterns = [
 ]
 ```
 
-# generic.ListView
+# ListView
 
-https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview
+<https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview>
 
 객체의 리스트를 표현하는 제네릭 뷰. 따라서 [[django template]]에서 순회를 돌 수 있다.
 
@@ -54,7 +51,7 @@ https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#lis
 
 `{% for object in object_list %}` 의 `object_list`가 서로 연결된다!
 
-# generic.DetailView
+# DetailView
 
 [DetailView 작성하는 영상](https://youtu.be/sMqDJovFO-Y?t=4993)  
 [djangoproject.com -- class based views -- generic display](https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/)
@@ -67,13 +64,13 @@ uri예시: `posts/<int:pk>/`
 
 템플릿에서 `{% url 'detail_article' %}` 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==> 그냥 `object.id`를 'detail_article' 뒤에 추가해버리니까 되네???? 😲
 
+# [TemplateView](https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview)
 
-
-[[slug가 뭐냐]]
+순수하게 템플릿 파일만을 저장한 view를 의미한다. [`TemplateResponseMixin`](https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.TemplateResponseMixin) 덕분에 `template_name` 멤버변수를 정의하기만 하면 알아서 GET 요청에 반응해준다. [`ContextMixin`](https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.ContextMixin) 덕분에 컨텍스트 확장이 가능해졌으며, `get_context_data`를 오버라이드 하는 것으로 구현이 가능하다.
 
 # 파라미터에 있던 HttpRequest
 
-https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest
+<https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest>
 
 - scheme
 - body
@@ -87,5 +84,7 @@ https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequ
 - dictionary를 들고있음
 	- GET
 	- POST
- 
-{% endraw %}
+
+# 기타
+
+[[slug가 뭐냐]]

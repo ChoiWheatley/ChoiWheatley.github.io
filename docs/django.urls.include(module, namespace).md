@@ -3,11 +3,9 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T15:21:01
-updated: 2023-07-15T21:33:05
+updated: 2023-07-18T18:13:20
 title: django.urls.include(module, namespace)
 ---
-
-{% raw %}
 
 - [django.urls.include {doc}](https://docs.djangoproject.com/en/4.2/ref/urls/#django.urls.include)
 - 모듈이름을 인자로 받는다. 타 모듈을 임포트 할 필요 없이 `urls.py`를 가지고 있는 장고앱을 명시만 하면 알아서 연결해주는듯.
@@ -61,5 +59,3 @@ urlpatterns = [
     path("filebrowser/", views.filebrowser, name="tinymce-filebrowser"),
 ]
 ```
-
-{% endraw %}
