@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-27T16:53:07
-updated: 2023-07-18T23:03:56
+updated: 2023-07-19T00:25:06
 title: django.views.{View, generic.{ListView, DetailView}}
 ---
 
@@ -67,6 +67,8 @@ uri예시: `posts/<int:pk>/`
 # [TemplateView](https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview)
 
 순수하게 템플릿 파일만을 저장한 view를 의미한다. [`TemplateResponseMixin`](https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.TemplateResponseMixin) 덕분에 `template_name` 멤버변수를 정의하기만 하면 알아서 GET 요청에 반응해준다. [`ContextMixin`](https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.ContextMixin) 덕분에 컨텍스트 확장이 가능해졌으며, `get_context_data`를 오버라이드 하는 것으로 구현이 가능하다.
+
+# [`LoginView`](https://docs.djangoproject.com/en/4.2/topics/auth/default/#django.contrib.auth.views.LoginView)
 
 # 파라미터에 있던 HttpRequest
 

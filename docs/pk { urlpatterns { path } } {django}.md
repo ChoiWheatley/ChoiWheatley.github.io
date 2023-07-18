@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T16:21:43
-updated: 2023-07-18T23:52:50
+updated: 2023-07-19T00:30:48
 title: pk { urlpatterns { path } } {django}
 ---
 
@@ -26,10 +26,25 @@ title: pk { urlpatterns { path } } {django}
 	    template_name = "blog/detail_article.html"
 	```
 
-	```html
-	<!-- blog > templates > blog > index.html -->
-	{% for object in object_list %}
-		...
-		<a href="{% url 'detail_article' object.id %}" class="btn btn-primary">Read More</a>
-	{% endfor %}
-	```
+```html
+<!-- blog > templates > blog > index.html -->
+{% for object in object_list %}
+	...
+	<a href="{% url 'detail_article' object.id %}" class="btn btn-primary">Read More</a>
+{% endfor %}
+```
+
+# include
+
+[including other url confs](https://docs.djangoproject.com/en/4.2/topics/http/urls/#including-other-urlconfs)
+
+```python
+from django.urls import include, path
+
+urlpatterns = [
+    # ... snip ...
+    path("community/", include("aggregator.urls")),
+    path("contact/", include("contact.urls")),
+    # ... snip ...
+]
+```
