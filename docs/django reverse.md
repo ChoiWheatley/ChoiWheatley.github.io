@@ -3,10 +3,9 @@ description:
 aliases: 
 tags: 
 created: 2023-06-07T14:11:36
-updated: 2023-07-15T21:30:20
+updated: 2023-07-19T01:08:52
 title: django reverse
 ---
-{% raw %}
 - 통째로 URL을 다 적지 않고도 말 그대로 **거꾸로** URL을 추적하는 편리한 기능 
 - `redirect(reverse("users:signup"))`: 엔드포인트를 추적한다.
 - `redirect("users:signup")`: URL 패턴 이름을 사용하여 리디렉션.
@@ -27,6 +26,3 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'signin' not found. 'signin' 
 	2. 특히, `include` 문법을 사용할 땐 해당 앱의 `urls.py` 전역변수에 `app_name`을 지정해 주어야 한다. | [[django.urls.include(module, namespace)]]
 3. `reverse`의 인자를 제대로 작성했나? | [[django reverse]]
 	1. reverse 인자도 마찬가지로 `:` 구분자를 사용한다는거.
- 
-
-{% endraw %}
