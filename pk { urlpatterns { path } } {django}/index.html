@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#include" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -214,6 +219,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -227,8 +234,6 @@
                 
                   
 
-
-  <h1>pk { urlpatterns { path } } {django}</h1>
 
 <ul>
 <li><a href="https://stackoverflow.com/questions/62804254/what-is-the-difference-between-intpk-and-pk">What is difference between <code>&lt;int:pk&gt;</code> and <code>&lt;pk&gt;</code> {SOF}</a><ul>
@@ -252,14 +257,25 @@
     <span class="n">model</span> <span class="o">=</span> <span class="n">Article</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;blog/detail_article.html&quot;</span>
 </code></pre></div>
+</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- blog &gt; templates &gt; blog &gt; index.html --&gt;</span>
 {% for object in object_list %}
     ...
     <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;detail_article&#39; object.id %}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Read More<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 {% endfor %}
 </code></pre></div>
-</li>
-</ul>
+<h1 id="include">include<a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.djangoproject.com/en/4.2/topics/http/urls/#including-other-urlconfs">including other url confs</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ... snip ...</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;community/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;aggregator.urls&quot;</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;contact/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;contact.urls&quot;</span><span class="p">)),</span>
+    <span class="c1"># ... snip ...</span>
+<span class="p">]</span>
+</code></pre></div>
 
 
 
