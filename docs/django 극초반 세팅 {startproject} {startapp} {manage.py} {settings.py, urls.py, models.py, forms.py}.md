@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T13:44:57
-updated: 2023-07-15T21:33:05
+updated: 2023-07-18T17:56:02
 title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.py, urls.py, models.py, forms.py}
 ---
 
@@ -16,7 +16,24 @@ title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.p
 	- `blog` : 블로그 아티클 관리, 유저관리, 좋아요, 게시글 삭제, 게시글 상세보기
 	- `users` : 로그인 로그아웃 회원가입, forms 관리, 
 	- `blogtutorial` : admin 전용 유즈케이스 모음
- 
+- Secret Key 및 각종 민감한 데이터를 숨기기 위하여 [`python-decouple`](https://github.com/HBNetwork/python-decouple) 모듈을 사용한다.
+
+	- specify .env path
+
+	```python
+	config = Config(RepositoryEnv("path/to/.env"))
+	```
+
+	- use it with django
+
+	```python
+	DEBUG = config("DEBUG", default=False, cast=bool)
+	```
+
+	- 주로 저장하는 데이터들
+		- `DEBUG`
+		- `SECRET_KEY`
+		- `DATABASE_URL`: 커스텀 DB 사용시
 
 # 각 파일의 목적
 
