@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-27T16:53:07
-updated: 2023-07-19T00:25:06
+updated: 2023-07-19T00:50:30
 title: django.views.{View, generic.{ListView, DetailView}}
 ---
 
@@ -89,4 +89,5 @@ uri예시: `posts/<int:pk>/`
 
 # 기타
 
-[[slug가 뭐냐]]
+- 자세한 View들간의 관계에 대해 알고싶다면 [[CCBV, Classy Class Based View -- django]]를 참조하쇼
+- [[slug가 뭐냐]]

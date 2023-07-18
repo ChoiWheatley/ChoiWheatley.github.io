@@ -3,10 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T17:37:49
-updated: 2023-07-15T21:30:21
+updated: 2023-07-19T00:55:00
 title: CCBV, Classy Class Based View -- django
 ---
-- https://ccbv.co.uk/ 
+- <https://ccbv.co.uk/> 
 - 모든 장고 클래스 기반 View들을 모아놓은 신기한 사이트이다. 치트시트처럼 모아놓은 것 같은뎅
 
 ## What are class-based views anyway?
@@ -15,7 +15,7 @@ Django's class-based generic views provide abstract classes implementing common 
 
 ## Great! So what's the problem?
 
-All of this power comes at the expense of simplicity. For example, trying to work out exactly which method you need to customise, and what its keyword arguments are, on your `UpdateView` can feel a little like wading through spaghetti — it has 10 separate ancestors (plus `object`), spread across 3 different python files. This site shows you exactly what you need to know.
+All of this power comes at the expense of simplicity. For example, trying to work out exactly which method you need to customize, and what its keyword arguments are, on your `UpdateView` can feel a little like wading through spaghetti — it has 10 separate ancestors (plus `object`), spread across 3 different python files. This site shows you exactly what you need to know.
 
 ## How does this site help?
 

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T16:21:43
-updated: 2023-07-19T00:30:48
+updated: 2023-07-19T00:48:50
 title: pk { urlpatterns { path } } {django}
 ---
 
@@ -36,15 +36,4 @@ title: pk { urlpatterns { path } } {django}
 
 # include
 
-[including other url confs](https://docs.djangoproject.com/en/4.2/topics/http/urls/#including-other-urlconfs)
-
-```python
-from django.urls import include, path
-
-urlpatterns = [
-    # ... snip ...
-    path("community/", include("aggregator.urls")),
-    path("contact/", include("contact.urls")),
-    # ... snip ...
-]
-```
+[[django.urls.include(module, namespace)]]
