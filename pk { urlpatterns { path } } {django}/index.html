@@ -266,16 +266,7 @@
 {% endfor %}
 </code></pre></div>
 <h1 id="include">include<a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
-<p><a href="https://docs.djangoproject.com/en/4.2/topics/http/urls/#including-other-urlconfs">including other url confs</a></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
-
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="c1"># ... snip ...</span>
-    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;community/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;aggregator.urls&quot;</span><span class="p">)),</span>
-    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;contact/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;contact.urls&quot;</span><span class="p">)),</span>
-    <span class="c1"># ... snip ...</span>
-<span class="p">]</span>
-</code></pre></div>
+<p><a href="../django.urls.include%28module%2C%20namespace%29/">django.urls.include(module, namespace)</a></p>
 
 
 
