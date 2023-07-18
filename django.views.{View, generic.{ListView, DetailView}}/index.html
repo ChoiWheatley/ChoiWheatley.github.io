@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
       
 
@@ -235,9 +235,8 @@
                   
 
 
-<p>{% raw %}</p>
 <h1 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h1>
-<p>https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view</p>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view">https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view</a></p>
 <ul>
 <li>attr<ul>
 <li><code>http_method_names</code>: `['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']</li>
@@ -253,8 +252,8 @@
     <span class="n">path</span><span class="p">(</span><span class="s2">&quot;mine/&quot;</span><span class="p">,</span> <span class="n">MyView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my-view&quot;</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
-<h1 id="genericlistview">generic.ListView<a class="headerlink" href="#genericlistview" title="Permanent link">&para;</a></h1>
-<p>https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview</p>
+<h1 id="listview">ListView<a class="headerlink" href="#listview" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview">https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview</a></p>
 <p>객체의 리스트를 표현하는 제네릭 뷰. 따라서 <a href="../django%20template/">django template</a>에서 순회를 돌 수 있다.</p>
 <blockquote>
 <p>While this view is executing, <code>self.object_list</code> will contain the list of objects (usually, but not necessarily a queryset) that the view is operating upon.</p>
@@ -275,16 +274,17 @@
         {%endfor%}
 </code></pre></div>
 <p><code>{% for object in object_list %}</code> 의 <code>object_list</code>가 서로 연결된다!</p>
-<h1 id="genericdetailview">generic.DetailView<a class="headerlink" href="#genericdetailview" title="Permanent link">&para;</a></h1>
+<h1 id="detailview">DetailView<a class="headerlink" href="#detailview" title="Permanent link">&para;</a></h1>
 <p><a href="https://youtu.be/sMqDJovFO-Y?t=4993">DetailView 작성하는 영상</a><br />
 <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/">djangoproject.com -- class based views -- generic display</a></p>
 <p>예를 들어 아티클을 보여주고자 할때 어떤 아티클을 보여줄지는 우리의 재량에 달렸다. 이 경우, <code>urls.py</code>에 <code>urlpatterns</code> 리스트에 <code>path</code>를 지정해줄때 <code>&lt;slug:slug&gt;/</code> 식의 URI를 제공하여야 한다. </p>
 <p>uri예시: <code>posts/&lt;int:pk&gt;/</code> </p>
 <p>자세한 활용예시는 위의 링크 따라가서 보세요.</p>
 <p>템플릿에서 <code>{% url 'detail_article' %}</code> 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==&gt; 그냥 <code>object.id</code>를 'detail_article' 뒤에 추가해버리니까 되네???? 😲</p>
-<p><a href="../slug%EA%B0%80%20%EB%AD%90%EB%83%90/">slug가 뭐냐</a></p>
+<h1 id="templateview"><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview">TemplateView</a><a class="headerlink" href="#templateview" title="Permanent link">&para;</a></h1>
+<p>순수하게 템플릿 파일만을 저장한 view를 의미한다. <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.TemplateResponseMixin"><code>TemplateResponseMixin</code></a> 덕분에 <code>template_name</code> 멤버변수를 정의하기만 하면 알아서 GET 요청에 반응해준다. <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.ContextMixin"><code>ContextMixin</code></a> 덕분에 컨텍스트 확장이 가능해졌으며, <code>get_context_data</code>를 오버라이드 하는 것으로 구현이 가능하다.</p>
 <h1 id="httprequest">파라미터에 있던 HttpRequest<a class="headerlink" href="#httprequest" title="Permanent link">&para;</a></h1>
-<p>https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest</p>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest">https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest</a></p>
 <ul>
 <li>scheme</li>
 <li>body</li>
@@ -301,7 +301,8 @@
 </ul>
 </li>
 </ul>
-<p>{% endraw %}</p>
+<h1 id="_1">기타<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><a href="../slug%EA%B0%80%20%EB%AD%90%EB%83%90/">slug가 뭐냐</a></p>
 
 
 
