@@ -235,9 +235,10 @@
                   
 
 
-<p>{% raw %}
-- https://docs.djangoproject.com/en/4.2/ref/templates/language/
-- django template != Jinja2</p>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/4.2/ref/templates/language/">https://docs.djangoproject.com/en/4.2/ref/templates/language/</a></li>
+<li>django template != Jinja2</li>
+</ul>
 <div class="highlight"><pre><span></span><code>{% extends &quot;base_generic.html&quot; %}
 
 {% block title %}{{ section.title }}{% endblock %}
@@ -277,7 +278,9 @@
 <h1 id="context">context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h1>
 <p><a href="../django%20template%20%7Bcontext%7D/">django template {context}</a>로 가세요.<br />
 <a href="../get_context_data%2C%20get_queryset%20%7B%20django%20%7D%20%7B%20ListView%20%7D/">get_context_data, get_queryset { django } { ListView }</a></p>
-<p>{% endraw %}</p>
+<h1 id="configuration-in-settingspy">Configuration in <code>settings.py</code><a class="headerlink" href="#configuration-in-settingspy" title="Permanent link">&para;</a></h1>
+<p><a href="https://docs.djangoproject.com/en/4.2/topics/templates/#configuration">https://docs.djangoproject.com/en/4.2/topics/templates/#configuration</a></p>
+<p>템플릿 파일을 저장하는 별도의 위치를 정의하고 싶다면 settings.py의 <code>TEMPLATES</code> 속성을 건들이자!</p>
 
 
 

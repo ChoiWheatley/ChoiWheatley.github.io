@@ -235,7 +235,6 @@
                   
 
 
-<p>{% raw %}</p>
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/howto/static-files/">doc.com</a></li>
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/pull/50">관련 bookstore 리포지토리 PR 내용</a></li>
@@ -263,7 +262,7 @@
 <blockquote>
 <p>Helper function to return a URL pattern for serving files in <strong>debug</strong> mode:</p>
 </blockquote>
-<p>이상한 코드를 보았다. https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/core/urls.py#L23-L29</p>
+<p>이상한 코드를 보았다. <a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/core/urls.py#L23-L29">https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/core/urls.py#L23-L29</a></p>
 <p><code>urlpatterns</code> 뒤에 <code>static()</code>을 <code>+</code> 연산으로 이어붙인 것 같은데, 이건 도대체 뭐냐?</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
 <span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>
@@ -272,7 +271,6 @@
     <span class="c1"># ... the rest of your URLconf goes here ...</span>
 <span class="p">]</span> <span class="o">+</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
 </code></pre></div>
-<p>{% endraw %}</p>
 
 
 
