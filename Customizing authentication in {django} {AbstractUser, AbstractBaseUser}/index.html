@@ -257,6 +257,8 @@
 <code>AbstractUser</code> extends <code>AbstractBaseUser</code> with full implementation of the default <code>User</code> as an abstract model.</p>
 </blockquote>
 <p>따라서, <code>AbstractUser</code>는 기본 <code>UserManager</code>또한 구현하고 있다는 것을 알 수 있다.</p>
+<h1 id="custom-users-and-the-built-in-authentication-forms">Custom users and the built-in authentication <strong>forms</strong><a class="headerlink" href="#custom-users-and-the-built-in-authentication-forms" title="Permanent link">&para;</a></h1>
+<p>기본 내장 form과 view는 기본 <code>User</code>를 사용하고 있음을 전제로 깔아뒀기 때문에 만약 <code>User</code>를 커스텀 했다면 form, view 모두 같이 커스텀 해야만 한다. 관련한 문제는 <a href="./커스텀한 User의 UserCreationForm 재정의하기 {django}.md">커스텀한 <code>User</code>의 <code>UserCreationForm</code> 재정의하기 {django}</a> 에서 볼 수 있다.</p>
 
 
 
