@@ -3,13 +3,9 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T17:16:09
-updated: 2023-07-15T21:33:04
+updated: 2023-07-19T15:36:05
 title: get_context_data, get_queryset { django } { ListView }
 ---
-
-
-{% raw %}
-
 - [docs](https://docs.djangoproject.com/en/4.1/ref/models/options/)
 - [When to use `get`, `get_query_set`, `get_context_data` in Django? -- SOF](https://stackoverflow.com/questions/36950416/when-to-use-get-get-queryset-get-context-data-in-django)
 ---
@@ -46,5 +42,3 @@ def get_context_data(self, **kwargs):
 {% endfor %}
 </ul>
 ```
-
-{% endraw %}

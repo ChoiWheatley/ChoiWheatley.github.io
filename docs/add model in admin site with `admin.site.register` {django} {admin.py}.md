@@ -3,7 +3,7 @@ description: admin 페이지에 새 애트리뷰트 추가하기
 aliases: 
 tags: 
 created: 2023-06-05T14:23:21
-updated: 2023-07-19T14:46:03
+updated: 2023-07-19T15:03:54
 title: add model in admin site with `admin.site.register` {django} {admin.py}
 ---
 - [admin site {doc}](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/)
@@ -43,3 +43,13 @@ Admin site에 모습을 드러내게 하기 위해서 반드시 `django.contrib.
 >     fieldsets = UserAdmin.fieldsets + ((None, {"fields": ["custom_field"]}),)
 >     add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ["custom_field"]}),)
 > ```
+
+## `ModelAdmin` 
+
+[doc](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#modeladmin-objects)
+
+특별히 추가할 필드가 없는 모델을 admin site에 띄우고 싶다면 굳이 새 클래스를 만들어 `pass` 할 필요 없이 다음과 같이 바로 `admin.site.register` 하면 된다.
+
+```python
+admin.site.register(MyModel)
+```

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-27T16:53:07
-updated: 2023-07-19T00:50:30
+updated: 2023-07-19T15:48:10
 title: django.views.{View, generic.{ListView, DetailView}}
 ---
 
@@ -49,7 +49,7 @@ urlpatterns = [
         {%endfor%}
 ```
 
-`{% for object in object_list %}` 의 `object_list`가 서로 연결된다!
+`{% for object in object_list %}` 의 `object_list`가 서로 연결된다! ==`object_list`==
 
 # DetailView
 
@@ -62,7 +62,11 @@ uri예시: `posts/<int:pk>/`
 
 자세한 활용예시는 위의 링크 따라가서 보세요.
 
-템플릿에서 `{% url 'detail_article' %}` 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==> 그냥 `object.id`를 'detail_article' 뒤에 추가해버리니까 되네???? 😲
+템플릿에서 `{% url 'detail_article' %}` 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==> 그냥 `object.id`를 `detail_article` 뒤에 추가해버리니까 되네???? 😲
+
+```django
+{% url 'detail_article' object.id %}
+```
 
 # [TemplateView](https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview)
 

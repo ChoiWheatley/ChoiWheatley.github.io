@@ -36,6 +36,8 @@ title: django template
 
 # Filters
 
+[[django template built in filters 자주 쓰이는 필터 목록]]
+
 내장 필터들이 있었구만. 자세한 건 그때그때 파헤쳐 보자구.
 
 `{{ name|lower }}`
