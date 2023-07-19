@@ -1396,11 +1396,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/%60User%60%EB%A5%BC%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%95%98%EA%B3%A0%EC%8B%B6%EC%9C%BC%EB%A9%B4%2C%20%60UserAdmin%60%EC%9D%84%20%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%93%9C%20%ED%95%98%EC%97%AC%EC%95%BC%20%ED%95%9C%EB%8B%A4%20%7Bdjango%7D/</loc>
-         <lastmod>2023-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/ab6767/</loc>
          <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
@@ -1697,6 +1692,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/divide%20and%20conquer/</loc>
+         <lastmod>2023-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/django%20Creating%20custom%20user%20model%20using%20AbstractUser%20in%20django-RestFramework/</loc>
          <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3607,6 +3607,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%EC%BA%A3%20%ED%80%98%EC%8A%A4%ED%8A%B8%202/</loc>
+         <lastmod>2023-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%EC%BB%A4%EC%8A%A4%ED%85%80%ED%95%9C%20%60User%60%EC%9D%98%20%60UserCreationForm%60%20%EC%9E%AC%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0%20%7Bdjango%7D/</loc>
          <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>

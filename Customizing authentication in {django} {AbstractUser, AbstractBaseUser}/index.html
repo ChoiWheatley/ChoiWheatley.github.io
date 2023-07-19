@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#abstractbaseuser" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -214,6 +219,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -228,14 +235,20 @@
                   
 
 
-  <h1>Customizing authentication in {django} {AbstractUser, AbstractBaseUser}</h1>
-
 <ul>
 <li><a href="https://docs.djangoproject.com/en/dev/topics/auth/customizing/#a-full-example">full example {doc}</a></li>
 <li><a href="https://dev.to/chokshiroshan/how-to-use-email-as-username-for-django-authentication-8if">How to use email as username in django</a></li>
-<li><a href="./User를 커스텀 하고싶으면, UserAdmin을 오버라이드 하여야 한다 {django}.md"><code>User</code>를 커스텀 하고싶으면, <code>UserAdmin</code>을 오버라이드 하여야 한다 {django}</a></li>
+<li><a href="./커스텀한 User의 UserCreationForm 재정의하기 {django}.md">커스텀한 <code>User</code>의 <code>UserCreationForm</code> 재정의하기 {django}</a></li>
+<li><a href="../django%20Creating%20custom%20user%20model%20using%20AbstractUser%20in%20django-RestFramework/">django Creating custom user model using AbstractUser in django-RestFramework</a></li>
 </ul>
 <hr />
+<h1 id="abstractbaseuser"><code>AbstractBaseUser</code><a class="headerlink" href="#abstractbaseuser" title="Permanent link">&para;</a></h1>
+<p>비밀번호 해싱에 필요한 구현체를 마련해놓고 프로그래머에게 기본 <code>User</code>를 확장할 수 있게 도와준다. 오버라이딩이 필요한 멤버는 다음과 같다. 
+- <code>USERNAME_FIELD</code> =&gt; default authentication backend는 pk 아닌 최소 하나의 필드를 고유하게 만들어야 하는데, 그것이 <code>username</code> 필드이다. 다른 필드를 고유하게 만들고 싶다면 얘를 수정해주면 된다.
+- <code>REQUIRED_FIELDS</code> =&gt; <code>createsuperuser</code> 명령시 이걸 보고 input field를 제공.
+- <code>EMAIL_FIELD</code> (option) =&gt; <code>get_email_field_name()</code> 메서드가 리턴하는 녀석임.
+- <code>is_active</code> (option)</p>
+<p>다만, <code>AbstractBaseUser</code>는 </p>
 
 
 
