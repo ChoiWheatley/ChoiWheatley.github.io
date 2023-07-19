@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/tinymce/">
+        <link rel="canonical" href="https://choiwheatley.github.io/Pasted%20image%2020230720071158.png/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>tinymce - Choi Wheatley's Second Brain</title>
+        <title>Pasted image 20230720071158.png - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#how-to-use-it-inside-the-admin-site" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              tinymce
+              Pasted image 20230720071158.png
             
           </span>
         </div>
@@ -220,28 +215,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-it-inside-the-admin-site" class="md-nav__link">
-    how to use it inside the admin site?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-it-outside-the-admin-site" class="md-nav__link">
-    how to use it outside the admin site?
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -255,68 +228,9 @@
                   
 
 
-  <h1>tinymce</h1>
+  <h1>Pasted image 20230720071158.png</h1>
 
-<p><a href="https://www.tiny.cloud/tinymce/">official link</a><br />
-<a href="https://django-tinymce.readthedocs.io/en/latest/">django-tinymce doc</a></p>
-<hr />
-<ul>
-<li>wysiwyg rich-text embeddable editor</li>
-<li><a href="https://youtu.be/sMqDJovFO-Y?t=7351">tinymce 사용하는 YT Link</a></li>
-</ul>
-<h2 id="how-to-use-it-inside-the-admin-site">how to use it <em>inside</em> the admin site?<a class="headerlink" href="#how-to-use-it-inside-the-admin-site" title="Permanent link">&para;</a></h2>
-<p>admin site에서는 자동으로 <code>django.contrib.admin</code> 템플릿이 얘를 렌더해주기 때문에 모델 필드에 딱 한 줄만 적으면 됐었다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="o">...</span>
-    <span class="n">content</span> <span class="o">=</span> <span class="n">tinymce</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">HTMLField</span><span class="p">()</span>
-    <span class="o">...</span>
-</code></pre></div>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230720084804.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230720084804.png" src="../assets/Pasted%20image%2020230720084804.png" /></a></p>
-<h2 id="how-to-use-it-outside-the-admin-site">how to use it <em>outside</em> the admin site?<a class="headerlink" href="#how-to-use-it-outside-the-admin-site" title="Permanent link">&para;</a></h2>
-<p>문서가 오지게 불친절하고, 심지어 쓸데도 없는 <code>FlatPage</code>에 의존하는 코드를 넣어놔서 한참을 헤맸다. 그래도 한 마디로 정리하자면,</p>
-<blockquote>
-<p>[!NOTE]<br />
-<code>django-tinymce</code>모듈은 미리 정의된 Form <strong>Widget</strong>이다</p>
-</blockquote>
-<p>필요한 작업만 쏙쏙 뽑아서 정리해보자.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>django-tinymce
-</code></pre></div>
-<p>in <code>settings.py</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">...</span>
-    <span class="s2">&quot;tinymce&quot;</span><span class="p">,</span>
-    <span class="o">...</span>
-<span class="p">]</span>
-<span class="o">...</span>
 
-<span class="c1"># cdn</span>
-<span class="n">TINYMCE_JS_URL</span> <span class="o">=</span> <span class="s1">&#39;https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js&#39;</span>
-<span class="c1"># installation</span>
-<span class="n">TINYMCE_JS_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">STATIC_URL</span><span class="p">,</span> <span class="s2">&quot;path/to/tiny_mce/tiny_mce.js&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>in <code>core/urls.py</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">[</span>
-    <span class="o">...</span>
-    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;tinymce/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;tinymce.urls&quot;</span><span class="p">)),</span>
-    <span class="o">...</span>
-<span class="p">]</span>
-</code></pre></div>
-<p>in template file which depends on tinymce form</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    ...
-    {{ form.media }}
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</code></pre></div>
-<p>in <code>forms.py</code></p>
-<p>그러니까, 우리가 평소 쓰는 Form과 똑같은데, tinymce를 쓰는 필드에만 <code>widget</code>을 붙인다고 보면 된다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">NewArticleForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;TinyMCE widget&quot;&quot;&quot;</span>
-
-    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">Article</span>
-        <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">TinyMCE</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cols&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">})}</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
-</code></pre></div>
 
 
 
