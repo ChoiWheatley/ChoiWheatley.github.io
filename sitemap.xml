@@ -1376,6 +1376,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Xmonad%2C%20window%20tiling%20manager%20written%20in%20%7Bhaskel%7D/</loc>
+         <lastmod>2023-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Youtube%20Script%20Search%20Engine/</loc>
          <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
