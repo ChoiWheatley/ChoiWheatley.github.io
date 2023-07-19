@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T17:09:28
-updated: 2023-07-15T21:30:20
+updated: 2023-07-19T13:50:10
 title: django model
 ---
 - [[OneToOneField {django}]]
@@ -12,3 +12,4 @@ title: django model
 	- [[django model.ForeignKey.on_delete]]
 - [[django admin site register를 사용하여 유저 정보 확인할 수 있다]]
 - [[querying in {django query}|queries]]
+- [[model 관련 에러 {django} {migration 순서}]]

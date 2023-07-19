@@ -4,7 +4,7 @@ tags:
 description:
 title: 2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}
 created: 2023-07-17T15:31:28
-updated: 2023-07-19T10:56:05
+updated: 2023-07-19T11:04:29
 ---
 
 parent link: [[0014.1 Django 🎈]]
@@ -26,6 +26,7 @@ erDiagram
 	User {
 		int id PK
 		varchar email "unique"
+		varchar nickname
 		bool is_superuser
 		bool is_staff
 		bool is_active
@@ -37,6 +38,8 @@ erDiagram
 		varchar title
 		int author FK
 		string body
+		timestamp created_at
+		timestamp modified_at
 	}
 
 	User ||--o{ Article : writes

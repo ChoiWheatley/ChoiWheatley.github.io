@@ -3,7 +3,7 @@ description:
 aliases: book-project🚀
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-07-15T21:33:02
+updated: 2023-07-19T13:47:19
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
@@ -29,11 +29,11 @@ title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 - [[20230609 book-project]]
 - [[20230610 book-project]]
 - [[20230611 book-project]]
-- ![[20230613 book-project]]
+- [[20230613 book-project]]
 	- [[20230613 ~ 20230701 Loadmap {book-project}]]
-- ![[20230615 book-project]]
-- ![[20230617 book-project]]
-	- ![[20230624 까지 진행할 구현사항 {book-project}]]
+- [[20230615 book-project]]
+- [[20230617 book-project]]
+	- [[20230624 까지 진행할 구현사항 {book-project}]]
 - [[20230619 book-project]]
 - [[20230620 book-project]]
 - [[20230621 book-project]]
@@ -50,7 +50,7 @@ title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 - [[20230628 book-project]]
 - [[20230629 book-project]]
 - [[20230630 book-project]]
-	- [ ] Docker 및 배포 @최승현
+	- [x] Docker 및 배포 @최승현
 - [[20230701 book-project]]
 - [[20230702 book-project]]
 - [[20230703 book-project]]

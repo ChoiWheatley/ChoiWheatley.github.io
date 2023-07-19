@@ -104,6 +104,7 @@ title: 0014 Python 🐍
 - [[typing.cast은 타입체커에게 정보를 제공한다 - python]]
 - [[typing.Callable]]
 - [[typing.Iterator]]
+- [[`__init_subclass__` Forward declaration of classes {python}]]
 
 ---
 
