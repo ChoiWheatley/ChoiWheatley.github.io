@@ -23,7 +23,7 @@ class Article(models.Model):
 	...
 ```
 
-![[Pasted image 20230720071158.png]]
+![[Pasted image 20230720084804.png]]
 
 ## how to use it *outside* the admin site?
 
