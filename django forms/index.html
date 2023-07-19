@@ -360,7 +360,7 @@
         <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">TinyMCE</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cols&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">})}</span>
         <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
 </code></pre></div>
-<p>템플릿 파일에서 <code>category</code>를 제대로 출력하기 위해서는 어떻게 작성해야 할까? <a href="https://stackoverflow.com/questions/36724255/render-choicefield-options-in-django-template">다음 대화 {sof}</a>와 <a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context"><code>Form.get_context</code> {doc}</a>를 참조해보자. 아래 두 템플릿 코드가 주어질텐데, 무엇이 정답일까?</p>
+<p>템플릿 파일에서 <code>category</code>를 제대로 출력하기 위해서는 어떻게 작성해야 할까? <a href="https://stackoverflow.com/questions/36724255/render-choicefield-options-in-django-template">다음 대화 {sof}</a>와 <a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context"><code>Form.get_context</code> {doc}</a>를 참조해보자. 아래 템플릿 코드가 주어질텐데, 무엇이 정답일까?</p>
 <ol>
 <li>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;select id=&quot;category&quot;&gt;</span>
@@ -378,7 +378,14 @@
 <span class="x">&lt;/select&gt;</span>
 </code></pre></div>
 </li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">category</span> <span class="p">}}</span>
+</code></pre></div>
+</li>
 </ol>
+<p><code>form.&lt;field_name&gt;</code> 은 그 자체로 HTML tag까지 가지고 있는 완전체라고 했다. 따라서 <code>form.category</code>를 하면 <code>&lt;select&gt;</code>를 포함한 HTML 스니펫이 그대로 들어간다. 따라서 3번은 정답이다.</p>
+<p>문제는 2번이다. <code>form.category</code> 뒤에 <code>.</code>을 또 붙여 <code>choices</code>를 참조하려고 한다. 하지만 이미 HTML 문자열 뒤에 <code>choices</code> 멤버가 존재할 리 없다. 따라서 null을 반환하고, 에러없이 빈 채로 렌더링이 된다. 😠</p>
+<p>1번도 정답이다. 바로 <a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context"><code>get_context</code></a> 메서드 덕분인데, <code>fields</code>라는 이름이 눈에 띈다. 따라서 1번은 form의 HTML이 아닌, 연관된 모델의 필드를 직접 접근하여 반복문 속에서 <code>&lt;option&gt;</code>을 붙여온 것이다.</p>
 
 
 
