@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T13:33:19
-updated: 2023-07-20T06:38:43
+updated: 2023-07-20T08:31:53
 title: django forms
 ---
 - [Working with forms {doc}](https://docs.djangoproject.com/en/4.2/topics/forms/)
@@ -73,8 +73,114 @@ form = ArticleForm(instance=article)
 
 1. `View`에서 `Form` 객체를 생성한다.
 2. [[django template {context}]] template context에 해당 form을 넘겨준다.
-3. [[django template]] 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣는다.
+3. [[django template]] 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣거나 직접 템플릿 form 요소를 채워넣는다.
 
-# plus alpha with crispy-forms
+## 템플릿 활용방안 1: 알아서
+
+```django
+<form action="#" method="post">
+	{{ form }}
+	<input type="submit" value="Submit">
+</form>
+```
+
+## 템플릿 활용방안 2: [rendering fields manually](https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually)
+
+`{{ form.name_of_field }}` 를 사용하여 HTML form member를 직접 정의한 뒤에 알맹이만 맡길 수 있다. [[form errors{ django }]]에서 에러처리에 대한 인사이트도 얻어가시오.
+
+```django
+{{ form.non_field_errors }}
+<div class="fieldWrapper">
+    {{ form.subject.errors }}
+    <label for="{{ form.subject.id_for_label }}">Email subject:</label>
+    {{ form.subject }}
+</div>
+<div class="fieldWrapper">
+    {{ form.message.errors }}
+    <label for="{{ form.message.id_for_label }}">Your message:</label>
+    {{ form.message }}
+</div>
+<div class="fieldWrapper">
+    {{ form.sender.errors }}
+    <label for="{{ form.sender.id_for_label }}">Your email address:</label>
+    {{ form.sender }}
+</div>
+<div class="fieldWrapper">
+    {{ form.cc_myself.errors }}
+    <label for="{{ form.cc_myself.id_for_label }}">CC yourself?</label>
+    {{ form.cc_myself }}
+</div>
+```
+
+## 템플릿 활용방안 3: [looping over form's fields](https://docs.djangoproject.com/en/4.2/topics/forms/#looping-over-the-form-s-fields)
+
+form은 그 자체로 HTML tag를 가지고 있다. 따라서 반복문을 돌아도 해당 태그를 가져다 쓰기만 하면 된다. 예를 들자면
+
+```django
+{% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+        <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+    </div>
+{% endfor %}
+```
+
+# crispy-forms
 
 [[django crispy forms]]
+
+# choices
+
+[[CharField {django} {choices}]]를 장고 기본 form으로 만들면 `<select>` 태그가 생성된다. 이에 감안하여 choices의 멤버들을 순회하며 아이템을 추가할 수 있다. 가령 다음과 같은 모델이 있다고 하자
+
+```python
+class Article(models.Model):
+    class Category(models.TextChoices):
+        TECH = "TECH", lazy("기술")
+        FOOD = 'FOOD', lazy("음식")
+        MUSIC = "MUSIC", lazy("음악")
+        EMOTIONS = "EMOTIONS", lazy("감정")
+        SCIENCE = "SCIENCE", lazy("과학")
+        ARTS = "ARTS", lazy("예술")
+        ANNOUNCE = "ANNOUNCE", lazy("공지")
+        MISC = "MISC", lazy("기타")
+
+    category = models.CharField(max_length=10, choices=Category.choices, default=Category.MISC)
+```
+
+in `forms.py`
+
+```python
+class NewArticleForm(forms.ModelForm):
+    """TinyMCE widget"""
+
+    class Meta:
+        model = Article
+        widgets = {"content": TinyMCE(attrs={"cols": 80, "rows": 30})}
+        fields = ["title", "content", "category"]
+```
+
+템플릿 파일에서 `category`를 제대로 출력하기 위해서는 어떻게 작성해야 할까? [다음 대화 {sof}](https://stackoverflow.com/questions/36724255/render-choicefield-options-in-django-template)와 [`Form.get_context` {doc}](https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context)를 참조해보자. 아래 두 템플릿 코드가 주어질텐데, 무엇이 정답일까?
+
+1. 
+
+	```django
+	<select id="category">
+		{% for key, value in form.fields.category.choices  %}
+			<option value="{{ key }}">{{ value }}</option>
+		{% endfor %}
+	</select>
+	```
+
+2. 
+
+    ```django
+	<select id="category">
+		{% for key, value in form.category.choices  %}
+			<option value="{{ key }}">{{ value }}</option>
+		{% endfor %}
+	</select>
+	```

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T17:54:31
-updated: 2023-07-20T07:10:33
+updated: 2023-07-20T07:25:30
 title: tinymce
 ---
 [official link](https://www.tiny.cloud/tinymce/)  
@@ -11,6 +11,8 @@ title: tinymce
 ___
 - wysiwyg rich-text embeddable editor
 - [tinymce 사용하는 YT Link](https://youtu.be/sMqDJovFO-Y?t=7351)
+
+## how to use it *inside* the admin site?
 
 admin site에서는 자동으로 `django.contrib.admin` 템플릿이 얘를 렌더해주기 때문에 모델 필드에 딱 한 줄만 적으면 됐었다.
 
@@ -20,6 +22,8 @@ class Article(models.Model):
     content = tinymce.models.HTMLField()
 	...
 ```
+
+![[Pasted image 20230720071158.png]]
 
 ## how to use it *outside* the admin site?
 
@@ -59,4 +63,27 @@ urlpatterns = patterns[
 	path("tinymce/", include("tinymce.urls")),
 	...
 ]
+```
+
+in template file which depends on tinymce form
+
+```html
+<head>
+	...
+	{{ form.media }}
+</head>
+```
+
+in `forms.py`
+
+그러니까, 우리가 평소 쓰는 Form과 똑같은데, tinymce를 쓰는 필드에만 `widget`을 붙인다고 보면 된다.
+
+```python
+class NewArticleForm(forms.ModelForm):
+    """TinyMCE widget"""
+
+    class Meta:
+        model = Article
+        widgets = {"content": TinyMCE(attrs={"cols": 80, "rows": 30})}
+        fields = ["title", "content", "category"]
 ```
