@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T13:33:19
-updated: 2023-07-20T08:31:53
+updated: 2023-07-20T08:42:09
 title: django forms
 ---
 - [Working with forms {doc}](https://docs.djangoproject.com/en/4.2/topics/forms/)
@@ -163,7 +163,7 @@ class NewArticleForm(forms.ModelForm):
         fields = ["title", "content", "category"]
 ```
 
-템플릿 파일에서 `category`를 제대로 출력하기 위해서는 어떻게 작성해야 할까? [다음 대화 {sof}](https://stackoverflow.com/questions/36724255/render-choicefield-options-in-django-template)와 [`Form.get_context` {doc}](https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context)를 참조해보자. 아래 두 템플릿 코드가 주어질텐데, 무엇이 정답일까?
+템플릿 파일에서 `category`를 제대로 출력하기 위해서는 어떻게 작성해야 할까? [다음 대화 {sof}](https://stackoverflow.com/questions/36724255/render-choicefield-options-in-django-template)와 [`Form.get_context` {doc}](https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context)를 참조해보자. 아래 템플릿 코드가 주어질텐데, 무엇이 정답일까?
 
 1. 
 
@@ -184,3 +184,15 @@ class NewArticleForm(forms.ModelForm):
 		{% endfor %}
 	</select>
 	```
+ 
+3. 
+
+	```python
+	{{ form.category }}
+	```
+
+`form.<field_name>` 은 그 자체로 HTML tag까지 가지고 있는 완전체라고 했다. 따라서 `form.category`를 하면 `<select>`를 포함한 HTML 스니펫이 그대로 들어간다. 따라서 3번은 정답이다.
+
+문제는 2번이다. `form.category` 뒤에 `.`을 또 붙여 `choices`를 참조하려고 한다. 하지만 이미 HTML 문자열 뒤에 `choices` 멤버가 존재할 리 없다. 따라서 null을 반환하고, 에러없이 빈 채로 렌더링이 된다. 😠
+
+1번도 정답이다. 바로 [`get_context`](https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context) 메서드 덕분인데, `fields`라는 이름이 눈에 띈다. 따라서 1번은 form의 HTML이 아닌, 연관된 모델의 필드를 직접 접근하여 반복문 속에서 `<option>`을 붙여온 것이다.
