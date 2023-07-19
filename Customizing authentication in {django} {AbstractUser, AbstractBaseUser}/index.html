@@ -248,7 +248,15 @@
 - <code>REQUIRED_FIELDS</code> =&gt; <code>createsuperuser</code> 명령시 이걸 보고 input field를 제공.
 - <code>EMAIL_FIELD</code> (option) =&gt; <code>get_email_field_name()</code> 메서드가 리턴하는 녀석임.
 - <code>is_active</code> (option)</p>
-<p>다만, <code>AbstractBaseUser</code>는 </p>
+<p>다만, <code>AbstractBaseUser</code>는 <code>UserManager</code>라는 유저 생성에 관여하는 매니저 객체를 필요로 한다. 커스텀 <code>User</code>가 단지 필드만 수정한 경우라면 <code>BaseUserManager</code>를 상속하는 것이 유리하다. 오버라이드 할 메서드는 다음과 같다.
+- <code>create_user(username_field, password, **other_fields)</code>
+- <code>create_superuser(username_field, password, **other_fields)</code></p>
+<h1 id="abstractuser"><code>AbstractUser</code><a class="headerlink" href="#abstractuser" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>[!info]<br />
+<code>AbstractUser</code> extends <code>AbstractBaseUser</code> with full implementation of the default <code>User</code> as an abstract model.</p>
+</blockquote>
+<p>따라서, <code>AbstractUser</code>는 기본 <code>UserManager</code>또한 구현하고 있다는 것을 알 수 있다.</p>
 
 
 
