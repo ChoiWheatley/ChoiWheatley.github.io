@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T11:40:54
-updated: 2023-07-18T23:16:56
+updated: 2023-07-19T10:59:41
 title: django template
 ---
 - <https://docs.djangoproject.com/en/4.2/ref/templates/language/>

@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T22:13:43
-updated: 2023-07-19T10:41:58
+updated: 2023-07-19T10:44:13
 title: Customizing authentication in {django} {AbstractUser, AbstractBaseUser}
 ---
 - [full example {doc}](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#a-full-example)
@@ -30,3 +30,7 @@ ___
 > `AbstractUser` extends `AbstractBaseUser` with full implementation of the default `User` as an abstract model.
 
 따라서, `AbstractUser`는 기본 `UserManager`또한 구현하고 있다는 것을 알 수 있다.
+
+# Custom users and the built-in authentication **forms**
+
+기본 내장 form과 view는 기본 `User`를 사용하고 있음을 전제로 깔아뒀기 때문에 만약 `User`를 커스텀 했다면 form, view 모두 같이 커스텀 해야만 한다. 관련한 문제는 [[커스텀한 `User`의 `UserCreationForm` 재정의하기 {django}]] 에서 볼 수 있다.

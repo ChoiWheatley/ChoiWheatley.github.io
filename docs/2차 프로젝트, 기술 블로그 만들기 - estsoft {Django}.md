@@ -4,7 +4,7 @@ tags:
 description:
 title: 2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}
 created: 2023-07-17T15:31:28
-updated: 2023-07-19T10:02:28
+updated: 2023-07-19T10:56:05
 ---
 
 parent link: [[0014.1 Django 🎈]]
@@ -25,10 +25,21 @@ erDiagram
 
 	User {
 		int id PK
-		email email
-		bool is_admin
+		varchar email "unique"
+		bool is_superuser
+		bool is_staff
+		bool is_active
 		timestamp created_at
 	}
+
+	Article {
+		int id PK
+		varchar title
+		int author FK
+		string body
+	}
+
+	User ||--o{ Article : writes
 ```
 
 ## 0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현
