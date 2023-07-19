@@ -4,7 +4,7 @@ tags:
 description:
 title: django template built in filters 자주 쓰이는 필터 목록
 created: 2023-07-19T15:28:39
-updated: 2023-07-19T15:58:56
+updated: 2023-07-19T16:20:16
 ---
 [doc](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#ref-templates-builtins-filters)
 
@@ -15,3 +15,4 @@ updated: 2023-07-19T15:58:56
 - `filesizeformat`: human readable file size format
 - `join`: 리스트를 하나의 문자열로 바꾸고, delimeter를 `join` 뒤에 오는 문자열로 대치.
 - `length`: 리스트의 길이
+- `safe`: HTML 문서를 출력하기 위해 필요한 필터
