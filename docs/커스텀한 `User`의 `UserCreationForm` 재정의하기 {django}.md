@@ -3,8 +3,8 @@ description:
 aliases: 
 tags: 
 created: 2023-06-07T11:13:59
-updated: 2023-07-15T21:33:03
-title: "`User`를 커스텀 하고싶으면, `User`말고도 다른 부분의 코드도 함께 변경해야 한다"
+updated: 2023-07-19T10:32:15
+title: 커스텀한 `User`의 `UserCreationForm` 재정의하기 {django}
 ---
 
 # TL;DR
