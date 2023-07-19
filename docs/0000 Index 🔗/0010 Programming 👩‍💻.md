@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:32:55
+updated: 2023-07-20T05:53:42
 ---
 
 parent link: [[0000 Index 🔗|index]]
@@ -38,20 +38,20 @@ parent link: [[0000 Index 🔗|index]]
 
 - [[OKKY 개발자 커뮤니티]]
 - [careerly](https://careerly.co.kr/home)
-- https://www.44bits.io/
+- <https://www.44bits.io/>
 
 ___
 
 # 학습 플랫폼
 
-- http://www.kocw.net/home/index.do
-- https://www.kmooc.kr/coursera
+- <http://www.kocw.net/home/index.do>
+- <https://www.kmooc.kr/coursera>
 - [[개발자가 꼭 알아야할 GitHub 리포지토리 모음]]
 ---
 
 # Utilities
 
-![[0110 Utility 🔧]]
+[[0110 Utility 🔧]]
 
 ---
 
