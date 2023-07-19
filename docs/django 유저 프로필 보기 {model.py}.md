@@ -3,8 +3,8 @@ description:
 aliases: 
 tags: 
 created: 2023-06-02T13:46:57
-updated: 2023-07-15T21:33:05
-title: django 유저 프로필 보기 {model.py} {TODO}
+updated: 2023-07-19T13:57:05
+title: django 유저 프로필 보기 {model.py}
 ---
 [[django Creating custom user model using AbstractUser in django-RestFramework]]
 

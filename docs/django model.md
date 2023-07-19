@@ -3,13 +3,23 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T17:09:28
-updated: 2023-07-19T13:50:10
+updated: 2023-07-19T14:05:35
 title: django model
 ---
+
+## documents
+
 - [[OneToOneField {django}]]
 - [[ManyToManyField {django}]]
 - [[ForeignKey {django}]]
 	- [[django model.ForeignKey.on_delete]]
-- [[django admin site register를 사용하여 유저 정보 확인할 수 있다]]
 - [[querying in {django query}|queries]]
-- [[model 관련 에러 {django} {migration 순서}]]
+
+## problem solving
+
+- custom user
+	- [[add model in admin page with `admin.site.register` {django} {admin.py}]]
+	- [[model 관련 에러 {django} {migration 순서}]]
+	- [[django 유저 프로필 보기 {model.py}]]
+	- [[django dependency issue 발생 시 AUTH_USER_MODEL이 제대로 박혀있는지 확인하라]]
+- [[add model in admin page with `admin.site.register` {django} {admin.py}]]

@@ -1,13 +1,12 @@
 ---
-description:
+description: admin 페이지에 새 애트리뷰트 추가하기
 aliases: 
 tags: 
 created: 2023-06-05T14:23:21
-updated: 2023-07-15T21:30:20
-title: django admin site register를 사용하여 유저 정보 확인할 수 있다
+updated: 2023-07-19T14:15:03
+title: add model in admin page with `admin.site.register` {django}
 ---
-- [purpose of admin.py {SOF}](https://stackoverflow.com/a/47753254)
-- 
+- [purpose of admin.py {SOF}](https://stackoverflow.com/a/47753254)  
 `admin.py`에 다음과 같은 코드를 작성하였더니, `localhost:8000/admin` 페이지에 새로운 애트리뷰트가 생겼다.
 
 ```python
