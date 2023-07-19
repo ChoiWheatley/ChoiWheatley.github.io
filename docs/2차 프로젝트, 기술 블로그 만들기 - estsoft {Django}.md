@@ -4,7 +4,7 @@ tags:
 description:
 title: 2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}
 created: 2023-07-17T15:31:28
-updated: 2023-07-19T11:04:29
+updated: 2023-07-19T16:40:01
 ---
 
 parent link: [[0014.1 Django 🎈]]
@@ -68,3 +68,30 @@ Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 �
 	- URL : `/blog/<int:id>`
 	- ex) `/blog/1, /blog/2,...`
 	- 게시글의 제목/내용을 보는 기능입니다.
+
+## 1. 블로그 CRUD 기능 구현하기
+
+- ~~main page~~
+- 게시글 작성 기능
+	- `url`: `/blog/write/`
+	- 게시글 제목과 내용을 작성할 수 있는 페이지
+	- 작성한 게시글이 저장되어 게시글 목록에 보여야 함.
+	- **카테고리**가 지정
+
+	> [!note]  
+	>  로그인이 되지 않더라도 글 작성이 가능하게끔
+
+- ~~list view~~
+- ~~detail view~~
+- 게시글 수정 기능
+	- `url`: `/blog/edit/<int:id>/`
+	- 게시글 제목과 내용을 수정하는 페이지
+	- 수정한 내용은 게시글 목록보기 / 상세보기에 반영
+- 게시글 삭제 기능
+	- `url`: `/blog/delete/<int:id>/`
+	- 게시글 삭제 완료 이후 list view로 redirect
+	- 삭제된 게시글은 list, detail 접근 불가능하며, 접근시도시 404 발생
+- 게시글 검색 기능
+	- `url`: `/blog/search/<str:tag>`
+	- 카테고리, 주제에 따라 검색이 가능하게
+	- 검색한 게시물은 시간순에 따라 정렬

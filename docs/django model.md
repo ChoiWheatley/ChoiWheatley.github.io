@@ -3,16 +3,18 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T17:09:28
-updated: 2023-07-19T14:05:35
+updated: 2023-07-19T17:13:05
 title: django model
 ---
 
 ## documents
 
-- [[OneToOneField {django}]]
-- [[ManyToManyField {django}]]
-- [[ForeignKey {django}]]
-	- [[django model.ForeignKey.on_delete]]
+- base fields
+	- [[OneToOneField {django}]]
+	- [[ManyToManyField {django}]]
+	- [[ForeignKey {django}]]
+		- [[django model.ForeignKey.on_delete]]
+	- [[CharField {django} {choices}]]
 - [[querying in {django query}|queries]]
 
 ## problem solving
