@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/django.views.%7BView%2C%20generic.%7BListView%2C%20DetailView%7D%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/django%20template%20built%20in%20filters%20%EC%9E%90%EC%A3%BC%20%EC%93%B0%EC%9D%B4%EB%8A%94%20%ED%95%84%ED%84%B0%20%EB%AA%A9%EB%A1%9D/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>django.views.{View, generic.{ListView, DetailView}} - Choi Wheatley's Second Brain</title>
+        <title>django template built in filters 자주 쓰이는 필터 목록 - Choi Wheatley's Second Brain</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#view" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              django.views.{View, generic.{ListView, DetailView}}
+              django template built in filters 자주 쓰이는 필터 목록
             
           </span>
         </div>
@@ -219,8 +219,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    자주 쓸만한 것들
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -235,79 +248,16 @@
                   
 
 
-<h1 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h1>
-<p><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view">https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view</a></p>
+  <h1>django template built in filters 자주 쓰이는 필터 목록</h1>
+
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#ref-templates-builtins-filters">doc</a></p>
+<h2 id="_1">자주 쓸만한 것들<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>attr<ul>
-<li><code>http_method_names</code>: `['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']</li>
-</ul>
-</li>
-<li>methods<ul>
-<li><em>classmethod</em> <code>as_view</code>: HttpRequest를 호출하는 함수 (<code>get</code>, <code>post</code>, etc.)를 매칭한다.</li>
-</ul>
-</li>
-</ul>
-<p><code>urls.py</code>에서 내가 리스닝을 할 요청과 그에 대한 콜백함수를 호출하는데 사용. </p>
-<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;mine/&quot;</span><span class="p">,</span> <span class="n">MyView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my-view&quot;</span><span class="p">),</span>
-<span class="p">]</span>
-</code></pre></div>
-<h1 id="listview">ListView<a class="headerlink" href="#listview" title="Permanent link">&para;</a></h1>
-<p><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview">https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview</a></p>
-<p>객체의 리스트를 표현하는 제네릭 뷰. 따라서 <a href="../django%20template/">django template</a>에서 순회를 돌 수 있다.</p>
-<blockquote>
-<p>While this view is executing, <code>self.object_list</code> will contain the list of objects (usually, but not necessarily a queryset) that the view is operating upon.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>        {%for object in object_list%}
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mx-md-auto mt-5 mb-5&quot;</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;fw-bold&quot;</span><span class="p">&gt;</span>{{object.title}}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>{{object.date}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>Posted by {{object.author.username}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-                {%if object.likes.count == 1%}
-                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>{{object.likes.count}} person likes this post<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-                {%else%}
-                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>{{object.likes.count}} people likes this post<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-                {%endif%}
-            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-        {%endfor%}
-</code></pre></div>
-<p><code>{% for object in object_list %}</code> 의 <code>object_list</code>가 서로 연결된다! <mark><code>object_list</code></mark></p>
-<h1 id="detailview">DetailView<a class="headerlink" href="#detailview" title="Permanent link">&para;</a></h1>
-<p><a href="https://youtu.be/sMqDJovFO-Y?t=4993">DetailView 작성하는 영상</a><br />
-<a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/">djangoproject.com -- class based views -- generic display</a></p>
-<p>예를 들어 아티클을 보여주고자 할때 어떤 아티클을 보여줄지는 우리의 재량에 달렸다. 이 경우, <code>urls.py</code>에 <code>urlpatterns</code> 리스트에 <code>path</code>를 지정해줄때 <code>&lt;slug:slug&gt;/</code> 식의 URI를 제공하여야 한다. </p>
-<p>uri예시: <code>posts/&lt;int:pk&gt;/</code> </p>
-<p>자세한 활용예시는 위의 링크 따라가서 보세요.</p>
-<p>템플릿에서 <code>{% url 'detail_article' %}</code> 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==&gt; 그냥 <code>object.id</code>를 <code>detail_article</code> 뒤에 추가해버리니까 되네???? 😲</p>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;detail_article&#39;</span> <span class="nv">object.id</span> <span class="cp">%}</span>
-</code></pre></div>
-<h1 id="templateview"><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview">TemplateView</a><a class="headerlink" href="#templateview" title="Permanent link">&para;</a></h1>
-<p>순수하게 템플릿 파일만을 저장한 view를 의미한다. <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.TemplateResponseMixin"><code>TemplateResponseMixin</code></a> 덕분에 <code>template_name</code> 멤버변수를 정의하기만 하면 알아서 GET 요청에 반응해준다. <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.ContextMixin"><code>ContextMixin</code></a> 덕분에 컨텍스트 확장이 가능해졌으며, <code>get_context_data</code>를 오버라이드 하는 것으로 구현이 가능하다.</p>
-<h1 id="loginview"><a href="https://docs.djangoproject.com/en/4.2/topics/auth/default/#django.contrib.auth.views.LoginView"><code>LoginView</code></a><a class="headerlink" href="#loginview" title="Permanent link">&para;</a></h1>
-<h1 id="httprequest">파라미터에 있던 HttpRequest<a class="headerlink" href="#httprequest" title="Permanent link">&para;</a></h1>
-<p><a href="https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest">https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest</a></p>
-<ul>
-<li>scheme</li>
-<li>body</li>
-<li>path</li>
-<li>path_info</li>
-<li>method</li>
-<li>encoding</li>
-<li>content_type</li>
-<li>content_params</li>
-<li>headers</li>
-<li>dictionary를 들고있음<ul>
-<li>GET</li>
-<li>POST</li>
-</ul>
-</li>
-</ul>
-<h1 id="_1">기타<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<ul>
-<li>자세한 View들간의 관계에 대해 알고싶다면 <a href="../CCBV%2C%20Classy%20Class%20Based%20View%20--%20django/">CCBV, Classy Class Based View -- django</a>를 참조하쇼</li>
-<li><a href="../slug%EA%B0%80%20%EB%AD%90%EB%83%90/">slug가 뭐냐</a></li>
+<li><code>date</code>: php의 date와 비슷하다고 하다. 문제는 나는 php를 모른다는거. 어쨌든 <code>{{ value|date:"D d M Y" }}</code> 이런거 보면 날짜형식의 value를 주어진 형식으로 내보내겠다는 뜻인 것으로 보임.</li>
+<li><code>default</code>: value가 <code>False</code>로 평가될 시에 (Falsely) 대치되는 저시기. <code>{{value|default:"nothing"}}</code></li>
+<li><code>filesizeformat</code>: human readable file size format</li>
+<li><code>join</code>: 리스트를 하나의 문자열로 바꾸고, delimeter를 <code>join</code> 뒤에 오는 문자열로 대치.</li>
+<li><code>length</code>: 리스트의 길이</li>
 </ul>
 
 
