@@ -3,17 +3,25 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T13:33:19
-updated: 2023-07-15T21:30:20
+updated: 2023-07-20T05:39:00
 title: django forms
 ---
 - [Working with forms {doc}](https://docs.djangoproject.com/en/4.2/topics/forms/)
 - [[form errors{ django }]]
-- `django.forms`를 실제로 활용하고 있는 영상 | https://youtu.be/sMqDJovFO-Y?t=1350
-- form, 너의 역할은 무엇이냐
-	- 정적 웹사이트를 만들어 배포할게 아니라면, 무조건 들춰보게 될 유용한 도구이다. 접속자가 우리 웹에서 활동(글쓰기, 댓글 등)을 하는 여러 유즈케이스를 구현하는데 도움을 줄 것이다.
-	- 렌더링 이전에는 폼에 필요한 데이터들을 정렬한다.
-	- 정렬한 데이터를 가지고 HTML `<form>` 태그 안에 감싸 넣는다.
-	- 사용자 입력을 올바르게 가지고 와서 처리까지 수행한다.
+- `django.forms`를 실제로 활용하고 있는 영상 | <https://youtu.be/sMqDJovFO-Y?t=1350>
+
+# form, 너의 역할은 무엇이냐
+
+- 정적 웹사이트를 만들어 배포할게 아니라면, 무조건 들춰보게 될 유용한 도구이다. 접속자가 우리 웹에서 활동(글쓰기, 댓글 등)을 하는 여러 유즈케이스를 구현하는데 도움을 줄 것이다.
+- 렌더링 이전에는 폼에 필요한 데이터들을 정렬한다.
+- 정렬한 데이터를 가지고 HTML `<form>` 태그 안에 감싸 넣는다.
+- 사용자 입력을 올바르게 가지고 와서 처리까지 수행한다.
+
+# form의 구성
+
+- form: `<form>` 태그 전체를 아우르는 객체
+- media: form과 연관된 js, css를 정의한다. [Form Assets (the Media class) {doc}](https://docs.djangoproject.com/en/4.2/topics/forms/media/)
+- `Widget`: 필드 하나하나를 위젯이라고 부른다. 얘네들을 따로 정의할 수도 있고, [[tinymce]]는 그저 하나의 위젯을 제공해주는 도구에 불과하다.
 
 > It is _possible_ to write code that does all of this manually, but Django can take care of it all for you.
 
