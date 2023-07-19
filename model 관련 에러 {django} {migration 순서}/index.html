@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/%EC%A3%BC%EB%8B%88%EC%96%B4%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%2C%20%EA%B7%B8%20%EC%9D%B4%EC%83%81%EC%9C%BC%EB%A1%9C%20%F0%9F%9A%80%7Bbook-project%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/model%20%EA%B4%80%EB%A0%A8%20%EC%97%90%EB%9F%AC%20%7Bdjango%7D%20%7Bmigration%20%EC%88%9C%EC%84%9C%7D/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>주니어 백엔드 개발자, 그 이상으로 🚀{book-project} - Choi Wheatley's Second Brain</title>
+        <title>model 관련 에러 {django} {migration 순서} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#index" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
+              model 관련 에러 {django} {migration 순서}
             
           </span>
         </div>
@@ -219,8 +214,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -235,55 +228,27 @@
                   
 
 
-<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
-<p><a href="../book-project%20%7BLEGACIES%7D/">book-project {LEGACIES}</a><br />
-<a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a><br />
-<a href="../%EA%B3%B5%EB%8F%99%EC%A7%91%ED%95%84%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20-%20estsoft%20%F0%9F%93%95/">공동집필 프로젝트 - estsoft 📕</a></p>
-<h1 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">&para;</a></h1>
-<p>이 문서는 생각 싸지르고 원자적인 문서들의 파편을 서로 연결하는 용도로 사용하는 것이지, 집필은 <a href="https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4" title="https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4">파이썬을 활용한 RESTful API 개발 기본 {NOTION}</a>에서 진행할 것이다.</p>
-<p>지금 한 번 이 문서를 갈아엎은 이래로 집필 프로젝트를 본격적으로 시작하게 되었다. 필요한 내용만 바로 볼 수 있게 바꾸었다. </p>
-<h1 id="daily-sprint">Daily Sprint<a class="headerlink" href="#daily-sprint" title="Permanent link">&para;</a></h1>
+  <h1>model 관련 에러 {django} {migration 순서}</h1>
+
 <ul>
-<li><a href="../20230603%20book-project/">20230603 book-project</a></li>
-<li><a href="../20230605%20book-project/">20230605 book-project</a></li>
-<li><a href="../20230607%20book-project/">20230607 book-project</a></li>
-<li><a href="../20230608%20book-project/">20230608 book-project</a></li>
-<li><a href="../20230609%20book-project/">20230609 book-project</a></li>
-<li><a href="../20230610%20book-project/">20230610 book-project</a></li>
-<li><a href="../20230611%20book-project/">20230611 book-project</a></li>
-<li><a href="../20230613%20book-project/">20230613 book-project</a><ul>
-<li><a href="../20230613%20~%2020230701%20Loadmap%20%7Bbook-project%7D/">20230613 ~ 20230701 Loadmap {book-project}</a></li>
+<li>
+<p>아직도 <code>users-model</code> 브랜치에서 에러를 고치지 못했다. 원인을 파악하자.</p>
+<ul>
+<li><code>forms.py</code>와 <code>admin.py</code>에서 기본 User를 전제로 생각해서 <code>username</code>을 참조하는 것 같다. 에러메시지를 요약하자면 다음과 같다.</li>
+</ul>
+<p><code>File "/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/forms/models.py", line 321, in __new__
+raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (username) specified for User</code></p>
+<ul>
+<li><a href="./커스텀한 User의 UserCreationForm 재정의하기 {django}.md">커스텀한 <code>User</code>의 <code>UserCreationForm</code> 재정의하기 {django}</a>. 디폴트 User의 멤버를 기대하고 있기 때문이다. 그것은 바로 <code>username</code>. |<ul>
+<li><code>forms.py</code></li>
+<li><code>admin.py</code></li>
 </ul>
 </li>
-<li><a href="../20230615%20book-project/">20230615 book-project</a></li>
-<li><a href="../20230617%20book-project/">20230617 book-project</a><ul>
-<li><a href="../20230624%20%EA%B9%8C%EC%A7%80%20%EC%A7%84%ED%96%89%ED%95%A0%20%EA%B5%AC%ED%98%84%EC%82%AC%ED%95%AD%20%7Bbook-project%7D/">20230624 까지 진행할 구현사항 {book-project}</a></li>
+<li>migration 순서가 꼬이면 <code>raise InconsistentMigrationHistory</code>가 발생한다. <code>****.0001_initial</code> 을 의존하는 다른 <code>&amp;&amp;&amp;&amp;.0001_initial</code>가 존재하기 전에 migrate를 해서 그렇다. 이 문제를 해소하기 위해선 일단 <code>db.sqlite</code> 파일을 백업하던가 폭파시키던가 하고, 꼬인 앱의 <code>migration</code>를 지운다. 그리고 <code>makemigrations</code> → <code>migrate</code> 명령을 수행하면 된다. | <a href="../django%20migration%20%EC%88%9C%EC%84%9C%20%EA%BC%AC%EC%9D%B8%EA%B2%BD%EC%9A%B0%20%7BGPT%7D/">django migration 순서 꼬인경우 {GPT}</a></li>
+<li><a href="../django%20reverse/">django reverse</a></li>
 </ul>
 </li>
-<li><a href="../20230619%20book-project/">20230619 book-project</a></li>
-<li><a href="../20230620%20book-project/">20230620 book-project</a></li>
-<li><a href="../20230621%20book-project/">20230621 book-project</a></li>
-<li>[x] <a href="../20230622%20book-project/">20230622 book-project</a><ul>
-<li>[x] <a href="https://github.com/ESTsoft-Book-Project/bookstore/pull/55">PR #55와 #54 충돌지점 토론하기</a></li>
-<li>[x] oauth</li>
-<li>[x] 카카오페이</li>
-<li>[x] <a href="../inventory%20modeling%20%7Bbook-project%7D%7B%EC%9E%AC%EA%B3%A0%2C%20%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88%2C%20%EA%B5%AC%EB%A7%A4%EB%A7%81%ED%81%AC%7D/">장바구니</a></li>
-</ul>
-</li>
-<li><a href="../20230623%20book-project/">20230623 book-project</a></li>
-<li><a href="../20230624%20book-project/">20230624 book-project</a></li>
-<li><a href="../20230625%20book-project/">20230625 book-project</a></li>
-<li><a href="../20230626%20book-project/">20230626 book-project</a></li>
-<li><a href="../20230627%20book-project/">20230627 book-project</a></li>
-<li><a href="../20230628%20book-project/">20230628 book-project</a></li>
-<li><a href="../20230629%20book-project/">20230629 book-project</a></li>
-<li><a href="../20230630%20book-project/">20230630 book-project</a><ul>
-<li>[x] Docker 및 배포 @최승현</li>
-</ul>
-</li>
-<li><a href="../20230701%20book-project/">20230701 book-project</a></li>
-<li><a href="../20230702%20book-project/">20230702 book-project</a></li>
-<li><a href="../20230703%20book-project/">20230703 book-project</a></li>
 </ul>
 
 

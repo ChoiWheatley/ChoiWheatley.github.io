@@ -236,34 +236,10 @@
 
 
 <ul>
-<li>
-<p>[?] <code>templates</code> 폴더를 밖으로 빼내야 하는 이유: static 파일들을 별도의 폴더에 관리하기 위해서. ==&gt; 그렇다면 장고 라이브러리는 왜 밖으로 빼내지 않았나?</p>
-</li>
-<li>
-<p>[[django PermissionsMixin의 역할이 뭐지]]</p>
-</li>
+<li>[?] <code>templates</code> 폴더를 밖으로 빼내야 하는 이유: static 파일들을 별도의 폴더에 관리하기 위해서. ==&gt; 그렇다면 장고 라이브러리는 왜 밖으로 빼내지 않았나? <a href="../django%20template/">django template</a></li>
 </ul>
 <h1 id="model">Model 관련 에러<a class="headerlink" href="#model" title="Permanent link">&para;</a></h1>
-<ul>
-<li>
-<p>아직도 <code>users-model</code> 브랜치에서 에러를 고치지 못했다. 원인을 파악하자.</p>
-<ul>
-<li><code>forms.py</code>와 <code>admin.py</code>에서 기본 User를 전제로 생각해서 <code>username</code>을 참조하는 것 같다. 에러메시지를 요약하자면 다음과 같다.</li>
-</ul>
-<p><code>File "/home/chltm/workspace/bookstore/venv/lib/python3.11/site-packages/django/forms/models.py", line 321, in __new__
-raise FieldError(message)
-django.core.exceptions.FieldError: Unknown field(s) (username) specified for User</code></p>
-<ul>
-<li><a href="./커스텀한 User의 UserCreationForm 재정의하기 {django}.md">커스텀한 <code>User</code>의 <code>UserCreationForm</code> 재정의하기 {django}</a>. 디폴트 User의 멤버를 기대하고 있기 때문이다. 그것은 바로 <code>username</code>. |<ul>
-<li><code>forms.py</code></li>
-<li><code>admin.py</code></li>
-</ul>
-</li>
-<li>migration 순서가 꼬이면 <code>raise InconsistentMigrationHistory</code>가 발생한다. <code>****.0001_initial</code> 을 의존하는 다른 <code>&amp;&amp;&amp;&amp;.0001_initial</code>가 존재하기 전에 migrate를 해서 그렇다. 이 문제를 해소하기 위해선 일단 <code>db.sqlite</code> 파일을 백업하던가 폭파시키던가 하고, 꼬인 앱의 <code>migration</code>를 지운다. 그리고 <code>makemigrations</code> → <code>migrate</code> 명령을 수행하면 된다. | <a href="../django%20migration%20%EC%88%9C%EC%84%9C%20%EA%BC%AC%EC%9D%B8%EA%B2%BD%EC%9A%B0%20%7BGPT%7D/">django migration 순서 꼬인경우 {GPT}</a></li>
-<li><a href="../django%20reverse/">django reverse</a></li>
-</ul>
-</li>
-</ul>
+<p><a href="../model%20%EA%B4%80%EB%A0%A8%20%EC%97%90%EB%9F%AC%20%7Bdjango%7D%20%7Bmigration%20%EC%88%9C%EC%84%9C%7D/">model 관련 에러 {django} {migration 순서}</a></p>
 
 
 
