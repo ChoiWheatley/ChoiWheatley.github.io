@@ -21,7 +21,7 @@
     
     
       
-        <title>add model in admin page with `admin.site.register` {django} {admin.py} - Choi Wheatley's Second Brain</title>
+        <title>add model in admin site with `admin.site.register` {django} {admin.py} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#abstractbaseuser" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              add model in admin page with `admin.site.register` {django} {admin.py}
+              add model in admin site with `admin.site.register` {django} {admin.py}
             
           </span>
         </div>
@@ -215,6 +220,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstractbaseuser" class="md-nav__link">
+    AbstractBaseUser를 상속한 커스텀 유저일 경우
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -228,12 +248,14 @@
                   
 
 
-  <h1>add model in admin page with `admin.site.register` {django} {admin.py}</h1>
+  <h1>add model in admin site with `admin.site.register` {django} {admin.py}</h1>
 
 <ul>
+<li><a href="https://docs.djangoproject.com/en/4.2/ref/contrib/admin/">admin site {doc}</a></li>
+<li><a href="https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#custom-users-and-django-contrib-admin">Custom users and <code>django.contrib.admin</code> {doc}</a></li>
 <li><a href="https://stackoverflow.com/a/47753254">purpose of admin.py {SOF}</a>  </li>
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/main/users/admin.py">bookstore/users/admin.py {GH}</a><br />
-<code>admin.py</code>에 다음과 같은 코드를 작성하였더니, <code>localhost:8000/admin</code> 페이지에 새로운 애트리뷰트가 생겼다.</li>
+<code>&lt;app&gt;/admin.py</code>에 다음과 같은 코드를 작성하였더니, <code>localhost:8000/admin</code> 페이지에 새로운 애트리뷰트가 생겼다.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;admin/ route에서 보여줄 정보들에 대하여 정의한다.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
@@ -250,6 +272,18 @@
 </code></pre></div>
 <blockquote>
 <p>The admin.py file is used to display your models in the Django admin panel. You can also customize your admin panel.</p>
+</blockquote>
+<h2 id="abstractbaseuser"><code>AbstractBaseUser</code>를 상속한 커스텀 유저일 경우<a class="headerlink" href="#abstractbaseuser" title="Permanent link">&para;</a></h2>
+<p>Admin site에 모습을 드러내게 하기 위해서 반드시 <code>django.contrib.auth.admin.UserAdmin</code>을 확장하여야 한다. 자세한 사항은 <a href="https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#custom-users-and-django-contrib-admin">문서</a>와 아래 Note를 읽어보기 바란다.</p>
+<blockquote>
+<p>[!note]<br />
+If you are using a custom <code>ModelAdmin</code> which is a subclass of <code>django.contrib.auth.admin.UserAdmin</code>, then you need to add your custom fields to <code>fieldsets</code> (for fields to be used in editing users) and to <code>add_fieldsets</code> (for fields to be used when creating a user). For example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.auth.admin</span> <span class="kn">import</span> <span class="n">UserAdmin</span>
+<span class="k">class</span> <span class="nc">CustomUserAdmin</span><span class="p">(</span><span class="n">UserAdmin</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">fieldsets</span> <span class="o">=</span> <span class="n">UserAdmin</span><span class="o">.</span><span class="n">fieldsets</span> <span class="o">+</span> <span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;custom_field&quot;</span><span class="p">]}),)</span>
+    <span class="n">add_fieldsets</span> <span class="o">=</span> <span class="n">UserAdmin</span><span class="o">.</span><span class="n">add_fieldsets</span> <span class="o">+</span> <span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;custom_field&quot;</span><span class="p">]}),)</span>
+</code></pre></div>
 </blockquote>
 
 
