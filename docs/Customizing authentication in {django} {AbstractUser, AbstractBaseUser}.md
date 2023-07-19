@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-05T22:13:43
-updated: 2023-07-19T10:29:18
+updated: 2023-07-19T10:41:58
 title: Customizing authentication in {django} {AbstractUser, AbstractBaseUser}
 ---
 - [full example {doc}](https://docs.djangoproject.com/en/dev/topics/auth/customizing/#a-full-example)
@@ -20,4 +20,13 @@ ___
 - `EMAIL_FIELD` (option) => `get_email_field_name()` 메서드가 리턴하는 녀석임.
 - `is_active` (option)
 
-다만, `AbstractBaseUser`는 
+다만, `AbstractBaseUser`는 `UserManager`라는 유저 생성에 관여하는 매니저 객체를 필요로 한다. 커스텀 `User`가 단지 필드만 수정한 경우라면 `BaseUserManager`를 상속하는 것이 유리하다. 오버라이드 할 메서드는 다음과 같다.
+- `create_user(username_field, password, **other_fields)`
+- `create_superuser(username_field, password, **other_fields)`
+
+# `AbstractUser`
+
+> [!info]  
+> `AbstractUser` extends `AbstractBaseUser` with full implementation of the default `User` as an abstract model.
+
+따라서, `AbstractUser`는 기본 `UserManager`또한 구현하고 있다는 것을 알 수 있다.
