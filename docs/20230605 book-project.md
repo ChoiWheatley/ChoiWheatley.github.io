@@ -32,7 +32,7 @@ class SignupView(View):
 - `form.is_valid()`가 계속 실패한다. 그래서 에러메시지를 출력하도록 만들었더니 템플릿에서 submit한 form들의 name과 model과 일치하지 않아 발생한 문제였다.
 
 - `django.db.utils.IntegrityError: UNIQUE constraint failed: users_user.username` 나는 커스텀 `User`에서 `username` 대신에 `email`을 사용하도록 설정했는데, 왜 계속 `username`이 고유하지 않다고 하는거지?
-- 그래서 어쩔 수 없지만 [[AbstractBaseUser]]를 상속하여 많은 것들을 직접 구현하는 쪽으로 진행해 보아야 할 것 같다... AbstractUser는 일단 `username`이 존재하고, 이것을 `email`을 사용하도록 임의로 선회하는 것이고. | [[Store informations related to User, but not authorization-related {django}]] 
+- 그래서 어쩔 수 없지만 [[Customizing authentication in {django} {AbstractUser, AbstractBaseUser}]]를 상속하여 많은 것들을 직접 구현하는 쪽으로 진행해 보아야 할 것 같다... AbstractUser는 일단 `username`이 존재하고, 이것을 `email`을 사용하도록 임의로 선회하는 것이고. | [[Store informations related to User, but not authorization-related {django}]] 
 
 [[logging in django]]
 

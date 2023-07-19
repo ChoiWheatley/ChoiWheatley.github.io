@@ -4,7 +4,7 @@ tags:
 description:
 title: 2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}
 created: 2023-07-17T15:31:28
-updated: 2023-07-19T00:42:21
+updated: 2023-07-19T10:02:28
 ---
 
 parent link: [[0014.1 Django 🎈]]
@@ -18,6 +18,18 @@ parent link: [[0014.1 Django 🎈]]
 - 클래스형 뷰를 사용하여 개발할 것
 - drf를 사용하지 말고 monolithic web app을 만들것
 - [dbdiagram](https://dbdiagram.io/home)을 사용하여 데이터베이스 구조를 설계할 것
+	- [[Customizing authentication in {django} {AbstractUser, AbstractBaseUser}]]
+
+```mermaid
+erDiagram
+
+	User {
+		int id PK
+		email email
+		bool is_admin
+		timestamp created_at
+	}
+```
 
 ## 0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현
 
@@ -29,12 +41,16 @@ Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 �
 
 - URL : `/` 
 	- 페이지 제목과 블로그 입장하기 버튼이 있습니다.
-	- Django admin을 이용하여 게시글 작성
+	- `index.html` 내용을 수정하여 `/blog` 엔드포인트로 보내야겠군
+- Django admin을 이용하여 게시글 작성
 	- 게시글은 제목, 내용으로 구성되어 있습니다.
 	- `/admin` 을 이용하여 게시글을 작성해보세요.  
-	- 작성되어 있는 게시글 목록을 볼 수 있습니다.  
-- URL : `/blog  `
+	- [[tinymce]]를 이용하여 Admin 페이지에 추가 어떻게 하더라?
+	- DEPENDS ON 데이터 모델링
+- 작성되어 있는 게시글 목록을 볼 수 있습니다.  
+	- URL : `/blog`
 	- 게시글들의 제목을 확인 할 수 있습니다.  
-	- 작성 되어있는 게시글 상세 페이지를 볼 수 있습니다.  
-	- URL : `/blog/<int:id> ex)/blog/1, /blog/2,...  `
+- 작성 되어있는 게시글 상세 페이지를 볼 수 있습니다.  
+	- URL : `/blog/<int:id>`
+	- ex) `/blog/1, /blog/2,...`
 	- 게시글의 제목/내용을 보는 기능입니다.
