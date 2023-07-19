@@ -18,8 +18,8 @@ title: django model
 ## problem solving
 
 - custom user
-	- [[add model in admin page with `admin.site.register` {django} {admin.py}]]
+	- [[add model in admin site with `admin.site.register` {django} {admin.py}]]
 	- [[model 관련 에러 {django} {migration 순서}]]
 	- [[django 유저 프로필 보기 {model.py}]]
 	- [[django dependency issue 발생 시 AUTH_USER_MODEL이 제대로 박혀있는지 확인하라]]
-- [[add model in admin page with `admin.site.register` {django} {admin.py}]]
+- [[add model in admin site with `admin.site.register` {django} {admin.py}]]
