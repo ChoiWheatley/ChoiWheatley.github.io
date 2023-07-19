@@ -235,6 +235,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#1-crud" class="md-nav__link">
+    1. 블로그 CRUD 기능 구현하기
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -311,6 +318,45 @@
 <li>URL : <code>/blog/&lt;int:id&gt;</code></li>
 <li>ex) <code>/blog/1, /blog/2,...</code></li>
 <li>게시글의 제목/내용을 보는 기능입니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-crud">1. 블로그 CRUD 기능 구현하기<a class="headerlink" href="#1-crud" title="Permanent link">&para;</a></h2>
+<ul>
+<li><del>main page</del></li>
+<li>
+<p>게시글 작성 기능</p>
+<ul>
+<li><code>url</code>: <code>/blog/write/</code></li>
+<li>게시글 제목과 내용을 작성할 수 있는 페이지</li>
+<li>작성한 게시글이 저장되어 게시글 목록에 보여야 함.</li>
+<li><strong>카테고리</strong>가 지정</li>
+</ul>
+<blockquote>
+<p>[!note]<br />
+ 로그인이 되지 않더라도 글 작성이 가능하게끔</p>
+</blockquote>
+</li>
+<li>
+<p><del>list view</del></p>
+</li>
+<li><del>detail view</del></li>
+<li>게시글 수정 기능<ul>
+<li><code>url</code>: <code>/blog/edit/&lt;int:id&gt;/</code></li>
+<li>게시글 제목과 내용을 수정하는 페이지</li>
+<li>수정한 내용은 게시글 목록보기 / 상세보기에 반영</li>
+</ul>
+</li>
+<li>게시글 삭제 기능<ul>
+<li><code>url</code>: <code>/blog/delete/&lt;int:id&gt;/</code></li>
+<li>게시글 삭제 완료 이후 list view로 redirect</li>
+<li>삭제된 게시글은 list, detail 접근 불가능하며, 접근시도시 404 발생</li>
+</ul>
+</li>
+<li>게시글 검색 기능<ul>
+<li><code>url</code>: <code>/blog/search/&lt;str:tag&gt;</code></li>
+<li>카테고리, 주제에 따라 검색이 가능하게</li>
+<li>검색한 게시물은 시간순에 따라 정렬</li>
 </ul>
 </li>
 </ul>

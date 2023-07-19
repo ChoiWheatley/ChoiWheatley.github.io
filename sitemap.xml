@@ -611,6 +611,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/CharField%20%7Bdjango%7D%20%7Bchoices%7D/</loc>
+         <lastmod>2023-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Comparing%20result%20with%20enum%20in%20python/</loc>
          <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
