@@ -290,10 +290,95 @@
 <ol>
 <li><code>View</code>에서 <code>Form</code> 객체를 생성한다.</li>
 <li><a href="../django%20template%20%7Bcontext%7D/">django template {context}</a> template context에 해당 form을 넘겨준다.</li>
-<li><a href="../django%20template/">django template</a> 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣는다.</li>
+<li><a href="../django%20template/">django template</a> 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣거나 직접 템플릿 form 요소를 채워넣는다.</li>
 </ol>
-<h1 id="plus-alpha-with-crispy-forms">plus alpha with crispy-forms<a class="headerlink" href="#plus-alpha-with-crispy-forms" title="Permanent link">&para;</a></h1>
+<h2 id="1">템플릿 활용방안 1: 알아서<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form</span> <span class="cp">}}</span>
+<span class="x">    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</span>
+<span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<h2 id="2-rendering-fields-manually">템플릿 활용방안 2: <a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">rendering fields manually</a><a class="headerlink" href="#2-rendering-fields-manually" title="Permanent link">&para;</a></h2>
+<p><code>{{ form.name_of_field }}</code> 를 사용하여 HTML form member를 직접 정의한 뒤에 알맹이만 맡길 수 있다. <a href="../form%20errors%7B%20django%20%7D/">form errors{ django }</a>에서 에러처리에 대한 인사이트도 얻어가시오.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">form.non_field_errors</span> <span class="cp">}}</span>
+<span class="x">&lt;div class=&quot;fieldWrapper&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.subject.errors</span> <span class="cp">}}</span>
+<span class="x">    &lt;label for=&quot;</span><span class="cp">{{</span> <span class="nv">form.subject.id_for_label</span> <span class="cp">}}</span><span class="x">&quot;&gt;Email subject:&lt;/label&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.subject</span> <span class="cp">}}</span>
+<span class="x">&lt;/div&gt;</span>
+<span class="x">&lt;div class=&quot;fieldWrapper&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.message.errors</span> <span class="cp">}}</span>
+<span class="x">    &lt;label for=&quot;</span><span class="cp">{{</span> <span class="nv">form.message.id_for_label</span> <span class="cp">}}</span><span class="x">&quot;&gt;Your message:&lt;/label&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.message</span> <span class="cp">}}</span>
+<span class="x">&lt;/div&gt;</span>
+<span class="x">&lt;div class=&quot;fieldWrapper&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.sender.errors</span> <span class="cp">}}</span>
+<span class="x">    &lt;label for=&quot;</span><span class="cp">{{</span> <span class="nv">form.sender.id_for_label</span> <span class="cp">}}</span><span class="x">&quot;&gt;Your email address:&lt;/label&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.sender</span> <span class="cp">}}</span>
+<span class="x">&lt;/div&gt;</span>
+<span class="x">&lt;div class=&quot;fieldWrapper&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.cc_myself.errors</span> <span class="cp">}}</span>
+<span class="x">    &lt;label for=&quot;</span><span class="cp">{{</span> <span class="nv">form.cc_myself.id_for_label</span> <span class="cp">}}</span><span class="x">&quot;&gt;CC yourself?&lt;/label&gt;</span>
+<span class="x">    </span><span class="cp">{{</span> <span class="nv">form.cc_myself</span> <span class="cp">}}</span>
+<span class="x">&lt;/div&gt;</span>
+</code></pre></div>
+<h2 id="3-looping-over-forms-fields">템플릿 활용방안 3: <a href="https://docs.djangoproject.com/en/4.2/topics/forms/#looping-over-the-form-s-fields">looping over form's fields</a><a class="headerlink" href="#3-looping-over-forms-fields" title="Permanent link">&para;</a></h2>
+<p>form은 그 자체로 HTML tag를 가지고 있다. 따라서 반복문을 돌아도 해당 태그를 가져다 쓰기만 하면 된다. 예를 들자면</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">field</span> <span class="k">in</span> <span class="nv">form</span> <span class="cp">%}</span>
+<span class="x">    &lt;div class=&quot;fieldWrapper&quot;&gt;</span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">field.errors</span> <span class="cp">}}</span>
+<span class="x">        </span><span class="cp">{{</span> <span class="nv">field.label_tag</span> <span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span> <span class="nv">field</span> <span class="cp">}}</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">field.help_text</span> <span class="cp">%}</span>
+<span class="x">        &lt;p class=&quot;help&quot;&gt;</span><span class="cp">{{</span> <span class="nv">field.help_text</span><span class="o">|</span><span class="nf">safe</span> <span class="cp">}}</span><span class="x">&lt;/p&gt;</span>
+<span class="x">        </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+<span class="x">    &lt;/div&gt;</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</code></pre></div>
+<h1 id="crispy-forms">crispy-forms<a class="headerlink" href="#crispy-forms" title="Permanent link">&para;</a></h1>
 <p><a href="../django%20crispy%20forms/">django crispy forms</a></p>
+<h1 id="choices">choices<a class="headerlink" href="#choices" title="Permanent link">&para;</a></h1>
+<p><a href="../CharField%20%7Bdjango%7D%20%7Bchoices%7D/">CharField {django} {choices}</a>를 장고 기본 form으로 만들면 <code>&lt;select&gt;</code> 태그가 생성된다. 이에 감안하여 choices의 멤버들을 순회하며 아이템을 추가할 수 있다. 가령 다음과 같은 모델이 있다고 하자</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
+        <span class="n">TECH</span> <span class="o">=</span> <span class="s2">&quot;TECH&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;기술&quot;</span><span class="p">)</span>
+        <span class="n">FOOD</span> <span class="o">=</span> <span class="s1">&#39;FOOD&#39;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;음식&quot;</span><span class="p">)</span>
+        <span class="n">MUSIC</span> <span class="o">=</span> <span class="s2">&quot;MUSIC&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;음악&quot;</span><span class="p">)</span>
+        <span class="n">EMOTIONS</span> <span class="o">=</span> <span class="s2">&quot;EMOTIONS&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;감정&quot;</span><span class="p">)</span>
+        <span class="n">SCIENCE</span> <span class="o">=</span> <span class="s2">&quot;SCIENCE&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;과학&quot;</span><span class="p">)</span>
+        <span class="n">ARTS</span> <span class="o">=</span> <span class="s2">&quot;ARTS&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;예술&quot;</span><span class="p">)</span>
+        <span class="n">ANNOUNCE</span> <span class="o">=</span> <span class="s2">&quot;ANNOUNCE&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;공지&quot;</span><span class="p">)</span>
+        <span class="n">MISC</span> <span class="o">=</span> <span class="s2">&quot;MISC&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="p">(</span><span class="s2">&quot;기타&quot;</span><span class="p">)</span>
+
+    <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">choices</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">MISC</span><span class="p">)</span>
+</code></pre></div>
+<p>in <code>forms.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">NewArticleForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;TinyMCE widget&quot;&quot;&quot;</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Article</span>
+        <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">TinyMCE</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cols&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;rows&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">})}</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>템플릿 파일에서 <code>category</code>를 제대로 출력하기 위해서는 어떻게 작성해야 할까? <a href="https://stackoverflow.com/questions/36724255/render-choicefield-options-in-django-template">다음 대화 {sof}</a>와 <a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#get-context"><code>Form.get_context</code> {doc}</a>를 참조해보자. 아래 두 템플릿 코드가 주어질텐데, 무엇이 정답일까?</p>
+<ol>
+<li>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;select id=&quot;category&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">key</span><span class="o">,</span> <span class="nv">value</span> <span class="k">in</span> <span class="nv">form.fields.category.choices</span>  <span class="cp">%}</span>
+<span class="x">        &lt;option value=&quot;</span><span class="cp">{{</span> <span class="nv">key</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span><span class="x">&lt;/option&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="x">&lt;/select&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<div class="highlight"><pre><span></span><code><span class="x">&lt;select id=&quot;category&quot;&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">key</span><span class="o">,</span> <span class="nv">value</span> <span class="k">in</span> <span class="nv">form.category.choices</span>  <span class="cp">%}</span>
+<span class="x">        &lt;option value=&quot;</span><span class="cp">{{</span> <span class="nv">key</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span><span class="cp">{{</span> <span class="nv">value</span> <span class="cp">}}</span><span class="x">&lt;/option&gt;</span>
+<span class="x">    </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+<span class="x">&lt;/select&gt;</span>
+</code></pre></div>
+</li>
+</ol>
 
 
 
