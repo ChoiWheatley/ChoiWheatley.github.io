@@ -6,13 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="site_description">
+        <meta name="description" content="admin 페이지에 새 애트리뷰트 추가하기">
       
       
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/django%20admin%20site%20register%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC%20%EC%9C%A0%EC%A0%80%20%EC%A0%95%EB%B3%B4%20%ED%99%95%EC%9D%B8%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">
+        <link rel="canonical" href="https://choiwheatley.github.io/add%20model%20in%20admin%20page%20with%20%60admin.site.register%60%20%7Bdjango%7D%20%7Badmin.py%7D/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>django admin site register를 사용하여 유저 정보 확인할 수 있다 - Choi Wheatley's Second Brain</title>
+        <title>add model in admin page with `admin.site.register` {django} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#-purpose-of-adminpy-sof" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              django admin site register를 사용하여 유저 정보 확인할 수 있다
+              add model in admin page with `admin.site.register` {django}
             
           </span>
         </div>
@@ -220,21 +215,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#-purpose-of-adminpy-sof" class="md-nav__link">
-    - purpose of admin.py {SOF}
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -248,10 +228,12 @@
                   
 
 
-  <h1>django admin site register를 사용하여 유저 정보 확인할 수 있다</h1>
+  <h1>add model in admin page with `admin.site.register` {django}</h1>
 
-<h2 id="-purpose-of-adminpy-sof">- <a href="https://stackoverflow.com/a/47753254">purpose of admin.py {SOF}</a><a class="headerlink" href="#-purpose-of-adminpy-sof" title="Permanent link">&para;</a></h2>
-<p><code>admin.py</code>에 다음과 같은 코드를 작성하였더니, <code>localhost:8000/admin</code> 페이지에 새로운 애트리뷰트가 생겼다.</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/47753254">purpose of admin.py {SOF}</a><br />
+<code>admin.py</code>에 다음과 같은 코드를 작성하였더니, <code>localhost:8000/admin</code> 페이지에 새로운 애트리뷰트가 생겼다.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;admin/ route에서 보여줄 정보들에 대하여 정의한다.&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span> <span class="nn">django.contrib.auth.admin</span> <span class="kn">import</span> <span class="n">UserAdmin</span>

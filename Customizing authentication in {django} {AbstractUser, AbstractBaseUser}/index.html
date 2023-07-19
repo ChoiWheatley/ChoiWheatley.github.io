@@ -245,7 +245,7 @@
 <h1 id="abstractbaseuser"><code>AbstractBaseUser</code><a class="headerlink" href="#abstractbaseuser" title="Permanent link">&para;</a></h1>
 <p>비밀번호 해싱에 필요한 구현체를 마련해놓고 프로그래머에게 기본 <code>User</code>를 확장할 수 있게 도와준다. 오버라이딩이 필요한 멤버는 다음과 같다. 
 - <code>USERNAME_FIELD</code> =&gt; default authentication backend는 pk 아닌 최소 하나의 필드를 고유하게 만들어야 하는데, 그것이 <code>username</code> 필드이다. 다른 필드를 고유하게 만들고 싶다면 얘를 수정해주면 된다.
-- <code>REQUIRED_FIELDS</code> =&gt; <code>createsuperuser</code> 명령시 이걸 보고 input field를 제공.
+- <code>REQUIRED_FIELDS</code> =&gt; <code>createsuperuser</code> 명령시 이걸 보고 input field를 제공. ❕ <code>USERNAME_FIELD</code>는 기본으로 들어가기 때문에 중복하여 넣지 않도록 유의
 - <code>EMAIL_FIELD</code> (option) =&gt; <code>get_email_field_name()</code> 메서드가 리턴하는 녀석임.
 - <code>is_active</code> (option)</p>
 <p>다만, <code>AbstractBaseUser</code>는 <code>UserManager</code>라는 유저 생성에 관여하는 매니저 객체를 필요로 한다. 커스텀 <code>User</code>가 단지 필드만 수정한 경우라면 <code>BaseUserManager</code>를 상속하는 것이 유리하다. 오버라이드 할 메서드는 다음과 같다.
