@@ -1731,6 +1731,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/django%20flat%20pages/</loc>
+         <lastmod>2023-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/django%20forms/</loc>
          <lastmod>2023-07-19</lastmod>
          <changefreq>daily</changefreq>
