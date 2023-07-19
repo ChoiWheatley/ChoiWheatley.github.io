@@ -12,7 +12,7 @@ title: 0110 Utility 🔧
 - [[무료 도메인 네임서버 DNS]]
 - linux
 	- [[ubuntu 20.04 etc apt sources.list]]
-	- [[Xmonad, window tiling manager written in {haskel}]]
+	- [[Xmonad, window tiling manager written in {haskell}]]
  - documents
 	 - [[웹에서 바로 서명 만들기 with glosign]]
 - [[regex]]
