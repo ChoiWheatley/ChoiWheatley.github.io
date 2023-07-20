@@ -4,7 +4,7 @@ tags:
 description:
 title: 2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}
 created: 2023-07-17T15:31:28
-updated: 2023-07-19T16:40:01
+updated: 2023-07-20T09:32:40
 ---
 
 parent link: [[0014.1 Django 🎈]]
@@ -72,7 +72,7 @@ Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 �
 ## 1. 블로그 CRUD 기능 구현하기
 
 - ~~main page~~
-- 게시글 작성 기능
+- [x] 게시글 작성 기능
 	- `url`: `/blog/write/`
 	- 게시글 제목과 내용을 작성할 수 있는 페이지
 	- 작성한 게시글이 저장되어 게시글 목록에 보여야 함.
@@ -80,6 +80,8 @@ Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 �
 
 	> [!note]  
 	>  로그인이 되지 않더라도 글 작성이 가능하게끔
+
+→ 구현해보니 이미 `Article` 자체에 `author` 필드가 있다. 이 부분은 로그인을 해야지 가능하게 바꾸자.
 
 - ~~list view~~
 - ~~detail view~~
