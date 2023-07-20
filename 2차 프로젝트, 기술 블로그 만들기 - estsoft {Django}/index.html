@@ -325,7 +325,7 @@
 <ul>
 <li><del>main page</del></li>
 <li>
-<p>게시글 작성 기능</p>
+<p>[x] 게시글 작성 기능</p>
 <ul>
 <li><code>url</code>: <code>/blog/write/</code></li>
 <li>게시글 제목과 내용을 작성할 수 있는 페이지</li>
@@ -337,9 +337,10 @@
  로그인이 되지 않더라도 글 작성이 가능하게끔</p>
 </blockquote>
 </li>
-<li>
-<p><del>list view</del></p>
-</li>
+</ul>
+<p>→ 구현해보니 이미 <code>Article</code> 자체에 <code>author</code> 필드가 있다. 이 부분은 로그인을 해야지 가능하게 바꾸자.</p>
+<ul>
+<li><del>list view</del></li>
 <li><del>detail view</del></li>
 <li>게시글 수정 기능<ul>
 <li><code>url</code>: <code>/blog/edit/&lt;int:id&gt;/</code></li>
