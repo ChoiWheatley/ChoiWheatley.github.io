@@ -2,7 +2,7 @@
 aliases: 
 tags: 
 created: 2023-05-20T10:14:11
-updated: 2023-07-15T21:33:03
+updated: 2023-07-21T21:56:52
 description: book-project의 시작
 title: 공동집필 프로젝트 - estsoft 📕
 ---
@@ -43,13 +43,6 @@ Proposals
 - 파이썬 PostgreSQL 데이터베이스 기초
 - 
 
-Verdict
----
+## Verdict
+
 [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
-
-# My Book
-
-- [머리말과 저자소개 {Notion}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed?pvs=4)
-- [[Data Modeling {book-project}]]
-- [[Error handling {django} {book-project}]]
-- [[Securities about {https} and {jwt {cookie}, {session}}]]

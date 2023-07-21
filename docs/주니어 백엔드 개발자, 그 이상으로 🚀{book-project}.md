@@ -1,9 +1,9 @@
 ---
 description:
-aliases: book-project🚀
+aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-07-19T13:47:19
+updated: 2023-07-21T21:56:46
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
@@ -11,8 +11,7 @@ title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 
 [[book-project {LEGACIES}]]  
 [[0014.1 Django 🎈]]  
-[[공동집필 프로젝트 - estsoft 📕]]
-	
+[[공동집필 프로젝트 - estsoft 📕(deprecated)]]
 
 # README
 
@@ -54,3 +53,12 @@ title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 - [[20230701 book-project]]
 - [[20230702 book-project]]
 - [[20230703 book-project]]
+
+___
+
+# My Book
+
+- [머리말과 저자소개 {Notion}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed?pvs=4)
+- [[Data Modeling {book-project}]]
+- [[Error handling {django} {book-project}]]
+- [[Securities about {https} and {jwt {cookie}, {session}}]]
