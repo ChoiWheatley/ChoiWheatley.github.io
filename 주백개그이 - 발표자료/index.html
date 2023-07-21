@@ -311,6 +311,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relational-database" class="md-nav__link">
+    Relational Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Relational Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-modeling_1" class="md-nav__link">
+    Data Modeling 
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity" class="md-nav__link">
+    Entity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attribute" class="md-nav__link">
+    Attribute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship" class="md-nav__link">
+    Relationship
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationship">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-models" class="md-nav__link">
+    Django Models
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -403,7 +464,6 @@
 <p><a class="glightbox" href="https://w7.pngwing.com/pngs/310/475/png-transparent-database-computer-icons-computer-software-information-database-miscellaneous-angle-information-technology.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db|200" src="https://w7.pngwing.com/pngs/310/475/png-transparent-database-computer-icons-computer-software-information-database-miscellaneous-angle-information-technology.png" /></a></p>
 <ul>
 <li>개념, 논리, 물리 모델링 (ER 다이어그램)</li>
-<li>DB연산 (이런게 있더라 정도)</li>
 <li>Django CRUD 예제와 같이 </li>
 </ul>
 <p>note:<br />
@@ -421,10 +481,10 @@ bookstore 깃허브 페이지 가서  DRF
 <hr />
 <h3 id="authentication-authorization">Authentication &amp; Authorization<a class="headerlink" href="#authentication-authorization" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
-- 인증? 인가?
-- Django의 인증, 인가
-- OAuth: <code>allauth</code> 모듈 활용 중심 소셜 로그인
-- JSON Web Token</p>
++ 인증? 인가?
++ Django의 인증, 인가
++ OAuth: <code>allauth</code> 모듈 활용 중심 소셜 로그인
++ JSON Web Token</p>
 <hr />
 <h3 id="securities">Securities<a class="headerlink" href="#securities" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230721023921.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023921.png" src="../assets/Pasted%20image%2020230721023921.png" width="200" /></a>
@@ -518,8 +578,10 @@ RESTful한 리소스 구분을 위한 Routing.</p>
 <div class="highlight"><pre><span></span><code>GET http://13.209.22.220/products/book/
 </code></pre></div>
 <p><code>core/urls.py</code></p>
-<iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/2a49b34eb84943ed2ec0cf19455c99cf618dcd89/core/urls.py#L23-L31" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
-
+<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;products/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;products.urls&quot;</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div>
 <hr />
 <p><grid drag="10 10" drop="topleft" rotate="-15">
 <a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
@@ -527,8 +589,10 @@ RESTful한 리소스 구분을 위한 Routing.</p>
 <div class="highlight"><pre><span></span><code>GET http://13.209.22.220/products/book/
 </code></pre></div>
 <p><code>products/urls.py</code></p>
-<iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/2a49b34eb84943ed2ec0cf19455c99cf618dcd89/products/urls.py#L7-L16" allow="fullscreen" allowfullscreen="" style="height: 100%; width: 100%;"></iframe>
-
+<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;book/&#39;</span><span class="p">,</span> <span class="n">book_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;book_list&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div>
 <hr />
 <p><grid drag="10 10" drop="topleft" rotate="-15">
 <a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
@@ -536,9 +600,66 @@ RESTful한 리소스 구분을 위한 Routing.</p>
 <div class="highlight"><pre><span></span><code>GET http://13.209.22.220/products/book/
 </code></pre></div>
 <p><code>proejcts/views.py</code></p>
-<iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/2a49b34eb84943ed2ec0cf19455c99cf618dcd89/products/views.py#L16-L22" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
-
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">book_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="n">Product</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">url_without_query</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">book</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">url_without_query</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;book_list.html&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;books&#39;</span><span class="p">:</span> <span class="n">books</span><span class="p">})</span>
+</code></pre></div>
 <hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
+<h2 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
+<h2 id="relational-database">Relational Database<a class="headerlink" href="#relational-database" title="Permanent link">&para;</a></h2>
+<h3 id="data-modeling_1">Data Modeling <!-- element class="fragment highlight-red" --><a class="headerlink" href="#data-modeling_1" title="Permanent link">&para;</a></h3>
+<p>Entity Relationships</p>
+<p>note:<br />
+Data Modeling 챕터는 바로 들어가기에 앞서 이 개념의 위치 파악에 힘을 써야 한다. 데이터베이스는 사실 윈도우 파일 시스템도 데이터베이스라고 불리울 수 있을 정도로 일반적인 개념.</p>
+<p>Relational database(RDB)는 Key와 Value의 관계를 테이블화한 데이터베이스</p>
+<p>Key 덕분에 서로 연관성 있는 테이블을 연결할 수 있게 되는데, 여기에서 ==데이터 모델링==이 튀어나오는 것.</p>
+<p>데이터 모델링에는 개념 / 논리 / 물리 모델링이 있는데, 우리가 흔히 "DB 다이어그램"이라고 부르는 단계는 개념 + 논리 모델링을 아우른다. 우리는 이 단계에만 집중한다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
+<h1 id="entity">Entity<a class="headerlink" href="#entity" title="Permanent link">&para;</a></h1>
+<pre class="mermaid"><code>erDiagram
+    User {
+        id
+        email
+        nickname
+        hash
+    }
+</code></pre>
+<p>note:<br />
+엔티티는 <strong>고유</strong>하게 식별할 수 있고 독립적으로 존재 가능한 개체이다. </p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
+<h1 id="attribute">Attribute<a class="headerlink" href="#attribute" title="Permanent link">&para;</a></h1>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
+<h1 id="relationship">Relationship<a class="headerlink" href="#relationship" title="Permanent link">&para;</a></h1>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
+<h3 id="django-models">Django Models<a class="headerlink" href="#django-models" title="Permanent link">&para;</a></h3>
+<p><code>products/models.py</code></p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+</grid></p>
 
 
 
