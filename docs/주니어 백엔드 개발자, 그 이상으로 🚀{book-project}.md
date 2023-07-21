@@ -3,7 +3,7 @@ description:
 aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-07-21T21:56:46
+updated: 2023-07-21T21:57:52
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
@@ -56,9 +56,11 @@ title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 
 ___
 
-# My Book
+# 주백개그이
 
-- [머리말과 저자소개 {Notion}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed?pvs=4)
-- [[Data Modeling {book-project}]]
-- [[Error handling {django} {book-project}]]
-- [[Securities about {https} and {jwt {cookie}, {session}}]]
+- [머리말과 저자소개 {weniv Notion}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed?pvs=4)
+- my book
+	- [[Data Modeling {book-project}]]
+	- [[Error handling {django} {book-project}]]
+	- [[Securities about {https} and {jwt {cookie}, {session}}]]
+- [[주백개그이 - 발표자료]]
