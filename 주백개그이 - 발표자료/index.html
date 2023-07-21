@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="site_description">
+        <meta name="description" content="Advanced Slides 사용">
       
       
         <meta name="author" content="you">
@@ -238,19 +238,6 @@
     주백개그이?
   </a>
   
-    <nav class="md-nav" aria-label="주백개그이?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#knowledge-for-junior-backend-developer" class="md-nav__link">
-    Knowledge For Junior Backend Developer
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -299,6 +286,33 @@
   <a href="#_2" class="md-nav__link">
     잠깐! ✋
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework" class="md-nav__link">
+    Framework
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mvt" class="md-nav__link">
+    MVT
+  </a>
+  
+    <nav class="md-nav" aria-label="MVT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -372,19 +386,17 @@
 저 링크들을 오가면서 발표를 진행할 것임. 라운지에 링크 올리고 발표 시작하자.</p>
 <hr />
 <h3 id="_1">주백개그이?<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230720224508.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _=";" alt="Pasted image 20230720224508.png" height="200" src="../assets/Pasted%20image%2020230720224508.png" width="200" /></a></p>
 <p>note:<br />
 - "주니어 백엔드 개발자, 그 이상으로" 라는 뜻
-- </p>
-<hr />
-<h4 id="knowledge-for-junior-backend-developer">Knowledge For Junior Backend Developer<a class="headerlink" href="#knowledge-for-junior-backend-developer" title="Permanent link">&para;</a></h4>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230720224508.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img _=";" alt="Pasted image 20230720224508.png" height="200" src="../assets/Pasted%20image%2020230720224508.png" width="200" /></a></p>
+- 구체적으로 예상독자의 수준을 제목에서부터 함의 → 비전공자 X, 초보자 X</p>
 <hr />
 <h3 id="django">django<a class="headerlink" href="#django" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="https://static.djangoproject.com/img/logos/django-logo-negative.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="django.png" src="https://static.djangoproject.com/img/logos/django-logo-negative.png" /></a></p>
 <ul>
 <li>장고가 뭘 해주는데</li>
 <li>Model Template View </li>
-<li>App, Form</li>
+<li><a href="../django%20app/">App</a>, Form, Routing</li>
 </ul>
 <hr />
 <h3 id="data-modeling">Data Modeling<a class="headerlink" href="#data-modeling" title="Permanent link">&para;</a></h3>
@@ -403,7 +415,7 @@ CRUD 예제는 ER 다이어그램을 토대로 admin site에 가서 확인해 �
 + Request &amp; Response
 + DRF 리팩토링한 결과 함께 보기 <code>users</code></p>
 <p>note:<br />
-bookstore 깃허브 페이지 가서 
+bookstore 깃허브 페이지 가서  DRF
 - <a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/main/users/serializers.py">users/serializers.py</a>
 - <a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/main/users/views.py">users/view.py</a></p>
 <hr />
@@ -438,6 +450,65 @@ bookstore 깃허브 페이지 가서
 <p>note:<br />
 책 순서와 발표 순서가 뒤죽박죽이라는 것을 눈치챘을거다. 괜찮다. 이 책은 비선형으로 진행이 되기 때문에 그때그때 찾아가며 읽으면 되는 책으로 만들었다. 따라서 이 책을 완독할 의무또한 없다.</p>
 <hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<h1 id="framework">Framework<a class="headerlink" href="#framework" title="Permanent link">&para;</a></h1>
+<p>as a web server</p>
+<p>note:
+- 장고는 웹 서버이고, 웹 애플리케이션임. 프레임워크로써 이미 설계가 된 대로 장고 백엔드 (서버 백엔드 X)와 통신을 해야함.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<p><a class="glightbox" href="../assets/image.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image.png" src="../assets/image.png" /></a>  </p>
+<p>note:<br />
+장고는 주어진 설계대로 App을 제작하여야 하며, App 별로 MVT 패턴을 적용하여야 함.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<h1 id="mvt">MVT<a class="headerlink" href="#mvt" title="Permanent link">&para;</a></h1>
+<p>Model, View, Template</p>
+<p>note:<br />
+장고 백엔드와의 통신규약.
+- Model: DB관리, ORM 기능 지원
+- View: 비즈니스 로직 구현, MVC 패턴의 View와 Controller를 모두 View가 담당함.
+- Template: HTML + Django Template Backend =&gt; 동적으로 HTML 생성</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<h2 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h2>
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<ul>
+<li><code>models.py</code></li>
+<li><code>views.py</code></li>
+<li><code>urls.py</code></li>
+<li>...</li>
+</ul>
+<p>note:
+- MTV 패턴을 구현하는 하나의 단위인 APP, 장고는 다음과 같은 파일로 구성되어 있다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SignupForm</span><span class="p">(</span><span class="n">UserCreationForm</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;nickname&quot;</span><span class="p">,</span> <span class="s2">&quot;password1&quot;</span><span class="p">,</span> <span class="s2">&quot;password2&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>note:
+- 백엔드 개발자가 프론트도 겸해야 할 때 쓰는 Form, </p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<p><a class="glightbox" href="../assets/routing.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="routing.png" src="../assets/routing.png" /></a><br />
+note:
+- RESTful한 리소스 구분을 위한 Routing까지</p>
 
 
 

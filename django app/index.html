@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/html%20table/">
+        <link rel="canonical" href="https://choiwheatley.github.io/django%20app/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>html table - Choi Wheatley's Second Brain</title>
+        <title>django app - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#table" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              html table
+              django app
             
           </span>
         </div>
@@ -219,8 +214,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -235,48 +228,11 @@
                   
 
 
-<ul>
-<li><a href="https://paullabworkspace.notion.site/table-298bb9380b9541cb852779393bbec940">notion src</a></li>
-<li>table<ul>
-<li>tr : row</li>
-<li>th : header : 테이블의 행,열, 제목</li>
-<li>td: table data</li>
-<li>colspan : 셀 병합 <a href="./#kgf9w8">html table#^kgf9w8</a> <ul>
-<li><code>&lt;th colspan="3"&gt;Something&lt;/th&gt;</code> =&gt; 현재 커서로부터 3개의 열을 병합한 열을 만든다.</li>
-</ul>
-</li>
-<li>rowspan : 셀 병합 (여러개의 행을 감싸는 부모행)<ul>
-<li><code>&lt;th rowspan="2"&gt;Somethin&lt;/th&gt;</code> =&gt; 현재 커서로부터 2개의 행을 병합한 행을 만든다.</li>
-</ul>
-</li>
-<li>caption</li>
-<li>thead : 머리글 (표 상단에 있는 줄)</li>
-<li>tbody : 몸통</li>
-<li>tfoot : 바닥글 (표 하단에 있는 줄)</li>
-<li>colgroup : 열 그룹 (여러개의 열을 감싸는 요소) <a href="./#u8ukv6">html table#^u8ukv6</a><ul>
-<li>사용할만한 데가 CSS 스타일링 밖에 없는데</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="table">table 마저 이어서<a class="headerlink" href="#table" title="Permanent link">&para;</a></h1>
-<ul>
-<li>[!] <code>&lt;thead&gt;</code> 와 <code>&lt;th&gt;</code>와의 차이점에 대해서 말하세욧<ul>
-<li>가독성 차이에 불과.</li>
-<li>열그룹, 행그룹으로 구성할 때 사용.</li>
-</ul>
-</li>
-<li>[!] <code>&lt;colgroup&gt;</code> 은 있는데 왜 <code>&lt;rowgroup&gt;</code> 은 없냐?<ul>
-<li><code>&lt;tr&gt;</code>이 대신하고 있잖아.</li>
-</ul>
-</li>
-<li><code>colspan</code>, <code>rowspan</code> attr들은 <code>&lt;th&gt;</code>와 <code>&lt;td&gt;</code> 모두 적용 가능하다. ![[Pasted image 20230427100240.png|400]] ^zo77kz</li>
-</ul>
-<hr />
-<p><a class="glightbox" href="../assets/image.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image.png" src="../assets/image.png" /></a> ^armjxj<br />
-<a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.13.18.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-04-26 21.13.18.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.13.18.png" /></a> ^kgf9w8</p>
-<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.37.25.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-04-26 21.37.25.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-04-26%2021.37.25.png" /></a> ^u8ukv6</p>
+  <h1>django app</h1>
+
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/applications/">Applications {docs}</a></p>
+<p>project ⊃ app 관계에 놓여있음. Project는 장고 웹앱 자체를 의미하며 설정파일, URL 라우팅, 게이트웨이 설정 등을 다룬다. Application은 Project가 의존하는 패키지이며, 여러 프로젝트에서 재사용될 수 있다. </p>
+<p>재사용 되는 application들은 pip 패키지 관리자로 관리가 될 수 있으며 <code>django-rest-framework</code>, <code>tinymce</code>, <code>allauth</code> 등이 있다.</p>
 
 
 

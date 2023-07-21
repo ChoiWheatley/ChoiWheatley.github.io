@@ -1726,6 +1726,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/django%20app/</loc>
+         <lastmod>2023-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/django%20authorization%20for%20accessing%EC%9D%B8%EA%B0%80%20%7Bmixins.%7BLoginRequiredMixin%2C%20UserPassesTestMixin%7D%7D/</loc>
          <lastmod>2023-07-21</lastmod>
          <changefreq>daily</changefreq>
@@ -2387,6 +2392,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/online%20c%2B%2B%20compiler/</loc>
+         <lastmod>2023-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/online%20photoshop%20%EB%AA%A8%EC%9D%8C/</loc>
          <lastmod>2023-07-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
