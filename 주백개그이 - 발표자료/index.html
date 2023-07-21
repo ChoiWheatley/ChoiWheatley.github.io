@@ -506,9 +506,39 @@ bookstore 깃허브 페이지 가서  DRF
 <p><grid drag="10 10" drop="topleft" rotate="-15">
 <a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
 </grid></p>
-<p><a class="glightbox" href="../assets/routing.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="routing.png" src="../assets/routing.png" /></a><br />
-note:
-- RESTful한 리소스 구분을 위한 Routing까지</p>
+<p><a class="glightbox" href="../assets/routing.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="routing.png" src="../assets/routing.png" /></a>  </p>
+<p>note:<br />
+RESTful한 리소스 구분을 위한 Routing.</p>
+<p><code>urlpatterns</code>가 라우팅을 수행함. 프로젝트에도 있고, 각 앱에도 있어서 들어오는 요청에 따라 구체적인 App의 <code>urlpatterns</code>에게 요청을 전달하는 일종의 ==게이트웨이==와 같은 기능을 하고 있음을 보여준다.</p>
+<p>라우팅이 성공적으로 진행되면 view에서 로직을 처리하고 웹에 응답을 보낸다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<div class="highlight"><pre><span></span><code>GET http://13.209.22.220/products/book/
+</code></pre></div>
+<p><code>core/urls.py</code></p>
+<iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/2a49b34eb84943ed2ec0cf19455c99cf618dcd89/core/urls.py#L23-L31" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
+
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<div class="highlight"><pre><span></span><code>GET http://13.209.22.220/products/book/
+</code></pre></div>
+<p><code>products/urls.py</code></p>
+<iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/2a49b34eb84943ed2ec0cf19455c99cf618dcd89/products/urls.py#L7-L16" allow="fullscreen" allowfullscreen="" style="height: 100%; width: 100%;"></iframe>
+
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
+</grid></p>
+<div class="highlight"><pre><span></span><code>GET http://13.209.22.220/products/book/
+</code></pre></div>
+<p><code>proejcts/views.py</code></p>
+<iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/2a49b34eb84943ed2ec0cf19455c99cf618dcd89/products/views.py#L16-L22" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
+
+<hr />
 
 
 
