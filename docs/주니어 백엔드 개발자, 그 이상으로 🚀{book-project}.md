@@ -3,18 +3,22 @@ description:
 aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-07-22T12:24:00
+updated: 2023-07-22T12:37:23
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
 # INDEX
 
-- [[book-project {LEGACIES}]]  
 - [[0014.1 Django 🎈]]
 - [파이썬을 활용한 RESTful API 개발 기본 {NOTION}](https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4 "https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4")
 - [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
 - [집필 초안 {google docs}](https://docs.google.com/document/d/1woWwBsRwAkYulZEkLztsihBLTT2GrWwnGys6xhKUbd0/edit?usp=sharing)
+- [공동집필 참고사항 - {Notion}](https://paullabworkspace.notion.site/db94b3465c1b414fac6bc4866231e042)
+	- [ISBN 번호 및 바코드 & 배포 진행과정 확인 {Notion}](https://paullabworkspace.notion.site/ISBN-7a83a7ea19f04f41941020f2fcf00c80)
+___
 - [[공동집필 프로젝트 - estsoft 📕(deprecated)]]
+- [[book-project {LEGACIES}]]  
+___
 
 # README
 
