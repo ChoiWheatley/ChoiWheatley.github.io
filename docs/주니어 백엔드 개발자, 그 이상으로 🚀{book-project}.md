@@ -37,6 +37,7 @@ ___
 	- [[Securities about {https} and {jwt {cookie}, {session}}]]
 - [[주백개그이 - 발표자료]]
 - [[주백개그이 - 피드백]]
+	- [[주백개그이 - 수정 2023-07-22]]
 
 ___
 
