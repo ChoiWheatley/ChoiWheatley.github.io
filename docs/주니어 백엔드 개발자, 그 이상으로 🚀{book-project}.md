@@ -36,6 +36,7 @@ ___
 	- [[Error handling {django} {book-project}]]
 	- [[Securities about {https} and {jwt {cookie}, {session}}]]
 - [[주백개그이 - 발표자료]]
+- [[주백개그이 - 피드백]]
 
 ___
 
