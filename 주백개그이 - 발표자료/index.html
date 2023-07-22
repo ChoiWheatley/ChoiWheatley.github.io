@@ -311,12 +311,18 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#database" class="md-nav__link">
     Database
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#relational-database" class="md-nav__link">
@@ -368,6 +374,149 @@
           <li class="md-nav__item">
   <a href="#django-models" class="md-nav__link">
     Django Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restful" class="md-nav__link">
+    RESTful?
+  </a>
+  
+    <nav class="md-nav" aria-label="RESTful?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-response" class="md-nav__link">
+    Request &amp; Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drf" class="md-nav__link">
+    DRF
+  </a>
+  
+    <nav class="md-nav" aria-label="DRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#django-allauth" class="md-nav__link">
+    django-allauth
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt" class="md-nav__link">
+    JWT
+  </a>
+  
+    <nav class="md-nav" aria-label="JWT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payload" class="md-nav__link">
+    Payload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signature" class="md-nav__link">
+    Signature
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ec2" class="md-nav__link">
+    EC2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s3" class="md-nav__link">
+    S3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rds" class="md-nav__link">
+    RDS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gateway" class="md-nav__link">
+    Gateway
   </a>
   
 </li>
@@ -473,7 +622,7 @@ CRUD 예제는 ER 다이어그램을 토대로 admin site에 가서 확인해 �
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230721023656.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023656.png" src="../assets/Pasted%20image%2020230721023656.png" width="200" /></a>
 + RESTful한 URI 설계
 + Request &amp; Response
-+ DRF 리팩토링한 결과 함께 보기 <code>users</code></p>
++ DRF 리팩토링한 결과 함께 보기 </p>
 <p>note:<br />
 bookstore 깃허브 페이지 가서  DRF
 - <a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/main/users/serializers.py">users/serializers.py</a>
@@ -521,8 +670,8 @@ bookstore 깃허브 페이지 가서  DRF
 <p><grid drag="10 10" drop="topleft" rotate="-15">
 <a class="glightbox" href="../assets/Pasted%20image%2020230721235931.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721235931.png" src="../assets/Pasted%20image%2020230721235931.png" /></a>
 </grid></p>
-<p><a class="glightbox" href="../assets/image.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image.png" src="../assets/image.png" /></a>  </p>
-<p>note:<br />
+<p><a class="glightbox" href="../assets/image41%201.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image41 1.png" src="../assets/image41%201.png" /></a><br />
+note:<br />
 장고는 주어진 설계대로 App을 제작하여야 하며, App 별로 MVT 패턴을 적용하여야 함.</p>
 <hr />
 <p><grid drag="10 10" drop="topleft" rotate="-15">
@@ -612,7 +761,7 @@ RESTful한 리소스 구분을 위한 Routing.</p>
 <p><grid drag="10 10" drop="topleft" rotate="15">
 <a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
 </grid></p>
-<h2 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
+<h1 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h1>
 <h2 id="relational-database">Relational Database<a class="headerlink" href="#relational-database" title="Permanent link">&para;</a></h2>
 <h3 id="data-modeling_1">Data Modeling <!-- element class="fragment highlight-red" --><a class="headerlink" href="#data-modeling_1" title="Permanent link">&para;</a></h3>
 <p>Entity Relationships</p>
@@ -653,13 +802,281 @@ Data Modeling 챕터는 바로 들어가기에 앞서 이 개념의 위치 파�
 <h3 id="django-models">Django Models<a class="headerlink" href="#django-models" title="Permanent link">&para;</a></h3>
 <p><code>products/models.py</code></p>
 <hr />
-<p><grid drag="10 10" drop="topleft" rotate="15">
-<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+<p><grid drag="10 10" drop="topleft" rotate="-15">
+REST
 </grid></p>
+<h1 id="restful">RESTful?<a class="headerlink" href="#restful" title="Permanent link">&para;</a></h1>
+<p>note:<br />
+REST는 웹을 망가뜨리지 않으면서 설계를 변경하기 위해 고안된 규약. HTML 문서, 엔티티 등의 리소스를 접근하기 위해 계층적인 경로를 가짐. </p>
+<p>메서드(동사)를 통해 리소스 명시와 이에 따른 동작을 분리할 수 있게 됐다. 덕분에 쌩판 처음 보는 요청을 접해도 직관적으로 유추할 수 있게 되었다.</p>
 <hr />
 <p><grid drag="10 10" drop="topleft" rotate="15">
-<a class="glightbox" href="../assets/db.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="db.png" src="../assets/db.png" /></a>
+REST
 </grid></p>
+<p><code>GET /books</code></p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><code>POST /books</code></p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><code>/deleteBooks</code></p>
+<p>note:<br />
+책을 추가하는 동작(동사)가 URI에 정의</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><code>/books/getAllBooks</code></p>
+<p>note:<br />
+book 이라는 단어 중복사용</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<h3 id="request-response">Request &amp; Response<a class="headerlink" href="#request-response" title="Permanent link">&para;</a></h3>
+<p>note:<br />
+ch.10 요청과 응답 참고바람.</p>
+<p>REST는 웹과 함께 성장했기에, HTTP는 REST이다. </p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230722091947.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230722091947.png" src="../assets/Pasted%20image%2020230722091947.png" width="500" /></a></p>
+<p>request header</p>
+<p>note:<br />
+우리가 눈여겨 볼 것은 바로 헤더와 바디. 일단 헤더 먼저 보자.</p>
+<p>위의 이미지는 요청의 헤더이다. </p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230722092200.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230722092200.png" src="../assets/Pasted%20image%2020230722092200.png" width="600" /></a></p>
+<p>response header</p>
+<p>note:<br />
+다음은 응답 헤더를 의미. </p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><split even gap="1"></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230722092343.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230722092343.png" src="../assets/Pasted%20image%2020230722092343.png" /></a><br />
+<a class="glightbox" href="../assets/Pasted%20image%2020230722092405.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230722092405.png" src="../assets/Pasted%20image%2020230722092405.png" /></a><br />
+<a class="glightbox" href="../assets/Pasted%20image%2020230722092504.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230722092504.png" src="../assets/Pasted%20image%2020230722092504.png" /></a></p>
+<p></split></p>
+<p>note:<br />
+바디는 <code>Content-Type</code>이 정의한 대로 간다. 이미지 왼쪽에서부터 각각 HTML, JS, JSON</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<h1 id="drf">DRF<a class="headerlink" href="#drf" title="Permanent link">&para;</a></h1>
+<p>note:</p>
+<p>모든 구성을 DRF으로 변경할 수는 없었다. 우리 프로젝트 중 user, cart 부분만 DRF으로 작업했다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><a class="glightbox" href="../assets/serde.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="serde.png" src="../assets/serde.png" /></a><br />
+note:</p>
+<p>DRF는 장고 앱 중의 하나로, Serialization, Deserialization을 지원한다.</p>
+<p>DRF는 객체, dictionary, QuerySet 등등 장고에서 다룰 수 있는 모든 데이터를 직렬화, 역직렬화 할 수 있다. 직렬화의 결과로 JSON을 채택했으며 (JSON만 있는 건 절대로 아님) JSON은 데이터를 바이트 스트림으로 인코드, 디코드할 수 있다. </p>
+<p>그러면 일반 오브젝트는 바이트 스트림으로 바로 변환이 안되냐? ㅇㅇ</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><code>users/serializers.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">UserSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="n">password1</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">password2</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;nickname&#39;</span><span class="p">,</span> <span class="s1">&#39;password1&#39;</span><span class="p">,</span> <span class="s1">&#39;password2&#39;</span><span class="p">]</span>
+        <span class="n">extra_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;password1&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;write_only&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+            <span class="s1">&#39;password2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;write_only&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></div>
+<p>note:<br />
+다음은 <code>UserSerializer</code>의 코드 일부를 가져왔다. 모양이 상당히 <code>Form</code>과 닮았다. 맞다. Form처럼 사용할 수도 있다. 사용자가 <code>&lt;form&gt;</code> 태그에 이메일, 닉네임, 비밀번호를 적어 회원가입을 할 때 Form이 아니라 <code>Serializer</code>에 의한 JSON이 날아온다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+REST
+</grid></p>
+<p><code>users/serializers.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">UserSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+<span class="c1"># continue</span>
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>
+        <span class="n">password1</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password1&#39;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">password_validation</span><span class="o">.</span><span class="n">validate_password</span><span class="p">(</span><span class="n">password1</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">DjangoValidationError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">({</span><span class="s1">&#39;password1&#39;</span><span class="p">:</span> <span class="n">error</span><span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">attrs</span>
+</code></pre></div>
+<p><code>users/views.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">signup</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">serializer</span> <span class="o">=</span> <span class="n">UserSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">raise_exception</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">serializer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;회원가입이 완료되었습니다.&#39;</span><span class="p">,</span> <span class="s1">&#39;redirect&#39;</span><span class="p">:</span> <span class="s1">&#39;/users/signin/&#39;</span><span class="p">})</span>
+        <span class="k">except</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+
+            <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="s1">&#39;email&#39;</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">detail</span> <span class="ow">and</span> <span class="s1">&#39;password1&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">detail</span><span class="p">:</span>
+                <span class="n">errors</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">detail</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="p">[])</span>
+                <span class="n">errors</span> <span class="o">=</span> <span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+
+            <span class="k">if</span> <span class="s1">&#39;password1&#39;</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">detail</span> <span class="ow">and</span> <span class="s1">&#39;email&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">error</span><span class="o">.</span><span class="n">detail</span><span class="p">:</span>
+                <span class="n">errors</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">detail</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password1&#39;</span><span class="p">,</span> <span class="p">[])</span>
+                <span class="n">errors</span> <span class="o">=</span> <span class="n">errors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s1">&#39;success&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;errors&#39;</span><span class="p">:</span> <span class="n">errors</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;signup.html&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>note:<br />
+<code>validate</code> 라는 메서드는 우리 <code>form.is_valid</code> 할 때와 같은 API를 가지고 있다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
+<h3 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h3>
+<p>note:<br />
+인증과 인가.</p>
+<p>인증은 사용자 신원을 확인하는 절차, 인가는 인증된 사용자에게 적절한 권한을 부여.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 사용자 객체 반환</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">authenticate</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+
+<span class="c1"># 로그인 실패 시 HttpResponse 반환</span>
+<span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+
+<span class="n">logout</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+<span class="c1"># Boolean 반환</span>
+<span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">:</span>
+</code></pre></div>
+<p>note:<br />
+사용자 모델을 <code>AbstractUser</code>나 <code>AbstractBaseUser</code>를 사용한 경우, 기본 내장 인증함수를 손쉽게 사용할 수 있다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<h3 id="django-allauth">django-allauth<a class="headerlink" href="#django-allauth" title="Permanent link">&para;</a></h3>
+<p>note:<br />
+구글 로그인 구현을 해보자. ch 9.4를 참조</p>
+<ol>
+<li><code>settings.py</code> 설정</li>
+<li>클라이언트 등록 및 발급</li>
+<li>admin-site에서 사이트 등록<ol>
+<li>Sites</li>
+<li>Social applications</li>
+</ol>
+</li>
+</ol>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<h1 id="jwt">JWT<a class="headerlink" href="#jwt" title="Permanent link">&para;</a></h1>
+<p>JSON Web Token</p>
+<p>note:<br />
+JWT는 쿠키와 같이 인증인가를 할 수 있는 여러 방법 중 하나임. 각각의 장단점이 명확하게 있어 무엇이 더 좋은지 논의하는 건 의미가 없음.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<h3 id="header">Header<a class="headerlink" href="#header" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHA256&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JWT&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<h3 id="payload">Payload<a class="headerlink" href="#payload" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Choi Wheatley&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023821.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023821.png" src="../assets/Pasted%20image%2020230721023821.png" width="200" /></a>
+</grid></p>
+<h3 id="signature">Signature<a class="headerlink" href="#signature" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230722095824.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230722095824.png" src="../assets/Pasted%20image%2020230722095824.png" width="700" /></a></p>
+<p><a href="https://jwt.io">https://jwt.io</a></p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Pasted%20image%2020230721023921.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230721023921.png" src="../assets/Pasted%20image%2020230721023921.png" width="200" /></a>
+</grid></p>
+<!---->
+
+<h1 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h1>
+<ul>
+<li>OAuth</li>
+<li>SSL/TLS</li>
+<li>Input Validation</li>
+<li>HTTPS</li>
+<li>CORS</li>
+</ul>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/jeff.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="jeff.jpg" src="../assets/jeff.jpg" /></a>
+</grid></p>
+<h1 id="ec2">EC2<a class="headerlink" href="#ec2" title="Permanent link">&para;</a></h1>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/jeff.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="jeff.jpg" src="../assets/jeff.jpg" /></a>
+</grid></p>
+<h1 id="s3">S3<a class="headerlink" href="#s3" title="Permanent link">&para;</a></h1>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/jeff.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="jeff.jpg" src="../assets/jeff.jpg" /></a>
+</grid></p>
+<h1 id="rds">RDS<a class="headerlink" href="#rds" title="Permanent link">&para;</a></h1>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/Docker_Logo.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Docker_Logo.jpg" src="../assets/Docker_Logo.jpg" /></a>
+</grid></p>
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<p>내 컴퓨터에서는 되는데?</p>
+<p>note:<br />
+컨테이너 기반의 오픈소스 가상화 플랫폼. 가상머신이 아니라 프로세스로 작동하기 때문에 가벼움. </p>
+<p>컨테이너란, 파일 시스템, 시스템 자원, 가상 네트워크를 아우르는 독립된 공간을 의미함.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/NGINX-logo-rgb-large.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NGINX-logo-rgb-large.png" src="../assets/NGINX-logo-rgb-large.png" /></a>
+</grid></p>
+<h1 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h1>
+<p>web server, not web application</p>
+<p>note:<br />
+웹 서버로 사용되는 nginx는 정적 HTML 문서들을 매우 빠른 속도로 호스팅 하는 용도 외적으로도 리버스 프록시, 부하분산, 캐싱, SSL 오프로딩, HTTP/2 지원 등 다양한 역할을 수행할 수 있는 다재다능한 서버이다. </p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/NGINX-logo-rgb-large.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NGINX-logo-rgb-large.png" src="../assets/NGINX-logo-rgb-large.png" /></a>
+</grid></p>
+<h3 id="gateway">Gateway<a class="headerlink" href="#gateway" title="Permanent link">&para;</a></h3>
+<p><code>nginx/default.conf</code></p>
+<p>note:<br />
+우리팀은 nginx를 게이트웨이로 사용하고 있다. </p>
 
 
 
