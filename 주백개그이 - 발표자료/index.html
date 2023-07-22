@@ -1076,7 +1076,14 @@ JWT는 쿠키와 같이 인증인가를 할 수 있는 여러 방법 중 하나�
 <h3 id="gateway">Gateway<a class="headerlink" href="#gateway" title="Permanent link">&para;</a></h3>
 <p><code>nginx/default.conf</code></p>
 <p>note:<br />
-우리팀은 nginx를 게이트웨이로 사용하고 있다. </p>
+우리팀은 nginx를 게이트웨이로 사용하고 있다.  <code>default.conf</code> 파일을 보면 http 프로토콜의 기본 리스닝 포트인 80을 받아다 장고 웹앱으로 보내는 작업을 하고 있다.</p>
+<hr />
+<p><grid drag="10 10" drop="topleft" rotate="15">
+<a class="glightbox" href="../assets/NGINX-logo-rgb-large.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="NGINX-logo-rgb-large.png" src="../assets/NGINX-logo-rgb-large.png" /></a>
+</grid></p>
+<p><code>entrypoint.sh</code></p>
+<p>note:<br />
+배포단계의 장고앱은 <code>runserver</code>를 호출하지 않는다! nginx가 장고 앱을 호출한다고 했지만 그 사이에 gunicorn이라는 미들웨어가 <code>runserver</code>같은 역할을 수행하는 걸로 알고 있지만 책에는 넣지 않았다.</p>
 
 
 
