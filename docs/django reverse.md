@@ -3,13 +3,14 @@ description:
 aliases: 
 tags: 
 created: 2023-06-07T14:11:36
-updated: 2023-07-19T01:08:52
+updated: 2023-07-23T16:09:09
 title: django reverse
 ---
 - 통째로 URL을 다 적지 않고도 말 그대로 **거꾸로** URL을 추적하는 편리한 기능 
 - `redirect(reverse("users:signup"))`: 엔드포인트를 추적한다.
 - `redirect("users:signup")`: URL 패턴 이름을 사용하여 리디렉션.
 - reverse를 가능하게 하기 위해선 필요한 조건이 있었는데 뭐더라? 전역변수에 뭘 할당했던 것 같은데
+- [[reverse를 사용해야 하는 이유 {django}]]
 
 # No Reverse Match 
 
