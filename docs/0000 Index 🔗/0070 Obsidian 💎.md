@@ -26,6 +26,7 @@ parent link: [[0000 Index 🔗|index]]
 - [[[Obsidian Basic Formatting Syntax]]
 - [[obsidian으로 프리젠테이션 하기 - no boilerplate]]
 - [[latex]]
+- [[obsidian-git]]
 
 # 플러그인
 
