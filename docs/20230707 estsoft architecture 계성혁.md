@@ -3,12 +3,10 @@ aliases:
 tags: 
 description:
 created: 2023-07-07T09:17:14
-updated: 2023-07-15T21:30:21
+updated: 2023-07-23T22:19:14
 title: 20230707 estsoft architecture 계성혁
 ---
-[[Special_Lecture_-_Architecturing_.pdf]]  
-[[Special_Lecture_-_Architecturing_ (1).pdf]]
-___
+- [[docs/assets/Special_Lecture_-_Architecturing_.pdf]]
 
 # 개요
 
@@ -101,7 +99,7 @@ monitoring
 					- 반박: 서버의 수가 증설되면 파이프의 수를 늘려야 하냐?
 				- 답정너: 무상태성을 확보하기 위해선 서버 애플리케이션이 사용하는 세션을 저장하는 서버를 하나 마련하여야 한다. **Redis** 메모리 기반 데이터베이스
 
-https://haveibeenpwned.com/
+<https://haveibeenpwned.com/>
 
 # 문제2
 
@@ -131,7 +129,7 @@ https://haveibeenpwned.com/
 
 # 문제3
 
-https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/  
+<https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/>  
 ![[Pasted image 20230707140620.png]]
 
 - 부가가치에 대해서는 보상이 안된다는거. → 상품 시스템을 개선해보자.
