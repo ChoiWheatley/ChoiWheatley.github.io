@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#publickey-mac" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -215,6 +220,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#publickey-mac" class="md-nav__link">
+    publickey - mac
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -231,8 +251,21 @@
   <h1>obsidian-git</h1>
 
 <ul>
+<li><a href="https://github.com/denolehov/obsidian-git">obsidian-git</a></li>
+</ul>
+<h2 id="publickey-mac">publickey - mac<a class="headerlink" href="#publickey-mac" title="Permanent link">&para;</a></h2>
+<ul>
 <li><a href="https://github.com/denolehov/obsidian-git/issues/42">Permission denied (publickey) {sof}</a></li>
 </ul>
+<p><strong>해결법</strong></p>
+<p><code>$HOME/.ssh/config</code> 파일에 다음 내용을 추가한다.</p>
+<div class="highlight"><pre><span></span><code>Host github.com
+    AddKeysToAgent yes
+    User git
+    IdentityFile &quot;/Users/{{username}}/.ssh/{{private_key_name}}&quot;
+</code></pre></div>
+<p><strong>원인</strong></p>
+<p>obsidian-git 이 의존하는 <a href="https://isomorphic-git.org/">isomorphic-git</a> 자체의 문제이다. HTTPS를 더 권장하는 이상한 정책을 가지고 있어 SSH에 상대적으로 덜 신경이 쏠린 탓일 수도 있다. isomorphic-git은 </p>
 
 
 
