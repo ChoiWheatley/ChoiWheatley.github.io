@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/2%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%2C%20%EA%B8%B0%EC%88%A0%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20-%20estsoft%20%7BDjango%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/202307241316/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>2차 프로젝트, 기술 블로그 만들기 - estsoft {Django} - Choi Wheatley's Second Brain</title>
+        <title>202307241316 - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#requirements" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}
+              202307241316
             
           </span>
         </div>
@@ -219,30 +214,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#0-django-admin" class="md-nav__link">
-    0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-crud" class="md-nav__link">
-    1. 블로그 CRUD 기능 구현하기
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -257,107 +228,9 @@
                   
 
 
-<p>parent link: <a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a></p>
-<p><a href="https://paullabworkspace.notion.site/Blog-2a7d87f563ad42f9a0382f523fae14e1">requirements {Notion}</a></p>
-<h1 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h1>
-<ul>
-<li><a href="https://github.com/weniv/BackendOrmi/tree/main/HTML-CSS/board_final">base repo</a>를 기본으로 커스텀 하여 만들것</li>
-<li>[option]  <a href="https://weniv.github.io/react-blog/">react-blog</a> 를 커스텀하여 프론트를 퀄리티 있게 만들것</li>
-<li>클래스형 뷰를 사용하여 개발할 것</li>
-<li>drf를 사용하지 말고 monolithic web app을 만들것</li>
-<li><a href="https://dbdiagram.io/home">dbdiagram</a>을 사용하여 데이터베이스 구조를 설계할 것<ul>
-<li><a href="../Customizing%20authentication%20in%20%7Bdjango%7D%20%7BAbstractUser%2C%20AbstractBaseUser%7D/">Customizing authentication in {django} {AbstractUser, AbstractBaseUser}</a></li>
-</ul>
-</li>
-</ul>
-<pre class="mermaid"><code>erDiagram
+  <h1>202307241316</h1>
 
-    User {
-        int id PK
-        varchar email "unique"
-        varchar nickname
-        bool is_superuser
-        bool is_staff
-        bool is_active
-        timestamp created_at
-    }
 
-    Article {
-        int id PK
-        varchar title
-        int author FK
-        string body
-        timestamp created_at
-        timestamp modified_at
-    }
-
-    User ||--o{ Article : writes</code></pre>
-<h2 id="0-django-admin">0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현<a class="headerlink" href="#0-django-admin" title="Permanent link">&para;</a></h2>
-<p>이거는 블로그 튜토리얼에서 했던 <a href="../tinymce/">tinymce</a> 비스무리한 텍스트 에디터 플러그인을 끌어와 쓰면 된다. 음화화</p>
-<p>Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 게시글 목록을 볼 수 있도록 구현합니다.</p>
-<p>쉽게 말해, 블로그 게시글을 Create하는 기능을 django로 작성하지 않고 Admin을 이용하여 게시글을 작성합니다. 즉, 게시글들과 게시글의 상세 페이지를 “보여주는”기능만 완성하면 됩니다.</p>
-<ul>
-<li>URL : <code>/</code> <ul>
-<li>페이지 제목과 블로그 입장하기 버튼이 있습니다.</li>
-<li><code>index.html</code> 내용을 수정하여 <code>/blog</code> 엔드포인트로 보내야겠군</li>
-</ul>
-</li>
-<li>Django admin을 이용하여 게시글 작성<ul>
-<li>게시글은 제목, 내용으로 구성되어 있습니다.</li>
-<li><code>/admin</code> 을 이용하여 게시글을 작성해보세요.  </li>
-<li><a href="../tinymce/">tinymce</a>를 이용하여 Admin 페이지에 추가 어떻게 하더라?</li>
-<li>DEPENDS ON 데이터 모델링</li>
-</ul>
-</li>
-<li>작성되어 있는 게시글 목록을 볼 수 있습니다.  <ul>
-<li>URL : <code>/blog</code></li>
-<li>게시글들의 제목을 확인 할 수 있습니다.  </li>
-</ul>
-</li>
-<li>작성 되어있는 게시글 상세 페이지를 볼 수 있습니다.  <ul>
-<li>URL : <code>/blog/&lt;int:id&gt;</code></li>
-<li>ex) <code>/blog/1, /blog/2,...</code></li>
-<li>게시글의 제목/내용을 보는 기능입니다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-crud">1. 블로그 CRUD 기능 구현하기<a class="headerlink" href="#1-crud" title="Permanent link">&para;</a></h2>
-<ul>
-<li><del>main page</del></li>
-<li>[x] 게시글 작성 기능<ul>
-<li><code>url</code>: <code>/blog/write/</code></li>
-<li>게시글 제목과 내용을 작성할 수 있는 페이지</li>
-<li>작성한 게시글이 저장되어 게시글 목록에 보여야 함.</li>
-<li><strong>카테고리</strong>가 지정</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>[!note]  로그인이 되지 않더라도 글 작성이 가능하게끔</p>
-</blockquote>
-<p>→ 구현해보니 이미 <code>Article</code> 자체에 <code>author</code> 필드가 있다. 이 부분은 로그인을 해야지 가능하게 바꾸자.</p>
-<ul>
-<li><del>list view</del></li>
-<li><del>detail view</del></li>
-<li>게시글 수정 기능<ul>
-<li><code>url</code>: <code>/blog/edit/&lt;int:id&gt;/</code></li>
-<li>게시글 제목과 내용을 수정하는 페이지</li>
-<li>수정한 내용은 게시글 목록보기 / 상세보기에 반영</li>
-</ul>
-</li>
-<li>게시글 삭제 기능<ul>
-<li><code>url</code>: <code>/blog/delete/&lt;int:id&gt;/</code></li>
-<li>게시글 삭제 완료 이후 list view로 redirect</li>
-<li>삭제된 게시글은 list, detail 접근 불가능하며, 접근시도시 404 발생</li>
-</ul>
-</li>
-<li>게시글 검색 기능<ul>
-<li><code>url</code>: <code>/blog/search/&lt;str:tag&gt;</code></li>
-<li>카테고리, 주제에 따라 검색이 가능하게</li>
-<li>검색한 게시물은 시간순에 따라 정렬</li>
-</ul>
-</li>
-</ul>
 
 
 
