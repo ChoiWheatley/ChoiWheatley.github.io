@@ -4,7 +4,7 @@ tags:
 description:
 title: obsidian-git
 created: 2023-07-23T15:58:09
-updated: 2023-07-24T20:28:56
+updated: 2023-07-24T20:31:39
 ---
 - [obsidian-git](https://github.com/denolehov/obsidian-git)
 
@@ -14,13 +14,12 @@ updated: 2023-07-24T20:28:56
 
 **해결법**
 
-`$HOME/.ssh/config` 파일에 다음 내용을 추가한다.
+`ssh-add` 명령에 `--apple-use-keychain` 옵션을 추가한다. 이렇게 하면 passphrase를 유저에게 묻지 않고 애플 키체인을 통해 획득할 수 있다. (근데 나는 비밀번호 없이 생성했는데?)
 
-```
-Host github.com
-    AddKeysToAgent yes
-    User git
-    IdentityFile "/Users/{{username}}/.ssh/{{private_key_name}}"
+예제
+
+```shell
+ssh-add --apple-use-keychain ~/.ssh/choi-workspace
 ```
 
 **원인**
