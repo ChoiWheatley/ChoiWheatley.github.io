@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T17:01:51
-updated: 2023-07-15T21:30:20
+updated: 2023-07-24T14:27:49
 title: django authorization for accessing인가 {mixins.{LoginRequiredMixin, UserPassesTestMixin}}
 ---
 - [Delete Article {YT}](https://youtu.be/sMqDJovFO-Y?t=7364)
@@ -17,3 +17,7 @@ title: django authorization for accessing인가 {mixins.{LoginRequiredMixin, Use
 - 하지만 위의 방식만 사용하면 눈치빠른 유저는 로그인을 해놓고 다른 유저의 아티클을 지울 우려가 있다. `LoginRequiredMixin`은 그냥 단지 로그인 여부만을 확인하기 때문이다. 따라서 `UserPassesTestMixin`을 추가로 상속받아 악의적인 URL 접근이 들어왔을 때 접근불가 403 에러를 띄워야 한다.
 	- `test_func` 메서드를 오버라이딩 해야하는군.
 - [수정본 {GH}](https://github.com/ChoiWheatley/blogtutorial/blob/9c077b3fb340db4496dd289687c642f33239b55b/blog/views.py)
+
+## `redirect_field_name`
+
+`LoginRequiredMixin`을 상속한 클래스는 해당 필드를 정의하여 로그인 이후에 어디로 갈건지를 정의할 수 있다.
