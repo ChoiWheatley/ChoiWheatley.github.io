@@ -19,3 +19,8 @@ updated: 2023-07-25T16:21:13
 - `form_class`
 - `success_url`
 - `queryset`
+
+## Methods
+
+- `get_form_kwargs`: keyword argument를 확장할 수 있는 메서드이다.
+	- 예를 들어 `class New(CreateView)`를 작성할때 정의한 form에는 굳이 `author`가 있을 필요가 없다. 이미 `request`안에 유저 정보가 들어있기 때문이다. 
