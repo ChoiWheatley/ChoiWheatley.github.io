@@ -3,9 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-06-01T17:01:51
-updated: 2023-07-24T14:27:49
+updated: 2023-07-25T11:20:57
 title: django authorization for accessing인가 {mixins.{LoginRequiredMixin, UserPassesTestMixin}}
 ---
+- [User authentication in django {doc}](https://docs.djangoproject.com/en/4.2/topics/auth/)
 - [Delete Article {YT}](https://youtu.be/sMqDJovFO-Y?t=7364)
 - [[0014.1 Django 🎈]] 에서 아티클을 지우는 페이지로 가는 GET요청과 실제 삭제를 수행하는 POST요청을 현재 아무나 할 수 있게 되었다. 
 	- [delete_article.html {GH}](https://github.com/ChoiWheatley/blogtutorial/blob/4a8ae28064ce08be811510b5040d556e41cfe369/blog/templates/blog/delete_article.html)
