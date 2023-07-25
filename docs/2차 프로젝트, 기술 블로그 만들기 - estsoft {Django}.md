@@ -88,6 +88,7 @@ Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 �
 	- `url`: `/blog/edit/<int:id>/`
 	- 게시글 제목과 내용을 수정하는 페이지
 	- 수정한 내용은 게시글 목록보기 / 상세보기에 반영
+	- [[UpdateView {django}]]
 - 게시글 삭제 기능
 	- `url`: `/blog/delete/<int:id>/`
 	- 게시글 삭제 완료 이후 list view로 redirect

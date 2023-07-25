@@ -3,11 +3,18 @@ description:
 aliases: 
 tags: 
 created: 2023-05-29T17:37:49
-updated: 2023-07-19T00:55:00
+updated: 2023-07-25T16:16:17
 title: CCBV, Classy Class Based View -- django
 ---
 - <https://ccbv.co.uk/> 
 - 모든 장고 클래스 기반 View들을 모아놓은 신기한 사이트이다. 치트시트처럼 모아놓은 것 같은뎅
+
+## INDEX
+
+- [[UpdateView {django}]]
+- [[CreateView {django}]]
+- [[DeleteView {django}]]
+- [[ListView {django}]]
 
 ## What are class-based views anyway?
 
