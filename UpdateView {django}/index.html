@@ -270,9 +270,34 @@
 </ul>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>get_form_kwargs</code>: keyword argument를 확장할 수 있는 메서드이다.<ul>
-<li>예를 들어 <code>class New(CreateView)</code>를 작성할때 정의한 form에는 굳이 <code>author</code>가 있을 필요가 없다. 이미 <code>request</code>안에 유저 정보가 들어있기 때문이다. </li>
+<li>
+<p><code>get_form_kwargs</code>: keyword argument를 확장할 수 있는 메서드이다.</p>
+<ul>
+<li><a href="https://stackoverflow.com/a/5774124/21369350">How do I Use CreateView with a ModelForm {SOF}</a></li>
+<li><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-editing/#django.views.generic.edit.FormMixin.get_form_kwargs">Editing mixins {doc}</a></li>
 </ul>
+</li>
+<li>
+<p><code>form_valid</code></p>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/">class-based-views {doc}</a></li>
+<li><a href="https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/#models-and-request-user">Models and <code>request.user</code> {doc}</a></li>
+<li><code>django.views.generic.ModelFormMixin.form_valid()</code>를 따라가보면 <code>form_valid</code> 안에 <code>form.save()</code>를 호출하는 것을 볼 수 있다. 따라서 우리가 <code>post</code> 메서드를 직접 구현할 때 form에 없던 <code>author</code>를 추가했었던 걸 기억해보자. 객체지향 안에서 기능을 확장하거나 후크를 걸기 위해선 오버라이드를 하여야 한다. </li>
+<li><code>form.instance.&lt;attr&gt;</code> 를 통하여 form을 확장할 수 있다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.auth.mixins</span> <span class="kn">import</span> <span class="n">LoginRequiredMixin</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.edit</span> <span class="kn">import</span> <span class="n">CreateView</span>
+<span class="kn">from</span> <span class="nn">myapp.models</span> <span class="kn">import</span> <span class="n">Author</span>
+
+
+<span class="k">class</span> <span class="nc">AuthorCreateView</span><span class="p">(</span><span class="n">LoginRequiredMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Author</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="n">form</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">created_by</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span> 
+</code></pre></div>
 </li>
 </ul>
 
