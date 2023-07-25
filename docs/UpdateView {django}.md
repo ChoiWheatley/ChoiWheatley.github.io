@@ -4,7 +4,7 @@ tags:
 description:
 title: UpdateView {django}
 created: 2023-07-25T16:07:06
-updated: 2023-07-25T17:30:52
+updated: 2023-07-25T18:03:09
 ---
 [[CCBV, Classy Class Based View -- django]]에서 참고 많이했다. 글 수정을 위한 뷰 클래스 작성을 하는데 `get`, `post` 메서드를 만들지 않고도 가능하다니
 
@@ -25,21 +25,24 @@ updated: 2023-07-25T17:30:52
 - `get_form_kwargs`: keyword argument를 확장할 수 있는 메서드이다.
 	- [How do I Use CreateView with a ModelForm {SOF}](https://stackoverflow.com/a/5774124/21369350)
 	- [Editing mixins {doc}](https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-editing/#django.views.generic.edit.FormMixin.get_form_kwargs)
-	- 예를 들어 `class New(CreateView)`를 작성할때 정의한 form에는 굳이 `author`가 있을 필요가 없다. 이미 `request`안에 유저 정보가 들어있기 때문이다. 하지만 그렇다고 form에 저거를 넣지 않으면 `author_id`가 없다고 `IntegrityError` 예외가 날아온다. 
-	- 그래서 `get_form_kwargs`가 디폴트로 `author`를 채워주는 역할을 한다. 다음 코드예제를 보자.
+
+- `form_valid`
+	- [class-based-views {doc}](https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/)
+	- [Models and `request.user` {doc}](https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-editing/#models-and-request-user)
+	- `django.views.generic.ModelFormMixin.form_valid()`를 따라가보면 `form_valid` 안에 `form.save()`를 호출하는 것을 볼 수 있다. 따라서 우리가 `post` 메서드를 직접 구현할 때 form에 없던 `author`를 추가했었던 걸 기억해보자. 객체지향 안에서 기능을 확장하거나 후크를 걸기 위해선 오버라이드를 하여야 한다. 
+	- `form.instance.<attr>` 를 통하여 form을 확장할 수 있다.
 
 	```python
-	class New(LoginRequiredMixin, CreateView):
-	    """Create new article"""
+	from django.contrib.auth.mixins import LoginRequiredMixin
+	from django.views.generic.edit import CreateView
+	from myapp.models import Author
 	
-	    model = Article
-	    template_name = "write.html"
-	    form_class = ArticleForm
-	    success_url = reverse_lazy("articles:list")
-	    queryset = model.objects.all()
 	
-	    def get_form_kwargs(self) -> Dict[str, Any]:
-	        kwargs = super().get_form_kwargs()
-	        kwargs['author'] = self.request.user
-	        return kwargs
+	class AuthorCreateView(LoginRequiredMixin, CreateView):
+	    model = Author
+	    fields = ["name"]
+	
+	    def form_valid(self, form):
+	        form.instance.created_by = self.request.user
+	        return super().form_valid(form)	
 	```
