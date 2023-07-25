@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/CCBV%2C%20Classy%20Class%20Based%20View%20--%20django/">
+        <link rel="canonical" href="https://choiwheatley.github.io/UpdateView%20%7Bdjango%7D/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>CCBV, Classy Class Based View -- django - Choi Wheatley's Second Brain</title>
+        <title>UpdateView {django} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index" class="md-skip">
+        <a href="#attributes" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CCBV, Classy Class Based View -- django
+              UpdateView {django}
             
           </span>
         </div>
@@ -227,29 +227,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
-    INDEX
+  <a href="#attributes" class="md-nav__link">
+    Attributes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-are-class-based-views-anyway" class="md-nav__link">
-    What are class-based views anyway?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#great-so-whats-the-problem" class="md-nav__link">
-    Great! So what's the problem?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-does-this-site-help" class="md-nav__link">
-    How does this site help?
+  <a href="#methods" class="md-nav__link">
+    Methods
   </a>
   
 </li>
@@ -269,25 +255,26 @@
                   
 
 
-  <h1>CCBV, Classy Class Based View -- django</h1>
+  <h1>UpdateView {django}</h1>
 
+<p><a href="../CCBV%2C%20Classy%20Class%20Based%20View%20--%20django/">CCBV, Classy Class Based View -- django</a>에서 참고 많이했다. 글 수정을 위한 뷰 클래스 작성을 하는데 <code>get</code>, <code>post</code> 메서드를 만들지 않고도 가능하다니</p>
+<p>그것은 애트리뷰트만 잘 알고 있으면 된다. 특히나 CCBV를 참고하면 복잡한 상속관계에서 오는 메서드, 애트리뷰트를 한 눈에 볼 수 있다. 거기에서 내가 원하는 확장만 추가하면 된다.</p>
+<p>어떤 믹스인은 반드시 정의해야 하는 애트리뷰트가 있다. 그걸 정의하지 않으면 <code>ImproperlyConfigured</code> 예외가 발생할 수 있으니 문제가 생기더라도 놀라지 말자.</p>
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://ccbv.co.uk/">https://ccbv.co.uk/</a> </li>
-<li>모든 장고 클래스 기반 View들을 모아놓은 신기한 사이트이다. 치트시트처럼 모아놓은 것 같은뎅</li>
+<li><code>model</code></li>
+<li><code>template_name</code></li>
+<li><code>form_class</code></li>
+<li><code>success_url</code></li>
+<li><code>queryset</code></li>
 </ul>
-<h2 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../UpdateView%20%7Bdjango%7D/">UpdateView {django}</a></li>
-<li>[[CreateView {django}]]</li>
-<li>[[DeleteView {django}]]</li>
-<li>[[ListView {django}]]</li>
+<li><code>get_form_kwargs</code>: keyword argument를 확장할 수 있는 메서드이다.<ul>
+<li>예를 들어 <code>class New(CreateView)</code>를 작성할때 정의한 form에는 굳이 <code>author</code>가 있을 필요가 없다. 이미 <code>request</code>안에 유저 정보가 들어있기 때문이다. </li>
 </ul>
-<h2 id="what-are-class-based-views-anyway">What are class-based views anyway?<a class="headerlink" href="#what-are-class-based-views-anyway" title="Permanent link">&para;</a></h2>
-<p>Django's class-based generic views provide abstract classes implementing common web development tasks. These are very powerful, and heavily-utilise Python's object orientation and multiple inheritance in order to be extensible. This means they're more than just a couple of generic shortcuts — they provide utilities which can be mixed into the much more complex views that you write yourself.</p>
-<h2 id="great-so-whats-the-problem">Great! So what's the problem?<a class="headerlink" href="#great-so-whats-the-problem" title="Permanent link">&para;</a></h2>
-<p>All of this power comes at the expense of simplicity. For example, trying to work out exactly which method you need to customize, and what its keyword arguments are, on your <code>UpdateView</code> can feel a little like wading through spaghetti — it has 10 separate ancestors (plus <code>object</code>), spread across 3 different python files. This site shows you exactly what you need to know.</p>
-<h2 id="how-does-this-site-help">How does this site help?<a class="headerlink" href="#how-does-this-site-help" title="Permanent link">&para;</a></h2>
-<p>To make things easier, we've taken all the attributes and methods that every view defines or inherits, and flattened all that information onto one comprehensive page per view. Check out <a href="https://ccbv.co.uk/UpdateView/">UpdateView</a>, for example.</p>
+</li>
+</ul>
 
 
 
