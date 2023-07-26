@@ -8,21 +8,23 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-07-15T21:33:03
+updated: 2023-07-27T00:55:09
 ---
 
-# .obsidian 동기화
+## Self Introduction
 
-- 필수 플러그인 동기화
-	- [dataview](obsidian://show-plugin?id=dataview)
-	- [remotely-save](obsidian://show-plugin?id=remotely-save)
-	- [table-editor](obsidian://show-plugin?id=table-editor-obsidian)
-	- [templator](obsidian://show-plugin?id=templater-obsidian)
-	- [waypoint](obsidian://show-plugin?id=waypoint)
-	- [Linter](obsidian://show-plugin?id=obsidian-linter)
+Hi, my name is Choi Wheatley. I'm a junior backend developer looking for better understanding of programming paradigms, computer knowledgements, agile cultures.
 
+I'm highly interested in knowledge making process. I have a kin pipeline from casting idea to archiving for further retrieve. On behalf of [Obsidian](https://obsidian.md), I can create notes with hyperlinks!
 
-- 각종 설정들 동기화
-	- hotkeys![[hotkeys 1.json]]
-	- daily-notes ![[daily-notes.json]]
-	- app ![[app.json]]
+I'm a native Korean, but I can understand English at reading, listening. Speaking is not good tho.
+
+Contact me:
+
+- chltmdgus604@gmail.com
+
+## External Links
+
+- [notion.site (deprecated)](https://choiwheatley.notion.site)
+- [github.com](https://github.com/ChoiWheatley)
+- [this site is made with mkdocs material and obsidian](choiwheatley.github.io)
