@@ -13,7 +13,7 @@ date modified: Monday, February 27th 2023, 6:20:45 pm
 updated: 2023-07-15T22:35:26
 ---
 
-parent link: [[Readme]]
+parent link: [[index]]
 
 ---
 %% Begin Waypoint %%

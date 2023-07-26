@@ -4,7 +4,7 @@ site_author: you
 site_description: site_description
 
 nav:
-  - About: test.md
+  - Index: "0000 Index 🔗.md"
 
 theme:
   name: material
