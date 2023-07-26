@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T15:35:07
+updated: 2023-07-26T15:42:18
 ---
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
@@ -66,16 +66,25 @@ flowchart LR
 
 ![[chatgpt-usecase.excalidraw]]
 
+#### Main Flow
+
 - _User_
 	- Request Chat List
 		- _System_
 			- Retrieve chat data.
-			- Create DOM element for display
+			- Create DOM elements for display
 	- Request Chat Session
 		- _System_
-			- Check if the user is logged in
+			- Check if the user is logged in. If not logged in, invoke **E-1**
 			- Create Request Prompts
 				- _ChatBot_
 					- Ask user's current state
 					- Ask user's goal
 					- Ask user's other requirements
+			- Request _OpenAI_ with previous prompts
+	- Sign out
+
+#### Error Flow, E-1
+
+- _System_
+	- redirect to login page
