@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T15:11:54
+updated: 2023-07-26T15:35:07
 ---
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
@@ -66,4 +66,16 @@ flowchart LR
 
 ![[chatgpt-usecase.excalidraw]]
 
-- 
+- _User_
+	- Request Chat List
+		- _System_
+			- Retrieve chat data.
+			- Create DOM element for display
+	- Request Chat Session
+		- _System_
+			- Check if the user is logged in
+			- Create Request Prompts
+				- _ChatBot_
+					- Ask user's current state
+					- Ask user's goal
+					- Ask user's other requirements
