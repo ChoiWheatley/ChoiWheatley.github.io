@@ -1737,8 +1737,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    TL;DR
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,10 +1766,12 @@
                   
 
 
+  <h1>flat map in python</h1>
+
 <ul>
 <li>https://dev.to/turbaszek/flat-map-in-python-3g98</li>
 </ul>
-<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h1>
+<h4 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h4>
 <p>double list comprehension with 10_000 * 10 class objects =&gt; 4.5945 ms</p>
 <div class="highlight"><pre><span></span><code><span class="n">flat_map</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">xs</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">ys</span> <span class="ow">in</span> <span class="n">xs</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">ys</span><span class="p">)]</span>
 

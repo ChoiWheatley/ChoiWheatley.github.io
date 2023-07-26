@@ -1737,8 +1737,49 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#filefield-imagefield" class="md-nav__link">
+    FileField, ImageField
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-files" class="md-nav__link">
+    Static files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filereader-js-object" class="md-nav__link">
+    FileReader js object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-storage" class="md-nav__link">
+    File Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#go-further" class="md-nav__link">
+    Go Further
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1752,6 +1793,8 @@
                 
                   
 
+
+  <h1>image(media) 파일을 DB 이외의 로컬 저장소에서 관리하게 만들기 {django}</h1>
 
 <ul>
 <li><a href="https://github.com/ESTsoft-Book-Project/bookstore/pull/44">Products image #44</a></li>
@@ -1779,7 +1822,7 @@
 <p><a href="../python%20os.path.join/">python os.path.join</a></p>
 </li>
 </ul>
-<h1 id="filefield-imagefield">FileField, ImageField<a class="headerlink" href="#filefield-imagefield" title="Permanent link">&para;</a></h1>
+<h4 id="filefield-imagefield">FileField, ImageField<a class="headerlink" href="#filefield-imagefield" title="Permanent link">#</a></h4>
 <p><a href="https://docs.djangoproject.com/en/4.2/topics/files/">Managing files {docs.djangoproject.com}</a></p>
 <p>로컬 저장소를 활용하기 위해 장고는 기본적으로 <code>MEDIA_ROOT</code>, <code>MEDIA_URL</code> 세팅을 사용한다. 저장소에 대한 선택권은 우리에게 있다. <a href="../File%20storage%20%7Bdjango%7D/">File storage {django}</a>를 확인해보라.</p>
 <p>DB에는 파일이 들어가지 않는다. <code>FileField</code>나 <code>ImageField</code>의 경우 Path와 URL만이 저장된다.
@@ -1789,16 +1832,16 @@
 - url
     - 업로드된 파일의 URL을 의미하며, 값을 그대로 웹 브라우저에 넣어 GET 요청을 보내면 해당 파일을 다운받을 수 있다.</p>
 <p>파일명이나 파일 위치를 바꾸는 행위, 파일을 수정하는 행위는 반드시 해당 필드의 <code>save</code> 메서드 호출을 필요로 한다.</p>
-<h1 id="static-files">Static files<a class="headerlink" href="#static-files" title="Permanent link">&para;</a></h1>
+<h4 id="static-files">Static files<a class="headerlink" href="#static-files" title="Permanent link">#</a></h4>
 <p><a href="../How%20to%20manage%20static%20files%20%28e.g.%20images%2C%20js%2C%20css%29%20%7Bdjango%7D/">How to manage static files (e.g. images, js, css) {django}</a>로 가세요</p>
-<h1 id="filereader-js-object">FileReader js object<a class="headerlink" href="#filereader-js-object" title="Permanent link">&para;</a></h1>
+<h4 id="filereader-js-object">FileReader js object<a class="headerlink" href="#filereader-js-object" title="Permanent link">#</a></h4>
 <p><a href="../FileReader%20%7Bjs%7D/">FileReader {js}</a></p>
-<h1 id="file-storage">File Storage<a class="headerlink" href="#file-storage" title="Permanent link">&para;</a></h1>
+<h4 id="file-storage">File Storage<a class="headerlink" href="#file-storage" title="Permanent link">#</a></h4>
 <p><a href="https://docs.djangoproject.com/en/4.2/topics/files/#file-storage">File storate {docs.djangoproject.com}</a></p>
 <ul>
 <li>[ ] TODO: 읽어볼 것</li>
 </ul>
-<h1 id="go-further">Go Further<a class="headerlink" href="#go-further" title="Permanent link">&para;</a></h1>
+<h4 id="go-further">Go Further<a class="headerlink" href="#go-further" title="Permanent link">#</a></h4>
 <p><a href="../Resource%20Storage%EC%99%80%20Database%EB%A5%BC%20%EC%97%B0%EB%8F%99%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC%20%EC%95%8C%EC%95%84%EB%B4%85%EB%8B%88%EB%8B%A4./">Resource Storage와 Database를 연동하는 방법에 대하여 알아봅니다.</a></p>
 
 

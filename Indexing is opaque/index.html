@@ -1782,7 +1782,7 @@
 <span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s_ref1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="c1">// ERROR cannot borrow `v` as mutable more than once at a time</span>
 </code></pre></div>
 <p><code>v[0]</code> 라고 해서 v의 첫번째 원소에 대한 레퍼런스만을 빌려왔겠다고 생각하기 쉽지만, 러스트 컴파일러는 그 내부에 대해 잘 모르기 때문에 <code>v</code> 를 통째로 빌렸다고 생각하게 된다. 따라서 두번째 borrowing에서 컴파일러는 "엥? v를 또 가변레퍼런스로 빌려가게?" 하면서 오류를 뱉어내게 되는 것이다.</p>
-<h3 id="_1">해결방법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h6 id="_1">해결방법<a class="headerlink" href="#_1" title="Permanent link">#</a></h6>
 <ol>
 <li>perform your operations sequentially</li>
 <li><a href="https://doc.rust-lang.org/std/primitive.slice.html#method.split_at_mut"><code>split_at_mut</code></a> 함수 사용하여 소유권을 따로 빌리기</li>

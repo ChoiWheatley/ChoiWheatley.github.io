@@ -1778,8 +1778,7 @@
     Usecase Diagram
   </a>
   
-    <nav class="md-nav" aria-label="Usecase Diagram">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#main-flow" class="md-nav__link">
@@ -1792,11 +1791,6 @@
   <a href="#error-flow-e-1" class="md-nav__link">
     Error Flow, E-1
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1841,7 +1835,7 @@
 <li><a href="https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb">요구사항 {Notion}</a></li>
 <li><a href="https://github.com/ChoiWheatley/ormi-project-1">ormi-project-1 {Notion}</a></li>
 </ul>
-<h2 id="_1">기본 요구사항<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h5 id="_1">기본 요구사항<a class="headerlink" href="#_1" title="Permanent link">#</a></h5>
 <ul>
 <li>모든 구현은 <strong>DRF</strong> 를 이용하여 구현.</li>
 <li>클래스 기반 뷰 사용</li>
@@ -1853,16 +1847,16 @@
 <li>모든 채팅내역은 로그인하지 않은 유저들에게도 열람권한이 있다.</li>
 <li>ERD를 그려주세요.</li>
 </ul>
-<h2 id="_2">선택 요구사항<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h5 id="_2">선택 요구사항<a class="headerlink" href="#_2" title="Permanent link">#</a></h5>
 <ul>
 <li>FE 배포 (Github Page를 사용하여 별개의 프로젝트로)</li>
 <li>BE 배포</li>
 <li>HTTPS 추가</li>
 <li>kakao, github 등 OAuth2 추가하기</li>
 </ul>
-<h2 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">&para;</a></h2>
+<h5 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">#</a></h5>
 <p>기본 요구사항: FE와 BE 분리: 프론트엔드에서 백엔드 서버를 통해 요청을 보내준다.</p>
-<h3 id="flowchart">Flowchart<a class="headerlink" href="#flowchart" title="Permanent link">&para;</a></h3>
+<h6 id="flowchart">Flowchart<a class="headerlink" href="#flowchart" title="Permanent link">#</a></h6>
 <pre class="mermaid"><code>flowchart LR
     id1[Client]
     id2[FE]
@@ -1893,10 +1887,10 @@
 </li>
 <li>백엔드가 각각의 서비스로부터 응답을 받으면 이를 통해 클라이언트에게 응답을 전송함.</li>
 </ol>
-<h3 id="usecase-diagram">Usecase Diagram<a class="headerlink" href="#usecase-diagram" title="Permanent link">&para;</a></h3>
+<h6 id="usecase-diagram">Usecase Diagram<a class="headerlink" href="#usecase-diagram" title="Permanent link">#</a></h6>
 <p>![[chatgpt-usecase.excalidraw]]<br />
 <a class="glightbox" href="../assets/chatgpt-usecase.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="chatgpt-usecase.excalidraw.png" src="../assets/chatgpt-usecase.excalidraw.png" /></a></p>
-<h4 id="main-flow">Main Flow<a class="headerlink" href="#main-flow" title="Permanent link">&para;</a></h4>
+<h6 id="main-flow">Main Flow<a class="headerlink" href="#main-flow" title="Permanent link">#</a></h6>
 <ul>
 <li><em>User</em><ul>
 <li>Request Chat List<ul>
@@ -1928,7 +1922,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="error-flow-e-1">Error Flow, E-1<a class="headerlink" href="#error-flow-e-1" title="Permanent link">&para;</a></h4>
+<h6 id="error-flow-e-1">Error Flow, E-1<a class="headerlink" href="#error-flow-e-1" title="Permanent link">#</a></h6>
 <ul>
 <li><em>System</em><ul>
 <li>redirect to login page</li>
@@ -1937,7 +1931,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="class-diagram">Class Diagram<a class="headerlink" href="#class-diagram" title="Permanent link">&para;</a></h3>
+<h6 id="class-diagram">Class Diagram<a class="headerlink" href="#class-diagram" title="Permanent link">#</a></h6>
 <pre class="mermaid"><code>classDiagram 
     User &lt;|-- Anonnymous
     User &lt;|-- Member
@@ -1947,7 +1941,7 @@
     Prompt &lt;|-- Goal
     Prompt &lt;|-- Misc
     Session "0..*" -- "1" ChatBot</code></pre>
-<h3 id="er-diagram">ER Diagram<a class="headerlink" href="#er-diagram" title="Permanent link">&para;</a></h3>
+<h6 id="er-diagram">ER Diagram<a class="headerlink" href="#er-diagram" title="Permanent link">#</a></h6>
 <ul>
 <li><a href="https://platform.openai.com/docs/api-reference/making-requests">openai api documentation</a></li>
 </ul>

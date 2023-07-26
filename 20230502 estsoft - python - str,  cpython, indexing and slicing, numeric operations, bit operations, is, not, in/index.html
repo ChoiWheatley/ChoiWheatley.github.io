@@ -1737,8 +1737,49 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#str" class="md-nav__link">
+    str
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing-and-slicing" class="md-nav__link">
+    indexing and slicing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-operation" class="md-nav__link">
+    numeric operation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is-not" class="md-nav__link">
+    is, not
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#member-operator-in" class="md-nav__link">
+    member operator in
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,11 +1794,13 @@
                   
 
 
+  <h1>20230502 estsoft - python - str,  cpython, indexing and slicing, numeric operations, bit operations, is, not, in</h1>
+
 <ul>
 <li><a href="https://colab.research.google.com/drive/1IRa8nYwM2HtkzlNJGBlavWK96kffytm_?usp=sharing#scrollTo=E1nDm4EOyOxg">멘토님의 실시간 노트북</a></li>
 <li><a href="https://colab.research.google.com/drive/1MLH1EUy3nmKQXPMjn5K5-FStLzh5HV5J?usp=sharing">별로 안 적은 구글 콜랩</a></li>
 </ul>
-<h1 id="str">str<a class="headerlink" href="#str" title="Permanent link">&para;</a></h1>
+<h4 id="str">str<a class="headerlink" href="#str" title="Permanent link">#</a></h4>
 <ul>
 <li><code>lower</code>, <code>upper</code> </li>
 <li><code>find</code>, <code>index</code> =&gt; 모두 인자로 온 문자열 값과 일치하는 첫번째 인덱스를 리턴. 두 메서드의 차이점이라면 <code>find</code>는 일치하지 않는다면 -1을 리턴하고 <code>index</code>는 <code>ValueError</code> 에러를 발생시킨다.</li>
@@ -1801,7 +1844,7 @@
 <li><code>center(self, width, fillchar=' ')</code> =&gt; 가운데 정렬</li>
 <li><code>maketranse(self, ...)</code> =&gt; <code>str.translate(self, table)</code>에 필요한 <code>table</code>을 만드는데, 얘는 <code>replace</code>이긴 하지만 table에 있는 다양한 녀석들을 매핑하여 저시기 할 수 있다.</li>
 </ul>
-<h1 id="indexing-and-slicing">indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permanent link">&para;</a></h1>
+<h4 id="indexing-and-slicing">indexing and slicing<a class="headerlink" href="#indexing-and-slicing" title="Permanent link">#</a></h4>
 <p>슬라이스 결과는 <code>slice</code> 객체이다. 내부적으로 <code>slice()</code> 내장함수를 호출한다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>  <span class="c1"># items start through stop-1</span>
 <span class="n">a</span><span class="p">[</span><span class="n">start</span><span class="p">:]</span>      <span class="c1"># items start through the rest of the array</span>
@@ -1821,7 +1864,7 @@
 <span class="n">a</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># the last two items, reversed</span>
 <span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># everything except the last two items, reversed</span>
 </code></pre></div>
-<h1 id="numeric-operation">numeric operation<a class="headerlink" href="#numeric-operation" title="Permanent link">&para;</a></h1>
+<h4 id="numeric-operation">numeric operation<a class="headerlink" href="#numeric-operation" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 
@@ -1833,7 +1876,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 ** 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;10 % 3 == </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># 나머지</span>
 </code></pre></div>
-<h1 id="is-not">is, not<a class="headerlink" href="#is-not" title="Permanent link">&para;</a></h1>
+<h4 id="is-not">is, not<a class="headerlink" href="#is-not" title="Permanent link">#</a></h4>
 <p><code>is</code>는 <code>==</code> 과 다르게 객체의 <code>id</code>를 보고 비교한다. 그래서 다음과 같은 이상한 현상을 발견할 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">256</span>
@@ -1850,7 +1893,7 @@
 <span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 <span class="k">assert</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>
 </code></pre></div>
-<h1 id="member-operator-in">member operator in<a class="headerlink" href="#member-operator-in" title="Permanent link">&para;</a></h1>
+<h4 id="member-operator-in">member operator in<a class="headerlink" href="#member-operator-in" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">assert</span> <span class="ow">not</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;hello, world&#39;</span>
 <span class="k">assert</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="mi">10</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>

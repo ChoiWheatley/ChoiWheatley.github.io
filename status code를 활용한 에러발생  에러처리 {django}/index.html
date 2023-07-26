@@ -1737,8 +1737,69 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-snippet-from-delete_product" class="md-nav__link">
+    code snippet from delete_product
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-code" class="md-nav__link">
+    status code
+  </a>
+  
+    <nav class="md-nav" aria-label="status code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#information-responses" class="md-nav__link">
+    Information responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#succesful-responses" class="md-nav__link">
+    Succesful responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-error-responses" class="md-nav__link">
+    Client error responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-error-responses" class="md-nav__link">
+    Server error responses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-cloud-json-status-code" class="md-nav__link">
+    Google Cloud :: JSON Status Code
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,7 +1814,9 @@
                   
 
 
-<h1 id="code-snippet-from-delete_product">code snippet from <code>delete_product</code><a class="headerlink" href="#code-snippet-from-delete_product" title="Permanent link">&para;</a></h1>
+  <h1>status code를 활용한 에러발생  에러처리 {django}</h1>
+
+<h4 id="code-snippet-from-delete_product">code snippet from <code>delete_product</code><a class="headerlink" href="#code-snippet-from-delete_product" title="Permanent link">#</a></h4>
 <p>Code snippet from <code>products.views.delete_product</code></p>
 <iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/523366aa0e8eb61c16cbde90cce28190cbba8883/products/views.py#L62-L76" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
 
@@ -1761,7 +1824,7 @@
 <iframe src="https://github.com/ESTsoft-Book-Project/bookstore/blob/0667d3eeded26793efe96c0f0243096822fb13dd/templates/book_detail.html#L39-L62" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
 
 <p>그렇다면 이제 <code>statusCode</code>가 각각 의미하는 바에 대하여 알아야겠다.</p>
-<h1 id="status-code">status code<a class="headerlink" href="#status-code" title="Permanent link">&para;</a></h1>
+<h4 id="status-code">status code<a class="headerlink" href="#status-code" title="Permanent link">#</a></h4>
 <p><a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/0667d3eeded26793efe96c0f0243096822fb13dd/templates/book_detail.html#L39-L62">moz.org</a></p>
 <p>HTTP response status codes indicate whether a specific <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a> request has been successfully completed. Responses are grouped in five classes:</p>
 <ol>
@@ -1774,14 +1837,14 @@
 <p>The status codes listed below are defined by <a href="https://httpwg.org/specs/rfc9110.html#overview.of.status.codes">RFC 9110</a>.</p>
 <p>자주 쓰는 응답코드부터 보자.</p>
 <p>TODO: 번역만 남기고 원문은 제거할 것</p>
-<h2 id="information-responses">Information responses<a class="headerlink" href="#information-responses" title="Permanent link">&para;</a></h2>
+<h5 id="information-responses">Information responses<a class="headerlink" href="#information-responses" title="Permanent link">#</a></h5>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100"><code>100 Continue</code></a></p>
 <p>This interim response indicates that the client should continue the request or ignore the response if the request is already finished.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101"><code>101 Switching Protocols</code></a></p>
 <p>This code is sent in response to an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade"><code>Upgrade</code></a> request header from the client and indicates the protocol the server is switching to.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/102"><code>102 Processing</code></a> (<a href="https://developer.mozilla.org/en-US/docs/Glossary/WebDAV">WebDAV</a>)</p>
 <p>This code indicates that the server has received and is processing the request, but no response is available yet.</p>
-<h2 id="succesful-responses">Succesful responses<a class="headerlink" href="#succesful-responses" title="Permanent link">&para;</a></h2>
+<h5 id="succesful-responses">Succesful responses<a class="headerlink" href="#succesful-responses" title="Permanent link">#</a></h5>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200"><code>200 OK</code></a></p>
 <p>The request succeeded. The result meaning of "success" depends on the HTTP method:<br />
 해당 요청이 성공했습니다. "성공"의 의미는 HTTP 별로 다릅니다:</p>
@@ -1809,7 +1872,7 @@
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204"><code>204 No Content</code></a></p>
 <p>There is no content to send for this request, but the headers may be useful. The user agent may update its cached headers for this resource with the new ones.<br />
 이 요청에 대해 전송할 콘텐츠가 없지만 헤더가 유용할 수 있습니다. 사용자 에이전트는 이 리소스에 대해 캐시된 헤더를 새 헤더로 업데이트할 수 있습니다.</p>
-<h2 id="client-error-responses"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses">Client error responses</a><a class="headerlink" href="#client-error-responses" title="Permanent link">&para;</a></h2>
+<h5 id="client-error-responses"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses">Client error responses</a><a class="headerlink" href="#client-error-responses" title="Permanent link">#</a></h5>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"><code>400 Bad Request</code></a></p>
 <p>The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401"><code>401 Unauthorized</code></a></p>
@@ -1850,7 +1913,7 @@
 <p>The server refuses the attempt to brew coffee with a teapot.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/421"><code>421 Misdirected Request</code></a></p>
 <p>The request was directed at a server that is not able to produce a response. This can be sent by a server that is not configured to produce responses for the combination of scheme and authority that are included in the request URI.</p>
-<h2 id="server-error-responses"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses">Server error responses</a><a class="headerlink" href="#server-error-responses" title="Permanent link">&para;</a></h2>
+<h5 id="server-error-responses"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses">Server error responses</a><a class="headerlink" href="#server-error-responses" title="Permanent link">#</a></h5>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"><code>500 Internal Server Error</code></a></p>
 <p>The server has encountered a situation it does not know how to handle.<br />
 서버가 다룰 수 없는 문제에 맞닥뜨렸습니다.</p>
@@ -1867,7 +1930,7 @@
 <p>The HTTP version used in the request is not supported by the server.</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506"><code>506 Variant Also Negotiates</code></a></p>
 <p>The server has an internal configuration error: the chosen variant resource is configured to engage in transparent content negotiation itself, and is therefore not a proper end point in the negotiation process.</p>
-<h1 id="google-cloud-json-status-code">Google Cloud :: JSON Status Code<a class="headerlink" href="#google-cloud-json-status-code" title="Permanent link">&para;</a></h1>
+<h4 id="google-cloud-json-status-code">Google Cloud :: JSON Status Code<a class="headerlink" href="#google-cloud-json-status-code" title="Permanent link">#</a></h4>
 <p><a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">cloud.google.com</a></p>
 <div class="highlight"><pre><span></span><code><span class="mi">404</span><span class="w"> </span><span class="err">No</span><span class="kc">t</span><span class="w"> </span><span class="err">Fou</span><span class="kc">n</span><span class="err">d</span>
 

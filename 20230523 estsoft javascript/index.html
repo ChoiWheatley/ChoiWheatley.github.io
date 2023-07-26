@@ -1737,8 +1737,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    상식
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#js" class="md-nav__link">
+    JS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instance-method" class="md-nav__link">
+    Instance Method
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,19 +1787,21 @@
                   
 
 
-<h1 id="_1">상식<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+  <h1>20230523 estsoft javascript</h1>
+
+<h4 id="_1">상식<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <p>JS 생태계 확장의 주역은 바로 <a href="https://nodejs.org/en">Node.js</a>이다. JS로 백엔드, 시스템, 게임개발 등을 할 수 있게 되었다. 그 전엔 브라우저에서밖에 돌아가지 않는다!</p>
 <p>다만, Node를 사용하면 관련 패키지를 엄청나게 많이 설치해야 하는데, 생태계가 그닥 깔끔하지 않다. 속도면에서도 뒤쳐지기도 하고. 노드를 만들던 분이 나와서 <a href="https://deno.com/runtime">deno</a>를 만들었다.</p>
 <p>Babel이라고 하는 트랜스파일러가 존재. (폴리필이라고도 부름) 얘의 역할은 뭐냐? 새로운 제안들에 대한 새로운 표준들을 구 표준에 적용되게 만들어주는 하위호환 backward-compatibility를 가능하게 만들어준다.</p>
 <p>npm: 일종의 앱 스토어. 파이썬에선 pip을 쓰듯이 JS 계열에서 가장 많이 쓰이는 패키지 매니저가 npm임.</p>
 <p>webpack: HTML/CSS/JS를 하나의 파일로 묶어준다. 장점: 난독화, 최적화 / 단점: 배포할 때 묶어주는 시간(CI/CD가 이를 해결해줌), SEO(검색엔진 최적화)가 매우 큰 단점이었으나 요오즘 크롤링 엔진은 라이브 크롤링을 하여 우리가 눈으로 보는 것을 직접 본다.</p>
-<h1 id="js">JS<a class="headerlink" href="#js" title="Permanent link">&para;</a></h1>
+<h4 id="js">JS<a class="headerlink" href="#js" title="Permanent link">#</a></h4>
 <p><code>window</code>와 <code>document</code>는 ECMA Script 문법이 아니다. 웹 브라우저 객체의 API이다.</p>
 <p><code>const</code>, <code>let</code>, <code>var</code> =&gt; <code>let</code>과 <code>const</code>만 사용하자. </p>
 <p><code>var</code>는 변수 가리기가 허용된다. (shadowing) 뿐만 아니라 <code>var</code>는 선언한 순간 전역변수가 된다.</p>
-<h1 id="type">Type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h1>
+<h4 id="type">Type<a class="headerlink" href="#type" title="Permanent link">#</a></h4>
 <p>이거 좀 이상한데</p>
-<h1 id="instance-method">Instance Method<a class="headerlink" href="#instance-method" title="Permanent link">&para;</a></h1>
+<h4 id="instance-method">Instance Method<a class="headerlink" href="#instance-method" title="Permanent link">#</a></h4>
 <p><a href="../JS%20instance%20method/">JS instance method</a></p>
 <p><a class="glightbox" href="../Javascript/#개꿀팁" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Javascript#개꿀팁" src="../Javascript/#개꿀팁" /></a></p>
 

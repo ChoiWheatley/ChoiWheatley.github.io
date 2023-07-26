@@ -1737,8 +1737,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start-blog-author-entry-models" class="md-nav__link">
+    Before you start (Blog, Author, Entry models)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-lookups" class="md-nav__link">
+    Field lookups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q-lookup" class="md-nav__link">
+    Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eof" class="md-nav__link">
+    EOF
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,10 +1787,12 @@
                   
 
 
+  <h1>querying in {django query}</h1>
+
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/db/queries/">doc</a></li>
 </ul>
-<h1 id="before-you-start-blog-author-entry-models">Before you start (Blog, Author, Entry models)<a class="headerlink" href="#before-you-start-blog-author-entry-models" title="Permanent link">&para;</a></h1>
+<h4 id="before-you-start-blog-author-entry-models">Before you start (Blog, Author, Entry models)<a class="headerlink" href="#before-you-start-blog-author-entry-models" title="Permanent link">#</a></h4>
 <p>앞으로 모든 예시는 아래의 코드에서 정의한 모델을 기반으로 제공된다.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 
@@ -1814,7 +1850,7 @@ e.blog = b</code></p>
 <li><strong>annotate</strong> 칼럼의 이름을 질의할 때 변경할 수도 있다고 한다. 마치 SQL <code>AS</code>와 같다. 사용법은 쿼리시 <code>annotate</code> 인자의 kwargs 자리에 원하는 이름을 key값으로 넣으면 그만이라고...</li>
 </ul>
 <p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-06%2009.32.11.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-07-06 09.32.11.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-07-06%2009.32.11.png" /></a></p>
-<h1 exclude="exclude" filter_="filter," get_="get," id="field-lookups">Field lookups<a class="headerlink" href="#field-lookups" title="Permanent link">&para;</a></h1>
+<h4 exclude="exclude" filter_="filter," get_="get," id="field-lookups">Field lookups<a class="headerlink" href="#field-lookups" title="Permanent link">#</a></h4>
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/models/querysets/#id4">docs</a></p>
 <p>SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. <code>QuerySet</code>로부터  <code>filter</code>, <code>get</code>, <code>exclude</code> 메서드의 키워드 인자로 들어가는 규칙에 대하여 정의한다. </p>
 <div class="highlight"><pre><span></span><code>&lt;field&gt;__&lt;lookuptype&gt;=&lt;value&gt;
@@ -1845,9 +1881,9 @@ Blog.objects.filter(entry__authors__name=&quot;Choi&quot;)
 </code></pre></div></p>
 </li>
 </ul>
-<h1 id="q-lookup">Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.<a class="headerlink" href="#q-lookup" title="Permanent link">&para;</a></h1>
+<h4 id="q-lookup">Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.<a class="headerlink" href="#q-lookup" title="Permanent link">#</a></h4>
 <p><a href="../F%28%29%2C%20Q%28%29%20in%20%7Bdjango%20query%7D/">F(), Q() in {django query}</a></p>
-<h1 id="eof">EOF<a class="headerlink" href="#eof" title="Permanent link">&para;</a></h1>
+<h4 id="eof">EOF<a class="headerlink" href="#eof" title="Permanent link">#</a></h4>
 
 
 

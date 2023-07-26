@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,16 +1745,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#0-django-admin" class="md-nav__link">
     0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#1-crud" class="md-nav__link">
     1. 블로그 CRUD 기능 구현하기
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1775,9 +1786,11 @@
                   
 
 
+  <h1>2차 프로젝트, 기술 블로그 만들기 - estsoft {Django}</h1>
+
 <p>parent link: <a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a></p>
 <p><a href="https://paullabworkspace.notion.site/Blog-2a7d87f563ad42f9a0382f523fae14e1">requirements {Notion}</a></p>
-<h1 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h1>
+<h4 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h4>
 <ul>
 <li><a href="https://github.com/weniv/BackendOrmi/tree/main/HTML-CSS/board_final">base repo</a>를 기본으로 커스텀 하여 만들것</li>
 <li>[option]  <a href="https://weniv.github.io/react-blog/">react-blog</a> 를 커스텀하여 프론트를 퀄리티 있게 만들것</li>
@@ -1810,7 +1823,7 @@
     }
 
     User ||--o{ Article : writes</code></pre>
-<h2 id="0-django-admin">0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현<a class="headerlink" href="#0-django-admin" title="Permanent link">&para;</a></h2>
+<h5 id="0-django-admin">0. Django Admin을 이용한 게시글 읽기 및 메인 페이지 구현<a class="headerlink" href="#0-django-admin" title="Permanent link">#</a></h5>
 <p>이거는 블로그 튜토리얼에서 했던 <a href="../tinymce/">tinymce</a> 비스무리한 텍스트 에디터 플러그인을 끌어와 쓰면 된다. 음화화</p>
 <p>Django Admin을 이용하여 게시글을 생성하고, 메인 페이지에서 게시글 목록을 볼 수 있도록 구현합니다.</p>
 <p>쉽게 말해, 블로그 게시글을 Create하는 기능을 django로 작성하지 않고 Admin을 이용하여 게시글을 작성합니다. 즉, 게시글들과 게시글의 상세 페이지를 “보여주는”기능만 완성하면 됩니다.</p>
@@ -1839,7 +1852,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="1-crud">1. 블로그 CRUD 기능 구현하기<a class="headerlink" href="#1-crud" title="Permanent link">&para;</a></h2>
+<h5 id="1-crud">1. 블로그 CRUD 기능 구현하기<a class="headerlink" href="#1-crud" title="Permanent link">#</a></h5>
 <ul>
 <li><del>main page</del></li>
 <li>[x] 게시글 작성 기능<ul>

@@ -1798,7 +1798,7 @@
 <blockquote>
 <p>The admin.py file is used to display your models in the Django admin panel. You can also customize your admin panel.</p>
 </blockquote>
-<h2 id="abstractbaseuser"><code>AbstractBaseUser</code>를 상속한 커스텀 유저일 경우<a class="headerlink" href="#abstractbaseuser" title="Permanent link">&para;</a></h2>
+<h5 id="abstractbaseuser"><code>AbstractBaseUser</code>를 상속한 커스텀 유저일 경우<a class="headerlink" href="#abstractbaseuser" title="Permanent link">#</a></h5>
 <p>Admin site에 모습을 드러내게 하기 위해서 반드시 <code>django.contrib.auth.admin.UserAdmin</code>을 확장하여야 한다. 자세한 사항은 <a href="https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#custom-users-and-django-contrib-admin">문서</a>와 아래 Note를 읽어보기 바란다.</p>
 <blockquote>
 <p>[!note]<br />
@@ -1810,7 +1810,7 @@ If you are using a custom <code>ModelAdmin</code> which is a subclass of <cod
     <span class="n">add_fieldsets</span> <span class="o">=</span> <span class="n">UserAdmin</span><span class="o">.</span><span class="n">add_fieldsets</span> <span class="o">+</span> <span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;custom_field&quot;</span><span class="p">]}),)</span>
 </code></pre></div>
 </blockquote>
-<h2 id="modeladmin"><code>ModelAdmin</code><a class="headerlink" href="#modeladmin" title="Permanent link">&para;</a></h2>
+<h5 id="modeladmin"><code>ModelAdmin</code><a class="headerlink" href="#modeladmin" title="Permanent link">#</a></h5>
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#modeladmin-objects">doc</a></p>
 <p>특별히 추가할 필드가 없는 모델을 admin site에 띄우고 싶다면 굳이 새 클래스를 만들어 <code>pass</code> 할 필요 없이 다음과 같이 바로 <code>admin.site.register</code> 하면 된다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MyModel</span><span class="p">)</span>

@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,9 +1745,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#comparing-result-with-enum-in-python" class="md-nav__link">
+    Comparing result with enum in python
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing result with enum in python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#but-why" class="md-nav__link">
     But... Why?
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1768,7 +1779,9 @@
                   
 
 
-<h1 id="comparing-result-with-enum-in-python">Comparing result with enum in python<a class="headerlink" href="#comparing-result-with-enum-in-python" title="Permanent link">&para;</a></h1>
+  <h1>Comparing result with enum in python</h1>
+
+<h4 id="comparing-result-with-enum-in-python">Comparing result with enum in python<a class="headerlink" href="#comparing-result-with-enum-in-python" title="Permanent link">#</a></h4>
 <ul>
 <li><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/commit/b95f48beb847fb2a962932d6f90eacdefc70aeb3">enum 사용한 파이썬 코드 - 백준 27447 주문은 토기입니까?</a> </li>
 </ul>
@@ -1788,7 +1801,7 @@
 </code></pre></div>
 <p>러스트에서 <a href="https://users.rust-lang.org/t/greater-than-less-than-in-a-match-block/63399/5">다음과 같은 코드</a>를 본 나는 파이썬에도 똑같이 적용할 수 있을 것 같았다. 일단 파이썬에는 당연하겠지만 <code>Compare</code> enum은 존재하지 않을 것 같아 직접 만들었다. <code>auto</code>는 굳이 구체적인 숫자를 붙이기 싫을 때 사용하는거다.</p>
 <p>중요한 건 <code>compare</code>이다. 이 함수가 두 객체를 직접 비교하여 <code>Cmp</code> 오브젝트를 리턴하는 역할을 가지고 있다.</p>
-<h2 id="but-why">But... Why?<a class="headerlink" href="#but-why" title="Permanent link">&para;</a></h2>
+<h5 id="but-why">But... Why?<a class="headerlink" href="#but-why" title="Permanent link">#</a></h5>
 <p>백준 27447 문제를 풀면서 이건 <code>match</code>로 풀면 딱이겠다고 생각하며 발상한거라서 해당 문제풀이 코드 일부를 아래에 기술한다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">last_time</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="n">delta_time</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">31</span>

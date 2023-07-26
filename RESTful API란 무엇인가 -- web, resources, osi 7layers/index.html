@@ -1737,8 +1737,69 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    API란?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    REST API란?
+  </a>
+  
+    <nav class="md-nav" aria-label="REST API란?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    Web?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-are-resources" class="md-nav__link">
+    What are Resources?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-api_1" class="md-nav__link">
+    그런 REST API로 괜찮은가 스크랩
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uri-url" class="md-nav__link">
+    URI? URL?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osi-7-layers" class="md-nav__link">
+    OSI 7 Layers
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,9 +1814,11 @@
                   
 
 
-<h1 id="api">API란?<a class="headerlink" href="#api" title="Permanent link">&para;</a></h1>
+  <h1>RESTful API란 무엇인가 -- web, resources, osi 7layers</h1>
+
+<h4 id="api">API란?<a class="headerlink" href="#api" title="Permanent link">#</a></h4>
 <p>Application Programming Interface의 약자로, SW간에 상호작용을 위한 제안된 함수, 핸들 목록을 의미한다. 인터페이스이기 때문에 구현체를 알지 않아도 인터페이스만 안다면 해당 기술을 별 무리없이 사용할 수 있게되어 아주 강력한 추상화를 이루어 낼 수 있다.</p>
-<h1 id="rest-api">REST API란?<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h1>
+<h4 id="rest-api">REST API란?<a class="headerlink" href="#rest-api" title="Permanent link">#</a></h4>
 <p><a href="https://www.yalco.kr/23_rest_api/">yalco - posting</a> | <a href="https://www.ibm.com/topics/rest-apis">IBM - What is a REST API?</a> | <a href="https://blog.hubspot.com/website/uri-vs-url">hubspot.com - URI VS URL</a> | <a href="https://youtu.be/RP_f5dMoHFc">그런 REST API로 괜찮은가</a></p>
 <blockquote>
 <p>하이퍼텍스트를 포함한 Self-descriptive한 메시지의 Uniform Interface를 통해 <strong>리소스</strong>에 접근하는 API</p>
@@ -1774,7 +1837,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="web">Web?<a class="headerlink" href="#web" title="Permanent link">&para;</a></h2>
+<h5 id="web">Web?<a class="headerlink" href="#web" title="Permanent link">#</a></h5>
 <p>인터넷이 발전하던 1990년대, 엔티티 간에 데이터를 공유할 수 있는 방법으로 고안. </p>
 <ul>
 <li>HTML<ul>
@@ -1790,14 +1853,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="what-are-resources">What are Resources?<a class="headerlink" href="#what-are-resources" title="Permanent link">&para;</a></h2>
+<h5 id="what-are-resources">What are Resources?<a class="headerlink" href="#what-are-resources" title="Permanent link">#</a></h5>
 <ul>
 <li>html 문서</li>
 <li>photo</li>
 <li>txt 파일</li>
 <li>등등</li>
 </ul>
-<h2 id="rest-api_1">그런 REST API로 괜찮은가 스크랩<a class="headerlink" href="#rest-api_1" title="Permanent link">&para;</a></h2>
+<h5 id="rest-api_1">그런 REST API로 괜찮은가 스크랩<a class="headerlink" href="#rest-api_1" title="Permanent link">#</a></h5>
 <p>REST api가 구현하기 까다로운 이유는 다름아닌 Uniform Interface의 제약조건 때문이다. 단순히 유일한 URI를 만드는 것은 쉽다. 다만 메시지 자체가 <strong>self-descriptive</strong>한지 여부와 <strong>HATEOAS</strong>(헤이티오스)를 준수하는지 여부가 우리의 발목을 잡는다.<br />
 <a class="glightbox" href="../assets/fwer23.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="fwer23.png" src="../assets/fwer23.png" /></a>
 - self-descriptive message<br />
@@ -1814,9 +1877,9 @@
 <a class="glightbox" href="../assets/9sd93sdsdAS%201.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="9sd93sdsdAS 1.png" src="../assets/9sd93sdsdAS%201.png" /></a></p>
 <p>JSON은 RESTful한가?<br />
 <a class="glightbox" href="../assets/naver%20d2%20-%20Day1%2C%202-2.%20%EA%B7%B8%EB%9F%B0%20REST%20API%EB%A1%9C%20%EA%B4%9C%EC%B0%AE%EC%9D%80%EA%B0%80%20%5BRP_f5dMoHFc%20-%201314x739%20-%2038m34s%5D.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="naver d2 - Day1, 2-2. 그런 REST API로 괜찮은가 [RP_f5dMoHFc - 1314x739 - 38m34s].png" src="../assets/naver%20d2%20-%20Day1%2C%202-2.%20%EA%B7%B8%EB%9F%B0%20REST%20API%EB%A1%9C%20%EA%B4%9C%EC%B0%AE%EC%9D%80%EA%B0%80%20%5BRP_f5dMoHFc%20-%201314x739%20-%2038m34s%5D.png" /></a></p>
-<h2 id="uri-url">URI? URL?<a class="headerlink" href="#uri-url" title="Permanent link">&para;</a></h2>
+<h5 id="uri-url">URI? URL?<a class="headerlink" href="#uri-url" title="Permanent link">#</a></h5>
 <p><a href="../URI%20vs%20URL/">URI vs URL</a></p>
-<h1 id="osi-7-layers">OSI 7 Layers<a class="headerlink" href="#osi-7-layers" title="Permanent link">&para;</a></h1>
+<h4 id="osi-7-layers">OSI 7 Layers<a class="headerlink" href="#osi-7-layers" title="Permanent link">#</a></h4>
 <p><a href="https://1drv.ms/b/s!AgE-lhMulmhxg5UUghoFBc0ThAoxNQ?e=Jtr77T">네트워크 top down aproach overview pdf</a></p>
 <p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-26%2021.27.51.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-05-26 21.27.51.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-05-26%2021.27.51.png" /></a></p>
 

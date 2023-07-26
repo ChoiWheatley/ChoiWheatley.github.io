@@ -1737,8 +1737,35 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-unix-based-systems" class="md-nav__link">
+    for UNIX-based systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-windows-systems" class="md-nav__link">
+    for Windows systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    공통
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,20 +1780,22 @@
                   
 
 
-<h1 id="for-unix-based-systems">for UNIX-based systems<a class="headerlink" href="#for-unix-based-systems" title="Permanent link">&para;</a></h1>
+  <h1>python venv 환경설정</h1>
+
+<h4 id="for-unix-based-systems">for UNIX-based systems<a class="headerlink" href="#for-unix-based-systems" title="Permanent link">#</a></h4>
 <ol>
 <li><a href="https://stackoverflow.com/a/59268046/6428901">pyenv</a>를 사용하여 사용할 파이썬의 버전을 명시할 수 있음.</li>
 <li><code>python&lt;version&gt; -m venv &lt;environment-name&gt;</code> 예시: <code>python3.11.3 -m venv venv</code></li>
 <li><code>. &lt;environment-name&gt;/bin/activate</code></li>
 </ol>
-<h1 id="for-windows-systems">for Windows systems<a class="headerlink" href="#for-windows-systems" title="Permanent link">&para;</a></h1>
+<h4 id="for-windows-systems">for Windows systems<a class="headerlink" href="#for-windows-systems" title="Permanent link">#</a></h4>
 <ol>
 <li>https://www.python.org 에 접속하여 원하는 파이썬 버전을 설치함.</li>
 <li>설치한 파이썬의 절대경로를 복사한다. (윈도우 키 누른 뒤에 <code>Python 3.11.3</code> 검색 후 Open File Location)</li>
 <li><code>&lt;python-path&gt;\python.exe -m venv &lt;environment-name&gt;</code> 예시: <code>C:\Users\chltm\AppData\Local\Programs\Python\Python311\python.exe -m venv venv</code></li>
 <li><code>.\&lt;environement-name&gt;\Scripts\Activate.ps1</code></li>
 </ol>
-<h1 id="_1">공통<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h4 id="_1">공통<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <ul>
 <li><code>python -V</code>를 사용하여 내가 사용하려는 파이썬 버전을 확인가능. </li>
 <li><a href="../%EB%82%B4%EA%B0%80%20%EC%8B%A4%ED%96%89%EC%A4%91%EC%9D%B8%20python%EC%9D%98%20%EC%A0%88%EB%8C%80%EA%B2%BD%EB%A1%9C%EB%A5%BC%20%EC%95%8C%EA%B3%A0%EC%8B%B6%EB%8B%A4%EB%A9%B4/">내가 실행중인 python의 절대경로를 알고싶다면</a></li>

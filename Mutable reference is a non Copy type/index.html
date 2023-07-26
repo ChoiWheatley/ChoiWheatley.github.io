@@ -1776,7 +1776,7 @@
   <h1>Mutable reference is a non Copy type</h1>
 
 <p>https://cotigao.medium.com/mutable-reference-in-rust-995320366e22</p>
-<h2 id="mutable-reference-cannot-outlive">mutable reference cannot outlive<a class="headerlink" href="#mutable-reference-cannot-outlive" title="Permanent link">&para;</a></h2>
+<h5 id="mutable-reference-cannot-outlive">mutable reference cannot outlive<a class="headerlink" href="#mutable-reference-cannot-outlive" title="Permanent link">#</a></h5>
 <p>다음 코드의 scope가 벗어나게되면 x가 해제되고 y는 dangling pointer가 되게 된다. 따라서 컴파일 에러가 발생한다.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -1785,7 +1785,7 @@
 <span class="w">    </span><span class="o">&amp;**</span><span class="n">y</span>
 <span class="p">};</span>
 </code></pre></div>
-<h2 id="immutable-reference-copied-out">immutable reference COPIED out<a class="headerlink" href="#immutable-reference-copied-out" title="Permanent link">&para;</a></h2>
+<h5 id="immutable-reference-copied-out">immutable reference COPIED out<a class="headerlink" href="#immutable-reference-copied-out" title="Permanent link">#</a></h5>
 <p>단지 불변 레퍼런스로 바꿨을 뿐인데 컴파일이 잘 된다. 이유로는 x가 단순히 y에 복사되어 들어가기 때문에 x가 소멸되어도 y는 i를 제대로 가리킬 수 있는 것이다.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>

@@ -1737,8 +1737,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    TL;DR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    번역
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,17 +1773,19 @@
                   
 
 
+  <h1>reverse를 사용해야 하는 이유 {django}</h1>
+
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/http/urls/#reverse-resolution-of-urls">Reverse resolution of URLs {docs.com}</a></li>
 <li><a href="https://www.webforefront.com/django/designprinciples.html">Don't Repeat Yourself (DRY principle)</a></li>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/http/urls/#reverse-resolution-of-urls">Reverse resolution of URLs {docs.com}</a></li>
 </ul>
-<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h1>
+<h4 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h4>
 <ul>
 <li>reverse는 URL 하드코딩을 피할 수 있는 좋은 도구이다.</li>
 <li>DRY 메커니즘을 사용하면 URL을 교체하는 것과 업무로직을 분리할 수 있다.</li>
 </ul>
-<h1 id="_1">번역<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h4 id="_1">번역<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <p>Django 프로젝트에서 작업할 때 일반적으로 필요한 것은 생성된 콘텐츠(뷰 및 자산 URL, 사용자에게 표시되는 URL 등)에 임베드하거나 서버 측의 탐색 흐름(리디렉션 등)을 처리하기 위해 최종 형식의 URL을 가져오는 것입니다.</p>
 <p>이러한 URL을 하드코딩하는 것은 피하는 것이 좋습니다(힘들고 확장성이 떨어지며 오류가 발생하기 쉬운 전략). URLconf에서 설명하는 설계와 평행한 URL을 생성하기 위해 임시 메커니즘을 고안하는 것도 마찬가지로 위험하며, 시간이 지남에 따라 부실해지는 URL을 생성할 수 있습니다.</p>
 <p>즉, 필요한 것은 DRY 메커니즘입니다. 이 메커니즘을 사용하면 프로젝트 소스 코드를 모두 검토하여 오래된 URL을 검색하고 교체할 필요 없이 URL 디자인을 발전시킬 수 있다는 장점이 있습니다.</p>

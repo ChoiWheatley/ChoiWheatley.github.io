@@ -1737,8 +1737,35 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstractbaseuser" class="md-nav__link">
+    AbstractBaseUser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstractuser" class="md-nav__link">
+    AbstractUser
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-users-and-the-built-in-authentication-forms" class="md-nav__link">
+    Custom users and the built-in authentication forms
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,6 +1780,8 @@
                   
 
 
+  <h1>Customizing authentication in {django} {AbstractUser, AbstractBaseUser}</h1>
+
 <ul>
 <li><a href="https://docs.djangoproject.com/en/dev/topics/auth/customizing/#a-full-example">full example {doc}</a></li>
 <li><a href="https://dev.to/chokshiroshan/how-to-use-email-as-username-for-django-authentication-8if">How to use email as username in django</a></li>
@@ -1760,7 +1789,7 @@
 <li><a href="../django%20Creating%20custom%20user%20model%20using%20AbstractUser%20in%20django-RestFramework/">django Creating custom user model using AbstractUser in django-RestFramework</a></li>
 </ul>
 <hr />
-<h1 id="abstractbaseuser"><code>AbstractBaseUser</code><a class="headerlink" href="#abstractbaseuser" title="Permanent link">&para;</a></h1>
+<h4 id="abstractbaseuser"><code>AbstractBaseUser</code><a class="headerlink" href="#abstractbaseuser" title="Permanent link">#</a></h4>
 <p>비밀번호 해싱에 필요한 구현체를 마련해놓고 프로그래머에게 기본 <code>User</code>를 확장할 수 있게 도와준다. 오버라이딩이 필요한 멤버는 다음과 같다. 
 - <code>USERNAME_FIELD</code> =&gt; default authentication backend는 pk 아닌 최소 하나의 필드를 고유하게 만들어야 하는데, 그것이 <code>username</code> 필드이다. 다른 필드를 고유하게 만들고 싶다면 얘를 수정해주면 된다.
 - <code>REQUIRED_FIELDS</code> =&gt; <code>createsuperuser</code> 명령시 이걸 보고 input field를 제공. ❕ <code>USERNAME_FIELD</code>는 기본으로 들어가기 때문에 중복하여 넣지 않도록 유의
@@ -1769,13 +1798,13 @@
 <p>다만, <code>AbstractBaseUser</code>는 <code>UserManager</code>라는 유저 생성에 관여하는 매니저 객체를 필요로 한다. 커스텀 <code>User</code>가 단지 필드만 수정한 경우라면 <code>BaseUserManager</code>를 상속하는 것이 유리하다. 오버라이드 할 메서드는 다음과 같다.
 - <code>create_user(username_field, password, **other_fields)</code>
 - <code>create_superuser(username_field, password, **other_fields)</code></p>
-<h1 id="abstractuser"><code>AbstractUser</code><a class="headerlink" href="#abstractuser" title="Permanent link">&para;</a></h1>
+<h4 id="abstractuser"><code>AbstractUser</code><a class="headerlink" href="#abstractuser" title="Permanent link">#</a></h4>
 <blockquote>
 <p>[!info]<br />
 <code>AbstractUser</code> extends <code>AbstractBaseUser</code> with full implementation of the default <code>User</code> as an abstract model.</p>
 </blockquote>
 <p>따라서, <code>AbstractUser</code>는 기본 <code>UserManager</code>또한 구현하고 있다는 것을 알 수 있다.</p>
-<h1 id="custom-users-and-the-built-in-authentication-forms">Custom users and the built-in authentication <strong>forms</strong><a class="headerlink" href="#custom-users-and-the-built-in-authentication-forms" title="Permanent link">&para;</a></h1>
+<h4 id="custom-users-and-the-built-in-authentication-forms">Custom users and the built-in authentication <strong>forms</strong><a class="headerlink" href="#custom-users-and-the-built-in-authentication-forms" title="Permanent link">#</a></h4>
 <p>기본 내장 form과 view는 기본 <code>User</code>를 사용하고 있음을 전제로 깔아뒀기 때문에 만약 <code>User</code>를 커스텀 했다면 form, view 모두 같이 커스텀 해야만 한다. 관련한 문제는 <a href="./커스텀한 User의 UserCreationForm 재정의하기 {django}.md">커스텀한 <code>User</code>의 <code>UserCreationForm</code> 재정의하기 {django}</a> 에서 볼 수 있다.</p>
 
 

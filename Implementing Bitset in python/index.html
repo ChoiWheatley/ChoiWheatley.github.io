@@ -1806,7 +1806,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">bits</span><span class="p">[</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
 </code></pre></div>
 <p>직접 비트셋을 구현한 것을 보면 알 수 있겠지만, 파이썬에선 별도의 비트셋 객체가 없다. 물론 <code>pip</code>를 사용하여 외부 패키지(<a href="https://pypi.org/project/BitSet/">BitSet</a>, <a href="https://pypi.org/project/BitVector/">BitVector</a>) 을 사용할 수 있겠지만, 이러면 코딩테스트에서 문제를 풀 수가 없다!</p>
-<h2 id="why-bitset">WHY Bitset?<a class="headerlink" href="#why-bitset" title="Permanent link">&para;</a></h2>
+<h5 id="why-bitset">WHY Bitset?<a class="headerlink" href="#why-bitset" title="Permanent link">#</a></h5>
 <p>비트셋을 사용하는 이유, 특히 코딩테스트에서 사용하는 이유는 가뜩이나 메모리를 많이 잡수시는 파이썬, 메모리를 조금이라도 아끼기 위해서이다. 예를 들어 <code>bool</code> 타입 리스트를 만들어 어떤 인덱스를 방문했는지 여부를 저장하는 <code>visited</code> 객체를 만든다고 가정해보자.</p>
 <div class="highlight"><pre><span></span><code><span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)]</span>
 </code></pre></div>
@@ -1815,7 +1815,7 @@
 <p><a href="https://pypi.org/project/BitVector/">Booleans are subtype of integers</a></p>
 </blockquote>
 <p>불리언 타입은 정수의 하위타입이다. 정수타입은 기본적으로 32비트일 것이므로(아마도) 오직 참과 거짓만을 표현하는 데 무려 31개의 비트를 낭비하는 것이다. </p>
-<h2 id="how-bitset">How Bitset?<a class="headerlink" href="#how-bitset" title="Permanent link">&para;</a></h2>
+<h5 id="how-bitset">How Bitset?<a class="headerlink" href="#how-bitset" title="Permanent link">#</a></h5>
 <p>내가 구현한 비트셋 연산은 C++에서 제공하는 <a href="https://pypi.org/project/BitVector/">bitset</a>의 시그니처를 많이 가져왔다. 
 - <code>test</code> ==&gt; 주어진 인덱스가 참인지 판별
 - <code>set</code> ==&gt; 주어진 인덱스를 True로 설정

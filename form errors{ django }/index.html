@@ -1737,8 +1737,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rendering-fields-manually" class="md-nav__link">
+    Rendering fields manually
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formadd_error" class="md-nav__link">
+    Form.add_error()
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,6 +1773,8 @@
                   
 
 
+  <h1>form errors{ django }</h1>
+
 <p>{% raw %}</p>
 <ul>
 <li>parent: <a href="../django%20forms/">django forms</a></li>
@@ -1760,7 +1782,7 @@
 <li><a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#django.forms.Form.errors">docs - Form.errors</a></li>
 <li><code>form.is_valid()</code>가 실패했을 때 기본적으로 추가되는 에러메시지 말고도 내가 에러를 폼에 넣어서 <strong>자동으로</strong> 렌더링 시킬 수 있다나 뭐라나.</li>
 </ul>
-<h1 id="rendering-fields-manually"><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">Rendering fields manually</a><a class="headerlink" href="#rendering-fields-manually" title="Permanent link">&para;</a></h1>
+<h4 id="rendering-fields-manually"><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">Rendering fields manually</a><a class="headerlink" href="#rendering-fields-manually" title="Permanent link">#</a></h4>
 <p>폼의 멤버를 참조할 수 있구만. <code>{{ form.name_of_field }}</code> 에러는 그 뒤에 <code>errors</code>를 붙이기만 하면 된다. <code>{{ form.name_of_field.errors }}</code> 또는 <code>{{ form.non_field_errors }}</code></p>
 <div class="highlight"><pre><span></span><code><span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">non_field_errors</span> <span class="p">}}</span>
 <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;fieldWrapper&quot;</span><span class="o">&gt;</span>
@@ -1784,7 +1806,7 @@
     <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">cc_myself</span> <span class="p">}}</span>
 <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </code></pre></div>
-<h1 id="formadd_error"><a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#django.forms.Form.add_error">Form.add_error()</a><a class="headerlink" href="#formadd_error" title="Permanent link">&para;</a></h1>
+<h4 id="formadd_error"><a href="https://docs.djangoproject.com/en/4.2/ref/forms/api/#django.forms.Form.add_error">Form.add_error()</a><a class="headerlink" href="#formadd_error" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">Form</span><span class="o">.</span><span class="n">add_error</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
 </code></pre></div>
 <p>구체적인 필드와 에러를 추가할 수 있다. 필드 자리에 <code>None</code>이 들어가면 자동으로 <code>non_field_errors</code> 안에 들어간다.</p>

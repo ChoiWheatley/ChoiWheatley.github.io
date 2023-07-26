@@ -1737,8 +1737,130 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    INDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdbms" class="md-nav__link">
+    RDBMS의 기본
+  </a>
+  
+    <nav class="md-nav" aria-label="RDBMS의 기본">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key" class="md-nav__link">
+    Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    조인
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rdbms_1" class="md-nav__link">
+    RDBMS가 제공하는 연산
+  </a>
+  
+    <nav class="md-nav" aria-label="RDBMS가 제공하는 연산">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dml" class="md-nav__link">
+    DML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ddl" class="md-nav__link">
+    DDL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dcl" class="md-nav__link">
+    DCL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    트랜잭션
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    데이터 모델링
+  </a>
+  
+    <nav class="md-nav" aria-label="데이터 모델링">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cardinality" class="md-nav__link">
+    Cardinality (대응수)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    식별관계와 비식별 관계
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    정규화
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n1-problem" class="md-nav__link">
+    N+1 Problem
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,7 +1875,9 @@
                   
 
 
-<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
+  <h1>Data Modeling {book-project}</h1>
+
+<h4 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h4>
 <ul>
 <li>TLDR<ul>
 <li>Onedrive 2021_1 Database1 수업을 기반으로 정리.</li>
@@ -1779,7 +1903,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="rdbms">RDBMS의 기본<a class="headerlink" href="#rdbms" title="Permanent link">&para;</a></h1>
+<h4 id="rdbms">RDBMS의 기본<a class="headerlink" href="#rdbms" title="Permanent link">#</a></h4>
 <p>Relational Data Base Management System의 약자. 우리가 가장 익히 알고 있는 RDBMS에는 정형 데이터 처리 도구인 SQL family가 있다.</p>
 <ul>
 <li>필드란<ul>
@@ -1848,7 +1972,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="key">Key<a class="headerlink" href="#key" title="Permanent link">&para;</a></h2>
+<h5 id="key">Key<a class="headerlink" href="#key" title="Permanent link">#</a></h5>
 <ul>
 <li>테이블의 레코드를 검색할 때 하나의 레코드를 구별(식별)할 수 있도록 하는 기준. 유일성 (Unique) 기준을 만족해야 한다.</li>
 <li><strong>복합키(Composite Key)</strong>: 하나의 칼럼이나 여러 칼럼을 묶어서 사용가능 (주민번호 + 학번 + 사번)</li>
@@ -1869,13 +1993,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="_1">조인<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h5 id="_1">조인<a class="headerlink" href="#_1" title="Permanent link">#</a></h5>
 <ul>
 <li>여러 테이블을 합쳐 큰 테이블로 만드는 연산. 테이블이 나뉘어진 상태에서 원하는 데이터를 찾기 위해선 먼저 테이블을 합쳐야 한다. 왜냐하면 검색을 시작한 테이블에 내가 원하는 데이터가 존재할 거란 보장이 없기 때문이다.</li>
 <li>조인은 테이블 단위 연산이다. 조인과정에서 테이블 간의 공통칼럼이 있어야 한다. 이를 표준 조인이라고 부른다. 이때 공통칼럼을 외래키라고 부른다.</li>
 </ul>
-<h1 id="rdbms_1">RDBMS가 제공하는 연산<a class="headerlink" href="#rdbms_1" title="Permanent link">&para;</a></h1>
-<h2 id="dml">DML<a class="headerlink" href="#dml" title="Permanent link">&para;</a></h2>
+<h4 id="rdbms_1">RDBMS가 제공하는 연산<a class="headerlink" href="#rdbms_1" title="Permanent link">#</a></h4>
+<h5 id="dml">DML<a class="headerlink" href="#dml" title="Permanent link">#</a></h5>
 <ul>
 <li>(Data Manipulation Language)</li>
 <li>selection<ul>
@@ -1936,7 +2060,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="ddl">DDL<a class="headerlink" href="#ddl" title="Permanent link">&para;</a></h2>
+<h5 id="ddl">DDL<a class="headerlink" href="#ddl" title="Permanent link">#</a></h5>
 <ul>
 <li>Data Definition Language</li>
 <li>create database</li>
@@ -1955,7 +2079,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="dcl">DCL<a class="headerlink" href="#dcl" title="Permanent link">&para;</a></h2>
+<h5 id="dcl">DCL<a class="headerlink" href="#dcl" title="Permanent link">#</a></h5>
 <ul>
 <li>(Data Control Language) | <a href="https://www.geeksforgeeks.org/mysql-grant-revoke-privileges/">gtg.org</a></li>
 <li>루트를 제외한 유저들에게 권한부여하는 명령어 모음</li>
@@ -1986,7 +2110,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_2">트랜잭션<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h4 id="_2">트랜잭션<a class="headerlink" href="#_2" title="Permanent link">#</a></h4>
 <ul>
 <li>RDBMS의 간판기능<ul>
 <li>트랜잭션의 모든 제약조건 (ACID)를 만족<ul>
@@ -2013,7 +2137,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_3">데이터 모델링<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h4 id="_3">데이터 모델링<a class="headerlink" href="#_3" title="Permanent link">#</a></h4>
 <p>| <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">wiki.org</a> | <a href="https://lifreeblog.tistory.com/70">blog</a> |</p>
 <ul>
 <li>정의<ul>
@@ -2083,7 +2207,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="cardinality">Cardinality (대응수)<a class="headerlink" href="#cardinality" title="Permanent link">&para;</a></h2>
+<h5 id="cardinality">Cardinality (대응수)<a class="headerlink" href="#cardinality" title="Permanent link">#</a></h5>
 <ul>
 <li>1:1<ul>
 <li><a class="glightbox" href="../assets/Pasted%20image%2020230614170840.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614170840.png" src="../assets/Pasted%20image%2020230614170840.png" /></a></li>
@@ -2120,7 +2244,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="_4">식별관계와 비식별 관계<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h5 id="_4">식별관계와 비식별 관계<a class="headerlink" href="#_4" title="Permanent link">#</a></h5>
 <ul>
 <li>식별관계 (Identifying Relationship)<ul>
 <li>강한 엔티티와 약한 엔티티 사이의 관계. </li>
@@ -2135,7 +2259,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_5">정규화<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<h4 id="_5">정규화<a class="headerlink" href="#_5" title="Permanent link">#</a></h4>
 <p>| <a href="https://mangkyu.tistory.com/110">blog</a> |</p>
 <ul>
 <li>데이터 중복을 방지하기 위해 사용하는 모델링 기법. </li>
@@ -2160,7 +2284,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="n1-problem">N+1 Problem<a class="headerlink" href="#n1-problem" title="Permanent link">&para;</a></h1>
+<h4 id="n1-problem">N+1 Problem<a class="headerlink" href="#n1-problem" title="Permanent link">#</a></h4>
 <p>ORM의 문제점: 쿼리가 필요한 것보다 많이 요청된다.</p>
 <p>지금 테이블에 연관 칼럼이 없을 경우 조인 연산을 수행한다. ORM은 <code>user.orders...</code>이런 식으로 자연스럽게 작성하게 되는데, 구현체 입장에서는 없는 칼럼 하나당 SELECT 쿼리를 날린다. 문제는 주문개수가 100개라면 단순히 연관 테이블의 멤버를 찾기 위해 100번의 추가적인 쿼리를 날려야 하게 된다. </p>
 <p>사전에 필요한 테이블에 대한 내용까지 조인을 수행시켜놓는다. 앞으로의 ORM 요청에 대하여 조인한 테이블을 기준으로 찾으면 된다. (캐시잖아..!)</p>

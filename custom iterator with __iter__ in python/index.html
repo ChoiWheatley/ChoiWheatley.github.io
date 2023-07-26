@@ -1817,7 +1817,7 @@
 <p>under the hood...
 1. <code>for</code>가 <code>__iter__</code>를 호출한다. 내부적으로 초기화 작업을 수행한다.
 2. 순회를 하면서 <code>__next__</code>를 호출한다. 이때 이터레이터는 내부 상태를 바꾸는 작업을 수행한다.</p>
-<h3 id="iter-next-builtin-functions"><code>iter</code>, <code>next</code> builtin functions<a class="headerlink" href="#iter-next-builtin-functions" title="Permanent link">&para;</a></h3>
+<h6 id="iter-next-builtin-functions"><code>iter</code>, <code>next</code> builtin functions<a class="headerlink" href="#iter-next-builtin-functions" title="Permanent link">#</a></h6>
 <p>그냥 <code>iter</code> 는 <code>__iter__</code>를 실행시켜 이터레이터 오브젝트를 반환받고, <code>next</code>는 이터레이터의 상태를 변화시고 결과값을 받아낸다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">my_iterator</span> <span class="o">=</span> <span class="n">MyIterator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">my_iterator</span><span class="p">)</span>
@@ -1829,12 +1829,12 @@
 <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># 4</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>  <span class="c1"># raise StopIteration</span>
 </code></pre></div>
-<h3 id="unpacking-iterators">Unpacking Iterators<a class="headerlink" href="#unpacking-iterators" title="Permanent link">&para;</a></h3>
+<h6 id="unpacking-iterators">Unpacking Iterators<a class="headerlink" href="#unpacking-iterators" title="Permanent link">#</a></h6>
 <p>순회를 굳이 하지 않고, 몇개의 원소들을 임의로 분해(혹은 언팩)할 수 있다. 이건 좀 좋은데?</p>
 <div class="highlight"><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">MyIterator</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="generator-which-generates-iterator-like-control-block">Generator which generates iterator-like control block<a class="headerlink" href="#generator-which-generates-iterator-like-control-block" title="Permanent link">&para;</a></h3>
+<h6 id="generator-which-generates-iterator-like-control-block">Generator which generates iterator-like control block<a class="headerlink" href="#generator-which-generates-iterator-like-control-block" title="Permanent link">#</a></h6>
 <p><a href="../generator%20function%20-%20python/">generator function - python</a>으로 옮겨감</p>
 
 

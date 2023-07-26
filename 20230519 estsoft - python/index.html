@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,23 +1745,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    페이지 교체 알고리즘
+  </a>
+  
+    <nav class="md-nav" aria-label="페이지 교체 알고리즘">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#mru-most-recently-used" class="md-nav__link">
     MRU (Most Recently Used)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#lru-least-recently-used" class="md-nav__link">
     LRU (Least Recently Used)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#fifo-first-in-first-out" class="md-nav__link">
     FIFO (First In First Out)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliding-window-and-two-pointer" class="md-nav__link">
+    Sliding Window and Two Pointer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recursion" class="md-nav__link">
+    Recursion
+  </a>
+  
+    <nav class="md-nav" aria-label="Recursion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palindrome-with-stack-queue-recursion" class="md-nav__link">
+    Palindrome with stack | queue | recursion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1782,18 +1820,20 @@
                   
 
 
-<h1 id="_1">페이지 교체 알고리즘<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="mru-most-recently-used">MRU (Most Recently Used)<a class="headerlink" href="#mru-most-recently-used" title="Permanent link">&para;</a></h2>
+  <h1>20230519 estsoft - python</h1>
+
+<h4 id="_1">페이지 교체 알고리즘<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
+<h5 id="mru-most-recently-used">MRU (Most Recently Used)<a class="headerlink" href="#mru-most-recently-used" title="Permanent link">#</a></h5>
 <p>MISS =&gt; <code>pop(0)</code>를 수행함.<br />
 HIT가 되면 <code>pop(0)</code>하지 않음.</p>
-<h2 id="lru-least-recently-used">LRU (Least Recently Used)<a class="headerlink" href="#lru-least-recently-used" title="Permanent link">&para;</a></h2>
+<h5 id="lru-least-recently-used">LRU (Least Recently Used)<a class="headerlink" href="#lru-least-recently-used" title="Permanent link">#</a></h5>
 <p>MISS =&gt; <code>pop(0)</code>를 수행함.<br />
 HIT =&gt; 히트한 원소를 꺼내어(위치상관없이) 다시 삽입한다.</p>
 <p>deque을 사용하면 <code>maxlen</code>을 설정하여 자동으로 <code>popleft</code>를 수행하게 만들 수 있군.</p>
-<h2 id="fifo-first-in-first-out">FIFO (First In First Out)<a class="headerlink" href="#fifo-first-in-first-out" title="Permanent link">&para;</a></h2>
+<h5 id="fifo-first-in-first-out">FIFO (First In First Out)<a class="headerlink" href="#fifo-first-in-first-out" title="Permanent link">#</a></h5>
 <p>선입선출 알고리즘<br />
 무지성으로 queue를 사용하면 이렇게 된다. 당연히 출제빈도는 낮음</p>
-<h1 id="sliding-window-and-two-pointer">Sliding Window and Two Pointer<a class="headerlink" href="#sliding-window-and-two-pointer" title="Permanent link">&para;</a></h1>
+<h4 id="sliding-window-and-two-pointer">Sliding Window and Two Pointer<a class="headerlink" href="#sliding-window-and-two-pointer" title="Permanent link">#</a></h4>
 <ul>
 <li>two pointer =&gt; 두 개의 점의 위치를 사용</li>
 <li>sliding window =&gt; 슬라이싱을 사용하여 고정된 길이의 윈도우를 움직이며 순회</li>
@@ -1802,8 +1842,8 @@ HIT =&gt; 히트한 원소를 꺼내어(위치상관없이) 다시 삽입한다.
 <ul>
 <li>[ ] 슬라이딩 윈도우 : [2, 5, 4, 6, 4, 6, 7, 6, 4, 3, 1, 2]에서 연속된 2개의 합이 10인 모든 수를 찾아라.</li>
 </ul>
-<h1 id="recursion">Recursion<a class="headerlink" href="#recursion" title="Permanent link">&para;</a></h1>
-<h2 id="palindrome-with-stack-queue-recursion">Palindrome with stack | queue | recursion<a class="headerlink" href="#palindrome-with-stack-queue-recursion" title="Permanent link">&para;</a></h2>
+<h4 id="recursion">Recursion<a class="headerlink" href="#recursion" title="Permanent link">#</a></h4>
+<h5 id="palindrome-with-stack-queue-recursion">Palindrome with stack | queue | recursion<a class="headerlink" href="#palindrome-with-stack-queue-recursion" title="Permanent link">#</a></h5>
 
 
 

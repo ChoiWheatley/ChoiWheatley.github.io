@@ -1737,8 +1737,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    INDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    Keywords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    Glossary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    Workflow
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,16 +1787,18 @@
                   
 
 
-<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
+  <h1>drf {django rest framework}</h1>
+
+<h4 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h4>
 <ul>
 <li><a href="https://www.django-rest-framework.org/">drf page</a></li>
 </ul>
-<h1 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permanent link">&para;</a></h1>
+<h4 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permanent link">#</a></h4>
 <ul>
 <li>throttles {drf}</li>
 <li><a href="../internalization%20with%20i18n%20%7Bdrf%7D/">internalization with i18n {drf}</a></li>
 </ul>
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
+<h4 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">#</a></h4>
 <ul>
 <li>Serialization (직렬화)<ul>
 <li>복잡한 데이터타입 (쿼리셋, 모델 객체)을 먼저 파이썬 내장 dict로 변환하는 일을 말한다. 이렇게 하는 이유는 dict는 JSON이나 XML과 같은 형식을 준수하기 쉽기 때문이다.</li>
@@ -1773,7 +1809,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h1>
+<h4 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">#</a></h4>
 <ul>
 <li>Form 클래스를 만들듯이, Serializer를 상속받은 클래스들은 자기만의 <strong>필드</strong>를 가질 수 있다. 필드를 기반으로 (역)직렬화가 진행이 되며, 기능을 몇가지만 추가하면 view에서는 이 Serializer 메서드를 호출하기만 하면 CRUD가 다 된다.</li>
 <li><strong><code>create</code>, <code>update</code></strong> 등을 오버라이드하여 Serializer 객체의 상태를 실제 모델에 적용시킬 수 있다. 이름처럼, 새로운 레코드를 추가할 수도 있고, 기존의 인스턴스를 수정할 수도 있다.</li>

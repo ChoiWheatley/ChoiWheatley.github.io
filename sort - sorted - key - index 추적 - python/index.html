@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,8 +1745,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    Sort
+  </a>
+  
+    <nav class="md-nav" aria-label="Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#zip" class="md-nav__link">
     갑분 좌표평면 차원축소 문제와  zip 활용법
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    인덱스 추적
   </a>
   
 </li>
@@ -1768,7 +1786,9 @@
                   
 
 
-<h1 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">&para;</a></h1>
+  <h1>sort - sorted - key - index 추적 - python</h1>
+
+<h4 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">#</a></h4>
 <ul>
 <li><code>sort</code>는 원본을 만지고, 반환값이 없음 (<code>None</code>을 리턴함)</li>
 <li><code>sorted</code>는 원본을 만지지 않고 정렬된 새 리스트를 반환함<ul>
@@ -1796,7 +1816,7 @@
 <p><code>filter</code>를 사용하면 <code>remove</code>를 여러 번 사용한 효과를 볼 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">20</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]))</span>
 </code></pre></div>
-<h2 id="zip">갑분 좌표평면 차원축소 문제와  zip 활용법<a class="headerlink" href="#zip" title="Permanent link">&para;</a></h2>
+<h5 id="zip">갑분 좌표평면 차원축소 문제와  zip 활용법<a class="headerlink" href="#zip" title="Permanent link">#</a></h5>
 <p>https://codingdojang.com/scode/408?answer_mode=hid<br />
 좌표평면 문제가 나오면 차원 축소나 차원 확대가 가능한 문제인지 확인할 것.</p>
 <blockquote>
@@ -1840,7 +1860,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">sum</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
 </code></pre></div>
-<h1 id="_1">인덱스 추적<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h4 id="_1">인덱스 추적<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <p>만약 리스트 정렬 수행결과 뿐만 아니라 옮겨진 <strong>인덱스</strong>까지 추적하고 싶다면 <a href="https://stackoverflow.com/questions/7851078/how-to-return-index-of-a-sorted-list#7851166">다음 토론</a>을 보는 것이 좋다.</p>
 <p>pandas의 <code>sorted_index</code>를 사용하는 것보다 이게 훨씬 낫다!!!</p>
 <div class="highlight"><pre><span></span><code><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>

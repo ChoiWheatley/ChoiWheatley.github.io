@@ -1737,8 +1737,110 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#form" class="md-nav__link">
+    form, 너의 역할은 무엇이냐
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#form_1" class="md-nav__link">
+    Form의 구성
+  </a>
+  
+    <nav class="md-nav" aria-label="Form의 구성">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#media" class="md-nav__link">
+    Media
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widget" class="md-nav__link">
+    Widget
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelforms" class="md-nav__link">
+    ModelForms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usercreationform" class="md-nav__link">
+    UserCreationForm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forms-workflow" class="md-nav__link">
+    forms workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="forms workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    템플릿 활용방안 1: 알아서
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-rendering-fields-manually" class="md-nav__link">
+    템플릿 활용방안 2: rendering fields manually
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-looping-over-forms-fields" class="md-nav__link">
+    템플릿 활용방안 3: looping over form's fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crispy-forms" class="md-nav__link">
+    crispy-forms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choices" class="md-nav__link">
+    choices
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,12 +1855,14 @@
                   
 
 
+  <h1>django forms</h1>
+
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/forms/">Working with forms {doc}</a></li>
 <li><a href="../form%20errors%7B%20django%20%7D/">form errors{ django }</a></li>
 <li><code>django.forms</code>를 실제로 활용하고 있는 영상 | <a href="https://youtu.be/sMqDJovFO-Y?t=1350">https://youtu.be/sMqDJovFO-Y?t=1350</a></li>
 </ul>
-<h1 id="form">form, 너의 역할은 무엇이냐<a class="headerlink" href="#form" title="Permanent link">&para;</a></h1>
+<h4 id="form">form, 너의 역할은 무엇이냐<a class="headerlink" href="#form" title="Permanent link">#</a></h4>
 <ul>
 <li>DRF만으로 데이터 전송할 것이 아니라면 무조건 들춰보게 될 유용한 도구이다. 접속자가 우리 웹에서 활동(글쓰기, 댓글 등)을 하는 여러 유즈케이스를 구현하는데 도움을 줄 것이다.</li>
 <li>렌더링 이전에는 폼에 필요한 데이터들을 정렬한다.</li>
@@ -1766,13 +1870,13 @@
 <li>사용자 입력을 올바르게 가지고 와서 처리까지 수행한다.</li>
 <li><code>&lt;form&gt;</code> 태그에 들어갈 context를 정의하는 객체이다.</li>
 </ul>
-<h1 id="form_1">Form의 구성<a class="headerlink" href="#form_1" title="Permanent link">&para;</a></h1>
-<h2 id="media">Media<a class="headerlink" href="#media" title="Permanent link">&para;</a></h2>
+<h4 id="form_1">Form의 구성<a class="headerlink" href="#form_1" title="Permanent link">#</a></h4>
+<h5 id="media">Media<a class="headerlink" href="#media" title="Permanent link">#</a></h5>
 <p>form과 연관된 js, css를 정의한다. <a href="https://docs.djangoproject.com/en/4.2/topics/forms/media/">Form Assets (the Media class) {doc}</a></p>
-<h2 id="widget"><a href="https://docs.djangoproject.com/en/4.2/ref/forms/widgets/"><code>Widget</code></a><a class="headerlink" href="#widget" title="Permanent link">&para;</a></h2>
+<h5 id="widget"><a href="https://docs.djangoproject.com/en/4.2/ref/forms/widgets/"><code>Widget</code></a><a class="headerlink" href="#widget" title="Permanent link">#</a></h5>
 <p>필드 하나하나를 위젯이라고 부른다. form은 단순히 데이터이다. 템플릿 파일에서 필드를 어떻게 만들지는 순전히 템플릿 작성자의 몫이라는 것이다(물론 백/프론트 분리가 안돼 혼자서 해도 되겠지만). 구체적인 필드에 대한 HTML 코드조각을 백엔드서부터 정의하고자 바로 이 위젯이 나오게 되었다.</p>
 <p>예를 들어<a href="../tinymce/">tinymce</a>는 그저 하나의 위젯을 제공해주는 도구에 불과하다.</p>
-<h1 id="modelforms"><code>ModelForms</code><a class="headerlink" href="#modelforms" title="Permanent link">&para;</a></h1>
+<h4 id="modelforms"><code>ModelForms</code><a class="headerlink" href="#modelforms" title="Permanent link">#</a></h4>
 <blockquote>
 <p>It is <em>possible</em> to write code that does all of this manually, but Django can take care of it all for you.</p>
 </blockquote>
@@ -1801,22 +1905,22 @@
 <a class="glightbox" href="../assets/Pasted%20image%2020230601150945.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230601150945.png" src="../assets/Pasted%20image%2020230601150945.png" width="350" /></a> </p>
 <p><code>fields = ["email", "username", "password1", "password2"]</code><br />
 <a class="glightbox" href="../assets/Pasted%20image%2020230601151020.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230601151020.png" src="../assets/Pasted%20image%2020230601151020.png" width="350" /></a></p>
-<h1 id="usercreationform">UserCreationForm<a class="headerlink" href="#usercreationform" title="Permanent link">&para;</a></h1>
+<h4 id="usercreationform">UserCreationForm<a class="headerlink" href="#usercreationform" title="Permanent link">#</a></h4>
 <p><a href="../UserCreationForm%20%7Bdjango%7D/">UserCreationForm {django}</a></p>
-<h1 id="forms-workflow">forms workflow<a class="headerlink" href="#forms-workflow" title="Permanent link">&para;</a></h1>
+<h4 id="forms-workflow">forms workflow<a class="headerlink" href="#forms-workflow" title="Permanent link">#</a></h4>
 <p><a href="https://docs.djangoproject.com/en/4.2/topics/forms/#instantiating-processing-and-rendering-forms">Instantiating, processing, and rendering forms</a></p>
 <ol>
 <li><code>View</code>에서 <code>Form</code> 객체를 생성한다.</li>
 <li><a href="../django%20template%20%7Bcontext%7D/">django template {context}</a> template context에 해당 form을 넘겨준다.</li>
 <li><a href="../django%20template/">django template</a> 장고 템플릿 HTML 파일에서 넘겨받은 form을 그대로 붙여넣거나 직접 템플릿 form 요소를 채워넣는다.</li>
 </ol>
-<h2 id="1">템플릿 활용방안 1: 알아서<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h5 id="1">템플릿 활용방안 1: 알아서<a class="headerlink" href="#1" title="Permanent link">#</a></h5>
 <div class="highlight"><pre><span></span><code><span class="x">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span>
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">form</span> <span class="cp">}}</span>
 <span class="x">    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</span>
 <span class="x">&lt;/form&gt;</span>
 </code></pre></div>
-<h2 id="2-rendering-fields-manually">템플릿 활용방안 2: <a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">rendering fields manually</a><a class="headerlink" href="#2-rendering-fields-manually" title="Permanent link">&para;</a></h2>
+<h5 id="2-rendering-fields-manually">템플릿 활용방안 2: <a href="https://docs.djangoproject.com/en/4.2/topics/forms/#rendering-fields-manually">rendering fields manually</a><a class="headerlink" href="#2-rendering-fields-manually" title="Permanent link">#</a></h5>
 <p><code>{{ form.name_of_field }}</code> 를 사용하여 HTML form member를 직접 정의한 뒤에 알맹이만 맡길 수 있다. <a href="../form%20errors%7B%20django%20%7D/">form errors{ django }</a>에서 에러처리에 대한 인사이트도 얻어가시오.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">{{</span> <span class="nv">form.non_field_errors</span> <span class="cp">}}</span>
 <span class="x">&lt;div class=&quot;fieldWrapper&quot;&gt;</span>
@@ -1840,7 +1944,7 @@
 <span class="x">    </span><span class="cp">{{</span> <span class="nv">form.cc_myself</span> <span class="cp">}}</span>
 <span class="x">&lt;/div&gt;</span>
 </code></pre></div>
-<h2 id="3-looping-over-forms-fields">템플릿 활용방안 3: <a href="https://docs.djangoproject.com/en/4.2/topics/forms/#looping-over-the-form-s-fields">looping over form's fields</a><a class="headerlink" href="#3-looping-over-forms-fields" title="Permanent link">&para;</a></h2>
+<h5 id="3-looping-over-forms-fields">템플릿 활용방안 3: <a href="https://docs.djangoproject.com/en/4.2/topics/forms/#looping-over-the-form-s-fields">looping over form's fields</a><a class="headerlink" href="#3-looping-over-forms-fields" title="Permanent link">#</a></h5>
 <p>form은 그 자체로 HTML tag를 가지고 있다. 따라서 반복문을 돌아도 해당 태그를 가져다 쓰기만 하면 된다. 예를 들자면</p>
 <div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">for</span> <span class="nv">field</span> <span class="k">in</span> <span class="nv">form</span> <span class="cp">%}</span>
 <span class="x">    &lt;div class=&quot;fieldWrapper&quot;&gt;</span>
@@ -1852,9 +1956,9 @@
 <span class="x">    &lt;/div&gt;</span>
 <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
 </code></pre></div>
-<h1 id="crispy-forms">crispy-forms<a class="headerlink" href="#crispy-forms" title="Permanent link">&para;</a></h1>
+<h4 id="crispy-forms">crispy-forms<a class="headerlink" href="#crispy-forms" title="Permanent link">#</a></h4>
 <p><a href="../django%20crispy%20forms/">django crispy forms</a></p>
-<h1 id="choices">choices<a class="headerlink" href="#choices" title="Permanent link">&para;</a></h1>
+<h4 id="choices">choices<a class="headerlink" href="#choices" title="Permanent link">#</a></h4>
 <p><a href="../CharField%20%7Bdjango%7D%20%7Bchoices%7D/">CharField {django} {choices}</a>를 장고 기본 form으로 만들면 <code>&lt;select&gt;</code> 태그가 생성된다. 이에 감안하여 choices의 멤버들을 순회하며 아이템을 추가할 수 있다. 가령 다음과 같은 모델이 있다고 하자</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>

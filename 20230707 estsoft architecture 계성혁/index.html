@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,9 +1745,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개요
+  </a>
+  
+    <nav class="md-nav" aria-label="개요">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#monitoring" class="md-nav__link">
     monitoring
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    문제1
+  </a>
+  
+    <nav class="md-nav" aria-label="문제1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    해결: 수직적 확장과 수평적 확장
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    문제2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    문제3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    문제3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    프로젝트 아키텍처링 실전 설계
+  </a>
+  
+    <nav class="md-nav" aria-label="프로젝트 아키텍처링 실전 설계">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    요구사항
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1768,10 +1840,12 @@
                   
 
 
+  <h1>20230707 estsoft architecture 계성혁</h1>
+
 <ul>
 <li><a href="docs/assets/Special_Lecture_-_Architecturing_.pdf">docs/assets/Special_Lecture_-<em>Architecturing</em>.pdf</a></li>
 </ul>
-<h1 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h4 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <ul>
 <li>코드가 서비스의 전부가 아님. 인프라를 위한 JVM 튜닝, 데이터베이스 lock 조절 등의 저시기가 이루어짐</li>
 <li>Time To Market 시간을 줄이는 법 = 패키지에 의존한다. → 레거시의 동산에 온 것을 환영합니다. <ul>
@@ -1780,7 +1854,7 @@
 </li>
 <li><a href="../VPC%20%28Virtual%20Private%20Cloud%29/">VPC (Virtual Private Cloud)</a></li>
 </ul>
-<h2 id="monitoring">monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
+<h5 id="monitoring">monitoring<a class="headerlink" href="#monitoring" title="Permanent link">#</a></h5>
 <p>서비스가 운영되고 있는 각종 상황들을 확인하는 행위의 전반을 의미. ex) 한문철 TV</p>
 <blockquote>
 <p>[!note] Zero Trust 기반 이중화 서비스</p>
@@ -1816,7 +1890,7 @@
 </li>
 </ul>
 <hr />
-<h1 id="1">문제1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h1>
+<h4 id="1">문제1<a class="headerlink" href="#1" title="Permanent link">#</a></h4>
 <p>쇼핑몰 서비스에서 평일 오후 2시에 특가 상품 판매를 시작했는데, 이용자들이 접속하지 못해 상품 구매를 하지 못하고 있다는 불만이 발생.</p>
 <ul>
 <li>소비자들이 Time-out 페이지를 마주하고 있다.</li>
@@ -1857,7 +1931,7 @@
 <blockquote>
 <p>[!quote] 서버의 자원 규모를 늘려야 한다</p>
 </blockquote>
-<h2 id="_2">해결: 수직적 확장과 수평적 확장<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h5 id="_2">해결: 수직적 확장과 수평적 확장<a class="headerlink" href="#_2" title="Permanent link">#</a></h5>
 <ul>
 <li>수직적 확장 (Scale Up) = 서버 자체의 성능을 증대 <ul>
 <li>서버의 Downtime이 필요함.</li>
@@ -1896,7 +1970,7 @@
 </li>
 </ul>
 <p><a href="https://haveibeenpwned.com/">https://haveibeenpwned.com/</a></p>
-<h1 id="2">문제2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<h4 id="2">문제2<a class="headerlink" href="#2" title="Permanent link">#</a></h4>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230707140741.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707140741.png" src="../assets/Pasted%20image%2020230707140741.png" /></a></p>
 <ul>
 <li></li>
@@ -1933,7 +2007,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="3">문제3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h1>
+<h4 id="3">문제3<a class="headerlink" href="#3" title="Permanent link">#</a></h4>
 <p><a href="https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/">https://aws.amazon.com/ko/blogs/korea/follow-up-to-the-november-22-event-in-aws-seoul-region/</a><br />
 <a class="glightbox" href="../assets/Pasted%20image%2020230707140620.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707140620.png" src="../assets/Pasted%20image%2020230707140620.png" /></a></p>
 <ul>
@@ -1993,7 +2067,7 @@
 - 리전 전체의 문제라면 Route53의 정책을 확인
 - 백업리전의 RDS Read Replica를 승격시켜 Read/Write가 가능하도록 만든다.</p>
 <hr />
-<h1 id="3_1">문제3<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h1>
+<h4 id="3_1">문제3<a class="headerlink" href="#3_1" title="Permanent link">#</a></h4>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230707150358.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707150358.png" src="../assets/Pasted%20image%2020230707150358.png" /></a></p>
 <hr />
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230707150452.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230707150452.png" src="../assets/Pasted%20image%2020230707150452.png" /></a></p>
@@ -2078,9 +2152,9 @@
 </li>
 </ul>
 <hr />
-<h1 id="_3">프로젝트 아키텍처링 실전 설계<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h4 id="_3">프로젝트 아키텍처링 실전 설계<a class="headerlink" href="#_3" title="Permanent link">#</a></h4>
 <p>SNS 서비스의 <em>뉴스 피드 시스템</em> 설계. 뉴스피드란, Home에 들어가면 보이는 게시글들을 뉴스피드라고 한다. 친구, 나와 친구인 사람, 팔로우중인 사람 (글, 사진, 영상, 링크)</p>
-<h2 id="_4">요구사항<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h5 id="_4">요구사항<a class="headerlink" href="#_4" title="Permanent link">#</a></h5>
 <ul>
 <li>플랫폼<ul>
 <li>모바일 &amp; 웹 둘 다 지원</li>

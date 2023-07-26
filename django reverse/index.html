@@ -1737,8 +1737,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-reverse-match" class="md-nav__link">
+    No Reverse Match
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,6 +1766,8 @@
                   
 
 
+  <h1>django reverse</h1>
+
 <ul>
 <li>통째로 URL을 다 적지 않고도 말 그대로 <strong>거꾸로</strong> URL을 추적하는 편리한 기능 </li>
 <li><code>redirect(reverse("users:signup"))</code>: 엔드포인트를 추적한다.</li>
@@ -1760,7 +1775,7 @@
 <li>reverse를 가능하게 하기 위해선 필요한 조건이 있었는데 뭐더라? 전역변수에 뭘 할당했던 것 같은데</li>
 <li><a href="../reverse%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%20%7Bdjango%7D/">reverse를 사용해야 하는 이유 {django}</a></li>
 </ul>
-<h1 id="no-reverse-match">No Reverse Match<a class="headerlink" href="#no-reverse-match" title="Permanent link">&para;</a></h1>
+<h4 id="no-reverse-match">No Reverse Match<a class="headerlink" href="#no-reverse-match" title="Permanent link">#</a></h4>
 <p>에러가 나왔을 때 해결해야 할 것들에 대해 정리해보자. </p>
 <div class="highlight"><pre><span></span><code>django.urls.exceptions.NoReverseMatch: Reverse for &#39;signin&#39; not found. &#39;signin&#39; is not a valid view function or pattern name.
 </code></pre></div>

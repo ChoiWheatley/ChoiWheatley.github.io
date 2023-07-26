@@ -1737,8 +1737,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-redirection" class="md-nav__link">
+    Why redirection?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#under-the-hood-of-redirection-302-found" class="md-nav__link">
+    Under the hood of redirection { 302 Found }
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpresponseredirect" class="md-nav__link">
+    HttpResponseRedirect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpresponsepermanentredirect" class="md-nav__link">
+    HttpResponsePermanentRedirect
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,27 +1787,29 @@
                   
 
 
+  <h1>redirect { django }</h1>
+
 <ul>
 <li><a href="https://realpython.com/django-redirects/">The Ultimate Guide to Django Redirects {Real Python}</a></li>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/http/shortcuts/#redirect">django.shortcuts.redirect {doc}</a></li>
 </ul>
 <hr />
-<h1 id="why-redirection">Why redirection?<a class="headerlink" href="#why-redirection" title="Permanent link">&para;</a></h1>
+<h4 id="why-redirection">Why redirection?<a class="headerlink" href="#why-redirection" title="Permanent link">#</a></h4>
 <ul>
 <li>로그인이 필요한 자원에 접근할 때 명시적으로 로그인 버튼을 누르게 만드는 건 사용자 피로도를 증가시킨다. → 따라서 자동으로 로그인 페이지로 리디렉션을 수행하고 로그인 완료시 본래 페이지로 되돌아가는 방식으로 작동한다면 매끄러울 것이다.</li>
 <li>위와 비슷하지만 인가와도 관련이 있을 수 있다. 사용자 권한을 미리 알아낸 뒤 서로 다른 페이지로 리디렉션 할 수도 있다.</li>
 <li>bit.ly와 같이 자주 접근하지만 쓸데없이 긴 URL을 짧게 만든 뒤에 사용자들이 간편하게 링크를 들고다닐 수 있게</li>
 <li>객체를 수정하거나 제거, 생성하는 등의 부가효과(side effects)를 일으키는 작업을 수행한 뒤에 리디렉션을 통해 사용자가 실수로 같은 작업을 두 번 일으키지 못하게 막을 수도 있다.</li>
 </ul>
-<h1 301="301" Moved="Moved" Permanently="Permanently" id="under-the-hood-of-redirection-302-found">Under the hood of redirection { 302 Found }<a class="headerlink" href="#under-the-hood-of-redirection-302-found" title="Permanent link">&para;</a></h1>
+<h4 301="301" Moved="Moved" Permanently="Permanently" id="under-the-hood-of-redirection-302-found">Under the hood of redirection { 302 Found }<a class="headerlink" href="#under-the-hood-of-redirection-302-found" title="Permanent link">#</a></h4>
 <p>일반적인 GET 요청으로 리디렉션 URL을 요청한다면 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302">302 FOUND</a> 응답을 돌려받게 된다. 302는 애초에 redirection을 위한 상태코드이다. 헤더에 <code>Location</code>이 반드시 포함돼있고, 상대 URL을 따라 리디렉션을 수행할지말지를 클라이언트 단에서 결정할 수 있다.</p>
 <blockquote>
 <p>[!note] Redirection은 의무가 아니다</p>
 </blockquote>
 <p><em>Permanent Redirection</em>도 존재한다. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301">301 Moved Permanently</a>는 아예 URL을 이주한 경우 사용된다. 302와 마찬가지로 <code>Location</code> 헤더가 존재하여 부드럽게 새 주소로 이전하게 만들 수 있다.</p>
-<h1 id="httpresponseredirect"><code>HttpResponseRedirect</code><a class="headerlink" href="#httpresponseredirect" title="Permanent link">&para;</a></h1>
+<h4 id="httpresponseredirect"><code>HttpResponseRedirect</code><a class="headerlink" href="#httpresponseredirect" title="Permanent link">#</a></h4>
 <p><code>django.shortcuts.redirect()</code> 함수가 리턴하는 객체의 타입이다. 저 안에 기본적으로 302 코드와 Location 헤더를 담고 있다.</p>
-<h1 id="httpresponsepermanentredirect"><code>HttpResponsePermanentRedirect</code><a class="headerlink" href="#httpresponsepermanentredirect" title="Permanent link">&para;</a></h1>
+<h4 id="httpresponsepermanentredirect"><code>HttpResponsePermanentRedirect</code><a class="headerlink" href="#httpresponsepermanentredirect" title="Permanent link">#</a></h4>
 <p><code>django.shortcuts.redirect()</code> 함수의 kwargs 중 <code>permanent=True</code>를 추가하면 리턴하는 객체의 타입이다.</p>
 
 

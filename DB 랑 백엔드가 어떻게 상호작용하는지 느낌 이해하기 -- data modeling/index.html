@@ -1737,8 +1737,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-data-modeling" class="md-nav__link">
+    What is Data Modeling?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    Glossary
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,10 +1773,12 @@
                   
 
 
+  <h1>DB 랑 백엔드가 어떻게 상호작용하는지 느낌 이해하기 -- data modeling</h1>
+
 <p><a href="https://www.ibm.com/topics/data-modeling">What is Data Modeling? - IBM</a> |<br />
 <a href="../django%20model/">django model</a><br />
 <a href="../Data%20Modeling%20%7Bbook-project%7D/">Data Modeling {book-project}</a></p>
-<h1 id="what-is-data-modeling">What is Data Modeling?<a class="headerlink" href="#what-is-data-modeling" title="Permanent link">&para;</a></h1>
+<h4 id="what-is-data-modeling">What is Data Modeling?<a class="headerlink" href="#what-is-data-modeling" title="Permanent link">#</a></h4>
 <p>데이터 모델링은 비즈니스 로직에 부합하는 자료구조를 설계하여 데이터와 구조 사이의 뚜렷한 연결다리를 놓는일. 또한 다른 데이터타입들과의 관계를 정의하여 그룹화를 수행할 수 있다.</p>
 <p>데이터 모델링은 그 추상화 정도에 따라 Conceptual Data Model -&gt; Logical Data Model -&gt; Physical Data Model 순으로 이어지는데</p>
 <ol>
@@ -1764,7 +1786,7 @@
 <li>Logical Data Model은 엔티티로부터 데이터 속성을 추출하게 된다. 데이터 타입, 데이터가 필요한 공간의 크기, 엔티티를 식별하기 위한 관계 등을 알게 된다.</li>
 <li>Physical Data Model은 Database의 Table을 생성하기 위한 스키마 작성에 돌입하게 된다.</li>
 </ol>
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
+<h4 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">#</a></h4>
 <ul>
 <li>ER Diagram == Entity Relationships Diagram</li>
 <li>Foreign Key and Primary Key</li>

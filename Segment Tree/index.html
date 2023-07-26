@@ -1737,8 +1737,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chatgpt" class="md-nav__link">
+    ChatGPT의 설명
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    연습문제
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,9 +1773,11 @@
                   
 
 
+  <h1>Segment Tree</h1>
+
 <p>parent link: <a href="../0000%20Index%20%F0%9F%94%97/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/">0011 Algorithms ♾️</a></p>
 <hr />
-<h1 id="chatgpt">ChatGPT의 설명<a class="headerlink" href="#chatgpt" title="Permanent link">&para;</a></h1>
+<h4 id="chatgpt">ChatGPT의 설명<a class="headerlink" href="#chatgpt" title="Permanent link">#</a></h4>
 <p>세그먼트 트리(Segment Tree)는 구간 쿼리(segment query)를 빠르게 수행하기 위한 자료구조입니다. 예를 들어, 주어진 배열에서 특정 구간의 합, 최소값, 최대값 등을 구하는 작업을 빠르게 처리할 수 있습니다.</p>
 <p>수도코드로는 다음과 같이 구현할 수 있습니다:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># arr: 원본 배열, tree: 세그먼트 트리, node: 현재 노드, start/end: 현재 노드가 표현하는 구간</span>
@@ -1790,7 +1812,7 @@
     <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="k">return</span> <span class="n">query</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">node</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span> <span class="o">+</span> <span class="n">query</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">node</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
 </code></pre></div>
-<h1 id="_1">연습문제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h4 id="_1">연습문제<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <ul>
 <li><a href="../Segment%20Tree%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C%201/">Segment Tree 연습문제 1</a></li>
 <li><a href="../Segment%20Tree%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C%202/">Segment Tree 연습문제 2</a></li>

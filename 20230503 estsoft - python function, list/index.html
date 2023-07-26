@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,30 +1745,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+    <nav class="md-nav" aria-label="Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#error-handling-with-parameters" class="md-nav__link">
     error handling with parameters
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     재귀함수
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#closure" class="md-nav__link">
     Closure, 함수가 함수를 리턴한다
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#local-variables-and-global-variables" class="md-nav__link">
     Local variables and Global variables
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+    <nav class="md-nav" aria-label="Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-operations-and-methods" class="md-nav__link">
+    List Operations and Methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1789,6 +1820,8 @@
                   
 
 
+  <h1>20230503 estsoft - python function, list</h1>
+
 <ul>
 <li>5월 20일부터 책 집필을 할 수 있는 기회가 있을 예정. 팀이던 뭐던. 장고는 아직 진도를 안 나갔으니까 ^alg2p3<ul>
 <li><a href="../pyscript/">pyscript</a>: 국내 책이 전무함</li>
@@ -1796,7 +1829,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h1>
+<h4 id="function">Function<a class="headerlink" href="#function" title="Permanent link">#</a></h4>
 <ul>
 <li><a href="https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R#scrollTo=L60Q1h-FDVHD&amp;line=2&amp;uniqifier=1">콜랩 링크(이제 하나의 콜랩으로 전부 활용할거임)</a></li>
 <li><a href="https://dowtech.tistory.com/38">파이썬 네이밍 규칙 - 블로그</a></li>
@@ -1810,7 +1843,7 @@
     <span class="k">except</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="error-handling-with-parameters">error handling with parameters<a class="headerlink" href="#error-handling-with-parameters" title="Permanent link">&para;</a></h2>
+<h5 id="error-handling-with-parameters">error handling with parameters<a class="headerlink" href="#error-handling-with-parameters" title="Permanent link">#</a></h5>
 <p>이를 막기 위해서 프로그래머는 몇가지 선택권이 주어진다(회사 컨벤션이 있다면 없을지도)
 1. <a href="https://docs.python.org/3/library/2to3.html?highlight=isinstance#to3fixer-isinstance"><code>isinstance</code></a> 를 활용한 타입체크
 2. <a href="https://bskyvision.com/entry/python-Pydantic-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-data-class%EB%B3%B4%EB%8B%A4-%EB%8D%94-%EB%82%98%EC%9D%80-%EB%93%AF"><code>pydantic</code></a> 모듈을 활용한 미연에 발생할 수 있는 타입에러 잡아주기 | <a href="https://pydantic.dev/">pydantic 공식문서</a>
@@ -1824,7 +1857,7 @@
 <blockquote>
 <p>타입힌트는 나중에 하지만 강제하진 않습니다. 저는 개인적으로 typehint도 견고한 코드를 위해 좋지만, pythonic함은 감소된다 생각해요.</p>
 </blockquote>
-<h2 id="_1">재귀함수<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h5 id="_1">재귀함수<a class="headerlink" href="#_1" title="Permanent link">#</a></h5>
 <p>아래 코드는 재귀를 활용한 (효율적인) 지수 연산이다. </p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_pow</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">num2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1841,7 +1874,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;2 ** </span><span class="si">{</span><span class="n">exp</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">my_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">exp</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">exp</span> <span class="o">==</span> <span class="n">my_pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">exp</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="closure">Closure, 함수가 함수를 리턴한다<a class="headerlink" href="#closure" title="Permanent link">&para;</a></h2>
+<h5 id="closure">Closure, 함수가 함수를 리턴한다<a class="headerlink" href="#closure" title="Permanent link">#</a></h5>
 <p>아래는 지수 연산을 수행하는 또 하나의 방법을 표현한다. Factory Function이라고도 불리우는 이 방식은, 휘발되지 않는 <code>x</code> 를 가지고 함수를 만든 뒤에 나중에 가서 호출하는 방식으로 이루어진다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">제곱</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">승수</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
@@ -1852,7 +1885,7 @@
 <span class="n">pow3</span> <span class="o">=</span> <span class="n">제곱</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">pow3_4</span> <span class="o">=</span> <span class="n">pow3</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="local-variables-and-global-variables">Local variables and Global variables<a class="headerlink" href="#local-variables-and-global-variables" title="Permanent link">&para;</a></h2>
+<h5 id="local-variables-and-global-variables">Local variables and Global variables<a class="headerlink" href="#local-variables-and-global-variables" title="Permanent link">#</a></h5>
 <ol>
 <li>전역변수 선언 시 함수 내에서 접근은 가능하지만 수정이 되지 않는다.</li>
 <li>전역변수를 함수 내에서 수정하기 위해선 <code>global</code> 을 작성하면 된다. 실무에서 거의 사용 안한다고 하넹</li>
@@ -1867,7 +1900,7 @@
     <span class="n">two</span><span class="p">()</span>
 <span class="n">one</span><span class="p">()</span>
 </code></pre></div>
-<h1 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h1>
+<h4 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">#</a></h4>
 <ul>
 <li>순서를 가진 데이터들의 집합 (Sequentially)</li>
 <li>리스트는 값의 변경이 가능함</li>
@@ -1879,7 +1912,7 @@
 <span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
 <span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
 </code></pre></div>
-<h2 id="list-operations-and-methods">List Operations and Methods<a class="headerlink" href="#list-operations-and-methods" title="Permanent link">&para;</a></h2>
+<h5 id="list-operations-and-methods">List Operations and Methods<a class="headerlink" href="#list-operations-and-methods" title="Permanent link">#</a></h5>
 <ul>
 <li>곱셈연산 <code>*</code>: 이놈은 조금 많이 이상하다. 리스트 원소의 값이 같으면 같은 메모리를 가리키도록 설계되어있기 때문에 <code>*</code> 연산을 활용한 리스트 초기화에는 각별한 주의가 필요하다. | <a href="https://stackoverflow.com/questions/8744113/python-list-by-value-not-by-reference">python list by value not by reference</a> | <a href="https://stackoverflow.com/a/3459131">create list of single item repeated N times</a> <ul>
 <li>if you want a list, use <code>[e] * n</code>. If you want to generate the elements lazily, use <code>repeat</code>.</li>

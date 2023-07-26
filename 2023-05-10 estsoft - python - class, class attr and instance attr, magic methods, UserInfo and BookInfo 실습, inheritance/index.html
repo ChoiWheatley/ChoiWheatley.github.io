@@ -1737,8 +1737,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1747,30 +1745,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    Class
+  </a>
+  
+    <nav class="md-nav" aria-label="Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#class-attribute-and-instance-attribute" class="md-nav__link">
     Class attribute and Instance attribute
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#magic-methods" class="md-nav__link">
     Magic methods
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#userinfo-bookinfo" class="md-nav__link">
     UserInfo, BookInfo 실습
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#inheritance" class="md-nav__link">
     Inheritance
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1789,8 +1800,10 @@
                   
 
 
+  <h1>2023-05-10 estsoft - python - class, class attr and instance attr, magic methods, UserInfo and BookInfo 실습, inheritance</h1>
+
 <p>{% raw %}</p>
-<h1 id="class">Class<a class="headerlink" href="#class" title="Permanent link">&para;</a></h1>
+<h4 id="class">Class<a class="headerlink" href="#class" title="Permanent link">#</a></h4>
 <p><a href="https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R#scrollTo=O7GLsOcjCaXC&amp;line=19&amp;uniqifier=1">구글콜랩 링크</a></p>
 <ul>
 <li>
@@ -1827,7 +1840,7 @@
 <p><code>self</code> 라는 키워드가 모든 메서드의 첫 파라미터에 들어간다.</p>
 </li>
 </ul>
-<h2 id="class-attribute-and-instance-attribute">Class attribute and Instance attribute<a class="headerlink" href="#class-attribute-and-instance-attribute" title="Permanent link">&para;</a></h2>
+<h5 id="class-attribute-and-instance-attribute">Class attribute and Instance attribute<a class="headerlink" href="#class-attribute-and-instance-attribute" title="Permanent link">#</a></h5>
 <p>CPP의 static attribute???</p>
 <p>클래스 변수는 클래스 바로 하위에 있는 변수이다. 클래스 변수는 모든 인스턴스가 공유할 수 있다. 따라서 <code>{{class-name}}.{{class-attr}}</code> 식으로 접근이 가능하다. 물론 <code>self.{{class-attr}}</code>도 가능함. </p>
 <p>문제는.... class attr를 instance attr와 혼동이 생길 우려가 있다는 것이다. 다음 예를 들어보자.<br />
@@ -2012,11 +2025,11 @@
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;p&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&lt;p&gt;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">create_date</span><span class="si">}</span><span class="s1">&lt;/p&gt;&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="magic-methods">Magic methods<a class="headerlink" href="#magic-methods" title="Permanent link">&para;</a></h2>
+<h5 id="magic-methods">Magic methods<a class="headerlink" href="#magic-methods" title="Permanent link">#</a></h5>
 <p><a href="../magic%20methods%20%28python%29/">magic methods (python)</a></p>
-<h2 id="userinfo-bookinfo">UserInfo, BookInfo 실습<a class="headerlink" href="#userinfo-bookinfo" title="Permanent link">&para;</a></h2>
+<h5 id="userinfo-bookinfo">UserInfo, BookInfo 실습<a class="headerlink" href="#userinfo-bookinfo" title="Permanent link">#</a></h5>
 <p><a href="../repr%2C%20dir%2C%20vars%2C%20pprint.pformat%20%2B%20UserInfo%20and%20BookInfo%20%EC%8B%A4%EC%8A%B5%20%28python%29/">repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)</a></p>
-<h2 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h2>
+<h5 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">#</a></h5>
 <p>python의 상속체계는 여타 언어들의 상속과 비슷해 보인다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Car</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="n">maxSpeed</span> <span class="o">=</span> <span class="mi">300</span>

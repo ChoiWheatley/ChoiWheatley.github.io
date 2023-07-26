@@ -1793,14 +1793,14 @@
 <li>https://www.geeksforgeeks.org/rust-from-and-into-traits/</li>
 </ul>
 <p>에러타입의 종류가 많은 enum을 리턴해야 하는 함수가 있다면 From 트레이트를 사용하여 코드를 간결하게 만들 수 있다고 한다.</p>
-<h3 id="_1">기본 용법<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h6 id="_1">기본 용법<a class="headerlink" href="#_1" title="Permanent link">#</a></h6>
 <div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">conver</span>::<span class="nb">From</span><span class="p">;</span>
 <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">_my_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;static &amp;str</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">_my_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="n">_my_str</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="from">커스텀 From<a class="headerlink" href="#from" title="Permanent link">&para;</a></h3>
+<h6 id="from">커스텀 From<a class="headerlink" href="#from" title="Permanent link">#</a></h6>
 <p>이건 그냥 생성자잖아</p>
 <div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">conver</span>::<span class="nb">From</span><span class="p">;</span>
 
@@ -1820,7 +1820,7 @@
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;learning Rust from {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="into-helper-function">into helper function<a class="headerlink" href="#into-helper-function" title="Permanent link">&para;</a></h3>
+<h6 id="into-helper-function">into helper function<a class="headerlink" href="#into-helper-function" title="Permanent link">#</a></h6>
 <p><code>From</code> 트레이트를 구현한 객체에 한하여 구체적인 타입을 명시한 변수에 할당될 객체를 자동으로 찾아서 <code>from</code>을 호출하게 해준다.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// ...</span>
 <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -1829,7 +1829,7 @@
 <span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;learning Rust from {:?}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="error-handling-with-enum-and-from-trait">Error handling with enum and From trait<a class="headerlink" href="#error-handling-with-enum-and-from-trait" title="Permanent link">&para;</a></h3>
+<h6 id="error-handling-with-enum-and-from-trait">Error handling with enum and From trait<a class="headerlink" href="#error-handling-with-enum-and-from-trait" title="Permanent link">#</a></h6>
 <p>트레이트로 아예 타입변환에 대한 메서드를 정의해버렸기 때문에 early return (error propagation operator) <code>?</code> 연산자를 사용하여 해당 구문을 실패했을 경우 자동으로 일치하는 타입의 <code>from</code> 메서드를 호출하여 에러를 리턴하게 될 것이다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">CliError</span><span class="p">{</span>
 <span class="w">    </span><span class="n">IoError</span><span class="p">(</span><span class="n">io</span>::<span class="n">Error</span><span class="p">),</span>

@@ -1737,8 +1737,21 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    하지만,
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1753,6 +1766,8 @@
                   
 
 
+  <h1>let 변수 선언만 해도 되나요</h1>
+
 <p>가능합니다. 다음 문장을 보면</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">{</span>
@@ -1762,7 +1777,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>은 cpp의 입장에서 볼 땐 불가능하지만, 러스트의 입장에서는 가능합니다. 컴파일러가 잔머리를 굴려서 x에 오직 한 번만 할당이 되는지 파악했고, 동시에 가능한 할당구문이 동일한 타입인지도 파악했기 때문입니다.</p>
-<h1 id="_1">하지만,<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h4 id="_1">하지만,<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <p>아래의 방식이 좀 더 구체적이고 직관적이죠. </p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">};</span>
 </code></pre></div>

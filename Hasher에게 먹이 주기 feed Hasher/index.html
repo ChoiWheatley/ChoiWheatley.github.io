@@ -1737,8 +1737,28 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disclaimer-hash-and-eq" class="md-nav__link">
+    Disclaimer: Hash and Eq
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disclaimer-prefix-collisions" class="md-nav__link">
+    Disclaimer: Prefix Collisions
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1752,6 +1772,8 @@
                 
                   
 
+
+  <h1>Hasher에게 먹이 주기 feed Hasher</h1>
 
 <ul>
 <li>https://rust-unofficial.github.io/too-many-lists/sixth-random-bits.html</li>
@@ -1779,9 +1801,9 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h1 id="disclaimer-hash-and-eq">Disclaimer: <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html#hash-and-eq">Hash and Eq</a><a class="headerlink" href="#disclaimer-hash-and-eq" title="Permanent link">&para;</a></h1>
+<h4 id="disclaimer-hash-and-eq">Disclaimer: <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html#hash-and-eq">Hash and Eq</a><a class="headerlink" href="#disclaimer-hash-and-eq" title="Permanent link">#</a></h4>
 <p>두 변수의 해시값이 같으면 반드시 <code>eq</code>가 참이어야 한다.</p>
-<h1 id="disclaimer-prefix-collisions">Disclaimer: <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html#prefix-collisions">Prefix Collisions</a><a class="headerlink" href="#disclaimer-prefix-collisions" title="Permanent link">&para;</a></h1>
+<h4 id="disclaimer-prefix-collisions">Disclaimer: <a href="https://doc.rust-lang.org/std/hash/trait.Hash.html#prefix-collisions">Prefix Collisions</a><a class="headerlink" href="#disclaimer-prefix-collisions" title="Permanent link">#</a></h4>
 <p>예를 들어 다음과 같은 경우에 Prefix Collision이 발생한다.</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="s">&quot;he&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;llo&quot;</span><span class="p">].</span><span class="n">hash</span><span class="p">(</span><span class="n">state1</span><span class="p">);</span>
 <span class="p">[</span><span class="s">&quot;hello&quot;</span><span class="p">].</span><span class="n">hash</span><span class="p">(</span><span class="n">state2</span><span class="p">);</span>
