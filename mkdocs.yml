@@ -4,7 +4,8 @@ site_author: you
 site_description: site_description
 
 nav:
-  - Index: "0000 Index 🔗"
+  - Index: "0000 Index 🔗/0000 Index 🔗/"
+  - "Daily Notes": "Daily Notes/"
 
 theme:
   name: material
