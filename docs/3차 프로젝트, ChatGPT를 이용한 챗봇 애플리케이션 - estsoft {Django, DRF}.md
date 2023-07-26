@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T16:51:38
+updated: 2023-07-26T17:15:43
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -109,8 +109,40 @@ classDiagram
 
 ### ER Diagram
 
+- [openai api documentation](https://platform.openai.com/docs/api-reference/making-requests)
+
+openai request, response는 JSON 형식을 갖고있고, JSON은 반정형 데이터이기 때문에 정형 데이터를 저장하는 SQL에 있어서 커다란 장애물이 된다. 이 문제를 해소하고 확장성을 높이기 위해 Word Press의 스타일을 차용하였다. `key`, `value` 쌍을 저장하는 것이다. 쿼리 속도는 늦어질지 몰라도 적어도 1단계 깊이의 객체를 표현할 수 있다. 
+
 ```mermaid
 erDiagram
 	Member ||--o{ Session : requests
-	Session ||--|{ Prompt : 
+	Session ||--|{ Prompt : has
+	Session ||--|{ ChatbotConfig : has
+	Session ||--o{ ChatbotReply : has
+
+	Member {
+		string nickname
+		string email
+		int age "NULL"
+		string job "NULL"
+	}
+
+	Session {
+		timestamp created_at
+	}
+
+	Prompt {
+		string prompt
+		string answer "NULL"
+	}
+
+	ChatbotConfig {
+		string key
+		string value
+	}
+
+	ChatbotReply {
+		string key
+		string value
+	}
 ```
