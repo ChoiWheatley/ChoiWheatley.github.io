@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T17:34:24
+updated: 2023-07-26T17:43:00
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -113,11 +113,17 @@ classDiagram
 
 openai request, response는 JSON 형식을 갖고있고, JSON은 반정형 데이터이기 때문에 정형 데이터를 저장하는 SQL에 있어서 커다란 장애물이 된다. 이 문제를 해소하고 확장성을 높이기 위해 WordPress의 스타일을 차용하였다. `key`, `value` 쌍을 저장하는 것이다. 쿼리 속도는 늦어질지 몰라도 적어도 1단계 깊이의 객체를 표현할 수 있다. 
 
+`ChatBotconfig`는 request에서 필요한 데이터들을 저장한다. 아래 example request을 보면 `"model"` 이 그 예이다. [Create chat completion](https://platform.openai.com/docs/api-reference/chat/create) 쪽을 보면 필요한 key, value 쌍에 무엇이 필요한지 알 수 있다.
+
+- **`model`**: chat gpt의 모델
+- **`messages`**: 세션 안에서 GPT와 대화한 내역을 모두 저장하여야 한다.
+	- **`role`** : `system`, `user`, `assistant`, `function` 중 하나를 가진다.
+
 나는 OpenAI의 Response만 어떻게 잘 처리하면 된다. request를 JSON으로 만드는 것은 데이터베이스의 문제가 아니기 때문이다. 
 
-example request
+**example request**
 
-```curl
+```shell
 curl https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
@@ -136,7 +142,7 @@ curl https://api.openai.com/v1/chat/completions \
   }'
 ```
 
-example response
+**example response**
 
 ```json
 {
@@ -159,12 +165,14 @@ example response
 }
 ```
 
+`ChatBotReply`에게 필요한 건 확장성인가, `choices.text`만 있으면 되는가.
+
 ```mermaid
 erDiagram
 	Member ||--o{ Session : requests
 	Session ||--|{ Prompt : has
-	Session ||--|{ ChatbotConfig : has
-	Session ||--o{ ChatbotReply : has
+	Session ||--|{ ChatBotConfig : has
+	Session ||--o{ ChatBotReply : has
 
 	Member {
 		string nickname
@@ -182,12 +190,12 @@ erDiagram
 		string answer "NULL"
 	}
 
-	ChatbotConfig {
+	ChatBotConfig {
 		string key
 		string value
 	}
 
-	ChatbotReply {
+	ChatBotReply {
 		string key
 		string value
 	}
