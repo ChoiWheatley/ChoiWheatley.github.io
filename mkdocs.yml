@@ -4,7 +4,7 @@ site_author: you
 site_description: site_description
 
 nav:
-  - Index: "0000 Index 🔗/0000 Index 🔗.md"
+  - Index: "0000 Index 🔗"
 
 theme:
   name: material
