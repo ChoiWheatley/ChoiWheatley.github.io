@@ -290,18 +290,18 @@
 <h2 id="diagram">Diagram<a class="headerlink" href="#diagram" title="Permanent link">&para;</a></h2>
 <p>기본 요구사항: FE와 BE 분리: 프론트엔드에서 백엔드 서버를 통해 요청을 보내준다.</p>
 <pre class="mermaid"><code>flowchart LR
-    id1[User]
+    id1[Client]
     id2[FE]
     id3[BE]
     id4[OpenAI]
+    id5[DataBase]
 
     id1 -- 1 --&gt; id2
     id2 -- 2 --&gt; id1
     id1 -- 3 --&gt; id3
-    id3 -- 3 --&gt; id4
-    id4 -- 4 --&gt; id3
-    id3 -- 5 --&gt; id2
-    id2 -- 6 --&gt; id1</code></pre>
+    id3 &lt;-- 4 --&gt; id4
+    id3 &lt;-- 4 --&gt; id5
+    id3 -- 5 --&gt; id1</code></pre>
 <ol>
 <li>클라이언트가 프론트에 HTML 문서를 요청함.</li>
 <li>프론트는 JS코드가 담긴 HTML 문서를 반환하고 클라이언트는 문서를 렌더링함.</li>
