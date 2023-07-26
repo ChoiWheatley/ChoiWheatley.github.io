@@ -22,3 +22,4 @@ title: 0110 Utility 🔧
 - [[utterances - lightweight comments widget built on GitHub issues]]
 - [[gtop, elegant top for cli]]
 - [[online photoshop 모음]]
+- [[parsec, 레이턴시에 몰빵한 리모트 데스크톱]]
