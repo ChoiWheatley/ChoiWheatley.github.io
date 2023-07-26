@@ -9,7 +9,7 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-07-20T06:31:27
+updated: 2023-07-26T09:37:02
 ---
 parent link: 
 - [[0000 Index 🔗|index]]
