@@ -4,8 +4,9 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T15:42:18
+updated: 2023-07-26T15:47:59
 ---
+- parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
 
@@ -88,3 +89,5 @@ flowchart LR
 
 - _System_
 	- redirect to login page
+	- if URL has `?next=` phrase, redirect to the provided page
+	- if not, redirect to main page
