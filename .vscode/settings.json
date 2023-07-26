@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml",
+        "https://json.schemastore.org/yamllint.json": "file:///c%3A/Users/chltm/workspace/ChoiWheatley.github.io/.pages"
+    }
+}

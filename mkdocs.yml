@@ -3,10 +3,6 @@ site_url: https://choiwheatley.github.io
 site_author: you
 site_description: site_description
 
-nav:
-  - Index: "0000 Index 🔗/0000 Index 🔗/"
-  - ...
-
 theme:
   name: material
   # highlights: true
