@@ -66,4 +66,4 @@ flowchart LR
 
 ![[chatgpt-usecase.excalidraw]]
 
-| 
+- 
