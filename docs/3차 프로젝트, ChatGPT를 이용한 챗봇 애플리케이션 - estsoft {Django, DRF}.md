@@ -65,3 +65,5 @@ flowchart LR
 ### Usecase Diagram
 
 ![[chatgpt-usecase.excalidraw]]
+
+| 
