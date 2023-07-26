@@ -1,0 +1,3 @@
+- [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
+- [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
+- 
