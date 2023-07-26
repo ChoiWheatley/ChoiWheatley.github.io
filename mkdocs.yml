@@ -4,13 +4,13 @@ site_author: you
 site_description: site_description
 
 nav:
-  - Index: "0000 Index 🔗.md"
+  - Index: "0000 Index 🔗/0000 Index 🔗.md"
 
 theme:
   name: material
-  highlights: true
-  hljs_languages:
-    - yaml
+  # highlights: true
+  # hljs_languages:
+  #   - yaml
   features:
     - navigation.instant
     - navigation.tracking
@@ -20,12 +20,10 @@ theme:
 
 # Extensions
 markdown_extensions:
-  # admonition
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
+  # - admonition
+  # - pymdownx.details
+  # - pymdownx.superfences
 
-  # image link
   - md_in_html
   - attr_list
 
