@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T11:56:00
+updated: 2023-07-26T11:58:50
 ---
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
@@ -34,18 +34,18 @@ updated: 2023-07-26T11:56:00
 
 ```mermaid
 flowchart LR
-	id1[User]
+	id1[Client]
 	id2[FE]
 	id3[BE]
 	id4[OpenAI]
+	id5[DataBase]
 
 	id1 -- 1 --> id2
 	id2 -- 2 --> id1
 	id1 -- 3 --> id3
-	id3 -- 3 --> id4
-	id4 -- 4 --> id3
-	id3 -- 5 --> id2
-	id2 -- 6 --> id1
+	id3 <-- 4 --> id4
+	id3 <-- 4 --> id5
+	id3 -- 5 --> id1
 ```
 
 1. 클라이언트가 프론트에 HTML 문서를 요청함.
