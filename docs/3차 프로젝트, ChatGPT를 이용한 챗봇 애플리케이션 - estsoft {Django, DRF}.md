@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T11:58:50
+updated: 2023-07-26T15:11:54
 ---
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
@@ -28,9 +28,11 @@ updated: 2023-07-26T11:58:50
 - HTTPS 추가
 - kakao, github 등 OAuth2 추가하기
 
-## Diagram
+## Diagrams
 
 기본 요구사항: FE와 BE 분리: 프론트엔드에서 백엔드 서버를 통해 요청을 보내준다.
+
+### Flowchart
 
 ```mermaid
 flowchart LR
@@ -59,3 +61,7 @@ flowchart LR
 	1. DB
 	2. OpenAI
 5. 백엔드가 각각의 서비스로부터 응답을 받으면 이를 통해 클라이언트에게 응답을 전송함.
+
+### Usecase Diagram
+
+![[chatgpt-usecase.excalidraw]]
