@@ -13,8 +13,9 @@ theme:
     - yaml
   features:
     - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.path
+    - navigation.tracking
+    - navigation.expand
+    - navigation.tabs
     - navigation.top
 
 # Extensions
