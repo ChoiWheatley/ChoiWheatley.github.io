@@ -630,13 +630,11 @@
 <li>키 칼럼과 나머지 일반 칼럼이 직접적인 연관관계(직접 종속)만 가지도록 테이블을 구성.</li>
 <li>아래의 예시는 복합키(학생번호, 강좌이름)가 성적을 식별하지만 동시에 키의 부분집합인 강좌이름 칼럼이 강의실을 식별하는 상황이라 강의실 테이블을 따로 분리하여 2NF를 만족시킬 수 있다.</li>
 <li><a class="glightbox" href="../assets/Pasted%20image%2020230614192239.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230614192239.png" src="../assets/Pasted%20image%2020230614192239.png" /></a></li>
-<li>![[Pasted image 20230614192248.png]]</li>
 </ul>
 </li>
 <li>3정규형 (3NF)<ul>
 <li>일반 컬럼끼리 간접 연관관계 (간접 종속)을 가지고 있다면 테이블을 분리.</li>
 <li>학생번호는 강좌이름을 결정하고 있고, 강좌 이름은 수강료를 결정하고 있다. 간접적으로 학생번호가 수강료를 결정하고 있으므로 테이블을 분리하여야 한다.</li>
-<li>![[Pasted image 20230614193952.png]]</li>
 </ul>
 </li>
 <li>BCNF 정규형 (Boyce-Codd Normal Form)<ul>

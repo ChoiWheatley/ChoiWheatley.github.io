@@ -282,6 +282,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#class-diagram" class="md-nav__link">
+    Class Diagram
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -362,7 +369,8 @@
 <li>백엔드가 각각의 서비스로부터 응답을 받으면 이를 통해 클라이언트에게 응답을 전송함.</li>
 </ol>
 <h3 id="usecase-diagram">Usecase Diagram<a class="headerlink" href="#usecase-diagram" title="Permanent link">&para;</a></h3>
-<p>![[chatgpt-usecase.excalidraw]]</p>
+<p>![[chatgpt-usecase.excalidraw]]<br />
+![[chatgpt-usecase.excalidraw.png]]</p>
 <h4 id="main-flow">Main Flow<a class="headerlink" href="#main-flow" title="Permanent link">&para;</a></h4>
 <ul>
 <li><em>User</em><ul>
@@ -404,6 +412,16 @@
 </ul>
 </li>
 </ul>
+<h3 id="class-diagram">Class Diagram<a class="headerlink" href="#class-diagram" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>classDiagram 
+    User &lt;|-- Anonnymous
+    User &lt;|-- Member
+    Session "0..*" -- "1" Member
+    Session "1" o-- "1..*" Prompt
+    Prompt &lt;|-- CurrentState
+    Prompt &lt;|-- Goal
+    Prompt &lt;|-- Misc
+    Session "0..*" -- "1" ChatBot</code></pre>
 
 
 
