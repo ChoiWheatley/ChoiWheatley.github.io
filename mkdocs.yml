@@ -5,7 +5,7 @@ site_description: site_description
 
 nav:
   - Index: "0000 Index 🔗/0000 Index 🔗/"
-  - "Daily Notes": "Daily Notes/"
+  - ...
 
 theme:
   name: material
@@ -55,6 +55,7 @@ plugins:
   - glightbox
   - search
   - roamlinks
+  - awesome-pages
   # - obsidian-support
   - kroki:
       FencePrefix: "kroki-"

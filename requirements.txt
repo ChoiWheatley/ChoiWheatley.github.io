@@ -9,3 +9,4 @@ mkdocs-obsidian-support-plugin
 mkdocs-backlinks
 mkdocs-exclude
 mkdocs-kroki-plugin
+mkdocs-awesome-pages-plugin
