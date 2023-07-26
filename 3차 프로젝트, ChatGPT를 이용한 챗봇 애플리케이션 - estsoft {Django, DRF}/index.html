@@ -289,6 +289,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#er-diagram" class="md-nav__link">
+    ER Diagram
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -422,6 +429,81 @@
     Prompt &lt;|-- Goal
     Prompt &lt;|-- Misc
     Session "0..*" -- "1" ChatBot</code></pre>
+<h3 id="er-diagram">ER Diagram<a class="headerlink" href="#er-diagram" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://platform.openai.com/docs/api-reference/making-requests">openai api documentation</a></li>
+</ul>
+<p>openai request, response는 JSON 형식을 갖고있고, JSON은 반정형 데이터이기 때문에 정형 데이터를 저장하는 SQL에 있어서 커다란 장애물이 된다. 이 문제를 해소하고 확장성을 높이기 위해 WordPress의 스타일을 차용하였다. <code>key</code>, <code>value</code> 쌍을 저장하는 것이다. 쿼리 속도는 늦어질지 몰라도 적어도 1단계 깊이의 객체를 표현할 수 있다. </p>
+<p>나는 OpenAI의 Response만 어떻게 잘 처리하면 된다. request를 JSON으로 만드는 것은 데이터베이스의 문제가 아니기 때문이다. </p>
+<p>example request</p>
+<div class="highlight"><pre><span></span><code>curl https://api.openai.com/v1/chat/completions \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer $OPENAI_API_KEY&quot; \
+  -d &#39;{
+    &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,
+    &quot;messages&quot;: [
+      {
+        &quot;role&quot;: &quot;system&quot;,
+        &quot;content&quot;: &quot;You are a helpful assistant.&quot;
+      },
+      {
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;content&quot;: &quot;Hello!&quot;
+      }
+    ]
+  }&#39;
+</code></pre></div>
+<p>example response</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chatcmpl-123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chat.completion&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1677652288</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;choices&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;\n\nHello there, how may I assist you today?&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;finish_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stop&quot;</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">&quot;usage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;prompt_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;completion_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;total_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>erDiagram
+    Member ||--o{ Session : requests
+    Session ||--|{ Prompt : has
+    Session ||--|{ ChatbotConfig : has
+    Session ||--o{ ChatbotReply : has
+
+    Member {
+        string nickname
+        string email
+        int age "NULL"
+        string job "NULL"
+    }
+
+    Session {
+        timestamp created_at
+    }
+
+    Prompt {
+        string prompt
+        string answer "NULL"
+    }
+
+    ChatbotConfig {
+        string key
+        string value
+    }
+
+    ChatbotReply {
+        string key
+        string value
+    }</code></pre>
 
 
 
