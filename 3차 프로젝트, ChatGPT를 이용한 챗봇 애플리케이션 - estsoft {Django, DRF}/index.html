@@ -260,6 +260,26 @@
     Usecase Diagram
   </a>
   
+    <nav class="md-nav" aria-label="Usecase Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-flow" class="md-nav__link">
+    Main Flow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-flow-e-1" class="md-nav__link">
+    Error Flow, E-1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -342,19 +362,20 @@
 </ol>
 <h3 id="usecase-diagram">Usecase Diagram<a class="headerlink" href="#usecase-diagram" title="Permanent link">&para;</a></h3>
 <p>![[chatgpt-usecase.excalidraw]]</p>
+<h4 id="main-flow">Main Flow<a class="headerlink" href="#main-flow" title="Permanent link">&para;</a></h4>
 <ul>
 <li><em>User</em><ul>
 <li>Request Chat List<ul>
 <li><em>System</em><ul>
 <li>Retrieve chat data.</li>
-<li>Create DOM element for display</li>
+<li>Create DOM elements for display</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Request Chat Session<ul>
 <li><em>System</em><ul>
-<li>Check if the user is logged in</li>
+<li>Check if the user is logged in. If not logged in, invoke <strong>E-1</strong></li>
 <li>Create Request Prompts<ul>
 <li><em>ChatBot</em><ul>
 <li>Ask user's current state</li>
@@ -364,10 +385,19 @@
 </li>
 </ul>
 </li>
+<li>Request <em>OpenAI</em> with previous prompts</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>Sign out</li>
+</ul>
+</li>
+</ul>
+<h4 id="error-flow-e-1">Error Flow, E-1<a class="headerlink" href="#error-flow-e-1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><em>System</em><ul>
+<li>redirect to login page</li>
 </ul>
 </li>
 </ul>
