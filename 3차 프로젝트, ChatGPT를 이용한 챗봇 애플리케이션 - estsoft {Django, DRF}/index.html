@@ -434,26 +434,34 @@
 <li><a href="https://platform.openai.com/docs/api-reference/making-requests">openai api documentation</a></li>
 </ul>
 <p>openai request, response는 JSON 형식을 갖고있고, JSON은 반정형 데이터이기 때문에 정형 데이터를 저장하는 SQL에 있어서 커다란 장애물이 된다. 이 문제를 해소하고 확장성을 높이기 위해 WordPress의 스타일을 차용하였다. <code>key</code>, <code>value</code> 쌍을 저장하는 것이다. 쿼리 속도는 늦어질지 몰라도 적어도 1단계 깊이의 객체를 표현할 수 있다. </p>
+<p><code>ChatBotconfig</code>는 request에서 필요한 데이터들을 저장한다. 아래 example request을 보면 <code>"model"</code> 이 그 예이다. <a href="https://platform.openai.com/docs/api-reference/chat/create">Create chat completion</a> 쪽을 보면 필요한 key, value 쌍에 무엇이 필요한지 알 수 있다.</p>
+<ul>
+<li><strong><code>model</code></strong>: chat gpt의 모델</li>
+<li><strong><code>messages</code></strong>: 세션 안에서 GPT와 대화한 내역을 모두 저장하여야 한다.<ul>
+<li><strong><code>role</code></strong> : <code>system</code>, <code>user</code>, <code>assistant</code>, <code>function</code> 중 하나를 가진다.</li>
+</ul>
+</li>
+</ul>
 <p>나는 OpenAI의 Response만 어떻게 잘 처리하면 된다. request를 JSON으로 만드는 것은 데이터베이스의 문제가 아니기 때문이다. </p>
-<p>example request</p>
-<div class="highlight"><pre><span></span><code>curl https://api.openai.com/v1/chat/completions \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;Authorization: Bearer $OPENAI_API_KEY&quot; \
-  -d &#39;{
-    &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,
-    &quot;messages&quot;: [
-      {
-        &quot;role&quot;: &quot;system&quot;,
-        &quot;content&quot;: &quot;You are a helpful assistant.&quot;
-      },
-      {
-        &quot;role&quot;: &quot;user&quot;,
-        &quot;content&quot;: &quot;Hello!&quot;
-      }
-    ]
-  }&#39;
+<p><strong>example request</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>https://api.openai.com/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,</span>
+<span class="s1">    &quot;messages&quot;: [</span>
+<span class="s1">      {</span>
+<span class="s1">        &quot;role&quot;: &quot;system&quot;,</span>
+<span class="s1">        &quot;content&quot;: &quot;You are a helpful assistant.&quot;</span>
+<span class="s1">      },</span>
+<span class="s1">      {</span>
+<span class="s1">        &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">        &quot;content&quot;: &quot;Hello!&quot;</span>
+<span class="s1">      }</span>
+<span class="s1">    ]</span>
+<span class="s1">  }&#39;</span>
 </code></pre></div>
-<p>example response</p>
+<p><strong>example response</strong></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chatcmpl-123&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chat.completion&quot;</span><span class="p">,</span>
@@ -473,11 +481,12 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<p><code>ChatBotReply</code>에게 필요한 건 확장성인가, <code>choices.text</code>만 있으면 되는가.</p>
 <pre class="mermaid"><code>erDiagram
     Member ||--o{ Session : requests
     Session ||--|{ Prompt : has
-    Session ||--|{ ChatbotConfig : has
-    Session ||--o{ ChatbotReply : has
+    Session ||--|{ ChatBotConfig : has
+    Session ||--o{ ChatBotReply : has
 
     Member {
         string nickname
@@ -495,12 +504,12 @@
         string answer "NULL"
     }
 
-    ChatbotConfig {
+    ChatBotConfig {
         string key
         string value
     }
 
-    ChatbotReply {
+    ChatBotReply {
         string key
         string value
     }</code></pre>
