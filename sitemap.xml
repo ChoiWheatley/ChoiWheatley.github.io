@@ -1351,6 +1351,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Untitled%205/</loc>
+         <lastmod>2023-07-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Untitled/</loc>
          <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
@@ -2487,6 +2492,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/pagination%20in%20%7Bdjango%7D/</loc>
+         <lastmod>2023-07-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/parsec%2C%20%EB%A0%88%EC%9D%B4%ED%84%B4%EC%8B%9C%EC%97%90%20%EB%AA%B0%EB%B9%B5%ED%95%9C%20%EB%A6%AC%EB%AA%A8%ED%8A%B8%20%EB%8D%B0%EC%8A%A4%ED%81%AC%ED%86%B1/</loc>
          <lastmod>2023-07-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
