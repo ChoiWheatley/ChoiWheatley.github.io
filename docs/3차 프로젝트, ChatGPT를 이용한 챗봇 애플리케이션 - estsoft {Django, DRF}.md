@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-27T14:46:24
+updated: 2023-07-27T16:30:43
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -269,3 +269,7 @@ erDiagram
 ## Django + React Full Course
 
 <iframe src="https://www.youtube.com/embed/soxd_xdHR0o?list=PLOLrQ9Pn6caw0PjVwymNc64NkUNbZlhFw" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
+
+### 알게된 개쩌는 꿀팁들
+
+- [admin site에 등록된 모델들의 컬럼을 정의할 수 있다](https://youtu.be/soxd_xdHR0o?t=3835)
