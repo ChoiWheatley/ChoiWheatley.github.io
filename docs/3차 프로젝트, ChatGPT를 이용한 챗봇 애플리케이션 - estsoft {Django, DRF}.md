@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-26T17:49:58
+updated: 2023-07-27T11:02:48
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -18,8 +18,8 @@ updated: 2023-07-26T17:49:58
 - 채팅은 로그인을 한 유저만 사용 가능함
 - 유저당 하루 최대 5번 요청가능
 - 채팅내역을 DB에 저장
-- 저장된 채팅 내역을 조회할 수 있고,
-- 모든 채팅내역은 로그인하지 않은 유저들에게도 열람권한이 있다.
+- 저장된 __본인의__ 채팅 내역을 조회할 수 있고,
+- ~~모든 채팅내역은 로그인하지 않은 유저들에게도 열람권한이 있다.~~
 - ERD를 그려주세요.
 
 ## 선택 요구사항
@@ -205,3 +205,7 @@ erDiagram
 		string value
 	}
 ```
+
+## Django + React Full Course
+
+<iframe src="https://www.youtube.com/embed/soxd_xdHR0o?list=PLOLrQ9Pn6caw0PjVwymNc64NkUNbZlhFw" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
