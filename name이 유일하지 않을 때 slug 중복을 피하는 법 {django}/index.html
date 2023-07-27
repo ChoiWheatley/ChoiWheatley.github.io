@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,28 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#question" class="md-nav__link">
-    Question
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#answer-by-allen9535" class="md-nav__link">
-    Answer by Allen9535
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1773,12 +1753,10 @@
                   
 
 
-  <h1>name이 유일하지 않을 때 slug 중복을 피하는 법 {django}</h1>
-
-<h4 id="question">Question<a class="headerlink" href="#question" title="Permanent link">#</a></h4>
+<h1 id="question">Question<a class="headerlink" href="#question" title="Permanent link">#</a></h1>
 <p>안녕하세요! 에러 처리의 일환으로 팀원들이 겪은(겪을) 다양한 에러에 대하여 조사를 진행하고 있습니다. 2023-06-17 진행한 회의에서 book name의 unique를 해제할 시 발생할 slug(handle)의 중복문제를 해결하는 과정에 대하여 해당 스레드의 답글로 달아주시면 감사하겠습니다!</p>
 <p>따봉따봉 👍</p>
-<h4 id="answer-by-allen9535">Answer by Allen9535<a class="headerlink" href="#answer-by-allen9535" title="Permanent link">#</a></h4>
+<h1 id="answer-by-allen9535">Answer by Allen9535<a class="headerlink" href="#answer-by-allen9535" title="Permanent link">#</a></h1>
 <p>해당 사항에 대해 두 가지 해결책을 생각해 봤습니다.<br />
 첫 번째는 상품에 대한 슬러그를 생성할 때, 상품의 PK를 함께 넣어주는 방식입니다. 현재 모델에는 따로 PK가 설정되어 있지 않아서 그런지 생성된 순서대로 숫자를 매겨 PK로 사용하고 있는 것 같습니다. 한 번 생성된 상품을 삭제하더라도 해당 PK는 결번이 되고요. 그래서 이름과 함께 PK를 사용하면 유니크한 슬러그가 될 것 같습니다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">request_data</span><span class="p">[</span><span class="s2">&quot;handle&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">request_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">request_data</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

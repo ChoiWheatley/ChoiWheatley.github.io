@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,35 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#newtype-pattern-inspired-by-haskell-programming-language" class="md-nav__link">
-    Newtype Pattern Inspired by Haskell programming language
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ensure-at-least-one-local-type-is-referenced-by-the-impl" class="md-nav__link">
-    Ensure at least one local type is referenced by the impl
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#define-a-trait-locally-and-implement-that-instead" class="md-nav__link">
-    Define a trait locally and implement that instead
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1779,8 +1752,6 @@
                 
                   
 
-
-  <h1>Using the Newtype Pattern to Implement External Traits on External Types</h1>
 
 <ul>
 <li><a href="https://doc.rust-lang.org/book/ch19-03-advanced-traits.html#using-the-newtype-pattern-to-implement-external-traits-on-external-types">the book</a></li>
@@ -1815,7 +1786,7 @@
 For more information about this error, try `rustc --explain E0117`.
 </code></pre></div>
 <p>해결방법은 다양하다. 하나씩 핥아보고 가자.</p>
-<h4 id="newtype-pattern-inspired-by-haskell-programming-language">Newtype Pattern Inspired by Haskell programming language<a class="headerlink" href="#newtype-pattern-inspired-by-haskell-programming-language" title="Permanent link">#</a></h4>
+<h1 id="newtype-pattern-inspired-by-haskell-programming-language">Newtype Pattern Inspired by Haskell programming language<a class="headerlink" href="#newtype-pattern-inspired-by-haskell-programming-language" title="Permanent link">#</a></h1>
 <p>래퍼타입을 사용하여 foreign type을 현재 크레이트의 타입인냥 사용할 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">core</span>::<span class="n">cmp</span>::<span class="o">*</span><span class="p">;</span>
 <span class="cp">#[derive(Eq, PartialEq, PartialOrd)]</span>
@@ -1837,7 +1808,7 @@ For more information about this error, try `rustc --explain E0117`.
 <span class="w">    </span><span class="fm">assert!</span><span class="p">(</span><span class="n">lhs</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">rhs</span><span class="p">);</span><span class="w"> </span><span class="c1">// 기본적으로 배열끼린 비교가 가능했구나</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="ensure-at-least-one-local-type-is-referenced-by-the-impl">Ensure at least one local type is referenced by the <code>impl</code><a class="headerlink" href="#ensure-at-least-one-local-type-is-referenced-by-the-impl" title="Permanent link">#</a></h4>
+<h1 id="ensure-at-least-one-local-type-is-referenced-by-the-impl">Ensure at least one local type is referenced by the <code>impl</code><a class="headerlink" href="#ensure-at-least-one-local-type-is-referenced-by-the-impl" title="Permanent link">#</a></h1>
 <p>래퍼타입을 쓰기 싫다면 <code>From</code> 트레잇을 구현한 임의의 타입으로 대치할 수 있다. (효용성은 잘 모르겠음)</p>
 <div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Foo</span><span class="p">;</span><span class="w"> </span><span class="c1">// you define your type in your crate</span>
 
@@ -1852,7 +1823,7 @@ For more information about this error, try `rustc --explain E0117`.
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="define-a-trait-locally-and-implement-that-instead">Define a trait locally and implement that instead<a class="headerlink" href="#define-a-trait-locally-and-implement-that-instead" title="Permanent link">#</a></h4>
+<h1 id="define-a-trait-locally-and-implement-that-instead">Define a trait locally and implement that instead<a class="headerlink" href="#define-a-trait-locally-and-implement-that-instead" title="Permanent link">#</a></h1>
 <p>타입을 로컬로 만드는 것이 아닌, 트레잇을 로컬로 만드는 전략이다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">trait</span><span class="w"> </span><span class="n">Bar</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span><span class="p">;</span>

@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,49 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wasm-pack" class="md-nav__link">
-    wasm-pack 으로 새 패키지 생성하기
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wasm" class="md-nav__link">
-    wasm 빌드하기
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    웹상의 패키지 빌드하기
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#npm" class="md-nav__link">
-    npm에 퍼블리싱하기
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wee_alloc" class="md-nav__link">
-    wee_alloc 할당자 사용하기
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1794,27 +1753,25 @@
                   
 
 
-  <h1>wasm-pack 사용하기</h1>
-
 <p>parent:
 - <a href="../0000%20Index%20%F0%9F%94%97/0013%20Rust%20%F0%9F%A6%80/">0013 Rust 🦀</a>
 - <a href="../wasm%20with%20rust/">wasm with rust</a><br />
 references:
 - <a href="https://rustwasm.github.io/docs/wasm-pack/introduction.html">wasm-pack tutorials</a> <a href="../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/">0080 Scraps 📚</a>
 - <a href="https://rustwasm.github.io/docs/wasm-pack/commands/index.html">wasm-pack commands</a> </p>
-<h4 id="wasm-pack">wasm-pack 으로 새 패키지 생성하기<a class="headerlink" href="#wasm-pack" title="Permanent link">#</a></h4>
+<h1 id="wasm-pack">wasm-pack 으로 새 패키지 생성하기<a class="headerlink" href="#wasm-pack" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code>wasm-pack<span class="w"> </span>new<span class="w"> </span>hello-wasm
 </code></pre></div>
-<h4 id="wasm">wasm 빌드하기<a class="headerlink" href="#wasm" title="Permanent link">#</a></h4>
+<h1 id="wasm">wasm 빌드하기<a class="headerlink" href="#wasm" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code>wasm-pack<span class="w"> </span>build<span class="w"> </span>--scope<span class="w"> </span>mynpmusername
 </code></pre></div>
-<h4 id="_1">웹상의 패키지 빌드하기<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
+<h1 id="_1">웹상의 패키지 빌드하기<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
 </code></pre></div>
-<h4 id="npm">npm에 퍼블리싱하기<a class="headerlink" href="#npm" title="Permanent link">#</a></h4>
+<h1 id="npm">npm에 퍼블리싱하기<a class="headerlink" href="#npm" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code>wasm-pack<span class="w"> </span>publish
 </code></pre></div>
-<h4 id="wee_alloc"><a href="https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/wee_alloc.html#wee_alloc">wee_alloc</a> 할당자 사용하기<a class="headerlink" href="#wee_alloc" title="Permanent link">#</a></h4>
+<h1 id="wee_alloc"><a href="https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/template-deep-dive/wee_alloc.html#wee_alloc">wee_alloc</a> 할당자 사용하기<a class="headerlink" href="#wee_alloc" title="Permanent link">#</a></h1>
 <p>컴파일을 새로 해야 하기 때문에 만약 npm 서버가 동작중이라면 종료하고 다시 컴파일 하여야 한다.</p>
 <div class="highlight"><pre><span></span><code>wasm-pack<span class="w"> </span>build<span class="w"> </span>--<span class="w"> </span>--features<span class="w"> </span>wee-alloc
 </code></pre></div>

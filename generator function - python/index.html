@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,21 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#generator-function-generates-iterator-like-control-block" class="md-nav__link">
-    Generator function generates iterator-like control block
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1766,11 +1753,9 @@
                   
 
 
-  <h1>generator function - python</h1>
-
 <p><a href="../2023-05-11%20estsoft%20-%20python%20-%20inheritance%2C%20linked-list%2C%20method-overriding%2C%20MRO%2C%20private-member%2C%20iterator%2C%20generator%2C%20module%2C%20file-io%2C%20excel/">2023-05-11 estsoft - python - inheritance, linked-list, method-overriding, MRO, private-member, iterator, generator, module, file-io, excel</a>
 - https://realpython.com/introduction-to-python-generators/</p>
-<h4 id="generator-function-generates-iterator-like-control-block">Generator function generates iterator-like control block<a class="headerlink" href="#generator-function-generates-iterator-like-control-block" title="Permanent link">#</a></h4>
+<h1 id="generator-function-generates-iterator-like-control-block">Generator function generates iterator-like control block<a class="headerlink" href="#generator-function-generates-iterator-like-control-block" title="Permanent link">#</a></h1>
 <p><code>yield</code> 문법이 나온다. <code>yield</code> 키워드를 가지고 있는 함수를 generator function이라고 부른다. 함수를 suspend 하고 <code>generator</code> 객체를 리턴하는 역할을 가지고 있다. 따라서 함수의 상태가 어딘가 저장이 되고 재호출이 되기를 기다린다. 해당 함수가 외부에서 다시 호출이 되면 <code>yield</code> 이후 문장들을 다시 실행하기 시작한다. </p>
 <p><code>yield</code>를 사용하여 리턴한 <code>yield</code> 객체로부터 데이터 뽑아내려면 <code>next</code> 내장 함수를 사용하자. 완전 이터레이터와 사용방법이 동일하지? </p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_yield</span><span class="p">():</span>

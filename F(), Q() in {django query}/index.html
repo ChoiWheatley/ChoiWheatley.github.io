@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,6 +1737,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1745,42 +1747,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#f" class="md-nav__link">
-    F()
-  </a>
-  
-    <nav class="md-nav" aria-label="F()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#high-performance" class="md-nav__link">
     high performance
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#race-conditions" class="md-nav__link">
     race conditions
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#returns-pk-rather-than-model-instance" class="md-nav__link">
-    returns PK rather than model instance
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#q" class="md-nav__link">
-    Q()
+  <a href="#returns-pk-rather-than-model-instance" class="md-nav__link">
+    returns PK rather than model instance
   </a>
   
 </li>
@@ -1800,9 +1782,7 @@
                   
 
 
-  <h1>F(), Q() in {django query}</h1>
-
-<h4 id="f"><code>F()</code><a class="headerlink" href="#f" title="Permanent link">#</a></h4>
+<h1 id="f"><code>F()</code><a class="headerlink" href="#f" title="Permanent link">#</a></h1>
 <p>https://docs.djangoproject.com/en/4.2/ref/models/expressions/#f-expressions</p>
 <blockquote>
 <p>F() 개체는 모델 필드의 값, 모델 필드의 변환된 값 또는 주석이 달린 열을 나타냅니다. 이를 통해 모델 필드 값을 참조하고 이를 사용하여 데이터베이스 작업을 수행할 수 있으므로 실제로 데이터베이스에서 파이썬 메모리로 가져올 필요 없이 데이터베이스 작업을 수행할 수 있습니다.</p>
@@ -1810,16 +1790,16 @@
 <p>ORM을 사용할 때 파이썬이 아니라 DB 자체 쿼리를 사용하게 만들어주는 메서드. </p>
 <div class="highlight"><pre><span></span><code><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;post__comment&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h5 id="high-performance">high performance<a class="headerlink" href="#high-performance" title="Permanent link">#</a></h5>
+<h2 id="high-performance">high performance<a class="headerlink" href="#high-performance" title="Permanent link">#</a></h2>
 <p>벌크 업데이트를 수행할 때 파이썬으로 가져올 필요가 없으므로 성능이 높다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Reporter</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">stories_filed</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;stories_filed&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<h5 id="race-conditions">race conditions<a class="headerlink" href="#race-conditions" title="Permanent link">#</a></h5>
+<h2 id="race-conditions">race conditions<a class="headerlink" href="#race-conditions" title="Permanent link">#</a></h2>
 <p>또, DB가 필드 값을 업데이트 하므로 race condition이 일어나지 않는다는 점도 장점이라고</p>
-<h5 id="returns-pk-rather-than-model-instance">returns PK rather than model instance<a class="headerlink" href="#returns-pk-rather-than-model-instance" title="Permanent link">#</a></h5>
+<h2 id="returns-pk-rather-than-model-instance">returns PK rather than model instance<a class="headerlink" href="#returns-pk-rather-than-model-instance" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">Company</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">built_by</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="s2">&quot;manufacturer&quot;</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
-<h4 id="q"><code>Q()</code><a class="headerlink" href="#q" title="Permanent link">#</a></h4>
+<h1 id="q"><code>Q()</code><a class="headerlink" href="#q" title="Permanent link">#</a></h1>
 <ul>
 <li>https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects</li>
 </ul>

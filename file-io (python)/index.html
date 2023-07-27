@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,35 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#write-file" class="md-nav__link">
-    Write File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-file" class="md-nav__link">
-    Read File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#with" class="md-nav__link">
-    파일 열기와 닫기를 동시에 with
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1780,9 +1753,7 @@
                   
 
 
-  <h1>file-io (python)</h1>
-
-<h4 id="write-file">Write File<a class="headerlink" href="#write-file" title="Permanent link">#</a></h4>
+<h1 id="write-file">Write File<a class="headerlink" href="#write-file" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;python.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;hello</span><span class="se">\n</span><span class="s2">world&quot;</span>
@@ -1823,12 +1794,12 @@
 <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">)),</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<h4 id="read-file">Read File<a class="headerlink" href="#read-file" title="Permanent link">#</a></h4>
+<h1 id="read-file">Read File<a class="headerlink" href="#read-file" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;python.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<h4 id="with">파일 열기와 닫기를 동시에 <code>with</code><a class="headerlink" href="#with" title="Permanent link">#</a></h4>
+<h1 id="with">파일 열기와 닫기를 동시에 <code>with</code><a class="headerlink" href="#with" title="Permanent link">#</a></h1>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Life is too short, you need python&#39;</span><span class="p">)</span>
 </code></pre></div>

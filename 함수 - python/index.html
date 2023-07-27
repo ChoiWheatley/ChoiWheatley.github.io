@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,6 +1737,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1745,22 +1747,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function" class="md-nav__link">
-    Function
-  </a>
-  
-    <nav class="md-nav" aria-label="Function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#what-is-closure" class="md-nav__link">
     What is Closure?
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1779,8 +1768,6 @@
                   
 
 
-  <h1>함수 - python</h1>
-
 <ul>
 <li>함수<ul>
 <li>파라미터와 아규먼트의 차이: 파라미터는 함수 <strong>선언</strong>시에 <code>(</code>과 <code>)</code> 사이에 들어가 있는 예약된 변수를 의미하고, 아규먼트는 함수 <strong>호출</strong>시에 <code>(</code>과 <code>)</code> 사이에 들어가는 실제 변수를 의미한다.</li>
@@ -1798,9 +1785,9 @@
 </li>
 <li>연산자 우선순위</li>
 </ul>
-<h4 id="function">Function<a class="headerlink" href="#function" title="Permanent link">#</a></h4>
+<h1 id="function">Function<a class="headerlink" href="#function" title="Permanent link">#</a></h1>
 <p>신기하게도, 타입을 명시하지 않아도 아무거나 들어간다...! 이를 사전에 막기 위해선 <a href="https://docs.python.org/3/library/2to3.html?highlight=isinstance#to3fixer-isinstance"><code>isinstance</code></a>라던가 <a href="https://bskyvision.com/entry/python-Pydantic-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-data-class%EB%B3%B4%EB%8B%A4-%EB%8D%94-%EB%82%98%EC%9D%80-%EB%93%AF"><code>pydantic</code></a> 이라는 모듈을 사용하는 방법을 고려할 수 있다. <a href="https://pydantic.dev/">pydantic 공식</a></p>
-<h5 id="what-is-closure">What is Closure?<a class="headerlink" href="#what-is-closure" title="Permanent link">#</a></h5>
+<h2 id="what-is-closure">What is Closure?<a class="headerlink" href="#what-is-closure" title="Permanent link">#</a></h2>
 <p>아래는 제곱을 수행하는 또하나의 방법을 표현한다. 이것은 팩토리 함수라고도 부른다. 원래는 휘발되었어야 하는 <code>x</code>를 가진 채 <code>x ** y</code>를 수행하는 함수를 리턴할 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">제곱</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">승수</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>

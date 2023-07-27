@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,116 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#re" class="md-nav__link">
-    자주 쓰는 re 메서드들
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regroup" class="md-nav__link">
-    re.group
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resub" class="md-nav__link">
-    re.sub
-  </a>
-  
-    <nav class="md-nav" aria-label="re.sub">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#regex" class="md-nav__link">
-    regex 그룹에 변수명을 붙일 수 있다...'
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#refindall" class="md-nav__link">
-    re.findall
-  </a>
-  
-    <nav class="md-nav" aria-label="re.findall">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    연습문제: 잘라서 배열로 저장하기
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    연습문제: 영어가 싫어요
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    연습문제: 암호문
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resplit" class="md-nav__link">
-    re.split
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#markdown-html" class="md-nav__link">
-    연습문제: Markdown 문법을 Html 문법으로
-  </a>
-  
-    <nav class="md-nav" aria-label="연습문제: Markdown 문법을 Html 문법으로">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#md-html" class="md-nav__link">
-    다른 사람들의 개쩌는 MD -&gt; HTML 코드
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#markdown" class="md-nav__link">
-    파이썬 모듈 markdown을 활용
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1860,8 +1752,6 @@
                 
                   
 
-
-  <h1>re - regex python package</h1>
 
 <p>{% raw %}</p>
 <ul>
@@ -1877,7 +1767,7 @@
 <span class="c1"># 2</span>
 <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([0-9]|10)([SDT])([\*\#]?)&#39;</span><span class="p">,</span> <span class="s1">&#39;1S2D*3T&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="re">자주 쓰는 re 메서드들<a class="headerlink" href="#re" title="Permanent link">#</a></h4>
+<h1 id="re">자주 쓰는 re 메서드들<a class="headerlink" href="#re" title="Permanent link">#</a></h1>
 <ul>
 <li><code>compile</code> : 패턴 컴파일</li>
 <li><a href="https://docs.python.org/3/library/re.html#re.match"><code>match</code></a><ul>
@@ -1938,20 +1828,20 @@
 </code></pre></div>
 </li>
 </ul>
-<h4 id="regroup">re.group<a class="headerlink" href="#regroup" title="Permanent link">#</a></h4>
+<h1 id="regroup">re.group<a class="headerlink" href="#regroup" title="Permanent link">#</a></h1>
 <p>https://docs.python.org/3/library/re.html#re.Match.group</p>
 <p>regex에서 그룹을 사용하면 인덱싱을 돌릴 수 있다. </p>
 <blockquote>
 <p>If the regular expression uses the <code>(?P&lt;name&gt;...)</code> syntax, the groupN arguments may also be strings identifying groups by their group name.</p>
 </blockquote>
-<h4 id="resub">re.sub<a class="headerlink" href="#resub" title="Permanent link">#</a></h4>
+<h1 id="resub">re.sub<a class="headerlink" href="#resub" title="Permanent link">#</a></h1>
 <p><a href="https://docs.python.org/3/library/re.html#re.sub">re.sub - doc</a><br />
 미국식, 영국식 날짜로 표기하시오</p>
 <div class="highlight"><pre><span></span><code>입력: &#39;2023/05/16&#39;
 출력1: &#39;05/16/2023&#39; 미국식 날짜 표기 월 -&gt; 일 -&gt; 년 순임...
 출력2: &#39;16/05/0223&#39; 영국식 날짜 표기 일 -&gt; 월 -&gt; 년 순임...
 </code></pre></div>
-<h5 id="regex">regex 그룹에 변수명을 붙일 수 있다...'<a class="headerlink" href="#regex" title="Permanent link">#</a></h5>
+<h2 id="regex">regex 그룹에 변수명을 붙일 수 있다...'<a class="headerlink" href="#regex" title="Permanent link">#</a></h2>
 <p><code>(?P&lt;VARNAME&gt;PATTERN)</code> 으로 그룹을 선언하면 <code>sub</code>을 사용할 때 해당 그룹을 맞춰갈 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
@@ -1991,7 +1881,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">my_string</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">my_string</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
 </code></pre></div>
-<h4 id="refindall">re.findall<a class="headerlink" href="#refindall" title="Permanent link">#</a></h4>
+<h1 id="refindall">re.findall<a class="headerlink" href="#refindall" title="Permanent link">#</a></h1>
 <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/120891">369 게임</a></p>
 <p>주어진 숫자 안에 있는 3, 6, 9의 숫자를 세시오.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
@@ -1999,7 +1889,7 @@
 
 <span class="n">solution</span><span class="p">(</span><span class="mi">29423</span><span class="p">)</span>
 </code></pre></div>
-<h5 id="_1">연습문제: 잘라서 배열로 저장하기<a class="headerlink" href="#_1" title="Permanent link">#</a></h5>
+<h2 id="_1">연습문제: 잘라서 배열로 저장하기<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>https://school.programmers.co.kr/learn/courses/30/lessons/120913</p>
 <p>사실 슬라이싱 문법 사용하여 간단하게 풀어도 되지만 <code>findall</code>을 사용하여 풀어보자</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># slicing 사용</span>
@@ -2012,7 +1902,7 @@
 <span class="n">solution</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">my_str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;.</span><span class="se">{{</span><span class="s1">1,</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="se">}}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_str</span><span class="p">)</span>
 <span class="n">solution</span><span class="p">(</span><span class="s1">&#39;abc1Addfggg4556b&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 </code></pre></div>
-<h5 id="_2">연습문제: 영어가 싫어요<a class="headerlink" href="#_2" title="Permanent link">#</a></h5>
+<h2 id="_2">연습문제: 영어가 싫어요<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>https://school.programmers.co.kr/learn/courses/30/lessons/120894</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
@@ -2038,7 +1928,7 @@
 
 <span class="n">solution</span><span class="p">(</span><span class="s1">&#39;onetwothreefourfivesixseveneightnine&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h5 id="_3">연습문제: 암호문<a class="headerlink" href="#_3" title="Permanent link">#</a></h5>
+<h2 id="_3">연습문제: 암호문<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p>https://pyalgo.co.kr/?page=2#</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
@@ -2049,7 +1939,7 @@
 
 <span class="n">solution</span><span class="p">(</span><span class="s1">&#39;a10b9r10ce33uab8wc918v2cv11v10&#39;</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="resplit">re.split<a class="headerlink" href="#resplit" title="Permanent link">#</a></h4>
+<h1 id="resplit">re.split<a class="headerlink" href="#resplit" title="Permanent link">#</a></h1>
 <p>정규표현 패턴으로 문자열을 분할한다. <code>str.split</code>과 같음</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
@@ -2057,7 +1947,7 @@
 
 <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ !]&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 </code></pre></div>
-<h4 id="markdown-html">연습문제: Markdown 문법을 Html 문법으로<a class="headerlink" href="#markdown-html" title="Permanent link">#</a></h4>
+<h1 id="markdown-html">연습문제: Markdown 문법을 Html 문법으로<a class="headerlink" href="#markdown-html" title="Permanent link">#</a></h1>
 <p>Before:</p>
 <div class="highlight"><pre><span></span><code># Hello world
 </code></pre></div>
@@ -2116,7 +2006,7 @@
 <span class="c1"># HTML을 출력합니다.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">markdown_to_html</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 </code></pre></div>
-<h5 id="md-html">다른 사람들의 개쩌는 MD -&gt; HTML 코드<a class="headerlink" href="#md-html" title="Permanent link">#</a></h5>
+<h2 id="md-html">다른 사람들의 개쩌는 MD -&gt; HTML 코드<a class="headerlink" href="#md-html" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 바름님 코드</span>
 <span class="kn">import</span> <span class="nn">re</span>
 
@@ -2196,7 +2086,7 @@
 <span class="n">f1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="n">f2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
-<h5 id="markdown">파이썬 모듈 <code>markdown</code>을 활용<a class="headerlink" href="#markdown" title="Permanent link">#</a></h5>
+<h2 id="markdown">파이썬 모듈 <code>markdown</code>을 활용<a class="headerlink" href="#markdown" title="Permanent link">#</a></h2>
 <p><a href="../markdown%20-%20python%20package/">markdown - python package</a></p>
 <p>{% endraw %}</p>
 

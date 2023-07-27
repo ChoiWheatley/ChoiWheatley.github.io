@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,6 +1737,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1745,36 +1747,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples:
-  </a>
-  
-    <nav class="md-nav" aria-label="Examples:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#function-views" class="md-nav__link">
     Function views
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#class-based-views" class="md-nav__link">
     Class-based views
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#including-another-urlconf" class="md-nav__link">
     Including another URLconf
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1792,8 +1781,6 @@
                 
                   
 
-
-  <h1>django path(route, view, name)</h1>
 
 <ul>
 <li>https://docs.djangoproject.com/en/4.2/ref/urls/</li>
@@ -1813,18 +1800,18 @@
 </blockquote>
 <p>The <code>urlpatterns</code> list routes URLs to views. For more information please see:<br />
     https://docs.djangoproject.com/en/4.2/topics/http/urls/</p>
-<h4 id="examples">Examples:<a class="headerlink" href="#examples" title="Permanent link">#</a></h4>
-<h5 id="function-views">Function views<a class="headerlink" href="#function-views" title="Permanent link">#</a></h5>
+<h1 id="examples">Examples:<a class="headerlink" href="#examples" title="Permanent link">#</a></h1>
+<h2 id="function-views">Function views<a class="headerlink" href="#function-views" title="Permanent link">#</a></h2>
 <ol>
 <li>Add an import:  <code>from my_app import views</code></li>
 <li>Add a URL to urlpatterns:  <code>path('', views.home, name='home')</code></li>
 </ol>
-<h5 id="class-based-views">Class-based views<a class="headerlink" href="#class-based-views" title="Permanent link">#</a></h5>
+<h2 id="class-based-views">Class-based views<a class="headerlink" href="#class-based-views" title="Permanent link">#</a></h2>
 <ol>
 <li>Add an import:  <code>from other_app.views import Home</code></li>
 <li>Add a URL to urlpatterns:  <code>path('', Home.as_view(), name='home')</code></li>
 </ol>
-<h5 id="including-another-urlconf">Including another URLconf<a class="headerlink" href="#including-another-urlconf" title="Permanent link">#</a></h5>
+<h2 id="including-another-urlconf">Including another URLconf<a class="headerlink" href="#including-another-urlconf" title="Permanent link">#</a></h2>
 <ol>
 <li>Import the include() function: <code>from django.urls import include, path</code></li>
 <li>Add a URL to urlpatterns:  <code>path('blog/', include('blog.urls'))</code></li>

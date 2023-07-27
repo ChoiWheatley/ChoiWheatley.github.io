@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,6 +1737,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1745,22 +1747,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ord" class="md-nav__link">
-    전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.
-  </a>
-  
-    <nav class="md-nav" aria-label="전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#partialord" class="md-nav__link">
     비교가능 여부도 알 수 있는 PartialOrd
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1778,8 +1767,6 @@
                 
                   
 
-
-  <h1>Ord is total order, PartialOrd is partial order</h1>
 
 <ul>
 <li><a href="https://github.com/ChoiWheatley/my-first-rust/blob/c55e7e848ccc2eefb0838b4ba44a3d7e86922f07/self_ref/src/step_006_self_ref_cmp.rs">실험을 진행한 코드</a></li>
@@ -1859,7 +1846,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h4 id="ord">전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.<a class="headerlink" href="#ord" title="Permanent link">#</a></h4>
+<h1 id="ord">전순서 집합이 아닌 커스텀 Ord도 만들 수 있다.<a class="headerlink" href="#ord" title="Permanent link">#</a></h1>
 <p>https://doc.rust-lang.org/std/cmp/trait.Ord.html#how-can-i-implement-ord<br />
 전순서가 아닌 비교 트레이트는 <code>PartialOrd</code> 이다. <code>Ord</code>를 구현하기 위해선 우선 <code>PartialOrd</code> + <code>Eq</code> ( + <code>PartialEq</code> ) 를 만족하여야 한다. 아래 코드는 height에 대해서만 비교를 수행하는 커스텀 <code>Ord</code>를 보여주고 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span>
@@ -1889,7 +1876,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<h5 id="partialord">비교가능 여부도 알 수 있는 PartialOrd<a class="headerlink" href="#partialord" title="Permanent link">#</a></h5>
+<h2 id="partialord">비교가능 여부도 알 수 있는 PartialOrd<a class="headerlink" href="#partialord" title="Permanent link">#</a></h2>
 <p>여기에서 <code>PartialOrd</code> 인터페이스 <code>partial_cmp</code>의 리턴형이 옵션인 이유에 대해 알게 되었다. 다음 <a href="https://rust-lang.github.io/rust-clippy/master/index.html#neg_cmp_op_on_partial_ord">clippy - neg_cmp_on_partial_ord</a> 문서에서 <code>partial_cmp</code>는 세가지 기본 비교연산(<code>Eq</code>, <code>Less</code>, <code>Greater</code>) 외에도 한 가지 연산을 더 수행할 수 있는데, 바로 <strong>비교가능</strong>인지 여부이다. 만약 두 연산자가 말이 안되는 경우( divide by zero )로 인해 비교자체가 불가능한 경우 <code>None</code>을 리턴하고, 이외엔 <code>Some(Ordering)</code> 을 리턴한다.</p>
 
 

@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,63 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#view" class="md-nav__link">
-    View
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#listview" class="md-nav__link">
-    ListView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailview" class="md-nav__link">
-    DetailView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#templateview" class="md-nav__link">
-    TemplateView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#loginview" class="md-nav__link">
-    LoginView
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#httprequest" class="md-nav__link">
-    파라미터에 있던 HttpRequest
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    기타
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1808,9 +1753,7 @@
                   
 
 
-  <h1>django.views.{View, generic.{ListView, DetailView}}</h1>
-
-<h4 id="view">View<a class="headerlink" href="#view" title="Permanent link">#</a></h4>
+<h1 id="view">View<a class="headerlink" href="#view" title="Permanent link">#</a></h1>
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view">https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#view</a></p>
 <ul>
 <li>attr<ul>
@@ -1827,7 +1770,7 @@
     <span class="n">path</span><span class="p">(</span><span class="s2">&quot;mine/&quot;</span><span class="p">,</span> <span class="n">MyView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my-view&quot;</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
-<h4 id="listview">ListView<a class="headerlink" href="#listview" title="Permanent link">#</a></h4>
+<h1 id="listview">ListView<a class="headerlink" href="#listview" title="Permanent link">#</a></h1>
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview">https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/#listview</a></p>
 <p>객체의 리스트를 표현하는 제네릭 뷰. 따라서 <a href="../django%20template/">django template</a>에서 순회를 돌 수 있다.</p>
 <blockquote>
@@ -1849,7 +1792,7 @@
         {%endfor%}
 </code></pre></div>
 <p><code>{% for object in object_list %}</code> 의 <code>object_list</code>가 서로 연결된다! <mark><code>object_list</code></mark></p>
-<h4 id="detailview">DetailView<a class="headerlink" href="#detailview" title="Permanent link">#</a></h4>
+<h1 id="detailview">DetailView<a class="headerlink" href="#detailview" title="Permanent link">#</a></h1>
 <p><a href="https://youtu.be/sMqDJovFO-Y?t=4993">DetailView 작성하는 영상</a><br />
 <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/generic-display/">djangoproject.com -- class based views -- generic display</a></p>
 <p>예를 들어 아티클을 보여주고자 할때 어떤 아티클을 보여줄지는 우리의 재량에 달렸다. 이 경우, <code>urls.py</code>에 <code>urlpatterns</code> 리스트에 <code>path</code>를 지정해줄때 <code>&lt;slug:slug&gt;/</code> 식의 URI를 제공하여야 한다. </p>
@@ -1858,10 +1801,10 @@
 <p>템플릿에서 <code>{% url 'detail_article' %}</code> 이라고만 주었을 때 추가 인자가 없다고 징징댄다. 이때 내가 정확히 선택한 아티클의 id를(pk) 어떻게 받아올까? ==&gt; 그냥 <code>object.id</code>를 <code>detail_article</code> 뒤에 추가해버리니까 되네???? 😲</p>
 <div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;detail_article&#39;</span> <span class="nv">object.id</span> <span class="cp">%}</span>
 </code></pre></div>
-<h4 id="templateview"><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview">TemplateView</a><a class="headerlink" href="#templateview" title="Permanent link">#</a></h4>
+<h1 id="templateview"><a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/base/#templateview">TemplateView</a><a class="headerlink" href="#templateview" title="Permanent link">#</a></h1>
 <p>순수하게 템플릿 파일만을 저장한 view를 의미한다. <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.TemplateResponseMixin"><code>TemplateResponseMixin</code></a> 덕분에 <code>template_name</code> 멤버변수를 정의하기만 하면 알아서 GET 요청에 반응해준다. <a href="https://docs.djangoproject.com/en/4.2/ref/class-based-views/mixins-simple/#django.views.generic.base.ContextMixin"><code>ContextMixin</code></a> 덕분에 컨텍스트 확장이 가능해졌으며, <code>get_context_data</code>를 오버라이드 하는 것으로 구현이 가능하다.</p>
-<h4 id="loginview"><a href="https://docs.djangoproject.com/en/4.2/topics/auth/default/#django.contrib.auth.views.LoginView"><code>LoginView</code></a><a class="headerlink" href="#loginview" title="Permanent link">#</a></h4>
-<h4 id="httprequest">파라미터에 있던 HttpRequest<a class="headerlink" href="#httprequest" title="Permanent link">#</a></h4>
+<h1 id="loginview"><a href="https://docs.djangoproject.com/en/4.2/topics/auth/default/#django.contrib.auth.views.LoginView"><code>LoginView</code></a><a class="headerlink" href="#loginview" title="Permanent link">#</a></h1>
+<h1 id="httprequest">파라미터에 있던 HttpRequest<a class="headerlink" href="#httprequest" title="Permanent link">#</a></h1>
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest">https://docs.djangoproject.com/en/4.2/ref/request-response/#django.http.HttpRequest</a></p>
 <ul>
 <li>scheme</li>
@@ -1879,7 +1822,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="_1">기타<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
+<h1 id="_1">기타<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <ul>
 <li>자세한 View들간의 관계에 대해 알고싶다면 <a href="../CCBV%2C%20Classy%20Class%20Based%20View%20--%20django/">CCBV, Classy Class Based View -- django</a>를 참조하쇼</li>
 <li><a href="../slug%EA%B0%80%20%EB%AD%90%EB%83%90/">slug가 뭐냐</a></li>

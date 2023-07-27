@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,28 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#get_queryset" class="md-nav__link">
-    get_queryset
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get_context_data" class="md-nav__link">
-    get_context_data
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1773,8 +1753,6 @@
                   
 
 
-  <h1>get_context_data, get_queryset { django } { ListView }</h1>
-
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.1/ref/models/options/">docs</a></li>
 <li><a href="https://stackoverflow.com/questions/36950416/when-to-use-get-get-queryset-get-context-data-in-django">When to use <code>get</code>, <code>get_query_set</code>, <code>get_context_data</code> in Django? -- SOF</a></li>
@@ -1788,9 +1766,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="get_queryset"><code>get_queryset</code><a class="headerlink" href="#get_queryset" title="Permanent link">#</a></h4>
+<h1 id="get_queryset"><code>get_queryset</code><a class="headerlink" href="#get_queryset" title="Permanent link">#</a></h1>
 <p><code>ListView</code>에서 객체의 리스트를 리턴하는 메서드이다. 기본적으로는 <code>objects.all()</code>을 호출하지만 오버라이딩 하여 원하는 결과만을 필터링하거나 exclude 하여 리턴할 수 있다.</p>
-<h4 id="get_context_data"><code>get_context_data</code><a class="headerlink" href="#get_context_data" title="Permanent link">#</a></h4>
+<h1 id="get_context_data"><code>get_context_data</code><a class="headerlink" href="#get_context_data" title="Permanent link">#</a></h1>
 <blockquote>
 <p>You will probably be overriding this method often to <strong>add</strong> things to display in your templates</p>
 </blockquote>

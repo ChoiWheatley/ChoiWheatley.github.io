@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,28 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-getitem" class="md-nav__link">
-    What is getitem
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementing-getitem" class="md-nav__link">
-    Implementing getitem
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1773,14 +1753,12 @@
                   
 
 
-  <h1>__getitem__ index and slice iteration in python</h1>
-
 <ul>
 <li><a href="https://www.geeksforgeeks.org/__getitem__-in-python/">GFG</a></li>
 <li><a href="https://docs.python.org/3/reference/datamodel.html#object.__getitem__"><code>object.__getitem__</code> python documentation</a><br />
 커스텀 링크드 리스트를 만들다가 발생한 문제 브리핑.</li>
 </ul>
-<h4 id="what-is-getitem">What is getitem<a class="headerlink" href="#what-is-getitem" title="Permanent link">#</a></h4>
+<h1 id="what-is-getitem">What is getitem<a class="headerlink" href="#what-is-getitem" title="Permanent link">#</a></h1>
 <p>아래와 같이 마지막 원소를 제외한 나머지를 순회하면서 <code>ret</code>에 문자열을 끼워넣고 싶었는데 안된다고 한다. 자세히 들여다보니 <code>__getitem__</code> 던더함수가 없다고 나오네.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
 
@@ -1812,7 +1790,7 @@
 <li>문자열 (매핑을 위하여)</li>
 <li>임의의 객체</li>
 </ol>
-<h4 id="implementing-getitem">Implementing getitem<a class="headerlink" href="#implementing-getitem" title="Permanent link">#</a></h4>
+<h1 id="implementing-getitem">Implementing getitem<a class="headerlink" href="#implementing-getitem" title="Permanent link">#</a></h1>
 <p>그래서, 임의의 타입을 일일이 <code>isinstance</code>를 찍어가면서 해야한단 거야? =&gt; No! <a href="https://stackoverflow.com/questions/22151335/implementing-getitem">SOF - use exception handling!</a></p>
 <p>slice 타입을 어떻게 처리하지? <a href="../slice.indices%20-%20python/">slice.indices - python</a></p>
 <p>빙챗한테 <code>__getitem__</code> 어떻게 구현하냐고 물어봤다. 굉장히 만족스러운 답변을 내놓았다. </p>

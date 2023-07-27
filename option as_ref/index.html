@@ -1693,7 +1693,7 @@
   
     <li class="md-nav__item">
       <a href="../Daily%20Notes/2023-07-24/" class="md-nav__link">
-        2023 07 24
+        2023-07-24
       </a>
     </li>
   
@@ -1737,21 +1737,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    example
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1766,13 +1753,11 @@
                   
 
 
-  <h1>option as_ref</h1>
-
 <ul>
 <li>https://doc.rust-lang.org/std/option/enum.Option.html#method.as_ref</li>
 <li>Converts from <code>&amp;Option&lt;T&gt;</code> to <code>Option&lt;&amp;T&gt;</code></li>
 </ul>
-<h4 id="example">example<a class="headerlink" href="#example" title="Permanent link">#</a></h4>
+<h1 id="example">example<a class="headerlink" href="#example" title="Permanent link">#</a></h1>
 <p>Calculates the length of an <code>Option&lt;String&gt;</code> as an <code>Option&lt;usize&gt;</code> without moving the String. The map method takes the self argument by value, consuming the original, so this technique uses as_ref to first take an Option to a reference to the value inside the original.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">text</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span>
 <span class="c1">// First, cast `Option&lt;String&gt;` to `Option&lt;&amp;String&gt;` with `as_ref`,</span>
