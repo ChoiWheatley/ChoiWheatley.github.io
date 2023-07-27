@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-27T14:23:28
+updated: 2023-07-27T14:41:31
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -66,6 +66,7 @@ flowchart LR
 ### Usecase Diagram
 
 ![[chatgpt-usecase.excalidraw]]  
+
 ![[chatgpt-usecase.excalidraw.png]]
 
 #### Main Flow
@@ -211,6 +212,8 @@ erDiagram
 ```
 
 멘토님께 질문하고 나니 굳이 이렇게 key, value를 사용할 필요는 없어보인다. JSON을 형식 그대로 저장하고 싶다면 MongoDB를 써도 되지만 나는 단순한 스키마를 채택하는 것이 정신건강에 이로울 것 같다. openai의 API 응답을 그대로 재현할 필요는 없지 않을까?
+
+#### 2차: 스키마 고정
 
 ```mermaid
 erDiagram
