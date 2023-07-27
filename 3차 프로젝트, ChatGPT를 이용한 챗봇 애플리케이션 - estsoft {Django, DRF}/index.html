@@ -1822,6 +1822,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2차: 스키마 고정
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1914,8 +1921,8 @@
 <li>백엔드가 각각의 서비스로부터 응답을 받으면 이를 통해 클라이언트에게 응답을 전송함.</li>
 </ol>
 <h3 id="usecase-diagram">Usecase Diagram<a class="headerlink" href="#usecase-diagram" title="Permanent link">#</a></h3>
-<p>![[chatgpt-usecase.excalidraw]]<br />
-<a class="glightbox" href="../assets/chatgpt-usecase.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="chatgpt-usecase.excalidraw.png" src="../assets/chatgpt-usecase.excalidraw.png" /></a></p>
+<p><a class="glightbox" href="assets/chatgpt-usecase.excalidraw.md" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="chatgpt-usecase.excalidraw" src="assets/chatgpt-usecase.excalidraw.md" /></a>  </p>
+<p>![[chatgpt-usecase.excalidraw.png]]</p>
 <h4 id="main-flow">Main Flow<a class="headerlink" href="#main-flow" title="Permanent link">#</a></h4>
 <ul>
 <li><em>User</em><ul>
@@ -2061,6 +2068,7 @@
         string value
     }</code></pre>
 <p>멘토님께 질문하고 나니 굳이 이렇게 key, value를 사용할 필요는 없어보인다. JSON을 형식 그대로 저장하고 싶다면 MongoDB를 써도 되지만 나는 단순한 스키마를 채택하는 것이 정신건강에 이로울 것 같다. openai의 API 응답을 그대로 재현할 필요는 없지 않을까?</p>
+<h4 id="2">2차: 스키마 고정<a class="headerlink" href="#2" title="Permanent link">#</a></h4>
 <pre class="mermaid"><code>erDiagram
     Member ||--o{ Session : requests
     Session ||--|{ Prompt : aggregates
