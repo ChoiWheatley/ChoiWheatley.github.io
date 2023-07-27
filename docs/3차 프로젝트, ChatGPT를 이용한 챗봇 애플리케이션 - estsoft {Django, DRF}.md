@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-27T11:14:00
+updated: 2023-07-27T14:23:28
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -174,6 +174,8 @@ curl https://api.openai.com/v1/chat/completions \
 
 `ChatBotReply`에게 필요한 건 확장성인가, `message.text`만 있으면 되는가.
 
+#### 1차: 높은 확장성
+
 ```mermaid
 erDiagram
 	Member ||--o{ Session : requests
@@ -205,6 +207,54 @@ erDiagram
 	ChatBotReply {
 		string key
 		string value
+	}
+```
+
+멘토님께 질문하고 나니 굳이 이렇게 key, value를 사용할 필요는 없어보인다. JSON을 형식 그대로 저장하고 싶다면 MongoDB를 써도 되지만 나는 단순한 스키마를 채택하는 것이 정신건강에 이로울 것 같다. openai의 API 응답을 그대로 재현할 필요는 없지 않을까?
+
+```mermaid
+erDiagram
+	Member ||--o{ Session : requests
+	Session ||--|{ Prompt : aggregates
+	Session ||--|{ ChatBotConfig : aggregates
+	Session ||--o{ ChatBotReply : aggregates
+	ChatBotReply ||--|{ Choice : has
+
+	Member {
+		string nickname
+		string email
+		int age "NULL"
+		string job "NULL"
+	}
+
+	Session {
+		timestamp created_at
+	}
+
+	Prompt {
+		string prompt
+		string answer "NULL"
+	}
+
+	ChatBotConfig {
+		string model
+		decimal temperature
+		bool stream
+		int max_tokens
+	}
+
+	ChatBotReply {
+		int prompt_token_usage
+		int completion_token_usage
+		int total_token_usage
+	}
+
+	Choice {
+		int reply FK
+		string role
+		string content
+		string finish_reason
+		int index
 	}
 ```
 
