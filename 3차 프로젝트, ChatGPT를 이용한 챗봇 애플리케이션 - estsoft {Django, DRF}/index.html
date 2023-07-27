@@ -1812,6 +1812,19 @@
     ER Diagram
   </a>
   
+    <nav class="md-nav" aria-label="ER Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1차: 높은 확장성
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2015,6 +2028,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><code>ChatBotReply</code>에게 필요한 건 확장성인가, <code>message.text</code>만 있으면 되는가.</p>
+<h4 id="1">1차: 높은 확장성<a class="headerlink" href="#1" title="Permanent link">#</a></h4>
 <pre class="mermaid"><code>erDiagram
     Member ||--o{ Session : requests
     Session ||--|{ Prompt : aggregates
@@ -2045,6 +2059,50 @@
     ChatBotReply {
         string key
         string value
+    }</code></pre>
+<p>멘토님께 질문하고 나니 굳이 이렇게 key, value를 사용할 필요는 없어보인다. JSON을 형식 그대로 저장하고 싶다면 MongoDB를 써도 되지만 나는 단순한 스키마를 채택하는 것이 정신건강에 이로울 것 같다. openai의 API 응답을 그대로 재현할 필요는 없지 않을까?</p>
+<pre class="mermaid"><code>erDiagram
+    Member ||--o{ Session : requests
+    Session ||--|{ Prompt : aggregates
+    Session ||--|{ ChatBotConfig : aggregates
+    Session ||--o{ ChatBotReply : aggregates
+    ChatBotReply ||--|{ Choice : has
+
+    Member {
+        string nickname
+        string email
+        int age "NULL"
+        string job "NULL"
+    }
+
+    Session {
+        timestamp created_at
+    }
+
+    Prompt {
+        string prompt
+        string answer "NULL"
+    }
+
+    ChatBotConfig {
+        string model
+        decimal temperature
+        bool stream
+        int max_tokens
+    }
+
+    ChatBotReply {
+        int prompt_token_usage
+        int completion_token_usage
+        int total_token_usage
+    }
+
+    Choice {
+        int reply FK
+        string role
+        string content
+        string finish_reason
+        int index
     }</code></pre>
 <h2 id="django-react-full-course">Django + React Full Course<a class="headerlink" href="#django-react-full-course" title="Permanent link">#</a></h2>
 <iframe src="https://www.youtube.com/embed/soxd_xdHR0o?list=PLOLrQ9Pn6caw0PjVwymNc64NkUNbZlhFw" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
