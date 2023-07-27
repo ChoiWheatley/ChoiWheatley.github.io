@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-27T11:02:48
+updated: 2023-07-27T11:14:00
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -125,6 +125,8 @@ openai request, response는 JSON 형식을 갖고있고, JSON은 반정형 데�
 - **`stream`**: True일 경우 부분 메시지가 함께 보내진다. 실시간으로 응답이 들어오기 때문에 유저가 지루하지 않다는 장점이 있다.
 
 나는 OpenAI의 Response만 어떻게 잘 처리하면 된다. request를 JSON으로 만드는 것은 데이터베이스의 문제가 아니기 때문이다. 
+
+[[JSON을 정형 데이터베이스에 저장하는법 {question}]]
 
 **example request**
 
