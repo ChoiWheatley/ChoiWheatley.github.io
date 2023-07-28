@@ -1840,22 +1840,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#django-react-full-course" class="md-nav__link">
-    Django + React Full Course
-  </a>
-  
-    <nav class="md-nav" aria-label="Django + React Full Course">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    알게된 개쩌는 꿀팁들
+  <a href="#usecase-component-layer" class="md-nav__link">
+    Usecase &amp; Component Layer
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#django-react-full-course" class="md-nav__link">
+    Django + React Full Course
+  </a>
   
 </li>
       
@@ -1934,7 +1928,7 @@
 <li>백엔드가 각각의 서비스로부터 응답을 받으면 이를 통해 클라이언트에게 응답을 전송함.</li>
 </ol>
 <h3 id="usecase-diagram">Usecase Diagram<a class="headerlink" href="#usecase-diagram" title="Permanent link">#</a></h3>
-<p><a class="glightbox" href="assets/chatgpt-usecase.excalidraw.md" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="chatgpt-usecase.excalidraw" src="assets/chatgpt-usecase.excalidraw.md" /></a>  </p>
+<p><a class="glightbox" href="assets/chatgpt-usecase.excalidraw.md" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="chatgpt-usecase.excalidraw" src="assets/chatgpt-usecase.excalidraw.md" width="800" /></a>  </p>
 <p><a class="glightbox" href="../assets/chatgpt-usecase.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="chatgpt-usecase.excalidraw.png" src="../assets/chatgpt-usecase.excalidraw.png" /></a></p>
 <h4 id="main-flow">Main Flow<a class="headerlink" href="#main-flow" title="Permanent link">#</a></h4>
 <ul>
@@ -2130,24 +2124,13 @@
         string finish_reason
         int index
     }</code></pre>
+<h2 id="usecase-component-layer">Usecase &amp; Component Layer<a class="headerlink" href="#usecase-component-layer" title="Permanent link">#</a></h2>
+<ul>
+<li>[?] <a href="../%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EC%97%90%EC%84%9C%EC%9D%98%20form%EA%B3%BC%20%EB%B0%B1%EC%97%94%EB%93%9C%EC%97%90%EC%84%9C%EC%9D%98%20form%20fields%EB%8A%94%20%EB%8F%85%EB%A6%BD%EC%A0%81%EC%9D%B4%EC%96%B4%EC%95%BC%20%ED%95%98%EB%82%98%20%7Bdrf%2C%20django%7D/">프론트엔드에서의 form과 백엔드에서의 form fields는 독립적이어야 하나 {drf, django}</a></li>
+</ul>
+<p><a class="glightbox" href="assets/Drawing 2023-07-28 14.31.23.excalidraw.md" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Drawing 2023-07-28 14.31.23.excalidraw" src="assets/Drawing 2023-07-28 14.31.23.excalidraw.md" width="800" /></a></p>
 <h2 id="django-react-full-course">Django + React Full Course<a class="headerlink" href="#django-react-full-course" title="Permanent link">#</a></h2>
-<iframe src="https://www.youtube.com/embed/soxd_xdHR0o?list=PLOLrQ9Pn6caw0PjVwymNc64NkUNbZlhFw" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
-
-<h3 id="_3">알게된 개쩌는 꿀팁들<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
-<ul>
-<li><a href="https://youtu.be/soxd_xdHR0o?t=3835">admin site에 등록된 모델들의 컬럼을 정의할 수 있다</a></li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Post</span><span class="p">)</span>
-<span class="k">class</span> <span class="nc">AuthorAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
-    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;slug&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">)</span>
-    <span class="n">prepopulated_fields</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;slug&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,),</span> <span class="p">}</span>
-
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Category</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li><a href="./objects member is Manager compositted in Model.md"><code>objects</code> member is Manager compositted in Model</a></li>
-<li><a href="../APIView%20%7Bdrf%7D/">APIView {drf}</a></li>
-</ul>
+<p><a href="../Django%20%2B%20React%20Full%20Cource%20Youtube%20Playlist/">Django + React Full Cource Youtube Playlist</a> 로 가세요</p>
 
 
 
