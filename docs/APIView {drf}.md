@@ -4,7 +4,7 @@ tags:
 description:
 title: APIView {drf}
 created: 2023-07-28T10:03:39
-updated: 2023-07-28T10:20:55
+updated: 2023-07-28T10:26:59
 ---
 - link
 	- [[drf {django rest framework}]]
@@ -12,3 +12,5 @@ updated: 2023-07-28T10:20:55
 ___
 
 JSON을 편하게 보고 수정할 수 있는 개발용 사이트를 제공해준다. Swagger UI가 그런 목적으로 존재하는 거 아닐까?
+
+신기하게도, Postman 같은 걸로 같은 엔드포인트로 요청을 하면 HTML이 아니라 JSON이 날아온다는 것이다.
