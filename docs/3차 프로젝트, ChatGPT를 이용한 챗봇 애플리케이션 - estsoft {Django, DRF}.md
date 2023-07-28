@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-28T15:19:47
+updated: 2023-07-28T15:35:56
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -270,7 +270,10 @@ erDiagram
 
 - [?] [[프론트엔드에서의 form과 백엔드에서의 form fields는 독립적이어야 하나 {drf, django}]]
 
-![[Drawing 2023-07-28 14.31.23.excalidraw|800]]
+
+![[usecase_component_diagram.excalidraw|800]]
+
+![[usecase_component_diagram.excalidraw.png]]
 
 ## Django + React Full Course
 
