@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-14T10:42:59
-updated: 2023-07-15T21:33:05
+updated: 2023-07-28T10:19:20
 title: drf {django rest framework}
 ---
 
@@ -15,6 +15,7 @@ title: drf {django rest framework}
 
 - throttles {drf}
 - [[internalization with i18n {drf}]]
+- [[APIView {drf}]]
 
 # Glossary
 
