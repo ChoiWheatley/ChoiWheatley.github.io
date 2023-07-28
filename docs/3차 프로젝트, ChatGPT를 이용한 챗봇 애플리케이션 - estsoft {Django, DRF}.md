@@ -282,3 +282,6 @@ class AuthorAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Category)
 ```
+
+- [[`objects` member is Manager compositted in Model]]
+- [[APIView {drf}]]
