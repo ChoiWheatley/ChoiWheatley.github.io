@@ -611,6 +611,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/CDRF%2C%20Classy%20Django%20REST%20Framework/</loc>
+         <lastmod>2023-07-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/CMake/</loc>
          <lastmod>2023-07-28</lastmod>
          <changefreq>daily</changefreq>
