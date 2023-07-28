@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-27T21:53:31
+updated: 2023-07-28T15:19:47
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -65,7 +65,7 @@ flowchart LR
 
 ### Usecase Diagram
 
-![[chatgpt-usecase.excalidraw]]  
+![[chatgpt-usecase.excalidraw|800]]  
 
 ![[chatgpt-usecase.excalidraw.png]]
 
@@ -266,22 +266,12 @@ erDiagram
 	}
 ```
 
+## Usecase & Component Layer
+
+- [?] [[프론트엔드에서의 form과 백엔드에서의 form fields는 독립적이어야 하나 {drf, django}]]
+
+![[Drawing 2023-07-28 14.31.23.excalidraw|800]]
+
 ## Django + React Full Course
 
-<iframe src="https://www.youtube.com/embed/soxd_xdHR0o?list=PLOLrQ9Pn6caw0PjVwymNc64NkUNbZlhFw" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
-
-### 알게된 개쩌는 꿀팁들
-
-- [admin site에 등록된 모델들의 컬럼을 정의할 수 있다](https://youtu.be/soxd_xdHR0o?t=3835)
-
-```python
-@admin.register(models.Post)
-class AuthorAdmin(admin.ModelAdmin):
-	list_display = ("title", "id", "status", "slug", "author")
-	prepopulated_fields = { "slug": ("title",), }
-
-admin.site.register(models.Category)
-```
-
-- [[`objects` member is Manager compositted in Model]]
-- [[APIView {drf}]]
+[[Django + React Full Cource Youtube Playlist]] 로 가세요
