@@ -9,6 +9,7 @@ updated: 2023-07-29T17:07:39
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
+- [ormi-project-3 {Github}](git@github.com:ChoiWheatley/ormi-project-3.git)
 
 ## 기본 요구사항
 
