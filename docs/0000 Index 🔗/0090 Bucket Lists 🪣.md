@@ -52,6 +52,7 @@ Pending
 	- [[레토르트 커리]]
 	- [[roasted corn and bacon]]
 	- [[돼지고기카레 전기밥솥 취사 2번이면 끝 {YT}]]
+	- [[홈메이드 치킨 4KG 치킨 튀기기 {YT}]]
 
 - Activities
 	- [[안양천 - 한강 따라 걷기코스]]
