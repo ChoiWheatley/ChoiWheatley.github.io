@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://choiwheatley.github.io/ViewSets%20%7Bdrf%7D/">
       
       
-        <link rel="prev" href="../Variance%20in%20rust/">
+        <link rel="prev" href="../ViewSet.reverse_action%20%7Bdrf%7D/">
       
       
         <link rel="next" href="../Web%20Crawling%20with%20Beautiful%20Soup%20%26%20requests/">
@@ -1759,7 +1759,40 @@
 <li><a href="../drf%20%EC%97%90%EC%84%9C%20redirect%20url%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20ViewSet%EC%97%90%20%EB%8B%B4%EB%8A%94%EB%B2%95%20%7Bdrf%7D/">drf 에서 redirect url에 대한 정보를 ViewSet에 담는법 {drf}</a></li>
 </ul>
 <h1 id="urlconf-view">urlconf를 자동으로 생성해주는 <code>View</code>들의 집합<a class="headerlink" href="#urlconf-view" title="Permanent link">#</a></h1>
+<p><a href="https://www.django-rest-framework.org/api-guide/routers/#routers">routers {doc}</a></p>
 <p><code>Router</code> 객체를 통하여 <code>urlpatterns</code>를 자동으로 생성할 수 있다. 그러기 위해선 <code>ViewSet</code>을 구현하여야 하며, <code>list</code>, <code>retrieve</code> 메서드를 구현하여야 한다. 이름에서부터 알 수 있듯이, 두 메서드는 각각 모든 데이터 참조와 구체적인 데이터 하나 참조를 의미한다.</p>
+<p><code>core/urls.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">rest_framework.routers</span> <span class="kn">import</span> <span class="n">DefaultRouter</span>
+<span class="kn">from</span> <span class="nn">users.views</span> <span class="kn">import</span> <span class="n">MemberViewSet</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="n">DefaultRouter</span><span class="p">()</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;users&quot;</span><span class="p">,</span> <span class="n">MemberViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">)</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;admin/&quot;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span> <span class="o">+</span> <span class="n">router</span><span class="o">.</span><span class="n">urls</span>
+</code></pre></div>
+<p>때로 <code>include</code>와 접두사를 붙여 이것이 API임을 확실하게 명시하기도 하는데..</p>
+<div class="highlight"><pre><span></span><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;forgot-password/&#39;</span><span class="p">,</span> <span class="n">ForgotPasswordFormView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;api/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">((</span><span class="n">router</span><span class="o">.</span><span class="n">urls</span><span class="p">,</span> <span class="s1">&#39;app_name&#39;</span><span class="p">))),</span>
+<span class="p">]</span>
+</code></pre></div>
+<h2 id="action-url">추가 <code>@action</code>을 url에 삽입하자<a class="headerlink" href="#action-url" title="Permanent link">#</a></h2>
+<p><a href="https://www.django-rest-framework.org/api-guide/routers/#routing-for-extra-actions">action decorator {doc}</a></p>
+<p>기본적인 <code>ViewSet</code>의 경우 CRUD 또는 기본 HTTP 메서드들에 대한 라우팅을 제공한다. 그것 말고도 추가적인 기능을 제공하는 엔드포인트를 만들고 싶을땐 <code>@action</code> 데코레이터를 붙이면 된다. URL 패턴의 이름은 메서드 자체의 이름이 되고, URL path의 이름은 <code>ViewSet.basename</code>에서 정의한 바와 URL 패턴의 이름을 <code>-</code>를 구분자로 취한 이름이 된다.</p>
+<ul>
+<li>URL pattern: <code>^users/{pk}/set_password/$</code><ul>
+<li>말 그대로 <code>urlpatterns</code>와 실제 주소에서 사용할 이름</li>
+</ul>
+</li>
+<li>URL name: <code>user-set-password</code><ul>
+<li>reverse할 때 사용할 이름, 참고로 rest framework에서의 리버싱은 <a href="../ViewSet.reverse_action%20%7Bdrf%7D/">ViewSet.reverse_action {drf}</a>이다.</li>
+</ul>
+</li>
+</ul>
 
 
 
