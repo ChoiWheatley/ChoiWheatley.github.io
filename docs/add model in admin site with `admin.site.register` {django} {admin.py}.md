@@ -3,7 +3,7 @@ description: admin 페이지에 새 애트리뷰트 추가하기
 aliases: 
 tags: 
 created: 2023-06-05T14:23:21
-updated: 2023-07-19T15:03:54
+updated: 2023-07-30T21:02:51
 title: add model in admin site with `admin.site.register` {django} {admin.py}
 ---
 - [admin site {doc}](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/)
@@ -52,4 +52,17 @@ Admin site에 모습을 드러내게 하기 위해서 반드시 `django.contrib.
 
 ```python
 admin.site.register(MyModel)
+```
+
+## The `register` decorator
+
+<https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#the-register-decorator>
+
+```python
+from django.contrib.import admin
+from .models import Author
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+	pass
 ```
