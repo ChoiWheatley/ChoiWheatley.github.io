@@ -1811,6 +1811,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/django%20generate%20new%20secret%20key/</loc>
+         <lastmod>2023-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/django%20internal%20class%20Meta/</loc>
          <lastmod>2023-07-30</lastmod>
          <changefreq>daily</changefreq>
