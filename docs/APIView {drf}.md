@@ -17,4 +17,4 @@ JSON을 편하게 보고 수정할 수 있는 개발용 사이트를 제공해�
 
 ## View & Serializer
 
-- [[직렬화 역직렬화 serialization {django rest framework}]] 
+- [[Serializers {django rest framework}]] 

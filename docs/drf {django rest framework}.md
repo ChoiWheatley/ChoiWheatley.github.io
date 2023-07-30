@@ -18,6 +18,7 @@ title: drf {django rest framework}
 - [[internalization with i18n {drf}]]
 - [[APIView {drf}]]
 - [[ViewSets {drf}]]
+- [[Serializers {django rest framework}]]
 
 # Glossary
 
