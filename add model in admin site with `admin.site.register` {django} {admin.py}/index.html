@@ -1806,7 +1806,7 @@
 <p>The admin.py file is used to display your models in the Django admin panel. You can also customize your admin panel.</p>
 </blockquote>
 <h2 id="abstractbaseuser"><code>AbstractBaseUser</code>를 상속한 커스텀 유저일 경우<a class="headerlink" href="#abstractbaseuser" title="Permanent link">#</a></h2>
-<p>Admin site에 모습을 드러내게 하기 위해서 반드시 <code>django.contrib.auth.admin.UserAdmin</code>을 확장하여야 한다. 자세한 사항은 <a href="https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#custom-users-and-django-contrib-admin">문서</a>와 아래 Note를 읽어보기 바란다.</p>
+<p>Admin site에 모습을 드러내게 하기 위해서 반드시 <code>django.contrib.auth.admin.UserAdmin</code>을 확장하여야 한다. 자세한 사항은 <a href="https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#custom-users-and-django-contrib-admin">문서</a>와 아래 Note를 읽어보기 바란다. | <a href="https://github.com/ESTsoft-Book-Project/bookstore/blob/main/users/admin.py#L19-L29">참고 코드 (allbooks)</a></p>
 <blockquote>
 <p>[!note]<br />
 If you are using a custom <code>ModelAdmin</code> which is a subclass of <code>django.contrib.auth.admin.UserAdmin</code>, then you need to add your custom fields to <code>fieldsets</code> (for fields to be used in editing users) and to <code>add_fieldsets</code> (for fields to be used when creating a user). For example:</p>
