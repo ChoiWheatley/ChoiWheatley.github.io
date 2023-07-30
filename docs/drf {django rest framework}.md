@@ -3,12 +3,13 @@ description:
 aliases: 
 tags: 
 created: 2023-06-14T10:42:59
-updated: 2023-07-28T10:19:20
+updated: 2023-07-30T22:49:48
 title: drf {django rest framework}
 ---
 
 # INDEX
 
+- [[0014.1 Django 🎈]]
 - [drf page](https://www.django-rest-framework.org/)
 
 # Keywords
@@ -16,6 +17,7 @@ title: drf {django rest framework}
 - throttles {drf}
 - [[internalization with i18n {drf}]]
 - [[APIView {drf}]]
+- [[ViewSets {drf}]]
 
 # Glossary
 
