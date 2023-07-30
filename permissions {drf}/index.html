@@ -12,20 +12,20 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/drf%20%7Bdjango%20rest%20framework%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/permissions%20%7Bdrf%7D/">
       
       
-        <link rel="prev" href="../docker-compose%20%EB%AA%85%EB%A0%B9%EC%96%B4%20%EB%AA%A8%EC%9D%8C/">
+        <link rel="prev" href="../payload/">
       
       
-        <link rel="next" href="../drf%20%EC%97%90%EC%84%9C%20redirect%20url%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20ViewSet%EC%97%90%20%EB%8B%B4%EB%8A%94%EB%B2%95%20%7Bdrf%7D/">
+        <link rel="next" href="../pervasive/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>drf {django rest framework} - Choi Wheatley's Second Brain</title>
+        <title>permissions {drf} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -77,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#index" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              drf {django rest framework}
+              permissions {drf}
             
           </span>
         </div>
@@ -1737,8 +1732,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1753,43 +1746,46 @@
                   
 
 
-<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h1>
+  <h1>permissions {drf}</h1>
+
 <ul>
-<li><a href="../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a></li>
-<li><a href="https://www.django-rest-framework.org/">drf page</a></li>
+<li><a href="https://www.django-rest-framework.org/api-guide/permissions/">doc</a></li>
 </ul>
-<h1 id="keywords">Keywords<a class="headerlink" href="#keywords" title="Permanent link">#</a></h1>
-<ul>
-<li>throttles {drf}</li>
-<li><a href="../internalization%20with%20i18n%20%7Bdrf%7D/">internalization with i18n {drf}</a></li>
-<li><a href="../APIView%20%7Bdrf%7D/">APIView {drf}</a></li>
-<li><a href="../ViewSets%20%7Bdrf%7D/">ViewSets {drf}</a></li>
-<li><a href="../Serializers%20%7Bdjango%20rest%20framework%7D/">Serializers {django rest framework}</a></li>
-<li><a href="../permissions%20%7Bdrf%7D/">permissions {drf}</a></li>
-</ul>
-<h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">#</a></h1>
-<ul>
-<li>Serialization (직렬화)<ul>
-<li>복잡한 데이터타입 (쿼리셋, 모델 객체)을 먼저 파이썬 내장 dict로 변환하는 일을 말한다. 이렇게 하는 이유는 dict는 JSON이나 XML과 같은 형식을 준수하기 쉽기 때문이다.</li>
-</ul>
-</li>
-<li>Deserialization (역직렬화)<ul>
-<li>반대로, dict로 파싱이 된 JSON이나 XML을 받아 다시 복잡한 데이터타입으로 변환하는 일을 맡는다.</li>
-</ul>
-</li>
-</ul>
-<h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">#</a></h1>
-<ul>
-<li>Form 클래스를 만들듯이, Serializer를 상속받은 클래스들은 자기만의 <strong>필드</strong>를 가질 수 있다. 필드를 기반으로 (역)직렬화가 진행이 되며, 기능을 몇가지만 추가하면 view에서는 이 Serializer 메서드를 호출하기만 하면 CRUD가 다 된다.</li>
-<li><strong><code>create</code>, <code>update</code></strong> 등을 오버라이드하여 Serializer 객체의 상태를 실제 모델에 적용시킬 수 있다. 이름처럼, 새로운 레코드를 추가할 수도 있고, 기존의 인스턴스를 수정할 수도 있다.</li>
-<li>역직렬화시, <strong>유효성 검사도</strong> 수행할 수 있다. 기본적으로 Form과 비슷한 성격을 많이 띄고 있기 때문에 <code>is_valid</code>라는 메서드를 통해 필드에 적격한 데이터가 들어왔는지를 미리 알아낼 수 있다.<ul>
-<li>유효성 검사는 본질적으로 필드에 대한 검사이다. 따라서 필드에 에러가 발생한 경우, 이를 dict의 형태로 에러 원인을 알려주게 되는데, key에는 필드의 이름이, value에는 구체적인 에러 메시지가 들어오게 된다. </li>
-</ul>
-</li>
-<li>Serializer는 다양한 <strong>예외</strong>클래스도 가지고 있다. 예를 들어 <code>ValidationError</code>는 발생 시 400 응답을 리턴한다.</li>
-<li><code>Serializer.save</code> 메서드는 <code>Model.save</code>와는 전혀 다르다. 객체 인스턴스를 리턴하는 것이지, 모델에 적용하는 명령이 아니라는 것이다. <del>왜 이따위로 만들었지</del> <a href="https://stackoverflow.com/questions/45100515/what-is-the-different-between-save-create-and-update-in-django-rest-fram">save, create, update의 차이점 {sof}</a></li>
-<li></li>
-</ul>
+<p>system-wide permission policy: <code>settings.py</code> 안에 <code>REST_FRAMEWORK</code>를 설정</p>
+<div class="highlight"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;DEFAULT_PERMISSION_CLASSES&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;rest_framework.permissions.IsAuthenticated&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>APIView</code> 클래스 단위의 permission policy: <code>permission_classes</code> 속성을 사용</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.permissions</span> <span class="kn">import</span> <span class="n">IsAuthenticated</span>
+<span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">rest_framework.views</span> <span class="kn">import</span> <span class="n">APIView</span>
+
+<span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">IsAuthenticated</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;request was permitted&#39;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<p>함수 단위의 permission policy: <code>api_view</code> 데코레이터 사용</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.decorators</span> <span class="kn">import</span> <span class="n">api_view</span><span class="p">,</span> <span class="n">permission_classes</span>
+<span class="kn">from</span> <span class="nn">rest_framework.permissions</span> <span class="kn">import</span> <span class="n">IsAuthenticated</span>
+<span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<span class="nd">@permission_classes</span><span class="p">([</span><span class="n">IsAuthenticated</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">example_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;request was permitted&#39;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<p>객체 단위의 permission policy: <code>self.check_object_permissions</code> 메서드 사용. <code>get_object</code> 메서드 자체에 이미 권한확인 코드가 있다.</p>
 
 
 

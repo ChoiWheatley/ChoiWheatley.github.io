@@ -1261,6 +1261,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Serializers%20%7Bdjango%20rest%20framework%7D/</loc>
+         <lastmod>2023-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Service%20that%20deploys%20user%27s%20blog%20from%20markdown%20and%20media%20wiki/</loc>
          <lastmod>2023-07-30</lastmod>
          <changefreq>daily</changefreq>
@@ -2551,6 +2556,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/permissions%20%7Bdrf%7D/</loc>
+         <lastmod>2023-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/pervasive/</loc>
          <lastmod>2023-07-30</lastmod>
          <changefreq>daily</changefreq>
@@ -3737,11 +3747,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%EC%A3%BC%EB%B0%B1%EA%B0%9C%EA%B7%B8%EC%9D%B4%20-%20%ED%94%BC%EB%93%9C%EB%B0%B1/</loc>
-         <lastmod>2023-07-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/%EC%A7%81%EB%A0%AC%ED%99%94%20%EC%97%AD%EC%A7%81%EB%A0%AC%ED%99%94%20serialization%20%7Bdjango%20rest%20framework%7D/</loc>
          <lastmod>2023-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
