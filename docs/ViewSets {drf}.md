@@ -4,7 +4,7 @@ tags:
 description:
 title: ViewSets {drf}
 created: 2023-07-30T22:49:59
-updated: 2023-07-30T22:50:53
+updated: 2023-07-30T22:55:13
 ---
 
 # INDEX
