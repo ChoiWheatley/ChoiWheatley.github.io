@@ -1426,6 +1426,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/ViewSets%20%7Bdrf%7D/</loc>
+         <lastmod>2023-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Web%20Crawling%20with%20Beautiful%20Soup%20%26%20requests/</loc>
          <lastmod>2023-07-30</lastmod>
          <changefreq>daily</changefreq>
