@@ -1758,6 +1758,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-register-decorator" class="md-nav__link">
+    The register decorator
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1814,6 +1821,15 @@ If you are using a custom <code>ModelAdmin</code> which is a subclass of <cod
 <p><a href="https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#modeladmin-objects">doc</a></p>
 <p>특별히 추가할 필드가 없는 모델을 admin site에 띄우고 싶다면 굳이 새 클래스를 만들어 <code>pass</code> 할 필요 없이 다음과 같이 바로 <code>admin.site.register</code> 하면 된다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MyModel</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="the-register-decorator">The <code>register</code> decorator<a class="headerlink" href="#the-register-decorator" title="Permanent link">#</a></h2>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#the-register-decorator">https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#the-register-decorator</a></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib.import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Author</span>
+
+<span class="nd">@admin</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">AuthorAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="k">pass</span>
 </code></pre></div>
 
 
