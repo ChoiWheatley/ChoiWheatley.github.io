@@ -19,6 +19,7 @@ title: drf {django rest framework}
 - [[APIView {drf}]]
 - [[ViewSets {drf}]]
 - [[Serializers {django rest framework}]]
+- [[permissions {drf}]]
 
 # Glossary
 
