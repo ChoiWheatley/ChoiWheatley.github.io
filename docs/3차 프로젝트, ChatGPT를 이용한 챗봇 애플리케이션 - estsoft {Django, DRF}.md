@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-07-30T19:43:53
+updated: 2023-07-30T20:50:40
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -101,14 +101,18 @@ flowchart LR
 classDiagram 
 	User <|-- Anonymous
 	User <|-- Member
-	Session "0..*" -- "1" Member
-	Session "1" o-- "1..*" Prompt
+	ChatBot "0..*" -- "1" Member
+	ChatBot "1" o-- "1..*" Prompt
+	ChatBot "1" o-- "1" Config
+	ChatBot "1" o-- "1..*" Reply
+	Reply "1" -- "1..*" Choice
+	
 	Prompt <|-- CurrentState
 	Prompt <|-- Goal
 	Prompt <|-- Misc
 ```
 
-Session은 데이터이다. 새 세션을 생성하거나 세션목록을 요청할 때 흩어져 있는 정보를 모아 실제 GPT와 대화가 이루어진 요청과 응답을 고스란히 재현하여야 한다. ChatBot은 컨트롤러이다. 따라서 이름이 적합하지는 않은 것 같다. 클래스 다이어그램에 들어갈 필요도 없을 것이고.
+ChatBot은 데이터이다. 새 세션을 생성하거나 세션목록을 요청할 때 흩어져 있는 정보를 모아 실제 GPT와 대화가 이루어진 요청과 응답을 고스란히 재현하여야 한다. ChatBot은 컨트롤러이다. 따라서 이름이 적합하지는 않은 것 같다. 클래스 다이어그램에 들어갈 필요도 없을 것이고.
 
 ### ER Diagram
 
@@ -181,10 +185,10 @@ curl https://api.openai.com/v1/chat/completions \
 
 ```mermaid
 erDiagram
-	Member ||--o{ Session : requests
-	Session ||--|{ Prompt : aggregates
-	Session ||--|{ ChatBotConfig : aggregates
-	Session ||--o{ ChatBotReply : aggregates
+	Member ||--o{ ChatBot : requests
+	ChatBot ||--|{ Prompt : aggregates
+	ChatBot ||--|{ ChatBotConfig : aggregates
+	ChatBot ||--o{ ChatBotReply : aggregates
 
 	Member {
 		string nickname
@@ -193,7 +197,7 @@ erDiagram
 		string job "NULL"
 	}
 
-	Session {
+	ChatBot {
 		timestamp created_at
 	}
 
@@ -224,10 +228,10 @@ erDiagram
 
 ```mermaid
 erDiagram
-	Member ||--o{ Session : requests
-	Session ||--|{ Prompt : aggregates
-	Session ||--|{ ChatBotConfig : aggregates
-	Session ||--o{ ChatBotReply : aggregates
+	Member ||--o{ ChatBot : requests
+	ChatBot ||--|{ Prompt : aggregates
+	ChatBot ||--|{ ChatBotConfig : aggregates
+	ChatBot ||--o{ ChatBotReply : aggregates
 	ChatBotReply ||--|{ Choice : has
 
 	Member {
@@ -237,7 +241,7 @@ erDiagram
 		string job "NULL"
 	}
 
-	Session {
+	ChatBot {
 		timestamp created_at
 	}
 

@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T13:44:57
-updated: 2023-07-18T17:56:02
+updated: 2023-07-30T20:55:41
 title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.py, urls.py, models.py, forms.py}
 ---
 
@@ -51,6 +51,7 @@ title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.p
 	- `MEDIA_URL`
 	- `MEDIA_ROOT`
 	- `LOGIN_URL`
+	- `AUTH_USER_MODEL` | [[django dependency issue 발생 시 AUTH_USER_MODEL이 제대로 박혀있는지 확인하라]]
 - **`urls.py`** : `blog`, `accounts`, `admin` 페이지로 이동할 수 있는 관문.
 	- `urls.py`에 라우트 주소(`route`)와 view 객체(콜백함수 또는 `View.as_view()`), 템플릿에서 사용할 명칭(`name`) 등에 대하여 명시한다. 
 	- [[pk { urlpatterns { path } } {django}]]
