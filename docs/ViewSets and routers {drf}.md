@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: ViewSets {drf}
+title: ViewSets and routers {drf}
 created: 2023-07-30T22:49:59
-updated: 2023-07-31T04:36:16
+updated: 2023-08-01T11:41:27
 ---
 
 # INDEX
@@ -39,13 +39,14 @@ urlpatterns = [
 ```python
 urlpatterns = [
     path('forgot-password/', ForgotPasswordFormView.as_view()),
-    path('api/', include((router.urls, 'app_name'))),
+    path('api/', include(router.urls, 'app_name')),
 ]
 ```
 
 ## 추가 `@action`을 url에 삽입하자
 
-[action decorator {doc}](https://www.django-rest-framework.org/api-guide/routers/#routing-for-extra-actions)
+- [action decorator {doc}](https://www.django-rest-framework.org/api-guide/routers/#routing-for-extra-actions)
+- [customizing dynamic routes {doc}](https://www.django-rest-framework.org/api-guide/routers/#customizing-dynamic-routes)
 
 기본적인 `ViewSet`의 경우 CRUD 또는 기본 HTTP 메서드들에 대한 라우팅을 제공한다. 그것 말고도 추가적인 기능을 제공하는 엔드포인트를 만들고 싶을땐 `@action` 데코레이터를 붙이면 된다. URL 패턴의 이름은 메서드 자체의 이름이 되고, URL path의 이름은 `ViewSet.basename`에서 정의한 바와 URL 패턴의 이름을 `-`를 구분자로 취한 이름이 된다.
 
