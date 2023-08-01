@@ -17,7 +17,7 @@ title: drf {django rest framework}
 - throttles {drf}
 - [[internalization with i18n {drf}]]
 - [[APIView {drf}]]
-- [[ViewSets {drf}]]
+- [[ViewSets and routers {drf}]]
 - [[Serializers {django rest framework}]]
 - [[permissions {drf}]]
 
