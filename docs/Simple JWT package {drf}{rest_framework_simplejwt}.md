@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T16:57:40
+updated: 2023-08-02T17:14:07
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -138,3 +138,59 @@ expired 상태의 토큰을 access 했을 때 돌아온 응답: `401-unauthorize
 만약 세팅에서 `ROTATE_REFRESH_TOKENS`를 켜두면 refresh 마다 access, refresh 토큰이 모두 재발급 된다.
 
 ![[Pasted image 20230802155350.png]]
+
+# 아니, 디코딩은 어떻게 하냐?
+
+다 방법이 있지. [다음 분서](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/rest_framework_simplejwt.html?highlight=authenticate#rest_framework_simplejwt.authentication.JWTAuthentication.authenticate)를 읽어봐라. [스택오버플로](https://stackoverflow.com/a/68342977/21369350)도 읽어봐라. 
+
+이제 `ExampleView`가 요청을 디코딩하여 각각 `user`, `token`으로 분해하는 코드를 보자.
+
+```python
+lass ExampleView(views.APIView):
+    """
+    sample code from drf documentation
+    ref: https://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme
+    """
+
+    # authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        authenticator = JWTAuthentication()
+        response = authenticator.authenticate(request)
+        if response:
+            user, token = response
+            ser_user = MemberSerializer(user)
+            return Response(
+                {
+                    "user": ser_user.data,
+                    "token": token.payload,
+                }
+            )
+        return Response({"error": "cannot authenticate"})
+```
+
+그 결과는 다음과 같다.
+
+```json
+{
+    "user": {
+        "id": 5,
+        "last_login": null,
+        "email": "a@a.com",
+        "nickname": "a",
+        "is_staff": false,
+        "is_superuser": false,
+        "is_active": true,
+        "born_year": null,
+        "job": null
+    },
+    "token": {
+        "token_type": "access",
+        "exp": 1690964101,
+        "iat": 1690961566,
+        "jti": "8743ccc6ccfb437d937f39da6ad303c5",
+        "user_id": 5
+    }
+}
+```
