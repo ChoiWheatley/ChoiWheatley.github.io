@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#settings" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1732,6 +1737,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1746,8 +1753,6 @@
                   
 
 
-  <h1>Simple JWT package {drf}{rest_framework_simplejwt}</h1>
-
 <ul>
 <li><a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html">doc</a></li>
 <li><a href="https://youtu.be/AfYfvjP1hK8?t=1228">예제 {YT}</a></li>
@@ -1756,6 +1761,60 @@
 </ul>
 </li>
 </ul>
+<hr />
+<h1 id="settings">settings<a class="headerlink" href="#settings" title="Permanent link">#</a></h1>
+<p><a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html">공식문서</a>에서 가져옴.</p>
+<p><code>settings.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Django project settings.py</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+
+<span class="n">SIMPLE_JWT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ACCESS_TOKEN_LIFETIME&quot;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="s2">&quot;REFRESH_TOKEN_LIFETIME&quot;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="s2">&quot;ROTATE_REFRESH_TOKENS&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;BLACKLIST_AFTER_ROTATION&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;UPDATE_LAST_LOGIN&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+
+    <span class="s2">&quot;ALGORITHM&quot;</span><span class="p">:</span> <span class="s2">&quot;HS256&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SIGNING_KEY&quot;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">SECRET_KEY</span><span class="p">,</span>
+    <span class="s2">&quot;VERIFYING_KEY&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AUDIENCE&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;ISSUER&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;JSON_ENCODER&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;JWK_URL&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s2">&quot;LEEWAY&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+
+    <span class="s2">&quot;AUTH_HEADER_TYPES&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;Bearer&quot;</span><span class="p">,),</span>
+    <span class="s2">&quot;AUTH_HEADER_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP_AUTHORIZATION&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;USER_ID_FIELD&quot;</span><span class="p">:</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;USER_ID_CLAIM&quot;</span><span class="p">:</span> <span class="s2">&quot;user_id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;USER_AUTHENTICATION_RULE&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.authentication.default_user_authentication_rule&quot;</span><span class="p">,</span>
+
+    <span class="s2">&quot;AUTH_TOKEN_CLASSES&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;rest_framework_simplejwt.tokens.AccessToken&quot;</span><span class="p">,),</span>
+    <span class="s2">&quot;TOKEN_TYPE_CLAIM&quot;</span><span class="p">:</span> <span class="s2">&quot;token_type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TOKEN_USER_CLASS&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.models.TokenUser&quot;</span><span class="p">,</span>
+
+    <span class="s2">&quot;JTI_CLAIM&quot;</span><span class="p">:</span> <span class="s2">&quot;jti&quot;</span><span class="p">,</span>
+
+    <span class="s2">&quot;SLIDING_TOKEN_REFRESH_EXP_CLAIM&quot;</span><span class="p">:</span> <span class="s2">&quot;refresh_exp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SLIDING_TOKEN_LIFETIME&quot;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="s2">&quot;SLIDING_TOKEN_REFRESH_LIFETIME&quot;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+
+    <span class="s2">&quot;TOKEN_OBTAIN_SERIALIZER&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.serializers.TokenObtainPairSerializer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TOKEN_REFRESH_SERIALIZER&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.serializers.TokenRefreshSerializer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TOKEN_VERIFY_SERIALIZER&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.serializers.TokenVerifySerializer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TOKEN_BLACKLIST_SERIALIZER&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.serializers.TokenBlacklistSerializer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SLIDING_TOKEN_OBTAIN_SERIALIZER&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.serializers.TokenObtainSlidingSerializer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SLIDING_TOKEN_REFRESH_SERIALIZER&quot;</span><span class="p">:</span> <span class="s2">&quot;rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="postman">postman에서 확인<a class="headerlink" href="#postman" title="Permanent link">#</a></h1>
+<p>회원 이메일과 비밀번호를 가지고 JWT를 인코딩한 결과이다. </p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802142521.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142521.png" src="../assets/Pasted%20image%2020230802142521.png" /></a>  </p>
+<p>access token을 가지고 <a href="https://jwt.io">https://jwt.io</a> 에 들어가 바로 디버깅을 실시해보자.  </p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802142807.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142807.png" src="../assets/Pasted%20image%2020230802142807.png" /></a></p>
 
 
 
