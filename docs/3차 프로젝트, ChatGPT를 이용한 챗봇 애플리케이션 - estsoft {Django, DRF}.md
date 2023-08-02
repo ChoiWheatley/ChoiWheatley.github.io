@@ -231,3 +231,7 @@ erDiagram
 ## Django + React Full Course
 
 [[Django + React Full Cource Youtube Playlist]] 로 가세요
+
+## 구현 LOGs
+
+[[Token based login {drf} {ormi-project-3}]]
