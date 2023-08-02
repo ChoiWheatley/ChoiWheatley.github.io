@@ -67,3 +67,7 @@ parent link: [[0000 Index 🔗|index]]
 4. PROFIT
 
 ****
+
+# obsidian으로 블로그 만들기
+
+[[Obsidian으로 블로그 만들기]]
