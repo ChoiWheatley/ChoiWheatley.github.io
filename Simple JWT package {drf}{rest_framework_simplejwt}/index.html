@@ -1811,11 +1811,103 @@
 <span class="p">}</span>
 </code></pre></div>
 <h1 id="postman">postman에서 확인<a class="headerlink" href="#postman" title="Permanent link">#</a></h1>
+<p><a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#usage">usage{doc}</a>  </p>
 <p>회원 이메일과 비밀번호를 가지고 JWT를 인코딩한 결과이다. </p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230802142521.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142521.png" src="../assets/Pasted%20image%2020230802142521.png" /></a>  </p>
+<p>장고 인증서버에게 유저 아이디와 비밀번호를 사용하여 access token, refresh token 모두를 받아냈다. 이제 이것으로 장고 리소스 서버에게 인가를 요구할 수 있다.</p>
 <p>access token을 가지고 <a href="https://jwt.io">https://jwt.io</a> 에 들어가 바로 디버깅을 실시해보자.  </p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230802142807.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142807.png" src="../assets/Pasted%20image%2020230802142807.png" /></a></p>
-<p>장고 인증서버에게 유저 아이디와 비밀번호를 사용하여 access token, refresh token 모두를 받아냈다. 이제 이것으로 장고 리소스 서버에게 인가를 요구할 수 있다.</p>
+<p>access token을 사용하여 특정한 view에 접근하는 방식에 대한 스니펫이다.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {{access-token}}&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>http://localhost:8000/api/some-protected-view/
+</code></pre></div>
+<p>그러면 이 <code>some-protected-view</code>를 어떻게 만드는 건지 궁금해진다.</p>
+<h3 id="access">access<a class="headerlink" href="#access" title="Permanent link">#</a></h3>
+<p><code>core.views.ExampleView</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    sample code from drf documentation</span>
+<span class="sd">    ref: https://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># authentication_classes = [TokenAuthentication]</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">IsAuthenticated</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">),</span>
+            <span class="s2">&quot;auth&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">auth</span><span class="p">),</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div>
+<p>이유는 아직 잘 모르겠는데, <code>authentication_classes</code>가 있으니까 자격증명이 실패했다. 따라서 <code>permission_classes</code>만 있으면 될 것 같다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802164348.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802164348.png" src="../assets/Pasted%20image%2020230802164348.png" /></a></p>
+<p>expired 상태의 토큰을 access 했을 때 돌아온 응답: <code>401-unauthorized</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="err">    </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="err"> </span><span class="s2">&quot;이 토큰은 모든 타입의 토큰에 대해 유효하지 않습니다&quot;</span><span class="p">,</span>
+<span class="err">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="err"> </span><span class="s2">&quot;token_not_valid&quot;</span><span class="p">,</span>
+<span class="err">    </span><span class="nt">&quot;messages&quot;</span><span class="p">:</span><span class="err"> </span><span class="p">[</span>
+<span class="err">        </span><span class="p">{</span>
+<span class="err">            </span><span class="nt">&quot;token_class&quot;</span><span class="p">:</span><span class="err"> </span><span class="s2">&quot;AccessToken&quot;</span><span class="p">,</span>
+<span class="err">            </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="err"> </span><span class="s2">&quot;access&quot;</span><span class="p">,</span>
+<span class="err">            </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="err"> </span><span class="s2">&quot;유효하지 않거나 만료된 토큰&quot;</span>
+<span class="err">        </span><span class="p">}</span>
+<span class="err">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>401이 왔을때 자동으로 토큰을 refresh 하도록 만들어 주어야 한다.</p>
+<h3 id="refresh">refresh<a class="headerlink" href="#refresh" title="Permanent link">#</a></h3>
+<p>만약 세팅에서 <code>ROTATE_REFRESH_TOKENS</code>를 켜두면 refresh 마다 access, refresh 토큰이 모두 재발급 된다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802155350.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802155350.png" src="../assets/Pasted%20image%2020230802155350.png" /></a></p>
+<h1 id="_1">아니, 디코딩은 어떻게 하냐?<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>다 방법이 있지. <a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/rest_framework_simplejwt.html?highlight=authenticate#rest_framework_simplejwt.authentication.JWTAuthentication.authenticate">다음 분서</a>를 읽어봐라. <a href="https://stackoverflow.com/a/68342977/21369350">스택오버플로</a>도 읽어봐라. </p>
+<p>이제 <code>ExampleView</code>가 요청을 디코딩하여 각각 <code>user</code>, <code>token</code>으로 분해하는 코드를 보자.</p>
+<div class="highlight"><pre><span></span><code><span class="n">lass</span> <span class="n">ExampleView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    sample code from drf documentation</span>
+<span class="sd">    ref: https://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># authentication_classes = [TokenAuthentication]</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">IsAuthenticated</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">authenticator</span> <span class="o">=</span> <span class="n">JWTAuthentication</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">authenticator</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+            <span class="n">user</span><span class="p">,</span> <span class="n">token</span> <span class="o">=</span> <span class="n">response</span>
+            <span class="n">ser_user</span> <span class="o">=</span> <span class="n">MemberSerializer</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="n">ser_user</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                    <span class="s2">&quot;token&quot;</span><span class="p">:</span> <span class="n">token</span><span class="o">.</span><span class="n">payload</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;cannot authenticate&quot;</span><span class="p">})</span>
+</code></pre></div>
+<p>그 결과는 다음과 같다.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last_login&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a@a.com&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;nickname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_staff&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_superuser&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_active&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;born_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;job&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;access&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1690964101</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1690961566</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;jti&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8743ccc6ccfb437d937f39da6ad303c5&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
