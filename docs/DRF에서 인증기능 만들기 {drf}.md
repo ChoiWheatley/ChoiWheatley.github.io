@@ -13,5 +13,5 @@ updated: 2023-08-02T13:47:02
 
 # 키워드 싸지르기
 
-- [[Simple JWT package {drf}]]
+- [[Simple JWT package {drf}{rest_framework_simplejwt}]]
 - [[axios {react}]]
