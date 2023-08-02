@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-08-02T15:29:42
+updated: 2023-08-02T17:32:30
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -232,6 +232,10 @@ erDiagram
 
 [[Django + React Full Cource Youtube Playlist]] 로 가세요
 
-## 구현 LOGs
+## 구현 - 토큰으로 사용자 인증/인가 수행
 
-[[Token based login {drf} {ormi-project-3}]]
+DRF는 Stateless 원칙을 지키기 위해 Token based Authentication을 제공한다. (물론 세션방식도 있긴 함) 나는 `is_authenticated`만 만족시키면 되기 때문에 뭐 특별히 커스텀 권한을 만들 필요는 없다. 하지만 아직까지 JWT를 사용하여 요청의 유저를 식별하는 방법에 대해서 잘 알지 못하겠다.
+
+우선 [[DRF에서 인증기능 만들기 {drf}]]에서 공부한 simple jwt 문서를 더 읽어보는 것으로 출발하자.
+
+[[Simple JWT package {drf}{rest_framework_simplejwt}]]
