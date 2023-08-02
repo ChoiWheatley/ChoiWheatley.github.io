@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T14:14:07
+updated: 2023-08-02T14:28:15
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -64,3 +64,13 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 ```
+
+# postman에서 확인
+
+회원 이메일과 비밀번호를 가지고 JWT를 인코딩한 결과이다. 
+
+![[Pasted image 20230802142521.png]]  
+
+access token을 가지고 <https://jwt.io> 에 들어가 바로 디버깅을 실시해보자.  
+
+![[Pasted image 20230802142807.png]]
