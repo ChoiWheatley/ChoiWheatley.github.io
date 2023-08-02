@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T16:52:28
+updated: 2023-08-02T16:57:40
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -133,9 +133,8 @@ expired 상태의 토큰을 access 했을 때 돌아온 응답: `401-unauthorize
 
 401이 왔을때 자동으로 토큰을 refresh 하도록 만들어 주어야 한다.
 
-### refersh
+### refresh
 
 만약 세팅에서 `ROTATE_REFRESH_TOKENS`를 켜두면 refresh 마다 access, refresh 토큰이 모두 재발급 된다.
 
 ![[Pasted image 20230802155350.png]]
-
