@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T17:14:07
+updated: 2023-08-02T17:18:33
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -141,7 +141,7 @@ expired 상태의 토큰을 access 했을 때 돌아온 응답: `401-unauthorize
 
 # 아니, 디코딩은 어떻게 하냐?
 
-다 방법이 있지. [다음 분서](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/rest_framework_simplejwt.html?highlight=authenticate#rest_framework_simplejwt.authentication.JWTAuthentication.authenticate)를 읽어봐라. [스택오버플로](https://stackoverflow.com/a/68342977/21369350)도 읽어봐라. 
+다 방법이 있지. [다음 문서](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/rest_framework_simplejwt.html#rest_framework_simplejwt.authentication.JWTAuthentication.authenticate)를 읽어봐라. [스택오버플로](https://stackoverflow.com/a/68342977/21369350)도 읽어봐라. 
 
 이제 `ExampleView`가 요청을 디코딩하여 각각 `user`, `token`으로 분해하는 코드를 보자.
 
