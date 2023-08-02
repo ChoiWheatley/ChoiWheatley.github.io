@@ -10,7 +10,7 @@ updated: 2023-07-30T20:50:40
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
 - [ormi-project-3 {Github}](git@github.com:ChoiWheatley/ormi-project-3.git)
-- [[DRF에서 세션을 활용한 인증기능 만들기 {drf}]]
+- [[DRF에서 세션을 활용한 인가기능 만들기 {drf}]]
 
 ## 기본 요구사항
 

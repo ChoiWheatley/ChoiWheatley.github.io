@@ -1,16 +1,16 @@
 ---
 aliases: 
-tags: drf/permissions
+tags: drf/permissions drf/authorization
 description:
-title: DRF에서 세션을 활용한 인증기능 만들기 {drf}
+title: DRF에서 세션을 활용한 인가기능 만들기 {drf}
 created: 2023-08-02T09:42:38
-updated: 2023-08-02T10:24:10
+updated: 2023-08-02T10:40:42
 ---
 ![Permissions and Custom Permissions {YT}](https://youtu.be/5AOn0BmSXyE)
 
-- 인증의 범위로 따진다면 | 
+- 인증의 범위로 따진다면 | [permissions {doc}](https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permission-policy)
 	- project level permissions
-	- class level permissions
+	- object level permissions
 	- view level permissions
 - 인증의 효력으로 따진다면 | [permissions {doc}](https://www.django-rest-framework.org/api-guide/permissions/)
 	- `AllowAny`
