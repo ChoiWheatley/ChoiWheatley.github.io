@@ -4,7 +4,7 @@ tags:
 description:
 title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}
 created: 2023-07-26T09:38:10
-updated: 2023-08-02T17:32:30
+updated: 2023-08-02T17:38:38
 ---
 - parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
@@ -239,3 +239,5 @@ DRF는 Stateless 원칙을 지키기 위해 Token based Authentication을 제공
 우선 [[DRF에서 인증기능 만들기 {drf}]]에서 공부한 simple jwt 문서를 더 읽어보는 것으로 출발하자.
 
 [[Simple JWT package {drf}{rest_framework_simplejwt}]]
+
+이제 장고에서 로그인을 처리하는 로직은 끝난 것 같다. stateless를 구현하기도 했겠다, 나는 들어오는 요청들에 대하여 `JWTAuthentication().authenticate(request)`만을 수행하여 그 결과를 가지고 바로 쿼리를 진행하면 되기 때문이다. 그러면 access token, refresh token은 누가 책임지냐고? 그거야 프론트가 알아서 하겠지 😏
