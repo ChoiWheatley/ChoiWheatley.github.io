@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T14:28:15
+updated: 2023-08-02T14:41:50
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -74,3 +74,5 @@ SIMPLE_JWT = {
 access token을 가지고 <https://jwt.io> 에 들어가 바로 디버깅을 실시해보자.  
 
 ![[Pasted image 20230802142807.png]]
+
+장고 인증서버에게 유저 아이디와 비밀번호를 사용하여 access token, refresh token 모두를 받아냈다. 이제 이것으로 장고 리소스 서버에게 인가를 요구할 수 있다.
