@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T15:42:31
+updated: 2023-08-02T15:53:57
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -88,3 +88,9 @@ curl \
 ```
 
 그러면 이 `some-protected-view`를 어떻게 만드는 건지 궁금해진다.
+
+### access
+
+### refersh
+
+![[Pasted image 20230802155350.png]]
