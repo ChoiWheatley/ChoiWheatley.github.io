@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T15:53:57
+updated: 2023-08-02T16:52:28
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -91,6 +91,51 @@ curl \
 
 ### access
 
+`core.views.ExampleView`:
+
+```python
+class ExampleView(views.APIView):
+    """
+    sample code from drf documentation
+    ref: https://www.django-rest-framework.org/api-guide/authentication/#setting-the-authentication-scheme
+    """
+
+    # authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        content = {
+            "user": str(request.user),
+            "auth": str(request.auth),
+        }
+        return Response(content)
+```
+
+이유는 아직 잘 모르겠는데, `authentication_classes`가 있으니까 자격증명이 실패했다. 따라서 `permission_classes`만 있으면 될 것 같다.
+
+![[Pasted image 20230802164348.png]]
+
+expired 상태의 토큰을 access 했을 때 돌아온 응답: `401-unauthorized`
+
+```json
+{
+    "detail": "이 토큰은 모든 타입의 토큰에 대해 유효하지 않습니다",
+    "code": "token_not_valid",
+    "messages": [
+        {
+            "token_class": "AccessToken",
+            "token_type": "access",
+            "message": "유효하지 않거나 만료된 토큰"
+        }
+    ]
+}
+```
+
+401이 왔을때 자동으로 토큰을 refresh 하도록 만들어 주어야 한다.
+
 ### refersh
 
+만약 세팅에서 `ROTATE_REFRESH_TOKENS`를 켜두면 refresh 마다 access, refresh 토큰이 모두 재발급 된다.
+
 ![[Pasted image 20230802155350.png]]
+
