@@ -2100,6 +2100,7 @@
 <p>DRF는 Stateless 원칙을 지키기 위해 Token based Authentication을 제공한다. (물론 세션방식도 있긴 함) 나는 <code>is_authenticated</code>만 만족시키면 되기 때문에 뭐 특별히 커스텀 권한을 만들 필요는 없다. 하지만 아직까지 JWT를 사용하여 요청의 유저를 식별하는 방법에 대해서 잘 알지 못하겠다.</p>
 <p>우선 <a href="../DRF%EC%97%90%EC%84%9C%20%EC%9D%B8%EC%A6%9D%EA%B8%B0%EB%8A%A5%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20%7Bdrf%7D/">DRF에서 인증기능 만들기 {drf}</a>에서 공부한 simple jwt 문서를 더 읽어보는 것으로 출발하자.</p>
 <p><a href="../Simple%20JWT%20package%20%7Bdrf%7D%7Brest_framework_simplejwt%7D/">Simple JWT package {drf}{rest_framework_simplejwt}</a></p>
+<p>이제 장고에서 로그인을 처리하는 로직은 끝난 것 같다. stateless를 구현하기도 했겠다, 나는 들어오는 요청들에 대하여 <code>JWTAuthentication().authenticate(request)</code>만을 수행하여 그 결과를 가지고 바로 쿼리를 진행하면 되기 때문이다. 그러면 access token, refresh token은 누가 책임지냐고? 그거야 프론트가 알아서 하겠지 😏</p>
 
 
 
