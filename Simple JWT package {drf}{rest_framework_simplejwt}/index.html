@@ -1937,6 +1937,28 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>만약 저 <code>permission_classes</code>가 <code>IsAdminUser</code>라면 admin access token만이 통과할 수 있겠지?</p>
+<h1 id="creating-tokens-manually"><a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/creating_tokens_manually.html">Creating tokens manually</a><a class="headerlink" href="#creating-tokens-manually" title="Permanent link">#</a></h1>
+<p>회원가입 후에 자동으로 토큰을 발급하게 만들어주고 싶다.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework_simplejwt.tokens</span> <span class="kn">import</span> <span class="n">RefreshToken</span>
+
+<span class="k">class</span> <span class="nc">MemberViewSet</span><span class="p">(</span><span class="n">viewsets</span><span class="o">.</span><span class="n">ViewSet</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;post&quot;</span><span class="p">],</span> <span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">permission_classes</span><span class="o">=</span><span class="p">[</span><span class="n">AllowAny</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">signup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">member_ser</span> <span class="o">=</span> <span class="n">MemberSerializer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">member_ser</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="n">member_ser</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="n">refresh</span> <span class="o">=</span> <span class="n">RefreshToken</span><span class="o">.</span><span class="n">for_user</span><span class="p">(</span><span class="n">member_ser</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;refresh&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">refresh</span><span class="p">),</span>
+                    <span class="s2">&quot;access&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">refresh</span><span class="o">.</span><span class="n">access_token</span><span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">member_ser</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span>
+</code></pre></div>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230804004734.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230804004734.png" src="../assets/Pasted%20image%2020230804004734.png" /></a></p>
 
 
 
