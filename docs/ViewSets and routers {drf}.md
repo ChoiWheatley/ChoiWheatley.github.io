@@ -4,7 +4,7 @@ tags:
 description:
 title: ViewSets and routers {drf}
 created: 2023-07-30T22:49:59
-updated: 2023-08-01T11:41:27
+updated: 2023-08-04T00:35:30
 ---
 
 # INDEX

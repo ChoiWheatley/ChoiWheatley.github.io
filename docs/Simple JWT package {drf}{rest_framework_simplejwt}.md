@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-04T00:34:45
+updated: 2023-08-04T00:36:24
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -196,3 +196,19 @@ lass ExampleView(views.APIView):
 ```
 
 만약 저 `permission_classes`가 `IsAdminUser`라면 admin access token만이 통과할 수 있겠지?
+
+# [Creating tokens manually](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/creating_tokens_manually.html)
+
+회원가입 후에 자동으로 토큰을 발급하게 만들어주고 싶다.
+
+```python
+from rest_framework_simplejwt.tokens import RefreshToken
+
+def get_tokens_for_user(user):
+    refresh = RefreshToken.for_user(user)
+
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+    }
+```
