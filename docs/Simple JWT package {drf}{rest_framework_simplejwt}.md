@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-04T00:36:24
+updated: 2023-08-04T00:47:36
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -204,11 +204,22 @@ lass ExampleView(views.APIView):
 ```python
 from rest_framework_simplejwt.tokens import RefreshToken
 
-def get_tokens_for_user(user):
-    refresh = RefreshToken.for_user(user)
+class MemberViewSet(viewsets.ViewSet):
+	...
 
-    return {
-        'refresh': str(refresh),
-        'access': str(refresh.access_token),
-    }
+    @action(methods=["post"], detail=False, permission_classes=[AllowAny])
+    def signup(self, request):
+        member_ser = MemberSerializer(data=request.data)
+        if member_ser.is_valid():
+            member_ser.save()
+            refresh = RefreshToken.for_user(member_ser.instance)
+            return Response(
+                {
+                    "refresh": str(refresh),
+                    "access": str(refresh.access_token),
+                }
+            )
+        return Response(member_ser.errors)
 ```
+
+![[Pasted image 20230804004734.png]]
