@@ -4,7 +4,7 @@ tags:
 description: JSON Web Token plugin for the Django REST Framework
 title: Simple JWT package {drf}{rest_framework_simplejwt}
 created: 2023-08-02T14:01:47
-updated: 2023-08-02T17:31:07
+updated: 2023-08-04T00:31:06
 ---
 - [doc](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html)
 - [예제 {YT}](https://youtu.be/AfYfvjP1hK8?t=1228)
@@ -196,3 +196,13 @@ lass ExampleView(views.APIView):
 ```
 
 만약 저 `permission_classes`가 `IsAdminUser`라면 admin access token만이 통과할 수 있겠지?
+
+# `detail` argument in dynamic routes
+
+[Customizing dynamic routes](https://www.django-rest-framework.org/api-guide/routers/#customizing-dynamic-routes)에 따르면, list-based, detail-based route로 구분이 되어진다고 하고, 이 사이를 구분하는 인자가 바로 `detail` 키워드 인자인 것 같다.
+
+[Simple router](https://www.django-rest-framework.org/api-guide/routers/#simplerouter)에서는 URL 스타일에 따라 `detail=True`, `detail=False`를 결정하기도 함.
+
+[sof](https://stackoverflow.com/a/54430929/21369350) 대화를 보니까 원래는 `@action`을 안 쓰고 `detail_route`와 `detail_route`를 사용했었고, 현재 deprecated 되었다고 한다. `detail_route`가 `detail=True`가 되었고 반대쪽도 마찬가지.
+
+> Use detail=True when this method will account for a single instance of the Model represented by that endpoint and False when it needs to represent a Queryset of that model
