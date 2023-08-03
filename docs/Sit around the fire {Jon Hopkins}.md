@@ -1,9 +1,9 @@
 ---
 description:
 aliases: 
-tags: 
+tags: scrap/in_progress 
 created: 2023-06-08T12:51:41
-updated: 2023-07-15T21:33:03
+updated: 2023-08-03T15:53:54
 title: Sit around the fire {Jon Hopkins}
 ---
 

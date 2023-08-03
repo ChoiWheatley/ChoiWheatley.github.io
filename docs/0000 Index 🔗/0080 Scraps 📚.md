@@ -12,7 +12,7 @@ aliases:
  - 스크랩
  - 읽기목록
 tags: book scrap
-updated: 2023-08-03T15:42:13
+updated: 2023-08-03T15:53:05
 title: 0080 Scraps 📚
 ---
 - parent link: [[0000 Index 🔗]]
@@ -54,8 +54,9 @@ ___
 - [[The Shape of Infinity -- manifold garden]]
 - [[conda, pyenv, pipenv, venv와의 차이점]]
 
-```dataviewjs
-const frontmatter = Object.entries()
+```dataview
+LIST
+FROM #scrap
 ```
 
 ___
@@ -65,6 +66,11 @@ ___
 - [[The camel has two humps]]
 - [[두 번째 뇌 만들기]]
 - [[Sit around the fire {Jon Hopkins}]]
+
+```dataview
+LIST
+FROM #scrap/in_progress
+```
 
 ___
 
