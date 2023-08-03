@@ -4,7 +4,7 @@ tags: drf/permissions drf/authorization
 description: 사용자에게 적절한 권한 부여하기
 title: DRF에서 인가기능 만들기 {drf}
 created: 2023-08-02T09:42:38
-updated: 2023-08-02T11:45:19
+updated: 2023-08-04T00:35:18
 ---
 - links:
 	- [[0014.1 Django 🎈]]
