@@ -1915,6 +1915,63 @@
 </ul>
 <p>대중적으로는 UML 다이어그램을 많이 사용한다. 구성 요소로는 여러 개체가 서로 관계를 시각적으로 표현하는 데에 있다. </p>
 <p>구조를 표현할 수도 있고, 행위를 표현할 수도 있다.</p>
+<h3 id="use-case-diagram">Use Case Diagram<a class="headerlink" href="#use-case-diagram" title="Permanent link">#</a></h3>
+<p>행위자가 요구하여 시스템이 수행하는 일의 목표 (추상화됨)</p>
+<ul>
+<li>행위자 (Actor)</li>
+<li>유스케이스</li>
+<li>관계 (Association): 액터가 요구할 수 있는 유스케이스, 일반화 관계, include/extend 관계 모두를 포함함</li>
+<li>시스템 경계</li>
+</ul>
+<p><strong>실습</strong></p>
+<p><a href="assets/Technical_Documentation_Usecase_Diagram.excalidraw.md">Technical_Documentation_Usecase_Diagram.excalidraw</a><br />
+<a class="glightbox" href="../assets/Technical_Documentation_Usecase_Diagram.excalidraw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Technical_Documentation_Usecase_Diagram.excalidraw.png" src="../assets/Technical_Documentation_Usecase_Diagram.excalidraw.png" /></a></p>
+<h3 id="class-diagram">Class Diagram<a class="headerlink" href="#class-diagram" title="Permanent link">#</a></h3>
+<p>관련있는 <strong>데이터</strong>와 <strong>행위</strong>를 한데 묶어 구조화한 결과를 표현</p>
+<p><strong>실습</strong></p>
+<pre class="mermaid"><code>classDiagram
+
+class Customer {
+    +int id
+    +string user_id
+    +string real_name
+    +string email
+    +string phone_no
+    +회원정보_수정(user_id, real_name, email, phone_no)
+}
+
+class Pet {
+    +int id
+    +string pet_name
+    +enum species
+    +string img_url
+    +array tags
+    +update_adoption_status(to): bool
+    +delete()
+}
+
+class Adoption {
+    +int id
+    +int pet_id
+    +enum adoption_status
+    +date adoption_date
+}
+
+Customer "1" -- "N" Adoption
+Adoption "1" -- "N" Pet</code></pre>
+<h3 id="sequence-diagram">Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permanent link">#</a></h3>
+<p>행위를 보여주는거임. 내부구성요소간의 상호작용 순서를 나타내는 도표</p>
+<h1 id="_4">도구를 이용한 문서 자동화<a class="headerlink" href="#_4" title="Permanent link">#</a></h1>
+<p>다양한 문서 혹은 다이어그램들을 작성했지만 작성해야 할 문서는 더욱 많다.</p>
+<ul>
+<li>api specification</li>
+<li>ERD</li>
+<li>SDK 문서</li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>우리는 게으른 민족이다. 언제 다 수작업으로 만드냐? 생각보다 자동화 도구는 굉장히 많다. 다이어그램 뽑아주는거랑, 자동으로 API 문서 만들어주는거 등등</p>
 
 
 
