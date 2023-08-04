@@ -1476,6 +1476,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Why%20engineers%20should%20focus%20on%20writing%20-%20Dmitry%20Kudryavtsevl/</loc>
+         <lastmod>2023-08-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Xmonad%2C%20window%20tiling%20manager%20written%20in%20%7Bhaskell%7D/</loc>
          <lastmod>2023-08-04</lastmod>
          <changefreq>daily</changefreq>
