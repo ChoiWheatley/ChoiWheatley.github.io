@@ -1840,6 +1840,81 @@
 </ul>
 <p>황우석 박사의 논문조작사건이 주는 파장: 내용이 진실되지 않는것이 주는 파급력은 굉장히 크다. 그 지식을 기반으로 쌓아온 새로운 지식들도 같이 무너지기 때문.</p>
 <h1 id="sw">SW 개발과 기술문서<a class="headerlink" href="#sw" title="Permanent link">#</a></h1>
+<p>sw 개발과 건물 올리는 과정</p>
+<blockquote>
+<p>소프트웨어 출시 후 발견된 요구사항 오류는 그 수정 비용이 매우 높지만, 초기에 발견된다면 그 비용이 매우 낮아집니다</p>
+</blockquote>
+<p>어떻게 하면 그 비용을 최소화 할 수 있을까?</p>
+<h2 id="framework">개발 방법론 (Framework)<a class="headerlink" href="#framework" title="Permanent link">#</a></h2>
+<p><a href="../%EC%95%A0%EC%9E%90%EC%9D%BC%20101.pdf">애자일 101.pdf</a><br />
+<a href="../20230508%20estsoft%20-%20%EA%B9%80%EC%B6%A9%ED%99%98%20%ED%9A%8C%EA%B3%A0%EA%B0%95%EC%82%AC%ED%8A%B9%EA%B0%95%20-%20%EC%95%A0%EC%9E%90%EC%9D%BC%20%ED%9A%8C%EA%B3%A0%20-%20%EB%A7%A4%EC%8A%AC%EB%A1%9C%EC%9A%B0%EC%9D%98%20%EC%9A%95%EA%B5%AC%EA%B3%84%EC%B8%B5%20-%20%EB%A7%8C%EB%8B%A4%EB%9D%BC%ED%8A%B8%20%EA%B3%BC%EC%A0%9C%EC%9E%88%EC%9D%8C/">20230508 estsoft - 김충환 회고강사특강 - 애자일 회고 - 매슬로우의 욕구계층 - 만다라트 과제있음</a></p>
+<ul>
+<li>build and fix model<ul>
+<li>일단 만들고 고쳐</li>
+<li>다 만든 뒤에 피드백을 보기 때문에 수정에 비용이 매우 커진다.</li>
+</ul>
+</li>
+<li>waterfall model<ul>
+<li>SRS, 디자인, 개발, 테스팅 ... 과정을 한 단계씩 진행한다.</li>
+<li>그런데 빠꾸가 없음. 중간단계에서 요구사항이 바뀌던가 설계를 잘못했던가 하면 다시 맨 처음으로 돌아가야만 한다.</li>
+</ul>
+</li>
+<li>iteration model(Agile Framework)<ul>
+<li>SW를 동작이 가능한 최소단위로 쪼개 점진적으로 완성시킨다.</li>
+</ul>
+</li>
+</ul>
+<p><strong>공통점</strong></p>
+<p>일반적인 언어 (비기술적인 언어)로 소프트웨어가 어떤 모습이 되어야 하는지 기술하는 것도 중요하다. 대표적으로 구현현황에 대한 자료를 포함한다.</p>
+<ul>
+<li>깃허브 리드미 파일</li>
+<li>openapi, swagger ui<ul>
+<li>API들의 리스트들과 API 하나하나가 정의하는 스키마</li>
+</ul>
+</li>
+<li>다이어그램</li>
+</ul>
+<h1 id="srs-software-requiremenet-specification">SRS (Software Requiremenet Specification)<a class="headerlink" href="#srs-software-requiremenet-specification" title="Permanent link">#</a></h1>
+<p>소프트웨어 요구사항을 정리한 문서</p>
+<ul>
+<li>기능적 요구사항</li>
+<li>외부 인터페이스 (API, SDK)</li>
+<li>비기능적 요구사항<ul>
+<li>성능</li>
+<li>안정성</li>
+<li>보안</li>
+<li>유지보수성</li>
+</ul>
+</li>
+<li>제약사항</li>
+</ul>
+<p><strong>SRS 작성 원칙</strong></p>
+<p><del>사실 모든 기술문서가 다 그렇지</del></p>
+<ul>
+<li>모두가 동의하여야 하고 </li>
+<li>명료하여야 하고</li>
+<li>모든 요구사항들이 담겨야 하고<ul>
+<li>중간중간에 계속 들어오는 걸 막을 수는 없음.</li>
+</ul>
+</li>
+<li>내용들은 모두 일관적이어야 한다.</li>
+<li>중요도나 안정성에 따라 순위가 매겨져 있어야 한다.</li>
+<li>검증할 수 있어야 한다.</li>
+<li>수정할 수 있어야 한다.</li>
+<li>추적 가능해야 한다.</li>
+</ul>
+<p><strong>Glossary</strong></p>
+<p>단어집이 필요한 이유: 비기술자도 읽고 이해할 수 있어야 함. 기존의 익숙한 개념으로 사용하거나 새로운 단어를 정의하기도 하는 등 문서 안에서 일반적으로 사용될 수 있다.</p>
+<p>비기술적인 용어로 기술된다. 탑다운 방식으로 요구사항이 구체화되는듯.</p>
+<h2 id="diagrams">Diagrams<a class="headerlink" href="#diagrams" title="Permanent link">#</a></h2>
+<p>말로 다 설명하기 어려운 부분들을 예시 SRS를 보면 다이어그램을 통해 시각적으로 보여주고 있음을 보여주고 있다. 다이어그램은</p>
+<ul>
+<li>다양한 이해당사자들이 명확하게 소통할 수 있는 수단이 되어야 하고</li>
+<li>특정 기술에 종속되지 않아야 하며</li>
+<li>문제를 해결하기 위한 방안을 제공해야 한다.</li>
+</ul>
+<p>대중적으로는 UML 다이어그램을 많이 사용한다. 구성 요소로는 여러 개체가 서로 관계를 시각적으로 표현하는 데에 있다. </p>
+<p>구조를 표현할 수도 있고, 행위를 표현할 수도 있다.</p>
 
 
 
