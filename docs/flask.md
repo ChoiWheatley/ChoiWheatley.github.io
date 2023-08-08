@@ -1,1 +1,1 @@
-[[application ]]
+[[application factory {flask}]]
