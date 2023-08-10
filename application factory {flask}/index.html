@@ -12,20 +12,20 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/args%2C%20kwargs%20%EA%B0%80%EB%B3%80%EC%9D%B8%EC%9E%90%EC%99%80%20%EA%B0%80%EB%B3%80%20%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%9D%B8%EC%9E%90/">
+        <link rel="canonical" href="https://choiwheatley.github.io/application%20factory%20%7Bflask%7D/">
       
       
-        <link rel="prev" href="../application%20factory%20%7Bflask%7D/">
+        <link rel="prev" href="../anyhow/">
       
       
-        <link rel="next" href="../array/">
+        <link rel="next" href="../args%2C%20kwargs%20%EA%B0%80%EB%B3%80%EC%9D%B8%EC%9E%90%EC%99%80%20%EA%B0%80%EB%B3%80%20%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%9D%B8%EC%9E%90/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>args, kwargs 가변인자와 가변 키워드 인자 - Choi Wheatley's Second Brain</title>
+        <title>application factory {flask} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              args, kwargs 가변인자와 가변 키워드 인자
+              application factory {flask}
             
           </span>
         </div>
@@ -1788,26 +1788,9 @@
                   
 
 
-  <h1>args, kwargs 가변인자와 가변 키워드 인자</h1>
+  <h1>application factory {flask}</h1>
 
-<p><code>args</code>, <code>kwargs</code> 얘네는 사실 그냥 이름이다. 파라미터 앞에 붙어있는 <code>*</code>가 훨씬 중요하다. =&gt; <mark>Packing</mark></p>
-<p><code>*args</code>는 우리가 다른 언어에서도 볼 수 있는 가변인자에 대한 저시기를 보여준다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">print_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;args: &#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">print_args</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;leehojun&#39;</span><span class="p">)</span>
-</code></pre></div>
-<p><code>**kwargs</code>는 신기하게 <code>*</code>이 두 번이나 붙었네? 왜일까? =&gt; 바로 <code>dict</code>를 받기 위해서이다. default argument를 사용하여 함수를 호출하게 되었을 경우, <code>kwargs</code>는 <code>dict</code> 타입이 되어 이름과 값 쌍으로 인수가 전달이 된다. 일반 인수와 혼용하고 싶다면, 일반인수의 이름을 붙이던가, 함수선언시 일반파라미터를 가변인자 왼쪽에 넣던가 해야한다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;num: &#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kwargs: &#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-<span class="n">print_kwargs</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;최승현&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</code></pre></div>
+<p><a href="https://flask.palletsprojects.com/en/2.3.x/tutorial/factory/">doc</a></p>
 
 
 
