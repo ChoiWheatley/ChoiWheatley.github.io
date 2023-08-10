@@ -13,3 +13,4 @@ updated: 2023-08-10T09:31:53
 	- [swjungle 7기를 위한 웹사이트](https://jungle7-7610626261f4.herokuapp.com/)
 - weekly
 	- [[week 00 {swjungle}]]
+	- [[week 01~03 {swjungle}]]
