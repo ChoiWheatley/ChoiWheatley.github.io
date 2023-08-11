@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T19:20:27
+updated: 2023-08-11T19:52:22
 ---
 
 # INDEX
@@ -50,18 +50,27 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 str \* 연산자  
 `a, b = [1, 2, 3, 4]` => 오류남
 
-# Chapter01 알고리즘 기초
+# Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편
 
-- 순차구조(sequential)와 선택(selection)구조
+## Chapter01 알고리즘 기초
+
+- 순차구조(sequential)와 선택(selection)구조, 반복(iteration)구조
 	- 순차: 한 문장씩 처리
 	- 선택: 조건에 따라 실행 흐름 변경
+	- 반복: 조건이 성립하는 동안 주어진 구간의 코드를 반복
+		- 카운터용 변수 (`cnt`, `counter`, ...): 반복문을 제어할 때 사용되는 변수
 - 형변환 to integer, floating point
 	- `int(문자열, 진수)`, `float(문자열)`
-- 헤더와 스위트(suite)
-	- if, function, loop 등 복합문은 `:`를 기준으로 헤더와 스위트로 나뉘어진다.
-	- 스위트는 평시에는 헤더의 다음줄의 공백 4개를 들여쓰기로 사용하지만, 단순문일 경우 같은 줄에 늘여써도 된다. 이때, 단순문을 두 개 이상 사용하는 것도 가능.
-	- 단순문의 정의: 복합문이 아닌 모든 구문
+- [[헤더와 스위트(suite) {python}]]
 - What is the algorithm?
 	- 문제를 해결하기 위해 기술된 일련의 실행절차
 - Decision Tree (결정트리)
 	- 세 정수 a, b, c의 대소관계조합을 모두 나열해보면 트리형태를 띄게 된다. 이것을 결정트리라고 부름.
+- DRY (Don't Repeat Yourself) 
+	- DRY 메커니즘의 예시: 하드코딩을 피하라 [[reverse를 사용해야 하는 이유 {django}]]
+	- 논리적으로 일치하는 분기문을 갖다 쓰지 말라. `if a < b: ... \n elif b >= a: ...` 이딴거 쓰지 말라는 거임 ==p.25==
+	- 9999번 A 분기에 들어가고 1번 B 분기에 들어갈거면 if 쓰지 말라. ==p.38==
+- `if`구문에서 `else`를 쓰지 않으면 내부적으로 `else: pass`가 숨어있다.
+- 연산자와 피연산자, operator, operand. 용어파악
+	- 삼항 연산자 (ternary operator) : `x if x < y else y`
+- swap: `a, b = b, a` 개쩔지 아니한가 : 사실 튜플 공간을 만들어 쓰는거라서... 변수를 하나 생성하여 스왑하는 것보다 비효율적임
