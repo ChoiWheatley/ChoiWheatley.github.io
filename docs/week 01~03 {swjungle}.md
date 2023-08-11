@@ -4,14 +4,14 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-10T17:16:26
+updated: 2023-08-11T10:38:05
 ---
 
 # INDEX
 
 - [swjungle 정보페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html)
 - [문제모음집](https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0)
-	- [문제모음집{개인}]
+	- [문제모음집{개인}](https://docs.google.com/spreadsheets/d/1G0WlH6y9V1RL09KuCbqwM-E57b5xTaIL9HiaQ2ZIvJs/edit?usp=sharing)
 
 # 컴퓨팅사고로의 전환
 
@@ -38,3 +38,8 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 # WEEK01 특별한 과제
 
 블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지
+
+## TIP
+
+- python 관련
+	- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]

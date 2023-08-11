@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-01T09:31:22
-updated: 2023-07-15T21:30:22
+updated: 2023-08-11T10:37:56
 title: 20230501 estsoft - python - convention, types, variables, int, float
 ---
 - [오늘자 google colab 주소](https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing)
@@ -31,6 +31,7 @@ title: 20230501 estsoft - python - convention, types, variables, int, float
 	- `print(f'{"hello":>10}')` => 10칸을 사용하여 오른쪽 정렬
 	- `print(f'{"hello":^10}')` => 10칸을 사용하여 가운데 정렬
 	- `print(f'{"hello":!<10}')` => 10칸을 사용하여 왼쪽 정렬, 이때 공백을 `!`으로 채우기
+	- `f{1.212323:.3f}`: floating point formatting
 
 - int
 	- built-in functions
@@ -52,7 +53,7 @@ title: 20230501 estsoft - python - convention, types, variables, int, float
 
 >여러분, 실력자 분들은 어떻게 정리하셔야 할지 잘 모르시겠죠? 그래서 준비해 보았습니다.
 
-1. 우선 아래 Lv0코드를 보면서 모르는 문법이나, 활용하는 문법에서 모르는 것이 있는지 한 번 체크해보세요.(https://github.com/paullabkorea/programmersLv0) [[fast io in python]]
+1. 우선 아래 Lv0코드를 보면서 모르는 문법이나, 활용하는 문법에서 모르는 것이 있는지 한 번 체크해보세요.(<https://github.com/paullabkorea/programmersLv0)> [[fast io in python]]
 	1. 모르는 것이 있으시면 한 번 정리 부탁드립니다. 예를 들어 collections나 itertools나 functools, re 정규표현식 같은 것이요. 
 	2. 우리 수업에 해당 수업이 들어 있습니다. 예를 들어 정규표현식이 부족하시다면 정규표현식 수업에는 꼭 수업을 들으시고, 정리한 것을 확인하시고 복습해보세요.
 	3. 수업 시간에 아는 내용들이 나오는 시간에는 1.1을 수행하시면 됩니다.
