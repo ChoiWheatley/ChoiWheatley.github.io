@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T15:59:05
+updated: 2023-08-11T19:20:27
 ---
 
 # INDEX
@@ -52,4 +52,16 @@ str \* 연산자
 
 # Chapter01 알고리즘 기초
 
-
+- 순차구조(sequential)와 선택(selection)구조
+	- 순차: 한 문장씩 처리
+	- 선택: 조건에 따라 실행 흐름 변경
+- 형변환 to integer, floating point
+	- `int(문자열, 진수)`, `float(문자열)`
+- 헤더와 스위트(suite)
+	- if, function, loop 등 복합문은 `:`를 기준으로 헤더와 스위트로 나뉘어진다.
+	- 스위트는 평시에는 헤더의 다음줄의 공백 4개를 들여쓰기로 사용하지만, 단순문일 경우 같은 줄에 늘여써도 된다. 이때, 단순문을 두 개 이상 사용하는 것도 가능.
+	- 단순문의 정의: 복합문이 아닌 모든 구문
+- What is the algorithm?
+	- 문제를 해결하기 위해 기술된 일련의 실행절차
+- Decision Tree (결정트리)
+	- 세 정수 a, b, c의 대소관계조합을 모두 나열해보면 트리형태를 띄게 된다. 이것을 결정트리라고 부름.
