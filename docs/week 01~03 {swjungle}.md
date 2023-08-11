@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T19:52:22
+updated: 2023-08-11T20:08:22
 ---
 
 # INDEX
@@ -47,7 +47,6 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 	- [[lower bound with bisect_left (python)]]
 	- [[20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices|colon slicing]] 2588
 	- 
-str \* 연산자  
 `a, b = [1, 2, 3, 4]` => 오류남
 
 # Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편
@@ -70,7 +69,9 @@ str \* 연산자
 	- DRY 메커니즘의 예시: 하드코딩을 피하라 [[reverse를 사용해야 하는 이유 {django}]]
 	- 논리적으로 일치하는 분기문을 갖다 쓰지 말라. `if a < b: ... \n elif b >= a: ...` 이딴거 쓰지 말라는 거임 ==p.25==
 	- 9999번 A 분기에 들어가고 1번 B 분기에 들어갈거면 if 쓰지 말라. ==p.38==
+	- 
 - `if`구문에서 `else`를 쓰지 않으면 내부적으로 `else: pass`가 숨어있다.
 - 연산자와 피연산자, operator, operand. 용어파악
 	- 삼항 연산자 (ternary operator) : `x if x < y else y`
 - swap: `a, b = b, a` 개쩔지 아니한가 : 사실 튜플 공간을 만들어 쓰는거라서... 변수를 하나 생성하여 스왑하는 것보다 비효율적임
+- str `*` 연산자는 문자열을 복제하여 리턴한다.
