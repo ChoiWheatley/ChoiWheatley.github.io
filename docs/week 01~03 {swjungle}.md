@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T15:18:28
+updated: 2023-08-11T15:59:05
 ---
 
 # INDEX
@@ -47,4 +47,5 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 	- [[lower bound with bisect_left (python)]]
 	- [[20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices|colon slicing]] 2588
 	- 
-str \* 연산자 
+str \* 연산자  
+`a, b = [1, 2, 3, 4]` => 오류남
