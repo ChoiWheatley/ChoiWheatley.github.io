@@ -43,3 +43,4 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 
 - python 관련
 	- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]
+	- [[iterator를 꺼내 문자열로 만드는 방법{sof}]]
