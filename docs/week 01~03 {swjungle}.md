@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T20:08:22
+updated: 2023-08-11T20:20:58
 ---
 
 # INDEX
@@ -40,6 +40,8 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지
 
 # TIPS
+
+[[0014 Python 🐍]]으로 옮겨적을것
 
 - python 관련
 	- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]
