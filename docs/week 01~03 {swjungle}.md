@@ -39,7 +39,7 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 
 블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지
 
-## TIP
+# TIPS
 
 - python 관련
 	- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]
@@ -49,3 +49,7 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 	- 
 str \* 연산자  
 `a, b = [1, 2, 3, 4]` => 오류남
+
+# Chapter01 알고리즘 기초
+
+
