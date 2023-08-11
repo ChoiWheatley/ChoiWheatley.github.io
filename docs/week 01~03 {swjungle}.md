@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T20:20:58
+updated: 2023-08-11T20:47:13
 ---
 
 # INDEX
@@ -42,20 +42,20 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 # TIPS
 
 [[0014 Python 🐍]]으로 옮겨적을것
-
-- python 관련
-	- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]
-	- [[iterator를 꺼내 문자열로 만드는 방법{sof}]]
-	- [[lower bound with bisect_left (python)]]
-	- [[20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices|colon slicing]] 2588
-	- 
-`a, b = [1, 2, 3, 4]` => 오류남
+___
+- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]
+- [[iterator를 꺼내 문자열로 만드는 방법{sof}]]
+- [[lower bound with bisect_left (python)]]
+- [[20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices|colon slicing]] boj 2588
+- `my_single_element_tuple = 1,`
+- `this_is_not_a_tuple = (1)`
+- `a, b = [1, 2, 3, 4]` => 오류남
 
 # Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편
 
 ## Chapter01 알고리즘 기초
 
-- 순차구조(sequential)와 선택(selection)구조, 반복(iteration)구조
+- 구조적 프로그래밍: 순차구조(sequential)와 선택(selection)구조, 반복(iteration)구조
 	- 순차: 한 문장씩 처리
 	- 선택: 조건에 따라 실행 흐름 변경
 	- 반복: 조건이 성립하는 동안 주어진 구간의 코드를 반복
@@ -71,9 +71,12 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 	- DRY 메커니즘의 예시: 하드코딩을 피하라 [[reverse를 사용해야 하는 이유 {django}]]
 	- 논리적으로 일치하는 분기문을 갖다 쓰지 말라. `if a < b: ... \n elif b >= a: ...` 이딴거 쓰지 말라는 거임 ==p.25==
 	- 9999번 A 분기에 들어가고 1번 B 분기에 들어갈거면 if 쓰지 말라. ==p.38==
-	- 
+	- 배열은 프로그램을 덜 수정하기 위해 도입된 개념이다. ==p.62== 집계, 인덱싱, 정렬, 해싱 등을 활용할 때 세부적이지 않은 사항인 원소의 개수에 영향을 최소화할 수 있다.
+		-  파이썬은 배열을 각각 리스트와 튜플로 구현할 수 있다. 리스트는 변경이 가능하고, 튜플은 변경이 불가하다는 차이가 존재하다.
 - `if`구문에서 `else`를 쓰지 않으면 내부적으로 `else: pass`가 숨어있다.
 - 연산자와 피연산자, operator, operand. 용어파악
 	- 삼항 연산자 (ternary operator) : `x if x < y else y`
 - swap: `a, b = b, a` 개쩔지 아니한가 : 사실 튜플 공간을 만들어 쓰는거라서... 변수를 하나 생성하여 스왑하는 것보다 비효율적임
 - str `*` 연산자는 문자열을 복제하여 리턴한다.
+- 파이썬의 모든 변수는 값을 저장하지 않는다. ==p.56== 
+	- 파이썬에서의 모든 건 객체이고, 변수는 그 객체를 참조하는 참조자에 불과. 엄밀한 의미에서의 포인터는 아니지만 고유식별번호가 있어 `id()`를 사용하여 이를 찍어볼 수 있다. 

@@ -3,12 +3,20 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T14:52:16
-updated: 2023-07-15T21:33:03
+updated: 2023-08-11T20:52:08
 title: __getitem__ index and slice iteration in python
 ---
 - [GFG](https://www.geeksforgeeks.org/__getitem__-in-python/)
 - [`object.__getitem__` python documentation](https://docs.python.org/3/reference/datamodel.html#object.__getitem__)  
 커스텀 링크드 리스트를 만들다가 발생한 문제 브리핑.
+
+# index slicing
+
+```python
+s[start:end:gap]
+s[:] # all
+s[::-1] # backwards iteration, better than reversed()?
+```
 
 # What is getitem
 
@@ -76,7 +84,7 @@ class MyClass:
 This implementation checks if the `index` parameter passed to `__getitem__` is a slice object. If it is, it uses the `indices` method of the slice object to get the start, stop and step values for the slice. It then uses a list comprehension to return a new list containing the sliced data. If `index` is not a slice object, it simply returns the element at that index in the data.
 
 Source: Conversation with Bing, 5/17/2023  
-(1) python - Implementing slicing in __getitem__ - Stack Overflow. https://stackoverflow.com/questions/2936863/implementing-slicing-in-getitem.  
-(2) 3. Data model — Python 3.11.3 documentation. https://docs.python.org/3/reference/datamodel.html.  
-(3) Implementing slicing in __getitem__ - GeeksforGeeks. https://www.geeksforgeeks.org/implementing-slicing-in-__getitem__/.  
-(4) Fix Python – Implementing slicing in __getitem__. https://fixpython.com/2022/11/fix-python-implementing-slicing-in-getitem-po1tjgr/.
+(1) python - Implementing slicing in __getitem__ - Stack Overflow. <https://stackoverflow.com/questions/2936863/implementing-slicing-in-getitem.>  
+(2) 3. Data model — Python 3.11.3 documentation. <https://docs.python.org/3/reference/datamodel.html.>  
+(3) Implementing slicing in __getitem__ - GeeksforGeeks. <https://www.geeksforgeeks.org/implementing-slicing-in-__getitem__/.>  
+(4) Fix Python – Implementing slicing in __getitem__. <https://fixpython.com/2022/11/fix-python-implementing-slicing-in-getitem-po1tjgr/.>

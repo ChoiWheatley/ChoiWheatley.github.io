@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T13:05:40
-updated: 2023-08-11T14:53:42
+updated: 2023-08-11T20:50:50
 title: 20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices
 ---
 - [[self reference a class with typing.Self (python)]]
@@ -32,8 +32,3 @@ title: 20230517 estsoft - python - linked list - dataclass - typing Self cast ty
 - <https://school.programmers.co.kr/learn/courses/30/lessons/120864>
 - [x] <https://school.programmers.co.kr/learn/courses/30/lessons/120956>
 
-==index slicing==
-
-```python
-[start:end:gap]
-```
