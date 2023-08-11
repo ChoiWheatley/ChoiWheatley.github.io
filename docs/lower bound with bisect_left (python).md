@@ -1,10 +1,10 @@
 ---
-description:
+description: 이진탐색에 활용하는 lower bound를 파이썬에서는 `bisect.bisect_left`로 가능하다.
 aliases: 
 tags: 
 created: 2023-05-18T17:32:42
-updated: 2023-07-15T21:30:21
-title: bisect_left (python)
+updated: 2023-08-11T13:40:39
+title: lower bound with bisect_left (python)
 ---
 [`bisect.bisect_left`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left)
 
