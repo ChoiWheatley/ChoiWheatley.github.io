@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-11T10:38:05
+updated: 2023-08-11T14:53:48
 ---
 
 # INDEX
@@ -45,3 +45,5 @@ OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.
 	- [[20230501 estsoft - python - convention, types, variables, int, float|floating point formatting]]
 	- [[iterator를 꺼내 문자열로 만드는 방법{sof}]]
 	- [[lower bound with bisect_left (python)]]
+	- [[20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices|colon slicing]] 2588
+	- 
