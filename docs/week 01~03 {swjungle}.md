@@ -11,6 +11,7 @@ updated: 2023-08-10T17:16:26
 
 - [swjungle 정보페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html)
 - [문제모음집](https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0)
+	- [문제모음집{개인}]
 
 # 컴퓨팅사고로의 전환
 
