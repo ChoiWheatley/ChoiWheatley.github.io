@@ -8,7 +8,7 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-08-12T01:15:05
+updated: 2023-08-12T01:16:17
 ---
 
 ## Self Introduction
@@ -27,4 +27,4 @@ Contact me:
 
 - [notion.site (deprecated)](https://choiwheatley.notion.site)
 - [github.com](https://github.com/ChoiWheatley)
-- [this site is made with mkdocs material and obsidian](choiwheatley.github.io)
+- this site is made with [[mkdocs]] material and [[0070 Obsidian 💎|obsidian]]
