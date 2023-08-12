@@ -12,20 +12,20 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/week%2001~03%20%7Bswjungle%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/call%20by%20object%20reference%20%7Bpython%7D/">
       
       
-        <link rel="prev" href="../week%2000%20%7Bswjungle%7D/">
+        <link rel="prev" href="../c%2B%2B%20-%20Understanding%20how%20Lambda%20closure%20type%20has%20deleted%20default%20constructor%20-%20Stack%20Overflow/">
       
       
-        <link rel="next" href="../whisk%20away/">
+        <link rel="next" href="../cargo%20watch/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>week 01~03 {swjungle} - Choi Wheatley's Second Brain</title>
+        <title>call by object reference {python} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -77,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#index" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              week 01~03 {swjungle}
+              call by object reference {python}
             
           </span>
         </div>
@@ -1807,8 +1802,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1823,141 +1816,15 @@
                   
 
 
-<h1 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h1>
+  <h1>call by object reference {python}</h1>
+
 <ul>
-<li><a href="https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html">swjungle 정보페이지</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0">문제모음집</a><ul>
-<li><a href="https://docs.google.com/spreadsheets/d/1G0WlH6y9V1RL09KuCbqwM-E57b5xTaIL9HiaQ2ZIvJs/edit?usp=sharing">문제모음집{개인}</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="_1">컴퓨팅사고로의 전환<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
-<p>개발자는 컴퓨터에게 일을 잘 시켜야 한다. 그럼 일을 잘 시킨다는 건 뭐임? </p>
-<ul>
-<li>Halting Problem: 컴퓨터가 답을 내게 만들어야 함 (멈춰야 함.) 무한루프는 생각보다 치명적인 에러임</li>
-</ul>
-<p>이미 컴퓨터가 풀 수 있는 문제들을 여러분에게 주어지고 그 문제를 풀 능력을 기르는 것이 이번 주차의 목표.</p>
-<p>백준문제 풀기: 키워드 위주로. 기초문제는 오늘 안에로 다 풀어주시고. 파이썬 언어로 풀기를 바람</p>
-<p><mark>시험</mark></p>
-<ul>
-<li>매주 목요일 오전 10:00 ~ 11:30</li>
-<li>깃헙에 풀 리퀘스트를 생성하여 제출.</li>
-<li>풀이를 리뷰할 사람을 정해 코드리뷰.</li>
-</ul>
-<p><mark>CSAPP</mark></p>
-<ul>
-<li>WEEK01: ~1.4. 프로세서는 메모리에 저장된 인스트럭션을 읽고 해석한다</li>
-</ul>
-<p>OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.</p>
-<h1 id="week01">WEEK01 특별한 과제<a class="headerlink" href="#week01" title="Permanent link">#</a></h1>
-<ul>
-<li>[x] <a href="../Daily%20Notes/2023-08-12%20SWJUNGLE%20%EC%9E%85%EC%84%B1%20%ED%9B%84%20%EC%93%B0%EB%8A%94%20%EC%B2%AB%20%EB%8D%B0%EC%9D%BC%EB%A6%AC%20%EB%B8%8C%EB%A6%AC%ED%95%91/">블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지</a></li>
-</ul>
-<h1 id="tips">TIPS<a class="headerlink" href="#tips" title="Permanent link">#</a></h1>
-<p><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a>으로 옮겨적을것</p>
-<hr />
-<ul>
-<li><a href="../20230501%20estsoft%20-%20python%20-%20convention%2C%20types%2C%20variables%2C%20int%2C%20float/">floating point formatting</a></li>
-<li><a href="../iterator%EB%A5%BC%20%EA%BA%BC%EB%82%B4%20%EB%AC%B8%EC%9E%90%EC%97%B4%EB%A1%9C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B0%A9%EB%B2%95%7Bsof%7D/">iterator를 꺼내 문자열로 만드는 방법{sof}</a></li>
-<li><a href="../lower%20bound%20with%20bisect_left%20%28python%29/">lower bound with bisect_left (python)</a></li>
-<li><a href="../20230517%20estsoft%20-%20python%20-%20linked%20list%20-%20dataclass%20-%20typing%20Self%20cast%20type%20union%20-%20__getitem__%20-%20slice.indices/">colon slicing</a> boj 2588</li>
-<li><code>my_single_element_tuple = 1,</code></li>
-<li><code>this_is_not_a_tuple = (1)</code></li>
-<li>[?] <code>a, b = [1, 2, 3, 4]</code> =&gt; 오류남 참조할 곳이 없게 되어서. None과 null의 차이가 뭐냐?<ul>
-<li>리턴문이 없는 함수는 None을 리턴하는데, 왜 쟤네들은 에러냐?</li>
-</ul>
-</li>
-</ul>
-<h1 id="doit">Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편<a class="headerlink" href="#doit" title="Permanent link">#</a></h1>
-<h2 id="chapter01">Chapter01 알고리즘 기초<a class="headerlink" href="#chapter01" title="Permanent link">#</a></h2>
-<ul>
-<li>구조적 프로그래밍: 순차구조(sequential)와 선택(selection)구조, 반복(iteration)구조<ul>
-<li>순차: 한 문장씩 처리</li>
-<li>선택: 조건에 따라 실행 흐름 변경</li>
-<li>반복: 조건이 성립하는 동안 주어진 구간의 코드를 반복<ul>
-<li>카운터용 변수 (<code>cnt</code>, <code>counter</code>, ...): 반복문을 제어할 때 사용되는 변수</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>형변환 to integer, floating point<ul>
-<li><code>int(문자열, 진수)</code>, <code>float(문자열)</code></li>
-</ul>
-</li>
-<li><a href="../%ED%97%A4%EB%8D%94%EC%99%80%20%EC%8A%A4%EC%9C%84%ED%8A%B8%28suite%29%20%7Bpython%7D/">헤더와 스위트(suite) {python}</a></li>
-<li>What is the algorithm?<ul>
-<li>문제를 해결하기 위해 기술된 일련의 실행절차</li>
-</ul>
-</li>
-<li>Decision Tree (결정트리)<ul>
-<li>세 정수 a, b, c의 대소관계조합을 모두 나열해보면 트리형태를 띄게 된다. 이것을 결정트리라고 부름.</li>
-</ul>
-</li>
-<li>DRY (Don't Repeat Yourself) <ul>
-<li>DRY 메커니즘의 예시: 하드코딩을 피하라 <a href="../reverse%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%20%7Bdjango%7D/">reverse를 사용해야 하는 이유 {django}</a></li>
-<li>논리적으로 일치하는 분기문을 갖다 쓰지 말라. <code>if a &lt; b: ... \n elif b &gt;= a: ...</code> 이딴거 쓰지 말라는 거임 <mark>p.25</mark></li>
-<li>9999번 A 분기에 들어가고 1번 B 분기에 들어갈거면 if 쓰지 말라. <mark>p.38</mark><ul>
-<li>파이썬은 배열을 각각 리스트와 튜플로 구현할 수 있다. 리스트는 변경이 가능하고, 튜플은 변경이 불가하다는 차이가 존재하다.</li>
-<li>[?] p.42 ~ p.44 for 문 안에 있는 if문이 무의미한 경우 (1억번 중 1억번 같은 브랜치) 파이썬은 내부적으로 분기예측을 통해 최적화를 하는가? ^8px73d</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>if</code>구문에서 <code>else</code>를 쓰지 않으면 내부적으로 <code>else: pass</code>가 숨어있다.</li>
-<li>연산자와 피연산자, operator, operand. 용어파악<ul>
-<li>삼항 연산자 (ternary operator) : <code>x if x &lt; y else y</code></li>
-</ul>
-</li>
-<li>swap: <code>a, b = b, a</code> 개쩔지 아니한가 : <del>사실 튜플 공간을 만들어 쓰는거라서... 변수를 하나 생성하여 스왑하는 것보다 비효율적임</del> 튜플은 레퍼런스를 담을 공간이다.</li>
-<li>str <code>*</code> 연산자는 문자열을 복제하여 리턴한다.</li>
-<li>파이썬의 모든 변수는 값을 저장하지 않는다. <mark>p.56</mark> <ul>
-<li>파이썬에서의 모든 건 객체이고, 변수는 그 객체를 참조하는 참조자에 불과. 엄밀한 의미에서의 포인터는 아니지만 고유식별번호가 있어 <code>id()</code>를 사용하여 이를 찍어볼 수 있다. </li>
-</ul>
-</li>
-<li>[?] 파이썬이 언제 메모리를 비우는가??  </li>
-<li>[?] range 음수 갭을 주었을 때 실험해보자.</li>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a></li>
 </ul>
 <hr />
-<h2 id="chapter02">Chapter02 기본 자료구조와 배열<a class="headerlink" href="#chapter02" title="Permanent link">#</a></h2>
-<ul>
-<li>DRY (Don't Repeat Yourself)<ul>
-<li>배열은 프로그램을 덜 수정하기 위해 도입된 개념이다. <mark>p.62</mark> 집계, 인덱싱, 정렬, 해싱 등을 활용할 때 세부적이지 않은 사항인 원소의 개수에 영향을 최소화할 수 있다.</li>
-</ul>
-</li>
-<li><code>tuple()</code>, <code>list()</code> 함수를 사용하면 순회 가능한 모든 놈들을 전부 리스트로 만들 수 있다.</li>
-<li>튜플은 <strong>불변성</strong>에 높은 가치를 두어야 할 것 같다.</li>
-<li><strong>누적 대입</strong>: <code>int</code>, <code>str</code> 같은  리터럴들은 값이 변하지 않는다. 1이 갑자기 2가 되거나 하지 않는다는 것이다. 그렇다면 우리가 리터럴을 저장한 변수에 <code>+=</code>과 같은 연산을 통해 값이 변하게 만드는 것은 무엇이냐? 단순히 리터럴 1에서 리터럴 2로 참조자를 변경한 것에 불과하다.<ul>
-<li>[!] 그건 그렇고 무한한 정수를 전부 메모리에 담을 수 없는데, 정수형 리터럴은 그럼 일종의 바운더리가 있는걸까? ==&gt; <a href="https://stackoverflow.com/questions/63188021/why-python-integer-caches-range-5-256-dont-work-in-similar-way-on-all-platf">맞기는 한데, 바운더리의 범위는 IDE나 인터프리터에 따라 얼마든지 달라질 수 있다.</a></li>
-</ul>
-</li>
-<li>statement and expression<ul>
-<li>statement: 출력값, 자료형이 없음. <code>x = 2</code>와 같은 대입 연산자의 결과는 값을 리턴하지 않는다.</li>
-<li>expression: 출력값, 자료형이 있음. <code>x + 17</code>은 값을 리턴한다. 리턴한 값을 함수 인자에 넣을 수도 있고, statement에 넣을 수도 있다.</li>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230812101702.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230812101702.png" src="../assets/Pasted%20image%2020230812101702.png" /></a></li>
-</ul>
-</li>
-<li>자료구조 (Data Structure)는 데이터가 모여있는 구조이다. 데이터가 어떻게 모여있는지는 궁금해 하지 않도록 적당히 추상화를 했다. 따라서 자료구조는 추상 자료형 (Abstract Data Type)이다.</li>
-<li>
-<p>배열의 대소, 등가관계</p>
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre></div>
-</li>
-<li>
-<p><a href="https://docs.python.org/3/glossary.html#term-sequence"><code>typing.Sequence</code></a> : list, <a href="https://dojang.io/mod/page/view.php?id=2462">bytes, bytearray</a>, string, tuple</p>
-</li>
-<li><a href="../custom%20iterator%20with%20__iter__%20in%20python/">custom iterator with <strong>iter</strong> in python</a></li>
-<li><a href="../call%20by%20object%20reference%20%7Bpython%7D/">call by object reference {python}</a></li>
-</ul>
-<hr />
-<ul>
-<li>소수 나열 <mark>p.97</mark> 예상시간 15min</li>
-</ul>
-<h2 id="chapter03">Chapter03 검색 알고리즘<a class="headerlink" href="#chapter03" title="Permanent link">#</a></h2>
-<ul>
-<li>이진검색 <mark>p.120</mark> 예상시간 30min</li>
-</ul>
+<p>함수 인자로 집어넣은 인수는 값이 복사되지 않는다는 것은 이미 알고 있는 사실이다. 그렇다면 함수 안에서 인자의 값을 변경하면 오리지널 값도 변경되는 걸까? -&gt; 그럴때도 있고, 아닐때도 있다.</p>
+<p>불변객체일 경우 (int, str, ...) 누누히 말해오는 거지만 누적 연산자 따위로 값을 수정하는 것이 아니라 레퍼런스만 바꾼다고 했다. 따라서 함수 안에서 인자의 값을 변경하는 행위는 마찬가지로 레퍼런스를 바꾸는 행위가 되기 때문에 원본 객체에는 영향을 주지 않는다.</p>
+<p>가변객체일 경우는 뭐 그럼 영향을 주겠지.</p>
 
 
 

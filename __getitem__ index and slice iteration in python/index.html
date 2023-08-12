@@ -1833,6 +1833,9 @@
 <span class="n">s</span><span class="p">[:]</span> <span class="c1"># all</span>
 <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># backwards iteration, better than reversed()?</span>
 </code></pre></div>
+<ul>
+<li>[?] range 음수 갭을 주었을 때 실험해보자.</li>
+</ul>
 <h1 id="what-is-getitem">What is getitem<a class="headerlink" href="#what-is-getitem" title="Permanent link">#</a></h1>
 <p>아래와 같이 마지막 원소를 제외한 나머지를 순회하면서 <code>ret</code>에 문자열을 끼워넣고 싶었는데 안된다고 한다. 자세히 들여다보니 <code>__getitem__</code> 던더함수가 없다고 나오네.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
