@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T14:52:16
-updated: 2023-08-11T20:52:08
+updated: 2023-08-12T11:12:04
 title: __getitem__ index and slice iteration in python
 ---
 - [GFG](https://www.geeksforgeeks.org/__getitem__-in-python/)
@@ -17,6 +17,8 @@ s[start:end:gap]
 s[:] # all
 s[::-1] # backwards iteration, better than reversed()?
 ```
+
+- [?] range 음수 갭을 주었을 때 실험해보자.
 
 # What is getitem
 

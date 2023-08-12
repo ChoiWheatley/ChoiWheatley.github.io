@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-12T09:59:22
+updated: 2023-08-12T12:52:30
 ---
 
 # INDEX
@@ -49,7 +49,8 @@ ___
 - [[20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices|colon slicing]] boj 2588
 - `my_single_element_tuple = 1,`
 - `this_is_not_a_tuple = (1)`
-- `a, b = [1, 2, 3, 4]` => 오류남
+- [?] `a, b = [1, 2, 3, 4]` => 오류남 참조할 곳이 없게 되어서. None과 null의 차이가 뭐냐?
+	- 리턴문이 없는 함수는 None을 리턴하는데, 왜 쟤네들은 에러냐?
 
 # Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편
 
@@ -80,9 +81,11 @@ ___
 - str `*` 연산자는 문자열을 복제하여 리턴한다.
 - 파이썬의 모든 변수는 값을 저장하지 않는다. ==p.56== 
 	- 파이썬에서의 모든 건 객체이고, 변수는 그 객체를 참조하는 참조자에 불과. 엄밀한 의미에서의 포인터는 아니지만 고유식별번호가 있어 `id()`를 사용하여 이를 찍어볼 수 있다. 
-- [?] 파이썬이 언제 메모리를 비우는가??
+- [?] 파이썬이 언제 메모리를 비우는가??  
+- [?] range 음수 갭을 주었을 때 실험해보자.
+___
 
-## Chapter02
+## Chapter02 기본 자료구조와 배열
 
 - DRY (Don't Repeat Yourself)
 	- 배열은 프로그램을 덜 수정하기 위해 도입된 개념이다. ==p.62== 집계, 인덱싱, 정렬, 해싱 등을 활용할 때 세부적이지 않은 사항인 원소의 개수에 영향을 최소화할 수 있다.
@@ -90,3 +93,25 @@ ___
 - 튜플은 **불변성**에 높은 가치를 두어야 할 것 같다.
 - **누적 대입**: `int`, `str` 같은  리터럴들은 값이 변하지 않는다. 1이 갑자기 2가 되거나 하지 않는다는 것이다. 그렇다면 우리가 리터럴을 저장한 변수에 `+=`과 같은 연산을 통해 값이 변하게 만드는 것은 무엇이냐? 단순히 리터럴 1에서 리터럴 2로 참조자를 변경한 것에 불과하다.
 	- [!] 그건 그렇고 무한한 정수를 전부 메모리에 담을 수 없는데, 정수형 리터럴은 그럼 일종의 바운더리가 있는걸까? ==> [맞기는 한데, 바운더리의 범위는 IDE나 인터프리터에 따라 얼마든지 달라질 수 있다.](https://stackoverflow.com/questions/63188021/why-python-integer-caches-range-5-256-dont-work-in-similar-way-on-all-platf)
+- statement and expression
+	- statement: 출력값, 자료형이 없음. `x = 2`와 같은 대입 연산자의 결과는 값을 리턴하지 않는다.
+	- expression: 출력값, 자료형이 있음. `x + 17`은 값을 리턴한다. 리턴한 값을 함수 인자에 넣을 수도 있고, statement에 넣을 수도 있다.
+	- ![[Pasted image 20230812101702.png]]
+- 자료구조 (Data Structure)는 데이터가 모여있는 구조이다. 데이터가 어떻게 모여있는지는 궁금해 하지 않도록 적당히 추상화를 했다. 따라서 자료구조는 추상 자료형 (Abstract Data Type)이다.
+- 배열의 대소, 등가관계
+
+	```python
+	[1, 2, 3] == [1, 2, 3]
+	[1, 2, 3] < [1, 2, 4]
+	[1, 2, 3] < [1, 2, 3, 5]
+	```
+
+- [`typing.Sequence`](https://docs.python.org/3/glossary.html#term-sequence) : list, [bytes, bytearray](https://dojang.io/mod/page/view.php?id=2462), string, tuple
+- [[custom iterator with __iter__ in python]]
+- [[call by object reference {python}]]
+___
+- 소수 나열 ==p.97== 예상시간 15min
+
+## Chapter03 검색 알고리즘
+
+- 이진검색 ==p.120== 예상시간 30min
