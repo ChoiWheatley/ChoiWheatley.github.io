@@ -8,7 +8,7 @@ title: lower bound with bisect_left (python)
 ---
 [`bisect.bisect_left`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left)
 
-C++에 [[lowerbound|lower_bound]]가 있다면 파이썬에는 `bisect.bisect_left`가 있다. 그럼 `upper_bound`는? `bisect.bisect_right` 바보야 😲
+C++에 [[이분탐색을 활용한 lowerbound 구현법 {Algo}|lower_bound]]가 있다면 파이썬에는 `bisect.bisect_left`가 있다. 그럼 `upper_bound`는? `bisect.bisect_right` 바보야 😲
 
 이분탐색은 그 자체로 너무 많은 곳에 활용이 되고 있어서 실전 위주로 정리를 해보겠다. 흠흠
 

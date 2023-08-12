@@ -52,7 +52,7 @@ ___
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
 - [[kmp f159c2f6b506459995d832281de0d949|kmp]]
 - [[tree 기초 6387549a21a74a839a06e287954d208b|tree]]
-- [[lowerbound|lowerbound]]
+- [[이분탐색을 활용한 lowerbound 구현법 {Algo}|이분탐색을 활용한 lowerbound 구현법 {Algo}]]
 - [[next_permutation 구현 76fe1739d7c944828b0abee8dd56e58e|next permutation 구현]]
 - [[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812|LIS]]
 - [[LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58|LCS]]
