@@ -12,20 +12,20 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/black%20formatter%20%7Bpython%7D%20%7Bvscode%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/binary%20search%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20lower%20upper%20bound%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20parametric%20search%EA%B9%8C%EC%A7%80%20%7BNotion%20export%7D/">
       
       
-        <link rel="prev" href="../binary%20search%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20lower%20upper%20bound%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20parametric%20search%EA%B9%8C%EC%A7%80%20%7BNotion%20export%7D/">
+        <link rel="prev" href="../bevy/">
       
       
-        <link rel="next" href="../book-project%20%7BLEGACIES%7D/">
+        <link rel="next" href="../black%20formatter%20%7Bpython%7D%20%7Bvscode%7D/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>black formatter {python} {vscode} - Choi Wheatley's Second Brain</title>
+        <title>binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#lowerupper-bound-parametric-search" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              black formatter {python} {vscode}
+              binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
             
           </span>
         </div>
@@ -1807,41 +1807,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    설치방법
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    옵션
-  </a>
-  
-    <nav class="md-nav" aria-label="옵션">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#format-on-save" class="md-nav__link">
-    Format on save
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1856,23 +1823,255 @@
                   
 
 
-  <h1>black formatter {python} {vscode}</h1>
+<h1 id="lowerupper-bound-parametric-search">lower/upper bound 그리고 parametric search까지<a class="headerlink" href="#lowerupper-bound-parametric-search" title="Permanent link">#</a></h1>
+<p>태그: binarysearch<br />
+상태: 정리완료<br />
+최종 편집 일시: 2023년 3월 2일 오후 7:25</p>
+<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h1>
+<ul>
+<li>정렬된 리스트 보다는 주어진 검색결과 (혹은 함숫값)가 True, False 구간으로 나뉘어있을 때 그 경계를 찾는 문제라고 보는 게 더 낫다.</li>
+<li>그러면 lower_bound 문제는 $v \ge x$ 를 만족하는 첫번째 v를 찾는 문제가 되고</li>
+<li>upper_bound 문제는 $v \gt x$를 만족하는 첫번째 v를 찾는 문제가 된다.</li>
+<li>
+<p>아래 표는 어떤 정렬된 배열에서 x = 20에 대한 lower_bound와 upper_bound를 찾은 모습이다.</p>
+<table>
+<thead>
+<tr>
+<th>10</th>
+<th>20</th>
+<th>20</th>
+<th>20</th>
+<th>30</th>
+<th>40</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>lower_bound</td>
+<td></td>
+<td></td>
+<td>upper_bound</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h1 id="_1">구현방법<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>실수의 여지가 오지게 많다. 꼼꼼하게 살펴볼 필요가 있다. 실수를 줄이기 위해서 다음과 같은 마인드로 구현해보자.</p>
+<ul>
+<li>IF 문은 한 번만 쓰는 게 좋다. v &lt; x, v == x, v &gt; x 이따위로 조건문 세개로 나누는 건 이분탐색에 어울리지 않아!</li>
+<li>중간값(<code>m</code>)에 대한 함숫값이 참인 경우 ⇒ <code>[m, r)</code> 범위는 볼 필요가 없다. 따라서 <code>[l, m)</code> 범위를 탐색하면 된다.</li>
+<li>중간값 <code>m</code>에 대한 함숫값이 거짓인 경우 ⇒ <code>[l, m+1)</code> 범위는 볼 필요가 없다. 따라서 <code>[m+1, r)</code> 범위를 탐색하면 된다.</li>
+</ul>
+<p>이런 식으로 소거법으로 정리해 나간다는 느낌으로 코드를 짜면 언제 반복문을 나가야 할지, 언제 l,r을 바꿔야 할지 알 수 있다.</p>
+<h1 id="pseudo-code">pseudo code<a class="headerlink" href="#pseudo-code" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">first_true</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">pred</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">begin</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">end</span>
+    <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="p">:</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># overflow 방지</span>
+        <span class="k">match</span> <span class="n">pred</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">case</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">m</span> 
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">l</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm">F-...-F-F-F-T-T-T-...-T</span>
+<span class="cm">            ^</span>
+<span class="cm">*/</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Predicate</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">first_true</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">Predicate</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">pred</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-<p>포매터에는 여러 종류가 있습니다. autopep8, yapf, black이 있습니다. 개인적으로 black을 가장 선호합니다. 별다른 과정 없이 잘 돌아가거든요. <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter#usage">doc</a></p>
-<h2 id="_1">설치방법<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<ol>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter">black formatter</a>를 설치합니다. </li>
-<li>커맨드 팔레트 <code>Ctrl+Shift+P</code>를 띄워 <strong>Format document with...</strong> 를 검색합니다. </li>
-<li>드롭다운메뉴? 가 나올텐데, 거기에서 <code>black</code>을 선택하시면 됩니다.</li>
-</ol>
-<h2 id="_2">옵션<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<h3 id="format-on-save">Format on save<a class="headerlink" href="#format-on-save" title="Permanent link">#</a></h3>
-<p>You can enable format on save for python by having the following values in your settings: 저장을 누르면 자동으로 포매터가 실행되게 만들 수 있습니다. 근데 가끔 남이 쓴 코드를 지혼자서 막 바꿔대는 경우가 발생해서 평소엔 꺼놓다가 <code>Alt+Shift+S</code>를 눌러 내가 원할때에만 포매팅을 하게 만들어 놓기도 합니다.</p>
-<p>아래 코드는 settings.json 파일을 열어 첫 번째로 열린 중괄호 사이에 추가하면 됩니다.</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&quot;[python]&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;editor.defaultFormatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ms-python.black-formatter&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;editor.formatOnSave&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span>
+<span class="w">  </span><span class="n">T</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pred</span><span class="p">(</span><span class="n">mid</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// next range is [l, mid)</span>
+<span class="w">      </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// next range is [mid + 1, r)</span>
+<span class="w">      </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">l</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>first_true</code>로 구현한 <code>upper_bound</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span><span class="n">BinSearch</span><span class="p">,</span><span class="w"> </span><span class="n">UpperBound</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sorted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">upper_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first_true</span><span class="p">(</span><span class="n">sorted</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">sorted</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+<span class="w">                            </span><span class="p">[</span><span class="n">key</span><span class="p">](</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">e</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">real_upper_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">sorted</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">sorted</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="w">  </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">real_upper_b</span><span class="p">,</span><span class="w"> </span><span class="n">upper_b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>first_true</code>로 구현한 <code>lower_bound</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">TEST</span><span class="p">(</span><span class="n">BinSearch</span><span class="p">,</span><span class="w"> </span><span class="n">LowerBound</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sorted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">lower_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first_true</span><span class="p">(</span><span class="n">sorted</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">sorted</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+<span class="w">                            </span><span class="p">[</span><span class="n">key</span><span class="p">](</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="o">*</span><span class="n">e</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">real_lower_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">sorted</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">sorted</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="w">  </span><span class="n">ASSERT_EQ</span><span class="p">(</span><span class="n">real_lower_b</span><span class="p">,</span><span class="w"> </span><span class="n">lower_b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1 id="parametric-search">Parametric Search로의 확장<a class="headerlink" href="#parametric-search" title="Permanent link">#</a></h1>
+<blockquote>
+<p>이진탐색은 최적화 문제를 결정 문제로 바꿔서 풀 수 있게 해준다.
+</p>
+</blockquote>
+<ul>
+<li>최적화 문제 = $f(x)=\text{True}$가 되게 하는 x의 최댓값을 구하여라.</li>
+<li>결정 문제 = 어떤 x에 대하여 $f(x)=\text{True}$인가?</li>
+</ul>
+<p>다만 이 f라는 녀석에 조건이 필요한데, 아래 식을 만족하는 함수 f는 함수값이 불리언 자료형에 의해 정렬된 형태이기 때문에 이분탐색이 가능해진다.</p>
+<p>$$
+x_1 \lt x_2\ f(x_1)=\text{True} \rarr f(x_2)=\text{True}
+$$</p>
+<h1 id="_2">관련 문제<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
+<p><a href="lower%20upper%20bound%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A9%20parametric%20search%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5%20e7e3716351934d7fbeda02ca26c70f53/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%20a1ff095ad95e4e3080163c7eed2d1517.csv">제목 없는 데이터베이스</a></p>
+<h1 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">#</a></h1>
+<p>lowerbound는 정렬된 리스트에서 찾고자 하는 검색키보다 “작지 않은” 원소들 중 첫번째 원소를 가리킨다. 대표적으로 C++의 std::lowerbound 가 있다. 반대로 upperbound라는 개념도 있는데, 얘는 검색키보다 “큰” 원소들 중에서 첫번째 원소를 가리킨다. 즉, equal한 원소를 포함하지 않는다.</p>
+<p>lowerbound는 어느 상황에서 쓰이는가? 바로 중간에 원소를 삽입할 일이 있을 때 요긴하게 사용된다. lowerbound는 새 key값을 삽입해야 하는 상황에서 바로 리스트에 집어넣을 인덱스를 리턴하기 때문에 유용하다.</p>
+<h1 id="lowerbound">lowerbound 시뮬레이션<a class="headerlink" href="#lowerbound" title="Permanent link">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>10</th>
+<th>20</th>
+<th>20</th>
+<th>20</th>
+<th>50</th>
+<th>end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>^</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>^</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td></td>
+<td>^</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>^</td>
+<td></td>
+</tr>
+<tr>
+<td>55</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>^</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>5보다 작지 않은 원소들: {10,20,20,20,50, end} 중 첫번째 원소의 인덱스 = 0</li>
+<li>10보다 작지 않은 원소들: {10,20,20,20,50, end} 중 첫번째 원소의 인덱스 = 0</li>
+<li>20보다 작지 않은 원소들: {20,20,20,50,end} 중 첫번째 원소의 인덱스 = 1</li>
+<li>25보다 작지 않은 원소들:{50, end} 중 첫번째 원소의 인덱스 = 4</li>
+<li>55보다 작지 않은 원소들: {end} 중 첫번째 원소의 인덱스 = 5 == length of list</li>
+</ol>
+<h1 id="upperbound">upperbound 시뮬레이션<a class="headerlink" href="#upperbound" title="Permanent link">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>10</th>
+<th>20</th>
+<th>20</th>
+<th>20</th>
+<th>50</th>
+<th>end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>^</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td>^</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>^</td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>^</td>
+<td></td>
+</tr>
+<tr>
+<td>55</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>^</td>
+</tr>
+</tbody>
+</table>
+<h1 id="pseudo-code_1">pseudo code<a class="headerlink" href="#pseudo-code_1" title="Permanent link">#</a></h1>
+<p>구현 방법으로는 바이너리 서치가 있다. </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">lower_bound</span><span class="p">(</span><span class="n">ls</span><span class="p">:</span> <span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">val</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span> 
+  <span class="c1"># todo</span>
 </code></pre></div>
 
 

@@ -736,6 +736,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Doit%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80%20%ED%95%A8%EA%BB%98%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%8E%B8/</loc>
+         <lastmod>2023-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Double%20Rainbow%20boj%2023567/</loc>
          <lastmod>2023-08-12</lastmod>
          <changefreq>daily</changefreq>
@@ -1627,6 +1632,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/bevy/</loc>
+         <lastmod>2023-08-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/binary%20search%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20lower%20upper%20bound%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20parametric%20search%EA%B9%8C%EC%A7%80%20%7BNotion%20export%7D/</loc>
          <lastmod>2023-08-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
