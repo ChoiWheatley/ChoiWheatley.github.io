@@ -1830,8 +1830,35 @@
       
         <li class="md-nav__item">
   <a href="#chapter03" class="md-nav__link">
-    Chapter03 검색 알고리즘
+    Chapter03 검색 알고리즘 :: 이진검색 / 이분검색
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter05" class="md-nav__link">
+    Chapter05 재귀 알고리즘
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter05 재귀 알고리즘">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p200" class="md-nav__link">
+    하노이의 탑: p.200
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-p204" class="md-nav__link">
+    8퀸 문제: p.204
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1954,12 +1981,49 @@
 O(\frac{\Pi(\sqrt{N})}{2} \cdot \frac{N}{2})=O(N\Pi(\sqrt{N}))
 $$</p>
 <p>이...렇......게? 되려나? $\Pi$가 대충 로그정도의 속도를 가지고 있다고 하니까 조금만 더 멍청하게 생각한다면 $O(N \log{N})$ 정도.....?? 그냥 에라토스테네스의 체를 사용해서 메모리는 많이 먹어도 $O(N)$에 끝내는 방법이 더 현명해 보이기도 하지만 일단 머리속에 입력은 해두자.</p>
-<h2 id="chapter03">Chapter03 검색 알고리즘<a class="headerlink" href="#chapter03" title="Permanent link">#</a></h2>
+<h2 id="chapter03">Chapter03 검색 알고리즘 :: 이진검색 / 이분검색<a class="headerlink" href="#chapter03" title="Permanent link">#</a></h2>
 <ul>
 <li>이진검색 <mark>p.120</mark> 예상시간 30min</li>
 </ul>
 <p><a href="https://www.notion.so/choiwheatley/Binary-Search-fc80010792364e23924f1ec933d467df">이분탐색 헷갈리지 않게 구현하기 {최백준}</a></p>
 <p><a href="../binary%20search%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20lower%20upper%20bound%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20parametric%20search%EA%B9%8C%EC%A7%80%20%7BNotion%20export%7D/">binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}</a></p>
+<p>파이썬에선 <code>index()</code> 함수로 리스트, 튜플 내 원소 검색을 수행할 수 있다.</p>
+<ul>
+<li>meta: 2023-08-12T15:00:41<ul>
+<li>지금까지 나간 진도, <ul>
+<li>Ch02 p.61 ~ Ch03 p.130</li>
+</ul>
+</li>
+<li>15:00~17:00 스프린트에서 나갈 진도, <ul>
+<li>Ch05-03 하노이의 탑 <mark>p.200</mark></li>
+<li>Ch05-04 8퀸 문제 <mark>p.204</mark></li>
+<li>Ch06-1 정렬 알고리즘 <mark>p.219</mark></li>
+<li>Ch06-02 버블 정렬 <mark>p.221</mark></li>
+</ul>
+</li>
+<li>오늘 밤까지 끝낼 진도, <ul>
+<li>Ch06-03 단순선택정렬 <mark>p.237</mark></li>
+<li>Ch06-04 단순삽입정렬 <mark>p.240</mark></li>
+<li>from: Ch06-05 셀 정렬 <mark>p.247</mark></li>
+<li>to: Ch06-09 도수 정렬 <mark>p.297</mark></li>
+</ul>
+</li>
+<li>일요일까지 끝낼 진도<ul>
+<li>from: Ch09-01 트리 구조 <mark>p.377</mark></li>
+<li>to: Ch09-02 이진트리와 이진 검색 트리 <mark>p.382</mark></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter05">Chapter05 재귀 알고리즘<a class="headerlink" href="#chapter05" title="Permanent link">#</a></h2>
+<p>재귀는 중단조건이 반드시 있어야 한다. </p>
+<h3 id="p200">하노이의 탑: <mark>p.200</mark><a class="headerlink" href="#p200" title="Permanent link">#</a></h3>
+<h3 id="8-p204">8퀸 문제: <mark>p.204</mark><a class="headerlink" href="#8-p204" title="Permanent link">#</a></h3>
+<p><a href="../N-Queen%20%7Bboj%7D/">N-Queen {boj}</a></p>
+<blockquote>
+<p>8개의 퀸이 서로를 잡을 수 없도록 8 * 8 체스판에 배치하시오</p>
+</blockquote>
 
 
 
