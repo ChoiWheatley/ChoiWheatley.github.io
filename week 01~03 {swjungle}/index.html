@@ -1850,7 +1850,9 @@
 </ul>
 <p>OS 단에 들어가기 전에 미리미리 하기 위한 저시기임.</p>
 <h1 id="week01">WEEK01 특별한 과제<a class="headerlink" href="#week01" title="Permanent link">#</a></h1>
-<p>블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지</p>
+<ul>
+<li>[x] <a href="../Daily%20Notes/2023-08-12%20SWJUNGLE%20%EC%9E%85%EC%84%B1%20%ED%9B%84%20%EC%93%B0%EB%8A%94%20%EC%B2%AB%20%EB%8D%B0%EC%9D%BC%EB%A6%AC%20%EB%B8%8C%EB%A6%AC%ED%95%91/">블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지</a></li>
+</ul>
 <h1 id="tips">TIPS<a class="headerlink" href="#tips" title="Permanent link">#</a></h1>
 <p><a href="../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a>으로 옮겨적을것</p>
 <hr />
@@ -1893,6 +1895,7 @@
 <li>논리적으로 일치하는 분기문을 갖다 쓰지 말라. <code>if a &lt; b: ... \n elif b &gt;= a: ...</code> 이딴거 쓰지 말라는 거임 <mark>p.25</mark></li>
 <li>9999번 A 분기에 들어가고 1번 B 분기에 들어갈거면 if 쓰지 말라. <mark>p.38</mark><ul>
 <li>파이썬은 배열을 각각 리스트와 튜플로 구현할 수 있다. 리스트는 변경이 가능하고, 튜플은 변경이 불가하다는 차이가 존재하다.</li>
+<li>[?] p.42 ~ p.44 for 문 안에 있는 if문이 무의미한 경우 (1억번 중 1억번 같은 브랜치) 파이썬은 내부적으로 분기예측을 통해 최적화를 하는가? ^8px73d</li>
 </ul>
 </li>
 </ul>
@@ -1908,13 +1911,18 @@
 <li>파이썬에서의 모든 건 객체이고, 변수는 그 객체를 참조하는 참조자에 불과. 엄밀한 의미에서의 포인터는 아니지만 고유식별번호가 있어 <code>id()</code>를 사용하여 이를 찍어볼 수 있다. </li>
 </ul>
 </li>
-<li>[?] p.42 ~ p.44 for 문 안에 있는 if문이 무의미한 경우 (1억번 중 1억번 같은 브랜치) 파이썬은 내부적으로 분기예측을 통해 최적화를 하는가?</li>
 <li>[?] 파이썬이 언제 메모리를 비우는가??</li>
 </ul>
 <h2 id="chapter02">Chapter02<a class="headerlink" href="#chapter02" title="Permanent link">#</a></h2>
 <ul>
 <li>DRY (Don't Repeat Yourself)<ul>
 <li>배열은 프로그램을 덜 수정하기 위해 도입된 개념이다. <mark>p.62</mark> 집계, 인덱싱, 정렬, 해싱 등을 활용할 때 세부적이지 않은 사항인 원소의 개수에 영향을 최소화할 수 있다.</li>
+</ul>
+</li>
+<li><code>tuple()</code>, <code>list()</code> 함수를 사용하면 순회 가능한 모든 놈들을 전부 리스트로 만들 수 있다.</li>
+<li>튜플은 <strong>불변성</strong>에 높은 가치를 두어야 할 것 같다.</li>
+<li><strong>누적 대입</strong>: <code>int</code>, <code>str</code> 같은  리터럴들은 값이 변하지 않는다. 1이 갑자기 2가 되거나 하지 않는다는 것이다. 그렇다면 우리가 리터럴을 저장한 변수에 <code>+=</code>과 같은 연산을 통해 값이 변하게 만드는 것은 무엇이냐? 단순히 리터럴 1에서 리터럴 2로 참조자를 변경한 것에 불과하다.<ul>
+<li>[!] 그건 그렇고 무한한 정수를 전부 메모리에 담을 수 없는데, 정수형 리터럴은 그럼 일종의 바운더리가 있는걸까? ==&gt; <a href="https://stackoverflow.com/questions/63188021/why-python-integer-caches-range-5-256-dont-work-in-similar-way-on-all-platf">맞기는 한데, 바운더리의 범위는 IDE나 인터프리터에 따라 얼마든지 달라질 수 있다.</a></li>
 </ul>
 </li>
 </ul>
