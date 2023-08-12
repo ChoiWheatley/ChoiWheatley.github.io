@@ -4,7 +4,7 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-08-12T13:49:26
+updated: 2023-08-12T13:56:32
 ---
 
 # lower/upper bound 그리고 parametric search까지
@@ -16,14 +16,13 @@ updated: 2023-08-12T13:49:26
 # TL;DR
 
 - 정렬된 리스트 보다는 주어진 검색결과 (혹은 함숫값)가 True, False 구간으로 나뉘어있을 때 그 경계를 찾는 문제라고 보는 게 더 낫다.
-- 그러면 lower_bound 문제는 $v \ge x$ 를 만족하는 첫번째 v를 찾는 문제가 되고
-- upper_bound 문제는 $v \gt x$를 만족하는 첫번째 v를 찾는 문제가 된다.
+- 그러면 검색키 $x$가 주어졌을 때  lower_bound 문제의 first true 조건은 $v \ge x$ 를 만족하는 첫번째 v를 찾는 문제가 되고
+- upper_bound 문제의 first true 조건은 $v \gt x$를 만족하는 첫번째 v를 찾는 문제가 된다.
 - 아래 표는 어떤 정렬된 배열에서 x = 20에 대한 lower_bound와 upper_bound를 찾은 모습이다.
-    
-    
-    | 10 | 20 | 20 | 20 | 30 | 40 |  
-    | --- | --- | --- | --- | --- | --- |  
-    |  | lower_bound |  |  | upper_bound |  |
+
+| 10 | 20 | 20 | 20 | 30 | 40 |  
+| --- | --- | --- | --- | --- | --- |  
+|  | lower_bound |  |  | upper_bound |  |
 
 # 구현방법
 
