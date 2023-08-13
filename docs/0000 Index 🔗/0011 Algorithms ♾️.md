@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:32:55
+updated: 2023-08-13T15:14:20
 ---
 parent link: [[0000 Index 🔗]] [[0010 Programming 👩‍💻]] 
 
@@ -72,3 +72,5 @@ ___
 - [[11602 카드게임]] 
 - [[leet_743_network_delay_time -- dijkstra -- graph -- min heap]]
 - [[leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap]]
+- [[Z {1074} {boj} {재귀}]]
+- [[N-Queen {boj}]]
