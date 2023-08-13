@@ -1839,15 +1839,15 @@
             <span class="n">diag2_visited</span><span class="p">[</span><span class="n">diag2_idx</span><span class="p">]):</span>
             <span class="k">continue</span>
 
-        <span class="n">row_visited</span><span class="p">,</span> <span class="n">diag1_visited</span><span class="p">,</span> <span class="n">diag2_visited</span> <span class="n">check</span>
+        <span class="n">visit</span><span class="p">:</span> <span class="n">row_visited</span><span class="p">,</span> <span class="n">diag1_visited</span><span class="p">,</span> <span class="n">diag2_visited</span>
 
         <span class="n">count</span> <span class="o">+=</span> <span class="n">solve</span><span class="p">(</span><span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-        <span class="n">row_visited</span><span class="p">,</span> <span class="n">diag1_visited</span><span class="p">,</span> <span class="n">diag2_visited</span> <span class="n">uncheck</span>
+        <span class="n">unvisit</span><span class="p">:</span> <span class="n">row_visited</span><span class="p">,</span> <span class="n">diag1_visited</span><span class="p">,</span> <span class="n">diag2_visited</span>
 
     <span class="k">return</span> <span class="n">count</span>
 </code></pre></div>
-<p>근데 이 방법으로는 시간초과가 발생하기 때문에 아예 다른 방식으로 접근하여야 한다.</p>
+<p>근데 이 방법으로는 시간초과가 발생하기 때문에 아예 다른 방식으로 접근하여야 한다. <a href="https://djm03178.tistory.com/m/16">그런데</a> pypy로 풀면 통과한다고 한다</p>
 
 
 
