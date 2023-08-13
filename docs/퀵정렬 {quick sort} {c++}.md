@@ -2,11 +2,11 @@
 description:
 aliases: Quick Sort
 created: 2023-02-27T16:43:12
-updated: 2023-08-13T19:39:12
+updated: 2023-08-13T20:56:15
 tags:
   - notion
   - algo/sort
-title: 퀵정렬
+title: 퀵정렬 {quick sort} {c++}
 ---
 <https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0>
 

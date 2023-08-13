@@ -182,7 +182,7 @@ $$
 - **셸 정렬 ==p.247==**
 	- 단순 삽입 정렬의 장점을 살리면서 많은 데이터 이동을 줄이기 위해 고안된 방법
 - **퀵 정렬 ==p.257==**
-	- [[퀵정렬|Quick Sort]]
+	- [[퀵정렬 {quick sort} {c++}|Quick Sort]]
 	- [[20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#quick sort]]
 - **병합 정렬 ==p.277==**
 	- [[20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#merge sort]]
