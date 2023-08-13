@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T09:33:14
-updated: 2023-08-13T19:49:59
+updated: 2023-08-13T23:01:18
 title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort
 ---
 
@@ -126,6 +126,8 @@ assert sorted(ls) == merge_sort_recur(ls)
 +2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 [`heapq.merge()`](https://docs.python.org/3/library/heapq.html#heapq.merge) 를 사용할 수 있다. `left`, `right` 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.
 
 ## quick sort
+
+[[퀵정렬 {quick sort}|Quick Sort]]
 
 괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 `left + [pivot] + right` 하면 되어서 손도 깔끔하다.  
 ![[84c12ea600ff72a816c6672bcbd5e82d.png|100]]

@@ -2,13 +2,15 @@
 description:
 aliases: Quick Sort
 created: 2023-02-27T16:43:12
-updated: 2023-08-13T21:47:45
+updated: 2023-08-13T23:01:08
 tags:
   - notion
   - algo/sort
-title: 퀵정렬 {quick sort} {c++}
+title: 퀵정렬 {quick sort}
 ---
 <https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0>
+
+[[20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort]]
 
 # TL;DR
 

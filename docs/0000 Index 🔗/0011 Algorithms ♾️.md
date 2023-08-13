@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-13T15:27:30
+updated: 2023-08-13T23:01:51
 ---
 parent link: [[0000 Index 🔗]] [[0010 Programming 👩‍💻]] 
 
@@ -68,6 +68,7 @@ ___
 - [[트라이]]
 - [[단절점]]
 - [[two pointer]]
+- [[퀵정렬 {quick sort}|Quick Sort]]
 
 ---
 
