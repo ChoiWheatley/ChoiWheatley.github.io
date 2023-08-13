@@ -4,7 +4,7 @@ tags:
 description:
 title: Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편
 created: 2023-08-12T12:54:52
-updated: 2023-08-13T19:27:44
+updated: 2023-08-13T20:01:27
 ---
 [[0120 swjungle 🤖]]의 일환으로 학습한 자료를 정리한 문서입니다.
 
@@ -184,3 +184,11 @@ $$
 - **퀵 정렬 ==p.257==**
 	- [[퀵정렬|Quick Sort]]
 	- [[20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#quick sort]]
+- **병합 정렬 ==p.277==**
+	- [[20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#merge sort]]
+- **힙 정렬 ==p.286==
+	- [[Heap|힙]]
+	- 루트를 삭제하고 힙을 재구성
+	- heapify: bottom-up 방식으로 가장 아래에 있는 서브트리부터 차례로 힙 트리로 만든다.
+- **도수 정렬(Counting Sort) ==p.297==**
+	- 

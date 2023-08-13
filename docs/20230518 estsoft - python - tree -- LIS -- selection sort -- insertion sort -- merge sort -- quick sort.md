@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T09:33:14
-updated: 2023-07-15T21:30:22
+updated: 2023-08-13T19:49:59
 title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort
 ---
 
@@ -25,7 +25,7 @@ title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion so
 # LIS (Longest Increasing Subsequence)
 
 [[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]  
-https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.  
+<https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812> 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.  
 ^4ygbua
 
 # Sort
@@ -122,6 +122,8 @@ ls = [199, 22, 33, 12, 32, 64, 72, 222, 233]
 assert sorted(ls) == merge_sort_recur(ls)
 
 ```
+
++2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 [`heapq.merge()`](https://docs.python.org/3/library/heapq.html#heapq.merge) 를 사용할 수 있다. `left`, `right` 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.
 
 ## quick sort
 
