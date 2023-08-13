@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pseudocode-c" class="md-skip">
+        <a href="#tldr" class="md-skip">
           Skip to content
         </a>
       
@@ -1824,7 +1824,15 @@
 
 
 <p><a href="https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0">https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0</a></p>
-<h1 id="pseudocode-c">pseudocode (C++)<a class="headerlink" href="#pseudocode-c" title="Permanent link">#</a></h1>
+<h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h1>
+<ul>
+<li>퀵정렬은 분할정복의 예시 중 유명한 알고리즘으로, 병합정렬의 <strong>분할 후 정복</strong> 개념과는 달리 <strong>정복 후 분할</strong> 정책을 사용한다.</li>
+<li>먼저 시퀀스를 두 부분으로 나누는 <strong>파티션</strong> 작업을 통해 피벗의 위치를 고정시킨다. 그리고 <strong>재귀호출</strong>을 사용하여 피벗의 왼쪽과 오른쪽에 대한 정렬을 각기 수행한다.</li>
+<li>피벗의 위치는 맨앞, 맨뒤, 정 가운데, 랜덤, 중앙값으로 잡는 방법이 있고, 아래 수도코드는 랜덤으로 인덱스를 잡아 end로 보낸 뒤 파티셔닝을 수행한다.</li>
+</ul>
+<h1 id="pseudo-code">Pseudo Code<a class="headerlink" href="#pseudo-code" title="Permanent link">#</a></h1>
+<p>유튜브 영상에서 보던 방식과는 조금 달라서 헤맸다. 실제 코드를 보면 two pointer개념을 사용하기는 하지만 pivot을 기점으로 물리적으로 분리된 공간에 실제로 데이터를 swap하는 것이 보였으나, 여기 방식에 따르면 일단 한쪽 끝 (아래 코드는 end)으로 피벗을 배치시킨 뒤에 pivot보다 작은 원소의 개수를 카운트 하고 incremental 하게 위치를 잡는 것을 볼 수 있다.</p>
+<p>맨 마지막 줄이 중요한데, 피벗의 위치는 아직 끝이므로 본래 있어야 할 자리로 옮기는 것을 알 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
 <span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">mt19937</span><span class="w"> </span><span class="n">engine</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">random_device</span><span class="p">{}()};</span>
@@ -1834,7 +1842,7 @@
 <span class="n">Iter</span><span class="w"> </span><span class="n">partition</span><span class="p">(</span><span class="n">Iter</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">Less</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">less</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">generator</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">begin</span><span class="p">);</span>
 <span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="n">pivot</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
-<span class="w">  </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// ==IMPORTANT== pivot is currently end of the sequence</span>
 <span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// pivot보다 작은 원소의 개수를 카운트</span>
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">pivot</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">cur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">less</span><span class="p">(</span><span class="o">*</span><span class="n">cur</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pivot</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
@@ -1859,6 +1867,39 @@
 <span class="w">  </span><span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">less</span><span class="p">);</span>
 <span class="w">  </span><span class="n">sort</span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">less</span><span class="p">);</span>
 <span class="p">}</span>
+</code></pre></div>
+<h1 id="pseudocode-python">pseudocode (python)<a class="headerlink" href="#pseudocode-python" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">MutableSequence</span><span class="p">,</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">ls</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">,</span> <span class="n">lo</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hi</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">less</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]):</span>
+    <span class="n">pivot_idx</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># move pivot last of the element</span>
+    <span class="n">ls</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">]</span>
+    <span class="n">pivot_idx</span> <span class="o">=</span> <span class="n">hi</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># count will be the separating point between less(x, pivot) and other</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">pivot_idx</span><span class="p">):</span>
+        <span class="c1"># iterate EXCEPT pivot</span>
+        <span class="k">if</span> <span class="n">less</span><span class="p">(</span><span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">]):</span>
+            <span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">lo</span> <span class="o">+</span> <span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">lo</span> <span class="o">+</span> <span class="n">count</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># move pivot to the right place</span>
+    <span class="n">ls</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">lo</span> <span class="o">+</span> <span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">lo</span> <span class="o">+</span> <span class="n">count</span><span class="p">],</span> <span class="n">ls</span><span class="p">[</span><span class="n">pivot_idx</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">count</span>
+
+
+<span class="k">def</span> <span class="nf">qsort</span><span class="p">(</span><span class="n">ls</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">,</span> <span class="n">lo</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hi</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">less</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    - lo: starting index (inclusive)</span>
+<span class="sd">    - hi: end index (exclusive)</span>
+<span class="sd">    - less: function that can customize ordering</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">pivot</span> <span class="o">=</span> <span class="n">partition</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">less</span><span class="p">)</span>
+    <span class="n">qsort</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">pivot</span><span class="p">,</span> <span class="n">less</span><span class="p">)</span>
+    <span class="n">qsort</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="n">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">less</span><span class="p">)</span>  <span class="c1"># pivot은 넣으면 무한재귀</span>
 </code></pre></div>
 <h1 id="_1">관련문제<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <ul>
