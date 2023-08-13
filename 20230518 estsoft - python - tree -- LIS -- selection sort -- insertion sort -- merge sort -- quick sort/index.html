@@ -1776,6 +1776,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-08-13%20%EC%9E%AC%EA%B7%80%EC%99%80%20%ED%80%B5%EC%86%8C%ED%8A%B8%20%EC%82%BD%EC%A7%88/" class="md-nav__link">
+        2023-08-13 재귀와 퀵소트 삽질
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         Daily Notes
       </a>
@@ -1939,6 +1953,7 @@
 </code></pre></div>
 <p>+2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 <a href="https://docs.python.org/3/library/heapq.html#heapq.merge"><code>heapq.merge()</code></a> 를 사용할 수 있다. <code>left</code>, <code>right</code> 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.</p>
 <h2 id="quick-sort">quick sort<a class="headerlink" href="#quick-sort" title="Permanent link">#</a></h2>
+<p><a href="../%ED%80%B5%EC%A0%95%EB%A0%AC%20%7Bquick%20sort%7D/">Quick Sort</a></p>
 <p>괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 <code>left + [pivot] + right</code> 하면 되어서 손도 깔끔하다.<br />
 <a class="glightbox" href="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="84c12ea600ff72a816c6672bcbd5e82d.png" src="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" width="100" /></a></p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">q_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
