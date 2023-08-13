@@ -1835,6 +1835,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chapter06" class="md-nav__link">
+    Chapter06 정렬 알고리즘
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1953,7 +1960,7 @@
 <p>$$
 O(\frac{\Pi(\sqrt{N})}{2} \cdot \frac{N}{2})=O(N\Pi(\sqrt{N}))
 $$</p>
-<p>이...렇......게? 되려나? $\Pi$가 대충 로그정도의 속도를 가지고 있다고 하니까 조금만 더 멍청하게 생각한다면 $O(N \log{N})$ 정도.....?? 그냥 에라토스테네스의 체를 사용해서 메모리는 많이 먹어도 $O(N)$에 끝내는 방법이 더 현명해 보이기도 하지만 일단 머리속에 입력은 해두자.</p>
+<p>이...렇......게? 되려나? $\Pi$가 대충 로그정도의 속도를 가지고 있다고 하니까 조금만 더 멍청하게 생각한다면 $O(N \log{\sqrt{N}})$ 정도.....?? 그냥 에라토스테네스의 체를 사용해서 메모리는 많이 먹어도 $O(N)$에 끝내는 방법이 더 현명해 보이기도 하지만 일단 머리속에 입력은 해두자.</p>
 <h2 id="chapter03">Chapter03 검색 알고리즘 :: 이진검색 / 이분검색<a class="headerlink" href="#chapter03" title="Permanent link">#</a></h2>
 <ul>
 <li>이진검색 <mark>p.120</mark> 예상시간 30min</li>
@@ -2015,6 +2022,85 @@ $$</p>
 <li>본격적으로 읽기속도가 더뎌지기 시작했다. 기초개념에서 시간을 많이 쏟지는 않았을까 걱정이 되기는 하지만 그래도 몰랐던 것들도 많이 알게 되고, 내가 알고 있던 것들도 많이 공유하고 해서 최선을 다했다는 생각만 가지고 가자. </li>
 <li>예상과는 다르게 책을 주말 안에 다 못 읽을 것 같다. 현재 재귀쪽에서 머물면서 관련 문제들을 몽땅 풀었고, 그래도 브루트포스/전수조사를 재귀함수로 푸는 것에 대한 감은 다시 되찾은 것 같다.</li>
 <li>지금 팀원 한 분이 몸이 아파서 자리에 없다. 진도를 뺄 상황은 아닌 것 같은데, 열심히 문제를 풀어야 겠다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter06">Chapter06 정렬 알고리즘<a class="headerlink" href="#chapter06" title="Permanent link">#</a></h2>
+<ul>
+<li>안정성(stability): 정렬을 수행한 후에도 값이 같은 두 원소들의 순서가 변하지 않는 경우, 해당 정렬을 안정적이라고 말할 수 있다.</li>
+<li>
+<p>내부정렬과 외부정렬: 하나의 메모리 공간 안에서 모든 정렬을 수행할 경우, 내부정렬이라고 하고, 그렇지 않은 경우(정렬할 데이터의 양이 너무 많은 경우) 파일 시스템을 활용해가며 정렬을 수행하게 되는데, 이것을 외부정렬이라고 부른다.</p>
+</li>
+<li>
+<p><strong>버블정렬 <mark>p.221</mark></strong></p>
+<ul>
+<li>단순 버블정렬 구현만 보여준 게 아니라 한 바퀴 순회할 때마다 이미 정렬이 된 부분에 대하여 비효율적인 반복을 피하기 위해 최적화 작업을 수행하는 모습이 나온다. 이게 아니었으면 <code>i = 0, 1, 2, ...</code> 순으로 진행했을텐데, 스왑을 안했다는 소리는 곧 정렬이 완료됐다는 소리나 마찬가지기 때문이다.</li>
+</ul>
+<p>```python
+from typing import MutableSequence</p>
+<p>def bubble_sort(a: MutableSequence) -&gt; None:
+    """버블정렬(스캔 범위를 제한)"""
+    n = len(a)
+    k = 0
+    while k &lt; n - 1:
+        last = n - 1
+        for j in range(n-1, k, -1): # 거꾸로 버블소트
+            if a[j - 1] &gt; a[j]:
+                a[j - 1], a[j] = a[j], a[j - 1]
+                last = j # 바로 여기서 점프할 인덱스를 지정한다
+        k = last
+```</p>
+<ul>
+<li>칵테일 셰이커 정렬이라고, 거의 완료된 정렬 <code>[9, 1, 2, 3, 4, 5]</code>에 대하여 위의 코드는 사실 $N^2$의 시간복잡도를 보인다. 왜냐면 점프할 인덱스가 항상 한 칸씩만 당겨오기 때문이다. 그래서 한 번은 우에서 좌로 훑고, 다른 한 번은 좌에서 우로 훑어 해당 현상을 없앤다.</li>
+<li><strong>단순 선택 정렬 <mark>p.237</mark></strong></li>
+<li>순회를 하면서 매번 가장 작은 원소를 <code>[0]</code>번째 원소와 스왑. 덕분에 unstable하다.</li>
+<li><strong>단순 삽입 정렬 <mark>p.240</mark></strong></li>
+<li>정렬이 완료된 구간을 늘려나가는 방식의 정렬방법.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">MutableSequence</span>
+
+<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">MutableSequence</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="c1"># 스왑하지 않고 tmp로 값을 보관하는 이유는 a[j, j-1, ...] 자리에 그대로 값을 박을거기 때문이다.</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">tmp</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="c1"># 이 아래는 볼 필요도 없이 정렬되어있다.</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>이진 삽입 정렬 <mark>p.244</mark></strong></p>
+<ul>
+<li>단순 삽입 정렬 알고리즘은 정렬되지 않은 구역을 순회하며 책을 꽂듯이 삽입했다면, 이진 삽입 정렬은 정렬된 구역을 이진탐색하여 그 사이를 비집고 밀어넣는다.</li>
+<li>하지만 <a href="https://docs.python.org/3/library/bisect.html#bisect.insort">bisect.insort</a> 문서에 조언에 따르면, 검색에 아무리 $O(\log {N})$  시간이 걸렸더래도 삽입하는 데에 $O(N)$의 시간이 소요되기 때문에 주의하라고 한다.</li>
+</ul>
+</li>
+<li><strong>셸 정렬 <mark>p.247</mark></strong><ul>
+<li>단순 삽입 정렬의 장점을 살리면서 많은 데이터 이동을 줄이기 위해 고안된 방법</li>
+</ul>
+</li>
+<li><strong>퀵 정렬 <mark>p.257</mark></strong><ul>
+<li><a href="../%ED%80%B5%EC%A0%95%EB%A0%AC%20%7Bquick%20sort%7D%20%7Bc%2B%2B%7D/">Quick Sort</a></li>
+<li><a href="../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/#quick-sort">20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#quick sort</a></li>
+</ul>
+</li>
+<li><strong>병합 정렬 <mark>p.277</mark></strong><ul>
+<li><a href="../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/#merge-sort">20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#merge sort</a></li>
+</ul>
+</li>
+<li>**힙 정렬 <mark>p.286</mark><ul>
+<li>[[Heap|힙]]</li>
+<li>루트를 삭제하고 힙을 재구성</li>
+<li>heapify: bottom-up 방식으로 가장 아래에 있는 서브트리부터 차례로 힙 트리로 만든다.</li>
+</ul>
+</li>
+<li><strong>도수 정렬(Counting Sort) <mark>p.297</mark></strong><ul>
+<li>누적도수분포표를 만든다 (누적 히스토그램)</li>
+<li>정렬할 리스트를 순회하며 누적도수분포표가 가리키는 인덱스에 원소를 넣고 누적도수분포표의 값을 1 줄인다.</li>
+<li>profit 💵</li>
 </ul>
 </li>
 </ul>

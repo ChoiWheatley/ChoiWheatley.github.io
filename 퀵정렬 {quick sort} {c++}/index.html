@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/%ED%80%B5%EC%A0%95%EB%A0%AC/">
+        <link rel="canonical" href="https://choiwheatley.github.io/%ED%80%B5%EC%A0%95%EB%A0%AC%20%7Bquick%20sort%7D%20%7Bc%2B%2B%7D/">
       
       
         <link rel="prev" href="../%EC%BF%A0%ED%8C%A1%20%EB%AC%BC%EB%A5%98%EC%84%BC%ED%84%B0/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>퀵정렬 - Choi Wheatley's Second Brain</title>
+        <title>퀵정렬 {quick sort} {c++} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#pseudocode-c" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              퀵정렬
+              퀵정렬 {quick sort} {c++}
             
           </span>
         </div>
@@ -1823,7 +1823,43 @@
                   
 
 
-<p>https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0</p>
+<p><a href="https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0">https://choiwheatley.notion.site/quick-sort-8720f36d603840f1b37fa73465c76eb0</a></p>
+<h1 id="pseudocode-c">pseudocode (C++)<a class="headerlink" href="#pseudocode-c" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+<span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">mt19937</span><span class="w"> </span><span class="n">engine</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">random_device</span><span class="p">{}()};</span>
+<span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">generator</span><span class="p">{};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Iter</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Less</span><span class="o">&gt;</span>
+<span class="n">Iter</span><span class="w"> </span><span class="n">partition</span><span class="p">(</span><span class="n">Iter</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">Less</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">less</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">generator</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">begin</span><span class="p">);</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="n">pivot</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+<span class="w">  </span><span class="n">pivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// pivot보다 작은 원소의 개수를 카운트</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">begin</span><span class="p">;</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">pivot</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">cur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">less</span><span class="p">(</span><span class="o">*</span><span class="n">cur</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pivot</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// move element to left</span>
+<span class="w">      </span><span class="c1">// begin ~ begin + count =&gt; *pivot 보다 작은 원소들</span>
+<span class="w">      </span><span class="c1">// begin+count ~ cur =&gt; *pivot 보다 크거나 같은 원소들</span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="n">cur</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="p">));</span>
+<span class="w">      </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// move pivot to right place</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="o">*</span><span class="n">pivot</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="n">begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="p">));</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">Iter</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Less</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">sort</span><span class="p">(</span><span class="n">Iter</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">Iter</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">Less</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="n">less</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">begin</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">partition</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">less</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">less</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sort</span><span class="p">(</span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="n">less</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 <h1 id="_1">관련문제<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <ul>
 <li><a href="../%EC%97%BC%EB%9D%BC%EB%8C%80%EC%99%95%EC%9D%98%20%EC%9D%B4%EB%A6%84%EC%A0%95%EB%A0%AC/">염라대왕의 이름정렬</a></li>

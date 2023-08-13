@@ -1855,7 +1855,7 @@
 <p>제네릭 코드를 짜기 위해서 <a href="https://docs.python.org/3/library/typing.html#typing.TypeVar">typing.TypeVar</a>를 찾아볼 필요가 있다. [[typing.TypeVar (python)]]</p>
 <h1 id="lis-longest-increasing-subsequence">LIS (Longest Increasing Subsequence)<a class="headerlink" href="#lis-longest-increasing-subsequence" title="Permanent link">#</a></h1>
 <p>[[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]<br />
-https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.<br />
+<a href="https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812">https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812</a> 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.<br />
 ^4ygbua</p>
 <h1 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">#</a></h1>
 <h2 id="selection-sort">selection sort<a class="headerlink" href="#selection-sort" title="Permanent link">#</a></h2>
@@ -1937,6 +1937,7 @@ https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리
 <span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
 <span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
 </code></pre></div>
+<p>+2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 <a href="https://docs.python.org/3/library/heapq.html#heapq.merge"><code>heapq.merge()</code></a> 를 사용할 수 있다. <code>left</code>, <code>right</code> 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.</p>
 <h2 id="quick-sort">quick sort<a class="headerlink" href="#quick-sort" title="Permanent link">#</a></h2>
 <p>괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 <code>left + [pivot] + right</code> 하면 되어서 손도 깔끔하다.<br />
 <a class="glightbox" href="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="84c12ea600ff72a816c6672bcbd5e82d.png" src="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" width="100" /></a></p>
