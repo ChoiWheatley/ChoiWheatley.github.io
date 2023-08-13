@@ -78,3 +78,4 @@ ___
 - [[leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap]]
 - [[Z {1074} {boj} {재귀}]]
 - [[N-Queen {boj}]]
+- [[한수 {boj}{1065}]]
