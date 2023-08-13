@@ -4,7 +4,7 @@ tags:
 description:
 title: Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편
 created: 2023-08-12T12:54:52
-updated: 2023-08-13T19:12:18
+updated: 2023-08-13T19:27:44
 ---
 [[0120 swjungle 🤖]]의 일환으로 학습한 자료를 정리한 문서입니다.
 
@@ -181,3 +181,6 @@ $$
 	- 하지만 [bisect.insort](https://docs.python.org/3/library/bisect.html#bisect.insort) 문서에 조언에 따르면, 검색에 아무리 $O(\log {N})$  시간이 걸렸더래도 삽입하는 데에 $O(N)$의 시간이 소요되기 때문에 주의하라고 한다.
 - **셸 정렬 ==p.247==**
 	- 단순 삽입 정렬의 장점을 살리면서 많은 데이터 이동을 줄이기 위해 고안된 방법
+- **퀵 정렬 ==p.257==**
+	- [[퀵정렬|Quick Sort]]
+	- [[20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort#quick sort]]
