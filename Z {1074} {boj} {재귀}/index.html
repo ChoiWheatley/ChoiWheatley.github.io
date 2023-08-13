@@ -12,20 +12,20 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/Zotero/">
+        <link rel="canonical" href="https://choiwheatley.github.io/Z%20%7B1074%7D%20%7Bboj%7D%20%7B%EC%9E%AC%EA%B7%80%7D/">
       
       
-        <link rel="prev" href="../Z%20%7B1074%7D%20%7Bboj%7D%20%7B%EC%9E%AC%EA%B7%80%7D/">
+        <link rel="prev" href="../Youtube%20Script%20Search%20Engine/">
       
       
-        <link rel="next" href="../%5BObsidian%20Basic%20Formatting%20Syntax/">
+        <link rel="next" href="../Zotero/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>Zotero - Choi Wheatley's Second Brain</title>
+        <title>Z {1074} {boj} {재귀} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Zotero
+              Z {1074} {boj} {재귀}
             
           </span>
         </div>
@@ -1802,6 +1807,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1816,9 +1823,39 @@
                   
 
 
-  <h1>Zotero</h1>
+<h1 id="1">1차 시도<a class="headerlink" href="#1" title="Permanent link">#</a></h1>
+<p><a href="../Comparing%20result%20with%20enum%20in%20python/">Comparing result with enum in python</a>를 참고하여 r, c값과 배열의 크기를 서로 비교해 몇사분면에 위치해 있는지를 판단하는 코드를 작성했다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sol_recur</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lo</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hi</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">dim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lo</span>
+    <span class="n">cell_size</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">dim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">match</span> <span class="p">(</span><span class="n">compare</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">compare</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="n">dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))):</span>
+        <span class="k">case</span> <span class="p">(</span><span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span><span class="p">,</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span><span class="p">):</span>
+            <span class="c1"># 1분면에 있음</span>
+            <span class="n">hi</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">cell_size</span>
+        <span class="k">case</span> <span class="p">(</span><span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span><span class="p">,</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Greater</span><span class="p">):</span>
+            <span class="c1"># 2분면에 있음</span>
+            <span class="n">lo</span> <span class="o">+=</span> <span class="n">cell_size</span>
+            <span class="n">hi</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">cell_size</span>
+        <span class="k">case</span> <span class="p">(</span><span class="n">Cmp</span><span class="o">.</span><span class="n">Greater</span><span class="p">,</span> <span class="n">Cmp</span><span class="o">.</span><span class="n">Less</span><span class="p">):</span>
+            <span class="c1"># 3분면에 있음</span>
+            <span class="n">lo</span> <span class="o">+=</span> <span class="n">cell_size</span> <span class="o">*</span> <span class="mi">2</span>
+            <span class="n">hi</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">cell_size</span>
+        <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+            <span class="c1"># 4분면에 있음</span>
+            <span class="n">lo</span> <span class="o">+=</span> <span class="n">cell_size</span> <span class="o">*</span> <span class="mi">3</span>
+            <span class="n">hi</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">cell_size</span>
+    <span class="k">return</span> <span class="n">sol_recur</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
 
 
+<span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sol_recur</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">)))</span>
+</code></pre></div>
+<p>하지만 결과는 칼같이 오답이었다. 😞</p>
+<p>이유로 하여금 <code>match</code> 안에서 r, c값을 잘못 비교한 게 아닐까 싶기는 한데... 관심 Cell의 크기와 위치가 자꾸 바뀌니까 r, c도 계속 바꾸어야 함.</p>
+<p>≤, &lt;같은 equality도 고려해야겠구나 </p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230813150631.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230813150631.png" src="../assets/Pasted%20image%2020230813150631.png" /></a></p>
 
 
 
