@@ -4,7 +4,7 @@ tags:
 description:
 title: 도수정렬 (Counting Sort) {rust} {python}
 created: 2023-08-14T16:47:35
-updated: 2023-08-14T16:55:45
+updated: 2023-08-14T18:46:06
 ---
 - [[0011 Algorithms ♾️]]
 - [수 정렬하기 3 {boj}](https://www.acmicpc.net/problem/10989)
@@ -52,3 +52,22 @@ fn main() -> Result<(), io::Error> {
 ```
 
 ## python source code
+
+```python
+"""도수정렬을 사용한 문제풀이
+참고: https://www.acmicpc.net/source/58913744"""
+from sys import stdin, stdout
+
+MAX_V = 10_000
+num_list = [0 for _ in range(MAX_V + 1)]
+n = int(input())
+
+for line in stdin:
+    num_list[int(line.strip())] += 1
+
+for idx, cnt in enumerate(num_list):
+    if cnt == 0:
+        continue
+    for _ in range(cnt):
+        stdout.write(str(idx) + "\n")
+```
