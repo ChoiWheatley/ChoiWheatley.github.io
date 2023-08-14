@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-08-13T18:07:25
+updated: 2023-08-14T16:45:14
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -109,6 +109,7 @@ title: 0014 Python 🐍
 - [[typing.Callable]]
 - [[typing.Iterator]]
 - [[`__init_subclass__` Forward declaration of classes {python}]]
+- [[python은 분기예측을 하는가 {sof}]]
 
 ---
 
