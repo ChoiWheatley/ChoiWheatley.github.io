@@ -21,7 +21,7 @@ parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]
 
 # 관련 문제 링크
 
-- [x] [[no23.힙]]
+- [x] [[no23.힙 (class Heap 소스코드)]]
 - [x] [[기초 partial sort 연습]]
 	- [x] [[Pro 사전문제 - 기초 Partial Sort 연습]]
 - [x] [[No. 24 - 보급로]]

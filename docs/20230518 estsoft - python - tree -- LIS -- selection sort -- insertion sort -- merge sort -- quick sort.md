@@ -20,7 +20,7 @@ title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion so
 
 ![[Pasted image 20230518131309.png|400]]
 
-제네릭 코드를 짜기 위해서 [typing.TypeVar](https://docs.python.org/3/library/typing.html#typing.TypeVar)를 찾아볼 필요가 있다. [[typing.TypeVar (python)]]
+제네릭 코드를 짜기 위해서 [typing.TypeVar](https://docs.python.org/3/library/typing.html#typing.TypeVar)를 찾아볼 필요가 있다. [[generic using typing.TypeVar (python)]]
 
 # LIS (Longest Increasing Subsequence)
 
