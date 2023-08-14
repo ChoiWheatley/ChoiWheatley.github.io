@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/heap ", algo/heap]
 date created: Friday, February 10th 2023, 11:39:15 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:04
+updated: 2023-08-14T23:34:58
 ---
 parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]
 
@@ -123,3 +123,8 @@ pop이 구현하는데 꽤나 고생했다. left, right 인덱스가 자꾸 예�
 	1. `left(idx) == m_top` : 오직 왼쪽 자식으로만 내려갈 수 있다.
 	2. `right(idx) <= m_top` : 왼쪽, 오른쪽 자식 중에서 비교를 통해서 하나를 골라야 한다.
 2. bubble down 코드에서 자식 노드와 비교 후 내려갈지 여기에서 멈출지를 선택해야 한다.
+
+# 아무 정렬문제 힙으로 풀기 (python)
+
+힙소트가 아니라 '힙' 클래스를 구현하여 풀었다는 점에 의의를 두었다.  
+[1181 {boj} source code](https://www.acmicpc.net/source/65079282) | [[1181 단어 정렬 {boj} source code {python} {heap}]]
