@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/%EB%8F%84%EC%88%98%EC%A0%95%EB%A0%AC%20%7Brust%7D%20%7Bpython%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/%EB%8F%84%EC%88%98%EC%A0%95%EB%A0%AC%20%28Counting%20Sort%29%20%7Brust%7D%20%7Bpython%7D/">
       
       
         <link rel="prev" href="../%EB%8B%AC%EB%A6%AC%EA%B8%B0%20%EC%9E%90%EC%84%B8%EC%9D%98%20%EC%A0%95%EC%84%9D%20-%20%EC%87%BC%EC%B8%A0/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>도수정렬 {rust} {python} - Choi Wheatley's Second Brain</title>
+        <title>도수정렬 (Counting Sort) {rust} {python} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              도수정렬 {rust} {python}
+              도수정렬 (Counting Sort) {rust} {python}
             
           </span>
         </div>
@@ -1857,9 +1857,10 @@
                   
 
 
-  <h1>도수정렬 {rust} {python}</h1>
+  <h1>도수정렬 (Counting Sort) {rust} {python}</h1>
 
 <ul>
+<li><a href="../0000%20Index%20%F0%9F%94%97/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/">0011 Algorithms ♾️</a></li>
 <li><a href="https://www.acmicpc.net/problem/10989">수 정렬하기 3 {boj}</a></li>
 <li><a href="https://www.acmicpc.net/source/58913744">Rust 풀이</a></li>
 <li>
@@ -1907,6 +1908,23 @@
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="python-source-code">python source code<a class="headerlink" href="#python-source-code" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;도수정렬을 사용한 문제풀이</span>
+<span class="sd">참고: https://www.acmicpc.net/source/58913744&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span>
+
+<span class="n">MAX_V</span> <span class="o">=</span> <span class="mi">10_000</span>
+<span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAX_V</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">stdin</span><span class="p">:</span>
+    <span class="n">num_list</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">cnt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">num_list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">cnt</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cnt</span><span class="p">):</span>
+        <span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 
 
