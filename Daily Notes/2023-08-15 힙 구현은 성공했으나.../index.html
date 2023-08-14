@@ -1,0 +1,1944 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/Daily%20Notes/2023-08-15%20%ED%9E%99%20%EA%B5%AC%ED%98%84%EC%9D%80%20%EC%84%B1%EA%B3%B5%ED%96%88%EC%9C%BC%EB%82%98.../">
+      
+      
+        <link rel="prev" href="../2023-08-13%20%EC%9E%AC%EA%B7%80%EC%99%80%20%ED%80%B5%EC%86%8C%ED%8A%B8%20%EC%82%BD%EC%A7%88/">
+      
+      
+        <link rel="next" href="../Daily%20Notes/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>2023-08-15 힙 구현은 성공했으나... - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2023-08-15" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2023-08-15 힙 구현은 성공했으나...
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0000%20Index%20%F0%9F%94%97/" class="md-tabs__link">
+        🔗
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2023-02-09/" class="md-tabs__link md-tabs__link--active">
+        Daily Notes
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          🔗
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          🔗
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0000%20Index%20%F0%9F%94%97/" class="md-nav__link">
+        0000 Index 🔗
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0005%20Archieve%20%F0%9F%92%BE/" class="md-nav__link">
+        0005 Archieve 💾
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0010%20Programming%20%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB/" class="md-nav__link">
+        0010 Programming 👩‍💻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/" class="md-nav__link">
+        0011 Algorithms ♾️
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0012%20Career%20%F0%9F%92%BC/" class="md-nav__link">
+        0012 Career 💼
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/" class="md-nav__link">
+        0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0013%20Rust%20%F0%9F%A6%80/" class="md-nav__link">
+        0013 Rust 🦀
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0014%20Python%20%F0%9F%90%8D/" class="md-nav__link">
+        0014 Python 🐍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0014.1%20Django%20%F0%9F%8E%88/" class="md-nav__link">
+        0014.1 Django 🎈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0020%20Games%20%F0%9F%8E%AE/" class="md-nav__link">
+        0020 Games 🎮
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0030%20Health%20%F0%9F%92%AA/" class="md-nav__link">
+        0030 Health 💪
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0031%20Emotions%20%F0%9F%A4%94/" class="md-nav__link">
+        0031 Emotions 🤔
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0070%20Obsidian%20%F0%9F%92%8E/" class="md-nav__link">
+        0070 Obsidian 💎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0080%20Scraps%20%F0%9F%93%9A/" class="md-nav__link">
+        0080 Scraps 📚
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0090%20Bucket%20Lists%20%F0%9F%AA%A3/" class="md-nav__link">
+        0090 Bucket Lists 🪣
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0100%20English%20%F0%9F%91%BB/" class="md-nav__link">
+        0100 English 👻
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0110%20Utility%20%F0%9F%94%A7/" class="md-nav__link">
+        0110 Utility 🔧
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0000%20Index%20%F0%9F%94%97/0120%20swjungle%20%F0%9F%A4%96/" class="md-nav__link">
+        0120 swjungle 🤖
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Daily Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Daily Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-09/" class="md-nav__link">
+        2023-02-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-10/" class="md-nav__link">
+        2023-02-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-11/" class="md-nav__link">
+        2023-02-11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-12%20%EC%A6%90%EA%B2%81%EA%B2%8C%20%EB%86%80%EC%95%98%EB%8B%A4%EA%B3%A0%20%EC%83%9D%EA%B0%81%ED%96%88%EB%8D%98%20%EC%A0%80%EB%85%81%EC%9D%98%20%EB%82%98%EC%97%90%EA%B2%8C%20%EB%92%A4%ED%86%B5%EC%88%98%EB%A5%BC%20%ED%9B%84%EB%A0%A4%EA%B0%88%EA%B8%B4%20%EC%95%8C%20%EC%88%98%20%EC%97%86%EB%8A%94%20%EA%B0%90%EC%A0%95.%20%EB%82%B4%EA%B0%80%20%EB%AD%98%20%EC%9E%98%EB%AA%BB%20%EB%A8%B9%EC%97%88%EB%82%98/" class="md-nav__link">
+        2023-02-12 즐겁게 놀았다고 생각했던 저녁의 나에게 뒤통수를 후려갈긴 알 수 없는 감정. 내가 뭘 잘못 먹었나
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-13/" class="md-nav__link">
+        2023-02-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-14/" class="md-nav__link">
+        2023-02-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-15/" class="md-nav__link">
+        2023-02-15
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-16/" class="md-nav__link">
+        2023-02-16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-17/" class="md-nav__link">
+        2023-02-17
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-20/" class="md-nav__link">
+        2023-02-20
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-21/" class="md-nav__link">
+        2023-02-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-24/" class="md-nav__link">
+        2023-02-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-25/" class="md-nav__link">
+        2023-02-25
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-26/" class="md-nav__link">
+        2023-02-26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-27/" class="md-nav__link">
+        2023-02-27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-28/" class="md-nav__link">
+        2023-02-28
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-01/" class="md-nav__link">
+        2023-03-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-02/" class="md-nav__link">
+        2023-03-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-03/" class="md-nav__link">
+        2023-03-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-04/" class="md-nav__link">
+        2023-03-04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-05/" class="md-nav__link">
+        2023-03-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-06/" class="md-nav__link">
+        2023-03-06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-08/" class="md-nav__link">
+        2023-03-08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-09/" class="md-nav__link">
+        2023-03-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-11/" class="md-nav__link">
+        2023-03-11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-12/" class="md-nav__link">
+        2023-03-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-13/" class="md-nav__link">
+        2023-03-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-14/" class="md-nav__link">
+        2023-03-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-15/" class="md-nav__link">
+        2023-03-15
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-16/" class="md-nav__link">
+        2023-03-16
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-19/" class="md-nav__link">
+        2023-03-19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-21/" class="md-nav__link">
+        2023-03-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-22/" class="md-nav__link">
+        2023-03-22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-23/" class="md-nav__link">
+        2023-03-23
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-26/" class="md-nav__link">
+        2023-03-26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-28/" class="md-nav__link">
+        2023-03-28
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-01/" class="md-nav__link">
+        2023-04-01
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-06/" class="md-nav__link">
+        2023-04-06
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-07/" class="md-nav__link">
+        2023-04-07
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-13/" class="md-nav__link">
+        2023-04-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-16%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%EB%A5%BC%20%EC%95%9E%EB%91%90%EA%B3%A0%20%EC%93%B0%EB%8A%94%20%EB%84%8B%EB%91%90%EB%A6%AC%20%28%EC%84%A0%EC%A0%9C%EC%A0%81%20%ED%95%99%EC%8A%B5%EA%B3%BC%20%ED%94%8C%EC%A0%9D%29/" class="md-nav__link">
+        2023-04-16 부트캠프를 앞두고 쓰는 넋두리 (선제적 학습과 플젝)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-17%20%EA%B5%AC%ED%98%84%EB%AF%B8%EC%8A%A4%EB%A1%9C%20%EB%82%A0%EB%A6%B0%20%EB%82%98%EC%9D%98%20%ED%94%BC%EA%B0%99%EC%9D%80%20%EC%8B%9C%EA%B0%84/" class="md-nav__link">
+        2023-04-17 구현미스로 날린 나의 피같은 시간
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-19/" class="md-nav__link">
+        2023-04-19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-21/" class="md-nav__link">
+        2023-04-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-23%20%EC%9C%A1%EC%B2%B4%EC%A0%81%20%ED%99%9C%EB%8F%99%EC%9D%98%20%EC%A6%90%EA%B1%B0%EC%9B%80%EC%9D%84%20%EA%B9%A8%EB%8B%AB%EB%8B%A4/" class="md-nav__link">
+        2023-04-23 육체적 활동의 즐거움을 깨닫다
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-29%20%EC%9D%B4%EC%A0%A0%20%EA%B3%A0%EA%B8%B0%EA%B0%80%20%EC%A7%88%EB%A6%B0%EB%8B%A4.%20%EC%97%B4%EC%8B%AC%ED%9E%88%20%EB%A7%8C%EB%93%A4%EC%96%B4%20%EB%A8%B9%EA%B3%A0%20%EA%B3%A7%EB%B0%94%EB%A1%9C%20%EC%B0%BE%EC%95%84%EC%98%A8%20%EC%9A%B0%EC%9A%B8%EA%B0%90/" class="md-nav__link">
+        2023-04-29 이젠 고기가 질린다. 열심히 만들어 먹고 곧바로 찾아온 우울감
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-09%20%EB%8F%84%ED%8C%8C%EB%AF%BC%20%EC%9E%90%ED%8C%90%EA%B8%B0%EB%A1%9C%EB%B6%80%ED%84%B0%20%EB%A9%80%EC%96%B4%EC%A7%80%EC%9E%90/" class="md-nav__link">
+        2023-05-09 도파민 자판기로부터 멀어지자
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-09/" class="md-nav__link">
+        2023-05-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-10/" class="md-nav__link">
+        2023-05-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-13/" class="md-nav__link">
+        2023-05-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-14/" class="md-nav__link">
+        2023-05-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-20/" class="md-nav__link">
+        2023-05-20
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-22/" class="md-nav__link">
+        2023-05-22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-24%20%EC%9E%A5%EA%B3%A0%EB%A1%9C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90/" class="md-nav__link">
+        2023-05-24 장고로 블로그 만들어보자
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-24/" class="md-nav__link">
+        2023-05-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-25/" class="md-nav__link">
+        2023-05-25
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-26/" class="md-nav__link">
+        2023-05-26
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-29/" class="md-nav__link">
+        2023-05-29
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-30/" class="md-nav__link">
+        2023-05-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-05-31/" class="md-nav__link">
+        2023-05-31
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-02/" class="md-nav__link">
+        2023-06-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-04/" class="md-nav__link">
+        2023-06-04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-05/" class="md-nav__link">
+        2023-06-05
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-08/" class="md-nav__link">
+        2023-06-08
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-09/" class="md-nav__link">
+        2023-06-09
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-12/" class="md-nav__link">
+        2023-06-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-13/" class="md-nav__link">
+        2023-06-13
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-14/" class="md-nav__link">
+        2023-06-14
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-15/" class="md-nav__link">
+        2023-06-15
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-18/" class="md-nav__link">
+        2023-06-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-19/" class="md-nav__link">
+        2023-06-19
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-20/" class="md-nav__link">
+        2023-06-20
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-21/" class="md-nav__link">
+        2023-06-21
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-22/" class="md-nav__link">
+        2023-06-22
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-27/" class="md-nav__link">
+        2023-06-27
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-28/" class="md-nav__link">
+        2023-06-28
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-30/" class="md-nav__link">
+        2023-06-30
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-07-10/" class="md-nav__link">
+        2023-07-10
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-07-11/" class="md-nav__link">
+        2023-07-11
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-07-12/" class="md-nav__link">
+        2023-07-12
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-07-15/" class="md-nav__link">
+        2023-07-15
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-07-18/" class="md-nav__link">
+        2023-07-18
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-07-24/" class="md-nav__link">
+        2023-07-24
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-08-02/" class="md-nav__link">
+        2023-08-02
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-08-03/" class="md-nav__link">
+        2023-08-03
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-08-04/" class="md-nav__link">
+        2023-08-04
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-08-12%20SWJUNGLE%20%EC%9E%85%EC%84%B1%20%ED%9B%84%20%EC%93%B0%EB%8A%94%20%EC%B2%AB%20%EB%8D%B0%EC%9D%BC%EB%A6%AC%20%EB%B8%8C%EB%A6%AC%ED%95%91/" class="md-nav__link">
+        2023-08-12 SWJUNGLE 입성 후 쓰는 첫 데일리 브리핑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-08-13%20%EC%9E%AC%EA%B7%80%EC%99%80%20%ED%80%B5%EC%86%8C%ED%8A%B8%20%EC%82%BD%EC%A7%88/" class="md-nav__link">
+        2023-08-13 재귀와 퀵소트 삽질
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2023-08-15 힙 구현은 성공했으나...
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/" class="md-nav__link">
+        Daily Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2023-08-15">2023-08-15<a class="headerlink" href="#2023-08-15" title="Permanent link">#</a></h1>
+<p>&lt;&lt; <a href="../2023-08-13%20%EC%9E%AC%EA%B7%80%EC%99%80%20%ED%80%B5%EC%86%8C%ED%8A%B8%20%EC%82%BD%EC%A7%88/">2023-08-13 재귀와 퀵소트 삽질</a> | [[2023-08-16]]&gt;&gt;</p>
+<hr />
+<h1 id="2023-08-15-daily-briefing">📅 2023-08-15 Daily Briefing<a class="headerlink" href="#2023-08-15-daily-briefing" title="Permanent link">#</a></h1>
+<h2 id="_1">🎵 오늘의 추천곡<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><a href="https://youtu.be/aNYjOVo5IEw">Something Good - Alt - J</a> 라이프 이즈 스트레인지 게임으로 알게 된 밴드. 차분한 멜로디와 매력적인 목소리의 조화, 추상적인 메시지를 담고 있는 뮤직비디오까지 상상력을 자극시켜준다.</p>
+<h2 id="_2">🌜 어제는...<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p><a href="../2023-08-13%20%EC%9E%AC%EA%B7%80%EC%99%80%20%ED%80%B5%EC%86%8C%ED%8A%B8%20%EC%82%BD%EC%A7%88/">2023-08-13 재귀와 퀵소트 삽질</a> | 늦잠, 퀵소트, 정렬 공부. 기억나는 이슈가 그것 말고는 딱히 없다. </p>
+<h2 id="_3">🙌 지금은...<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p>오전과 오후를 내가 알고있는 지식을 공유하는 데에 쏟아부었다. 다들 어려워 했던 <a href="../../Z%20%7B1074%7D%20%7Bboj%7D%20%7B%EC%9E%AC%EA%B7%80%7D/">Z {1074} {boj} {재귀}</a> 문제와 <a href="../../N-Queen%20%7Bboj%7D/">N-Queen {boj}</a> 문제를 면접관이 앞에 있다고 상상하며 단계적으로 설명해주었다. 아는 것이 있다고 그것을 설명할 수 없다면 그건 제대로 아는 것이 아니라는 것은 정말 맞는 말이다. 분명 문제를 풀었고 확실하게 알았다고 생각했음에도, 함수 스택에 따라 바뀌는 변수값을 화이트보드에 추적하는 데 약간의 어려움을 겪었다.</p>
+<h2 id="_4">🚀 내가 달성하고자 하는 것들은...<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<p>월요일에 잔뜩 쌓아두었던 문제리스트를 거의 풀지 못했다. 따라서 내일은 중요한 문제들을 제외하고 문제들을 타이머와 함께 빠르게 풀어나갈 계획이다.</p>
+<h2 id="_5">👎 오늘 나에게 닥친 어려움은...<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
+<p>문제리스트를 왜 거의 풀지 못했느냐는 질문에 스스로 답하자면, '힙' 구현에 너무 많은 시간을 쏟았기 때문이었다. [[1181 단어 정렬 {boj} source code {python} {heap}|1181 단어 정렬]] 문제는 단순히 정렬의 방식만 수정하는 <code>key</code>만 잘 정의하면 되는 문제였는데, 욕심이 생겨 힙 클래스를 구현하기로 정했기 때문이다. 이전에 swea 알고리즘 특강때 힙 자료구조를 C++로 작성한 적이 있었기 때문에 그렇게 어렵지 않을 거라고 생각한 것은 오산이었다. 알고리즘의 기조를 파악하면 뭐하나, 인덱스를 벗어나고, 정렬 순서를 반대로 해놓고 (최소힙이라 생각했는데 최대힙이었다) 원하는 결과가 안 나오자 기분부터 상했기 때문이다. 기분이 상하는 대상은 컴퓨터가 아니라 나라는 사실을 인지하자. </p>
+<p>어제의 교훈을 기억하며 수도코드를 종이에 먼저 작성한 뒤에 코드로 옮겼으나, 종이의 내용을 개무시하고 구현 내용을 멋대로 바꿔나가기 시작한 점이 오늘 이슈의 화근이었을 것이다. 생각하지도 않았던 <a href="../../generic%20using%20typing.TypeVar%20%28python%29/">TypeVar</a>를 꺼내어 일반화 프로그래밍을 시도하기도 했고 C++에서의 정적배열을 일반 <code>List</code>로 바꾸면서 변경사항이 다른 코드들로 전파되었기도 했다. 따라서 내가 할 일을 스스로 늘린 셈이었다. </p>
+<p>더 좋은 코드, 더 일반화된 코드를 작성하는 것도 좋지만 솔직히 말해서 나는 아직 그런 역량이 아니잖아. 그리고 진짜로 제대로 된 코드를 만들 것이었으면 아예 라이브러리화 시켜서 오픈소스로 공개하지 그래? 제한시간이 있는 문제를 풀 때 힙을 처음부터 구현하는 건 의미가 없다. <code>heapq</code> 라이브러리가 따로 힙 클래스를 제공하지 않고 <code>MutableSequence</code>를 가지고 전역적으로 heapify, insert, peek, pop 등의 연산을 제공하는 것은 그럴만한 이유가 있을 것이다.</p>
+<hr />
+<h1 id="notes">📝 Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h1>
+<ul>
+<li></li>
+</ul>
+<hr />
+<p><a class="glightbox" href="../../0000%20Index%20%F0%9F%94%97/Pending%20%E2%8C%9B.canvas" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pending ⌛.canvas" src="../../0000%20Index%20%F0%9F%94%97/Pending%20%E2%8C%9B.canvas" /></a></p>
+<hr />
+<h1 id="notes-modified-today">Notes modified today<a class="headerlink" href="#notes-modified-today" title="Permanent link">#</a></h1>
+<div class="highlight"><pre><span></span><code>List FROM &quot;&quot; 
+WHERE striptime(date(file.frontmatter.updated)) = date(&quot;2023-08-15&quot;) 
+SORT file.mtime asc
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
