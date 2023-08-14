@@ -1824,6 +1824,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#s-idea" class="md-nav__link">
+    신병철's idea
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1862,6 +1877,8 @@
     <span class="k">return</span> <span class="n">count</span>
 </code></pre></div>
 <p>근데 이 방법으로는 시간초과가 발생하기 때문에 아예 다른 방식으로 접근하여야 한다. <a href="https://djm03178.tistory.com/m/16">그런데</a> pypy로 풀면 통과한다고 한다</p>
+<h2 id="s-idea">신병철's idea<a class="headerlink" href="#s-idea" title="Permanent link">#</a></h2>
+<p>등록된 모든 퀸들의 <code>(x', y')</code> 과 현재 주목중인 <code>(y, x)</code>간에 <code>|x - x'| == |y - y'|</code>이라면 north east 대각선 OR south east 대각선에 의해 공격당할 위치에 놓이게 된다. 이것을 가지고 문제를 풀 수도 있다.</p>
 
 
 
