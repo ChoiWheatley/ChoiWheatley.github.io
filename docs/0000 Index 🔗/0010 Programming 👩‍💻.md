@@ -28,6 +28,7 @@ parent link: [[0000 Index 🔗|index]]
 - [[0014 Python 🐍]]
 - [[glossary]]
 - [[vim 관련 꿀팁]]
+- [[neovim]]
 - git 관련
 	- [[get fetch --prune]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
