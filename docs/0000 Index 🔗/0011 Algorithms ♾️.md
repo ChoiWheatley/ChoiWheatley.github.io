@@ -69,6 +69,7 @@ ___
 - [[단절점]]
 - [[two pointer]]
 - [[퀵정렬 {quick sort}|Quick Sort]]
+- [[도수정렬 (Counting Sort) {rust} {python}]]
 
 ---
 

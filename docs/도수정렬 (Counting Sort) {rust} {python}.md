@@ -2,10 +2,11 @@
 aliases: 
 tags: 
 description:
-title: 도수정렬 {rust} {python}
+title: 도수정렬 (Counting Sort) {rust} {python}
 created: 2023-08-14T16:47:35
-updated: 2023-08-14T16:54:49
+updated: 2023-08-14T16:55:45
 ---
+- [[0011 Algorithms ♾️]]
 - [수 정렬하기 3 {boj}](https://www.acmicpc.net/problem/10989)
 - [Rust 풀이](https://www.acmicpc.net/source/58913744)
 - [Python 풀이]  
