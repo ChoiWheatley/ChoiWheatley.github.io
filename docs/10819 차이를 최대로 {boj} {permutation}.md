@@ -7,6 +7,8 @@ created: 2023-08-15T11:35:09
 updated: 2023-08-15T11:37:04
 ---
 - <https://www.acmicpc.net/problem/10819>
+- [[next_permutation 구현]]
+- [[next_combination 구현하기]]
 
 ## C++ 코드
 
