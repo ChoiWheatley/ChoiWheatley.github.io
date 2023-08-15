@@ -1,25 +1,26 @@
 ---
 description:
 aliases: 
-tags: 
+tags: algo/permutation
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:26
-updated: 2023-07-15T21:33:05
-title: next_permutation 구현 76fe1739d7c944828b0abee8dd56e58e
+updated: 2023-08-15T11:12:50
+title: next_permutation 구현
 ---
 
-# next_permutation 구현
+## next_permutation 구현
 
 상태: In progress  
 태그: 순열조합
 
-[boj.kr/17359](http://boj.kr/17359) 
+## 전구 길만 걷자
+
+- [전구 길만 걷자](http://boj.kr/17359) 
 
 > 가장 마지막에 오는 단조증가 수열을 단조감소 수열로 변환하는 문제
-> 
 
-# 예시
+### 예시
 
 - [1, 2, 3] 경우의 수 = 3! = 6
     
@@ -70,7 +71,7 @@ title: next_permutation 구현 76fe1739d7c944828b0abee8dd56e58e
     baa
     
 
-# 구현
+### 구현
 
 [https://en.cppreference.com/w/cpp/algorithm/next_permutation](https://en.cppreference.com/w/cpp/algorithm/next_permutation)를 참고했다.
 
@@ -134,3 +135,25 @@ title: next_permutation 구현 76fe1739d7c944828b0abee8dd56e58e
 ---
 
 [boj.kr/17359](http://boj.kr/17359) 문제 해결 소스코드, 시간 순서대로 푼 코드를 지우지 않고 별도의 클래스로 처리했다. [https://www.acmicpc.net/source/53386573](https://www.acmicpc.net/source/53386573)
+
+## 일곱 난쟁이
+
+<https://www.acmicpc.net/problem/2309>
+
+`itertools.permutations` 활용 구현
+
+```python
+"""permutation을 직접 구현해보기"""
+from itertools import permutations
+
+MAXN = 9
+
+ls = [int(input()) for _ in range(MAXN)]
+
+for perm in permutations(ls, 7):
+    if sum(perm) == 100:
+        {print(x) for x in sorted(perm)}
+        break
+```
+
+> [!todo] 파이썬으로 다음 순열 구하는 코드 작성할 것

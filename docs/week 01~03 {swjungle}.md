@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-15T10:50:58
+updated: 2023-08-15T11:13:50
 ---
 
 # INDEX
@@ -56,3 +56,8 @@ ___
 # Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편
 
 [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
+
+# 문제풀이
+
+- [swjungle-week-01 {GH}](https://github.com/ChoiWheatley/swjungle-week-01)를 참고하세요. 문제푼것들, 교재 실습한 것들 코드 위주로 올라갑니다. 
+- [ ] [[next_permutation 구현#일곱 난쟁이]] 직접 next_permutation 구현해 볼 것
