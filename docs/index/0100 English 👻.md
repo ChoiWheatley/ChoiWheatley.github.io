@@ -6,7 +6,7 @@ created: 2023-03-09T16:55:06
 updated: 2023-07-15T21:32:55
 title: 0100 English 👻
 ---
-[[0000 Index 🔗|index]]
+[[docs/index/index|index]]
 ___
 
 [[why were we making such a fuss]]  

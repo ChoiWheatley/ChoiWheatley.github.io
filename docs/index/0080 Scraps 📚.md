@@ -15,7 +15,7 @@ tags: book scrap
 updated: 2023-08-03T15:53:05
 title: 0080 Scraps 📚
 ---
-- parent link: [[0000 Index 🔗]]
+- parent link: [[docs/index/index]]
 - child linkes
 	- [[0010 Programming 👩‍💻#Scrapped 0080 Scraps 📚]]
 

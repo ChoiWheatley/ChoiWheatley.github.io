@@ -12,7 +12,7 @@ date created: Friday, February 10th 2023, 6:11:21 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
 updated: 2023-07-15T21:32:55
 ---
-parent link: [[0000 Index 🔗|index]]
+parent link: [[docs/index/index|index]]
 
 ---
 

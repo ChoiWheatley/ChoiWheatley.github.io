@@ -14,7 +14,7 @@ date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 updated: 2023-08-13T23:01:51
 ---
-parent link: [[0000 Index 🔗]] [[0010 Programming 👩‍💻]] 
+parent link: [[docs/index/index]] [[0010 Programming 👩‍💻]] 
 
 ___
 

@@ -1,6 +1,6 @@
 ---
 description:
-title: 0000 Index 🔗
+title: index
 created: 2023-02-09T11:01:44
 categories: 
  - index
@@ -10,10 +10,10 @@ aliases:
 tags: index
 date created: Thursday, February 9th 2023, 11:01:44 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T22:35:26
+updated: 2023-08-15T09:27:02
 ---
 
-parent link: [[index]]
+parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%

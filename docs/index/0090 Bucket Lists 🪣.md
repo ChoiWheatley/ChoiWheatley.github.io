@@ -12,7 +12,7 @@ tags:
 updated: 2023-07-26T09:37:02
 ---
 parent link: 
-- [[0000 Index 🔗|index]]
+- [[docs/index/index|index]]
 
 Pending
 ---

@@ -11,7 +11,7 @@ aliases:
 tags: index
 updated: 2023-07-15T21:32:55
 ---
-parent link: [[0000 Index 🔗]]
+parent link: [[docs/index/index]]
 
 ---
 
