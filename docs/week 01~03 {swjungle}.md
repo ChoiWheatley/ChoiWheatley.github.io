@@ -62,6 +62,6 @@ ___
 - [swjungle-week-01 {GH}](https://github.com/ChoiWheatley/swjungle-week-01)를 참고하세요. 문제푼것들, 교재 실습한 것들 코드 위주로 올라갑니다. 
 
 - [ ] [[next_permutation 구현#일곱 난쟁이]] 직접 next_permutation 구현해 볼 것
-- [ ] [[10819 차이를 최대로 {boj} {permutation}]]
-- [ ] [[10927 외판원 순회 2 {boj} {완전탐색}]]
-- [ ] [[1629 곱셈 {boj} {modular exponentiation} {나머지 지수승}]]
+- [x] [[10819 차이를 최대로 {boj} {permutation}]]
+- [x] [[10927 외판원 순회 2 {boj} {완전탐색}]]
+- [x] [[1629 곱셈 {boj} {modular exponentiation} {나머지 지수승}]]
