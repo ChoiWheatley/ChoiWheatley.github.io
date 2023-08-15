@@ -17,7 +17,7 @@ theme:
     - navigation.indexes
 
 nav:
-  - "0000 Index 🔗.md"
+  - "docs/index/index.md"
 
 # Extensions
 markdown_extensions:
