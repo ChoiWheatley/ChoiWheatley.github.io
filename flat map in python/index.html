@@ -182,8 +182,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../Daily Notes/" class="md-tabs__link">
-      DailyNotes
+    <a href="../Daily%20Notes/" class="md-tabs__link">
+      Daily Notes
     </a>
   </li>
 
@@ -447,8 +447,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Daily Notes/" class="md-nav__link">
-        DailyNotes
+      <a href="../Daily%20Notes/" class="md-nav__link">
+        Daily Notes
       </a>
     </li>
   
@@ -729,6 +729,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2023-08-15-2-1" class="md-nav__link">
+    2023-08-15 추가: 2차원 리스트를 1차원 리스트로
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -743,7 +758,7 @@
 
 
 <ul>
-<li>https://dev.to/turbaszek/flat-map-in-python-3g98</li>
+<li><a href="https://dev.to/turbaszek/flat-map-in-python-3g98">https://dev.to/turbaszek/flat-map-in-python-3g98</a></li>
 </ul>
 <h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h1>
 <p>double list comprehension with 10_000 * 10 class objects =&gt; 4.5945 ms</p>
@@ -760,6 +775,9 @@
     <span class="n">ys</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">return</span> <span class="n">yskofor</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
     <span class="n">ys</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="2023-08-15-2-1">2023-08-15 추가: 2차원 리스트를 1차원 리스트로<a class="headerlink" href="#2023-08-15-2-1" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">wholelist</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">],</span>
 </code></pre></div>
 
 

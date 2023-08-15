@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#0-all" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -177,8 +182,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../Daily Notes/" class="md-tabs__link">
-      DailyNotes
+    <a href="../Daily%20Notes/" class="md-tabs__link">
+      Daily Notes
     </a>
   </li>
 
@@ -442,8 +447,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../Daily Notes/" class="md-nav__link">
-        DailyNotes
+      <a href="../Daily%20Notes/" class="md-nav__link">
+        Daily Notes
       </a>
     </li>
   
@@ -722,6 +727,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-all" class="md-nav__link">
+    0번째 아이템을 기준으로 all
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deprecated" class="md-nav__link">
+    deprecated
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -737,6 +764,11 @@
 
   <h1>check every element from sequence is same {python} {functools.reduce}</h1>
 
+<h2 id="0-all">0번째 아이템을 기준으로 <code>all</code><a class="headerlink" href="#0-all" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">all</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">items</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="deprecated">deprecated<a class="headerlink" href="#deprecated" title="Permanent link">#</a></h2>
+<p>항상 작동하지 않는다는 문제 발생</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 
 <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
