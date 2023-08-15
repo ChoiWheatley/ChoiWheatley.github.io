@@ -3,10 +3,10 @@ description:
 aliases: 
 tags: 
 created: 2023-05-09T15:05:51
-updated: 2023-07-15T21:33:04
+updated: 2023-08-15T20:58:28
 title: flat map in python
 ---
-- https://dev.to/turbaszek/flat-map-in-python-3g98
+- <https://dev.to/turbaszek/flat-map-in-python-3g98>
 
 # TL;DR
 
@@ -29,4 +29,10 @@ def flat_map(f, xs):
 	ys = []
 	return yskofor x in xs:
 	ys.extend(f(x))
+```
+
+## 2023-08-15 추가: 2차원 리스트를 1차원 리스트로
+
+```python
+[x for sublist in wholelist for x in sublist],
 ```
