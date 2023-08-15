@@ -20,6 +20,7 @@ nav:
   - INDEX: "index/index.md"
   - DailyNotes:
       - "Daily Notes/index.md"
+      - 2023-02-09.md
       - ...
   - "index/0005 Archieve 💾.md"
   - "index/0010 Programming 👩‍💻.md"
