@@ -14,7 +14,6 @@ theme:
     - navigation.expand
     - navigation.tabs
     - navigation.top
-    - navigation.indexes
 
 nav:
   - INDEX: "index/index.md"
