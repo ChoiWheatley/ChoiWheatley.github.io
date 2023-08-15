@@ -18,7 +18,9 @@ theme:
 
 nav:
   - INDEX: "index/index.md"
-  - DailyNotes: "Daily Notes/index.md"
+  - DailyNotes:
+      - "Daily Notes/index.md"
+      - ...
   - "index/0005 Archieve 💾.md"
   - "index/0010 Programming 👩‍💻.md"
   - "index/0011 Algorithms ♾️.md"
