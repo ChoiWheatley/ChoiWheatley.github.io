@@ -1,0 +1,943 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/index/0014%20Python%20%F0%9F%90%8D/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>0014 Python 🐍 - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fast-index" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              0014 Python 🐍
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/index.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/Daily Notes/index.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0005 Archieve 💾.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0010 Programming 👩‍💻.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0011 Algorithms ♾️.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0012 Career 💼.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0013 Rust 🦀.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0014 Python 🐍.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0014.1 Django 🎈.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0020 Games 🎮.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0030 Health 💪.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0031 Emotions 🤔.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0070 Obsidian 💎.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0080 Scraps 📚.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0090 Bucket Lists 🪣.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0100 English 👻.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0110 Utility 🔧.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../docs/index/0120 swjungle 🤖.md" class="md-tabs__link">
+      None
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/Daily Notes/index.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0005 Archieve 💾.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0010 Programming 👩‍💻.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0011 Algorithms ♾️.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0012 Career 💼.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0013 Rust 🦀.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0014 Python 🐍.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0014.1 Django 🎈.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0020 Games 🎮.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0030 Health 💪.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0031 Emotions 🤔.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0070 Obsidian 💎.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0080 Scraps 📚.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0090 Bucket Lists 🪣.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0100 English 👻.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0110 Utility 🔧.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs/index/0120 swjungle 🤖.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<ul>
+<li><a href="../../venv%20activation%20and%20deactivation/">venv activation and deactivation</a></li>
+<li><a href="../../python%EC%97%90%EC%84%9C%20Optional%28Nullable%29%20type%EC%9D%84%20%EB%8B%A4%EB%A3%A8%EB%8A%94%20%EB%B2%95/">python에서 Optional(Nullable) type을 다루는 법</a></li>
+<li><a href="https://google.github.io/styleguide/pyguide.html">python google style guides</a></li>
+<li><a href="../0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/">0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊</a> 의 일환으로 빡세게 배울 파이썬 강의</li>
+<li><a href="https://inf.run/qBQP">인프런 알고리즘 베스트 10 - 제코베</a></li>
+</ul>
+<hr />
+<h1 id="fast-index">Fast Index<a class="headerlink" href="#fast-index" title="Permanent link">#</a></h1>
+<ul>
+<li>강의자료들<ul>
+<li><a href="../../%ED%8C%8C%EC%9D%B4%EC%8D%AC_%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84_%EC%96%95%EC%9D%80%EB%AC%BC.pdf">파이썬_부트캠프_얕은물.pdf</a></li>
+<li><a href="https://drive.google.com/drive/folders/1HdUC_HOL_evEy1ozrOd2OGcSnozYggSJ?usp=share_link">파이썬_부트캠프_깊은물 - google drive</a></li>
+<li><a href="https://paullabworkspace.notion.site/Python-c20c452099dc46f4895019df86cb317b">Python 기초 - NOTION</a></li>
+<li><a href="https://shallowpython.notion.site/shallowpython/6e5d012e159d4e3fa3fe6ca8566d9e22?v=b73c91efc98c46e49158156a5927a4fd">Python 얕은물 - NOTION</a></li>
+<li><a href="https://colab.research.google.com/drive/1IRa8nYwM2HtkzlNJGBlavWK96kffytm_?usp=sharing#scrollTo=E1nDm4EOyOxg">멘토님의 python_deep_dive.ipynb 노트북</a></li>
+<li><a href="https://colab.research.google.com/drive/18ezSWxVCOIRw-AB84gVsap-Zi22oQpkR?usp=sharing">멘토님의 알고리즘특강 실시간 노트북</a></li>
+<li><a href="https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing">최승현의 노트북</a> =&gt; <a href="https://github.com/ChoiWheatley/ormi-master">깃허브</a>로 이전함. </li>
+</ul>
+</li>
+<li><a href="../../python%20cheatsheet%20and%20snippets/">python cheatsheet and snippets</a></li>
+<li>external packages<ul>
+<li><a href="../../Web%20Crawling%20with%20Beautiful%20Soup%20%26%20requests/">Web Crawling with Beautiful Soup &amp; requests</a></li>
+<li><a href="../../markdown%20-%20python%20package/">markdown - python package</a></li>
+<li><a href="../../xlsxwriter%20-%20python%20package/">xlsxwriter - python package</a></li>
+</ul>
+</li>
+<li>useful<ul>
+<li>standard lib<ul>
+<li><a href="../../itertools%20module/">itertools module</a></li>
+<li><a href="../../re%20-%20regex%20python%20package/">re - regex python package</a></li>
+<li>[[os module (미완성)]]</li>
+<li><a href="../../dataclasses%20python%20module/">dataclasses python module</a></li>
+<li><a href="../../collections.defaultdict%20%20%20%EC%9D%B8%EB%8D%B1%EC%8A%A4%20%EC%A1%B0%ED%9A%8C%20%EC%8B%A4%ED%8C%A8%20%EC%8B%9C%20%EB%94%94%ED%8F%B4%ED%8A%B8%20%EA%B0%9D%EC%B2%B4%20%EC%83%9D%EC%84%B1/">collections.defaultdict   인덱스 조회 실패 시 디폴트 객체 생성</a> </li>
+<li><a href="../../priority%20queue%20-%20python/">priority queue - python</a></li>
+<li><a href="../../dataclasses%20-%20python%20--%20custom%20comparator/">dataclasses - python -- custom comparator</a></li>
+<li><a href="../../getattr%2C%20setattr%20%7Bpython%7D/">getattr, setattr {python}</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>test<ul>
+<li><a href="../../unittest%20module%20-%20python/">unittest module - python</a></li>
+<li><a href="../../unit%20tests%20in%20python%20%2B%20vscode%20debugging/">unit tests in python + vscode debugging</a></li>
+</ul>
+</li>
+<li>read<ul>
+<li>[x] <a href="../../flat%20map%20in%20python/">flat map in python</a></li>
+<li>[ ] <a href="../../python%20map%20function/">python map function</a></li>
+<li>[ ] <a href="../../Python%20Type%20Hints%20-%20How%20to%20Narrow%20Types%20with%20isinstance%2C%20assert%2C%20and%20literal/">Python Type Hints - How to Narrow Types with isinstance, assert, and literal</a></li>
+<li>[ ] <a href="../../understanding%20python%20dataclasses/">understanding python dataclasses</a></li>
+<li>[ ]  <a href="../../typing.Optional%20and%20type%20union%20in%20python/">typing.Optional and type union in python</a></li>
+<li>[x] <a href="../../self%20reference%20a%20class%20with%20typing.Self%20%28python%29/">self reference a class with typing.Self (python)</a></li>
+<li>[ ] <a href="../../setting%20up%20python%20environment%20venv%20requirenemts.txt/">setting up python environment venv requirenemts.txt</a></li>
+</ul>
+</li>
+<li>book<ul>
+<li><a href="../../CPython%20%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0%20-%20%EC%97%94%EC%84%9C%EB%8B%88%20%EC%87%BC/">CPython 파헤치기 - 엔서니 쇼</a></li>
+<li><a href="../../Fluent%20Python%20Clear%2C%20Concise%20and%20Effective%20Programming%2C%202nd%20Edition/">Fluent Python Clear, Concise and Effective Programming, 2nd Edition</a></li>
+<li><a href="../../%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%ED%84%B0%EB%B7%B0%20-%2095%EA%B0%80%EC%A7%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EB%AC%B8%EC%A0%9C%20%ED%92%80%EC%9D%B4%EB%A1%9C%20%EC%99%84%EC%84%B1%ED%95%98%EB%8A%94%20%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/">파이썬 알고리즘 인터뷰 - 95가지 알고리즘 문제 풀이로 완성하는 코딩테스트</a></li>
+</ul>
+</li>
+<li>bootstrap<ul>
+<li><a href="../../check%20every%20element%20from%20sequence%20is%20same%20%7Bpython%7D%20%7Bfunctools.reduce%7D/">check every element from sequence is same {python} {functools.reduce}</a></li>
+<li><a href="../../sliding%20window%20%7Bpython%7D%20%7Bitertools.islice%7D%20%7Bcollections.deque%7D/">sliding window {python} {itertools.islice} {collections.deque}</a></li>
+<li><a href="../../Comparing%20result%20with%20enum%20in%20python/">Comparing result with enum in python</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="basics-of-python">Basics of Python (따로뺌)<a class="headerlink" href="#basics-of-python" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="../../%ED%83%80%EC%9E%85%20-%20python/">타입 - python</a></li>
+<li><a href="../../%EC%97%B0%EC%82%B0%EC%9E%90%20-%20python/">연산자 - python</a></li>
+<li><a href="../../%ED%95%A8%EC%88%98%20-%20python/">함수 - python</a><ul>
+<li><a href="../../closures%2C%20factory%20functions%20%28python%29/">closures, factory functions (python)</a></li>
+</ul>
+</li>
+<li><a href="../../%EB%B0%98%EB%B3%B5%20-%20python/">반복 - python</a></li>
+<li><a href="../../%ED%81%B4%EB%9E%98%EC%8A%A4%20-%20python/">클래스 - python</a></li>
+<li><a href="../../sort%20-%20sorted%20-%20key%20-%20index%20%EC%B6%94%EC%A0%81%20-%20python/">sort - sorted - key - index 추적 - python</a></li>
+<li><a href="../../list%20comprehension%20-%20python/">list comprehension - python</a></li>
+<li><a href="../../lambda%20-%20python/">lambda - python</a></li>
+<li><a href="../../try%20-%20except%20-%20else%20-%20finally%20%28python%29/">try - except - else - finally (python)</a></li>
+<li><a href="../../args%2C%20kwargs%20%EA%B0%80%EB%B3%80%EC%9D%B8%EC%9E%90%EC%99%80%20%EA%B0%80%EB%B3%80%20%ED%82%A4%EC%9B%8C%EB%93%9C%20%EC%9D%B8%EC%9E%90/">args, kwargs 가변인자와 가변 키워드 인자</a></li>
+<li><a href="../../decorator%20-%20python/">decorator - python</a></li>
+<li><a href="../../module%20and%20package%20%28python%29/">module and package (python)</a></li>
+<li><a href="../../file-io%20%28python%29/">file-io (python)</a></li>
+</ul>
+<hr />
+<h1 id="daily-document">Daily Document<a class="headerlink" href="#daily-document" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="../../20230501%20estsoft%20-%20python%20-%20convention%2C%20types%2C%20variables%2C%20int%2C%20float/">20230501 estsoft - python - convention, types, variables, int, float</a></li>
+<li><a href="../../20230502%20estsoft%20-%20python%20-%20str%2C%20%20cpython%2C%20indexing%20and%20slicing%2C%20numeric%20operations%2C%20bit%20operations%2C%20is%2C%20not%2C%20in/">20230502 estsoft - python - str,  cpython, indexing and slicing, numeric operations, bit operations, is, not, in</a></li>
+<li><a href="../../20230503%20estsoft%20-%20python%20function%2C%20list/">20230503 estsoft - python function, list</a></li>
+<li><a href="../../20230504%20estsoft%20-%20python%20-%20sort%2C%20deep%20copy%20and%20shallow%20copy%2C%20tuple%2C%20dictionary%2C%20set%2C%20match%20case/">20230504 estsoft - python - sort, deep copy and shallow copy, tuple, dictionary, set, match case</a></li>
+<li>20230508 if, loop =&gt; 걍 수업 안들음</li>
+<li><a href="../../20230509%20estsoft%20-%20python%20-%20list%20comprehension%2C%20try%20except%20else%2C%20builtin%20functions%2C%20args%20and%20kwargs%2C%20lambda/">20230509 estsoft - python - list comprehension, try except else, builtin functions, args and kwargs, lambda</a></li>
+<li><a href="../../2023-05-10%20estsoft%20-%20python%20-%20class%2C%20class%20attr%20and%20instance%20attr%2C%20magic%20methods%2C%20UserInfo%20and%20BookInfo%20%EC%8B%A4%EC%8A%B5%2C%20inheritance/">2023-05-10 estsoft - python - class, class attr and instance attr, magic methods, UserInfo and BookInfo 실습, inheritance</a></li>
+<li><a href="../../2023-05-11%20estsoft%20-%20python%20-%20inheritance%2C%20linked-list%2C%20method-overriding%2C%20MRO%2C%20private-member%2C%20iterator%2C%20generator%2C%20module%2C%20file-io%2C%20excel/">2023-05-11 estsoft - python - inheritance, linked-list, method-overriding, MRO, private-member, iterator, generator, module, file-io, excel</a></li>
+<li><a href="../../2023-05-12%20estsoft%20-%20python/">2023-05-12 estsoft - python</a></li>
+<li><a href="../../20230517%20estsoft%20-%20python%20-%20linked%20list%20-%20dataclass%20-%20typing%20Self%20cast%20type%20union%20-%20__getitem__%20-%20slice.indices/">20230517 estsoft - python - linked list - dataclass - typing Self cast type union - <strong>getitem</strong> - slice.indices</a></li>
+<li><a href="../../20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/">20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort</a></li>
+<li><a href="../../20230519%20estsoft%20-%20python/">20230519 estsoft - python</a></li>
+</ul>
+<hr />
+<h1 id="_1">파이썬 특이사항들<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="../../%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%95%A8%EC%88%98%EB%A5%BC%20%ED%98%B8%EC%B6%9C%ED%95%A0%20%EB%95%8C%20%EC%9D%B8%EC%9E%90%20%EC%88%9C%EC%84%9C%EB%A5%BC%20%EB%B0%94%EA%BF%94%EC%8D%A8%EB%8F%84%20%EB%90%9C%EB%8B%A4%20%2B%20default%20value/">파이썬 함수를 호출할 때 인자 순서를 바꿔써도 된다 + default value</a></li>
+<li><a href="../../match%20case%20in%20python/">match case in python</a></li>
+<li><a href="../../python%20f-string%EC%97%90%EC%84%9C%20%EC%A4%91%EA%B4%84%ED%98%B8%20%ED%91%9C%EA%B8%B0%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95/">python f-string에서 중괄호 표기하는 방법</a></li>
+<li><a href="../../2023-05-10%20estsoft%20-%20python%20-%20class%2C%20class%20attr%20and%20instance%20attr%2C%20magic%20methods%2C%20UserInfo%20and%20BookInfo%20%EC%8B%A4%EC%8A%B5%2C%20inheritance/#1eq9ew"><strong>repr</strong>, dir, vars, pprint 관련 개꿀팁</a></li>
+<li><a href="../../custom%20iterator%20with%20__iter__%20in%20python/">custom iterator with <strong>iter</strong> in python</a></li>
+<li><a href="../../__getitem__%20index%20and%20slice%20iteration%20in%20python/"><strong>getitem</strong> index and slice iteration in python</a></li>
+<li><a href="../../typing.cast%EC%9D%80%20%ED%83%80%EC%9E%85%EC%B2%B4%EC%BB%A4%EC%97%90%EA%B2%8C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20%EC%A0%9C%EA%B3%B5%ED%95%9C%EB%8B%A4%20-%20python/">typing.cast은 타입체커에게 정보를 제공한다 - python</a></li>
+<li><a href="../../typing.Callable/">typing.Callable</a></li>
+<li><a href="../../typing.Iterator/">typing.Iterator</a></li>
+<li><a href="../__init_subclass__ Forward declaration of classes {python}.md"><code>__init_subclass__</code> Forward declaration of classes {python}</a></li>
+<li><a href="../../python%EC%9D%80%20%EB%B6%84%EA%B8%B0%EC%98%88%EC%B8%A1%EC%9D%84%20%ED%95%98%EB%8A%94%EA%B0%80%20%7Bsof%7D/">python은 분기예측을 하는가 {sof}</a></li>
+</ul>
+<hr />
+<h1 id="python-toy-projects">Python Toy Projects<a class="headerlink" href="#python-toy-projects" title="Permanent link">#</a></h1>
+<ul>
+<li>[[AutoHotKey Alternative Python Key Mapper]]</li>
+<li>[[Tailwind 기반 HTML 파일 자동생성기]]</li>
+<li><a href="../0014.1%20Django%20%F0%9F%8E%88/">0014.1 Django 🎈</a></li>
+<li><a href="../../pyscript/">pyscript</a></li>
+</ul>
+<hr />
+<h1 id="-">수준 별 공부방향 - 이호준<a class="headerlink" href="#-" title="Permanent link">#</a></h1>
+<p>초급자<br />
+왕도는 없지만, 효율적으로 공부하는 방법은 있습니다.</p>
+<ol>
+<li>강사님 colab 보고 다시 코딩 해보기 </li>
+<li>이해 안되는 것 손코딩 </li>
+<li>개발 블로그에 배운 거 정리 </li>
+<li>깃헙 잔디 심기</li>
+<li>하루 Lv0 2문제<br />
+(만약 못푸는 문제라면 15분 이상 고민하지 마시고, 답을 손코딩 하는 것을 권합니다.)<br />
+(푼 문제는 깃헙에 잔디를 심기를 부탁드립니다.)<br />
+주말 - Python 얕은물</li>
+</ol>
+<hr />
+<p>전공자</p>
+<ol>
+<li>더 채우려 하지 마시고, 부족한 부분이 어디에 있는가?</li>
+<li>일주일 Lv3 ~ Lv4 2문제</li>
+</ol>
+<p>주말 - 중급자를 위한 Python + 라이브러리</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
