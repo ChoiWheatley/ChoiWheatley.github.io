@@ -70,3 +70,4 @@ ___
 - [x] [[1629 곱셈 {boj} {modular exponentiation} {나머지 지수승}]]
 - [ ] [[10830 행렬제곱 {boj}]] 행렬 대각화 사용하여 풀어볼 것
 - [x] [[2805 나무자르기 {boj}]]
+- [ ] [[2110 공유기 설치 {boj} {parametric search}]]
