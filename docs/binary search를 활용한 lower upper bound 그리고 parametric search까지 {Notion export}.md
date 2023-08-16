@@ -4,7 +4,7 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-08-16T15:16:00
+updated: 2023-08-16T15:16:22
 ---
 
 # lower/upper bound 그리고 parametric search까지
@@ -113,10 +113,6 @@ TEST(BinSearch, LowerBound) {
 $$
 x_1 \lt x_2\\ f(x_1)=\text{True} \Rightarrow f(x_2)=\text{True}
 $$
-
-# 관련 문제
-
-[제목 없는 데이터베이스](lower%20upper%20bound%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A9%20parametric%20search%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5%20e7e3716351934d7fbeda02ca26c70f53/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%20a1ff095ad95e4e3080163c7eed2d1517.csv)
 
 # Legacy
 
