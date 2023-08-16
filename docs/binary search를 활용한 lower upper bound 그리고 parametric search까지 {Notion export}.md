@@ -4,7 +4,7 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-08-12T13:56:32
+updated: 2023-08-16T15:16:00
 ---
 
 # lower/upper bound 그리고 parametric search까지
@@ -111,7 +111,7 @@ TEST(BinSearch, LowerBound) {
 다만 이 f라는 녀석에 조건이 필요한데, 아래 식을 만족하는 함수 f는 함수값이 불리언 자료형에 의해 정렬된 형태이기 때문에 이분탐색이 가능해진다.
 
 $$
-x_1 \lt x_2\\ f(x_1)=\text{True} \rarr f(x_2)=\text{True}
+x_1 \lt x_2\\ f(x_1)=\text{True} \Rightarrow f(x_2)=\text{True}
 $$
 
 # 관련 문제
