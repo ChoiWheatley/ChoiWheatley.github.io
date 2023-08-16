@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#source-code" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -722,6 +727,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    source code
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -742,6 +762,33 @@
 </ul>
 <p>나머지 지수승 관련한 이산수학 교재 캡처 추가. 이 알고리즘이 기반한 원리는 $b^4 \mod m$ 이나 $(b^2 \mod m) \cdot (b^2 \mod m) \mod m$ 이나 같다는 것이다. 주목할 변수는 <code>x</code>일지 몰라도 그 x에 붙일 계수를 알기 위해선 당연하게도 <code>power</code>를 지수승만큼 증가시켜야 한다. 그런데 그냥 $b^1$ $b^2$ $b^3$ ... 이런식이 아닌, $b<sup>{2</sup>1}$ $b<sup>{2</sup>2}$ $b<sup>{2</sup>3}$ 이런 식으로 증가하기 때문에 <code>power</code>를 매 이터레이션마다 제곱을 시키는 것이다.</p>
 <p><a class="glightbox" href="../assets/software%20-%200.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="software - 0.jpg" src="../assets/software%20-%200.jpg" /></a></p>
+<h2 id="source-code" python="python">source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;modular exponentiation 참고: https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/modular-exponentiation&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">log2</span>
+
+
+<span class="k">def</span> <span class="nf">modular_exponentiation</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">exp</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;나머지 지수승 연산을 수행하는 알고리즘.</span>
+<span class="sd">    $$</span>
+<span class="sd">    b^{exp} \mod m</span>
+<span class="sd">    $$</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">power</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">m</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="n">exp</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">exp</span> <span class="o">&gt;&gt;</span> <span class="n">i</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># a_i = 1 then,</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
+        <span class="n">power</span> <span class="o">=</span> <span class="p">(</span><span class="n">power</span> <span class="o">*</span> <span class="n">power</span><span class="p">)</span> <span class="o">%</span> <span class="n">m</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+
+<span class="n">b</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">modular_exponentiation</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+</code></pre></div>
 
 
 
