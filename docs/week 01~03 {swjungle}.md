@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-17T15:38:43
+updated: 2023-08-17T15:52:52
 ---
 
 ## INDEX
@@ -75,6 +75,19 @@ ___
 	- 1.6 ?
 	- 1.7 운영체제는 하드웨어를 관리한다
 
+### Doit!
+
+[[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편#Chapter04 스택과 힙]]
+
 ### TIPS
+
+- `Exception`을 상속하는 클래스는 `raise`가 가능해지는구나 ==p.157==
+- `try` - `except` - `else` - `finally` 
+	- `try`: 원래 처리할 내용
+	- `except`: 예상 에러 발생시 처리할 내용
+	- `else`: 에러 미발생시 처리할 내용
+	- `finally`: 심지어 중간에 리턴을 했을지라도 에러 발생여부 상관없이 무조건 실행하는 내용
+- `BaseException`과 `Exception` 간의 차이
+- `__contains__`: `in` 문법 사용 가능
 
 ### 문제풀이
