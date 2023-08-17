@@ -50,6 +50,7 @@ ___
 	- expression: 출력값, 자료형이 있음. `x + 17`은 값을 리턴한다. 리턴한 값을 함수 인자에 넣을 수도 있고, statement에 넣을 수도 있다.
 	- ![[Pasted image 20230812101702.png]]
 - 자료구조 (Data Structure)는 데이터가 모여있는 구조이다. 데이터가 어떻게 모여있는지는 궁금해 하지 않도록 적당히 추상화를 했다. 따라서 자료구조는 추상 자료형 (Abstract Data Type)이다.
+	- [?] [[abstract data type과 interface, class와의 차이]]
 - 배열의 대소, 등가관계
 
 	```python
