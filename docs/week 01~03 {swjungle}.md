@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-16T14:53:18
+updated: 2023-08-17T15:36:18
 ---
 
 ## INDEX
@@ -14,6 +14,7 @@ updated: 2023-08-16T14:53:18
 	- [문제모음집{개인}](https://docs.google.com/spreadsheets/d/1G0WlH6y9V1RL09KuCbqwM-E57b5xTaIL9HiaQ2ZIvJs/edit?usp=sharing)
 - [swjungle-week-01 {GH}](https://github.com/ChoiWheatley/swjungle-week-01)
 - [P7-Week01-03 목요일 시험 문제 답안 제출용 리포지토리 {GH}](https://github.com/SWJungle/P7-Week01-03)
+- [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
 
 ## 컴퓨팅사고로의 전환
 
@@ -54,10 +55,6 @@ ___
 - [?] `a, b = [1, 2, 3, 4]` => 오류남 참조할 곳이 없게 되어서. None과 null의 차이가 뭐냐?
 	- 리턴문이 없는 함수는 None을 리턴하는데, 왜 쟤네들은 에러냐?
 
-## Doit! 자료구조와 함께 배우는 알고리즘 기초 : 파이썬 편
-
-[[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
-
 ## 문제풀이
 
 [[0011 Algorithms ♾️#문제풀이 회고용]] 페이지에 추가할 것
@@ -71,3 +68,13 @@ ___
 - [ ] [[10830 행렬제곱 {boj}]] 행렬 대각화 사용하여 풀어볼 것
 - [x] [[2805 나무자르기 {boj}]]
 - [ ] [[2110 공유기 설치 {boj} {parametric search}]]
+
+## WEEK02
+
+- 스택, 큐, 우선순위큐, 그래프(vertex, edge, node, arc), BFS, DFS, 위상정렬
+- 읽어야 할 단원
+	- 4-1 스택
+	- 4-2 큐
+	- 6-8 힙 정렬
+	- 9-1 트리
+	- 9-2 이진트리와 이진검색트리
