@@ -4,7 +4,7 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-08-18T10:18:12
+updated: 2023-08-18T10:28:50
 ---
 
 # lower/upper bound 그리고 parametric search까지
@@ -22,11 +22,12 @@ updated: 2023-08-18T10:18:12
 - upper_bound 문제의 first true 조건은 $v \gt x$를 만족하는 첫번째 v를 찾는 문제가 된다.
 - 아래 표는 어떤 정렬된 배열에서 `value` = 20에 대한 lower_bound와 upper_bound를 찾은 모습이다.
 
-|     | 10  | 20  | 20  | 20  | 30  | 40  |
-| --- | --- | --- | --- | --- | --- | --- |
-|     | F   | T   | T   | T   | T   | T   |
-|     | F   | F   | F   | F   | T   | T   |
-|     |     | lb  |     |     | ub  |     |
+| index                        | 0   | 1   | 2   | 3   | 4   | 5   |
+| ---------------------------- | --- | --- | --- | --- | --- | --- |
+| elements                     | 10  | 20  | 20  | 20  | 30  | 40  |
+| first_true(value <= element) | F   | T   | T   | T   | T   | T   |
+| first_true(value < element)  | F   | F   | F   | F   | T   | T   |
+|                              |     | lb  |     |     | ub  |     |
 
 ## first true와 first false와의 관계는 역이다
 
@@ -66,11 +67,10 @@ def first_true(begin, end, pred):
 	r = end
 	while l != r :
 		m = l + (r - l) / 2 # overflow 방지
-		match pred(m):
-			case True:
-				r = m 
-			case _:
-				l = m + 1
+		if pred(m):
+			r = m 
+		else:
+			l = m + 1
 	return l
 ```
 
