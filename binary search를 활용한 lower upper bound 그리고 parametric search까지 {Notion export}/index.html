@@ -748,14 +748,74 @@
 최종 편집 일시: 2023년 3월 2일 오후 7:25</p>
 <h1 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h1>
 <ul>
+<li><a href="https://en.cppreference.com/w/cpp/algorithm/lower_bound">std::lower_bound {c++}</a>: 구간 <code>[first, last)</code> 에서 <code>value &lt;= element</code>를 만족하는 첫번째 <code>element</code>를 찾는 알고리즘</li>
+<li><a href="https://en.cppreference.com/w/cpp/algorithm/upper_bound">std::upper_bound {c++}</a> :  구간 <code>[first, last)</code>에서 <code>value &lt; element</code>를 만족하는 첫번째 <code>element</code>를 찾는 알고리즘</li>
 <li>정렬된 리스트 보다는 주어진 검색결과 (혹은 함숫값)가 True, False 구간으로 나뉘어있을 때 그 경계를 찾는 문제라고 보는 게 더 낫다.</li>
 <li>그러면 검색키 $x$가 주어졌을 때  lower_bound 문제의 first true 조건은 $v \ge x$ 를 만족하는 첫번째 v를 찾는 문제가 되고</li>
 <li>upper_bound 문제의 first true 조건은 $v \gt x$를 만족하는 첫번째 v를 찾는 문제가 된다.</li>
-<li>아래 표는 어떤 정렬된 배열에서 x = 20에 대한 lower_bound와 upper_bound를 찾은 모습이다.</li>
+<li>아래 표는 어떤 정렬된 배열에서 <code>value</code> = 20에 대한 lower_bound와 upper_bound를 찾은 모습이다.</li>
 </ul>
 <table>
 <thead>
 <tr>
+<th>index</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>elements</td>
+<td>10</td>
+<td>20</td>
+<td>20</td>
+<td>20</td>
+<td>30</td>
+<td>40</td>
+</tr>
+<tr>
+<td>first_true(value &lt;= element)</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>first_true(value &lt; element)</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>lb</td>
+<td></td>
+<td></td>
+<td>ub</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="first-true-first-false">first true와 first false와의 관계는 역이다<a class="headerlink" href="#first-true-first-false" title="Permanent link">#</a></h2>
+<p><code>std::lower_bound</code>의 예제를 보자면, <code>value &lt;= element</code>를 만족하는 첫번째 <code>element</code>를 찾는 문제였다. 이것을 뒤집으면 <code>element &lt; value</code>가 되는데, 이분탐색의 결과가 완전히 뒤집히는 것을 볼 수 있다. 따라서 여기에서 <code>lower_bound</code>를 찾기 위해선 첫번째로 나타나는 <code>False</code>를 찾아야 할 것이다.</p>
+<p>위의 예제와 같이 <code>value = 20</code>일 때 각각 first_true와 first_false를 찾아보자</p>
+<ul>
+<li><code>lower_bound</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
 <th>10</th>
 <th>20</th>
 <th>20</th>
@@ -766,12 +826,58 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td>lower_bound</td>
-<td></td>
-<td></td>
-<td>upper_bound</td>
-<td></td>
+<td>first_true(value &lt;= element)</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>first_false(element &lt; value)</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>upper_bound</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>10</th>
+<th>20</th>
+<th>20</th>
+<th>20</th>
+<th>30</th>
+<th>40</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>first_true(value &lt; element)</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>first_false(element &lt;= value)</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
 </tr>
 </tbody>
 </table>
@@ -789,11 +895,10 @@
     <span class="n">r</span> <span class="o">=</span> <span class="n">end</span>
     <span class="k">while</span> <span class="n">l</span> <span class="o">!=</span> <span class="n">r</span> <span class="p">:</span>
         <span class="n">m</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># overflow 방지</span>
-        <span class="k">match</span> <span class="n">pred</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-            <span class="n">case</span> <span class="kc">True</span><span class="p">:</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="n">m</span> 
-            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-                <span class="n">l</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">pred</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">m</span> 
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">l</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
@@ -851,8 +956,6 @@
 <p>$$
 x_1 \lt x_2\ f(x_1)=\text{True} \Rightarrow f(x_2)=\text{True}
 $$</p>
-<h1 id="_2">관련 문제<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
-<p><a href="lower%20upper%20bound%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%B5%E1%84%80%E1%85%A9%20parametric%20search%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5%20e7e3716351934d7fbeda02ca26c70f53/%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B3%20a1ff095ad95e4e3080163c7eed2d1517.csv">제목 없는 데이터베이스</a></p>
 <h1 id="legacy">Legacy<a class="headerlink" href="#legacy" title="Permanent link">#</a></h1>
 <p>lowerbound는 정렬된 리스트에서 찾고자 하는 검색키보다 “작지 않은” 원소들 중 첫번째 원소를 가리킨다. 대표적으로 C++의 std::lowerbound 가 있다. 반대로 upperbound라는 개념도 있는데, 얘는 검색키보다 “큰” 원소들 중에서 첫번째 원소를 가리킨다. 즉, equal한 원소를 포함하지 않는다.</p>
 <p>lowerbound는 어느 상황에서 쓰이는가? 바로 중간에 원소를 삽입할 일이 있을 때 요긴하게 사용된다. lowerbound는 새 key값을 삽입해야 하는 상황에서 바로 리스트에 집어넣을 인덱스를 리턴하기 때문에 유용하다.</p>
