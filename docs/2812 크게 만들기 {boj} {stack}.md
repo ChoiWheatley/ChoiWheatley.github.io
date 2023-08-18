@@ -4,7 +4,7 @@ tags:
 description:
 title: 2812 크게 만들기 {boj} {stack}
 created: 2023-08-18T16:11:30
-updated: 2023-08-18T16:14:27
+updated: 2023-08-18T16:14:59
 ---
 <https://www.acmicpc.net/problem/2812>
 
@@ -33,7 +33,7 @@ print(sol(n, k))
 
 ## `str`, `int` 형변환에서 시간을 많이 잡아먹는다.
 
-위의 코드는 input할 때 한 번, `sol` 함수 루프 돌 때 한 번, 리턴할 때 N번 형변환을 수행한다. 이 부분을 모두 덜어내니 바로 1832ms에서 220ms로 확 줄었다. 아래는 형변환 없이 통과한 코드이다.
+위의 코드는 input할 때 한 번, `sol` 함수 루프 돌 때 한 번, 리턴할 때 N번 형변환을 수행한다. 리턴을 제외한 부분들을 모두 덜어내니 바로 1832ms에서 220ms로 확 줄었다. 아래는 형변환 없이 통과한 코드이다.
 
 ```python
 def sol(n: str, k: int) -> str:
