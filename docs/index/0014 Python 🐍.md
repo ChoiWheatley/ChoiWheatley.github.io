@@ -111,6 +111,7 @@ title: 0014 Python 🐍
 - [[`__init_subclass__` Forward declaration of classes {python}]]
 - [[python은 분기예측을 하는가 {sof}]]
 - [[for else {python}]]
+- [[catch multiple exceptions in {python}]]
 
 ---
 
