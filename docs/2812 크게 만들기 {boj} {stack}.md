@@ -4,7 +4,7 @@ tags:
 description:
 title: 2812 크게 만들기 {boj} {stack}
 created: 2023-08-18T16:11:30
-updated: 2023-08-18T16:14:59
+updated: 2023-08-18T16:15:36
 ---
 <https://www.acmicpc.net/problem/2812>
 

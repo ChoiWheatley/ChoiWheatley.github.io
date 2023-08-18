@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-17T15:52:52
+updated: 2023-08-18T16:15:48
 ---
 
 ## INDEX
@@ -92,4 +92,4 @@ ___
 
 ### 문제풀이
 
-- [[2812 크게 만들기 {boj} {stack}]]
+- [[2812 크게 만들기 {boj} {stack}]] -> int, str 형변환을 자주 하지 말자
