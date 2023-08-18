@@ -4,7 +4,7 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-08-18T10:28:50
+updated: 2023-08-18T15:09:30
 ---
 
 # lower/upper bound 그리고 parametric search까지
@@ -48,6 +48,10 @@ updated: 2023-08-18T10:28:50
 | ----------------------------- | --- | --- | --- | --- | --- | --- |
 | first_true(value < element)   | F   | F   | F   | F   | T   | T   |
 | first_false(element <= value) | T   | T   | T   | T   | F   | F   |
+
+## whiteboard
+
+![[lowerbound and upperbound.jpg]]
 
 # 구현방법
 
