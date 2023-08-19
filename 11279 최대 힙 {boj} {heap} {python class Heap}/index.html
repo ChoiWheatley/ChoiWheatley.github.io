@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/week%2001~03%20%7Bswjungle%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/11279%20%EC%B5%9C%EB%8C%80%20%ED%9E%99%20%7Bboj%7D%20%7Bheap%7D%20%7Bpython%20class%20Heap%7D/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>week 01~03 {swjungle} - Choi Wheatley's Second Brain</title>
+        <title>11279 최대 힙 {boj} {heap} {python class Heap} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#index" class="md-skip">
+        <a href="#python-sourcecode" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              week 01~03 {swjungle}
+              11279 최대 힙 {boj} {heap} {python class Heap}
             
           </span>
         </div>
@@ -734,77 +734,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
-    INDEX
+  <a href="#python-sourcecode" class="md-nav__link">
+    python sourcecode
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    컴퓨팅사고로의 전환
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#week01" class="md-nav__link">
-    WEEK01
-  </a>
-  
-    <nav class="md-nav" aria-label="WEEK01">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    TIPS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    문제풀이
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#week02" class="md-nav__link">
-    WEEK02
-  </a>
-  
-    <nav class="md-nav" aria-label="WEEK02">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#doit" class="md-nav__link">
-    Doit!
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tips_1" class="md-nav__link">
-    TIPS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    문제풀이
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -823,108 +755,105 @@
                   
 
 
-  <h1>week 01~03 {swjungle}</h1>
+  <h1>11279 최대 힙 {boj} {heap} {python class Heap}</h1>
 
-<h2 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html">swjungle 정보페이지</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0">문제모음집</a><ul>
-<li><a href="https://docs.google.com/spreadsheets/d/1G0WlH6y9V1RL09KuCbqwM-E57b5xTaIL9HiaQ2ZIvJs/edit?usp=sharing">문제모음집{개인}</a></li>
-</ul>
-</li>
-<li><a href="https://github.com/ChoiWheatley/swjungle-week-01">swjungle-week-01 {GH}</a></li>
-<li><a href="https://github.com/SWJungle/P7-Week01-03">P7-Week01-03 목요일 시험 문제 답안 제출용 리포지토리 {GH}</a></li>
-<li><a href="../Doit%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80%20%ED%95%A8%EA%BB%98%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%8E%B8/">Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편</a></li>
-</ul>
-<h2 id="_1">컴퓨팅사고로의 전환<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>개발자는 컴퓨터에게 일을 잘 시켜야 한다. 그럼 일을 잘 시킨다는 건 뭐임? </p>
-<ul>
-<li>Halting Problem: 컴퓨터가 답을 내게 만들어야 함 (멈춰야 함.) 무한루프는 생각보다 치명적인 에러임 이미 컴퓨터가 풀 수 있는 문제들을 여러분에게 주어지고 그 문제를 풀 능력을 기르는 것이 이번 주차의 목표.</li>
-</ul>
-<p>백준문제 풀기: 키워드 위주로. 기초문제는 오늘 안에로 다 풀어주시고. 파이썬 언어로 풀기를 바람</p>
-<p><mark>시험</mark></p>
-<ul>
-<li>매주 목요일 오전 10:00 ~ 11:30</li>
-<li>깃헙에 풀 리퀘스트를 생성하여 제출.</li>
-<li>풀이를 리뷰할 사람을 정해 코드리뷰.</li>
-</ul>
-<h2 id="week01">WEEK01<a class="headerlink" href="#week01" title="Permanent link">#</a></h2>
-<ul>
-<li>[x] <a href="../Daily%20Notes/2023-08-12%20SWJUNGLE%20%EC%9E%85%EC%84%B1%20%ED%9B%84%20%EC%93%B0%EB%8A%94%20%EC%B2%AB%20%EB%8D%B0%EC%9D%BC%EB%A6%AC%20%EB%B8%8C%EB%A6%AC%ED%95%91/">블로그를 하나 만들어 에세이를 작성하시오. ~= 12일 자정까지</a></li>
-</ul>
-<h3 id="tips">TIPS<a class="headerlink" href="#tips" title="Permanent link">#</a></h3>
-<p><a href="../index/0014%20Python%20%F0%9F%90%8D/">0014 Python 🐍</a>으로 옮겨적을것</p>
-<hr />
-<ul>
-<li><a href="../20230501%20estsoft%20-%20python%20-%20convention%2C%20types%2C%20variables%2C%20int%2C%20float/">floating point formatting</a></li>
-<li><a href="../iterator%EB%A5%BC%20%EA%BA%BC%EB%82%B4%20%EB%AC%B8%EC%9E%90%EC%97%B4%EB%A1%9C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B0%A9%EB%B2%95%7Bsof%7D/">iterator를 꺼내 문자열로 만드는 방법{sof}</a></li>
-<li><a href="../lower%20bound%20with%20bisect_left%20%28python%29/">lower bound with bisect_left (python)</a></li>
-<li><a href="../20230517%20estsoft%20-%20python%20-%20linked%20list%20-%20dataclass%20-%20typing%20Self%20cast%20type%20union%20-%20__getitem__%20-%20slice.indices/">colon slicing</a> boj 2588</li>
-<li><code>my_single_element_tuple = 1,</code></li>
-<li><code>this_is_not_a_tuple = (1)</code></li>
-<li>[?] <code>a, b = [1, 2, 3, 4]</code> =&gt; 오류남 참조할 곳이 없게 되어서. None과 null의 차이가 뭐냐?<ul>
-<li>리턴문이 없는 함수는 None을 리턴하는데, 왜 쟤네들은 에러냐?</li>
-</ul>
-</li>
-</ul>
-<h3 id="_2">문제풀이<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
-<p><a href="../index/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/#문제풀이-회고용">0011 Algorithms ♾️#문제풀이 회고용</a> 페이지에 추가할 것</p>
-<ul>
-<li>
-<p><a href="https://github.com/ChoiWheatley/swjungle-week-01">swjungle-week-01 {GH}</a>를 참고하세요. 문제푼것들, 교재 실습한 것들 코드 위주로 올라갑니다. </p>
-</li>
-<li>
-<p>[ ] [[next_permutation 구현#일곱 난쟁이]] 직접 next_permutation 구현해 볼 것</p>
-</li>
-<li>[x] <a href="../10819%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EC%B5%9C%EB%8C%80%EB%A1%9C%20%7Bboj%7D%20%7Bpermutation%7D/">10819 차이를 최대로 {boj} {permutation}</a></li>
-<li>[x] <a href="../10927%20%EC%99%B8%ED%8C%90%EC%9B%90%20%EC%88%9C%ED%9A%8C%202%20%7Bboj%7D%20%7B%EC%99%84%EC%A0%84%ED%83%90%EC%83%89%7D/">10927 외판원 순회 2 {boj} {완전탐색}</a></li>
-<li>[x] <a href="../1629%20%EA%B3%B1%EC%85%88%20%7Bboj%7D%20%7Bmodular%20exponentiation%7D%20%7B%EB%82%98%EB%A8%B8%EC%A7%80%20%EC%A7%80%EC%88%98%EC%8A%B9%7D/">1629 곱셈 {boj} {modular exponentiation} {나머지 지수승}</a></li>
-<li>[ ] <a href="../10830%20%ED%96%89%EB%A0%AC%EC%A0%9C%EA%B3%B1%20%7Bboj%7D/">10830 행렬제곱 {boj}</a> 행렬 대각화 사용하여 풀어볼 것</li>
-<li>[x] <a href="../2805%20%EB%82%98%EB%AC%B4%EC%9E%90%EB%A5%B4%EA%B8%B0%20%7Bboj%7D/">2805 나무자르기 {boj}</a></li>
-<li>[ ] <a href="../2110%20%EA%B3%B5%EC%9C%A0%EA%B8%B0%20%EC%84%A4%EC%B9%98%20%7Bboj%7D%20%7Bparametric%20search%7D/">2110 공유기 설치 {boj} {parametric search}</a></li>
-</ul>
-<h2 id="week02">WEEK02<a class="headerlink" href="#week02" title="Permanent link">#</a></h2>
-<ul>
-<li>스택, 큐, 우선순위큐, 그래프(vertex, edge, node, arc), BFS, DFS, 위상정렬</li>
-<li>읽어야 할 단원<ul>
-<li>4-1 스택</li>
-<li>4-2 큐</li>
-<li>6-8 힙 정렬</li>
-<li>9-1 트리</li>
-<li>9-2 이진트리와 이진검색트리</li>
-</ul>
-</li>
-<li>CSAPP<ul>
-<li>1.5 캐시가 중요하다</li>
-<li>1.6 ?</li>
-<li>1.7 운영체제는 하드웨어를 관리한다</li>
-</ul>
-</li>
-</ul>
-<h3 id="doit">Doit!<a class="headerlink" href="#doit" title="Permanent link">#</a></h3>
-<p><a href="../Doit%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80%20%ED%95%A8%EA%BB%98%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%8E%B8/#chapter04-스택과-힙">Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편#Chapter04 스택과 힙</a></p>
-<h3 id="tips_1">TIPS<a class="headerlink" href="#tips_1" title="Permanent link">#</a></h3>
-<ul>
-<li><code>Exception</code>을 상속하는 클래스는 <code>raise</code>가 가능해지는구나 <mark>p.157</mark></li>
-<li><code>try</code> - <code>except</code> - <code>else</code> - <code>finally</code> <ul>
-<li><code>try</code>: 원래 처리할 내용</li>
-<li><code>except</code>: 예상 에러 발생시 처리할 내용</li>
-<li><code>else</code>: 에러 미발생시 처리할 내용</li>
-<li><code>finally</code>: 심지어 중간에 리턴을 했을지라도 에러 발생여부 상관없이 무조건 실행하는 내용</li>
-</ul>
-</li>
-<li><code>BaseException</code>과 <code>Exception</code> 간의 차이</li>
-<li><code>__contains__</code>: <code>in</code> 문법 사용 가능</li>
-</ul>
-<h3 id="_3">문제풀이<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
-<ul>
-<li><a href="../2812%20%ED%81%AC%EA%B2%8C%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20%7Bboj%7D%20%7Bstack%7D/">2812 크게 만들기 {boj} {stack}</a> -&gt; int, str 형변환을 자주 하지 말자</li>
-<li><a href="../18258%20%ED%81%90%202%20%7Bboj%7D%20%7Bqueue%7D/">18258 큐 2 {boj} {queue}</a></li>
-<li><a href="../11279%20%EC%B5%9C%EB%8C%80%20%ED%9E%99%20%7Bboj%7D%20%7Bheap%7D%20%7Bpython%20class%20Heap%7D/">11279 최대 힙 {boj} {heap} {python class Heap}</a></li>
-<li><a href="../1655%20%EA%B0%80%EC%9A%B4%EB%8D%B0%EB%A5%BC%20%EB%A7%90%ED%95%B4%EC%9A%94%20%7Bboj%7D%20%7Bheapq%7D/">1655 가운데를 말해요 {boj} {heapq}</a></li>
-<li>[[1715 카드 정렬하기 {boj}]] →수열을 더하는데 괄호를 어디에 배치하느냐에 따라 달라지는 결과값 중 최소를 구하는 문제인듯</li>
-<li>[[13334 철로 {boj}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?</li>
-</ul>
+<p><a href="https://www.acmicpc.net/problem/11279">https://www.acmicpc.net/problem/11279</a></p>
+<p><a href="../Heap/">Heap</a></p>
+<h2 id="python-sourcecode">python sourcecode<a class="headerlink" href="#python-sourcecode" title="Permanent link">#</a></h2>
+<p>파이썬으로 직접 힙 클래스와 비교자를 구현해서 문제를 풀었다. 사실 이 코드는 <a href="../1181%20%EB%8B%A8%EC%96%B4%20%EC%A0%95%EB%A0%AC%20%7Bboj%7D%20source%20code%20%7Bpython%7D%20%7Bheap%7D/">1181 단어 정렬 {boj} source code {python} {heap}</a> 에서 가져온 거임</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Generic</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">TypeVar</span>
+
+
+<span class="k">class</span> <span class="nc">Comparable</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># 제네릭 T 타입은 반드시 구현하여야 하는 메서드</span>
+        <span class="o">...</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Comparable</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Heap</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;완전이진트리로 구현된 힙. 인덱스는 보기 편하게 1부터 시작합니다. `__lt__`를 기준으로 minheap을 구축합니다.&quot;&quot;&quot;</span>
+
+    <span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">left</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">right</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">()]</span>  <span class="c1"># 0번 인덱스는 사용안함</span>
+
+    <span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">parent</span> <span class="o">=</span> <span class="n">Heap</span><span class="o">.</span><span class="n">parent</span>
+
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+        <span class="c1"># bubble up</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)]:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)],</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">parent</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;루트 원소를 삭제하고 힙으로 다시 만든다&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span>
+
+        <span class="c1"># get last element root and bubble down</span>
+        <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">next_idx</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="c1"># right에 데이터가 없고 left가 마지막인 경우</span>
+                <span class="n">next_idx</span> <span class="o">=</span> <span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># 아래에 얼마나 더 내려가야 하는지 모르는 상황 → minheap 기준으로 작은 놈을 올려보내는 것이 상식</span>
+                <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">right</span><span class="p">(</span><span class="n">idx</span><span class="p">)]:</span>
+                    <span class="n">next_idx</span> <span class="o">=</span> <span class="n">left</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">next_idx</span> <span class="o">=</span> <span class="n">right</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">next_idx</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span>
+                <span class="c1"># DO bubble down</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">next_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">next_idx</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># end bubble down</span>
+                <span class="k">break</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">next_idx</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
 
 
 
