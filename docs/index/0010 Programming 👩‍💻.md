@@ -32,6 +32,7 @@ parent link: [[docs/index/index|index]]
 - git 관련
 	- [[get fetch --prune]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
+- [[ssh into WSL2 & vs-code]]
 
 ---
 
