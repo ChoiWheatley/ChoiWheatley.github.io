@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/heap ", algo/heap]
 date created: Friday, February 10th 2023, 11:39:15 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-14T23:34:58
+updated: 2023-08-19T13:14:02
 ---
 parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]
 
@@ -27,7 +27,8 @@ parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]
 - [x] [[No. 24 - 보급로]]
 - [x] [[No. 25 중간값 구하기]]
 - [ ] [[No. 27 Social Media]]
-
+- [ ] [[1181 단어 정렬 {boj} source code {python} {heap}]]
+- [ ] [[11279 최대 힙 {boj} {heap} {python class Heap}]]
 
 ___
 
