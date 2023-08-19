@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/1715%20%EC%B9%B4%EB%93%9C%20%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0%20%7Bboj%7D/</loc>
+         <lastmod>2023-08-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/18258%20%ED%81%90%202%20%7Bboj%7D%20%7Bqueue%7D/</loc>
          <lastmod>2023-08-19</lastmod>
          <changefreq>daily</changefreq>
@@ -3042,6 +3047,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/sort%20-%20sorted%20-%20key%20-%20index%20%EC%B6%94%EC%A0%81%20-%20python/</loc>
+         <lastmod>2023-08-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/ssh%20into%20WSL2%20%26%20vs-code/</loc>
          <lastmod>2023-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
