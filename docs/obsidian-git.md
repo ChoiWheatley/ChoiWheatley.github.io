@@ -4,7 +4,7 @@ tags:
 description:
 title: obsidian-git
 created: 2023-07-23T15:58:09
-updated: 2023-07-24T20:31:39
+updated: 2023-08-20T02:38:17
 ---
 - [obsidian-git](https://github.com/denolehov/obsidian-git)
 
