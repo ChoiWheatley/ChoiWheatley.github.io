@@ -5,10 +5,10 @@ tags:
 date created: Friday, February 10th 2023, 9:37:24 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-10T21:37:24
-updated: 2023-07-15T21:33:04
+updated: 2023-08-19T13:33:41
 title: No. 25 중간값 구하기
 ---
-[No. 25 중간값 구하기](https://swexpertacademy.com/main/talk/codeBattle/problemDetail.do?contestProbId=AV-fO0s6ARoDFAXT&categoryId=AYWab_JKjkwDFAQK&categoryType=BATTLE&battleMainPageIndex=1)
+[No. 25 중간값 구하기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV-fO0s6ARoDFAXT)
 
 ___
 
