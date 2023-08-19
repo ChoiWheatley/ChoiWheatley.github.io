@@ -29,6 +29,7 @@ parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]
 - [ ] [[No. 27 Social Media]]
 - [ ] [[1181 단어 정렬 {boj} source code {python} {heap}]]
 - [ ] [[11279 최대 힙 {boj} {heap} {python class Heap}]]
+- [ ] [[1655 가운데를 말해요 {boj} {heapq}]]
 
 ___
 
