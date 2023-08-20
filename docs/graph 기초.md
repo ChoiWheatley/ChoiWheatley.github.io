@@ -1,6 +1,6 @@
 ---
 description:
-title: graph 기초 29f71a5029ec4983b6adb834e17c137a
+title: graph 기초
 created: 2023-02-13T06:16:26
 categories: 
  - 알고리즘
@@ -12,7 +12,7 @@ aliases:
 tags: [" algo/graph  ", algo/graph]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:05
+updated: 2023-08-20T14:57:24
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -60,7 +60,7 @@ parent link: [[0011 Algorithms ♾️]]
         }
         ```
 
-        ![Untitled](graph%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%2029f71a5029ec4983b6adb834e17c137a/Untitled.png)
+	![[Untitled(3).png]]
         
     - 1차원 벡터로 구현
         
@@ -81,13 +81,13 @@ parent link: [[0011 Algorithms ♾️]]
         }
         ```
 
-        ![Untitled](graph%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%2029f71a5029ec4983b6adb834e17c137a/Untitled%201.png)
+        ![[Untitled(4).png]]
         
 - 인접리스트 : 정점마다 해당 정점으로부터 나가는 간선의 정보를 저장.
     - 간선의 개수가 적은 경우 유용. 모든 인덱스를 링크드 리스트형식으로 저장.
     - 한 정점에서 특정 정점으로 가야 할 때 하나씩 살펴봐야 한다는 단점.
         
-        ![Untitled](graph%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%2029f71a5029ec4983b6adb834e17c137a/Untitled%202.png)
+        ![[Untitled.png]]
         
     - 배열을 사용한 인접리스트
         
@@ -107,11 +107,11 @@ parent link: [[0011 Algorithms ♾️]]
         }
         ```
 
-        ![nodes](graph%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%2029f71a5029ec4983b6adb834e17c137a/Untitled%203.png)
+        ![[Untitled(1).png]]
         
         nodes
         
-        ![head](graph%20%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9%2029f71a5029ec4983b6adb834e17c137a/Untitled%204.png)
+        ![[Untitled(2).png]]
         
         head
         

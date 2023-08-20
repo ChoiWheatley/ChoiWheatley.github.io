@@ -51,7 +51,7 @@ ___
 ---
 
 - [[Heap]]
-- [[graph 기초 29f71a5029ec4983b6adb834e17c137a|graph]]
+- [[graph 기초|graph]]
 - [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
 - [[kmp f159c2f6b506459995d832281de0d949|kmp]]
