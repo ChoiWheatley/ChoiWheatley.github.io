@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-13T23:01:51
+updated: 2023-08-20T22:03:39
 ---
 parent link: [[docs/index/index]] [[0010 Programming 👩‍💻]] 
 
@@ -55,9 +55,9 @@ ___
 - [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
 - [[kmp f159c2f6b506459995d832281de0d949|kmp]]
-- [[tree 기초 6387549a21a74a839a06e287954d208b|tree]]
-- [[이분탐색을 활용한 lowerbound 구현법 {Algo}|이분탐색을 활용한 lowerbound 구현법 {Algo}]]
+- [[tree 기초|tree]]
 - [[next_permutation 구현|next permutation 구현]]
+- [[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
 - [[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812|LIS]]
 - [[LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58|LCS]]
 - [[종만북 카라츠바 알고리즘 정답편 + 포스팅ᄋ 5bb97600d3b94c38b1050e1cb4ee3c4e|카라츠바 알고리즘 정답편]]

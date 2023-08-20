@@ -199,3 +199,8 @@ $$
 
 ## Chapter04 스택과 힙
 
+
+## Chapter09 트리
+
+[[tree 기초]]
+[[graph 기초]]

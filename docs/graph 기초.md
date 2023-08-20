@@ -12,7 +12,7 @@ aliases:
 tags: [" algo/graph  ", algo/graph]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-20T14:57:24
+updated: 2023-08-20T22:13:36
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -202,3 +202,15 @@ parent link: [[0011 Algorithms ♾️]]
     알아둘 점: visited를 설정하는 타이밍이 실제 방문을 했을 때가 아닌, queue에 넣었을 때라는 것을 기억하자. dfs는 스택에 중복된 원소를 넣을 수밖에 없었는데, 그 이유는 훨씬 전에 넣었던 원소가 언제 pop 할지 알 수 없었기 때문. 하지만 bfs는 중복 원소를 넣을 필요 없이 언제 그 원소가 dequeue되는지 알 수 있다.
     
     bfs는 가중치 없는 그래프에서는 경로의 길이를 구할 수 있다는 특징이 있다.  다른 정점을 한 번씩 방문할 때마다 dist 배열의 정점번호에 인접한 인덱스의 값 + 1 해주기만 하면 된다. `dist[next] = dist[curr] + 1` 이러면 dist는 시작노드로부터 모든 노드까지 이어지는 길이를 갖게 된다.
+
+# 신장트리 (spanning tree)
+
+> 신장트리는 무방향 그래프 G의 정점을 모두 포함하고 최소 간선수를 갖는 서브그래프를 의미한다
+
+신장트리를 만드는 법은 여러가지가 있다. 먼저 사이클을 일으키는 간선을 제거하는 방법이 있고, DFS, BFS를 순회하며 신장트리를 만드는 방법이 있다. 
+
+## 최소신장트리 (minimum spanning tree)
+
+> 최소신장트리는 가중치합이 최소가 되도록 만든 신장트리이다
+
+대표적으로 [[prim algorithm과 kruskal algorithm {Minimum Spanning Tree}]]이 있다.
