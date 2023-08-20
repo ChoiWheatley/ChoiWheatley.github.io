@@ -1,0 +1,8 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "showFrontmatter": true,
+  "autoPairBrackets": false,
+  "autoPairMarkdown": false,
+  "useTab": true
+}
