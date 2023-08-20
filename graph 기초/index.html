@@ -1,0 +1,977 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="site_description">
+      
+      
+        <meta name="author" content="you">
+      
+      
+        <link rel="canonical" href="https://choiwheatley.github.io/graph%20%EA%B8%B0%EC%B4%88/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>graph 기초 - Choi Wheatley's Second Brain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#graph" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-header__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choi Wheatley's Second Brain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              graph 기초
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/" class="md-tabs__link">
+      INDEX
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Daily%20Notes/" class="md-tabs__link">
+      Daily Notes
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0005%20Archieve%20%F0%9F%92%BE/" class="md-tabs__link">
+      0005 Archieve 💾
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0010%20Programming%20%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB/" class="md-tabs__link">
+      0010 Programming 👩‍💻
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/" class="md-tabs__link">
+      0011 Algorithms ♾️
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0012%20Career%20%F0%9F%92%BC/" class="md-tabs__link">
+      0012 Career 💼
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/" class="md-tabs__link">
+      0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0013%20Rust%20%F0%9F%A6%80/" class="md-tabs__link">
+      0013 Rust 🦀
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0014%20Python%20%F0%9F%90%8D/" class="md-tabs__link">
+      0014 Python 🐍
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0014.1%20Django%20%F0%9F%8E%88/" class="md-tabs__link">
+      0014.1 Django 🎈
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0020%20Games%20%F0%9F%8E%AE/" class="md-tabs__link">
+      0020 Games 🎮
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0030%20Health%20%F0%9F%92%AA/" class="md-tabs__link">
+      0030 Health 💪
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0031%20Emotions%20%F0%9F%A4%94/" class="md-tabs__link">
+      0031 Emotions 🤔
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0070%20Obsidian%20%F0%9F%92%8E/" class="md-tabs__link">
+      0070 Obsidian 💎
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0080%20Scraps%20%F0%9F%93%9A/" class="md-tabs__link">
+      0080 Scraps 📚
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0090%20Bucket%20Lists%20%F0%9F%AA%A3/" class="md-tabs__link">
+      0090 Bucket Lists 🪣
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0100%20English%20%F0%9F%91%BB/" class="md-tabs__link">
+      0100 English 👻
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0110%20Utility%20%F0%9F%94%A7/" class="md-tabs__link">
+      0110 Utility 🔧
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../index/0120%20swjungle%20%F0%9F%A4%96/" class="md-tabs__link">
+      0120 swjungle 🤖
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choi Wheatley&#39;s Second Brain" class="md-nav__button md-logo" aria-label="Choi Wheatley's Second Brain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Choi Wheatley's Second Brain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/" class="md-nav__link">
+        INDEX
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/" class="md-nav__link">
+        Daily Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0005%20Archieve%20%F0%9F%92%BE/" class="md-nav__link">
+        0005 Archieve 💾
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0010%20Programming%20%F0%9F%91%A9%E2%80%8D%F0%9F%92%BB/" class="md-nav__link">
+        0010 Programming 👩‍💻
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/" class="md-nav__link">
+        0011 Algorithms ♾️
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0012%20Career%20%F0%9F%92%BC/" class="md-nav__link">
+        0012 Career 💼
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/" class="md-nav__link">
+        0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0013%20Rust%20%F0%9F%A6%80/" class="md-nav__link">
+        0013 Rust 🦀
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0014%20Python%20%F0%9F%90%8D/" class="md-nav__link">
+        0014 Python 🐍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0014.1%20Django%20%F0%9F%8E%88/" class="md-nav__link">
+        0014.1 Django 🎈
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0020%20Games%20%F0%9F%8E%AE/" class="md-nav__link">
+        0020 Games 🎮
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0030%20Health%20%F0%9F%92%AA/" class="md-nav__link">
+        0030 Health 💪
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0031%20Emotions%20%F0%9F%A4%94/" class="md-nav__link">
+        0031 Emotions 🤔
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0070%20Obsidian%20%F0%9F%92%8E/" class="md-nav__link">
+        0070 Obsidian 💎
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0080%20Scraps%20%F0%9F%93%9A/" class="md-nav__link">
+        0080 Scraps 📚
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0090%20Bucket%20Lists%20%F0%9F%AA%A3/" class="md-nav__link">
+        0090 Bucket Lists 🪣
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0100%20English%20%F0%9F%91%BB/" class="md-nav__link">
+        0100 English 👻
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0110%20Utility%20%F0%9F%94%A7/" class="md-nav__link">
+        0110 Utility 🔧
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index/0120%20swjungle%20%F0%9F%A4%96/" class="md-nav__link">
+        0120 swjungle 🤖
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>parent link: <a href="../index/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/">0011 Algorithms ♾️</a></p>
+<hr />
+<h1 id="graph">graph 기초<a class="headerlink" href="#graph" title="Permanent link">#</a></h1>
+<p>상태: 정리완료<br />
+태그: graph</p>
+<p>그래프는 엔티티와 그들 사이의 연결관계를 표현한다. 정점의 집합과 이들을 연결하는 간선의 집합으로 표현이 가능하며, 여러가지 표현의 방법이 있다. </p>
+<h1 id="_1">그래프의 종류<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<ul>
+<li>방향성이 없는 그래프 (무향 그래프) == 어디로든 갈 수 있다.</li>
+<li>방향성이 있는 그래프 (유향 그래프) == 반대로는 갈 수 없다.</li>
+<li>가중치 그래프 == 노드에서 노드로 간선을 따라 이동할 때 소요되는 비용</li>
+<li>사이클이 있는 그래프 == 한 노드에서 시작해 자기 자신으로 돌아올 수 있다면 사이클이 있다.</li>
+<li>사이클이 없는 그래프 == 모든 노드에 대하여 사이클이 존재하지 않는다면 사이클이 없다고 표현할 수 있다.</li>
+<li>완전 그래프 == 정점들에 대해 가능한 모든 간선을 가진 그래프</li>
+<li>부분 그래프 == 원래 그래프에서 일부 정점이나 간선을 제외한 그래프</li>
+</ul>
+<h1 id="_2">용어정리<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
+<ul>
+<li>인접 (Adjacency) == 두 개의 정점에 간선이 존재하다.</li>
+<li>경로 == 간선을 순서대로 나열 OR 정점을 순서대로 나열<ul>
+<li>단순경로 == 같은 정점이 경로 안에 두 번 출현하지 않는 경로 == 사이클이 없다는 뜻.</li>
+<li>사이클 == 시작한 정점에서 끝나는 경로</li>
+</ul>
+</li>
+</ul>
+<h1 id="_3">그래프 표현방법<a class="headerlink" href="#_3" title="Permanent link">#</a></h1>
+<ul>
+<li>
+<p>인접행렬 : 모든 정점에 대한 이차원 행렬을 가지고 가중치가 없으면 불리언, 있으면 정수형으로 저장</p>
+<ul>
+<li>두 정점의 번호를 각각 행 번호, 열 번호에 할당. (n,m)에 인접해 있지 않다면 false 혹은 ♾️ 를 저장</li>
+<li>방향성이 없는 경우 대칭행렬이 될 수밖에 없다.</li>
+<li>정점의 번호들의 인덱스만 가지고 바로 알 수 있기 때문에 코드가 간결.</li>
+<li>불필요한 공간낭비가 발생할 수 있다는 단점.</li>
+<li>
+<p>2차원 벡터로 구현</p>
+<p>매우 직관적으로 코딩할 수 있지만 벡터 특성상 오버헤드가 발생하고 동적으로 생성한 데이터가 파편화 되어 캐시 효율이 떨어진다는 단점 존재.</p>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">graph</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">edges</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">graph</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<p><a class="glightbox" href="../assets/Untitled%283%29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Untitled(3).png" src="../assets/Untitled%283%29.png" /></a></p>
+<ul>
+<li>
+<p>1차원 벡터로 구현</p>
+<p>2차원 벡터의 모든 요소를 하나의 일차원 벡터(vertices)에 몰아넣었다. 어느 정점이 몇개의 인접노드를 갖고 있는지 파악하기 위해 out을 사용하고, 정점이 연결된 vertices 배열의 시작 인덱스를 알기 위해 prefix를 사용한다.</p>
+<p>[수정] outdegree는 리스트 생성 이후 전부 0으로 초기화 되는 것 같다. 따라서 각 정점과 연결된 노드의 개수를 알기 위해선 prefix[i+1] - prefix[i] 작업을 해야 한다. 사실 i번 정점의 인접 노드들 = [prefix[i], prefix[i+1]) 구간의 vertices만 알면 된다.</p>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">outdegree</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">prefix</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">vertices</span><span class="p">(</span><span class="n">edges</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">edges</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">++</span><span class="n">outdegree</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">partial_sum</span><span class="p">(</span><span class="n">outdegree</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">outdegree</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">prefix</span><span class="p">.</span><span class="n">begin</span><span class="p">()));</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">edges</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vertices</span><span class="p">[</span><span class="n">prefix</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">outdegree</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><a class="glightbox" href="../assets/Untitled%284%29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Untitled(4).png" src="../assets/Untitled%284%29.png" /></a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>인접리스트 : 정점마다 해당 정점으로부터 나가는 간선의 정보를 저장.</p>
+<ul>
+<li>간선의 개수가 적은 경우 유용. 모든 인덱스를 링크드 리스트형식으로 저장.</li>
+<li>
+<p>한 정점에서 특정 정점으로 가야 할 때 하나씩 살펴봐야 한다는 단점.</p>
+<p><a class="glightbox" href="../assets/Untitled.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Untitled.png" src="../assets/Untitled.png" /></a></p>
+</li>
+<li>
+<p>배열을 사용한 인접리스트</p>
+<p>nodes의 next는 포인터를 가리키는게 아니라 배열의 인덱스를 가리킨다는 점에 유의하자. 사실 어떻게 보면 그게 그거긴 함. 결국 가리킨다는 본질은 그대로니까. head[] 각 인덱스는 인접노드의 nodes[] 배열에 대한 시작 인덱스를 가리킨다. 그렇게 계속 next, next 따라 이동하다 마지막 인접노드의 next 는 항상 -1로 끝난다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">LinkedListNode</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">LinkedListNode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">nodes</span><span class="p">(</span><span class="n">edges</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">&gt;</span><span class="p">(</span><span class="n">edges</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
+<span class="w">    </span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">head</span><span class="p">[</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="p">];</span>
+<span class="w">    </span><span class="n">head</span><span class="p">[</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><a class="glightbox" href="../assets/Untitled%281%29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Untitled(1).png" src="../assets/Untitled%281%29.png" /></a></p>
+<p>nodes</p>
+<p><a class="glightbox" href="../assets/Untitled%282%29.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Untitled(2).png" src="../assets/Untitled%282%29.png" /></a></p>
+<p>head</p>
+</li>
+</ul>
+</li>
+<li>
+<p>간선의 배열 : 간선을 배열에 연속적으로 저장한 방법</p>
+</li>
+</ul>
+<h1 id="_4">그래프 탐색<a class="headerlink" href="#_4" title="Permanent link">#</a></h1>
+<ul>
+<li>
+<p>DFS : 한 방향으로 갈 수 있는 곳을 우선으로 끝까지 탐색. 인접 정점이 더 없는 경우 이전에 지나쳤던 곳으로 돌아와 다른 방향의 정점으로 탐색을 계속 반복.</p>
+<ul>
+<li>재귀 or 스택</li>
+<li>LIFO 가장 마지막에 넣은 자료가 가장 먼저 나온다.</li>
+<li>top := -1 사실 단순한 스택이라면 굳이 스택까지 만들 필요조차 없다.</li>
+<li>push(), pop(), peek(), empty()</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">MAX_N</span><span class="p">][</span><span class="n">MAX_N</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">stack</span><span class="p">[</span><span class="n">STACK_SIZE</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">visited</span><span class="p">[</span><span class="n">MAX_N</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
+<span class="w">    </span><span class="n">top</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">stack</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span><span class="w"> </span><span class="c1">// push</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">top</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// is_empty</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">curr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">[</span><span class="n">top</span><span class="o">--</span><span class="p">];</span><span class="w"> </span><span class="c1">// pop</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">curr</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">visited</span><span class="p">[</span><span class="n">curr</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">next</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">next</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">[</span><span class="o">++</span><span class="n">top</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"> </span><span class="c1">// push</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>BFS : 시작점의 인접한 정점들을 먼저 차례로 방문한다. 그 뒤에 방문했던 정점으로부터 인접한 정점들을 차례로 방문한다.</p>
+<ul>
+<li>Queue</li>
+<li>FIFO 삽입된 원소 순서대로 나온다. (선입선출)</li>
+<li>front := -1, rear := -1 변수를 사용하여 구현.</li>
+<li>enqueue(), dequeue(), empty()</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">queue</span><span class="p">[</span><span class="n">QUEUE_SIZE</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">front</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">enqueue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rear</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">QUEUE_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">overflow</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">queue</span><span class="p">[</span><span class="o">++</span><span class="n">rear</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">val</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">dequeue</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">front</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">rear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">반환할</span><span class="w"> </span><span class="n">게</span><span class="w"> </span><span class="n">없음</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">queue</span><span class="p">[</span><span class="o">++</span><span class="n">front</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>원형큐 : 배열기반 큐는 사용할수록 공간이 버려지는게 많다는 문제가 발생. 이를 해소하기 위해 배열의 끝을 처음과 연결함. <code>rear = (rear + 1) % QUEUE_SIZE</code> <code>front = (front + 1) % QUEUE_SIZE</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">MAX_N</span><span class="p">][</span><span class="n">MAX_N</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">queue</span><span class="p">[</span><span class="n">QUEUE_SIZE</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">front</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">rear</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">visited</span><span class="p">[</span><span class="n">MAX_N</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
+<span class="w">    </span><span class="n">front</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">visited</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">queue</span><span class="p">[</span><span class="o">++</span><span class="n">rear</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">front</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">rear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">curr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">[</span><span class="o">++</span><span class="n">front</span><span class="p">];</span>
+<span class="w">        </span><span class="n">do_something_with</span><span class="p">(</span><span class="n">curr</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">visited</span><span class="p">[</span><span class="n">next</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">graph</span><span class="p">[</span><span class="n">curr</span><span class="p">][</span><span class="n">next</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">visited</span><span class="p">[</span><span class="n">next</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// queue에 집어넣었으면 방문처리하는 것이 가능하다.</span>
+<span class="w">                </span><span class="n">queue</span><span class="p">[</span><span class="o">++</span><span class="n">rear</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>알아둘 점: visited를 설정하는 타이밍이 실제 방문을 했을 때가 아닌, queue에 넣었을 때라는 것을 기억하자. dfs는 스택에 중복된 원소를 넣을 수밖에 없었는데, 그 이유는 훨씬 전에 넣었던 원소가 언제 pop 할지 알 수 없었기 때문. 하지만 bfs는 중복 원소를 넣을 필요 없이 언제 그 원소가 dequeue되는지 알 수 있다.</p>
+<p>bfs는 가중치 없는 그래프에서는 경로의 길이를 구할 수 있다는 특징이 있다.  다른 정점을 한 번씩 방문할 때마다 dist 배열의 정점번호에 인접한 인덱스의 값 + 1 해주기만 하면 된다. <code>dist[next] = dist[curr] + 1</code> 이러면 dist는 시작노드로부터 모든 노드까지 이어지는 길이를 갖게 된다.</p>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

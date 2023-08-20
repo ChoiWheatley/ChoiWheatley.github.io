@@ -803,6 +803,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    다시 풀 문제
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -874,7 +881,7 @@
 <p><a href="https://github.com/ChoiWheatley/swjungle-week-01">swjungle-week-01 {GH}</a>를 참고하세요. 문제푼것들, 교재 실습한 것들 코드 위주로 올라갑니다. </p>
 </li>
 <li>
-<p>[ ] [[next_permutation 구현#일곱 난쟁이]] 직접 next_permutation 구현해 볼 것</p>
+<p>[ ] <a href="../next_permutation%20%EA%B5%AC%ED%98%84/#일곱-난쟁이">next_permutation 구현#일곱 난쟁이</a> 직접 next_permutation 구현해 볼 것</p>
 </li>
 <li>[x] <a href="../10819%20%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EC%B5%9C%EB%8C%80%EB%A1%9C%20%7Bboj%7D%20%7Bpermutation%7D/">10819 차이를 최대로 {boj} {permutation}</a></li>
 <li>[x] <a href="../10927%20%EC%99%B8%ED%8C%90%EC%9B%90%20%EC%88%9C%ED%9A%8C%202%20%7Bboj%7D%20%7B%EC%99%84%EC%A0%84%ED%83%90%EC%83%89%7D/">10927 외판원 순회 2 {boj} {완전탐색}</a></li>
@@ -898,6 +905,23 @@
 <li>1.5 캐시가 중요하다</li>
 <li>1.6 ?</li>
 <li>1.7 운영체제는 하드웨어를 관리한다</li>
+</ul>
+</li>
+<li>Day01: Stack<ul>
+<li><a href="https://github.com/ChoiWheatley/swjungle-week-02/pull/2">PR: 10828, 17608</a></li>
+</ul>
+</li>
+<li>Day02: Queue<ul>
+<li><a href="https://github.com/ChoiWheatley/swjungle-week-02/pull/8">PR: 17608, 10828, 2504, 2493, 2812, 18258, 2164 </a></li>
+</ul>
+</li>
+<li>Day03: PriorityQueue, Graph<ul>
+<li><a href="https://github.com/ChoiWheatley/swjungle-week-02/pull/11">PR1: 원 영역, 최대 힙</a></li>
+<li><a href="https://github.com/ChoiWheatley/swjungle-week-02/pull/13">PR2: 가운데를 말해요, 카드 정렬하기</a></li>
+</ul>
+</li>
+<li>Day04: DFS<ul>
+<li><a href="https://github.com/ChoiWheatley/swjungle-week-02/pull/15">PR</a></li>
 </ul>
 </li>
 </ul>
@@ -924,8 +948,22 @@
 <li><a href="../11279%20%EC%B5%9C%EB%8C%80%20%ED%9E%99%20%7Bboj%7D%20%7Bheap%7D%20%7Bpython%20class%20Heap%7D/">11279 최대 힙 {boj} {heap} {python class Heap}</a></li>
 <li><a href="../1655%20%EA%B0%80%EC%9A%B4%EB%8D%B0%EB%A5%BC%20%EB%A7%90%ED%95%B4%EC%9A%94%20%7Bboj%7D%20%7Bheapq%7D/">1655 가운데를 말해요 {boj} {heapq}</a></li>
 <li><a href="../1715%20%EC%B9%B4%EB%93%9C%20%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0%20%7Bboj%7D/">1715 카드 정렬하기 {boj}</a> →수열을 더하는데 괄호를 어디에 배치하느냐에 따라 달라지는 결과값 중 최소를 구하는 문제인듯</li>
+</ul>
+<h3 id="_4">다시 풀 문제<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<ul>
 <li>[[13334 철로 {boj}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?</li>
-<li></li>
+<li>11725(트리부모찾기): 멍청하게 10_000 ** 2 크기의 행렬을 생성하려고 했다.</li>
+<li>1707(이분그래프): 20분동안 문제를 다르게 바라보았다. 그래도 실마리는 찾은 것 같다.<br />
+    집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 <code>set.교집합()</code> 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임</li>
+<li>21606(아침산책): 73점, <ul>
+<li>Ai = 0인 케이스, Ai = 1인 i는 2개 이하인 케이스, N&lt;= 100인 케이스는 모두 맞추었으나</li>
+<li>1 &lt;= i &lt; N 인 모든 정수 i에 대해 트리의 i번 정점과 i+1번 정점 사이에 간선이 존재하는 경우 (35점)과 추가 제한조건 없는(92점) 케이스는 틀렸다.</li>
+</ul>
+</li>
+<li>2573(빙산): 시간초과<ul>
+<li>대충봐도 비효율적이긴 한데... 시간 안에 구현하려면 깊게 생각할 시간이 부족해지지 않나???</li>
+</ul>
+</li>
 </ul>
 
 

@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/">
+        <link rel="canonical" href="https://choiwheatley.github.io/LCS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EA%B3%B5%ED%86%B5%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20f0cc6bf4f3074b9d93505e0ab5062c58/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort - Choi Wheatley's Second Brain</title>
+        <title>LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58 - Choi Wheatley's Second Brain</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tree" class="md-skip">
+        <a href="#lcs" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort
+              LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58
             
           </span>
         </div>
@@ -729,21 +729,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    트리 구현
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -757,130 +742,67 @@
                   
 
 
-<h1 id="tree">Tree<a class="headerlink" href="#tree" title="Permanent link">#</a></h1>
-<blockquote>
-<p>Tree는 방향성이 없고 사이클이 없는 그래프를 지칭한다.</p>
-</blockquote>
+<h1 id="lcs">LCS 가장 긴 공통 부분수열<a class="headerlink" href="#lcs" title="Permanent link">#</a></h1>
+<p>상태: 풀이완료<br />
+태그: dp, string</p>
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr">최장공통부분수열 - swea</a> | <a href="https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열">wiki</a></p>
+<h1 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>Longest Common Sequence </p>
+<p>두 문자열이 주어졌을 때 —문자열도 결국 수열이니까— 두 문자열의 공통 부분수열 중 가장 긴 녀석의 길이를 찾아라.</p>
+<p>예를 들어 "acaykp"와 "capcak"의 경우, 두 문자열의 최대 공통 부분 수열은 "acak"로 길이가 4이다. 예시와 같이 공통부분”문자열”이 아니라 공통부분”수열”이라는 점 유의하고.</p>
+<h1 id="3-for">3중 for 문을 활용한 나의 방식<a class="headerlink" href="#3-for" title="Permanent link">#</a></h1>
 <ul>
-<li>depth에 대한 개념</li>
-<li>bin tree<ul>
-<li>saturated bin tree = every single node has exactly two children</li>
-<li>complete bin tree = all levels of nodes are filled except leaf nodes which are filled from the leftmost node. ==&gt; When you implement Binary Tree with array, You'll always get complete binary tree! 😆 </li>
+<li>memo[i] = s1의 i번째 인덱스까지의 LCS의 길이</li>
+<li>begin[i] = s2의 탐색을 시작할 인덱스</li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sol</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+    <span class="n">memo_prev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">start</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">.&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="o">..&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s1</span><span class="p">):</span>
+            <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">memo_prev</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="n">begin</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">..&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">s2</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">s1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">s2</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+                    <span class="n">begin</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+                    <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">memo_prev</span> <span class="o">=</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="k">break</span>
+</code></pre></div>
+<p>결과 = s1의 길이를 N, s2의 길이를 M이라고 했을 때 무려 $O(N^2M)$의 숫자가 나와버렸다. 두 문자열의 최대 길이는 1000이므로 1000^3 = 1’000’000’000이니 1초안에 못푼다. 따라서 다른 방법을 구해야 한다.</p>
+<h1 id="_2">접두어를 부분문제로 두고 푸는 위키의 설명<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
+<ul>
+<li>LCS(X,Y) = X와 Y의 LCS</li>
+<li>Xi = X의 i개의 접두어</li>
+<li>Yi = Y의 i개의 접두어</li>
+<li>xi = X의 i번째 문자</li>
+<li>yi = Y의 i번째 문자</li>
+</ul>
+<p>가장 작은 접두어는 당연히 빈 수열일테니, i = 0 or j = 0일때다. 따라서</p>
+<p>$$
+\text{LCS}(X_0,Y_i)<em i_le="i\le" size_X_="size(X)">{i\le size(Y)}=\empty\ \text{LCS}(X_i,Y_0)</em>=\empty
+$$</p>
+<p>부분문제 : </p>
+<ol>
+<li>
+<p>두 수열 Xn과 Ym이 같은 원소로 끝나는 경우</p>
+<p>마지막 원소 xn과 ym을 제거할 수 있다. 그리고 두 짧아진 문자열 Xn-1, Ym-1에 대한 LCS를 찾고 삭제한 원소를 뒤에 붙여주면 된다.</p>
+<p>$$
+\text{LCS}(X_n, Y_m) = \text{LCS}(X_{n-1},Y_{m-1}),x_n
+$$</p>
 </li>
-</ul>
-<h2 id="_1">트리 구현<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230518131309.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230518131309.png" src="../assets/Pasted%20image%2020230518131309.png" width="400" /></a></p>
-<p>제네릭 코드를 짜기 위해서 <a href="https://docs.python.org/3/library/typing.html#typing.TypeVar">typing.TypeVar</a>를 찾아볼 필요가 있다. <a href="../generic%20using%20typing.TypeVar%20%28python%29/">generic using typing.TypeVar (python)</a></p>
-<h1 id="lis-longest-increasing-subsequence">LIS (Longest Increasing Subsequence)<a class="headerlink" href="#lis-longest-increasing-subsequence" title="Permanent link">#</a></h1>
-<p><a href="../LIS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20d61b26f5619a4ea1b0412155535ec812/">LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812</a><br />
-<a href="https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812">https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812</a> 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.<br />
-^4ygbua</p>
-<h1 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">#</a></h1>
-<h2 id="selection-sort">selection sort<a class="headerlink" href="#selection-sort" title="Permanent link">#</a></h2>
-<p>간단하다. <code>min</code> 값을 가진 원소의 인덱스를 최종 리스트에 넣고 해당 원소를 방문처리한다. 남은 리스트의 원소들 중에서 다시 <code>min</code>을 찾아 최종 리스트에 하나씩 추가한다. 사실상 버블 소트만큼 오래 걸림. 얘와의 차이점이라면, 버블소트는 추가공간을 사용하지는 않는다는거.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">최솟값_인덱스_리턴_함수</span><span class="p">(</span><span class="n">리스트</span><span class="p">):</span>
-    <span class="n">최솟값인덱스</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">증가값</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">리스트</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">리스트</span><span class="p">[</span><span class="n">증가값</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">리스트</span><span class="p">[</span><span class="n">최솟값인덱스</span><span class="p">]:</span>
-            <span class="n">최솟값인덱스</span> <span class="o">=</span> <span class="n">증가값</span>
-    <span class="k">return</span> <span class="n">최솟값인덱스</span>
-
-
-<span class="k">def</span> <span class="nf">선택정렬</span><span class="p">(</span><span class="n">리스트</span><span class="p">):</span>
-    <span class="n">최종결과값</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">리스트</span><span class="p">:</span>
-        <span class="n">최솟값_인덱스_저장</span> <span class="o">=</span> <span class="n">최솟값_인덱스_리턴_함수</span><span class="p">(</span><span class="n">리스트</span><span class="p">)</span>
-        <span class="n">최솟값</span> <span class="o">=</span> <span class="n">리스트</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">최솟값_인덱스_저장</span><span class="p">)</span>
-        <span class="n">최종결과값</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">최솟값</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">최종결과값</span>
-
-
-<span class="n">주어진리스트</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">선택정렬</span><span class="p">(</span><span class="n">주어진리스트</span><span class="p">))</span>
-</code></pre></div>
-<h2 id="insertion-sort">insertion sort<a class="headerlink" href="#insertion-sort" title="Permanent link">#</a></h2>
-<p>도서관에서 책을 정렬할 때 사용하는 기법. 두서 없이 흩뿌려진 책들로부터 정렬된 결과물을 만들어 나가는데, 중요한 점은 <strong>이분탐색</strong>을 이용하여 빠르게 삽입할 위치를 찾아 나선다는 것이다. 파이썬에서의 이분탐색은 <a href="../lower%20bound%20with%20bisect_left%20%28python%29/">lower bound with bisect_left (python)</a>을 사용하면 된다.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span>
-
-
-<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;insertion sort with binary search =&gt; O(N LOG(N))&quot;&quot;&quot;</span>
-
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">idx</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">result</span>
-
-
-<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">insertion_sort</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
-</code></pre></div>
-<p>^fyzoll</p>
-<h2 id="merge-sort">merge sort<a class="headerlink" href="#merge-sort" title="Permanent link">#</a></h2>
-<p>전형적인 분할정복인데, C++에서의 이터레이터 지옥과 달리 슬라이스 문법으로 아주 깔끔하게 문제를 정복할 수 있었다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">merge_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ls</span>
-
-    <span class="c1"># divide</span>
-    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-    <span class="n">left</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[:</span><span class="n">mid</span><span class="p">]</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">mid</span><span class="p">:]</span>
-
-    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
-
-    <span class="c1"># conquer</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">left</span> <span class="ow">and</span> <span class="n">right</span><span class="p">:</span>
-        <span class="c1"># 둘 다 있을 때에만 이 작업을 수행한다</span>
-        <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">right</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-
-    <span class="n">ret</span> <span class="o">+=</span> <span class="n">left</span>
-    <span class="n">ret</span> <span class="o">+=</span> <span class="n">right</span>
-
-    <span class="k">return</span> <span class="n">ret</span>
-
-
-<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
-</code></pre></div>
-<p>+2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 <a href="https://docs.python.org/3/library/heapq.html#heapq.merge"><code>heapq.merge()</code></a> 를 사용할 수 있다. <code>left</code>, <code>right</code> 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.</p>
-<h2 id="quick-sort">quick sort<a class="headerlink" href="#quick-sort" title="Permanent link">#</a></h2>
-<p><a href="../%ED%80%B5%EC%A0%95%EB%A0%AC%20%7Bquick%20sort%7D/">Quick Sort</a></p>
-<p>괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 <code>left + [pivot] + right</code> 하면 되어서 손도 깔끔하다.<br />
-<a class="glightbox" href="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="84c12ea600ff72a816c6672bcbd5e82d.png" src="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" width="100" /></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">q_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ls</span>
-
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">left</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">ls</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">pivot</span> <span class="o">&gt;</span> <span class="n">elem</span><span class="p">:</span>
-            <span class="n">left</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">right</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">q_sort_recur</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">+</span> <span class="n">q_sort_recur</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
-
-
-<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">q_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
-</code></pre></div>
+<li>
+<p>두 수열 Xn과 Ym이 같은 원소로 끝나지 않는 경우 다음과 같은 경우 중 하나에 해당하게 될 것이다.</p>
+<ol>
+<li>LCS(Xn, Ym)이 xn으로 끝나는 경우</li>
+<li>LCS(Xn, Ym)이 xn으로 끝나지 않는 경우</li>
+</ol>
+<p>a의 사례는 xn을 지워버리면 전체 LCS에 손실이 발생할 테지만 ym을 지운다고 손실이 일어나지 않는다. 따라서 $\text{LCS}(X_n, Y_{m-1})$</p>
+<p>b의 사례는 반대로 xn을 지운다고 손실이 일어나지 않는다. 따라서$\text{LCS}(X_{n-1}, Y_{m})$두</p>
+<p>2번 사례는 a와 b 경우밖에 존재하지 않기 때문에 둘 중에 더 긴 녀석을 선택하기만 하면 된다. 따라서</p>
+<p>$$
+\text{LCS}(X_n, Y_{m})=\text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m}))
+$$</p>
+</li>
+</ol>
 
 
 

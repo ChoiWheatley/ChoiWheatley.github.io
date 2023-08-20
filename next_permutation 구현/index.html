@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/20230518%20estsoft%20-%20python%20-%20tree%20--%20LIS%20--%20selection%20sort%20--%20insertion%20sort%20--%20merge%20sort%20--%20quick%20sort/">
+        <link rel="canonical" href="https://choiwheatley.github.io/next_permutation%20%EA%B5%AC%ED%98%84/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort - Choi Wheatley's Second Brain</title>
+        <title>next_permutation 구현 - Choi Wheatley's Second Brain</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tree" class="md-skip">
+        <a href="#next_permutation" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort
+              next_permutation 구현
             
           </span>
         </div>
@@ -726,8 +726,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -736,8 +734,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#next_permutation" class="md-nav__link">
+    next_permutation 구현
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    트리 구현
+    전구 길만 걷자
+  </a>
+  
+    <nav class="md-nav" aria-label="전구 길만 걷자">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    예시
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    구현
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    일곱 난쟁이
   </a>
   
 </li>
@@ -757,130 +789,143 @@
                   
 
 
-<h1 id="tree">Tree<a class="headerlink" href="#tree" title="Permanent link">#</a></h1>
-<blockquote>
-<p>Tree는 방향성이 없고 사이클이 없는 그래프를 지칭한다.</p>
-</blockquote>
+  <h1>next_permutation 구현</h1>
+
+<h2 id="next_permutation">next_permutation 구현<a class="headerlink" href="#next_permutation" title="Permanent link">#</a></h2>
+<p>상태: In progress<br />
+태그: 순열조합</p>
+<h2 id="_1">전구 길만 걷자<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <ul>
-<li>depth에 대한 개념</li>
-<li>bin tree<ul>
-<li>saturated bin tree = every single node has exactly two children</li>
-<li>complete bin tree = all levels of nodes are filled except leaf nodes which are filled from the leftmost node. ==&gt; When you implement Binary Tree with array, You'll always get complete binary tree! 😆 </li>
+<li><a href="http://boj.kr/17359">전구 길만 걷자</a> </li>
 </ul>
+<blockquote>
+<p>가장 마지막에 오는 단조증가 수열을 단조감소 수열로 변환하는 문제</p>
+</blockquote>
+<h3 id="_2">예시<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>[1, 2, 3] 경우의 수 = 3! = 6</p>
+<p>123</p>
+<p>132</p>
+<p>213</p>
+<p>231</p>
+<p>312</p>
+<p>321</p>
+</li>
+<li>
+<p>[a, b, c, d] 경우의 수 = 4! = 24</p>
+<ol>
+<li>abcd</li>
+<li>abdc</li>
+<li>acbd</li>
+<li>acdb</li>
+<li>adbc</li>
+<li>adcb</li>
+<li>bacd</li>
+<li>badc</li>
+<li>bcad</li>
+<li>bcda</li>
+<li>bdac</li>
+<li>bdca</li>
+<li>cabd</li>
+<li>cadb</li>
+<li>cbad</li>
+<li>cbda</li>
+<li>cdab</li>
+<li>cdba</li>
+<li>dabc</li>
+<li>dacb</li>
+<li>dbac</li>
+<li>dbca</li>
+<li>dcab</li>
+<li>dcba</li>
+</ol>
+</li>
+<li>
+<p>[a, a, b] 경우의 수 = 3! / 2 = 3</p>
+<p>aab</p>
+<p>aba</p>
+<p>baa</p>
 </li>
 </ul>
-<h2 id="_1">트리 구현<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230518131309.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230518131309.png" src="../assets/Pasted%20image%2020230518131309.png" width="400" /></a></p>
-<p>제네릭 코드를 짜기 위해서 <a href="https://docs.python.org/3/library/typing.html#typing.TypeVar">typing.TypeVar</a>를 찾아볼 필요가 있다. <a href="../generic%20using%20typing.TypeVar%20%28python%29/">generic using typing.TypeVar (python)</a></p>
-<h1 id="lis-longest-increasing-subsequence">LIS (Longest Increasing Subsequence)<a class="headerlink" href="#lis-longest-increasing-subsequence" title="Permanent link">#</a></h1>
-<p><a href="../LIS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20d61b26f5619a4ea1b0412155535ec812/">LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812</a><br />
-<a href="https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812">https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812</a> 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.<br />
-^4ygbua</p>
-<h1 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">#</a></h1>
-<h2 id="selection-sort">selection sort<a class="headerlink" href="#selection-sort" title="Permanent link">#</a></h2>
-<p>간단하다. <code>min</code> 값을 가진 원소의 인덱스를 최종 리스트에 넣고 해당 원소를 방문처리한다. 남은 리스트의 원소들 중에서 다시 <code>min</code>을 찾아 최종 리스트에 하나씩 추가한다. 사실상 버블 소트만큼 오래 걸림. 얘와의 차이점이라면, 버블소트는 추가공간을 사용하지는 않는다는거.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">최솟값_인덱스_리턴_함수</span><span class="p">(</span><span class="n">리스트</span><span class="p">):</span>
-    <span class="n">최솟값인덱스</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">증가값</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">리스트</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">리스트</span><span class="p">[</span><span class="n">증가값</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">리스트</span><span class="p">[</span><span class="n">최솟값인덱스</span><span class="p">]:</span>
-            <span class="n">최솟값인덱스</span> <span class="o">=</span> <span class="n">증가값</span>
-    <span class="k">return</span> <span class="n">최솟값인덱스</span>
+<h3 id="_3">구현<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<p><a href="https://en.cppreference.com/w/cpp/algorithm/next_permutation">https://en.cppreference.com/w/cpp/algorithm/next_permutation</a>를 참고했다.</p>
+<ol>
+<li>i = len(ls) - 1 ~ 0까지 거꾸로 단조 감소수열이 끝나는 인덱스 i를 찾는다.</li>
+<li>upperbound자리를 찾는다. 거꾸로</li>
+<li>i..&lt;len(ls) 구간의 원소들을 뒤집는다. 왜냐면 방금 전까지는 단조감소수열이었기 때문.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm">   * 사전순 상에 다음으로 오는 조합을 collection에 저장한다.</span>
+<span class="cm">   * </span>
+<span class="cm">   * @param ls         out</span>
+<span class="cm">   * @param comparator 사전순서 정의</span>
+<span class="cm">   * @return if has no any next permutation, return false, else, return true</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">nextPermutation</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ls</span><span class="p">,</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">comparator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lastIdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// 1. 단조감소수열이 끝나는 인덱스 i를 찾는다.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastIdx</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comparator</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 
+<span class="w">    </span><span class="c1">// 2. 이진탐색을 활용하여 i - 1에 위치한 원소와 그보다 큰 원소들 중 가장 작은 원소(upperbound)를</span>
+<span class="w">    </span><span class="c1">// 찾아 서로 바꾼다. 참고: [i:last]는 현재 reversed이다.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">size</span><span class="p">();</span>
+<span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">hi</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">comparator</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">mid</span><span class="p">),</span><span class="w"> </span><span class="n">tmp</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// go left</span>
+<span class="w">        </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// go right</span>
+<span class="w">        </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">ls</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">lo</span><span class="p">));</span>
+<span class="w">    </span><span class="n">ls</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
 
-<span class="k">def</span> <span class="nf">선택정렬</span><span class="p">(</span><span class="n">리스트</span><span class="p">):</span>
-    <span class="n">최종결과값</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">리스트</span><span class="p">:</span>
-        <span class="n">최솟값_인덱스_저장</span> <span class="o">=</span> <span class="n">최솟값_인덱스_리턴_함수</span><span class="p">(</span><span class="n">리스트</span><span class="p">)</span>
-        <span class="n">최솟값</span> <span class="o">=</span> <span class="n">리스트</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">최솟값_인덱스_저장</span><span class="p">)</span>
-        <span class="n">최종결과값</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">최솟값</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">최종결과값</span>
+<span class="w">    </span><span class="c1">// 3. i번째 원소부터 단조증가수열로 만든다.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lastIdx</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">left</span><span class="p">);</span>
+<span class="w">      </span><span class="n">ls</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">ls</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">right</span><span class="p">));</span>
+<span class="w">      </span><span class="n">ls</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">tmp</span><span class="p">);</span>
+<span class="w">      </span><span class="n">left</span><span class="o">++</span><span class="p">;</span>
+<span class="w">      </span><span class="n">right</span><span class="o">--</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-
-<span class="n">주어진리스트</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">선택정렬</span><span class="p">(</span><span class="n">주어진리스트</span><span class="p">))</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
-<h2 id="insertion-sort">insertion sort<a class="headerlink" href="#insertion-sort" title="Permanent link">#</a></h2>
-<p>도서관에서 책을 정렬할 때 사용하는 기법. 두서 없이 흩뿌려진 책들로부터 정렬된 결과물을 만들어 나가는데, 중요한 점은 <strong>이분탐색</strong>을 이용하여 빠르게 삽입할 위치를 찾아 나선다는 것이다. 파이썬에서의 이분탐색은 <a href="../lower%20bound%20with%20bisect_left%20%28python%29/">lower bound with bisect_left (python)</a>을 사용하면 된다.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span>
+<hr />
+<p><a href="http://boj.kr/17359">boj.kr/17359</a> 문제 해결 소스코드, 시간 순서대로 푼 코드를 지우지 않고 별도의 클래스로 처리했다. <a href="https://www.acmicpc.net/source/53386573">https://www.acmicpc.net/source/53386573</a></p>
+<h2 id="_4">일곱 난쟁이<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<p><a href="https://www.acmicpc.net/problem/2309">https://www.acmicpc.net/problem/2309</a></p>
+<p><code>itertools.permutations</code> 활용 구현</p>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;permutation을 직접 구현해보기&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
 
+<span class="n">MAXN</span> <span class="o">=</span> <span class="mi">9</span>
 
-<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;insertion sort with binary search =&gt; O(N LOG(N))&quot;&quot;&quot;</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAXN</span><span class="p">)]</span>
 
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">idx</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">result</span>
-
-
-<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">insertion_sort</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">perm</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">ls</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">perm</span><span class="p">)</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="p">{</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">perm</span><span class="p">)}</span>
+        <span class="k">break</span>
 </code></pre></div>
-<p>^fyzoll</p>
-<h2 id="merge-sort">merge sort<a class="headerlink" href="#merge-sort" title="Permanent link">#</a></h2>
-<p>전형적인 분할정복인데, C++에서의 이터레이터 지옥과 달리 슬라이스 문법으로 아주 깔끔하게 문제를 정복할 수 있었다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">merge_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ls</span>
-
-    <span class="c1"># divide</span>
-    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-    <span class="n">left</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[:</span><span class="n">mid</span><span class="p">]</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="n">mid</span><span class="p">:]</span>
-
-    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
-
-    <span class="c1"># conquer</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">left</span> <span class="ow">and</span> <span class="n">right</span><span class="p">:</span>
-        <span class="c1"># 둘 다 있을 때에만 이 작업을 수행한다</span>
-        <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">right</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-
-    <span class="n">ret</span> <span class="o">+=</span> <span class="n">left</span>
-    <span class="n">ret</span> <span class="o">+=</span> <span class="n">right</span>
-
-    <span class="k">return</span> <span class="n">ret</span>
-
-
-<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">merge_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
-</code></pre></div>
-<p>+2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 <a href="https://docs.python.org/3/library/heapq.html#heapq.merge"><code>heapq.merge()</code></a> 를 사용할 수 있다. <code>left</code>, <code>right</code> 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.</p>
-<h2 id="quick-sort">quick sort<a class="headerlink" href="#quick-sort" title="Permanent link">#</a></h2>
-<p><a href="../%ED%80%B5%EC%A0%95%EB%A0%AC%20%7Bquick%20sort%7D/">Quick Sort</a></p>
-<p>괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 <code>left + [pivot] + right</code> 하면 되어서 손도 깔끔하다.<br />
-<a class="glightbox" href="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="84c12ea600ff72a816c6672bcbd5e82d.png" src="../assets/84c12ea600ff72a816c6672bcbd5e82d.png" width="100" /></a></p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">q_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ls</span>
-
-    <span class="n">pivot</span> <span class="o">=</span> <span class="n">ls</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">left</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">right</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">ls</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">pivot</span> <span class="o">&gt;</span> <span class="n">elem</span><span class="p">:</span>
-            <span class="n">left</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">right</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">q_sort_recur</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pivot</span><span class="p">]</span> <span class="o">+</span> <span class="n">q_sort_recur</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
-
-
-<span class="n">ls</span> <span class="o">=</span> <span class="p">[</span><span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">233</span><span class="p">]</span>
-<span class="k">assert</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span> <span class="o">==</span> <span class="n">q_sort_recur</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
-</code></pre></div>
+<blockquote>
+<p>[!todo] 파이썬으로 다음 순열 구하는 코드 작성할 것</p>
+</blockquote>
 
 
 
