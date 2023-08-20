@@ -89,6 +89,7 @@ ___
 	- `finally`: 심지어 중간에 리턴을 했을지라도 에러 발생여부 상관없이 무조건 실행하는 내용
 - `BaseException`과 `Exception` 간의 차이
 - `__contains__`: `in` 문법 사용 가능
+- [[dataclass ValueError mutable default class list is not allowed, use default_factory {python}]]
 
 ### 문제풀이
 
@@ -98,3 +99,4 @@ ___
 - [[1655 가운데를 말해요 {boj} {heapq}]]
 - [[1715 카드 정렬하기 {boj}]] →수열을 더하는데 괄호를 어디에 배치하느냐에 따라 달라지는 결과값 중 최소를 구하는 문제인듯
 - [[13334 철로 {boj}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?
+- 
