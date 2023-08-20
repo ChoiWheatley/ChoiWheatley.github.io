@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/1197%20%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC%20%7Bboj%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/Union%20Find/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>1197 최소 스패닝 트리 {boj} - Choi Wheatley's Second Brain</title>
+        <title>Union Find - Choi Wheatley's Second Brain</title>
       
     
     
@@ -73,11 +73,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1197 최소 스패닝 트리 {boj}
+              Union Find
             
           </span>
         </div>
@@ -727,21 +722,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    정렬을 할 줄이야
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -755,42 +735,30 @@
                   
 
 
-  <h1>1197 최소 스패닝 트리 {boj}</h1>
+  <h1>Union Find</h1>
 
-<p><a href="https://www.acmicpc.net/problem/1197">https://www.acmicpc.net/problem/1197</a><br />
-<a href="https://ongveloper.tistory.com/376">크루스칼 알고리즘 {blog}</a></p>
-<h2 id="_1">정렬을 할 줄이야<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>모든 간선을 가중치 기준으로 정렬한 다음, 주어진 조건을 만족하기만 하면 T에 넣는다. 그렇게 총 <code>n-1</code>번 반복하면 된다.</p>
-<p><mark>주어진 조건</mark></p>
-<blockquote>
-<p>추가되는 간선은 사이클을 만들지 않아야 한다.</p>
-</blockquote>
-<p>사이클 탐지방법으로는 각 노드의 부모노드가 동일한지를 검사하면 된다. <a href="https://chanhuiseok.github.io/posts/algo-33/">Union Find 관련 블로그</a></p>
-<p><a href="../Union%20Find/">Union Find</a></p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sol</span><span class="p">(</span><span class="n">G</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    순회를 돌면서 매번 최소 가중치 간선을 찾아 추가하는 알고리즘</span>
-<span class="sd">    가중치값만 구하면 되므로 최소신장그래프는 작성하지 않는다.</span>
+<p><a href="../1197%20%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC%20%7Bboj%7D/">1197 최소 스패닝 트리 {boj}</a><br />
+<a href="https://chanhuiseok.github.io/posts/algo-33/">kruskal algorithm explaning blog</a></p>
+<p>union find란, 서로소 집합(공통분모가 없는 두 집합)을 표현하는 자료구조. 최소 스패닝 트리 문제를 풀 때 크루스칼 알고리즘을 사용하였다. 이때 사이클을 탐지해야 하는 상황에서 Union Find라는 기법을 알게 되었다. 얘는 두개의 서로소 집합을 Union, 즉 합집합 연산을 하는 것으로 간선을 추가해 갈 수 있다. </p>
+<p>그러면 Union Find는 어떤거냐? 간선을 추가해 나갈때마다 간선의 정점이 기존의 집합에 속하는지 검색해야 하는데, 이를 두고 말하는 것이다.</p>
+<p><a href="https://m.blog.naver.com/ndb796/221230967614">서로소 집합을 만들어나가는 과정</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">disjoint_set</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">idx</span><span class="p">:</span>
+        <span class="c1"># 자기자신이 루트(서로소집합 그 자체)인 경우</span>
+        <span class="k">return</span> <span class="n">idx</span>
+    <span class="k">return</span> <span class="n">get_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">,</span> <span class="n">disjoint_set</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
 
-<span class="sd">    근데, 순환탐지를 어떻게 하지? =&gt; 간선을 추가할 때 중복된 정점이 있다면 순환임.</span>
 
-<span class="sd">    근데, 중복된 정점을 어떻게 찾지? =&gt; Union Find</span>
-
-<span class="sd">    - G: 연결리스트 형식의 그래프, 각 원소는 (시작 정점번호, 인접 정점번호, 가중치)로 이루어져 있다.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">disjoint_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAXV</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>  <span class="c1"># 순환탐지용</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-
-    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">union_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-            <span class="n">ret</span> <span class="o">+=</span> <span class="n">w</span>
-        <span class="k">except</span> <span class="n">NotADisJointSet</span><span class="p">:</span>
-            <span class="k">continue</span>
-
-    <span class="k">return</span> <span class="n">ret</span>
+<span class="k">def</span> <span class="nf">union_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;두 서로소 집합을 합친다. 만약 서로소 집합이 아닌 경우 에러를 발생시킨다.&quot;&quot;&quot;</span>
+    <span class="n">set_a</span> <span class="o">=</span> <span class="n">get_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">set_b</span> <span class="o">=</span> <span class="n">get_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">set_a</span> <span class="o">==</span> <span class="n">set_b</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">NotADisJointSet</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">set_a</span> <span class="o">&gt;</span> <span class="n">set_b</span><span class="p">:</span>
+        <span class="c1"># 작은 인덱스가 부모가 되도록</span>
+        <span class="n">set_a</span><span class="p">,</span> <span class="n">set_b</span> <span class="o">=</span> <span class="n">set_b</span><span class="p">,</span> <span class="n">set_a</span>
+    <span class="n">disjoint_set</span><span class="p">[</span><span class="n">set_b</span><span class="p">]</span> <span class="o">=</span> <span class="n">set_a</span>
 </code></pre></div>
 
 
