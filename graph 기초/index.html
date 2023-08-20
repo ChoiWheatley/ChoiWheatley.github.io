@@ -925,6 +925,16 @@
 <p>bfs는 가중치 없는 그래프에서는 경로의 길이를 구할 수 있다는 특징이 있다.  다른 정점을 한 번씩 방문할 때마다 dist 배열의 정점번호에 인접한 인덱스의 값 + 1 해주기만 하면 된다. <code>dist[next] = dist[curr] + 1</code> 이러면 dist는 시작노드로부터 모든 노드까지 이어지는 길이를 갖게 된다.</p>
 </li>
 </ul>
+<h1 id="spanning-tree">신장트리 (spanning tree)<a class="headerlink" href="#spanning-tree" title="Permanent link">#</a></h1>
+<blockquote>
+<p>신장트리는 무방향 그래프 G의 정점을 모두 포함하고 최소 간선수를 갖는 서브그래프를 의미한다</p>
+</blockquote>
+<p>신장트리를 만드는 법은 여러가지가 있다. 먼저 사이클을 일으키는 간선을 제거하는 방법이 있고, DFS, BFS를 순회하며 신장트리를 만드는 방법이 있다. </p>
+<h2 id="minimum-spanning-tree">최소신장트리 (minimum spanning tree)<a class="headerlink" href="#minimum-spanning-tree" title="Permanent link">#</a></h2>
+<blockquote>
+<p>최소신장트리는 가중치합이 최소가 되도록 만든 신장트리이다</p>
+</blockquote>
+<p>대표적으로 <a href="../prim%20algorithm%EA%B3%BC%20kruskal%20algorithm%20%7BMinimum%20Spanning%20Tree%7D/">prim algorithm과 kruskal algorithm {Minimum Spanning Tree}</a>이 있다.</p>
 
 
 
