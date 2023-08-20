@@ -3,11 +3,9 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:02:32
-updated: 2023-07-15T21:33:03
+updated: 2023-08-21T00:47:11
 title: try - except - else - finally (python)
 ---
-
-{% raw %}
 
 # Exception Handling
 
@@ -49,5 +47,3 @@ class FxxxedUpError(Exception):
 
 raise FxxxedUpError
 ```
-
-{% endraw %}
