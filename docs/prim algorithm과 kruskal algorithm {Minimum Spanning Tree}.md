@@ -4,7 +4,7 @@ tags:
 description:
 title: prim algorithm과 kruskal algorithm {Minimum Spanning Tree}
 created: 2023-08-20T22:13:53
-updated: 2023-08-20T22:19:20
+updated: 2023-08-20T22:29:57
 ---
 - [[graph 기초#최소신장트리 (minimum spanning tree)]]
 
@@ -20,5 +20,21 @@ def prim(G: n개의 정점이 있고 가중치가 있는 비방향 그래프):
 		T += e
 	return T
 ```
+
 ![[prim algorithm excercise.jpg]]
 
+## kruskal algorithm (pseudocode)
+
+```python
+def kruskal(G: 가중치를 갖고 n개의 정점을 갖는 비방향 그래프):
+	T = {} # empty graph
+	for _ in range(n-1):
+		e = 추가되었을 때 T에 순환을 일으키지 않는 최소가중치 간선
+		T += e
+	return T
+```
+
+
+## 관련 문제
+
+- [[1197 최소 스패닝 트리 {boj}]]
