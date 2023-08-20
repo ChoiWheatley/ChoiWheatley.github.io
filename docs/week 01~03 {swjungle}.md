@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-19T11:07:51
+updated: 2023-08-20T15:36:25
 ---
 
 ## INDEX
@@ -74,6 +74,15 @@ ___
 	- 1.5 캐시가 중요하다
 	- 1.6 ?
 	- 1.7 운영체제는 하드웨어를 관리한다
+- Day01: Stack
+	- [PR: 10828, 17608](https://github.com/ChoiWheatley/swjungle-week-02/pull/2)
+- Day02: Queue
+	- [PR: 17608, 10828, 2504, 2493, 2812, 18258, 2164 ](https://github.com/ChoiWheatley/swjungle-week-02/pull/8)
+- Day03: PriorityQueue, Graph
+	- [PR1: 원 영역, 최대 힙](https://github.com/ChoiWheatley/swjungle-week-02/pull/11)
+	- [PR2: 가운데를 말해요, 카드 정렬하기](https://github.com/ChoiWheatley/swjungle-week-02/pull/13)
+- Day04: DFS
+	- [PR](https://github.com/ChoiWheatley/swjungle-week-02/pull/15)
 
 ### Doit!
 
@@ -99,4 +108,9 @@ ___
 - [[1655 가운데를 말해요 {boj} {heapq}]]
 - [[1715 카드 정렬하기 {boj}]] →수열을 더하는데 괄호를 어디에 배치하느냐에 따라 달라지는 결과값 중 최소를 구하는 문제인듯
 - [[13334 철로 {boj}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?
-- 
+
+### 다시 풀 문제
+
+- 11725(트리부모찾기): 멍청하게 10_000 ** 2 크기의 행렬을 생성하려고 했다.
+- 1707(이분그래프): 20분동안 문제를 다르게 바라보았다. 그래도 실마리는 찾은 것 같다.  
+	집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 `set.교집합()` 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임
