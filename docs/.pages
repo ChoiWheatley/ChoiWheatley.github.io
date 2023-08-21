@@ -1,7 +1,6 @@
-title: README
 nav:
-  - index.md
   - INDEX:
-    - ... | index/*.md
+    - ... | "index/*.md"
   - DAILY NOTES:
     - ... | "Daily Notes/*.md"
+  ... | *.md
