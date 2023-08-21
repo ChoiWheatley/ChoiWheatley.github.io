@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2023-08-21T16:20:15
+updated: 2023-08-21T16:23:47
 ---
 
 # ssh into WSL2 & vs-code
