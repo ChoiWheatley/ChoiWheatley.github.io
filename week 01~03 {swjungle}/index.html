@@ -810,15 +810,15 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-dfs-set" class="md-nav__link">
-    - 집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 set.교집합() 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -960,13 +960,11 @@
 <ul>
 <li>[[13334 철로 {boj}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?</li>
 <li>11725(트리부모찾기): 멍청하게 10_000 ** 2 크기의 행렬을 생성하려고 했다.</li>
-<li>
-<p>1707(이분그래프): 20분동안 문제를 다르게 바라보았다. 그래도 실마리는 찾은 것 같다.  </p>
-<h2 id="-dfs-set">- 집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 <code>set.교집합()</code> 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임<a class="headerlink" href="#-dfs-set" title="Permanent link">#</a></h2>
+<li>1707(이분그래프): 20분동안 문제를 다르게 바라보았다. 그래도 실마리는 찾은 것 같다.  <ul>
+<li>집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 <code>set.교집합()</code> 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임 </li>
+</ul>
 </li>
-<li>
-<p>21606(아침산책): 73점, </p>
-<ul>
+<li>21606(아침산책): 73점, <ul>
 <li>Ai = 0인 케이스, Ai = 1인 i는 2개 이하인 케이스, N&lt;= 100인 케이스는 모두 맞추었으나</li>
 <li>1 &lt;= i &lt; N 인 모든 정수 i에 대해 트리의 i번 정점과 i+1번 정점 사이에 간선이 존재하는 경우 (35점)과 추가 제한조건 없는(92점) 케이스는 틀렸다.</li>
 </ul>
@@ -976,6 +974,14 @@
 <li><mark>단절점 평가</mark></li>
 </ul>
 </li>
+</ul>
+<blockquote>
+<p>문제를 풀 때가 아니다, 머리에 든 게 없다 </p>
+</blockquote>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="../1197%20%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC%20%7Bboj%7D/">1197 최소 스패닝 트리 {boj}</a>와 <a href="../Union%20Find/">Union Find</a>를 공부하며 서로소집합이 무엇인지 알아야 한다.</li>
+<li>서로소집합을 알아야 <a href="../%EB%8B%A8%EC%A0%88%EC%A0%90/">단절점</a>을 이해할 수 있다.</li>
 </ul>
 
 
