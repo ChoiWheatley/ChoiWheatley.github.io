@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2023-08-21T10:55:13
+updated: 2023-08-21T15:53:10
 ---
 
 # ssh into WSL2 & vs-code
@@ -124,3 +124,5 @@ ERROR: Failed to download https://update.code.visualstudio.com/commit:6445d93c81
 Please install missing certificates.
 Debian/Ubuntu:  sudo apt-get install ca-certificates
 ```
+
+[remote ssh in vscode on a target machine that only allows inbound ssh connections {sof}](https://stackoverflow.com/questions/56718453/using-remote-ssh-in-vscode-on-a-target-machine-that-only-allows-inbound-ssh-co)
