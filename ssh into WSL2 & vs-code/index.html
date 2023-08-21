@@ -798,6 +798,24 @@ To<span class="w"> </span>grant<span class="w"> </span>access<span class="w"> </
 <h1 id="windows-ssh-key">Windows에 ssh key 추가하기<a class="headerlink" href="#windows-ssh-key" title="Permanent link">#</a></h1>
 <p><code>$env:ProgramData</code> 또는 <code>%ProgramData%</code> 환경변수 안에 있는 <code>ssh\administrators_authorized_keys</code> 파일에 퍼블릭 키의 내용을 추가하여야 한다. <code>$env:Home\ssh\authorized_keys</code>를 수정한다고 적용이 되지 않아 고생했다. </p>
 <p>그리고 키를 추가한 뒤로는 꼭 <code>Restart-Service sshd</code>를 사용하여 데몬을 재시작 해주어야 한다.</p>
+<h1 id="wsl-updatecodevisualstudiocom">wsl에서 <code>update.code.visualstudio.com</code>에 접근할 수 없다는데?<a class="headerlink" href="#wsl-updatecodevisualstudiocom" title="Permanent link">#</a></h1>
+<p>에러메시지</p>
+<div class="highlight"><pre><span></span><code>code tunnel
+Updating VS Code Server to version 6445d93c81ebe42c4cbd7a60712e0b17d9463e97
+Removing previous installation...
+Installing VS Code Server for x64 (6445d93c81ebe42c4cbd7a60712e0b17d9463e97)
+Downloading: 100%
+Failed
+--2023-08-21 10:53:55--  https://update.code.visualstudio.com/commit:6445d93c81ebe42c4cbd7a60712e0b17d9463e97/server-linux-x64/stable
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 13.107.246.74, 13.107.213.74, 2620:1ec:bdf::74, ...
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.246.74|:443... connected.
+ERROR: cannot verify update.code.visualstudio.com&#39;s certificate, issued by ‘CN=Microsoft Azure TLS Issuing CA 05,O=Microsoft Corporation,C=US’:
+  Unable to locally verify the issuer&#39;s authority.
+To connect to update.code.visualstudio.com insecurely, use `--no-check-certificate&#39;.
+ERROR: Failed to download https://update.code.visualstudio.com/commit:6445d93c81ebe42c4cbd7a60712e0b17d9463e97/server-linux-x64/stable to /home/chltm/.vscode-server/bin/6445d93c81ebe42c4cbd7a60712e0b17d9463e97-1692582835.tar.gz
+Please install missing certificates.
+Debian/Ubuntu:  sudo apt-get install ca-certificates
+</code></pre></div>
 
 
 
