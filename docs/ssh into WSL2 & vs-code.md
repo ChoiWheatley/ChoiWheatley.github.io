@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2023-08-21T16:18:15
+updated: 2023-08-21T16:20:15
 ---
 
 # ssh into WSL2 & vs-code
@@ -110,7 +110,7 @@ To grant access to the server, please log into https://github.com/login/device a
 > 너 지금 update.code.visualstudio.com에 접근할 권한이 없으니까 vscode-server-linux-x64.tar.gz 파일을 다운받을 수 없어
 
 ```
-code tunnel
+code 
 Updating VS Code Server to version 6445d93c81ebe42c4cbd7a60712e0b17d9463e97
 Removing previous installation...
 Installing VS Code Server for x64 (6445d93c81ebe42c4cbd7a60712e0b17d9463e97)
@@ -129,6 +129,6 @@ Debian/Ubuntu:  sudo apt-get install ca-certificates
 
 해결!!!!! 뿌와악!!! 아래 대화의 답변에서 해답이 있다. 결국은 파일을 직접 다운받을 수 없으니까 우리가 직접 꽂아넣어주면 되는 것이었다. 이때 중요한 건 `$COMMIT_ID`를 찾는 방법하고 다운받은 파일을 압축해제한 뒤에 `--strip-components 1` 옵션을 주어 바로 그 폴더에 담아야 하지 아무 옵션도 주지 않으면 폴더를 생성하여 그 안에 담아주므로 둘의 차이 그거 명심하자.
 
-물론 언젠간 저 `ca-certificates` 관련 문제가 다시 찾아올 것이고, vscode-server 업데이트가 막혀 같은 문제가 찾아오리란 사실은 변치 않을 것이다.
-
 [remote ssh in vscode on a target machine that only allows inbound ssh connections {sof}](https://stackoverflow.com/questions/56718453/using-remote-ssh-in-vscode-on-a-target-machine-that-only-allows-inbound-ssh-co)
+
+물론 언젠간 저 `ca-certificates` 관련 문제가 다시 찾아올 것이고, vscode-server 업데이트가 막혀 같은 문제가 찾아오리란 사실은 변치 않을 것이다. 지금도 `code` 명령어를 치면 프로세스가 스폰되지 않고 에러메시지가 출력된다.
