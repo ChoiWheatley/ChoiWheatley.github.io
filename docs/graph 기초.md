@@ -12,7 +12,7 @@ aliases:
 tags: [" algo/graph  ", algo/graph]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-20T22:13:36
+updated: 2023-08-21T23:10:47
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -208,6 +208,8 @@ parent link: [[0011 Algorithms ♾️]]
 > 신장트리는 무방향 그래프 G의 정점을 모두 포함하고 최소 간선수를 갖는 서브그래프를 의미한다
 
 신장트리를 만드는 법은 여러가지가 있다. 먼저 사이클을 일으키는 간선을 제거하는 방법이 있고, DFS, BFS를 순회하며 신장트리를 만드는 방법이 있다. 
+
+사이클 여부를 판단하는 방법은 바로 서로소 집합(disjoint set)의 [[Union Find]]를 통해 해결이 가능하다.
 
 ## 최소신장트리 (minimum spanning tree)
 
