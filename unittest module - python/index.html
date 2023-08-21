@@ -738,7 +738,22 @@
   <h1>unittest module - python</h1>
 
 <ul>
-<li>https://docs.python.org/3/library/unittest.html</li>
+<li><a href="https://docs.python.org/3/library/unittest.html">https://docs.python.org/3/library/unittest.html</a></li>
+<li>
+<p><a href="https://pypi.org/project/timeout-decorator/">timeout-decorator {pypi}</a> -- unittest 모듈에 없는 타임아웃 기능을 제공합니다.
+     ```python
+    import time
+    import timeout_decorator</p>
+<p>@timeout_decorator.timeout(5)
+def mytest():
+    print("Start")
+    for i in range(1,10):
+        time.sleep(1)
+        print("{} seconds have passed".format(i))</p>
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    mytest()
+```</p>
+</li>
 </ul>
 
 
