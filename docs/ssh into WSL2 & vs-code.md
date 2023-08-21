@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2023-08-19T19:09:11
+updated: 2023-08-21T10:55:13
 ---
 
 # ssh into WSL2 & vs-code
@@ -102,3 +102,25 @@ To grant access to the server, please log into https://github.com/login/device a
 `$env:ProgramData` 또는 `%ProgramData%` 환경변수 안에 있는 `ssh\administrators_authorized_keys` 파일에 퍼블릭 키의 내용을 추가하여야 한다. `$env:Home\ssh\authorized_keys`를 수정한다고 적용이 되지 않아 고생했다. 
 
 그리고 키를 추가한 뒤로는 꼭 `Restart-Service sshd`를 사용하여 데몬을 재시작 해주어야 한다.
+
+# wsl에서 `update.code.visualstudio.com`에 접근할 수 없다는데?
+
+에러메시지
+
+```
+code tunnel
+Updating VS Code Server to version 6445d93c81ebe42c4cbd7a60712e0b17d9463e97
+Removing previous installation...
+Installing VS Code Server for x64 (6445d93c81ebe42c4cbd7a60712e0b17d9463e97)
+Downloading: 100%
+Failed
+--2023-08-21 10:53:55--  https://update.code.visualstudio.com/commit:6445d93c81ebe42c4cbd7a60712e0b17d9463e97/server-linux-x64/stable
+Resolving update.code.visualstudio.com (update.code.visualstudio.com)... 13.107.246.74, 13.107.213.74, 2620:1ec:bdf::74, ...
+Connecting to update.code.visualstudio.com (update.code.visualstudio.com)|13.107.246.74|:443... connected.
+ERROR: cannot verify update.code.visualstudio.com's certificate, issued by ‘CN=Microsoft Azure TLS Issuing CA 05,O=Microsoft Corporation,C=US’:
+  Unable to locally verify the issuer's authority.
+To connect to update.code.visualstudio.com insecurely, use `--no-check-certificate'.
+ERROR: Failed to download https://update.code.visualstudio.com/commit:6445d93c81ebe42c4cbd7a60712e0b17d9463e97/server-linux-x64/stable to /home/chltm/.vscode-server/bin/6445d93c81ebe42c4cbd7a60712e0b17d9463e97-1692582835.tar.gz
+Please install missing certificates.
+Debian/Ubuntu:  sudo apt-get install ca-certificates
+```
