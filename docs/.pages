@@ -1,6 +1,4 @@
 nav:
-  - INDEX:
-    - ... | "index/*.md"
-  - DAILY NOTES:
-    - ... | "Daily Notes/*.md"
+  - index
+  - Daily Notes
   - ... | *.md
