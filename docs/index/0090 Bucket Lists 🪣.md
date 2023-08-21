@@ -9,7 +9,7 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-07-26T09:37:02
+updated: 2023-08-21T09:34:01
 ---
 parent link: 
 - [[docs/index/index|index]]
@@ -64,6 +64,7 @@ Pending
 	- NHK에 어서오세요
 	- 더폴 오디어스와 환상의 문
 	- 줄무늬파자마를 입은 소년
+	- [The Legend of 1900](https://en.wikipedia.org/wiki/The_Legend_of_1900) -- 배에서 태어나 배에서 죽은 한 아이의 이야기
 
 - 게임
 	- [[0020 Games 🎮]]로 가세요
