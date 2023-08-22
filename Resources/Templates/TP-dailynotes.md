@@ -9,36 +9,36 @@ tags:
 - " DailyNote "
 ---
 
-# <% today %>
+## <% today %>
 
 << [[<% yesterday %>]] | [[<% tomorrow %>]]>>
 
 ---
-# 📅 <% today %> Daily Briefing
+## 📅 <% today %> Daily Briefing
 
-## 🎵 오늘의 추천곡
-
-
-## 🌜 어제는...
+### 🎵 오늘의 추천곡
 
 
-## 🙌 지금은...
+### 🌜 어제는...
 
 
-## 🚀 내가 달성하고자 하는 것들은...
+### 🙌 지금은...
 
 
-## 👎 오늘 나에게 닥친 어려움은...
+### 🚀 내가 달성하고자 하는 것들은...
+
+
+### 👎 오늘 나에게 닥친 어려움은...
 
 
 ---
 
-# 📝 Notes
+## 📝 Notes
 
 - 
 
 ---
-# Notes modified today
+## Notes modified today
 
 ```dataview
 List FROM "" 
