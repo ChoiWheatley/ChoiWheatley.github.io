@@ -43,6 +43,7 @@ Pending
 	- [[웹사이트 단어 빈도수 통계내기]]
 	- [[앱별 inout 패킷 계산하여 데이터 사용량 통계내기]]
 	- [[Xmonad, window tiling manager written in {haskell}]]
+	- [[url shortner with easy-to-memorize]]
 
 - Food
 	- [[순두부김말이]]
