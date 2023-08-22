@@ -131,3 +131,7 @@ ___
 ### BFS ♥️ Dijkstra
 
 [[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]
+
+### 위상정렬 (Topology Sort)
+
+[[위상정렬]]
