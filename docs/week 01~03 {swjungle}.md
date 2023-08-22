@@ -57,9 +57,9 @@ ___
 - [x] [[10819 차이를 최대로 {boj} {permutation}]]
 - [x] [[10927 외판원 순회 2 {boj} {완전탐색}]]
 - [x] [[1629 곱셈 {boj} {modular exponentiation} {나머지 지수승}]]
-- [ ] [[10830 행렬제곱 {boj}]] 행렬 대각화 사용하여 풀어볼 것
+- [x] [[10830 행렬제곱 {boj}]] 행렬 대각화 사용하여 풀어볼 것
 - [x] [[2805 나무자르기 {boj}]]
-- [ ] [[2110 공유기 설치 {boj} {parametric search}]]
+- [x] [[2110 공유기 설치 {boj} {parametric search}]]
 
 ## WEEK02
 
@@ -127,3 +127,7 @@ ___
 
 - [[1197 최소 스패닝 트리 {boj}]]와 [[Union Find]]를 공부하며 서로소집합이 무엇인지 알아야 한다.
 - 서로소집합을 알아야 [[단절점]]을 이해할 수 있다.
+
+### BFS ♥️ Dijkstra
+
+[[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]

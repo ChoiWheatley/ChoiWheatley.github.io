@@ -76,7 +76,7 @@ ___
 # 문제풀이 회고용
 
 - [[11602 카드게임]] 
-- [[leet_743_network_delay_time -- dijkstra -- graph -- min heap]]
+- [[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]
 - [[leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap]]
 - [[Z {1074} {boj} {재귀}]]
 - [[N-Queen {boj}]]
