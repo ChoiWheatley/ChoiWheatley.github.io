@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.2">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
     
     
       
@@ -11446,6 +11446,23 @@
     
   
   upkeep
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../url%20shortner%20with%20easy-to-memorize/" class="md-tabs__link">
+        
+  
+    
+  
+  url shortner with easy-to-memorize
 
       </a>
     </li>
@@ -29817,6 +29834,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../url%20shortner%20with%20easy-to-memorize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    url shortner with easy-to-memorize
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../utterances%20-%20lightweight%20comments%20widget%20built%20on%20GitHub%20issues/" class="md-nav__link">
         
   
@@ -33724,7 +33760,7 @@ URL: boj.kr/1005<br />
 <p>어쨌든 <code>w</code> 노드서부터 재귀적으로 노드를 방문하면서 말단노드까지 — 즉, 나는 방향성 그래프의 방향을 반대로 세워놓은 채로 문제를 풀었다. — 방문하면서 발생할 수 있는 모든 경우에 대한 최대 weight의 합을 리턴하도록 만들었다. 정답은 대충 맞는 것 같았지만 시간초과가 나와 힌트를 볼 수 밖에 없었다.</p>
 <h1 id="2">풀이 2. 위상정렬<a class="headerlink" href="#2" title="Permanent link">#</a></h1>
 <p><a href="https://github.com/ChoiWheatley/choi-workspace/blob/6331da9eecacfdcb3250d51b8427baef8654ea39/ALGORITHMS/bak/problem/1005/solution.hpp">choi-workspace/solution.hpp at 6331da9eecacfdcb3250d51b8427baef8654ea39 · ChoiWheatley/choi-workspace</a></p>
-<p>swea 특강에서 온라인 수업에 잠깐 배운 기억이 있지만 문제를 풀어본 것은 이번이 처음이다. 따라서 사실상 까맣게 잊고 있었던 위상정렬을 인터넷에 검색해가며 공부했다. 자세한 구현방법은 <a href="https://www.notion.so/792c57121d2b49a38d090ac01959a706?pvs=21">위상정렬</a> 을 참고하라.</p>
+<p>swea 특강에서 온라인 수업에 잠깐 배운 기억이 있지만 문제를 풀어본 것은 이번이 처음이다. 따라서 사실상 까맣게 잊고 있었던 위상정렬을 인터넷에 검색해가며 공부했다. 자세한 구현방법은 <a href="../%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC/">위상정렬</a> 을 참고하라.</p>
 <p>나는 욕심이 나서 아까 구현해두었던 flatten 1D linked list를 그대로 사용하면서 위상정렬을 구현하려고 했고, 이번에도 시간을 펑펑 낭비하고 말았다. 💸💸💸💸 지나간 건 지나갔다. 정리를 마저 끝내자. </p>
 <p>풀이1번에서 내가 direction의 방향을 뒤집어 놓았기 때문에 원래 방향대로 돌려놓을 필요가 있었다. 이제 1 → 2→ 3 관계에 대하여 3을 수행하기 위해 2가 필요하고 2를 수행하기 위해 1이 필요한 그래프가 갖추어졌다. </p>
 <ol>
@@ -33773,6 +33809,8 @@ URL: boj.kr/1005<br />
   1 --&gt; 2 --&gt; 4
     1 --&gt; 3 --&gt; 4</code></pre>
 <p>위는 문제에서 제공하는 예시와 같은데, 각각의 weight도 동일하게 1번부터 [10, 100, 1, 10] 이라고 치자. 위의 코드대로 위상정렬을 수행하면 아마 아래와 같을 것이다.</p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -33791,26 +33829,47 @@ URL: boj.kr/1005<br />
 <td>2</td>
 <td>1</td>
 </tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p><code>sorted_rev.pop()</code> ⇒ 1</p>
+<p>1과 연결된 노드들에 <code>weight[1] = 10</code>을 더한다.</p>
+</li>
+</ol>
+<table>
+<thead>
 <tr>
-<td>1. <code>sorted_rev.pop()</code> ⇒ 1</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<th>i</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>weight</td>
+<td>10</td>
+<td>100</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>result</td>
+<td>10</td>
+<td>110</td>
+<td>11</td>
+<td>10</td>
 </tr>
 </tbody>
 </table>
-<pre><code>1과 연결된 노드들에 `weight[1] = 10`을 더한다.
-
-| i | 1 | 2 | 3 | 4 |  
-| --- | --- | --- | --- | --- |  
-| weight | 10 | 100 | 1 | 10 |  
-| result | 10 | 110 | 11 | 10 |
-</code></pre>
 <ol>
 <li>
 <p><code>sorted_rev.pop()</code> ⇒ 2</p>
 <p>2와 연결된 노드들에 <code>weight[2] = 110</code>을 더한다.</p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -33836,16 +33895,14 @@ URL: boj.kr/1005<br />
 <td>11</td>
 <td>10</td>
 </tr>
-<tr>
-<td>3. <code>sorted_rev.pop()</code> ⇒ 3</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<ol>
+<li>
+<p><code>sorted_rev.pop()</code> ⇒ 3</p>
 <p>3과 연결된 노드들에 <code>weight[3] = 11</code>을 더한다.</p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -33874,12 +33931,10 @@ URL: boj.kr/1005<br />
 </tbody>
 </table>
 <p>변함이 없다. 왜냐하면 <code>result[1]</code>이 이미 더 큰 값인 120을 가지고 있기 때문이다. 갱신하지 않고 다음으로 넘어간다.</p>
-</li>
+<ol>
 <li>
 <p><code>sorted_rev.pop()</code> ⇒ 4</p>
 <p>4와 연결된 노드는 없고 심지어 4는 W이므로 그대로 리턴한다.</p>
-</li>
-</ol>
 </li>
 </ol>
 
