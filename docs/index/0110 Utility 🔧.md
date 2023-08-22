@@ -23,3 +23,4 @@ title: 0110 Utility 🔧
 - [[gtop, elegant top for cli]]
 - [[online photoshop 모음]]
 - [[parsec, 레이턴시에 몰빵한 리모트 데스크톱]]
+- [[yabai, tiling window manager for macOS]]
