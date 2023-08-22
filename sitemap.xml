@@ -2536,7 +2536,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/leet_743_network_delay_time%20--%20dijkstra%20--%20graph%20--%20min%20heap/</loc>
+         <loc>https://choiwheatley.github.io/leet_743_network_delay_time%7Bdijkstra%7D%7Bgraph%7D%7Bmin%20heap%7D/</loc>
          <lastmod>2023-08-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3402,6 +3402,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/xlsxwriter%20-%20python%20package/</loc>
+         <lastmod>2023-08-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/yabai%2C%20tiling%20window%20manager%20for%20macOS/</loc>
          <lastmod>2023-08-22</lastmod>
          <changefreq>daily</changefreq>
     </url>

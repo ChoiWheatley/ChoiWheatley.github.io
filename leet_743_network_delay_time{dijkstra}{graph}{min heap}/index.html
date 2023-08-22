@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/leet_743_network_delay_time%20--%20dijkstra%20--%20graph%20--%20min%20heap/">
+        <link rel="canonical" href="https://choiwheatley.github.io/leet_743_network_delay_time%7Bdijkstra%7D%7Bgraph%7D%7Bmin%20heap%7D/">
       
       
         <link rel="prev" href="../leet787%20cheapest%20flights%20within%20k%20stops%20--%20dijkstra%20--%20graph%20--min-heap/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>leet_743_network_delay_time -- dijkstra -- graph -- min heap - Choi Wheatley's Second Brain</title>
+        <title>leet_743_network_delay_time{dijkstra}{graph}{min heap} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              leet_743_network_delay_time -- dijkstra -- graph -- min heap
+              leet_743_network_delay_time{dijkstra}{graph}{min heap}
             
           </span>
         </div>
@@ -8839,7 +8839,7 @@
   
     
   
-  leet_743_network_delay_time -- dijkstra -- graph -- min heap
+  leet_743_network_delay_time{dijkstra}{graph}{min heap}
 
       </a>
     </li>
@@ -11781,6 +11781,23 @@
     
   
   xlsxwriter - python package
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../yabai%2C%20tiling%20window%20manager%20for%20macOS/" class="md-tabs__link">
+        
+  
+    
+  
+  yabai, tiling window manager for macOS
 
       </a>
     </li>
@@ -26836,7 +26853,7 @@
         
   
   <span class="md-ellipsis">
-    leet_743_network_delay_time -- dijkstra -- graph -- min heap
+    leet_743_network_delay_time{dijkstra}{graph}{min heap}
   </span>
   
 
@@ -30125,6 +30142,25 @@
   
   <span class="md-ellipsis">
     xlsxwriter - python package
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yabai%2C%20tiling%20window%20manager%20for%20macOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    yabai, tiling window manager for macOS
   </span>
   
 
@@ -33584,14 +33620,103 @@
                   
 
 
-  <h1>leet_743_network_delay_time -- dijkstra -- graph -- min heap</h1>
+  <h1>leet_743_network_delay_time{dijkstra}{graph}{min heap}</h1>
 
 <ul>
-<li>https://leetcode.com/problems/network-delay-time/</li>
+<li><a href="https://leetcode.com/problems/network-delay-time/">https://leetcode.com/problems/network-delay-time/</a></li>
 <li><a href="https://github.com/OrmiCodeRanger/ChoiSeunghyeon/issues/1">The reason of FAIL -- github issue</a></li>
 <li><a href="../priority%20queue%20-%20python/">priority queue - python</a> </li>
 </ul>
 <p>다익스트라 알고리즘을 파이썬으로 직접 구현한게 이번이 처음이다. 수도코드로만 읽고 이게 이거구나 하고 넘어간 것과는 완전히 다른 느낌이다. 역시 직접 구현을 해보는 것이 중요하다!</p>
+<ul>
+<li>다익스트라 알고리즘을 활용한 문제풀이코드</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">https://leetcode.com/problems/network-delay-time/</span>
+<span class="sd">min heap을 활용한 다익스트라</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">heapq</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+
+
+<span class="n">V</span> <span class="o">=</span> <span class="nb">int</span>  <span class="c1"># Vertex</span>
+<span class="n">W</span> <span class="o">=</span> <span class="nb">int</span>  <span class="c1"># Weight</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">PrioritizedItem</span><span class="p">:</span>
+    <span class="n">key</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">item</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">compare</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">V</span><span class="p">,</span> <span class="n">W</span><span class="p">]]],</span> <span class="n">source</span><span class="p">:</span> <span class="n">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">V</span><span class="p">,</span> <span class="n">W</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    source로부터 graph 안의 모든 노드들 사이에 최단거리를 리턴한다.</span>
+<span class="sd">    만약 닿을 수 없는 노드라면 key 값에 포함이 되어있지 않는 식으로 처리했다.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># source로부터 v까지 필요한 거리</span>
+    <span class="c1"># 위키와 다른 형태 주의</span>
+    <span class="n">queue</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">PrioritizedItem</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">PrioritizedItem</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="mi">0</span><span class="p">))]</span>
+
+    <span class="c1"># source에서 v까지 최단거리</span>
+    <span class="c1"># 위키와 다른 형태 주의. INF 값을 사용하지 않고 그냥 dict를 비워두는 것.</span>
+    <span class="n">dist</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">V</span><span class="p">,</span> <span class="n">W</span><span class="p">]</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="c1"># 가장 가까운 노드부터 꺼낸다. -- 위키피디아의 것과 일치</span>
+        <span class="n">vertex</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span><span class="o">.</span><span class="n">item</span>
+
+        <span class="k">if</span> <span class="n">vertex</span> <span class="ow">in</span> <span class="n">dist</span><span class="p">:</span>
+            <span class="c1"># 해당 버텍스로 가는 최단거리가 이미 구해졌다.</span>
+            <span class="c1"># 따라서 해당값을 그냥 버린다.</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># vertex까지 가는 최단거리를 찾았다.</span>
+        <span class="n">dist</span><span class="p">[</span><span class="n">vertex</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+
+        <span class="k">for</span> <span class="n">n_vertex</span><span class="p">,</span> <span class="n">n_weight</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">vertex</span><span class="p">]:</span>
+            <span class="c1"># vertex와 인접한 노드들을 순회</span>
+            <span class="c1"># 이때 source로부터 vertex까지의 최단거리인 weight를</span>
+            <span class="c1"># 추가해 주어야 한다는 것이다.</span>
+            <span class="n">alt</span> <span class="o">=</span> <span class="n">n_weight</span> <span class="o">+</span> <span class="n">weight</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">PrioritizedItem</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">alt</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="p">(</span><span class="n">n_vertex</span><span class="p">,</span> <span class="n">alt</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="n">dist</span>
+
+
+<span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">networkDelayTime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        return the minimum time it takes for all the n nodes to receive the</span>
+<span class="sd">        signal. If it is impossible, return -1</span>
+
+<span class="sd">        params:</span>
+<span class="sd">        - times: list of [u, v, w], where u is the source node, v is the</span>
+<span class="sd">            target node, w is the time it takes for a signal to travel</span>
+<span class="sd">            from source to target.</span>
+<span class="sd">        - n: number of nodes</span>
+<span class="sd">        - k: very first node that tries to send signal</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># normalise indices</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[[</span><span class="n">u</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">v</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">times</span><span class="p">]</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># create a graph</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+        <span class="n">dist</span> <span class="o">=</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dist</span><span class="p">)</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">dist</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</code></pre></div>
 
 
 
