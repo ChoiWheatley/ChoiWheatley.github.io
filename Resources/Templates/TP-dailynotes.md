@@ -37,10 +37,6 @@ tags:
 
 - 
 
-___
-
-![[Pending ⌛.canvas]]
-
 ---
 # Notes modified today
 
