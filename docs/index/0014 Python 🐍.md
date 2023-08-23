@@ -50,6 +50,7 @@ title: 0014 Python 🐍
 	- [ ]  [[typing.Optional and type union in python]]
 	- [x] [[self reference a class with typing.Self (python)]]
 	- [ ] [[setting up python environment venv requirenemts.txt]]
+	- [ ] [[property, getter and setter in {python}]]
  - book
 	- [[CPython 파헤치기 - 엔서니 쇼]]
 	- [[Fluent Python Clear, Concise and Effective Programming, 2nd Edition]]
