@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-23T11:27:26
+updated: 2023-08-24T09:54:51
 ---
 
 ## INDEX
@@ -79,10 +79,12 @@ ___
 - Day02: Queue
 	- [PR: 17608, 10828, 2504, 2493, 2812, 18258, 2164 ](https://github.com/ChoiWheatley/swjungle-week-02/pull/8)
 - Day03: PriorityQueue, Graph
+	- [[graph 기초|그래프]]
 	- [PR1: 원 영역, 최대 힙](https://github.com/ChoiWheatley/swjungle-week-02/pull/11)
 	- [PR2: 가운데를 말해요, 카드 정렬하기](https://github.com/ChoiWheatley/swjungle-week-02/pull/13)
 - Day04: DFS
 	- [PR](https://github.com/ChoiWheatley/swjungle-week-02/pull/15)
+- [[위상정렬]]  
 
 ### Doit!
 
@@ -90,15 +92,16 @@ ___
 
 ### TIPS
 
-- `Exception`을 상속하는 클래스는 `raise`가 가능해지는구나 ==p.157==
-- `try` - `except` - `else` - `finally` 
-	- `try`: 원래 처리할 내용
-	- `except`: 예상 에러 발생시 처리할 내용
-	- `else`: 에러 미발생시 처리할 내용
-	- `finally`: 심지어 중간에 리턴을 했을지라도 에러 발생여부 상관없이 무조건 실행하는 내용
-- `BaseException`과 `Exception` 간의 차이
-- `__contains__`: `in` 문법 사용 가능
-- [[dataclass ValueError mutable default class list is not allowed, use default_factory {python}]]
+- [[0014 Python 🐍]]으로 옮겨적었습니다.
+	- `Exception`을 상속하는 클래스는 `raise`가 가능해지는구나 ==p.157==
+	- `try` - `except` - `else` - `finally` 
+		- `try`: 원래 처리할 내용
+		- `except`: 예상 에러 발생시 처리할 내용
+		- `else`: 에러 미발생시 처리할 내용
+		- `finally`: 심지어 중간에 리턴을 했을지라도 에러 발생여부 상관없이 무조건 실행하는 내용
+	- `BaseException`과 `Exception` 간의 차이
+	- `__contains__`: `in` 문법 사용 가능
+	- [[dataclass ValueError mutable default class list is not allowed, use default_factory {python}]]
 
 ### 문제풀이
 
@@ -107,37 +110,30 @@ ___
 - [[11279 최대 힙 {boj} {heap} {python class Heap}]]
 - [[1655 가운데를 말해요 {boj} {heapq}]]
 - [[1715 카드 정렬하기 {boj}]] →수열을 더하는데 괄호를 어디에 배치하느냐에 따라 달라지는 결과값 중 최소를 구하는 문제인듯
+- [[13334 철로 {boj} {priorityqueue}]]  
+- [[21606(아침산책) {boj} {dfs}]]  
+- [[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]  
+- [[이분 그래프]]  
+- [[2617 구슬찾기 {boj} {플로이드워셜}]]  
+- [[1948 임계경로 {boj} {위상정렬}]]
 
 ### 다시 풀 문제
 
-- [[13334 철로 {boj}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?
-- 11725(트리부모찾기): 멍청하게 10_000 ** 2 크기의 행렬을 생성하려고 했다.
-- 1707(이분그래프): 20분동안 문제를 다르게 바라보았다. 그래도 실마리는 찾은 것 같다.  
-	- 집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 `set.교집합()` 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임	
-- 21606(아침산책): 73점, 
+- ~~[[13334 철로 {boj} {priorityqueue}]] → 길이 d의 모든 선분 L에 대하여 집과 사무실의 위치가 모두 L에 포함되는 사람들의 최대 수를 구하는 문제가 힙이야?~~  
+~~- 11725(트리부모찾기): 멍청하게 10_000 ** 2 크기의 행렬을 생성하려고 했다.
+- ~~1707(이분그래프): 20분동안 문제를 다르게 바라보았다. 그래도 실마리는 찾은 것 같다.~~  
+	- ~~집합 안에서 정점끼리 인접하지 않아야 한다. DFS 돌면서 핑퐁하면서 집합을 다르게 준다. 두 개의 집합으로부터 중복되는 원소가 있다면 `set.교집합()` 결과가 비어있지 않으면 이건 이분그래프가 아니게 된다는 것임~~	
+- [[21606(아침산책) {boj} {dfs}]]: 73점, 
 	- Ai = 0인 케이스, Ai = 1인 i는 2개 이하인 케이스, N<= 100인 케이스는 모두 맞추었으나
 	- 1 <= i < N 인 모든 정수 i에 대해 트리의 i번 정점과 i+1번 정점 사이에 간선이 존재하는 경우 (35점)과 추가 제한조건 없는(92점) 케이스는 틀렸다.
-- 2573(빙산): 시간초과
-	- 대충봐도 비효율적이긴 한데... 시간 안에 구현하려면 깊게 생각할 시간이 부족해지지 않나???
-	- ==단절점 평가==
-- 10000(원 영역): 시간초과
+- ~~2573(빙산): 시간초과~~
+	- ~~대충봐도 비효율적이긴 한데... 시간 안에 구현하려면 깊게 생각할 시간이 부족해지지 않나???~~
+- ~~10000(원 영역): 시간초과~~
 	- [[Union Find]]이 여기서 왜 나와?
 
-> 문제를 풀 때가 아니다, 머리에 든 게 없다 
+> 문제를 풀 때가 아니다, 머리에 든 게 없다 [[graph 기초|그래프]]를 다시 공부하자.
 
 ### Prerequisites
 
 - [[1197 최소 스패닝 트리 {boj}]]와 [[Union Find]]를 공부하며 서로소집합이 무엇인지 알아야 한다.
 - 서로소집합을 알아야 [[단절점]]을 이해할 수 있다.
-
-### BFS ♥️ Dijkstra
-
-[[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]
-
-### 위상정렬 (Topology Sort)
-
-[[위상정렬]]
-
-### 이분 그래프(Bipartite Graph)
-
-[[이분 그래프]]

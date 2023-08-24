@@ -12,7 +12,7 @@ aliases:
 tags: [" algo/graph  ", algo/graph]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-21T23:10:47
+updated: 2023-08-24T09:39:17
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -211,8 +211,13 @@ parent link: [[0011 Algorithms ♾️]]
 
 사이클 여부를 판단하는 방법은 바로 서로소 집합(disjoint set)의 [[Union Find]]를 통해 해결이 가능하다.
 
-## 최소신장트리 (minimum spanning tree)
+### 최소신장트리 (minimum spanning tree)
 
 > 최소신장트리는 가중치합이 최소가 되도록 만든 신장트리이다
 
-대표적으로 [[prim algorithm과 kruskal algorithm {Minimum Spanning Tree}]]이 있다.
+대표적으로 [[prim algorithm과 kruskal algorithm {Minimum Spanning Tree}]]이 있다.  
+[[1197 최소 스패닝 트리 {boj}]]
+
+# 이중 연결 요소 (Biconnected Components)
+
+[다음 PR 참고](https://github.com/ChoiWheatley/swjungle-week-02/blob/day07/ChoiWheatley/ChoiWheatley/p2617.py)

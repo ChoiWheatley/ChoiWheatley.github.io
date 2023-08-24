@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-08-14T16:45:14
+updated: 2023-08-24T09:55:56
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -113,6 +113,11 @@ title: 0014 Python 🐍
 - [[python은 분기예측을 하는가 {sof}]]
 - [[for else {python}]]
 - [[catch multiple exceptions in {python}]]
+- `Exception`을 상속하는 클래스는 `raise`가 가능해지는구나 
+	- [?] `BaseException`과 `Exception` 간의 차이?
+- [[try - except - else - finally (python)]]
+- `__contains__`: `in` 문법 사용 가능
+- [[dataclass ValueError mutable default class list is not allowed, use default_factory {python}]]
 
 ---
 
