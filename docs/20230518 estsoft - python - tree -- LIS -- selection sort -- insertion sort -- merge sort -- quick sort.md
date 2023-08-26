@@ -24,7 +24,7 @@ title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion so
 
 # LIS (Longest Increasing Subsequence)
 
-[[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]  
+[[LIS 가장 긴 증가하는 부분수열]]  
 <https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812> 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.  
 ^4ygbua
 
