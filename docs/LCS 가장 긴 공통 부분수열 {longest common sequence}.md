@@ -1,12 +1,12 @@
 ---
 description:
 aliases: 
-tags: 
+tags: algo/dp 
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-07-15T21:33:05
-title: LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58
+updated: 2023-08-26T21:20:27
+title: LCS 가장 긴 공통 부분수열 {longest common sequence}
 ---
 
 # LCS 가장 긴 공통 부분수열
@@ -14,7 +14,7 @@ title: LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58
 상태: 풀이완료  
 태그: dp, string
 
-[최장공통부분수열 - swea](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr) | [wiki](https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열)
+[최장공통부분수열 - swea](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr) | [wiki](https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열) | [9251 LCS {boj}](https://www.acmicpc.net/problem/9251)
 
 # 개요
 
@@ -56,7 +56,7 @@ def sol(s1, s2):
 가장 작은 접두어는 당연히 빈 수열일테니, i = 0 or j = 0일때다. 따라서
 
 $$
-\text{LCS}(X_0,Y_i)_{i\le size(Y)}=\empty\\ \text{LCS}(X_i,Y_0)_{i\le size(X)}=\empty
+\text{LCS}(X_0,Y_i)_{i\le size(Y)}=~~\\ \text{LCS}(X_i,Y_0)_{i\le size(X)}
 $$
 
 부분문제 : 

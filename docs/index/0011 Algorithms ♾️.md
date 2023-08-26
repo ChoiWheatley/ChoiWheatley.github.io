@@ -59,7 +59,7 @@ ___
 - [[next_permutation 구현|next permutation 구현]]
 - [[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
 - [[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812|LIS]]
-- [[LCS 가장 긴 공통 부분수열 f0cc6bf4f3074b9d93505e0ab5062c58|LCS]]
+- [[LCS 가장 긴 공통 부분수열 {longest common sequence}|LCS]]
 - [[종만북 카라츠바 알고리즘 정답편 + 포스팅ᄋ 5bb97600d3b94c38b1050e1cb4ee3c4e|카라츠바 알고리즘 정답편]]
 - [[Segment Tree]]
 - [[Hash]] 
