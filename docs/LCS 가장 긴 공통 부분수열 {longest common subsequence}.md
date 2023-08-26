@@ -5,7 +5,7 @@ tags: algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-26T21:58:09
+updated: 2023-08-26T22:52:56
 title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
 ---
 
@@ -82,3 +82,10 @@ $$
     $$
     \text{LCS}(X_n, Y_{m})=\text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m}))
     $$
+
+## 예제
+
+X = ACAYKP  
+Y = CAPCAK  
+라고 할 때, 상향식 방식으로 DP 배열을 만들고자 하는 경우 다음과 같이 그릴 수 있다.  
+![[IMG_2714.jpg]]
