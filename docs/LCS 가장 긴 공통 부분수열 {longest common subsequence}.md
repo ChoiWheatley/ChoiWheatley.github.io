@@ -5,8 +5,8 @@ tags: algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-26T21:20:27
-title: LCS 가장 긴 공통 부분수열 {longest common sequence}
+updated: 2023-08-26T21:46:29
+title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
 ---
 
 # LCS 가장 긴 공통 부분수열
@@ -20,7 +20,7 @@ title: LCS 가장 긴 공통 부분수열 {longest common sequence}
 
 Longest Common Sequence 
 
-두 문자열이 주어졌을 때 —문자열도 결국 수열이니까— 두 문자열의 공통 부분수열 중 가장 긴 녀석의 길이를 찾아라.
+두 문자열이 주어졌을 때 —문자열도 결국 수열이니까— 두 문자열의 공통 부분수열 중 가장 긴 녀석의 길이를 찾아라. *최적화 문제이구나*
 
 예를 들어 "acaykp"와 "capcak"의 경우, 두 문자열의 최대 공통 부분 수열은 "acak"로 길이가 4이다. 예시와 같이 공통부분”문자열”이 아니라 공통부분”수열”이라는 점 유의하고.
 
