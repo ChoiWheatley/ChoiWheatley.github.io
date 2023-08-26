@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/LIS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20d61b26f5619a4ea1b0412155535ec812/">
+        <link rel="canonical" href="https://choiwheatley.github.io/LIS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4/">
       
       
         <link rel="prev" href="../LCS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EA%B3%B5%ED%86%B5%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20%7Blongest%20common%20subsequence%7D/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812 - Choi Wheatley's Second Brain</title>
+        <title>LIS 가장 긴 증가하는 부분수열 - Choi Wheatley's Second Brain</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812
+              LIS 가장 긴 증가하는 부분수열
             
           </span>
         </div>
@@ -3965,7 +3965,7 @@
   
     
   
-  LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812
+  LIS 가장 긴 증가하는 부분수열
 
       </a>
     </li>
@@ -21719,7 +21719,7 @@
         
   
   <span class="md-ellipsis">
-    LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812
+    LIS 가장 긴 증가하는 부분수열
   </span>
   
 
@@ -34311,20 +34311,17 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><code>using_dp_iter</code> 함수의 인자로 들어가는 반복자 <code>it</code> 을 포함하는 부분수열 중 가장 긴 증가부분수열의 길이를 ret에 저장하게 된다. 이로인해 초기 <code>it</code> 을 결정하는 코드를 N 번 수행하여야 하고 (using_dp), 하나의 이터레이션마다 최대 N번 재귀를 반복하기 때문에 이 코드의 시간복잡도는 O(N^N)가 된다. 하지만 우리에겐 중복되는 문제의 해답을 이미 가지고 있으므로 time taken per iteration = N 즉, O(N*N) 이 된다. 물론 N의 최대치인 500에 비교하면 해당 테스트 케이스 안에 정복이 가능하다.</p>
-<aside>
-💡 [Time Complexity is **the number of unique problems / subproblems * time taken per iteration**](https://www.freecodecamp.org/news/demystifying-dynamic-programming-24fbdb831d3a/)
-
-</aside>
-
+<p><code>using_dp_iter</code> 함수의 인자로 들어가는 반복자 <code>it</code> 을 포함하는 부분수열 중 가장 긴 증가부분수열의 길이를 ret에 저장하게 된다. 이로인해 초기 <code>it</code> 을 결정하는 코드를 N 번 수행하여야 하고 (using_dp), 하나의 이터레이션마다 최대 N번 재귀를 반복하기 때문에 이 코드의 시간복잡도는 O(N^N)가 된다. 하지만 우리에겐 중복되는 문제의 해답을 이미 가지고 있으므로 time taken per iteration = N 즉, <code>O(N*N)</code> 이 된다. 물론 N의 최대치인 500에 비교하면 해당 테스트 케이스 안에 정복이 가능하다.</p>
+<blockquote>
+<p>💡 <a href="https://www.freecodecamp.org/news/demystifying-dynamic-programming-24fbdb831d3a/">Time Complexity is <strong>the number of unique problems / subproblems * time taken per iteration</strong></a></p>
+</blockquote>
+<p>시간복잡도는 고유문제의 수 ➗ 부분문제의 수 ✖️ 이터레이션을 지배하는 시간복잡도</p>
 <h1 id="not-dp">최적화 방법론 (not dp)<a class="headerlink" href="#not-dp" title="Permanent link">#</a></h1>
 <p>위의 방법을 활용하면 매 이터레이션마다 접근하게 되는 부분문제의 수가 N개가 된다. 만약 이를 줄일 수 있다면? 우리는 고정된 길이 i에서의 LIS의 길이를 가지고는 있으나, 그것 말고는 저장하고 있는 정보가 없다. 따라서 조금 더 영리하게 문제를 풀기 위해선 dp의 정의였던 <strong>부분문제의 유일성</strong> 을 포기 하고서라도 캐시를 말 그대로 동적으로 활용해야 한다. </p>
 <p><a href="https://seungkwan.tistory.com/8">가장 긴 증가하는 부분 수열 (Longest Increasing Subsequence)</a></p>
-<aside>
-💡 cache[i] = i 길이 증가수열의 마지막 원소 중 가장 작은 값을 가리키는 인덱스
-
-</aside>
-
+<blockquote>
+<p>💡 cache[i] = i 길이 증가수열의 마지막 원소 중 가장 작은 값을 가리키는 인덱스</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">efficient_lis</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">seq</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">newL</span><span class="p">;</span>
