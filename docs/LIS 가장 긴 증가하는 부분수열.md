@@ -5,7 +5,7 @@ tags: algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-26T23:20:16
+updated: 2023-08-26T23:29:39
 title: LIS 가장 긴 증가하는 부분수열
 ---
 
@@ -90,12 +90,11 @@ int using_dp(vector<int>& sequence)
 }
 ```
 
-`using_dp_iter` 함수의 인자로 들어가는 반복자 `it` 을 포함하는 부분수열 중 가장 긴 증가부분수열의 길이를 ret에 저장하게 된다. 이로인해 초기 `it` 을 결정하는 코드를 N 번 수행하여야 하고 (using_dp), 하나의 이터레이션마다 최대 N번 재귀를 반복하기 때문에 이 코드의 시간복잡도는 O(N^N)가 된다. 하지만 우리에겐 중복되는 문제의 해답을 이미 가지고 있으므로 time taken per iteration = N 즉, O(N*N) 이 된다. 물론 N의 최대치인 500에 비교하면 해당 테스트 케이스 안에 정복이 가능하다.
+`using_dp_iter` 함수의 인자로 들어가는 반복자 `it` 을 포함하는 부분수열 중 가장 긴 증가부분수열의 길이를 ret에 저장하게 된다. 이로인해 초기 `it` 을 결정하는 코드를 N 번 수행하여야 하고 (using_dp), 하나의 이터레이션마다 최대 N번 재귀를 반복하기 때문에 이 코드의 시간복잡도는 O(N^N)가 된다. 하지만 우리에겐 중복되는 문제의 해답을 이미 가지고 있으므로 time taken per iteration = N 즉, `O(N*N)` 이 된다. 물론 N의 최대치인 500에 비교하면 해당 테스트 케이스 안에 정복이 가능하다.
 
-<aside>
-💡 [Time Complexity is **the number of unique problems / subproblems * time taken per iteration**](https://www.freecodecamp.org/news/demystifying-dynamic-programming-24fbdb831d3a/)
+> 💡 [Time Complexity is **the number of unique problems / subproblems * time taken per iteration**](https://www.freecodecamp.org/news/demystifying-dynamic-programming-24fbdb831d3a/)
 
-</aside>
+시간복잡도는 고유문제의 수 ➗ 부분문제의 수 ✖️ 이터레이션을 지배하는 시간복잡도
 
 # 최적화 방법론 (not dp)
 
@@ -103,10 +102,7 @@ int using_dp(vector<int>& sequence)
 
 [가장 긴 증가하는 부분 수열 (Longest Increasing Subsequence)](https://seungkwan.tistory.com/8)
 
-<aside>
-💡 cache[i] = i 길이 증가수열의 마지막 원소 중 가장 작은 값을 가리키는 인덱스
-
-</aside>
+> 💡 cache[i] = i 길이 증가수열의 마지막 원소 중 가장 작은 값을 가리키는 인덱스
 
 ```cpp
 int efficient_lis(const vector<int>& seq)
