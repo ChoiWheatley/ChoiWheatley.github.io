@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-26T17:12:43
+updated: 2023-08-26T19:10:28
 ---
 
 ## INDEX
@@ -155,3 +155,7 @@ WEEK 04에서 C를 들어가는데, 미리미리 준비해주는 것이 좋을 �
 - INDEX
 	- [문제풀이링크 {GH}](https://github.com/Designated-Hitter/Week03----algorithm/pull/4) | 루트 README로 문제풀이현황을 체크하고 각 문제 폴더 안 README에 각종 고민들 풀고
 - Problems
+	- [[2624 동전 바꿔주기{boj}]]
+	- [[9084 동전 {boj}]]
+	- [[2294 동전 2{boj}]]
+	- [[9251 LCS {boj}]]
