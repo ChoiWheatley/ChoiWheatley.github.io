@@ -4,7 +4,7 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-26T21:09:14
+updated: 2023-08-26T21:23:15
 ---
 
 ## INDEX
@@ -158,7 +158,7 @@ WEEK 04에서 C를 들어가는데, 미리미리 준비해주는 것이 좋을 �
 	- [[2624 동전 바꿔주기{boj}]]
 	- [[9084 동전 {boj}]]
 	- [[2294 동전 2{boj}]]
-	- [[9251 LCS {boj}]]
+	- 9251 LCS {boj} → [[LCS 가장 긴 공통 부분수열 {longest common subsequence}]] 참고하세요 과거의 나에게 압도적 감사
 
 ### 일정
 
