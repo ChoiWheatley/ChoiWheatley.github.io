@@ -5,7 +5,7 @@ tags: algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-26T21:46:29
+updated: 2023-08-26T21:58:09
 title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
 ---
 
@@ -14,7 +14,7 @@ title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
 상태: 풀이완료  
 태그: dp, string
 
-[최장공통부분수열 - swea](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr) | [wiki](https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열) | [9251 LCS {boj}](https://www.acmicpc.net/problem/9251)
+[최장공통부분수열 - swea](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr) | [wiki](https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열) | [9251 LCS {boj}](https://www.acmicpc.net/problem/9251) | [누워서 보는 알고리즘 {YT}](https://youtu.be/z8KVLz9BFIo?feature=shared)
 
 # 개요
 
