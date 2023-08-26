@@ -571,7 +571,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/2294%20%EB%8F%99%EC%A0%84%202%7Bboj%7D/</loc>
+         <lastmod>2023-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/2617%20%EA%B5%AC%EC%8A%AC%EC%B0%BE%EA%B8%B0%20%7Bboj%7D%20%7B%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C%7D/</loc>
+         <lastmod>2023-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/2624%20%EB%8F%99%EC%A0%84%20%EB%B0%94%EA%BF%94%EC%A3%BC%EA%B8%B0%7Bboj%7D/</loc>
          <lastmod>2023-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -617,6 +627,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/40Hz%20Binaural%20Beats%EC%9D%98%20%ED%9A%A8%EA%B3%BC%20-%20%7B%EC%95%A4%EB%93%9C%EB%A5%98%20%ED%9B%84%EB%B2%84%EB%A7%8C%7D/</loc>
+         <lastmod>2023-08-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/9251%20LCS%20%7Bboj%7D/</loc>
          <lastmod>2023-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
