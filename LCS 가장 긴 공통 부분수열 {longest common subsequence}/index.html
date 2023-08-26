@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/LCS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EA%B3%B5%ED%86%B5%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20%7Blongest%20common%20sequence%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/LCS%20%EA%B0%80%EC%9E%A5%20%EA%B8%B4%20%EA%B3%B5%ED%86%B5%20%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%20%7Blongest%20common%20subsequence%7D/">
       
       
         <link rel="prev" href="../Knapsack%20problem%20-%20Wikipedia/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>LCS 가장 긴 공통 부분수열 {longest common sequence} - Choi Wheatley's Second Brain</title>
+        <title>LCS 가장 긴 공통 부분수열 {longest common subsequence} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LCS 가장 긴 공통 부분수열 {longest common sequence}
+              LCS 가장 긴 공통 부분수열 {longest common subsequence}
             
           </span>
         </div>
@@ -3948,7 +3948,7 @@
   
     
   
-  LCS 가장 긴 공통 부분수열 {longest common sequence}
+  LCS 가장 긴 공통 부분수열 {longest common subsequence}
 
       </a>
     </li>
@@ -21700,7 +21700,7 @@
         
   
   <span class="md-ellipsis">
-    LCS 가장 긴 공통 부분수열 {longest common sequence}
+    LCS 가장 긴 공통 부분수열 {longest common subsequence}
   </span>
   
 
@@ -34248,10 +34248,10 @@
 <h1 id="lcs">LCS 가장 긴 공통 부분수열<a class="headerlink" href="#lcs" title="Permanent link">#</a></h1>
 <p>상태: 풀이완료<br />
 태그: dp, string</p>
-<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr">최장공통부분수열 - swea</a> | <a href="https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열">wiki</a> | <a href="https://www.acmicpc.net/problem/9251">9251 LCS {boj}</a></p>
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr">최장공통부분수열 - swea</a> | <a href="https://ko.m.wikipedia.org/wiki/최장_공통_부분_수열">wiki</a> | <a href="https://www.acmicpc.net/problem/9251">9251 LCS {boj}</a> | <a href="https://youtu.be/z8KVLz9BFIo?feature=shared">누워서 보는 알고리즘 {YT}</a></p>
 <h1 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <p>Longest Common Sequence </p>
-<p>두 문자열이 주어졌을 때 —문자열도 결국 수열이니까— 두 문자열의 공통 부분수열 중 가장 긴 녀석의 길이를 찾아라.</p>
+<p>두 문자열이 주어졌을 때 —문자열도 결국 수열이니까— 두 문자열의 공통 부분수열 중 가장 긴 녀석의 길이를 찾아라. <em>최적화 문제이구나</em></p>
 <p>예를 들어 "acaykp"와 "capcak"의 경우, 두 문자열의 최대 공통 부분 수열은 "acak"로 길이가 4이다. 예시와 같이 공통부분”문자열”이 아니라 공통부분”수열”이라는 점 유의하고.</p>
 <h1 id="3-for">3중 for 문을 활용한 나의 방식<a class="headerlink" href="#3-for" title="Permanent link">#</a></h1>
 <ul>
@@ -34306,6 +34306,11 @@ $$</p>
 $$</p>
 </li>
 </ol>
+<h2 id="_3">예제<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p>X = ACAYKP<br />
+Y = CAPCAK<br />
+라고 할 때, 상향식 방식으로 DP 배열을 만들고자 하는 경우 다음과 같이 그릴 수 있다.<br />
+<a class="glightbox" href="../assets/IMG_2714.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="IMG_2714.jpg" src="../assets/IMG_2714.jpg" /></a></p>
 
 
 
