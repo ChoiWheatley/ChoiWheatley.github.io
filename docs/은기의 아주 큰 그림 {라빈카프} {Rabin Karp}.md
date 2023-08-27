@@ -2,17 +2,17 @@
 description:
 aliases: 
 created: 2023-02-16T20:39:00
-tags: [' algo/hash  ', algo/hash]
+tags: algo/hash, algo/string 
 source: https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWkIfv7qBCYDFAXC
 author: 
 date created: Thursday, February 16th 2023, 8:39:00 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:02
-title: 은기의 아주 큰 그림
+updated: 2023-08-27T14:04:09
+title: 은기의 아주 큰 그림 {라빈카프} {Rabin Karp}
 ---
 parent link: [[Hash]]
 
-https://choiwheatley.notion.site/717124ae47104e8d902a8c4a571df03d
+<https://choiwheatley.notion.site/717124ae47104e8d902a8c4a571df03d>
 
 # SW Expert Academy
 
