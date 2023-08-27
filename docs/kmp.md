@@ -1,6 +1,6 @@
 ---
 description:
-title: kmp f159c2f6b506459995d832281de0d949
+title: kmp
 created: 2023-02-13T06:16:30
 categories: 
  - 
@@ -9,7 +9,7 @@ aliases:
 tags: [" algo/kmp algo/string ", algo/kmp, algo/string]
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:05
+updated: 2023-08-27T13:28:01
 ---
 parent link: [[0011 Algorithms ♾️|algorithms]]
 

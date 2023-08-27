@@ -54,7 +54,7 @@ ___
 - [[graph 기초|graph]]
 - [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
-- [[kmp f159c2f6b506459995d832281de0d949|kmp]]
+- [[kmp|kmp]]
 - [[tree 기초|tree]]
 - [[next_permutation 구현|next permutation 구현]]
 - [[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
