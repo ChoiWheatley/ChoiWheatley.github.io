@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-27T22:50:38
+updated: 2023-08-27T23:28:32
 ---
 
 ## INDEX / README
@@ -101,9 +101,11 @@ register > L1 cache > L2 cache > L3 cache > main memory > disk storage > network
 프로그램이 실행될 때 우리는 하드웨어를 독점적으로 사용하고 있다는 착각을 하게 만든다. 그 기저엔 운영체제가 깔려있고, 운영체제는 레이어로 구현되어있다. 하드웨어를 다루는 작업 (`printf`, `scanf` 등등)을 수행할 때에도 하드웨어를 컨트롤 하는 레이어의 인터페이스를 사용하는 수밖에 없다. 레이어 간의 추상화 덕분에 보안상의 이점도 가져가고, 인지부하도 줄일 수 있게 되었다.
 
 **다양한 추상화들**
+- ISA(Instruction Set Architecture)는 기계의 동작을 추상화했다.
 - 프로세스는 프로세서를 추상화했다. context switching 덕분에, 프로세서의 개수에 제약을 받지 않고 원하는 만큼의 프로세스를 실행할 수 있게 되었다.
 - 파일은 디스크 IO 디바이스를 추상화했다.
 - 가상메모리는 디스크와 메인 메모리를 추상화했다.
+- 가상 운영체제는 위의 모든 것을 추상화했다. (개쩌는데?) 😮
 
 **프로세스**  
 `syscall`은 커널 코드와 유저 코드를 분리하는 인터페이스이다
@@ -142,6 +144,17 @@ WWW, FTP, SSH 등 다양한 애플리케이션들이 네트워크 어댑터를 �
 	$$
 
 	- 그래서 전체 시스템의 60퍼센트의 실행시간을 차지하는 한 컴포넌트를 3배 빠르게 만들었을 때 전체 시스템의 속도는 이전에 비해 1/(0.4 + 0.6 / 3) = 1.6667 배 빨라지게 된다. 
+
+- Concurrency and Parallelism
+	- Thread Level Parallelism: 멀티 프로세서로 인해 컴퓨터는 동시에 수행할 수 있는 작업의 양이 늘어났다. 하이퍼스레딩 기술을 사용하여 코어 하나당 두개의 스레드를 동시에 실행하는 것을 보장한다. 
+	- Instruction Level Parallelism: Superscala Processors라고 불리우는 파이프라이닝을 통해서 클록 사이클 수회를 차지하는 명령어를 계단 형태로 배치하여 한 사이클 당 하나의 명령어가 실행 완료가 되게 구성할 수 있다.
+	- [!] Single Instruction Multiple data (SIMD): 한 번에 8개의 실수연산을 수행하도록 하드웨어가 구성되어있어 보다 빠르게 행렬연산을 수행할 수 있다. GCC 컴파일러는 C 코드로부터 SIMD 명령어를 식별해 낼 수 있다.
+
+- Layer and Abstractions
+
+    > 소프트웨어 공학의 역사는 추상화 수준을 높히는 방향으로 진행되어왔다. |  [[20230522 김충환 회고강사특강#협력을 통한 추상화]] 
+
+	- API (Application Programming Interface): 프로그래머들이 기능을 제공하기 위해 묶어놓은 함수나 클래스의 집합
 
 ### 1.10 Summary
 
