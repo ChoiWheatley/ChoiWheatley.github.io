@@ -4,7 +4,7 @@ tags:
 description:
 title: 0120 swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2023-08-17T15:10:15
+updated: 2023-08-28T08:46:37
 ---
 
 # INDEX
@@ -14,6 +14,9 @@ updated: 2023-08-17T15:10:15
 - weekly
 	- [[week 00 {swjungle}]]
 	- [[week 01~03 {swjungle} {ALGORITHMS}]]
+		- [[Operating Systems {ssu 2021-second-semester archive}]]
+		- [[Computer Systems A Programmer's Perspective {swjungle}]]
+		- [[Linux IPC Programming {inflearn archive}]]
 
 # QUESTIONS
 
