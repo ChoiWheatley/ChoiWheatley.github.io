@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-25T17:30:46
+updated: 2023-08-27T19:10:44
 ---
 
 ## INDEX / README
@@ -23,7 +23,7 @@ updated: 2023-08-25T17:30:46
 - 1.3 It pays to understand how compilation system work
 	- 어떻게 컴파일 시스템이 작동하는지에 대한 내용을 다룰 것 같다. 1.2와의 차이점? 1.2는 스크립트 언어와 컴파일 언어와의 차이점에 대해서 이야기하려나?
 - 1.4 Processors read and interpret instructions stored in memory
-	- "프로게서는 메모리에 저장된 명령어를 읽고 해독한다."
+	- "프로세서는 메모리에 저장된 명령어를 읽고 해독한다."
 - 1.5 Caches matter
 	- 캐시가 진짜로 중요하기는 하지. 캐시의 양을 늘리는 것만으로 수없이 많은 성능향상을 볼 수 있기 때문!
 - 1.6 Storage devices form a hierarchy
@@ -41,7 +41,20 @@ p.73 ~ p.131 | 60 pages
 
 ### 1.1 Information is bits + context
 
+> The only thing that distinguishes different data objects is the context in which we view them.
+
+서로 다른 데이터임을 구별할 수 있는 유일한 방법은 그것을 바라보는 문맥 뿐이다.
+
 ### 1.2 Programs are translated by other programs into different forms
+
+- 전처리기
+	- 헤더파일 포함, 각종 매크로 치환 후 텍스트 파일 출력
+- 컴파일러
+	- C 코드를 CPU 아키텍처와 맞는 명령어셋의 어셈블리 언어로 출력. (텍스트 파일)
+- 어셈블러
+	- 어셈블리 언어를 기계어로 변환하고 목적파일로 출력 (이진파일)
+- 링커
+	- 이진파일로부터 실행 가능한 파일을 만들기 위해 
 
 ### 1.3 It pays to understand how compilation system work
 
