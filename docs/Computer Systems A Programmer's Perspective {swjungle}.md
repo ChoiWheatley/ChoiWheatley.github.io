@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-27T20:27:33
+updated: 2023-08-27T20:46:03
 ---
 
 ## INDEX / README
@@ -64,14 +64,23 @@ p.73 ~ p.131 | 60 pages
 
 ### 1.3 It pays to understand how compilation system work
 
+컴파일이 진행되는 방법을 알면 코드를 최적화 시킬 수 있고, 보안취약점으로부터 안전한 코드를 작성할 수 있으며, 링크 타임 에러를 해결할 수 있게 된다.
+
+### 1.4 Processors read and interpret instructions stored in memory
+
 셸의 역할: 사용자의 명령을 입력으로 받아 다양한 일을 수행하는 프로그램. 실행 가능한 프로그램을 실행시켜 새 프로세스로 만들어주는 역할을 담당한다. 
 
+**시스템을 구성하는 하드웨어 컴포넌트**
 - Buses
 - I/O Devices
 - Main Memory
 - Processor
 
-### 1.4 Processors read and interpret instructions stored in memory
+> Thus, we can distinguish the processor's instruction set architecture, describing the effect of each machine-code instruction, FROM its microarchitecture, describing how the processor is actually implemented.  
+> 따라서, 우리는 프로세서의 설계도인 마이크로아키텍쳐와 각각의 기계어가 의미하는 바를 설명하는 명령어 셋 아키텍처 간의 차이를 구별할 수 있습니다.
+
+**DMA**  
+Directed Memory Access라고, 우리가 영속저장장치에 저장된 실행 가능한 파일을 실행시킬 때 CPU를 거치지 않고 바로 메모리에 직빵으로 올려버리는 테크닉이 있다.
 
 ### 1.5 Caches matter
 
