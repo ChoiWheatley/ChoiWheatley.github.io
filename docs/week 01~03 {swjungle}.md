@@ -150,7 +150,7 @@ ___
 
 동적 프로그래밍 & 그리디 알고리즘
 
-WEEK 04에서 C를 들어가는데, 미리미리 준비해주는 것이 좋을 것 같다. C '언어'를 배우는 게 아니다. C는 사실 제공되는 기능이 거의 없다. 기계를 이해하는 것, CPU 구조를 이해하는 데 중요하다.
+WEEK 04에서 C를 들어가는데, 미리미리 준비해주는 것이 좋을 것 같다. C '언어'를 배우는 게 아니다. C는 사실 제공되는 기능이 거의 없다. 기계를 이해하는 것, CPU 구조를 이해하는 데 중요하다. | [[Computer Systems A Programmer's Perspective {swjungle}]]
 
 - INDEX
 	- [문제풀이링크 {GH}](https://github.com/Designated-Hitter/Week03----algorithm/pull/4) | 루트 README로 문제풀이현황을 체크하고 각 문제 폴더 안 README에 각종 고민들 풀고
