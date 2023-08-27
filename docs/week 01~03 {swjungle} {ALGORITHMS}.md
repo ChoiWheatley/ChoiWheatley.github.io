@@ -2,19 +2,22 @@
 aliases: 
 tags: 
 description:
-title: week 01~03 {swjungle}
+title: week 01~03 {swjungle} {ALGORITHMS}
 created: 2023-08-10T16:27:48
-updated: 2023-08-28T00:21:25
+updated: 2023-08-28T00:25:17
 ---
 
 ## INDEX
 
+- [[0120 swjungle 🤖]]
 - [swjungle 정보페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html)
 - [문제모음집](https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0)
 - [swjungle-week-01 {GH}](https://github.com/ChoiWheatley/swjungle-week-01)
 - [P7-Week01-03 목요일 시험 문제 답안 제출용 리포지토리 {GH}](https://github.com/SWJungle/P7-Week01-03)
 - [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
 - [[Computer Systems A Programmer's Perspective {swjungle}]]
+- [[Operating Systems {ssu 2021-second-semester archive}]]
+- [[Linux IPC Programming {inflearn archive}]]
 
 ## CSAPP
 

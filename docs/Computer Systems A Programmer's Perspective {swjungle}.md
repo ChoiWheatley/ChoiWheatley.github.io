@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-28T00:21:44
+updated: 2023-08-28T00:26:36
 ---
 
 ## INDEX / README
@@ -137,13 +137,14 @@ WWW, FTP, SSH 등 다양한 애플리케이션들이 네트워크 어댑터를 �
 - Amdahl's Law(암달의 저주)
 	- 병목현상으로 인해 한 컴포넌트의 성능향상이 실제로 유의미한 변화를 주기 어렵다. $T_{old}$ 시간이 걸리던 한 시스템 중 일부를 개선하여 $k$ 배 성능향상을 이뤄냈다고 해보자. 만약 이 컴포넌트 실행시간이 전체 시스템의 $\alpha$ 만큼의 비중을 가지고 있다면 전체 시스템 성능향상 $T_{new}$은 어느정도일까?
 
-	$$
-	\begin{align}
-	T_{new} &= (1-\alpha)\cdot T_{old} ~+~ \frac{\alpha \cdot T_{old}}{k} \\
-	&= T_{old} ((1-\alpha)+\frac{\alpha}{k})
-	\end{align}
-	$$
+$$
+\begin{align}
+T_{new} &= (1-\alpha)\cdot T_{old} ~+~ \frac{\alpha \cdot T_{old}}{k} \\
+&= T_{old} ((1-\alpha)+\frac{\alpha}{k})
+\end{align}
+$$
 
+- 
 	- 그래서 전체 시스템의 60퍼센트의 실행시간을 차지하는 한 컴포넌트를 3배 빠르게 만들었을 때 전체 시스템의 속도는 이전에 비해 1/(0.4 + 0.6 / 3) = 1.6667 배 빨라지게 된다. 
 
 - Concurrency and Parallelism
