@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-27T19:10:44
+updated: 2023-08-27T20:27:33
 ---
 
 ## INDEX / README
@@ -54,9 +54,22 @@ p.73 ~ p.131 | 60 pages
 - 어셈블러
 	- 어셈블리 언어를 기계어로 변환하고 목적파일로 출력 (이진파일)
 - 링커
-	- 이진파일로부터 실행 가능한 파일을 만들기 위해 
+	- 이진파일로부터 실행 가능한 파일을 만들기 위해 relocatable object들의 주소를 정확한 위치로 할당시킨다.
+		- **relocatable object란?**: 정적 라이브러리나 동적 라이브러리들이 정의한 변수, 함수등을 가리키는 포인터. 테이블의 형태로 존재하고 링킹작업 전에는 말 그대로 비어있다.
+
+**추가**
+
+- 로더
+	- 실행파일을 메모리에 올리고 PC(Program Counter)를 설정하는 프로그램. COW (Copy On Write) 메모리 주소 참조, 동적 라이브러리 로드도 담당한다.
 
 ### 1.3 It pays to understand how compilation system work
+
+셸의 역할: 사용자의 명령을 입력으로 받아 다양한 일을 수행하는 프로그램. 실행 가능한 프로그램을 실행시켜 새 프로세스로 만들어주는 역할을 담당한다. 
+
+- Buses
+- I/O Devices
+- Main Memory
+- Processor
 
 ### 1.4 Processors read and interpret instructions stored in memory
 
