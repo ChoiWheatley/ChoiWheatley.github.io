@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.4">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
     
     
       
@@ -34545,7 +34545,6 @@
 
 <h2 id="index-readme">INDEX / README<a class="headerlink" href="#index-readme" title="Permanent link">#</a></h2>
 <ul>
-<li><a href="../Computer%20Systems%20A%20Programmer%27s%20Perspective.pdf">Computer Systems A Programmer's Perspective.pdf</a></li>
 <li>본 페이지는 swjungle WEEK 01 ~ 03 기간도중 읽어야 할 챕터들 + 이후에 계속 접하면서 새로 알게된 내용 위주로 작성할 예저입니다. 페이지의 양이 많아지는 것을 줄이기 위해 어느정도 길이가 길어진다면 별도의 페이지를 파 그쪽으로 레퍼런싱을 하는 쪽으로 관리할 예정입니다.</li>
 </ul>
 <h2 id="1-a-tour-of-computer-systems">1. A Tour of Computer Systems<a class="headerlink" href="#1-a-tour-of-computer-systems" title="Permanent link">#</a></h2>
@@ -34565,7 +34564,7 @@
 </ul>
 </li>
 <li>1.4 Processors read and interpret instructions stored in memory<ul>
-<li>"프로게서는 메모리에 저장된 명령어를 읽고 해독한다."</li>
+<li>"프로세서는 메모리에 저장된 명령어를 읽고 해독한다."</li>
 </ul>
 </li>
 <li>1.5 Caches matter<ul>
@@ -34591,14 +34590,126 @@
 </ul>
 <p>p.73 ~ p.131 | 60 pages</p>
 <h3 id="11-information-is-bits-context">1.1 Information is bits + context<a class="headerlink" href="#11-information-is-bits-context" title="Permanent link">#</a></h3>
+<blockquote>
+<p>The only thing that distinguishes different data objects is the context in which we view them.</p>
+</blockquote>
+<p>서로 다른 데이터임을 구별할 수 있는 유일한 방법은 그것을 바라보는 문맥 뿐이다.</p>
 <h3 id="12-programs-are-translated-by-other-programs-into-different-forms">1.2 Programs are translated by other programs into different forms<a class="headerlink" href="#12-programs-are-translated-by-other-programs-into-different-forms" title="Permanent link">#</a></h3>
+<ul>
+<li>전처리기<ul>
+<li>헤더파일 포함, 각종 매크로 치환 후 텍스트 파일 출력</li>
+</ul>
+</li>
+<li>컴파일러<ul>
+<li>C 코드를 CPU 아키텍처와 맞는 명령어셋의 어셈블리 언어로 출력. (텍스트 파일)</li>
+</ul>
+</li>
+<li>어셈블러<ul>
+<li>어셈블리 언어를 기계어로 변환하고 목적파일로 출력 (이진파일)</li>
+</ul>
+</li>
+<li>링커<ul>
+<li>이진파일로부터 실행 가능한 파일을 만들기 위해 relocatable object들의 주소를 정확한 위치로 할당시킨다.<ul>
+<li><strong>relocatable object란?</strong>: 정적 라이브러리나 동적 라이브러리들이 정의한 변수, 함수등을 가리키는 포인터. 테이블의 형태로 존재하고 링킹작업 전에는 말 그대로 비어있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>추가</strong></p>
+<ul>
+<li>로더<ul>
+<li>실행파일을 메모리에 올리고 PC(Program Counter)를 설정하는 프로그램. COW (Copy On Write) 메모리 주소 참조, 동적 라이브러리 로드도 담당한다.</li>
+</ul>
+</li>
+</ul>
 <h3 id="13-it-pays-to-understand-how-compilation-system-work">1.3 It pays to understand how compilation system work<a class="headerlink" href="#13-it-pays-to-understand-how-compilation-system-work" title="Permanent link">#</a></h3>
+<p>컴파일이 진행되는 방법을 알면 코드를 최적화 시킬 수 있고, 보안취약점으로부터 안전한 코드를 작성할 수 있으며, 링크 타임 에러를 해결할 수 있게 된다.</p>
 <h3 id="14-processors-read-and-interpret-instructions-stored-in-memory">1.4 Processors read and interpret instructions stored in memory<a class="headerlink" href="#14-processors-read-and-interpret-instructions-stored-in-memory" title="Permanent link">#</a></h3>
+<p>셸의 역할: 사용자의 명령을 입력으로 받아 다양한 일을 수행하는 프로그램. 실행 가능한 프로그램을 실행시켜 새 프로세스로 만들어주는 역할을 담당한다. </p>
+<p><strong>시스템을 구성하는 하드웨어 컴포넌트</strong>
+- Buses
+- I/O Devices
+- Main Memory
+- Processor</p>
+<blockquote>
+<p>Thus, we can distinguish the processor's instruction set architecture, describing the effect of each machine-code instruction, FROM its microarchitecture, describing how the processor is actually implemented.<br />
+따라서, 우리는 프로세서의 설계도인 마이크로아키텍쳐와 각각의 기계어가 의미하는 바를 설명하는 명령어 셋 아키텍처 간의 차이를 구별할 수 있습니다.</p>
+</blockquote>
+<p><strong>DMA</strong><br />
+Directed Memory Access라고, 우리가 영속저장장치에 저장된 실행 가능한 파일을 실행시킬 때 CPU를 거치지 않고 바로 메모리에 직빵으로 올려버리는 테크닉이 있다.</p>
 <h3 id="15-caches-matter">1.5 Caches matter<a class="headerlink" href="#15-caches-matter" title="Permanent link">#</a></h3>
+<p>저장장치는 크기가 클수록 느리고, 멀수록 느리다. CPU가 데이터를 처리하는 속도의 증가량보다 메모리가 데이터를 처리하는 속도의 증가량이 느리기 때문에 이 차이는 시대가 지날수록 커진다. 따라서 메인 메모리와 CPU 사이에 캐시를 다단계로 갖추어 중요하고 자주 접근할 데이터들을 빠르게 접근할 수 있도록 만들었다.</p>
+<p><strong>localities</strong>
+- 공간적 지역성
+    - 한 메모리를 참조하게 되면 그 주변도 같이 참조할 가능성이 높다.
+- 시간적 지역성
+    - 한 메모리를 참조하게 되면 다시 참조될 가능성이 높다.</p>
 <h3 id="16-storage-devices-form-a-hierarchy">1.6 Storage devices form a hierarchy<a class="headerlink" href="#16-storage-devices-form-a-hierarchy" title="Permanent link">#</a></h3>
+<p>register &gt; L1 cache &gt; L2 cache &gt; L3 cache &gt; main memory &gt; disk storage &gt; network</p>
 <h3 id="17-the-operating-system-manages-the-hardware">1.7 The operating system manages the hardware<a class="headerlink" href="#17-the-operating-system-manages-the-hardware" title="Permanent link">#</a></h3>
+<p>프로그램이 실행될 때 우리는 하드웨어를 독점적으로 사용하고 있다는 착각을 하게 만든다. 그 기저엔 운영체제가 깔려있고, 운영체제는 레이어로 구현되어있다. 하드웨어를 다루는 작업 (<code>printf</code>, <code>scanf</code> 등등)을 수행할 때에도 하드웨어를 컨트롤 하는 레이어의 인터페이스를 사용하는 수밖에 없다. 레이어 간의 추상화 덕분에 보안상의 이점도 가져가고, 인지부하도 줄일 수 있게 되었다.</p>
+<p><strong>다양한 추상화들</strong>
+- ISA(Instruction Set Architecture)는 기계의 동작을 추상화했다.
+- 프로세스는 프로세서를 추상화했다. context switching 덕분에, 프로세서의 개수에 제약을 받지 않고 원하는 만큼의 프로세스를 실행할 수 있게 되었다.
+- 파일은 디스크 IO 디바이스를 추상화했다.
+- 가상메모리는 디스크와 메인 메모리를 추상화했다.
+- 가상 운영체제는 위의 모든 것을 추상화했다. (개쩌는데?) 😮</p>
+<p><strong>프로세스</strong><br />
+<code>syscall</code>은 커널 코드와 유저 코드를 분리하는 인터페이스이다</p>
+<p><strong>스레드</strong><br />
+하나의 프로세스 안에서도 여러개의 실행흐름이 존재할 수 있다.</p>
+<p><strong>가상 메모리</strong>
+- [?] 왜 스택이 위에서 아래로 자라고 힙이 아래에서 위로 자라지? <code>brk</code>는 어디에 붙어있더라?<br />
+<a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-08-27%20%EC%98%A4%ED%9B%84%209.33.41.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-08-27 오후 9.33.41.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-08-27%20%EC%98%A4%ED%9B%84%209.33.41.png" /></a></p>
+<ul>
+<li>Program Code, Data (text 영역)</li>
+<li>Heap 영역</li>
+<li>Shared Libraries영역이 가상메모리의 중간에 존재한다고? 들어본 적이 없는데?</li>
+<li>Stack 영역은 모든 함수와 지역변수들이 쌓이는 공간이다.</li>
+<li>커널 가상 메모리 영역은 커널코드를 직접 손대는 것으로부터 방지하기 위해 마련된 공간이다.</li>
+</ul>
+<p><strong>Files</strong></p>
+<blockquote>
+<p>유닉스 시스템에서 모든 것은 파일이다. IO기기나 네트워크도 파일이라는거. </p>
+</blockquote>
 <h3 id="18-systems-communicate-with-other-systems-using-networks">1.8 Systems communicate with other systems using networks<a class="headerlink" href="#18-systems-communicate-with-other-systems-using-networks" title="Permanent link">#</a></h3>
+<p>WWW, FTP, SSH 등 다양한 애플리케이션들이 네트워크 어댑터를 사용하여 통신한다.</p>
 <h3 id="19-important-themes">1.9 Important themes<a class="headerlink" href="#19-important-themes" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Amdahl's Law(암달의 저주)</p>
+<ul>
+<li>병목현상으로 인해 한 컴포넌트의 성능향상이 실제로 유의미한 변화를 주기 어렵다. $T_{old}$ 시간이 걸리던 한 시스템 중 일부를 개선하여 $k$ 배 성능향상을 이뤄냈다고 해보자. 만약 이 컴포넌트 실행시간이 전체 시스템의 $\alpha$ 만큼의 비중을 가지고 있다면 전체 시스템 성능향상 $T_{new}$은 어느정도일까?</li>
+</ul>
+<p>$$
+\begin{align}
+    T_{new} &amp;= (1-\alpha)\cdot T_{old} <sub>+</sub> \frac{\alpha \cdot T_{old}}{k} \
+    &amp;= T_{old} ((1-\alpha)+\frac{\alpha}{k})
+\end{align}
+$$</p>
+<ul>
+<li>그래서 전체 시스템의 60퍼센트의 실행시간을 차지하는 한 컴포넌트를 3배 빠르게 만들었을 때 전체 시스템의 속도는 이전에 비해 1/(0.4 + 0.6 / 3) = 1.6667 배 빨라지게 된다. </li>
+</ul>
+</li>
+<li>
+<p>Concurrency and Parallelism</p>
+<ul>
+<li>Thread Level Parallelism: 멀티 프로세서로 인해 컴퓨터는 동시에 수행할 수 있는 작업의 양이 늘어났다. 하이퍼스레딩 기술을 사용하여 코어 하나당 두개의 스레드를 동시에 실행하는 것을 보장한다. </li>
+<li>Instruction Level Parallelism: Superscala Processors라고 불리우는 파이프라이닝을 통해서 클록 사이클 수회를 차지하는 명령어를 계단 형태로 배치하여 한 사이클 당 하나의 명령어가 실행 완료가 되게 구성할 수 있다.</li>
+<li>[!] Single Instruction Multiple data (SIMD): 한 번에 8개의 실수연산을 수행하도록 하드웨어가 구성되어있어 보다 빠르게 행렬연산을 수행할 수 있다. GCC 컴파일러는 C 코드로부터 SIMD 명령어를 식별해 낼 수 있다.</li>
+</ul>
+</li>
+<li>
+<p>Layer and Abstractions</p>
+<blockquote>
+<p>소프트웨어 공학의 역사는 추상화 수준을 높히는 방향으로 진행되어왔다. |  <a href="../20230522%20%EA%B9%80%EC%B6%A9%ED%99%98%20%ED%9A%8C%EA%B3%A0%EA%B0%95%EC%82%AC%ED%8A%B9%EA%B0%95/#협력을-통한-추상화">20230522 김충환 회고강사특강#협력을 통한 추상화</a> </p>
+</blockquote>
+<ul>
+<li>API (Application Programming Interface): 프로그래머들이 기능을 제공하기 위해 묶어놓은 함수나 클래스의 집합</li>
+</ul>
+</li>
+</ul>
 <h3 id="110-summary">1.10 Summary<a class="headerlink" href="#110-summary" title="Permanent link">#</a></h3>
 <h2 id="2-representing-and-manipulation-information">2. Representing and Manipulation Information<a class="headerlink" href="#2-representing-and-manipulation-information" title="Permanent link">#</a></h2>
 
