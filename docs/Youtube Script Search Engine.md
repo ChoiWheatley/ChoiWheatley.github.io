@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-18T22:00:38
-updated: 2023-07-15T21:33:03
+updated: 2023-08-27T21:28:49
 title: Youtube Script Search Engine
 ---
 - Usecase
@@ -15,3 +15,5 @@ title: Youtube Script Search Engine
 		- 검색결과를 돌아다니면서 내가 원하던 위치로 간다.
 	- Script가 없을 경우
 		- 불가능. 불가능
+
+유튜브 영상들의 스크립트를 학습시켜서 자동으로 목차를 뽑아내는 그런거 없을까?

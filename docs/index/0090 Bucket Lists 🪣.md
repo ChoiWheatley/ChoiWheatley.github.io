@@ -9,7 +9,7 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-08-21T09:34:01
+updated: 2023-08-27T21:26:14
 ---
 parent link: 
 - [[docs/index/index|index]]
@@ -44,6 +44,7 @@ Pending
 	- [[앱별 inout 패킷 계산하여 데이터 사용량 통계내기]]
 	- [[Xmonad, window tiling manager written in {haskell}]]
 	- [[url shortner with easy-to-memorize]]
+	- [[JSON, XML, YAML, TOML converter]]
 
 - Food
 	- [[순두부김말이]]
@@ -73,7 +74,6 @@ Pending
 
 - 뽐뿌
 	- [[원격접속을 위한 공유기 세팅을 위한 공유기 구매욕구]]
-	- [[ring]]
 - 음악
 	- [[do-re-mi-fa-so-la-ti-do VS Done(Let's Get it)]]  
 On Progress

@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-27T20:46:03
+updated: 2023-08-27T21:50:13
 ---
 
 ## INDEX / README
@@ -84,13 +84,55 @@ Directed Memory Access라고, 우리가 영속저장장치에 저장된 실행 �
 
 ### 1.5 Caches matter
 
+저장장치는 크기가 클수록 느리고, 멀수록 느리다. CPU가 데이터를 처리하는 속도의 증가량보다 메모리가 데이터를 처리하는 속도의 증가량이 느리기 때문에 이 차이는 시대가 지날수록 커진다. 따라서 메인 메모리와 CPU 사이에 캐시를 다단계로 갖추어 중요하고 자주 접근할 데이터들을 빠르게 접근할 수 있도록 만들었다.
+
+**localities**
+- 공간적 지역성
+	- 한 메모리를 참조하게 되면 그 주변도 같이 참조할 가능성이 높다.
+- 시간적 지역성
+	- 한 메모리를 참조하게 되면 다시 참조될 가능성이 높다.
+
 ### 1.6 Storage devices form a hierarchy
+
+register > L1 cache > L2 cache > L3 cache > main memory > disk storage > network
 
 ### 1.7 The operating system manages the hardware
 
+프로그램이 실행될 때 우리는 하드웨어를 독점적으로 사용하고 있다는 착각을 하게 만든다. 그 기저엔 운영체제가 깔려있고, 운영체제는 레이어로 구현되어있다. 하드웨어를 다루는 작업 (`printf`, `scanf` 등등)을 수행할 때에도 하드웨어를 컨트롤 하는 레이어의 인터페이스를 사용하는 수밖에 없다. 레이어 간의 추상화 덕분에 보안상의 이점도 가져가고, 인지부하도 줄일 수 있게 되었다.
+
+**다양한 추상화들**
+- 프로세스는 프로세서를 추상화했다. context switching 덕분에, 프로세서의 개수에 제약을 받지 않고 원하는 만큼의 프로세스를 실행할 수 있게 되었다.
+- 파일은 디스크 IO 디바이스를 추상화했다.
+- 가상메모리는 디스크와 메인 메모리를 추상화했다.
+
+**프로세스**  
+`syscall`은 커널 코드와 유저 코드를 분리하는 인터페이스이다
+
+**스레드**  
+하나의 프로세스 안에서도 여러개의 실행흐름이 존재할 수 있다.
+
+**가상 메모리**
+- [?] 왜 스택이 위에서 아래로 자라고 힙이 아래에서 위로 자라지? `brk`는 어디에 붙어있더라?  
+![[스크린샷 2023-08-27 오후 9.33.41.png]]
+
+- Program Code, Data (text 영역)
+- Heap 영역
+- Shared Libraries영역이 가상메모리의 중간에 존재한다고? 들어본 적이 없는데?
+- Stack 영역은 모든 함수와 지역변수들이 쌓이는 공간이다.
+- 커널 가상 메모리 영역은 커널코드를 직접 손대는 것으로부터 방지하기 위해 마련된 공간이다.
+
+**Files**
+
+> 유닉스 시스템에서 모든 것은 파일이다. IO기기나 네트워크도 파일이라는거. 
+
 ### 1.8 Systems communicate with other systems using networks
 
+WWW, FTP, SSH 등 다양한 애플리케이션들이 네트워크 어댑터를 사용하여 통신한다.
+
 ### 1.9 Important themes
+
+- Amdahl's Law(암달의 저주)
+	- 병목현상으로 인해 한 컴포넌트의 성능향상이 실제로 유의미한 변화를 주기 어렵다.
 
 ### 1.10 Summary
 
