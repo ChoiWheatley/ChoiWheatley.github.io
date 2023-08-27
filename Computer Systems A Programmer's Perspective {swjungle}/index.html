@@ -11969,12 +11969,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../week%2001~03%20%7Bswjungle%7D/" class="md-tabs__link">
+      <a href="../week%2001~03%20%7Bswjungle%7D%20%7BALGORITHMS%7D/" class="md-tabs__link">
         
   
     
   
-  week 01~03 {swjungle}
+  week 01~03 {swjungle} {ALGORITHMS}
 
       </a>
     </li>
@@ -30868,11 +30868,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../week%2001~03%20%7Bswjungle%7D/" class="md-nav__link">
+      <a href="../week%2001~03%20%7Bswjungle%7D%20%7BALGORITHMS%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    week 01~03 {swjungle}
+    week 01~03 {swjungle} {ALGORITHMS}
   </span>
   
 
@@ -34752,10 +34752,10 @@ Directed Memory Access라고, 우리가 영속저장장치에 저장된 실행 �
 <p>WWW, FTP, SSH 등 다양한 애플리케이션들이 네트워크 어댑터를 사용하여 통신한다.</p>
 <h3 id="19-important-themes">1.9 Important themes<a class="headerlink" href="#19-important-themes" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p>Amdahl's Law(암달의 저주)</p>
-<ul>
+<li>Amdahl's Law(암달의 저주)<ul>
 <li>병목현상으로 인해 한 컴포넌트의 성능향상이 실제로 유의미한 변화를 주기 어렵다. $T_{old}$ 시간이 걸리던 한 시스템 중 일부를 개선하여 $k$ 배 성능향상을 이뤄냈다고 해보자. 만약 이 컴포넌트 실행시간이 전체 시스템의 $\alpha$ 만큼의 비중을 가지고 있다면 전체 시스템 성능향상 $T_{new}$은 어느정도일까?</li>
+</ul>
+</li>
 </ul>
 <p>$$
 \begin{align}
@@ -34763,6 +34763,8 @@ T_{new} &amp;= (1-\alpha)\cdot T_{old} <sub>+</sub> \frac{\alpha \cdot T_{old}}{
 &amp;= T_{old} ((1-\alpha)+\frac{\alpha}{k})
 \end{align}
 $$</p>
+<ul>
+<li>
 <ul>
 <li>그래서 전체 시스템의 60퍼센트의 실행시간을 차지하는 한 컴포넌트를 3배 빠르게 만들었을 때 전체 시스템의 속도는 이전에 비해 1/(0.4 + 0.6 / 3) = 1.6667 배 빨라지게 된다. </li>
 </ul>
