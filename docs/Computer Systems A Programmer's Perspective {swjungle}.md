@@ -4,7 +4,7 @@ tags:
 description:
 title: "Computer Systems A Programmer's Perspective {swjungle}"
 created: 2023-08-25T16:47:45
-updated: 2023-08-27T23:28:32
+updated: 2023-08-28T00:21:44
 ---
 
 ## INDEX / README
@@ -139,8 +139,8 @@ WWW, FTP, SSH 등 다양한 애플리케이션들이 네트워크 어댑터를 �
 
 	$$
 	\begin{align}
-		T_{new} &= (1-\alpha)\cdot T_{old} ~+~ \frac{\alpha \cdot T_{old}}{k} \\
-		&= T_{old} ((1-\alpha)+\frac{\alpha}{k})
+	T_{new} &= (1-\alpha)\cdot T_{old} ~+~ \frac{\alpha \cdot T_{old}}{k} \\
+	&= T_{old} ((1-\alpha)+\frac{\alpha}{k})
 	\end{align}
 	$$
 

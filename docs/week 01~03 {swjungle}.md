@@ -4,14 +4,13 @@ tags:
 description:
 title: week 01~03 {swjungle}
 created: 2023-08-10T16:27:48
-updated: 2023-08-26T21:23:15
+updated: 2023-08-28T00:21:25
 ---
 
 ## INDEX
 
 - [swjungle 정보페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html)
 - [문제모음집](https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0)
-	- [문제모음집{개인}](https://docs.google.com/spreadsheets/d/1G0WlH6y9V1RL09KuCbqwM-E57b5xTaIL9HiaQ2ZIvJs/edit?usp=sharing)
 - [swjungle-week-01 {GH}](https://github.com/ChoiWheatley/swjungle-week-01)
 - [P7-Week01-03 목요일 시험 문제 답안 제출용 리포지토리 {GH}](https://github.com/SWJungle/P7-Week01-03)
 - [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
