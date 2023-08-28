@@ -34523,11 +34523,14 @@ $$</p>
 <p>a의 사례는 xn을 지워버리면 전체 LCS에 손실이 발생할 테지만 ym을 지운다고 손실이 일어나지 않는다. 따라서 $\text{LCS}(X_n, Y_{m-1})$</p>
 <p>b의 사례는 반대로 xn을 지운다고 손실이 일어나지 않는다. 따라서$\text{LCS}(X_{n-1}, Y_{m})$두</p>
 <p>2번 사례는 a와 b 경우밖에 존재하지 않기 때문에 둘 중에 더 긴 녀석을 선택하기만 하면 된다. 따라서</p>
-<p>$$
-\text{LCS}(X_n, Y_{m})=\text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m}))
-$$</p>
 </li>
 </ol>
+<p>$$
+\text{LCS}(X_n, Y_{m})= \begin{cases}
+    \text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m})) <sub>\text{if}</sub>x_n \ne y_m  \
+    \text{LCS}(X_{n-1}, Y_{m-1})+x_n <sub>\text{if}</sub>x_n = y_n
+\end{cases} 
+$$</p>
 <h3 id="recurrence-relation">Recurrence Relation<a class="headerlink" href="#recurrence-relation" title="Permanent link">#</a></h3>
 <p>재귀적 관계로 나타낸 수도코드는 다음과 같다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">LCS</span><span class="p">(</span><span class="n">X</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
