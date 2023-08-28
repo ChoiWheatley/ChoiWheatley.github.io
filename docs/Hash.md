@@ -12,9 +12,10 @@ tags:
   - todo
 date created: Thursday, February 16th 2023, 7:19:11 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:04
+updated: 2023-08-28T17:16:29
 ---
-parent link: [[0011 Algorithms ♾️]]
+parent link: [[0011 Algorithms ♾️]]  
+![Hash Table은 프로그래머의 기본기 {YT}](https://youtu.be/S7vni1hdsZE?feature=shared)
 
 ---
 
@@ -65,7 +66,7 @@ unsigned long djbc2(unsigned char * str) {
 
 # 참고
 
-https://woo-dev.tistory.com/106
+<https://woo-dev.tistory.com/106>
 
 # 연습문제
 
