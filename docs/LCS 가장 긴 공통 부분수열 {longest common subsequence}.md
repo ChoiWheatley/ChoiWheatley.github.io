@@ -5,7 +5,7 @@ tags: algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-26T23:19:09
+updated: 2023-08-28T13:46:48
 title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
 ---
 
@@ -79,9 +79,12 @@ $$
     
     2번 사례는 a와 b 경우밖에 존재하지 않기 때문에 둘 중에 더 긴 녀석을 선택하기만 하면 된다. 따라서
 
-    $$
-    \text{LCS}(X_n, Y_{m})=\text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m}))
-    $$
+$$
+\text{LCS}(X_n, Y_{m})= \begin{cases}
+	\text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m})) ~\text{if}~x_n \ne y_m  \\
+	\text{LCS}(X_{n-1}, Y_{m-1})+x_n ~\text{if}~x_n = y_n
+\end{cases} 
+$$
 
 ### Recurrence Relation
 
