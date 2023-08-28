@@ -5,7 +5,7 @@ tags: algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-28T13:46:48
+updated: 2023-08-28T19:49:46
 title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
 ---
 
@@ -131,3 +131,78 @@ X = ACAYKP
 Y = CAPCAK  
 라고 할 때, 상향식 방식으로 DP 배열을 만들고자 하는 경우 다음과 같이 그릴 수 있다.  
 ![[IMG_2714.jpg]]
+
+## LCS 수열 자체도 찾고싶다면?
+
+우리가 사용한 dp와 동일한 크기의 이차원 배열 `dp_b`를 만들어 그 안에 방향정보를 넣어주면 된다. 예를 들어 두 접두어가 같은 문자로 끝나는 경우에는 대각선으로 이동하기 때문에 `Dir.SE`를, 두 접두어가 다르게 끝날 경우엔 더 긴 쪽으로 가는 것이 유리하므로 각각 `Dir.E` 또는 `Dir.S`라는 반복자를 넣어 관리했다.
+
+그 결과로, `len(X)-1, len(Y)-1` 위치에서부터 반복자를 거꾸로 트레이싱 하면서 두 접두어가 일치하는 경우에만 결과값에 추가해주면 뒤집어진 LCS 수열을 찾을 수 있게 된다. 다음은 [9252 LCS 2 {boj}](https://boj.kr/9252) 문제를 풀었을 때의 소스코드이다.
+
+```python
+from enum import Enum, auto
+from typing import Callable
+
+
+class Dir(Enum):
+    SE = auto()
+    E = auto()
+    S = auto()
+
+
+def LCS(X: str, Y: str, hook: Callable[[int, int, Dir], None]) -> int:
+    """X와 Y의 최장 공통부분수열의 길이를 구한다."""
+    # ∵ 빈 수열도 비교해야 하기 때문. (초기조건)
+    dp = [[0 for _ in range(len(Y))] for _ in range(len(X))]
+    for i in range(1, len(X)):
+        for j in range(1, len(Y)):
+            if X[i] == Y[j]:
+                dp[i][j] = dp[i - 1][j - 1] + 1
+                hook(i, j, Dir.SE)
+            elif dp[i - 1][j] > dp[i][j - 1]:
+                hook(i, j, Dir.S)
+                dp[i][j] = dp[i - 1][j]
+            else:
+                hook(i, j, Dir.E)
+                dp[i][j] = dp[i][j - 1]
+    return dp[-1][-1]
+
+
+class Tracer:
+    """공통부분수열의 문자열을 찾기 위해 만든 클래스"""
+
+    dp: list[list[Dir]]
+
+    def __init__(self, xlen: int, ylen: int):
+        self.dp = [[Dir.E for _ in range(ylen)] for _ in range(xlen)]
+
+    def hook(self, i: int, j: int, d: Dir):
+        self.dp[i][j] = d
+
+
+if __name__ == "__main__":
+    X = input()
+    Y = input()
+    X = " " + X
+    Y = " " + Y
+    tracer = Tracer(len(X), len(Y))
+    lcs_len = LCS(X, Y, tracer.hook)
+    print(lcs_len)
+
+    if lcs_len > 0:
+        # tracer 안에 있는 정보를 역으로 추적해가며 문자열을 생성한다.
+        result = ""
+        x = len(X) - 1
+        y = len(Y) - 1
+        while x > 0 and y > 0:
+            match tracer.dp[x][y]:
+                case Dir.E:
+                    y -= 1
+                case Dir.S:
+                    x -= 1
+                case Dir.SE:
+                    result += X[x]
+                    x -= 1
+                    y -= 1
+        print(result[::-1])
+
+```
