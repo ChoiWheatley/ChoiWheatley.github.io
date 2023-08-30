@@ -10,7 +10,7 @@ updated: 2023-08-30T16:35:07
 ## INDEX / README
 
 - 본 페이지는 swjungle WEEK 01 ~ 03 기간도중 읽어야 할 챕터들 + 이후에 계속 접하면서 새로 알게된 내용 위주로 작성할 예저입니다. 페이지의 양이 많아지는 것을 줄이기 위해 어느정도 길이가 길어진다면 별도의 페이지를 파 그쪽으로 레퍼런싱을 하는 쪽으로 관리할 예정입니다.
-- [[Operating Systems {ssu 2021-second-semester archive}]]
+- [[0015 OS {ssu2021-2nd} 💻]]
 
 ## 1. A Tour of Computer Systems
 
@@ -48,7 +48,7 @@ p.73 ~ p.131 | 60 pages
 셸의 역할: 사용자의 명령을 입력으로 받아 다양한 일을 수행하는 프로그램. 실행 가능한 프로그램을 실행시켜 새 프로세스로 만들어주는 역할을 담당한다. 
 
 **시스템을 구성하는 하드웨어 컴포넌트**
-- Buses
+- Buses 
 - I/O Devices
 - Main Memory
 - Processor

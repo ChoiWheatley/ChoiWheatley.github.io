@@ -16,7 +16,7 @@ updated: 2023-08-30T10:18:28
 - [P7-Week01-03 목요일 시험 문제 답안 제출용 리포지토리 {GH}](https://github.com/SWJungle/P7-Week01-03)
 - [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
 - [[Computer Systems A Programmer's Perspective {swjungle}]]
-- [[Operating Systems {ssu 2021-second-semester archive}]]
+- [[0015 OS {ssu2021-2nd} 💻]]
 - [[Linux IPC Programming {inflearn archive}]]
 
 ## CSAPP

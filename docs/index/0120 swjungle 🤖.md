@@ -14,7 +14,7 @@ updated: 2023-08-28T08:46:37
 - weekly
 	- [[week 00 {swjungle}]]
 	- [[week 01~03 {swjungle} {ALGORITHMS}]]
-		- [[Operating Systems {ssu 2021-second-semester archive}]]
+		- [[0015 OS {ssu2021-2nd} 💻]]
 		- [[Computer Systems A Programmer's Perspective {swjungle}]]
 		- [[Linux IPC Programming {inflearn archive}]]
 

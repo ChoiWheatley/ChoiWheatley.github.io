@@ -10,7 +10,7 @@ aliases:
 tags: index
 date created: Thursday, February 9th 2023, 11:01:44 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-15T09:27:02
+updated: 2023-08-30T16:53:12
 ---
 
 parent link: [[docs/index]]
@@ -25,6 +25,8 @@ parent link: [[docs/index]]
 - [[0013 Rust 🦀]]
 - [[0014 Python 🐍]]
 - [[0014.1 Django 🎈]]
+- [[0015 OS {ssu2021-2nd} 💻]]
+- [[0016 Systems Programming {ssu2021-1st} 🐼]]
 - [[0020 Games 🎮]]
 - [[0030 Health 💪]]
 - [[0031 Emotions 🤔]]
