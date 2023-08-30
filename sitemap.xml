@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/1.%20A%20Tour%20of%20Computer%20Systems/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/1005%20ACM%20Craft/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
@@ -631,6 +636,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/3.%20Machine%20Level%20Representation%20of%20Programs/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/3.2%20Programming%20Encodings/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/3%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%2C%20ChatGPT%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B1%97%EB%B4%87%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20-%20estsoft%20%7BDjango%2C%20DRF%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
@@ -802,11 +817,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Comparing%20result%20with%20enum%20in%20python/</loc>
-         <lastmod>2023-08-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/Computer%20Systems%20A%20Programmer%27s%20Perspective%20%7Bswjungle%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1257,11 +1267,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Online%20Sandbox%20%28Literally%29/</loc>
-         <lastmod>2023-08-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/Operating%20Systems%20%7Bssu%202021-second-semester%20archive%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1857,6 +1862,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/bootstrap%20and%20tailwind/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/buses%20and%20hierarchical%20buses%20%7Bos%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2701,6 +2711,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/memory%20representation%20%7BSP%7D%20%7Bweek03%7D/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/mingle/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
@@ -2932,6 +2947,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/private%20attributes%20%28python%29/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/process%20%7BSP%7D%7B04%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3442,6 +3462,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/vim%20%EA%B4%80%EB%A0%A8%20%EA%BF%80%ED%8C%81/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/virtual%20memory%20%7BSP%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4981,6 +5006,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/index/0015%20OS%20%7Bssu2021-2nd%7D%20%F0%9F%92%BB/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/index/0016%20Systems%20Programming%20%7Bssu2021-1st%7D%20%F0%9F%90%BC/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/index/0020%20Games%20%F0%9F%8E%AE/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
@@ -5022,6 +5057,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/index/0120%20swjungle%20%F0%9F%A4%96/</loc>
+         <lastmod>2023-08-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/index/0121%20CSAPP%20%7Bswjungle%7D/</loc>
          <lastmod>2023-08-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
