@@ -1,0 +1,31 @@
+---
+aliases: 
+tags: 
+description:
+title: process {SP}{04}
+created: 2023-08-30T17:22:02
+updated: 2023-08-30T17:35:58
+---
+- parent: [[0016 Systems Programming {ssu2021-1st} 🐼]]
+- week04 참고
+
+## INDEX
+
+- ELF format
+- memory layout
+
+## 프로그램이 프로세스가 되는 과정 
+
+> The executable file is loaded into memory to become a **process**
+
+![[스크린샷 2023-08-30 오후 5.25.51.png]]  
+
+스택영역과 힙 영역, 커널 영역의 위치에 주목하자. 스택은 higher addr에서 내려오고 힙은 lower addr에서 올라온다. brk은 힙영역의 마지막 부분에 자리하고 있으며, brk가 동적할당시 상승하는 식으로 작동함.
+
+**Stack Frame**
+
+함수가 호출이 되면 스택영역에 스택프레임이 추가가 되는데, 그 안에는 로컬 변수들, 함수 인자들이 함께 들어온다. 모든 프로그램은 main함수가 있어야 하니 모든 프로세스들의 스택의 가장 윗부분에는 main과 관련한 스택프레임이 있다. 프로그램 호출 시 같이 제공했던 인자들, 저장된 PC(Program Counter)들이 저장이 되어있다. 함수를 호출할 때마다 **자동으로** 스택영역이 증가한다.
+
+**Heap**
+
+힙영역은 program break라는 변수를 커널이 관리하는데, 프로그램이 직접 커널에게 break를 옮겨달라는 요청을 해야지만 바뀐다. 메모리 공간을 요청하는 행위가 이것이라고 볼 수 있다.

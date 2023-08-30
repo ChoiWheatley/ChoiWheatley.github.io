@@ -15,7 +15,7 @@ updated: 2023-08-28T08:46:37
 	- [[week 00 {swjungle}]]
 	- [[week 01~03 {swjungle} {ALGORITHMS}]]
 		- [[0015 OS {ssu2021-2nd} 💻]]
-		- [[Computer Systems A Programmer's Perspective {swjungle}]]
+		- [[0121 CSAPP {swjungle}]]
 		- [[Linux IPC Programming {inflearn archive}]]
 
 # QUESTIONS

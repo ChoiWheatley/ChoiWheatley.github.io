@@ -36,5 +36,6 @@ parent link: [[docs/index]]
 - [[0100 English 👻]]
 - [[0110 Utility 🔧]]
 - [[0120 swjungle 🤖]]
+- [[0121 CSAPP {swjungle}]]
 
 %% End Waypoint %%

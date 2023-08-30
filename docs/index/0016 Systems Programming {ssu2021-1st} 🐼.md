@@ -18,3 +18,5 @@ ___
 일단 문서를 열심히 쌓고 정리는 시간내서
 
 - [[memory representation {SP} {week03}]]
+- [[virtual memory {SP}]]
+- [[process {SP}{04}]]
