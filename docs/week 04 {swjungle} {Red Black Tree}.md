@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-01T00:57:51
+updated: 2023-09-01T00:58:13
 ---
 
 ## INDEX
@@ -36,7 +36,7 @@ updated: 2023-09-01T00:57:51
 
 시간 맞추기 (오전 10시) 일요일 제외 -> 늦잠을 안 자게 된다.
 
-금요일까지
+**금요일까지**
 
 - C에 대한 기본문법 학습
 	- static, array, string, multi-dimension array, string array, pointer, structure, dynamic memory allocation, conditional compile, preprocessors
