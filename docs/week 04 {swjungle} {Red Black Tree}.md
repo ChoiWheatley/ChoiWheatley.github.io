@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-08-31T15:37:17
+updated: 2023-09-01T00:09:16
 ---
 
 ## INDEX
@@ -18,10 +18,9 @@ updated: 2023-08-31T15:37:17
 
 ==당장 해야할 것==
 
-- WSL Ubuntu 20.04 -> 22.04로 업그레이드 하기
+- [x] WSL Ubuntu 20.04 -> 22.04로 업그레이드 하기
 - 개발환경 설치
 - 과제 다운 및 복제
-- 
 
 ==탐험준비==
 
