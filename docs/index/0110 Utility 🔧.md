@@ -26,3 +26,4 @@ title: 0110 Utility 🔧
 - [[yabai, tiling window manager for macOS]]
 - [[Witch, Alt tab for window switching {macos}]]
 - [[zsh 설정 관련]]
+- [[neovim 설정 관련 {NvChad}]]
