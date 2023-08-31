@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-01T00:09:16
+updated: 2023-09-01T00:57:51
 ---
 
 ## INDEX
@@ -19,8 +19,8 @@ updated: 2023-09-01T00:09:16
 ==당장 해야할 것==
 
 - [x] WSL Ubuntu 20.04 -> 22.04로 업그레이드 하기
-- 개발환경 설치
-- 과제 다운 및 복제
+- [x] 개발환경 설치
+- [x] 과제 다운 및 복제
 
 ==탐험준비==
 
@@ -32,10 +32,21 @@ updated: 2023-09-01T00:09:16
 - rbtree-lab 리포의 메이크파일에 있는 `make test` 를 실행하여 통과하기
 
 
-설명할 것들을 나눠서 공부하고 돌아와서 저시기를 한다. 아니, 
+~~설명할 것들을 나눠서 공부하고 돌아와서 저시기를 한다~~. 다 같이 같은 범위를 공부하고 다 같이 발표한다.
 
 시간 맞추기 (오전 10시) 일요일 제외 -> 늦잠을 안 자게 된다.
 
 금요일까지
 
-- C에 대한 기본문법: 키워드, IO, 함수, static, 배열, 문자열, 다차원 배열, 포인터, 구조체, malloc, 
+- C에 대한 기본문법 학습
+	- static, array, string, multi-dimension array, string array, pointer, structure, dynamic memory allocation, conditional compile, preprocessors
+
+다음에 진행해야 할 것들
+
+- 자료구조
+	- ADT, 배열, 스택, 큐, 우선순위 큐, 리스트
+	- 이진검색트리
+		- AVL tree
+		- RB tree
+
+> [!note] RB-tree, malloc-lab을 동시에 공부하고 Python으로 구현을 시도해보는 것으로 무엇이 필요한지에 대한 인사이트를 얻을 수 있을 것이다.
