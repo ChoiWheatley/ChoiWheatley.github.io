@@ -3,7 +3,7 @@ description: 매일매일 나의 삶을 부트스트랩 할 수 있는 도구들
 aliases: 유틸리티 아카이브 archive hack
 tags: utility
 created: 2023-03-15T14:30:15
-updated: 2023-07-15T21:32:55
+updated: 2023-09-01T00:08:29
 title: 0110 Utility 🔧
 ---
 - [[prime numbers]]
@@ -26,4 +26,3 @@ title: 0110 Utility 🔧
 - [[yabai, tiling window manager for macOS]]
 - [[Witch, Alt tab for window switching {macos}]]
 - [[zsh 설정 관련]]
-- [[neovim 설정 관련 {NvChad}]]
