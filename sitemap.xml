@@ -2751,6 +2751,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/neovim%20%EC%84%A4%EC%A0%95%20%EA%B4%80%EB%A0%A8%20%7BNvChad%7D/</loc>
+         <lastmod>2023-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/neovim/</loc>
          <lastmod>2023-08-31</lastmod>
          <changefreq>daily</changefreq>
@@ -3552,6 +3557,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/zoxide%20-%20z%20and%20autojump%20killer%20written%20in%20rust/</loc>
+         <lastmod>2023-08-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/zsh%20%EC%84%A4%EC%A0%95%20%EA%B4%80%EB%A0%A8/</loc>
          <lastmod>2023-08-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
