@@ -4,13 +4,14 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-01T00:58:13
+updated: 2023-09-01T11:17:03
 ---
 
 ## INDEX
 
 - [4주차 herokuapp.com](https://jungle7-7610626261f4.herokuapp.com/pages/W04-rbtree.html)
 - [rbtree-lab {GH}](https://github.com/SWJungle/rbtree-lab)
+- [missing semester-kr](https://missing-semester-kr.github.io/) | CS 학기에서 가르쳐주지 않지만 거의 필수적으로 알아야 하는 주제들에 대한 내용을 다루고 있음.
 
 ## Before start...
 
@@ -38,7 +39,7 @@ updated: 2023-09-01T00:58:13
 
 **금요일까지**
 
-- C에 대한 기본문법 학습
+- C에 대한 기본문법 학습 | [[0017 C 🍎]]
 	- static, array, string, multi-dimension array, string array, pointer, structure, dynamic memory allocation, conditional compile, preprocessors
 
 다음에 진행해야 할 것들
