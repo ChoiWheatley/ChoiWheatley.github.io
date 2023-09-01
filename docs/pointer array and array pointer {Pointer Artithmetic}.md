@@ -50,8 +50,30 @@ long(*ptr)[5] = &arr;
 ```
 
 ```
-p: 8800, ptr: 8800, arr: 8800, &arr: 8800
-*p: 1, *ptr: 8800, *arr: 1
-sizeof(p): 8, sizeof(ptr): 8, sizeof(arr): 20, sizeof(&arr): 8
-sizeof(*p): 4, sizeof(*ptr): 20, sizeof(*arr): 4
+p: 140731009609168
+arrptr: 140731009609168
+ptrarr: 140731009609200
+arr: 140731009609168
+&arr: 140731009609168
+
+*p: 1
+*arrptr: 140731009609168
+*ptrarr: 140731009609168
+*arr: 1
+
+sizeof(p): 8
+sizeof(arrptr): 8
+sizeof(ptrarr): 40
+sizeof(arr): 20
+sizeof(&arr): 8
+
+sizeof(*p): 4
+sizeof(*arrptr): 20
+sizeof(*ptrarr): 8
+sizeof(*arr): 4
+
+&arr[5]: 140731009609188
+&arr + 1: 140731009609188
+arrptr + 1: 140731009609188
+ptrarr + 1: 140731009609208
 ```
