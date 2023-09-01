@@ -11306,6 +11306,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../stride%20of%20an%20array%20%7BC%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  stride of an array {C}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../stripe/" class="md-tabs__link">
         
   
@@ -30425,6 +30442,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../stride%20of%20an%20array%20%7BC%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    stride of an array {C}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../stripe/" class="md-nav__link">
         
   
@@ -35118,8 +35154,8 @@
 <p>D) Invalid statement</p>
 <hr />
 <p>정답은 D인 줄 알았으나 B였다. 꼭 변수명 앞에 <code>*</code>을 붙이고 괄호로 감싼다고 그것이 함수포인터라는 것은 아니다. 처음엔 함수포인터의 형태 <code>type (*var_name)(args)</code>가 아니라고 판단하여 D를 찍은 것이었고, 사실 이것은 <strong>포인터 배열</strong>과 <strong>배열 포인터</strong> 사이의 관계에 대한 내용을 이해하고 있는지에 대한 문제였던 것이다. </p>
-<p><code>int *ptr[10]</code> 는 연산자 우선순위 규칙에 의해 <code>int * (ptr[10])</code>으로 변환된다. 따라서 그대로 읽으면 <em>int * 원소 10개를 담은 ptr</em>이 된다.</p>
-<p><code>int (*ptr)[10]</code>  는 괄호의 위치가 바뀌었음에 주의하자. </p>
+<p><code>int *ptr[10]</code> 는 연산자 우선순위 규칙에 의해 <code>int * (ptr[10])</code>으로 변환된다. 따라서 그대로 읽으면 <em>int * 원소 10개를 담은 ptr</em>이 된다. </p>
+<p><code>int (*ptr)[10]</code> 는 <em>int 원소 10개를 담은 배열을 가리키는 ptr</em>이다. 타입은 <code>int (*)[5]</code>이다. stride는 10이다 </p>
 <p><code>int ptr[10]</code> </p>
 <p><code>int *ptr</code></p>
 <h2 id="array-pointer">array pointer<a class="headerlink" href="#array-pointer" title="Permanent link">#</a></h2>
