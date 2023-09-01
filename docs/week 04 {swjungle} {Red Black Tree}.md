@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-01T23:45:07
+updated: 2023-09-02T00:11:27
 ---
 
 ## INDEX
@@ -44,7 +44,8 @@ updated: 2023-09-01T23:45:07
 
 **토요일**
 
-- malloc, calloc, realloc
+- malloc, calloc, realloc, struct
+- rbtree python code
 
 **다음에 진행해야 할 것들**
 
