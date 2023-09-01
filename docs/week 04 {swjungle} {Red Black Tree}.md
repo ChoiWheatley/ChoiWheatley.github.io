@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-01T11:17:03
+updated: 2023-09-01T23:36:13
 ---
 
 ## INDEX
@@ -40,7 +40,7 @@ updated: 2023-09-01T11:17:03
 **금요일까지**
 
 - C에 대한 기본문법 학습 | [[0017 C 🍎]]
-	- static, array, string, multi-dimension array, string array, pointer, structure, dynamic memory allocation, conditional compile, preprocessors
+	- static, ~~array, string, multi-dimension array, string array, pointer,~~ structure, dynamic memory allocation, conditional compile, preprocessors
 
 다음에 진행해야 할 것들
 
