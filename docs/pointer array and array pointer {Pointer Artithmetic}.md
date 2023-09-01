@@ -4,7 +4,7 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T15:24:33
+updated: 2023-09-01T15:38:45
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
@@ -41,7 +41,7 @@ ___
 
 다만, `arr`과 `&arr`이 완전히 같은 것은 아니다. 아래의 예시를 통해 보게되면, `sizeof(arr) = 20`인데 반해 `sizeof(&arr) = 8`이라는 점이다. 두 차이점을 궁금해 한 어떤 사람이 질문을 올렸고 <https://stackoverflow.com/a/2528328/21369350> 에서 확인해 보기 바란다.
 
-한 마디로 정리하자면, `arr`의 stride는 
+한 마디로 정리하자면, `arr`의 stride는 선언한 배열의 원소크기이고, `&arr`의 stride는 1이다.
 
 ```c
 long arr[] = {1, 2, 3, 4, 5};
