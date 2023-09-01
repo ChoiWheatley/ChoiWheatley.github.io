@@ -4,7 +4,7 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T22:21:54
+updated: 2023-09-01T22:23:05
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
@@ -44,10 +44,10 @@ ___
 한 마디로 정리하자면, `arr`의 stride는 1이고, `&arr`의 stride는 N이다.
 
 - `arr`
-	- `sizeof(arr) = N`
+	- `sizeof(arr)` is number of element * size of element type
 	- stride of `arr` is 1
 - `&arr`
-	- `sizeof(&arr)` is size of type of element
+	- `sizeof(&arr)` is size of pointer type
 	- stride of `&arr` is N
 
 ```c
