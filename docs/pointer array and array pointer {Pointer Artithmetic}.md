@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: pointer array and array pointer
+title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T12:00:24
+updated: 2023-09-01T13:06:31
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
