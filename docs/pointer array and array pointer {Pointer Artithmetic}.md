@@ -4,7 +4,7 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T20:51:40
+updated: 2023-09-01T22:21:54
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
@@ -33,7 +33,7 @@ ___
 
 `int *ptr` 는 *int 원소를 가리키는 포인터*이다. 타입은 `int *`이다. stride는 1이다.
 
-## array pointer
+## array pointer and array
 
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
 
@@ -42,6 +42,13 @@ ___
 다만, `arr`과 `&arr`이 완전히 같은 것은 아니다. 아래의 예시를 통해 보게되면, `sizeof(arr) = 20`인데 반해 `sizeof(&arr) = 8`이라는 점이다. 두 차이점을 궁금해 한 어떤 사람이 질문을 올렸고 <https://stackoverflow.com/a/2528328/21369350> 에서 확인해 보기 바란다.
 
 한 마디로 정리하자면, `arr`의 stride는 1이고, `&arr`의 stride는 N이다.
+
+- `arr`
+	- `sizeof(arr) = N`
+	- stride of `arr` is 1
+- `&arr`
+	- `sizeof(&arr)` is size of type of element
+	- stride of `&arr` is N
 
 ```c
 long arr[] = {1, 2, 3, 4, 5};
