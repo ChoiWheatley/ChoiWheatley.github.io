@@ -4,7 +4,7 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T14:36:48
+updated: 2023-09-01T14:49:05
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
@@ -33,6 +33,16 @@ ___
 
 `int *ptr`
 
+## array pointer
+
+- [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
+
+적절한 예시들이 있기에 가져왔다. 배열을 가리키는 포인터 `ptr`는 `arr`의 주소를 값으로 가지고 있다. `*ptr`은 `arr`의 첫번째 원소의 주소를 가리키게 될텐데, 사실 두 값은 같다! 나는 처음엔 별도의 `arr`를 위한 공간과 배열 `{1, 2, 3, 4, 5}`를 위한 공간이 마련된 다음 `arr`이 배열의 첫번째 원소의 주소를 값으로 가지고 있는 것으로 생각했으나 나의 생각이 틀렸다.
+
+다만, `arr`과 `&arr`이 완전히 같은 것은 아니다. 아래의 예시를 통해 보게되면, `sizeof(arr) = 20`인데 반해 `sizeof(&arr) = 8`이라는 점이다. 두 차이점을 궁금해 한 어떤 사람이 질문을 올렸고 <https://stackoverflow.com/a/2528328/21369350> 에서 확인해 보기 바란다.
+
+한 마디로 정리하자면, `arr`의 stride는 
+
 ```c
 long arr[] = {1, 2, 3, 4, 5};
 long *p = arr;
@@ -40,8 +50,8 @@ long(*ptr)[5] = &arr;
 ```
 
 ```
-p: 6656, ptr: 6656, arr: 6656
-*p: 1, *ptr: 6656, arr: 1
-sizeof(p): 8, sizeof(ptr): 8, sizeof(arr): 40
-sizeof(*p): 8, sizeof(*ptr): 40, sizeof(*arr): 8
+p: 8800, ptr: 8800, arr: 8800, &arr: 8800
+*p: 1, *ptr: 8800, *arr: 1
+sizeof(p): 8, sizeof(ptr): 8, sizeof(arr): 20, sizeof(&arr): 8
+sizeof(*p): 4, sizeof(*ptr): 20, sizeof(*arr): 4
 ```
