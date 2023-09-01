@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#array-pointer" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -29130,6 +29135,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    pointer array and array pointer {Pointer Artithmetic}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -29139,6 +29155,30 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#array-pointer" class="md-nav__link">
+    array pointer
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -35033,6 +35073,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#array-pointer" class="md-nav__link">
+    array pointer
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -35051,6 +35106,7 @@
 <ul>
 <li><a href="../index/0017%20C%20%F0%9F%8D%8E/">0017 C 🍎</a></li>
 <li><a href="https://www.geeksforgeeks.org/pointer-array-array-pointer/">gfg</a></li>
+<li><a href="https://stackoverflow.com/questions/2528318/how-come-an-arrays-address-is-equal-to-its-value-in-c">How come an array's address is equal to its value in C? {SO}</a></li>
 </ul>
 <hr />
 <blockquote>
@@ -35066,6 +35122,22 @@
 <p><code>int (*ptr)[10]</code>  는 괄호의 위치가 바뀌었음에 주의하자. </p>
 <p><code>int ptr[10]</code> </p>
 <p><code>int *ptr</code></p>
+<h2 id="array-pointer">array pointer<a class="headerlink" href="#array-pointer" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/pointer-array-array-pointer/">gfg</a></li>
+</ul>
+<p>적절한 예시들이 있기에 가져왔다. 배열을 가리키는 포인터 <code>ptr</code>는 <code>arr</code>의 주소를 값으로 가지고 있다. <code>*ptr</code>은 <code>arr</code>의 첫번째 원소의 주소를 가리키게 될텐데, 사실 두 값은 같다! 나는 처음엔 별도의 <code>arr</code>를 위한 공간과 배열 <code>{1, 2, 3, 4, 5}</code>를 위한 공간이 마련된 다음 <code>arr</code>이 배열의 첫번째 원소의 주소를 값으로 가지고 있는 것으로 생각했으나 나의 생각이 틀렸다.</p>
+<p>다만, <code>arr</code>과 <code>&amp;arr</code>이 완전히 같은 것은 아니다. 아래의 예시를 통해 보게되면, <code>sizeof(arr) = 20</code>인데 반해 <code>sizeof(&amp;arr) = 8</code>이라는 점이다. 두 차이점을 궁금해 한 어떤 사람이 질문을 올렸고 <a href="https://stackoverflow.com/a/2528328/21369350">https://stackoverflow.com/a/2528328/21369350</a> 에서 확인해 보기 바란다.</p>
+<p>한 마디로 정리하자면, <code>arr</code>의 stride는 </p>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">arr</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+<span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span>
+<span class="kt">long</span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">arr</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>p: 8800, ptr: 8800, arr: 8800, &amp;arr: 8800
+*p: 1, *ptr: 8800, *arr: 1
+sizeof(p): 8, sizeof(ptr): 8, sizeof(arr): 20, sizeof(&amp;arr): 8
+sizeof(*p): 4, sizeof(*ptr): 20, sizeof(*arr): 4
+</code></pre></div>
 
 
 
