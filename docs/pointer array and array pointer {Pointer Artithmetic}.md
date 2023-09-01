@@ -4,10 +4,11 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T13:45:50
+updated: 2023-09-01T14:36:48
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
+- [How come an array's address is equal to its value in C? {SO}](https://stackoverflow.com/questions/2528318/how-come-an-arrays-address-is-equal-to-its-value-in-c)
 ___
 
 > what do you mean by `int (*ptr)[10]`
