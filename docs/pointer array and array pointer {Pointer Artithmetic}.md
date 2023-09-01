@@ -4,7 +4,7 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T15:38:45
+updated: 2023-09-01T20:51:40
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
@@ -27,7 +27,7 @@ ___
 
 `int *ptr[10]` 는 연산자 우선순위 규칙에 의해 `int * (ptr[10])`으로 변환된다. 따라서 그대로 읽으면 *int * 원소 10개를 담은 ptr*이 된다. 타입은 `int *[10]`이다. stride는 10이다.
 
-`int (*ptr)[10]` 는 *int 원소 10개를 담은 배열을 가리키는 포인터*이다. 타입은 `int (*)[5]`이다. stride는 10이다.
+`int (*ptr)[10]` 는 *int 원소 10개를 담은 배열을 가리키는 포인터*이다. 타입은 `int (*)[10]`이다. stride는 10이다.
 
 `int ptr[10]` 는 *int 원소 10개를 담은 배열*이다. 타입은 `int [10]`이다. stride는 10이다. 중요한 점은 `ptr == &ptr`이라는 점이다. 자세한 정보는 [[#array pointer]]를 참고하라.
 
@@ -41,7 +41,7 @@ ___
 
 다만, `arr`과 `&arr`이 완전히 같은 것은 아니다. 아래의 예시를 통해 보게되면, `sizeof(arr) = 20`인데 반해 `sizeof(&arr) = 8`이라는 점이다. 두 차이점을 궁금해 한 어떤 사람이 질문을 올렸고 <https://stackoverflow.com/a/2528328/21369350> 에서 확인해 보기 바란다.
 
-한 마디로 정리하자면, `arr`의 stride는 선언한 배열의 원소크기이고, `&arr`의 stride는 1이다.
+한 마디로 정리하자면, `arr`의 stride는 1이고, `&arr`의 stride는 N이다.
 
 ```c
 long arr[] = {1, 2, 3, 4, 5};
@@ -51,21 +51,21 @@ long(*ptr)[5] = &arr;
 
 ```
 p: 140731009609168
-arrptr: 140731009609168
-ptrarr: 140731009609200
-arr: 140731009609168
-&arr: 140731009609168
+arrptr: 140731009609168 # arrptr는 &arr이다
+ptrarr: 140731009609200 # ptrarr는 별개의 배열이다.
+arr: 140731009609168 # stride 5짜리 배열의 주소
+&arr: 140731009609168 # stride 1짜리 
 
 *p: 1
-*arrptr: 140731009609168
-*ptrarr: 140731009609168
+*arrptr: 140731009609168 # *arrptr는 arr이다
+*ptrarr: 140731009609168 # *ptrarr는 arr이다
 *arr: 1
 
-sizeof(p): 8
-sizeof(arrptr): 8
-sizeof(ptrarr): 40
-sizeof(arr): 20
-sizeof(&arr): 8
+sizeof(p): 8 # pointer 8byte
+sizeof(arrptr): 8 # pointer 8byte
+sizeof(ptrarr): 40 # pointer 8byte * 5
+sizeof(arr): 20 # int 4byte * 5
+sizeof(&arr): 8 # pointer 8byte
 
 sizeof(*p): 4
 sizeof(*arrptr): 20
