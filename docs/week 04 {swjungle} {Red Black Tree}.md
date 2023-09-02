@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-02T11:58:22
+updated: 2023-09-02T13:44:22
 ---
 
 ## INDEX
@@ -60,8 +60,8 @@ updated: 2023-09-02T11:58:22
 
 **토요일**
 
-- [ ] malloc, calloc, realloc, struct
+- [ ] malloc, calloc, [[realloc {C}]], struct, 
 - [ ] rbtree python code 
 	- CLRS book 13장 레드블랙 트리의 센티널 노드를 사용한 구현 참조할 것
 - [ ] [[2의 보수법]] 복습
-
+- [ ] 
