@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-02T10:20:37
+updated: 2023-09-02T11:58:22
 ---
 
 ## INDEX
@@ -56,6 +56,8 @@ updated: 2023-09-02T10:20:37
 - C에 대한 기본문법 학습 | [[0017 C 🍎]]
 	- static, ~~array, string, multi-dimension array, string array, pointer,~~ structure, dynamic memory allocation, conditional compile, preprocessors
 
+> [!note] RB-tree, malloc-lab을 동시에 공부하고 Python으로 구현을 시도해보는 것으로 무엇이 필요한지에 대한 인사이트를 얻을 수 있을 것이다.  
+
 **토요일**
 
 - [ ] malloc, calloc, realloc, struct
@@ -63,4 +65,3 @@ updated: 2023-09-02T10:20:37
 	- CLRS book 13장 레드블랙 트리의 센티널 노드를 사용한 구현 참조할 것
 - [ ] [[2의 보수법]] 복습
 
-> [!note] RB-tree, malloc-lab을 동시에 공부하고 Python으로 구현을 시도해보는 것으로 무엇이 필요한지에 대한 인사이트를 얻을 수 있을 것이다.
