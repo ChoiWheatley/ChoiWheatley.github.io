@@ -4132,6 +4132,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Library/" class="md-tabs__link">
+        
+  
+    
+  
+  Library
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Linked%20List%20in%20python/" class="md-tabs__link">
         
   
@@ -21255,25 +21272,19 @@
     Generator Expression
   </a>
   
-    <nav class="md-nav" aria-label="Generator Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packages" class="md-nav__link">
     Packages
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#project" class="md-nav__link">
     Project
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -22645,6 +22656,25 @@
   
   <span class="md-ellipsis">
     LRU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Library/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library
   </span>
   
 
@@ -35568,25 +35598,19 @@
     Generator Expression
   </a>
   
-    <nav class="md-nav" aria-label="Generator Expression">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packages" class="md-nav__link">
     Packages
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#project" class="md-nav__link">
     Project
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -35604,6 +35628,8 @@
                 
                   
 
+
+  <h1>CMake</h1>
 
 <ul>
 <li><a href="https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html#creating-relocatable-packages">CMake Packages</a></li>
@@ -35675,7 +35701,7 @@ target_compile_definitions<span class="o">(</span>exe1<span class="w"> </span>PR
 <span class="w">    </span>$&lt;$&lt;CONFIG:Debug&gt;:DEBUG_BUILD&gt;
 <span class="o">)</span>
 </code></pre></div>
-<h1 id="generator-expression">Generator Expression<a class="headerlink" href="#generator-expression" title="Permanent link">#</a></h1>
+<h2 id="generator-expression">Generator Expression<a class="headerlink" href="#generator-expression" title="Permanent link">#</a></h2>
 <p><a href="https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html">https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html</a></p>
 <p>Generator Expression은 타겟 프로퍼티를 정의할 때 사용하는데, 이때 타겟 프로퍼티로 <code>LINK_LIBRARIES</code>, <code>INCLUDE_DIRECTORIES</code>, <code>COMPILE_DEFINITIONS</code> 등이 있다. 이 프로퍼티를 전파(populate)하는 데 사용될 수도 있다. populate 키워드는 아마도 PRIVATE, PUBLIC, INTERFACE와 연관이 있는 것 같은데 그건 나중에 보자. </p>
 <p>Generator Expression은 조건부 링킹, 조건부 definition, 조건부 include 등에 사용된다. 해당 ‘조건’들은 사전에 정의되어있고, 빌드속성이나 타겟 프로퍼티, 플랫폼 등에 의해 결정되고 쿼리될 수 있다고 한다. 메이크파일에서의 특수변수 <code>$&gt;</code> , <code>$@</code>라던가 정규표현식 같은 것으로 이해된다. 아님말고.</p>
