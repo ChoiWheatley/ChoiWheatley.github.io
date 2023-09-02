@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89%ED%8A%B8%EB%A6%AC%20red%20black%20tree%2088a6efb4e9b44717b7f2c028ea7a9eab/">
+        <link rel="canonical" href="https://choiwheatley.github.io/%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89%ED%8A%B8%EB%A6%AC%20red%20black%20tree/">
       
       
         <link rel="prev" href="../%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>이진검색트리 red black tree 88a6efb4e9b44717b7f2c028ea7a9eab - Choi Wheatley's Second Brain</title>
+        <title>이진검색트리 red black tree - Choi Wheatley's Second Brain</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              이진검색트리 red black tree 88a6efb4e9b44717b7f2c028ea7a9eab
+              이진검색트리 red black tree
             
           </span>
         </div>
@@ -4130,12 +4130,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Library/" class="md-tabs__link">
+      <a href="../Library%20%7BC%7D/" class="md-tabs__link">
         
   
     
   
-  Library
+  Library {C}
 
       </a>
     </li>
@@ -14507,7 +14507,7 @@
   
     
   
-  이진검색트리 red black tree 88a6efb4e9b44717b7f2c028ea7a9eab
+  이진검색트리 red black tree
 
       </a>
     </li>
@@ -22571,11 +22571,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Library/" class="md-nav__link">
+      <a href="../Library%20%7BC%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Library
+    Library {C}
   </span>
   
 
@@ -34167,18 +34167,65 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    이진검색트리 red black tree
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    이진검색트리 red black tree 88a6efb4e9b44717b7f2c028ea7a9eab
+    이진검색트리 red black tree
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#red-black-tree" class="md-nav__link">
+    이진검색트리 red black tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    INDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adt" class="md-nav__link">
+    ADT
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -35455,8 +35502,35 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#red-black-tree" class="md-nav__link">
+    이진검색트리 red black tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    INDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adt" class="md-nav__link">
+    ADT
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -35471,14 +35545,63 @@
                   
 
 
+  <h1>이진검색트리 red black tree</h1>
+
 <p>parent link: <a href="../index/0011%20Algorithms%20%E2%99%BE%EF%B8%8F/">0011 Algorithms ♾️</a></p>
 <hr />
-<h1 id="red-black-tree">이진검색트리 red black tree<a class="headerlink" href="#red-black-tree" title="Permanent link">#</a></h1>
+<h2 id="red-black-tree">이진검색트리 red black tree<a class="headerlink" href="#red-black-tree" title="Permanent link">#</a></h2>
 <p>상태: Not started<br />
 태그: datastructure, graph, tree</p>
 <p>Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구현해보자. 이진탐색트리를 먼저 구현하고 스스로 균형을 조절하는 RB-tree (Red-black tree) 트리를 만들어 보겠다.</p>
 <p><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC">이진 탐색 트리 - 위키백과, 우리 모두의 백과사전</a></p>
 <p><a href="https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC">레드-블랙 트리 - 위키백과, 우리 모두의 백과사전</a></p>
+<h2 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h2>
+<ul>
+<li>참고하기 좋은 자료들<ul>
+<li>CSLR Chapter 13 Red-Black Trees</li>
+<li>C로 쓴 자료구조론 - Horowitz, Sahni Anderson-Freed, 이석호 역 10.3 Red-Black Trees</li>
+<li><a href="https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py">msambol/dsa/trees/red_black_tree.py {GH}</a></li>
+</ul>
+</li>
+<li>keywords<ul>
+<li>left rotate</li>
+<li>right rotate</li>
+<li>insert<ul>
+<li>insert_fixup<ul>
+<li>case1) Z's uncle is red</li>
+<li>case2) Z's uncle is black and Z's parent, grandparent form a triangle</li>
+<li>case3) Z's uncle is black and Z's parent, grandparent form a line</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>deletion<ul>
+<li>transplant (u, v)<ul>
+<li>case1) u's parent is None</li>
+<li>case2) u is u's parent's left child</li>
+<li>case3) u is u's parent's right child</li>
+</ul>
+</li>
+<li>delete (x)<ul>
+<li>case1) left child is NIL</li>
+<li>case2) right child is NIL</li>
+<li>case3) both of children are not NIL</li>
+</ul>
+</li>
+<li>delete_fixup (x)<ul>
+<li>let w x's sibling</li>
+<li>case1) w is red</li>
+<li>case2) w is black, w's both children are black</li>
+<li>case3) w is black, w's left child is red, right child is black</li>
+<li>case 4) w is black, w's right child is red</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="adt">ADT<a class="headerlink" href="#adt" title="Permanent link">#</a></h2>
 
 
 
