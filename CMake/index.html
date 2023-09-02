@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cmake-crash-course" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -21169,6 +21174,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CMake
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -21178,6 +21194,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cmake-crash-course" class="md-nav__link">
+    CMake Crash Course
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    목표
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmakeliststxt" class="md-nav__link">
+    다른 CMakeLists.txt 실행시키기 가능할까?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch" class="md-nav__link">
+    자동으로 파일 fetch하기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    최하위 디렉토리 이름만 꺼내기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake 정리
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator-expression" class="md-nav__link">
+    Generator Expression
+  </a>
+  
+    <nav class="md-nav" aria-label="Generator Expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    Project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -35413,6 +35515,83 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cmake-crash-course" class="md-nav__link">
+    CMake Crash Course
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    목표
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmakeliststxt" class="md-nav__link">
+    다른 CMakeLists.txt 실행시키기 가능할까?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch" class="md-nav__link">
+    자동으로 파일 fetch하기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    최하위 디렉토리 이름만 꺼내기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cmake" class="md-nav__link">
+    CMake 정리
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generator-expression" class="md-nav__link">
+    Generator Expression
+  </a>
+  
+    <nav class="md-nav" aria-label="Generator Expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    Project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -35426,15 +35605,146 @@
                   
 
 
-  <h1>CMake</h1>
-
 <ul>
 <li><a href="https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html#creating-relocatable-packages">CMake Packages</a></li>
-<li>https://github.com/methylDragon/coding-notes/blob/master/CMake/01%20CMake%20-%20Basics%20and%20Scripting.md</li>
+<li><a href="https://github.com/methylDragon/coding-notes/blob/master/CMake/01%20CMake%20-%20Basics%20and%20Scripting.md">https://github.com/methylDragon/coding-notes/blob/master/CMake/01%20CMake%20-%20Basics%20and%20Scripting.md</a></li>
 <li><a href="https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes/">Tutorial</a></li>
 <li><a href="https://gist.github.com/yuntaek/589a16002ccaf07cdcabf8bdd132f71f">한글번역 - CMake 도움되는 글</a></li>
-<li>https://cgold.readthedocs.io/en/latest/overview/cmake-can.html</li>
+<li><a href="https://cgold.readthedocs.io/en/latest/overview/cmake-can.html">https://cgold.readthedocs.io/en/latest/overview/cmake-can.html</a></li>
 </ul>
+<h2 id="cmake-crash-course">CMake Crash Course<a class="headerlink" href="#cmake-crash-course" title="Permanent link">#</a></h2>
+<p><a href="https://www.notion.so/CMake-GitHub-fc4ecb3301b84b1fbe666464d4b43b69?pvs=21">CMake 할때 쪼오오금 도움이 되는 문서 · GitHub</a></p>
+<p><a href="https://cgold.readthedocs.io/en/latest/tutorials.html">3. Tutorials - CGold 0.1 documentation</a></p>
+<p><a href="https://preshing.com/20170522/learn-cmakes-scripting-language-in-15-minutes/">Learn CMake's Scripting Language in 15 Minutes</a></p>
+<p><a href="https://github.com/methylDragon/coding-notes/blob/master/CMake/01%20CMake%20-%20Basics%20and%20Scripting.md">coding-notes/01 CMake - Basics and Scripting.md at master · methylDragon/coding-notes</a></p>
+<p><a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake Tutorial - CMake 3.24.0-rc4 Documentation</a></p>
+<h2 id="_1">목표<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>VSCode의 C/C++ 플러그인을 사용하면 .vscode/tasks.json 파일과 .vscode/launch.json 파일을 통해 내 컴퓨터에 들어있는 gcc나 clang과 같은 빌드/디버그 프로그램을 실행시켜 IDE처럼 쓸 수 있다. 아직까진 직접 gcc와 gdb에 연결이 되어있는 반면에, CMake를 사용하여 원하는 폴더마다 CMakeLists.txt 파일을 만들어 각 폴더 별 빌드규칙을 설정하고 F5만 눌러도 CMake configure → build → make → exec이 연달아 일어나도록 구성할 것이다.</p>
+<p>덩달아 CMakeLists.txt 안에는 GoogleTest를 활용한 CTest 관련 코드도 들어있어 여러가지 configuration에 따라 빌드를 할 건지, 테스트를 할 건지 선택할 수 있도록 구성할 것이다.</p>
+<h2 id="cmakeliststxt">다른 CMakeLists.txt 실행시키기 가능할까?<a class="headerlink" href="#cmakeliststxt" title="Permanent link">#</a></h2>
+<p>루트에서부터 재귀적으로 CMakeLists.txt 파일이 하위 파일을 컴파일 해서 각각 테스트용 바이너리, 라이브러리 생성, 실행파일 생성을 따로따로 담당하게 만들 수 없을까?</p>
+<p><a href="https://stackoverflow.com/questions/16725657/cmake-depending-on-another-cmake-project">https://stackoverflow.com/questions/16725657/cmake-depending-on-another-cmake-project</a></p>
+<h2 id="fetch">자동으로 파일 fetch하기<a class="headerlink" href="#fetch" title="Permanent link">#</a></h2>
+<p><a href="https://stackoverflow.com/a/25610377">How to add source files in another folder</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">Source</span>
+<span class="w">    </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="n">_</span><span class="w"> </span><span class="n">CMakeLists</span><span class="p">.</span><span class="n">txt</span><span class="w">   </span>
+<span class="w">    </span><span class="o">|</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">project</span><span class="p">(</span><span class="n">MyProgram</span><span class="p">)</span>
+<span class="w">    </span><span class="o">|</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">cmake_minimum_required</span><span class="p">(</span><span class="n">VERSION</span><span class="w"> </span><span class="mf">3.8</span><span class="p">)</span>
+<span class="w">    </span><span class="o">|</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">add_subdirectory</span><span class="p">(</span><span class="s">&quot;Dir1&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="o">|</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">add_subdirectory</span><span class="p">(</span><span class="s">&quot;Dir2&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="o">|</span>
+<span class="w">    </span><span class="o">|</span><span class="n">_</span><span class="w"> </span><span class="n">Dir1</span><span class="w">   </span>
+<span class="w">    </span><span class="o">|</span><span class="w">     </span><span class="o">|</span><span class="n">_</span><span class="w"> </span><span class="n">CMakeLists</span><span class="p">.</span><span class="n">txt</span><span class="w">   </span>
+<span class="w">    </span><span class="o">|</span><span class="w">         </span><span class="o">&gt;</span><span class="w"> </span><span class="n">file</span><span class="p">(</span><span class="n">GLOB</span><span class="w"> </span><span class="n">Sources</span><span class="w"> </span><span class="s">&quot;*.cpp&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="o">|</span><span class="w">         </span><span class="o">&gt;</span><span class="w"> </span><span class="n">add_library</span><span class="p">(</span><span class="n">Dir1</span><span class="w"> </span><span class="n">STATIC</span><span class="w"> </span><span class="n">$</span><span class="p">{</span><span class="n">Sources</span><span class="p">})</span>
+<span class="w">    </span><span class="o">|</span><span class="n">_</span><span class="w"> </span><span class="n">Dir2</span><span class="w">   </span>
+<span class="w">          </span><span class="o">|</span><span class="n">_</span><span class="w"> </span><span class="n">CMakeLists</span><span class="p">.</span><span class="n">txt</span><span class="w">   </span>
+<span class="w">              </span><span class="o">&gt;</span><span class="w"> </span><span class="n">file</span><span class="p">(</span><span class="n">GLOB</span><span class="w"> </span><span class="n">Sources</span><span class="w"> </span><span class="s">&quot;*.cpp&quot;</span><span class="p">)</span>
+<span class="w">              </span><span class="o">&gt;</span><span class="w"> </span><span class="n">add_executable</span><span class="p">(</span><span class="n">MyProgram</span><span class="w"> </span><span class="n">$</span><span class="p">{</span><span class="n">Sources</span><span class="p">})</span>
+<span class="w">              </span><span class="o">&gt;</span><span class="w"> </span><span class="n">target_link_libraries</span><span class="p">(</span><span class="n">MyProgram</span><span class="w"> </span><span class="n">Dir1</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_2">최하위 디렉토리 이름만 꺼내기<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p><a href="https://stackoverflow.com/questions/34296269/cmake-how-to-get-the-second-last-in-the-directory-name#34311368">CMake - How to get the SECOND LAST in the directory name?</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">get_filename_component</span><span class="p">(</span><span class="n">a_dir</span><span class="w"> </span><span class="s">&quot;${some_file}&quot;</span><span class="w"> </span><span class="n">PATH</span><span class="p">)</span>
+<span class="n">get_filename_component</span><span class="p">(</span><span class="n">a_last_dir</span><span class="w"> </span><span class="s">&quot;${a_dir}&quot;</span><span class="w"> </span><span class="n">NAME</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="cmake">CMake 정리<a class="headerlink" href="#cmake" title="Permanent link">#</a></h2>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html">https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html</a> 다른 블로그 글들을 읽으면서 부정확한 정보들로 인해 머리 아프지 말고 차라리 공식 문서를 읽자. 아래는 내가 읽으면서 정리한 것 뿐이다.</p>
+<p>타겟을 정의하기 위해선 <code>add_executable()</code> 과 <code>add_library()</code> 커맨드를 사용해야 한다. 타겟에 대한 의존성은 <code>target_link_libraries()</code> 커맨드에서 관리한다.</p>
+<p>타겟에 대한 빌드 세부사항과 사용 요구사항 (Build specifications and the usage requirements of binary targets)을 정의하는 커맨드는 다음과 같다.</p>
+<ul>
+<li><code>target_include_directories()</code> : 주어진 타겟을 컴파일할 때 포함할 디렉토리를 명시한다. <code>INCLUDE_DIRECTORIES</code> 프로퍼티 값을 설정하며, <code>-I</code> 옵션에 사용된다.</li>
+<li><code>target_compile_definitions()</code> : 컴파일 시에 선언할 <code>#define</code> 문을 정의할 수 있다. 타겟은 반드시 <code>add_executable()</code> 또는 <code>add_library()</code> 에 의해 선언되어있어야 한다. <code>COMPILE_DEFINITIONS</code> 프로퍼티 값을 설정하며, <code>-D</code> 옵션에 사용된다.</li>
+<li><code>target_compile_options()</code> : 컴파일 시에 파라메터로 올 옵션들을 정의할 수 있다. 마찬가지로 타겟이 선언된 뒤에 사용이 가능하다.</li>
+</ul>
+<p><strong>Build Configurations</strong></p>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#build-configurations">https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#build-configurations</a></p>
+<p>Release, Debug모드가 곧 Build Configuration이다. 이것 말고도 컴파일 시에 이것저것 조정할 것들에 대한 선택권한을 줄 수 있다. 예를 들어 Makefile generator를 Ninja로 할 건지, Visual Studio로 할 건지 등에 대한 선택이 가능해진다. Build Configuration을 generator expression으로 설정하게 되면 <code>CMAKE_BUILD_TYPE</code>은 무시된다. </p>
+<p>CMake GUI를 열어 외부 라이브러리나 프로그램을 컴파일 할 일이 있다면 꼭 Configuration을 먼저하고 그 다음에 Generate한 기억이 있을 것이다. </p>
+<p>문서는 multi-config 타입의 경우에 if 문으로 빌드타입을 처리하지 말라고 강조한다. config time에서야 겨우 가능한 configuration들을 알고 빌드단계 전까진 configuration들의 값을 알 수 없기 때문이라는데 무슨 소리인지 잘 모르겠다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 안 좋은 예시. This is wrong for multi-config generators because they don&#39;t use</span>
+<span class="c1"># and typically don&#39;t even set CMAKE_BUILD_TYPE</span>
+string<span class="o">(</span>TOLOWER<span class="w"> </span><span class="si">${</span><span class="nv">CMAKE_BUILD_TYPE</span><span class="si">}</span><span class="w"> </span>build_type<span class="o">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">(</span>build_type<span class="w"> </span>STREQUAL<span class="w"> </span>debut<span class="o">)</span>
+<span class="w">    </span>target_compile_definitions<span class="o">(</span>exe1<span class="w"> </span>PRIVATE<span class="w"> </span>DEBUG_BUILD<span class="o">)</span>
+endif<span class="o">()</span>
+
+<span class="c1"># 좋은 예시. Works correctly for both single and multi-config generators</span>
+target_compile_definitions<span class="o">(</span>exe1<span class="w"> </span>PRIVATE
+<span class="w">    </span>$&lt;$&lt;CONFIG:Debug&gt;:DEBUG_BUILD&gt;
+<span class="o">)</span>
+</code></pre></div>
+<h1 id="generator-expression">Generator Expression<a class="headerlink" href="#generator-expression" title="Permanent link">#</a></h1>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html">https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html</a></p>
+<p>Generator Expression은 타겟 프로퍼티를 정의할 때 사용하는데, 이때 타겟 프로퍼티로 <code>LINK_LIBRARIES</code>, <code>INCLUDE_DIRECTORIES</code>, <code>COMPILE_DEFINITIONS</code> 등이 있다. 이 프로퍼티를 전파(populate)하는 데 사용될 수도 있다. populate 키워드는 아마도 PRIVATE, PUBLIC, INTERFACE와 연관이 있는 것 같은데 그건 나중에 보자. </p>
+<p>Generator Expression은 조건부 링킹, 조건부 definition, 조건부 include 등에 사용된다. 해당 ‘조건’들은 사전에 정의되어있고, 빌드속성이나 타겟 프로퍼티, 플랫폼 등에 의해 결정되고 쿼리될 수 있다고 한다. 메이크파일에서의 특수변수 <code>$&gt;</code> , <code>$@</code>라던가 정규표현식 같은 것으로 이해된다. 아님말고.</p>
+<p><code>$&lt;...&gt;</code> 형태의 모든 표현식은 generator expression으로 평가된다. 이때 안에는 조건문이 들어갈 수도 있고 단순 문자열, 타겟이 들어갈 수 있다.</p>
+<p>조건문이 너무 많으니까 필요할 때마다 문서 봐 가면서 작성할 것.</p>
+<p><strong>string-valued generator expressions</strong></p>
+<div class="highlight"><pre><span></span><code><span class="err">include_directories(/usr/include/</span><span class="k">$&lt;</span><span class="err">CXX_COMPILER_ID&gt;/)</span>
+</code></pre></div>
+<p>여기에서 기본으로 설정된 컴파일러의 이름에 따라 <code>/usr/include/GNU/</code> 또는 <code>/usr/include/Clang</code> 등으로 치환될 수 있다. 아니, 그냥 저 프로퍼티를 그냥 정의한 거 아닌가?</p>
+<p><strong>Path Decompositions</strong></p>
+<p>CMake에는 함수란 개념이 조금 모호해서 변수 자리에 아무렇게나 함수를 박아넣을 수는 없다. 이 점을 보완한 게 Generator Expression인 것 같다. 이렇게라도 함수적으로 표현한다면 가독성이 좋아질 테니깐. </p>
+<p><a href="https://cmake.org/cmake/help/latest/command/cmake_path.html#command:cmake_path">https://cmake.org/cmake/help/latest/command/cmake_path.html</a> <code>cmake_path()</code> 에서 주어지는 다양한 Decomposition과 Query, Modification 등등의 기능을 원래는 별도의 라인과 별도의 변수명으로 적어야 했지만 Generator Expression의 도움으로 Path를 분해하고 쿼리하고 조작하는 등의 행위가 가능해졌다.</p>
+<div class="highlight"><pre><span></span><code>$&lt;PATH:GET_ROOT_NAME,path&gt;
+$&lt;PATH:GET_ROOT_DIRECTORY,path&gt;
+$&lt;PATH:GET_ROOT_PATH,path&gt;
+$&lt;PATH:GET_FILENAME,path&gt;
+$&lt;PATH:GET_EXTENSION[,LAST_ONLY],path&gt;
+$&lt;PATH:GET_STEM[,LAST_ONLY],path&gt;
+$&lt;PATH:GET_RELATIVE_PART,path&gt;
+$&lt;PATH:GET_PARENT_PATH,path&gt;
+</code></pre></div>
+<p><strong>Variable Queries</strong></p>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html#id2">https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html#id2</a></p>
+<p>대표적으로 C++ 컴파일러 ID를 쿼리하는 <code>$&lt;CXX_COMPILER_ID&gt;</code> 는 다음 리스트 중에서 현재 CMake가 사용하는 컴파일러 아이디를 리턴한다.</p>
+<div class="highlight"><pre><span></span><code>Absoft = Absoft Fortran (absoft.com)
+ADSP = Analog VisualDSP++ (analog.com)
+AppleClang = Apple Clang (apple.com)
+ARMCC = ARM Compiler (arm.com)
+ARMClang = ARM Compiler based on Clang (arm.com)
+Bruce = Bruce C Compiler
+CCur = Concurrent Fortran (ccur.com)
+Clang = LLVM Clang (clang.llvm.org)
+Cray = Cray Compiler (cray.com)
+Embarcadero, Borland = Embarcadero (embarcadero.com)
+Flang = Classic Flang Fortran Compiler (https://github.com/flang-compiler/flang)
+LLVMFlang = LLVM Flang Fortran Compiler (https://github.com/llvm/llvm-project/tree/main/flang)
+Fujitsu = Fujitsu HPC compiler (Trad mode)
+FujitsuClang = Fujitsu HPC compiler (Clang mode)
+G95 = G95 Fortran (g95.org)
+GNU = GNU Compiler Collection (gcc.gnu.org)
+GHS = Green Hills Software (www.ghs.com)
+HP = Hewlett-Packard Compiler (hp.com)
+IAR = IAR Systems (iar.com)
+Intel = Intel Compiler (intel.com)
+IntelLLVM = Intel LLVM-Based Compiler (intel.com)
+LCC = MCST Elbrus C/C++/Fortran Compiler (mcst.ru)
+MSVC = Microsoft Visual Studio (microsoft.com)
+NVHPC = NVIDIA HPC SDK Compiler (nvidia.com)
+NVIDIA = NVIDIA CUDA Compiler (nvidia.com)
+OpenWatcom = Open Watcom (openwatcom.org)
+PGI = The Portland Group (pgroup.com)
+PathScale = PathScale (pathscale.com)
+SDCC = Small Device C Compiler (sdcc.sourceforge.net)
+SunPro = Oracle Solaris Studio (oracle.com)
+TI = Texas Instruments (ti.com)
+TinyCC = Tiny C Compiler (tinycc.org)
+XL, VisualAge, zOS = IBM XL (ibm.com)
+XLClang = IBM Clang-based XL (ibm.com)
+IBMClang = IBM LLVM-based Compiler (ibm.com)
+</code></pre></div>
+<h2 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">#</a></h2>
+<p>패키지, 인스톨은 시기상조다. 온디맨드 식으로 필요할 때 그때 공부하는 쪽으로 진행하자. 이러다간 끝도 없겠다.</p>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html#creating-relocatable-packages">https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html</a></p>
+<p><strong>find_package &amp; 의존성 관리 가이드</strong></p>
+<p><a href="https://cmake.org/cmake/help/latest/command/find_package.html#command:find_package">https://cmake.org/cmake/help/latest/command/find_package.html</a></p>
+<p><a href="https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html">https://cmake.org/cmake/help/latest/guide/using-dependencies/index.html</a></p>
+<h2 id="project">Project<a class="headerlink" href="#project" title="Permanent link">#</a></h2>
+<p><a href="https://cmake.org/cmake/help/latest/command/project.html">https://cmake.org/cmake/help/latest/command/project.html</a></p>
+<p>프로젝트는 <code>PROJECT_NAME</code> 변수에 설정이 된다. 버전을 Major, Minor, Patch, Tweak 순으로 설정할 수 있다. 여러개의 프로젝트를 만들 수 있으며, 이때 가장 높은 레벨 프로젝트명이 <code>CMAKE_PROJECT_NAME</code> 변소에 설정이 된다.</p>
 
 
 
