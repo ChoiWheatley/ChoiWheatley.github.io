@@ -105,7 +105,7 @@ target_compile_definitions(exe1 PRIVATE
 )
 ```
 
-# Generator Expression
+## Generator Expression
 
 [https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html](https://cmake.org/cmake/help/latest/manual/cmake-generator-expressions.7.html)
 
