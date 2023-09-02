@@ -31835,6 +31835,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    구현 규칙
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#motivation" class="md-nav__link">
     과제의 의도 (Motivation)
   </a>
@@ -31842,7 +31849,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     참고문헌
   </a>
   
@@ -35524,6 +35531,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    구현 규칙
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#motivation" class="md-nav__link">
     과제의 의도 (Motivation)
   </a>
@@ -35531,7 +35545,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     참고문헌
   </a>
   
@@ -35568,7 +35582,13 @@
 <li><a href="https://github.com/SWJungle/rbtree-lab">rbtree-lab {GH}</a></li>
 <li><a href="https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py">msambol/dsa/trees/red_black_tree.py {GH}</a></li>
 <li><a href="https://missing-semester-kr.github.io/">missing semester-kr</a> | CS 학기에서 가르쳐주지 않지만 거의 필수적으로 알아야 하는 주제들에 대한 내용을 다루고 있음.</li>
-<li><a href="../%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89%ED%8A%B8%EB%A6%AC%20red%20black%20tree/">red black tree</a></li>
+<li><a href="../%EC%9D%B4%EC%A7%84%EA%B2%80%EC%83%89%ED%8A%B8%EB%A6%AC%20red%20black%20tree/">red black tree</a> | 구현 인터페이스 확인바람.</li>
+</ul>
+<h2 id="_1">구현 규칙<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<ul>
+<li><code>src/rbtree.c</code> 이외에는 수정하지 않고 test를 통과해야 합니다.</li>
+<li><code>make test</code>를 수행하여 <code>Passed All tests!</code>라는 메시지가 나오면 모든 test를 통과한 것입니다.</li>
+<li><strong>Sentinel node</strong>를 사용하여 구현했다면 <code>test/Makefile</code>에서 <code>CFLAGS</code> 변수에 <code>-DSENTINEL</code>이 추가되도록 comment를 제거해 줍니다.</li>
 </ul>
 <h2 id="motivation">과제의 의도 (Motivation)<a class="headerlink" href="#motivation" title="Permanent link">#</a></h2>
 <ul>
@@ -35577,7 +35597,7 @@
 <li>동적 메모리 할당(dynamic memory allocation)을 직접 사용해 봄으로써 동적 메모리 할당의 필요성 체감 및 data segment에 대한 이해도 상승</li>
 <li>고급 언어에서 기본으로 제공되는 자료구조가 세부적으로는 어떻게 구현되어 있는지 경험함으로써 고급 언어 사용시에도 효율성 고려</li>
 </ul>
-<h2 id="_1">참고문헌<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h2 id="_2">참고문헌<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC">위키백과: 레드-블랙 트리</a> (<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree">영어</a>)</li>
 <li>CLRS book (Introduction to Algorithms) 13장 레드 블랙 트리 - Sentinel node를 사용한 구현</li>
