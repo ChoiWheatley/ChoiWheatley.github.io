@@ -35,7 +35,15 @@ tags:
 - 
 
 ---
-## Notes modified today
+
+## 읽을것들 (dataview)
+
+```dataview
+LIST
+FROM #scrap
+```
+
+## Notes modified today (dataview)
 
 ```dataview
 List FROM "" 

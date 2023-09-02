@@ -12,7 +12,7 @@ aliases:
  - 스크랩
  - 읽기목록
 tags: book scrap
-updated: 2023-08-03T15:53:05
+updated: 2023-09-02T23:46:03
 title: 0080 Scraps 📚
 ---
 - parent link: [[docs/index/index]]
@@ -42,17 +42,8 @@ ___
 - [[It's probably time to stop recommending Clean Code 클린 코드를 멈춰야 할 때]]
 - [[Understanding Rust futures by going way too deep]]
 - [[15시간 공부하면 무조건 망합니다]]
-- [[걍 라우팅 전반적인 내용에 대한 기본부터 숙지해라]]
 - [[반지성주의를 말하다 - 우치다 다쓰루]]
-- [[custom iterator with __iter__ in python#Generators and yield]]
-- [[20230515 estsoft - 김충환 회고강사특강 - 3점조직 - 야생학습 - 자기계발은 복리 - 수파리 - 실수를 대하는 자세 {만다라트수정필요}]] ==> 3점조직과 관련한 추가적인 읽을 자료
-	- 위키: 조직침묵
-	- 도서: 두려움 없는 조직
-	- 기사: 간호사 "태움" 사례 - 조직공정성이 낮을수록 높아지는 태움
-	- 논문: 조직침묵의 원인에 대한 메타분석
 - [[20230515 estsoft - 김충환 회고강사특강 - 3점조직 - 야생학습 - 자기계발은 복리 - 수파리 - 실수를 대하는 자세 {만다라트수정필요}#^ajd62h|함께 자라기, 애자일로 가는 길 - 김창준]]
-- [[The Shape of Infinity -- manifold garden]]
-- [[conda, pyenv, pipenv, venv와의 차이점]]
 
 ```dataview
 LIST
@@ -79,3 +70,5 @@ ___
 - [[불편한 진실을 피하지 말자 - 포프TV]]
 - [[믿음과 성장속도의 관계 {포프TV}]]
 - [[40Hz Binaural Beats의 효과 - {앤드류 후버만}]]
+- [[The Shape of Infinity -- manifold garden]]
+- [[conda, pyenv, pipenv, venv와의 차이점]]
