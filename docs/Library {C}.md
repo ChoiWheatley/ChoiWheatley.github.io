@@ -2,10 +2,11 @@
 aliases: 
 tags: 
 description:
-title: Library
+title: Library {C}
 created: 2023-09-02T13:44:48
-updated: 2023-09-02T22:46:01
+updated: 2023-09-02T22:46:34
 ---
+- parent: [[0017 C 🍎]]
 - 설명: shared library를 만들고 링크하는 법을 터득한다.
 - 체크: Done
 
