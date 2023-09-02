@@ -856,6 +856,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Data%20Structure%20in%20C/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/DateTimeField%20%7Bauto_now_add%7D%20%7Bauto_now%7D%20%7Bdjango%7D/</loc>
          <lastmod>2023-09-02</lastmod>
          <changefreq>daily</changefreq>
@@ -2721,6 +2726,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/memcpy%20%7BC%7D/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/memory%20representation%20%7BSP%7D%20%7Bweek03%7D/</loc>
          <lastmod>2023-09-02</lastmod>
          <changefreq>daily</changefreq>
@@ -3106,6 +3116,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/realloc%20%7BC%7D/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/redirect%20%7B%20django%20%7D/</loc>
          <lastmod>2023-09-02</lastmod>
          <changefreq>daily</changefreq>
@@ -3272,6 +3287,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/stdout%20precision%20and%20fix/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/strcpy%20and%20strcat%20%7BC%7D/</loc>
          <lastmod>2023-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4202,6 +4222,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%EC%A0%9C%ED%85%94%EC%B9%B4%EC%8A%A4%ED%85%90/</loc>
+         <lastmod>2023-09-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%EC%A1%B0%EA%B1%B4%EB%B6%80%20%EC%BB%B4%ED%8C%8C%EC%9D%BC%EA%B3%BC%20%EC%A0%84%EC%B2%98%EB%A6%AC%EA%B8%B0/</loc>
          <lastmod>2023-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
