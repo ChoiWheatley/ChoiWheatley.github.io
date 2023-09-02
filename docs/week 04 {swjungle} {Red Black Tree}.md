@@ -61,5 +61,6 @@ updated: 2023-09-02T10:20:37
 - [ ] malloc, calloc, realloc, struct
 - [ ] rbtree python code 
 	- CLRS book 13장 레드블랙 트리의 센티널 노드를 사용한 구현 참조할 것
+- [ ] [[2의 보수법]] 복습
 
 > [!note] RB-tree, malloc-lab을 동시에 공부하고 Python으로 구현을 시도해보는 것으로 무엇이 필요한지에 대한 인사이트를 얻을 수 있을 것이다.
