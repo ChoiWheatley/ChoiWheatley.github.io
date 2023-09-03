@@ -4,7 +4,7 @@ tags:
 description:
 title: pointer array and array pointer {Pointer Artithmetic}
 created: 2023-09-01T11:30:13
-updated: 2023-09-01T22:23:05
+updated: 2023-09-03T14:26:32
 ---
 - [[0017 C 🍎]]
 - [gfg](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
@@ -53,7 +53,8 @@ ___
 ```c
 long arr[] = {1, 2, 3, 4, 5};
 long *p = arr;
-long(*ptr)[5] = &arr;
+long(*arrptr)[5] = &arr;
+long *ptrarr[5] = {arr, arr + 1, arr + 2, arr + 3, arr + 4};
 ```
 
 ```
