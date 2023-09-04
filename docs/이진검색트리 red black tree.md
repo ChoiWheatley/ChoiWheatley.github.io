@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-04T17:36:15
+updated: 2023-09-04T17:56:08
 ---
 parent link: [[0011 Algorithms ♾️]], [[week 04 {swjungle} {Red Black Tree}]]
 
@@ -59,6 +59,8 @@ Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구
 			- case2) w is black, w's both children are black
 			- case3) w is black, w's left child is red, right child is black
 			- case 4) w is black, w's right child is red
+- [?] questions
+	- duplicates를 처리하기 위해선 `node_t`에 `count`라는 속성을 추가해야 한다. 하지만 현재 프로젝트의 제약사항으로 "rbtree.c"만 수정해야 하는데, 정말로 `node_t`를 수정하지 않고 중복 원소를 처리하라는 것인가?
 
 ## RBTree 제약조건
 
