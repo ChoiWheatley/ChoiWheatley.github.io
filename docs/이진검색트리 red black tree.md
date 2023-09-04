@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-04T01:18:33
+updated: 2023-09-04T10:15:13
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -96,6 +96,12 @@ ADT RBTree:
 - `subtree_max(u)`
 	- u 서브트리의 최댓값에 해당하는 노드를 리턴한다.
 - 
+
+## Insert
+
+### Example
+
+### Summary
 
 ## Delete
 
