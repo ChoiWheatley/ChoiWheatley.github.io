@@ -34237,6 +34237,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rbtree" class="md-nav__link">
+    RBTree 제약조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adt" class="md-nav__link">
     ADT
   </a>
@@ -34265,20 +34272,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -34293,14 +34286,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example_1" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     Example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary_1" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     summary
   </a>
   
@@ -35619,6 +35612,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#rbtree" class="md-nav__link">
+    RBTree 제약조건
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adt" class="md-nav__link">
     ADT
   </a>
@@ -35647,20 +35647,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -35675,14 +35661,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example_1" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     Example
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary_1" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     summary
   </a>
   
@@ -35774,6 +35760,12 @@
 </ul>
 </li>
 </ul>
+<h2 id="rbtree">RBTree 제약조건<a class="headerlink" href="#rbtree" title="Permanent link">#</a></h2>
+<ol>
+<li>모든 노드는 RED 이거나 BLACK이다.</li>
+<li>루트에서 리프노드로의 경로는 2개의 연속적인 RED 노드를 가질 수 없다.</li>
+<li>루트에서 뻗어나가는 모든 경로의 BLACK 노드의 개수(rank)는 동일하다.</li>
+</ol>
 <h2 id="adt">ADT<a class="headerlink" href="#adt" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nt">ADT RBTree</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">objects</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">공백이거나 루트노드, 왼쪽 노드, 오른쪽 노드로 구성되는 노드들의 유한집합</span>
@@ -35819,6 +35811,8 @@
 <li></li>
 </ul>
 <h2 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">#</a></h2>
+<p>새 노드는 언제나 red노드로 만들어 시작한다. 그 이유는 black 노드로 만들면 항상 RBTree 제약조건 3번 (모든 path로 향하는 black node의 개수가 동일하다)를 어기지만 red 노드로 만들면 RBTree 제약조건 2번 (연속하는 red 노드는 없다)를 어길 수도 있지만 어기지 않을 수도 있기 때문이다.</p>
+<p>RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 케이스가 있는데, 중복되는 것들이 있으므로 편하게 들어도 된다.</p>
 <h3 id="imbalance-cases">Imbalance Cases<a class="headerlink" href="#imbalance-cases" title="Permanent link">#</a></h3>
 <p>먼저 용어정리부터 하고 넘어갑시다</p>
 <ul>
@@ -35829,14 +35823,14 @@
 <p><code>uncle</code>: gu의 다른 자식</p>
 </li>
 <li>
-<p><code>XYz</code> </p>
+<p><code>XYz</code> imbalance</p>
 <ul>
 <li><code>X</code>, <code>Y</code>는 L 또는 R이다. 왼쪽에서부터 gu입장에서 pu의 위치, pu 입장에서 u의 위치를 나타낸다.</li>
 <li><code>z</code>는 r 또는 b이다. uncle의 색상을 나타낸다.</li>
 </ul>
 </li>
 <li>
-<p>XYr imbalance는 단순히 색깔만 바꿔주면 된다.</p>
+<p>XYr imbalance는 단순히 색깔만 바꿔주면 된다. gu의 색이 바뀌기 때문에 gu 노드의 부모와 그 상위 노드들 간에 RBTree 제약조건 2번을 어겼는지 여부를 검사해야 한다. 따라서 u를 gu로 바꿔 while 루프를 돈다.</p>
 <ul>
 <li>LLr <ul>
 <li>before:  <a class="glightbox" href="../assets/Pasted%20image%2020230904135740.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230904135740.png" src="../assets/Pasted%20image%2020230904135740.png" /></a></li>
@@ -35884,15 +35878,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
-<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
 <h2 id="delete">Delete<a class="headerlink" href="#delete" title="Permanent link">#</a></h2>
-<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">#</a></h3>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
 <iframe title="Red-black trees in 8 minutes — Deletions" src="https://www.youtube.com/embed/lU99loSvD8s?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
 <p>다음 영상의 예시를 그대로 따라가봤다. msambol 깃허브 페이지에도 파이썬 코드가 있으니 참고바란다.</p>
 <p><a class="glightbox" href="../assets/rbtree_delete_example_01.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="rbtree_delete_example_01.jpg" src="../assets/rbtree_delete_example_01.jpg" /></a></p>
 <p><a class="glightbox" href="../assets/rbtree_delete_example_02.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="rbtree_delete_example_02.jpg" src="../assets/rbtree_delete_example_02.jpg" /></a></p>
-<h3 id="summary_1">summary<a class="headerlink" href="#summary_1" title="Permanent link">#</a></h3>
+<h3 id="summary">summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
 <p>총 두 가지 스텝이 있다. 먼저 delete의 설명부터. 솔직히 case 1,2는 어렵지 않다. RBtree 제약조건을 위반하지 않으면서 단순히 NIL이 아닌 자식을 끌어올리기만 하면 그만이거든.</p>
 <p>진짜 문제는 z의 자식이 모두 존재할 경우이다. z를 사전순으로 가장 가까운 노드인 y로 대치해야 하는데, 그 과정에서 black의 손실이 일어나기 때문이다. y를 z의 오른쪽 서브트리의 최솟값이라고 했을때, y의 왼쪽 자식은 두말할 것 없이 NIL이고, y의 오른쪽 자식을 x라고 해보자. x가 심지어 NIL일 지라도 일단 눈 한번 딱 감고 transplant를 해보자. 그러면 x는 y.p의 자식이 될 것이고 x.p는 y.p가 될 것이다. 상황에 따라서 NIL.p를 설정할 수도 있지만 괜찮다.</p>
 <p><a class="glightbox" href="../assets/rbtree_delete_summary_01.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="rbtree_delete_summary_01.jpg" src="../assets/rbtree_delete_summary_01.jpg" /></a></p>
