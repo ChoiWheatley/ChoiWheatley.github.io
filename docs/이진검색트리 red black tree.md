@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-04T14:26:40
+updated: 2023-09-04T14:45:09
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -60,6 +60,12 @@ Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구
 			- case3) w is black, w's left child is red, right child is black
 			- case 4) w is black, w's right child is red
 
+## RBTree 제약조건
+
+1. 모든 노드는 RED 이거나 BLACK이다.
+2. 루트에서 리프노드로의 경로는 2개의 연속적인 RED 노드를 가질 수 없다.
+3. 루트에서 뻗어나가는 모든 경로의 BLACK 노드의 개수(rank)는 동일하다.
+
 ## ADT
 
 ```yaml
@@ -99,6 +105,10 @@ ADT RBTree:
 
 ## Insert
 
+새 노드는 언제나 red노드로 만들어 시작한다. 그 이유는 black 노드로 만들면 항상 RBTree 제약조건 3번 (모든 path로 향하는 black node의 개수가 동일하다)를 어기지만 red 노드로 만들면 RBTree 제약조건 2번 (연속하는 red 노드는 없다)를 어길 수도 있지만 어기지 않을 수도 있기 때문이다.
+
+RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 케이스가 있는데, 중복되는 것들이 있으므로 편하게 들어도 된다.
+
 ### Imbalance Cases
 
 먼저 용어정리부터 하고 넘어갑시다
@@ -108,11 +118,11 @@ ADT RBTree:
 - `gu`: u의 조부모
 - `uncle`: gu의 다른 자식
 
-- `XYz` 
+- `XYz` imbalance
 	- `X`, `Y`는 L 또는 R이다. 왼쪽에서부터 gu입장에서 pu의 위치, pu 입장에서 u의 위치를 나타낸다.
 	- `z`는 r 또는 b이다. uncle의 색상을 나타낸다.
 
-- XYr imbalance는 단순히 색깔만 바꿔주면 된다.
+- XYr imbalance는 단순히 색깔만 바꿔주면 된다. gu의 색이 바뀌기 때문에 gu 노드의 부모와 그 상위 노드들 간에 RBTree 제약조건 2번을 어겼는지 여부를 검사해야 한다. 따라서 u를 gu로 바꿔 while 루프를 돈다.
 	- LLr 
 		- before:  ![[Pasted image 20230904135740.png]]
 		- after: ![[Pasted image 20230904135848.png]]
@@ -138,10 +148,6 @@ ADT RBTree:
 	- RRb
 		- before: ![[Pasted image 20230904142056.png]]
 		- after: ![[Pasted image 20230904142310.png]]
-
-### Example
-
-### Summary
 
 ## Delete
 
