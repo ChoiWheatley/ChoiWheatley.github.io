@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-04T14:45:09
+updated: 2023-09-04T17:36:15
 ---
 parent link: [[0011 Algorithms ♾️]], [[week 04 {swjungle} {Red Black Tree}]]
 
@@ -70,7 +70,7 @@ Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구
 
 ```yaml
 ADT RBTree:
-	objects: 공백이거나 루트노드, 왼쪽 노드, 오른쪽 노드로 구성되는 노드들의 유한집합
+	objects: 공백이거나 루트노드, 왼쪽 노드, 오른쪽 노드로 구성되는 노드들의 유한집합, ordered set, multiset
 	functions: 
 		모든 t, t1, t2 ∈ RBTree에 대하여
 		- RBTree new_tree(): 비어있는 트리 생성
