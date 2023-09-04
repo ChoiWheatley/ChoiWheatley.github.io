@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-04T10:15:13
+updated: 2023-09-04T14:26:40
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -98,6 +98,46 @@ ADT RBTree:
 - 
 
 ## Insert
+
+### Imbalance Cases
+
+먼저 용어정리부터 하고 넘어갑시다
+
+- `u`: 새로운 노드
+- `pu`: u의 부모
+- `gu`: u의 조부모
+- `uncle`: gu의 다른 자식
+
+- `XYz` 
+	- `X`, `Y`는 L 또는 R이다. 왼쪽에서부터 gu입장에서 pu의 위치, pu 입장에서 u의 위치를 나타낸다.
+	- `z`는 r 또는 b이다. uncle의 색상을 나타낸다.
+
+- XYr imbalance는 단순히 색깔만 바꿔주면 된다.
+	- LLr 
+		- before:  ![[Pasted image 20230904135740.png]]
+		- after: ![[Pasted image 20230904135848.png]]
+	- LRr
+		- before: ![[Pasted image 20230904140846.png]]
+		- after: ![[Pasted image 20230904140908.png]]
+	- RLr
+		- before: ![[Pasted image 20230904141108.png]]
+		- after: ![[Pasted image 20230904141043.png]]
+	- RRr
+		- before: ![[Pasted image 20230904141458.png]]
+		- after: ![[Pasted image 20230904141525.png]]
+- XYb imbalance부터는 회전이 들어간다. 특히나 X,Y가 서로 다를땐 XXb 형식으로 회전한 다음 다시 XXb imbalance를 해결하는 것으로 fallthrough 한다는 점을 유의하자.
+	- LLb
+		- before: ![[Pasted image 20230904141850.png]]
+		- after: ![[Pasted image 20230904142330.png]]
+	- LRb
+		- before: ![[Pasted image 20230904142000.png]]
+		- after: ![[Pasted image 20230904142657.png]]
+	- RLb
+		- before: ![[Pasted image 20230904142022.png]]
+		- after: ![[Pasted image 20230904142638.png]]
+	- RRb
+		- before: ![[Pasted image 20230904142056.png]]
+		- after: ![[Pasted image 20230904142310.png]]
 
 ### Example
 
