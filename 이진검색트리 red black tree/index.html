@@ -2413,6 +2413,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../3.4%20Accessing%20Information/" class="md-tabs__link">
+        
+  
+    
+  
+  3.4 Accessing Information
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../3%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%2C%20ChatGPT%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B1%97%EB%B4%87%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20-%20estsoft%20%7BDjango%2C%20DRF%7D/" class="md-tabs__link">
         
   
@@ -20689,6 +20706,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../3.4%20Accessing%20Information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Accessing Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../3%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%2C%20ChatGPT%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B1%97%EB%B4%87%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20-%20estsoft%20%7BDjango%2C%20DRF%7D/" class="md-nav__link">
         
   
@@ -35845,6 +35881,9 @@
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">array의 크기는 n으로 주어지며, tree의 크기가 n보다 큰 경우 순서대로 n개 까지만 반환</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">array의 메모리 공간은 이 함수를 부르는 쪽에서 준비하고 그 크기를 세번째 인자로 알려줍니다.</span>
 </code></pre></div>
+<ul>
+<li><code>tree_to_array(tree, arr_out, n)</code>를 DFS 순회 코드의 callback함수를 사용하여 만들어 보려고 했으나 대차게 실패했다. 일단 C 자체에서 람다함수나 중첩 함수 선언같은걸 지원하지 않는데다, Callable 타입 객체를 만드는 것도 다른 언어에서는 어떻게 했는지 모르겠지만 C에서는 전역변수에 접근하는 것 말고는 다른 함수의 지역변수에 접근하는 것은 불가능해보였다.</li>
+</ul>
 <h2 id="helper-functions">Helper Functions<a class="headerlink" href="#helper-functions" title="Permanent link">#</a></h2>
 <ul>
 <li><code>insert_case(u, parent, grandparent, uncle) -&gt; LLr | LRr | RLr | RRr | LLb | LRb | RLb | RRb</code></li>

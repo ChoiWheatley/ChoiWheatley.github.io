@@ -18,7 +18,7 @@
         <link rel="prev" href="../3.%20Machine%20Level%20Representation%20of%20Programs/">
       
       
-        <link rel="next" href="../3%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%2C%20ChatGPT%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%B1%97%EB%B4%87%20%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20-%20estsoft%20%7BDjango%2C%20DRF%7D/">
+        <link rel="next" href="../3.4%20Accessing%20Information/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -2404,6 +2404,23 @@
     
   
   3.2 Programming Encodings
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../3.4%20Accessing%20Information/" class="md-tabs__link">
+        
+  
+    
+  
+  3.4 Accessing Information
 
       </a>
     </li>
@@ -20725,10 +20742,36 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#321-machine-level-code" class="md-nav__link">
+    3.2.1 Machine Level Code
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4%20Accessing%20Information/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Accessing Information
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -35572,6 +35615,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#321-machine-level-code" class="md-nav__link">
+    3.2.1 Machine Level Code
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -35604,7 +35654,12 @@
 </ul>
 <h2 id="index">INDEX<a class="headerlink" href="#index" title="Permanent link">#</a></h2>
 <ul>
-<li>3.2.1 Machine Level Code<ul>
+<li>3.2.1. Machine Level Code</li>
+<li>3.2.2. Code Examples</li>
+<li>3.2.3. Notes on Formatting</li>
+</ul>
+<h2 id="321-machine-level-code">3.2.1 Machine Level Code<a class="headerlink" href="#321-machine-level-code" title="Permanent link">#</a></h2>
+<ul>
 <li>프로그래머로부터 가려진 중요한 프로그램의 상태들 (registers)<ul>
 <li>PC(Program Counter): 다음 실행할 명령어의 위치를 저장하고 있음. <code>%rip</code></li>
 <li>다양한 방식으로 활용될 수 있는 16개의 64비트 레지스터: 임시 값 저장, 인자, 지역변수, 리턴값</li>
@@ -35614,7 +35669,11 @@
 </li>
 <li>어셈블리 단에서는 배열이나 구조체를 그저 바이트 뭉치로 볼 뿐이다. 더군다나 데이터의 타입도 분해되어 signed integer, unsigned integer, 포인터 등등을 전혀 구별하지 않는다. 우리는 무의미한 바이트의 집합으로부터 의미를 해석하는 작업을 하고 있었던 것이다.</li>
 </ul>
-</li>
+<p><mark>p.457</mark> disassembler로 뜯어본 바이너리 코드</p>
+<ul>
+<li>x86-64 명령어 셋은 그 크기가 1byte ~ 15byte로 다양하다. 단순하고 인자가 적은 명령어도 굳이 1워드를 가득 채울 필요가 없기 때문이다.</li>
+<li>명령어 형식은 시작위치가 정해진 경우가 있다. 예를 들어 <code>pushq rbx</code> 명령은 바이트값 53으로 시작할 수 있다.</li>
+<li>disassembler는 GCC의 이름규칙과 다르다는 점 참고.</li>
 </ul>
 
 
