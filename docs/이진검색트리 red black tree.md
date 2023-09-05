@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T14:11:11
+updated: 2023-09-05T16:39:20
 ---
 parent link: [[0011 Algorithms ♾️]], [[week 04 {swjungle} {Red Black Tree}]]
 
@@ -71,6 +71,7 @@ RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 �
 			- case 4) w is black, w's right child is red
 - [?] questions
 	- duplicates를 처리하기 위해선 `node_t`에 `count`라는 속성을 추가해야 한다. 하지만 현재 프로젝트의 제약사항으로 "rbtree.c"만 수정해야 하는데, 정말로 `node_t`를 수정하지 않고 중복 원소를 처리하라는 것인가?
+	- (답변) 네, 가능합니다.  정렬된 list를 `[1,1, 2, 2, 2, 3]`과 같이 구현할 수도 있고 `{1: 2개, 2: 3개, 3: 1개}` 로 구현할 수도 있습니다만, 앞의 방식으로 구현하라는 이야기입니다.
 
 ## RBTree 제약조건
 
