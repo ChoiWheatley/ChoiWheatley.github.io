@@ -14,7 +14,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T23:25:18
+updated: 2023-09-06T01:36:51
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -175,6 +175,14 @@ RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 �
 총 두 가지 스텝이 있다. 먼저 delete의 설명부터. 솔직히 case 1,2는 어렵지 않다. RBtree 제약조건을 위반하지 않으면서 단순히 NIL이 아닌 자식을 끌어올리기만 하면 그만이거든.
 
 진짜 문제는 z의 자식이 모두 존재할 경우이다. z를 사전순으로 가장 가까운 노드인 y로 대치해야 하는데, 그 과정에서 black의 손실이 일어나기 때문이다. y를 z의 오른쪽 서브트리의 최솟값이라고 했을때, y의 왼쪽 자식은 두말할 것 없이 NIL이고, y의 오른쪽 자식을 x라고 해보자. x가 심지어 NIL일 지라도 일단 눈 한번 딱 감고 transplant를 해보자. 그러면 x는 y.p의 자식이 될 것이고 x.p는 y.p가 될 것이다. 상황에 따라서 NIL.p를 설정할 수도 있지만 괜찮다.
+
++) z has both children 추가: y가 직속 z의 자식이 아니라면 `transplant`만으로 해결하지 못한 y의 자식문제를 손봐야 한다.
+
+```python
+transplant(tree, y, y.right)
+y.right = z.right
+y.right.p = y
+```
 
 ![[rbtree_delete_summary_01.jpg]]
 
