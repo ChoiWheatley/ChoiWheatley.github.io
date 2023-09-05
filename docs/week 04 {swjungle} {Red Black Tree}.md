@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-05T11:07:30
+updated: 2023-09-05T12:09:23
 ---
 
 ## INDEX
@@ -15,6 +15,7 @@ updated: 2023-09-05T11:07:30
 - [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
 - [missing semester-kr](https://missing-semester-kr.github.io/) | CS 학기에서 가르쳐주지 않지만 거의 필수적으로 알아야 하는 주제들에 대한 내용을 다루고 있음.
 - [[이진검색트리 red black tree|red black tree]] | 구현 인터페이스 확인바람.
+- [[0121 CSAPP {swjungle}]]
 
 ## 구현 규칙
 
@@ -34,6 +35,14 @@ updated: 2023-09-05T11:07:30
 - [위키백과: 레드-블랙 트리](https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC) ([영어](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree))
 - CLRS book (Introduction to Algorithms) 13장 레드 블랙 트리 - Sentinel node를 사용한 구현
 - [Wikipedia:균형 이진 트리의 구현 방법들](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree#Implementations)
+
+## CSAPP 읽을 곳들
+
+- 컴퓨터시스템 교재
+    - 3장: 프로그램의 기계수준 표현 (특히 3.4, 3.7, 3.8)
+    - 7장: 링커 (특히 7.1, 7.4, 7.9, 그림 7.15)
+    - 8장: 예외적인 제어 흐름 (특히 8.1, 8.5)
+    - 9장: 가상메모리 (특히 9.9, 9.11)
 
 ## Before start...
 
