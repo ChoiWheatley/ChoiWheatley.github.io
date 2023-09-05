@@ -14,7 +14,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T16:41:33
+updated: 2023-09-05T16:59:14
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -90,13 +90,13 @@ ADT RBTree:
 	objects: 공백이거나 루트노드, 왼쪽 노드, 오른쪽 노드로 구성되는 노드들의 유한집합, ordered set, multiset
 	functions: 
 		모든 t, t1, t2 ∈ RBTree에 대하여
-		- RBTree new_tree(): 비어있는 트리 생성
+		- RBTree new_tree() -> rbtree: 비어있는 트리 생성
 		- delete_tree(tree): 트리의 메모리 반환
-		- tree_insert(tree, key): tree에 key 추가
-		- elem_p tree_find(tree, key): 트리 안에 key 탐색 후 노드의 포인터 또는 NULL 반환
-		- tree_erase(tree, ptr): 트리 내부의 ptr로 지정된 노드 삭제 후 메모리 반환
-		- elem_p tree_min(tree): 트리 중 최소 값을 가진 노드의 포인터 반환
-		- elem_p tree_max(tree): 트리 중 최대 값을 가진 노드의 포인터 반환
+		- tree_insert(tree, key) -> node: tree에 key 추가, 추가한 노드의 주소 반환
+		- elem_p tree_find(tree, key) -> node: 트리 안에 key 탐색 후 노드의 포인터 또는 NULL 반환
+		- tree_erase(tree, ptr) -> node: 트리 내부의 ptr로 지정된 노드 삭제 후 메모리 반환
+		- elem_p tree_min(tree) -> node: 트리 중 최소 값을 가진 노드의 포인터 반환
+		- elem_p tree_max(tree) -> node: 트리 중 최대 값을 가진 노드의 포인터 반환
 		- tree_to_array(tree, array_out, n): 
 			- 트리의 내용을 key 순서대로 주어진 array로 변환. 
 			- array의 크기는 n으로 주어지며, tree의 크기가 n보다 큰 경우 순서대로 n개 까지만 반환
