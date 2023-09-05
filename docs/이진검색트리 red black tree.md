@@ -14,7 +14,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T16:59:14
+updated: 2023-09-05T23:25:18
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -170,15 +170,6 @@ RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 �
 
 ## Delete
 
-### Example
-
-<iframe title="Red-black trees in 8 minutes — Deletions" src="https://www.youtube.com/embed/lU99loSvD8s?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe> 
-다음 영상의 예시를 그대로 따라가봤다. msambol 깃허브 페이지에도 파이썬 코드가 있으니 참고바란다.
-
-![[rbtree_delete_example_01.jpg]]
-
-![[rbtree_delete_example_02.jpg]]
-
 ### summary
 
 총 두 가지 스텝이 있다. 먼저 delete의 설명부터. 솔직히 case 1,2는 어렵지 않다. RBtree 제약조건을 위반하지 않으면서 단순히 NIL이 아닌 자식을 끌어올리기만 하면 그만이거든.
@@ -202,3 +193,12 @@ RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 �
 ![[rbtree_delete_fixup_type03.jpg]]
 
 ![[rbtree_delete_fixup_type04.jpg]]
+
+### Example
+
+<iframe title="Red-black trees in 8 minutes — Deletions" src="https://www.youtube.com/embed/lU99loSvD8s?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe> 
+다음 영상의 예시를 그대로 따라가봤다. msambol 깃허브 페이지에도 파이썬 코드가 있으니 참고바란다.
+
+![[rbtree_delete_example_01.jpg]]
+
+![[rbtree_delete_example_02.jpg]]
