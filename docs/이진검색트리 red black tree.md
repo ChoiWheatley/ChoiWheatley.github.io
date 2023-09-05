@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-04T17:56:08
+updated: 2023-09-05T10:32:37
 ---
 parent link: [[0011 Algorithms ♾️]], [[week 04 {swjungle} {Red Black Tree}]]
 
@@ -28,6 +28,14 @@ Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구
 
 - [이진 탐색 트리 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC)
 - [레드-블랙 트리 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC)
+
+## height는  $2 \lg{n+1}$ 만큼을 넘을 수 없다.
+
+**증명**
+
+1. 이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. 
+2. RBTree에서의 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$, 최대 $2r$개의 노드를 거치게 되므로 $h \le 2r$이 성립한다.
+3. 1과 2로 인해 $n \le 2^h - 1 \le 2^{2r} - 1$ 을 만족하기 때문에 $n \le 2^{2r} - 1$이고 이를 
 
 ## INDEX
 
