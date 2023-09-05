@@ -10,12 +10,21 @@ aliases:
  - red black tree
  - binary search tree
  - BST
+ - RBTree
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T16:39:20
+updated: 2023-09-05T16:41:33
 ---
-parent link: [[0011 Algorithms ♾️]], [[week 04 {swjungle} {Red Black Tree}]]
+- parent link: 
+	- [[0011 Algorithms ♾️]] 
+	- [[week 04 {swjungle} {Red Black Tree}]]
+- [ChoiWheatley/swjungle-week-04 {GH}](https://github.com/ChoiWheatley/swjungle-week-04/tree/main)
+- 참고하기 좋은 자료들
+	- CSLR Chapter 13 Red-Black Trees
+	- C로 쓴 자료구조론 - Horowitz, Sahni Anderson-Freed, 이석호 역 10.3 Red-Black Trees
+	- [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
+	- [redblack tree visualization tool](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 
 ---
 
@@ -39,13 +48,8 @@ Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구
 
 RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 수행하는 동안 최대 $O(2\lg{(n+1)})$이 필요하며, 따라서 RBTree 삽입,삭제 알고리즘의 시간복잡도는 $O(\log{n})$이 된다.
 
-## INDEX
+## KEYWORDS
 
-- 참고하기 좋은 자료들
-	- CSLR Chapter 13 Red-Black Trees
-	- C로 쓴 자료구조론 - Horowitz, Sahni Anderson-Freed, 이석호 역 10.3 Red-Black Trees
-	- [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
-	- [redblack tree visualization tool](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 - keywords
 	- left rotate
 	- right rotate
