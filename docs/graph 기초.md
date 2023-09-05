@@ -12,7 +12,7 @@ aliases:
 tags: [" algo/graph  ", algo/graph]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T11:16:40
+updated: 2023-09-05T16:33:24
 ---
 parent link: [[0011 Algorithms ♾️]]
 
@@ -151,7 +151,7 @@ parent link: [[0011 Algorithms ♾️]]
     }
     ```
 
-	이진트리 탐색의 예시: stack을 출력을 위한 스택으로 활용한다는 점에 차이가 있다. 순회는 `cur`가 직접 돈다.
+	이진트리 탐색의 예시: stack을 출력을 위한 스택으로 활용한다는 점에 차이가 있다. 순회는 `cur`가 직접 돈다. `visited`를 써줄 필요가 없는 이유는 트리는 사이클이 없기 때문이다.
 
 	```c
 	typedef struct node_t{
