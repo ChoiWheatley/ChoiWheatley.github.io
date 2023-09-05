@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-04T15:45:12
+updated: 2023-09-05T11:07:30
 ---
 
 ## INDEX
@@ -76,6 +76,10 @@ updated: 2023-09-04T15:45:12
 **월요일**
 
 - [x] rbtree delete
-- [ ] 기본 Binary Search Tree 구현
-- [ ] 각종 helper functions 구현
+- [x] 기본 Binary Search Tree 구현
+- [x] BFS, DFS 순회 구현
 - [ ] RBTree Insert 구현
+
+**화요일**
+
+- [ ] 
