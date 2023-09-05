@@ -13,7 +13,7 @@ aliases:
 tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-05T11:04:33
+updated: 2023-09-05T14:11:11
 ---
 parent link: [[0011 Algorithms ♾️]], [[week 04 {swjungle} {Red Black Tree}]]
 
@@ -97,6 +97,8 @@ ADT RBTree:
 			- array의 크기는 n으로 주어지며, tree의 크기가 n보다 큰 경우 순서대로 n개 까지만 반환
 			- array의 메모리 공간은 이 함수를 부르는 쪽에서 준비하고 그 크기를 세번째 인자로 알려줍니다.
 ```
+
+- `tree_to_array(tree, arr_out, n)`를 DFS 순회 코드의 callback함수를 사용하여 만들어 보려고 했으나 대차게 실패했다. 일단 C 자체에서 람다함수나 중첩 함수 선언같은걸 지원하지 않는데다, Callable 타입 객체를 만드는 것도 다른 언어에서는 어떻게 했는지 모르겠지만 C에서는 전역변수에 접근하는 것 말고는 다른 함수의 지역변수에 접근하는 것은 불가능해보였다.
 
 ## Helper Functions
 
