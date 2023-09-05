@@ -35855,6 +35855,7 @@
 </li>
 <li>[?] questions<ul>
 <li>duplicates를 처리하기 위해선 <code>node_t</code>에 <code>count</code>라는 속성을 추가해야 한다. 하지만 현재 프로젝트의 제약사항으로 "rbtree.c"만 수정해야 하는데, 정말로 <code>node_t</code>를 수정하지 않고 중복 원소를 처리하라는 것인가?</li>
+<li>(답변) 네, 가능합니다.  정렬된 list를 <code>[1,1, 2, 2, 2, 3]</code>과 같이 구현할 수도 있고 <code>{1: 2개, 2: 3개, 3: 1개}</code> 로 구현할 수도 있습니다만, 앞의 방식으로 구현하라는 이야기입니다.</li>
 </ul>
 </li>
 </ul>
