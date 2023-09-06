@@ -1,20 +1,21 @@
 ---
-description:
+description: 
 title: 이진검색트리 red black tree
 created: 2023-02-13T06:16:26
-categories: 
- - 알고리즘
- - 이진검색트리 
- - red black tree
-aliases: 
- - red black tree
- - binary search tree
- - BST
- - RBTree
-tags: [" algo/tree algo/graph algo/datastructure  ", algo/tree, algo/graph, algo/datastructure]
-date created: Monday, February 13th 2023, 6:16:26 am
-date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-06T01:36:51
+categories:
+  - 알고리즘
+  - 이진검색트리
+  - red black tree
+aliases:
+  - red black tree
+  - binary search tree
+  - BST
+  - RBTree
+tags:
+  - algo/tree
+  - algo/graph
+  - algo/datastructure
+updated: 2023-09-06T13:24:45
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
