@@ -15,7 +15,7 @@ tags:
   - algo/tree
   - algo/graph
   - algo/datastructure
-updated: 2023-09-06T13:24:45
+updated: 2023-09-07T13:55:07
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -26,15 +26,16 @@ updated: 2023-09-06T13:24:45
 	- C로 쓴 자료구조론 - Horowitz, Sahni Anderson-Freed, 이석호 역 10.3 Red-Black Trees
 	- [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
 	- [redblack tree visualization tool](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
+	- [[linux 커널 rbtree 코드, 어떤 최적화가 있는지 보자]]
+		- [linux/lib/rbtree.c {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/lib/rbtree.c)
+		- [linux/include/linux/rbtree.h {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/include/linux/rbtree.h)
+		- [linux/include/linux/rbtree_types.h {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/include/linux/rbtree_types.h)
 
 ---
 
 ## 이진검색트리 red black tree
 
-상태: Not started  
-태그: datastructure, graph, tree
-
-Ranged search에 강력한 성능을 보이는 트리 자료구조를 직접 구현해보자. 이진탐색트리를 먼저 구현하고 스스로 균형을 조절하는 RB-tree (Red-black tree) 트리를 만들어 보겠다.
+이진탐색트리를 먼저 구현하고 스스로 균형을 조절하는 RB-tree (Red-black tree) 트리를 만들어 보겠다.
 
 - [이진 탐색 트리 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC)
 - [레드-블랙 트리 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC)
@@ -56,9 +57,9 @@ RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 �
 	- right rotate
 	- insert
 		- insert_fixup
-			- case1) Z's uncle is red
-			- case2) Z's uncle is black and Z's parent, grandparent form a triangle
-			- case3) Z's uncle is black and Z's parent, grandparent form a line
+			- case1) `??r` Z's uncle is red
+			- case2) `LRb`, `RLb` Z's uncle is black and Z's parent, grandparent form a triangle
+			- case3) `LLb`, `RRb` Z's uncle is black and Z's parent, grandparent form a line
 	- deletion
 		- transplant (u, v)
 			- case1) u's parent is None
