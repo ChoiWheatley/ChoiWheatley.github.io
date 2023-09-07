@@ -1861,6 +1861,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/bat%2C%20beautiful%20cat%20command/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/begin%20align/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
@@ -2376,6 +2381,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/fzf%2C%20fuzzy%20finder%20for%20terminal/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/gcc%20options/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
@@ -2692,6 +2702,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/linux%20-%20How%20much%20data%20does%20SSH%20typically%20use%20-%20Super%20User/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/linux%20%EC%BB%A4%EB%84%90%20rbtree%20%EC%BD%94%EB%93%9C%20%7B%EC%95%88%EC%93%B0%EB%8A%94%20%EB%B9%84%ED%8A%B8%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EC%B5%9C%EC%A0%81%ED%99%94%7D/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3386,6 +3401,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/tldr%2C%20man%EB%B3%B4%EB%8B%A4%20%EA%B0%84%EA%B2%B0%ED%95%9C%20%EB%AA%85%EB%A0%B9%EC%96%B4%20%EC%82%AC%EC%9A%A9%EB%B2%95%20%EB%A7%A4%EB%89%B4%EC%96%BC/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/tokio/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
@@ -3396,7 +3416,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/trash-cli%2C%20%EC%9C%84%ED%97%98%EC%B2%9C%EB%A7%8C%ED%95%9C%20rm%20%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A5%BC%20%EB%8C%80%EC%B2%B4%ED%95%B4%EC%A4%8D%EB%8B%88%EB%8B%A4/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/tree%20%EA%B8%B0%EC%B4%88/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/tree%2C%20cli%20command%20for%20directory%20structure/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3626,12 +3656,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/zellij/</loc>
+         <loc>https://choiwheatley.github.io/zellij%2C%20terminal%20multiplexer%20built%20with%20rust/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://choiwheatley.github.io/zeroing/</loc>
+         <lastmod>2023-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/zip%2C%20unzip%2C%20cli%20%EC%95%95%EC%B6%95%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/</loc>
          <lastmod>2023-09-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
