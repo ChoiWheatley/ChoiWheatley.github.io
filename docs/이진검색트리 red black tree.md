@@ -15,7 +15,7 @@ tags:
   - algo/tree
   - algo/graph
   - algo/datastructure
-updated: 2023-09-07T13:55:07
+updated: 2023-09-07T21:16:07
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -212,3 +212,11 @@ y.right.p = y
 ![[rbtree_delete_example_01.jpg]]
 
 ![[rbtree_delete_example_02.jpg]]
+
+## FEEDBACK
+
+[SWJungle/P7-Week04-06/pull/3 {GH}](https://github.com/SWJungle/P7-Week04-06/pull/3) 참조
+
+> if문만 쓰다 switch 문을 보니 if와 switch 문에서 시간과 공간 복잡도에서 트레이드 오프가 있다고 들은적이 있던것 같은데 다시 공부해 봐야겠네요
+
+[[if와 switch 간에 속도차이]]

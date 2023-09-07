@@ -4,7 +4,7 @@ tags:
 description:
 title: linux 커널 rbtree 코드 {안쓰는 비트를 활용한 최적화}
 created: 2023-09-07T13:55:57
-updated: 2023-09-07T15:24:46
+updated: 2023-09-07T21:21:20
 ---
 - parent: [[이진검색트리 red black tree|RBTree]]
 - [linux/include/linux/rbtree_types.h {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/include/linux/rbtree_types.h)
