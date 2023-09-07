@@ -3,7 +3,7 @@ description: 매일매일 나의 삶을 부트스트랩 할 수 있는 도구들
 aliases: 유틸리티 아카이브 archive hack
 tags: utility
 created: 2023-03-15T14:30:15
-updated: 2023-09-07T20:54:02
+updated: 2023-09-07T21:12:12
 title: 0110 Utility 🔧
 ---
 
@@ -21,6 +21,10 @@ title: 0110 Utility 🔧
 - [[parsec, 레이턴시에 몰빵한 리모트 데스크톱]]
 - [[zsh 설정 관련]]
 - [[bat, beautiful cat command]]
+- [[fzf, fuzzy finder for terminal]]
+- [[trash-cli, 위험천만한 rm 명령어를 대체해줍니다]]
+- [[tldr, man보다 간결한 명령어 사용법 매뉴얼]]
+- [[zip, unzip, cli 압축 프로그램]]
 
 ## mac utils
 
@@ -37,4 +41,6 @@ title: 0110 Utility 🔧
 - [[gtop, elegant top for cli]]
 - [[espanso text converter]]
 - [[neovim 설정 관련 {NvChad}]]
-- [[fzf, fuzzy finder for terminal]]
+- [[tree, cli command for directory structure]]
+- [[zellij, terminal multiplexer built with rust]]
+- 
