@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#341-operand-specifiers" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -9811,6 +9816,23 @@
     
   
   no23.힙 (class Heap 소스코드)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../noclamshell%2C%20%EB%A7%A5%EB%B6%81%20%EB%9A%9C%EA%BB%91%EC%9D%84%20%EB%8B%AB%EC%9C%BC%EB%A9%B4%20%EB%AC%B4%EC%A1%B0%EA%B1%B4%20sleep%EB%AA%A8%EB%93%9C%EB%A1%9C/" class="md-tabs__link">
+        
+  
+    
+  
+  noclamshell, 맥북 뚜껑을 닫으면 무조건 sleep모드로
 
       </a>
     </li>
@@ -20748,6 +20770,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3.4 Accessing Information
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -20757,6 +20790,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#341-operand-specifiers" class="md-nav__link">
+    3.4.1.  Operand Specifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342-data-movement-instructions" class="md-nav__link">
+    3.4.2. Data Movement Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#343-data-movement-example" class="md-nav__link">
+    3.4.3. Data Movement Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#344-pushing-and-popping-stack-data" class="md-nav__link">
+    3.4.4. Pushing and Popping Stack Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -29033,6 +29111,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../noclamshell%2C%20%EB%A7%A5%EB%B6%81%20%EB%9A%9C%EA%BB%91%EC%9D%84%20%EB%8B%AB%EC%9C%BC%EB%A9%B4%20%EB%AC%B4%EC%A1%B0%EA%B1%B4%20sleep%EB%AA%A8%EB%93%9C%EB%A1%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    noclamshell, 맥북 뚜껑을 닫으면 무조건 sleep모드로
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nosy/" class="md-nav__link">
         
   
@@ -35581,6 +35678,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#341-operand-specifiers" class="md-nav__link">
+    3.4.1.  Operand Specifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342-data-movement-instructions" class="md-nav__link">
+    3.4.2. Data Movement Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#343-data-movement-example" class="md-nav__link">
+    3.4.3. Data Movement Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#344-pushing-and-popping-stack-data" class="md-nav__link">
+    3.4.4. Pushing and Popping Stack Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -35604,7 +35737,41 @@
 <blockquote>
 <p>서로 다른 레지스터들은 범용목적을 제외하곤 고유한 역할이 있다.</p>
 </blockquote>
-<p>함수 호출 시 스택 관리, 인자, 리턴값, 지역변수 관리 등등</p>
+<h2 id="341-operand-specifiers">3.4.1.  Operand Specifiers<a class="headerlink" href="#341-operand-specifiers" title="Permanent link">#</a></h2>
+<p>피연산자들의 타입에 대해 알아보자.</p>
+<ul>
+<li>Immediate <code>$Imm</code><ul>
+<li>값 리터럴을 담는데 쓰임</li>
+</ul>
+</li>
+<li>Register <code>R[ra]</code><ul>
+<li>레지스터 이름을 가리킨다.</li>
+</ul>
+</li>
+<li>Memory <code>M[Imm]</code>, <code>M[Imm + R[rb]]</code>, <code>M[R[rb]+R[ri]]</code>, <code>M[Imm + R[rb] + R[ri]]</code>, <code>M[R[ri] * s]</code>, <code>M[Imm + R[ri] * s]</code>, etc.<ul>
+<li>메모리 주소값을 참조한다.</li>
+<li>메모리 인덱스 연산을 제공하나보네</li>
+</ul>
+</li>
+</ul>
+<h2 id="342-data-movement-instructions">3.4.2. Data Movement Instructions<a class="headerlink" href="#342-data-movement-instructions" title="Permanent link">#</a></h2>
+<blockquote>
+<p>The generality of the operand notation allows a simple data movement instruction to express a range of possibilities that in many machines would require a number of different instructions<br />
+ 피연산자 표기법의 범용성 덕분에 많은 기계에서 여러 명령어가 필요한 다양한 기능을 간단한 데이터 이동 명령어로 표현할 수 있습니다.</p>
+</blockquote>
+<p>크기가 다를뿐, 여러 mov 연산자는 동일한 역할을 가지고 있다. Destination으로 Source 데이터를 옮기는 명령으로 Source, Destination 모두 레지스터, 메모리공간을 뜻할 수는 있지만 Source, Destination 모두 동시에 메모리주소를 가리킬 수는 없다. 따라서 메모리 A에 있는 데이터를 메모리 B로 옮기기 위해선 두 번의 연산이 필요하다.</p>
+<h2 id="343-data-movement-example">3.4.3. Data Movement Example<a class="headerlink" href="#343-data-movement-example" title="Permanent link">#</a></h2>
+<p>단순 값을 수정하는 함수 <code>exchange</code>를 GCC로 컴파일 했을때 어떤 어셈블리 코드가 나오는지 직접 실습을 하는 장이다. </p>
+<blockquote>
+<p>First, we see that what we call "pointers" in C are simply addresses. Dereferencing a pointer involves copying that pointer into a register, and then using  this register in a memory reference. </p>
+<p>Second, local variables such as x are often kept in registers rather than stored in memory locations. Register access is much faster than memory access.</p>
+</blockquote>
+<h2 id="344-pushing-and-popping-stack-data">3.4.4. Pushing and Popping Stack Data<a class="headerlink" href="#344-pushing-and-popping-stack-data" title="Permanent link">#</a></h2>
+<p>stack frame에 대한 설명을 하려나? 인자 (4개?), 리턴위치, 스택 포인터 등등. 기억이 가물가물</p>
+<p>스택의 top을 가리키는 레지스터는 <code>%rsp</code>이다. 스택 포인터는 스택의 TOP을 의미하는구나. 스택포인터는 높은 곳에서 시작해 낮은 곳으로 내려간다는 점 기억하자. 새로운 함수 호출시 <code>pushq</code>를 사용하고 함수 반환시 <code>popq</code>를 사용한다. <code>pushq</code>를 명령하면 현재 스택포인터의 값을 8만큼 감소시킨 뒤 새 스택포인터의 자리에 값을 저장한다. <code>popq</code>는 반대로 리턴에 해당하는 결과값을 <code>%rax</code>에 저장한 뒤 다시 <code>%rsp</code>를 8만큼 증가시킨다.</p>
+<ul>
+<li>[?] 스택 포인터가 가리키는 메모리 공간에 저장할 수 있는 용량이 고작 1 words 밖에 안하는 것 같은데, 그 작은 공간 안에 함수가 다 들어간가는 건가? 아니면 함수의 실제 위치를 참조하는 걸까?</li>
+</ul>
 
 
 
