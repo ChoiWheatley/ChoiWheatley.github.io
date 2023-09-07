@@ -18,6 +18,7 @@ updated: 2023-08-31T14:41:36
 		- [[0121 CSAPP {swjungle}]]
 		- [[Linux IPC Programming {inflearn archive}]]
 	- [[week 04 {swjungle} {Red Black Tree}]]
+	- [[week 05 {swjungle} {malloc-lab}]]
 
 # QUESTIONS and TEATIMES
 
