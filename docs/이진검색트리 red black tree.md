@@ -26,7 +26,7 @@ updated: 2023-09-07T13:55:07
 	- C로 쓴 자료구조론 - Horowitz, Sahni Anderson-Freed, 이석호 역 10.3 Red-Black Trees
 	- [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
 	- [redblack tree visualization tool](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
-	- [[linux 커널 rbtree 코드, 어떤 최적화가 있는지 보자]]
+	- [[linux 커널 rbtree 코드 {안쓰는 비트를 활용한 최적화}]]
 		- [linux/lib/rbtree.c {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/lib/rbtree.c)
 		- [linux/include/linux/rbtree.h {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/include/linux/rbtree.h)
 		- [linux/include/linux/rbtree_types.h {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/include/linux/rbtree_types.h)
