@@ -4,7 +4,7 @@ tags:
 description:
 title: linux 커널 rbtree 코드 {안쓰는 비트를 활용한 최적화}
 created: 2023-09-07T13:55:57
-updated: 2023-09-07T14:55:15
+updated: 2023-09-07T15:09:21
 ---
 - parent: [[이진검색트리 red black tree|RBTree]]
 - [linux/include/linux/rbtree_types.h {GH}](https://github.com/torvalds/linux/blob/7ba2090ca64ea1aa435744884124387db1fac70f/include/linux/rbtree_types.h)
@@ -83,3 +83,9 @@ struct rb_node {
 `__rb_parent_color`는 비록 하나의 멤버변수이지만 포인터 연산의 특징을 영리하게 활용했습니다. 모든 `rb_node`에 대한 포인터는 4 또는 8바이트 이하로 쪼개질 수 없습니다. 따라서 첫 두 비트는 항상 0입니다. 
 
 parent 포인터가 필요할 땐 `__rb_parent` 매크로 함수를 이용하여 첫 두 비트를 0으로 만들어버리는 비트 마스킹을 취한 후 포인터로 캐스팅을 합니다. 반대로 color가 필요할 땐 `__rb_color` 매크로 함수를 이용하여 첫 비트가 0인지, 1인지만 봅니다.
+
+before:  
+`assert(sizeof(node_t) == 32)`
+
+after:  
+`assert(sizeof(node_t) == 24)`
