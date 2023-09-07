@@ -3,7 +3,7 @@ description: 매일매일 나의 삶을 부트스트랩 할 수 있는 도구들
 aliases: 유틸리티 아카이브 archive hack
 tags: utility
 created: 2023-03-15T14:30:15
-updated: 2023-09-07T13:25:10
+updated: 2023-09-07T13:38:27
 title: 0110 Utility 🔧
 ---
 - [[prime numbers]]
@@ -25,6 +25,7 @@ title: 0110 Utility 🔧
 - [[Witch, Alt tab for window switching {macos}]]
 - [[yabai, tiling window manager for macOS]]
 - [[karabiner-elements]]
+- [[noclamshell, 맥북 뚜껑을 닫으면 무조건 sleep모드로]]
 
 ## linux utils
 
