@@ -4,7 +4,7 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-08T11:43:02
+updated: 2023-09-08T13:54:31
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP {swjungle}]]
@@ -14,13 +14,13 @@ updated: 2023-09-08T11:43:02
 			- [[⭐️ 3.7 Procedures]]
 			- [[⭐️ 3.8 Array Allocation and Access]]
 		- [[7. Linking]]
-			- 7.1
-			- 7.4
+			- [[⭐️ 7.1. Compiler Drivers]]
+			- [[⭐️ 7.4. Relocatable Object Files]]
 			- 7.9
 		- [[8. Exceptional Control Flow]]
 			- 8.1
 			- 8.5
-		- 9장, 가상메모리
+		- [[9. Virtual Memory]]
 			- **9.9**
 			- 9.11
 	- WEEK05 읽어두면 좋을 챕터들 
