@@ -16,7 +16,7 @@ updated: 2023-09-08T13:54:31
 		- [[7. Linking]]
 			- [[⭐️ 7.1. Compiler Drivers]]
 			- [[⭐️ 7.4. Relocatable Object Files]]
-			- 7.9
+			- [[⭐️ 7.9. Loading Executable Files]]
 		- [[8. Exceptional Control Flow]]
 			- 8.1
 			- 8.5
