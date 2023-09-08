@@ -12,7 +12,7 @@ updated: 2023-09-08T11:43:02
 		- [[3. Machine Level Representation of Programs]]
 			- [[⭐️ 3.4 Accessing Information]]
 			- [[⭐️ 3.7 Procedures]]
-			- 3.8
+			- [[⭐️ 3.8 Array Allocation and Access]]
 		- 7장, 링커
 			- 7.1
 			- 7.4
