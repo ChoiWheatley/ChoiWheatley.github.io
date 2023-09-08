@@ -2517,6 +2517,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../9.%20Virtual%20Memory/" class="md-tabs__link">
+        
+  
+    
+  
+  9. Virtual Memory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../9084%20%EB%8F%99%EC%A0%84%20%7Bboj%7D/" class="md-tabs__link">
         
   
@@ -12853,6 +12870,57 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 7.4. Relocatable Object Files
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 7.9. Loading Executable Files
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.1%20Exceptions/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 8.1 Exceptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-tabs__link">
         
   
@@ -21164,6 +21232,25 @@
   
   <span class="md-ellipsis">
     8. Exceptional Control Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.%20Virtual%20Memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Virtual Memory
   </span>
   
 
@@ -32730,6 +32817,63 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 7.4. Relocatable Object Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 7.9. Loading Executable Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.1%20Exceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 8.1 Exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-nav__link">
         
   
@@ -36233,19 +36377,85 @@
 <h2 id="dump">DUMP<a class="headerlink" href="#dump" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../%E2%AD%90%EF%B8%8F%207.1.%20Compiler%20Drivers/">⭐️ 7.1. Compiler Drivers</a></li>
-<li>7.2. Static Linking</li>
-<li>7.3. Object Files</li>
-<li>⭐️ 7.4. Relocatable Object Files</li>
-<li>7.5. Symbols and Symbol Tables</li>
-<li>7.6. Symbol Resolution</li>
-<li>7.7. Relocation</li>
-<li>7.8. Executable Object Files</li>
-<li>⭐️ 7.9. Loading Executable Files</li>
-<li>7.10. Dynamic Linking with Shared Libraries</li>
-<li>7.11. Loading and Linking Shared Libraries from Applications</li>
-<li>7.12. Position Independent Code (PIC)</li>
-<li>7.13. Library Interpositioning</li>
-<li>7.14. Tools for manipulating Object Files</li>
+<li>7.2. Static Linking<ul>
+<li><code>ld</code>에 의해서 필요한 모든 객체파일들이 하나의 실행파일로 담기는 형태를 말한다.</li>
+<li><em>symbol resolution</em>, 목적파일들은 'symbol'이란 이름의 레퍼런스로 정의된다. 그 안에 함수, 전역변수, 정적변수 등에 대한 정의가 들어있다.</li>
+<li><em>relocation</em> 컴파일러와 어셈블러가 뽑아낸 산물은 주소값이 0번지부터 시작한다. 링커는 이 여러 목적파일들의 위치를 재정의한다.</li>
+</ul>
+</li>
+<li>7.3. Object Files<ol>
+<li><em>relocatable object file</em>, 컴파일이 된 바이너리이지만 그 자체로 실행할 수는 없는 목적파일. 반드시 링커에 의해 컴파일 타임에 링크 되어야 한다.</li>
+<li><em>executable object file</em>, 실행 가능한 목적파일로, 메모리에 곧장 복붙해서 실행될 수 있는 목적파일</li>
+<li><em>shared object file</em>, 특별한 종류의 relocatable object file인데, 메모리에 올라가 동적으로 링크될 수 있음. 심지어 로드타임, 런타임 모두 가능.</li>
+</ol>
+</li>
+<li><a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/">⭐️ 7.4. Relocatable Object Files</a></li>
+<li>7.5. Symbols and Symbol Tables<ul>
+<li>같은 이름의 다른 함수에 들어있는 정적변수는 에러가 난다? 안난다?</li>
+<li>global symbols that are defined by module <em>m</em></li>
+<li>global symbols that are referenced by module <em>m</em></li>
+<li>local symbols that are defined and referenced exclusively by module <em>m</em></li>
+</ul>
+</li>
+<li>7.6. Symbol Resolution<ul>
+<li>심볼 참조작업은 먼저 모든 모듈을 돌면서 로컬 심볼이 모듈 안에서 유일한지 여부를 검사하는 것으로 시작한다.</li>
+<li>전역적으로 정의된 글로벌 심볼은 좀 더 까다로운데, 현재 모듈에 정의되어있지 않은 심볼 (선언만 되어있음)을 단순 외부에 정의되어 있다고 간주할 수밖에 없음.</li>
+<li>그러한 '정의되어있다고 간주한 심볼'들의 위치를 <em>linker symbol table entry</em> 에 보관한다. 컴파일러 책임은 아님. 링커의 책임임.</li>
+<li>7.6.1. 링커가 중복된 심볼 이름에 대처하는 방법</li>
+<li>7.6.2. 링커가 정적 라이브러리를 링크하는 방법</li>
+<li>7.6.3. 링커가 정적 라이브러리의 참조를 resolve 하는 방법</li>
+</ul>
+</li>
+<li>7.7. Relocation<ul>
+<li>symbol resolution 작업을 마치면 relocation 작업을 수행한다. 링커 할 일도 많다.</li>
+<li>링커는 이미 연관 모듈들의 모든 <code>.data</code> 섹션들에 대한 정확한 사이즈를 알고있다.</li>
+<li>각각의 심볼들에게 '실행 시 위치할 주소'를 정의한다. (물론 그것이 실제 메모리 주소를 의미하는 것은 아닐 것이다.)</li>
+</ul>
+</li>
+<li>7.8. Executable Object Files<ul>
+<li>링커가 symbol resolution과 relocation 작업을 통해 relocatable object file을 executable object file로 만들었다. 👏👏👏👏👏👏</li>
+<li>그 안에는 꽤 많은 것들이 relocatable object file과 비슷하지만, 이젠 relocation 작업 덕분에 <code>.text</code>, <code>.rodata</code>, <code>.data</code> 영역들의 위치가 결정이 난 상태가 되었다.</li>
+<li><code>.init</code> 섹션이 추가가 됐는데, <code>_init</code>이라는 작은 함수를 프로그램 실행시 처음 호출하게 된다. <code>.rel</code> 섹션은 이제 더 이상 필요가 없다.</li>
+<li>program header table 안에는 섹션들이 로드되어 세그먼트가 될 때의 매핑에 대한 정보가 들어간다. ELF 파일에서 섹션이었던 애들이 프로세스가 되면 세그먼트가 되는 식.</li>
+</ul>
+</li>
+<li><a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/">⭐️ 7.9. Loading Executable Files</a></li>
+<li>7.10. Dynamic Linking with Shared Libraries<ul>
+<li>공유 라이브러리는 메모리에 한 번만 로드되면 다른 프로세스들이 얼마든지 가져다 쓸 수 있다. (COW 안나오나?) 컴파일 시 <code>-fpic</code> 플래그를 달면 컴파일러가 PIC를 생성하며, <code>-shared</code> 플래그를 달면 링커에게 shared object file을 생성하라고 명령할 수 있다.</li>
+</ul>
+</li>
+<li>7.11. Loading and Linking Shared Libraries from Applications<ul>
+<li>리눅스는 동적 링커를 위한 간단한(?) 인터페이스를 제공한다. <code>dlfcn.h</code> 안에 <code>dlopen</code>, <code>dlsym</code>, <code>dlclose</code>, <code>dlerror</code> 함수. </li>
+<li>컴파일 시 <code>-rdynamic</code> 옵션을 넣어야 한다.</li>
+</ul>
+</li>
+<li>
+<p>7.12. Position Independent Code (PIC)</p>
+<ul>
+<li>메모리에 상주해 있는 라이브러리 코드를 공유하기 위해서 PIC가 존재한다. </li>
+</ul>
+<blockquote>
+<p>한 가지 접근 방식은 각 공유 라이브러리에 전용 주소 공간 청크를 선험적으로 할당하고 로더가 항상 해당 주소에서 공유 라이브러리를 로드하도록 하는 것입니다.</p>
+</blockquote>
+</li>
+<li>
+<p>7.13. Library Interpositioning</p>
+<ul>
+<li>라이브러리 교차? 공유 라이브러리 함수호출을 훔쳐다 내 코드를 호출하도록 만드는 기법을 의미함. 일종의 후크처럼 생각해도 좋겠다.</li>
+<li>compile time interpositioning, link time interpositioning, run time interpositioning </li>
+</ul>
+</li>
+<li>7.14. Tools for manipulating Object Files<ul>
+<li><code>ar</code> 정적 라이브러리 생성툴</li>
+<li><code>strings</code> 목적파일 안에 들어있는 모든 문자열 리터럴들을 출력</li>
+<li><code>strip</code> 목적파일에서 symbol 테이블 정보를 제거</li>
+<li><code>nm</code> 목적파일 내 심볼 테이블 안에 정의된 모든 심볼 출력</li>
+<li><code>size</code> 목적파일의 각 섹션의 사이즈와 이름을 출력</li>
+<li><code>readelf</code> ELF 헤더로부터 목적파일을 인간이 볼 수 있게 디코딩해줌</li>
+<li><code>objdump</code> 목적파일의 모든 정보를 보여준다.</li>
+<li><code>ldd</code> 런타임에 필요한 공유 라이브러리들의 정보를 출력한다.</li>
+</ul>
+</li>
 <li>7.15. Summary</li>
 </ul>
 

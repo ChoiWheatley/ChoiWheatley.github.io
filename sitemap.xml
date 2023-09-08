@@ -676,6 +676,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/9.%20Virtual%20Memory/</loc>
+         <lastmod>2023-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/9084%20%EB%8F%99%EC%A0%84%20%7Bboj%7D/</loc>
          <lastmod>2023-09-08</lastmod>
          <changefreq>daily</changefreq>
@@ -3712,6 +3717,21 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%E2%AD%90%EF%B8%8F%207.1.%20Compiler%20Drivers/</loc>
+         <lastmod>2023-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/</loc>
+         <lastmod>2023-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/</loc>
+         <lastmod>2023-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%E2%AD%90%EF%B8%8F%208.1%20Exceptions/</loc>
          <lastmod>2023-09-08</lastmod>
          <changefreq>daily</changefreq>
     </url>

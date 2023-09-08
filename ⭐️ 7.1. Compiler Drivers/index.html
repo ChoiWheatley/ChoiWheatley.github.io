@@ -18,7 +18,7 @@
         <link rel="prev" href="../%E2%AD%90%EF%B8%8F%203.8%20Array%20Allocation%20and%20Access/">
       
       
-        <link rel="next" href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/">
+        <link rel="next" href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -2504,6 +2504,23 @@
     
   
   8. Exceptional Control Flow
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../9.%20Virtual%20Memory/" class="md-tabs__link">
+        
+  
+    
+  
+  9. Virtual Memory
 
       </a>
     </li>
@@ -12853,6 +12870,57 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 7.4. Relocatable Object Files
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 7.9. Loading Executable Files
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.1%20Exceptions/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 8.1 Exceptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-tabs__link">
         
   
@@ -21121,6 +21189,25 @@
   
   <span class="md-ellipsis">
     8. Exceptional Control Flow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.%20Virtual%20Memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Virtual Memory
   </span>
   
 
@@ -32730,6 +32817,63 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 7.4. Relocatable Object Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 7.9. Loading Executable Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.1%20Exceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 8.1 Exceptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-nav__link">
         
   
@@ -36216,6 +36360,11 @@
 </ul>
 <hr />
 <h2 id="dump">DUMP<a class="headerlink" href="#dump" title="Permanent link">#</a></h2>
+<ul>
+<li>compiler drivers는 사실 <code>GCC</code>와 같이 전처리기, 컴파일러, 어셈블러, 링커를 하나로 묶은 드라이버를 의미한다.</li>
+<li>그러니까 이번 장에서는 컴파일 과정에서 참여하는 링커(<code>ld</code>)의 중요한 역할에 대해서 이야기 나누게 된다.</li>
+</ul>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230908134433.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230908134433.png" src="../assets/Pasted%20image%2020230908134433.png" /></a></p>
 
 
 
