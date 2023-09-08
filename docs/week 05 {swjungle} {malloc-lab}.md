@@ -13,7 +13,7 @@ updated: 2023-09-08T11:43:02
 			- [[⭐️ 3.4 Accessing Information]]
 			- [[⭐️ 3.7 Procedures]]
 			- [[⭐️ 3.8 Array Allocation and Access]]
-		- 7장, 링커
+		- [[7. Linking {CSAPP}]]
 			- 7.1
 			- 7.4
 			- 7.9
