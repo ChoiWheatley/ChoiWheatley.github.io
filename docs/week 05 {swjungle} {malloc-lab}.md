@@ -4,7 +4,7 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-08T13:54:31
+updated: 2023-09-08T17:35:40
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP {swjungle}]]
@@ -68,10 +68,13 @@ ___
 **09/08**  
 
 **09/09**  
+[[⭐️ 9.9. Dynamic Memory Allocation]] 발표 @안상언
 
 **09/10**  
+[[7. Linking]] 발표 @최승현
 
 **09/11**  
+시스템 콜 발표 @이인복
 
 **09/12**  
 
