@@ -681,6 +681,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/9.3.%20VM%20as%20a%20Tool%20for%20Caching/</loc>
+         <lastmod>2023-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/9084%20%EB%8F%99%EC%A0%84%20%7Bboj%7D/</loc>
          <lastmod>2023-09-08</lastmod>
          <changefreq>daily</changefreq>
@@ -5162,6 +5167,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2023-09-07/</loc>
+         <lastmod>2023-09-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2023-09-09/</loc>
          <lastmod>2023-09-08</lastmod>
          <changefreq>daily</changefreq>
     </url>

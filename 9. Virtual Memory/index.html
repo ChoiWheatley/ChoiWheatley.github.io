@@ -18,7 +18,7 @@
         <link rel="prev" href="../8.%20Exceptional%20Control%20Flow/">
       
       
-        <link rel="next" href="../9084%20%EB%8F%99%EC%A0%84%20%7Bboj%7D/">
+        <link rel="next" href="../9.3.%20VM%20as%20a%20Tool%20for%20Caching/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -82,6 +82,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#dump" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -2518,6 +2523,23 @@
     
   
   9. Virtual Memory
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../9.3.%20VM%20as%20a%20Tool%20for%20Caching/" class="md-tabs__link">
+        
+  
+    
+  
+  9.3. VM as a Tool for Caching
 
       </a>
     </li>
@@ -18637,6 +18659,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-09-09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-09
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -21222,6 +21264,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9. Virtual Memory
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -21232,6 +21285,49 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dump" class="md-nav__link">
+    DUMP
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.3.%20VM%20as%20a%20Tool%20for%20Caching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3. VM as a Tool for Caching
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -36321,6 +36417,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dump" class="md-nav__link">
+    DUMP
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -36338,10 +36449,27 @@
 
 <ul>
 <li><a href="../index/0121%20CSAPP%20%7Bswjungle%7D/">0121 CSAPP {swjungle}</a></li>
-<li>9.1. Physical and Virtual Addressing</li>
+</ul>
+<hr />
+<p>타 프로세스가 자기 메모리 공간에 실수로 접근하기라도 한다면 내 프로그램이 완벽할지라도 제대로 돌아가지 않을 수 있다. 따라서 가상메모리 개념을 도입하는 것으로 다음 목표를 달성할 수 있다.</p>
+<ol>
+<li>프로세스간에 독립적인 메모리 자원을 약속한다.</li>
+<li>메인 메모리를 디스크의 캐시로 활용할 수 있다. 즉, 디스크공간또한 메모리처럼 활용할 수도 있다는 얘기.</li>
+<li>메모리 관리를 좀 더 단순하게 처리할 수 있다.</li>
+</ol>
+<h2 id="dump">DUMP<a class="headerlink" href="#dump" title="Permanent link">#</a></h2>
+<ul>
+<li>9.1. Physical and Virtual Addressing<ul>
+<li>물리적인 주소를 매핑하는 시스템 (초기 컴퓨터, IoT)도 분명 있다. </li>
+<li>가상 주소는 MMU (Memory Management Unit) 하드웨어의 도움을 받아 CPU가 요청한 가상 주소를 물리 주소로 매핑한다.</li>
+</ul>
+</li>
 <li>9.2. Address Spaces</li>
-<li>9.3. VM as a Tool for Caching</li>
-<li>9.4. VM as a Tool for Memory Management</li>
+<li><a href="../9.3.%20VM%20as%20a%20Tool%20for%20Caching/">9.3. VM as a Tool for Caching</a></li>
+<li>9.4. VM as a Tool for Memory Management<ul>
+<li></li>
+</ul>
+</li>
 <li>9.5. VM as a Tool for Memory Protection</li>
 <li>9.6. Address Translation</li>
 <li>9.7. Case Study: The Intel Core i7, Linux Memory System</li>
