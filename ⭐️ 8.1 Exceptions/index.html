@@ -18,7 +18,7 @@
         <link rel="prev" href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/">
       
       
-        <link rel="next" href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/">
+        <link rel="next" href="../%E2%AD%90%EF%B8%8F%208.5.%20Signals/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -12910,6 +12910,23 @@
     
   
   ⭐️ 8.1 Exceptions
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.5.%20Signals/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 8.5. Signals
 
       </a>
     </li>
@@ -32887,6 +32904,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.5.%20Signals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 8.5. Signals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-nav__link">
         
   
@@ -36402,6 +36438,23 @@
 <li>CPU 제조사가 예외번호를 정의한다.. 커널 디자이너들또한 몇몇 예외테이블의 예외번호를 할당받는다.</li>
 <li>시스템이 부팅할때 OS는 예외테이블이라 불리우는 점프 테이블을 생성해 메모리에 상주시킨다.</li>
 <li>런타임에 프로세서는 이벤트를 탐지할 수 있으며, 사전에 정의한 예외번호에 따른 예외처리기를 호출한다. 이때 예외처리기의 정확한 주소를 찾기 위해서 exception table base register에 exception number * 8을 더한다.</li>
+<li>
+<p>8.1.2. Classes of Exceptions</p>
+<ul>
+<li><strong>Interrupts</strong>: 프로세서 바깥에 있는 IO 디바이스로부터의 시그널에 의해 촉발된다.</li>
+<li><strong>Traps and System Calls</strong>: 유저 프로세스와 커널코드 사이에 함수를 호출하는 것처럼 간주되기도 한다. (syscall)</li>
+<li><strong>Faults</strong>: 복구가 가능한 에러를 칭한다. 핸들러가 현 상황을 복구할 수 있으면 이전 코드로 돌아가고, 그러지 못한다면 abort를 호출한다.</li>
+<li><strong>Aborts</strong>: 복구가 불가능한 에러를 칭한다. 하드웨어 에러</li>
+</ul>
+</li>
+<li>
+<p>8.1.3. Exceptions in Linux/x86-64 Systems</p>
+<ul>
+<li>총 256개나 되는 예외가 있다고!!!</li>
+<li>0-31번 예외는 인텔에서 정의함, 32-255는 OS가 정의함.</li>
+<li>syscall</li>
+</ul>
+</li>
 </ol>
 
 

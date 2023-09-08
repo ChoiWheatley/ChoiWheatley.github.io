@@ -12921,6 +12921,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.5.%20Signals/" class="md-tabs__link">
+        
+  
+    
+  
+  ⭐️ 8.5. Signals
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-tabs__link">
         
   
@@ -21228,6 +21245,13 @@
         <li class="md-nav__item">
   <a href="#dump" class="md-nav__link">
     DUMP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    MISC
   </a>
   
 </li>
@@ -32874,6 +32898,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../%E2%AD%90%EF%B8%8F%208.5.%20Signals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ⭐️ 8.5. Signals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EA%B0%80%EC%A7%9C%20JSON%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%83%9D%EC%84%B1%EA%B8%B0%28json-generator%29%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%9C%20python%20%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/" class="md-nav__link">
         
   
@@ -36338,6 +36381,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    MISC
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -36388,14 +36438,48 @@ updated: 2023-09-08T16:29:12</p>
 <h2 id="dump">DUMP<a class="headerlink" href="#dump" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../%E2%AD%90%EF%B8%8F%208.1%20Exceptions/">⭐️ 8.1 Exceptions</a></li>
-<li>8.2. Processes</li>
-<li>8.3. System Call Error Handling</li>
-<li>8.4. Process Control</li>
-<li>[[⭐️ 8.5. Signals]]</li>
-<li>8.6. Nonlocal Jumps</li>
+<li>8.2. Processes<ul>
+<li>Process는 혼자서 시스템 전체를 점유하고 있다는 착각을 하게 만든다. 그 아래에는 논리흐름에 따라 멀티태스킹(혹은 time slicing)을 사용한다.</li>
+<li>유저모드와 커널모드: 커널모드비트가 켜져있으면 물리메모리를 참조할 수 있게 되는 등 권한이 강화된다. 하지만 유저 프로세스는 커널모드로 강제로 전환할 수 없기 때문에 오직 syscall 인터페이스만을 통해 시스템 자원에 간접적으로 접근할 수 있다.</li>
+<li><strong>Context Switches</strong>: 프로세스 상태(code, data, stack, registers, pc, env, fd)를 Context라고 부른다. 컨텍스트 정보가 있으면 얼마든지 중단시켰던 프로세스를 다시 preempt(선점)할 수 있다. 스케줄러는 이렇게 선점할 프로세스를 결정하게 되고, 다음 단계에 의해서 컨텍스트를 변환하게 된다.<ol>
+<li>기존 프로세스의 컨텍스트를 저장한다.</li>
+<li>선점할 프로세스의 컨텍스트를 불러온다.</li>
+<li>실행흐름을 다시 옮긴다.</li>
+</ol>
+</li>
+<li>trap에 의해 syscall이 호출될 수도 있지만 interrupt에 의해서도 context switch될 수도 있다. <ul>
+<li><em>trap</em>: 커널에게 <code>read</code> 요청을 보내면 디스크가 완료 시그널을 보낼때까지 현 프로세스를 sleep시키고 context switch</li>
+<li><em>interrupt</em>: OS 타이머가 일정 시간이 지나면 보내는 신호에 따라 context switch</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>8.3. System Call Error Handling<ul>
+<li><code>strerror(errno)</code> 전역변수 <code>errno</code>를 해석해주는 함수 <code>strerror</code>를 잘 활용하자.</li>
+</ul>
+</li>
+<li>8.4. Process Control<ul>
+<li><code>getpid</code> 나의 pid, <code>getppid</code> 부모 프로세스의 pid</li>
+<li>프로세스의 상태는 세가지이다. {Running, Stopped, Terminated}</li>
+<li><code>fork</code>를 통해 부모와 거의 동일한 컨텍스트를 가진 자식 프로세스를 생성할 수 있다. 자식 프로세스가 새로운 프로그램을 실행하도록 만들고 싶다면 <code>execve</code>를 사용하면 된다.</li>
+<li>자식 프로세스가 terminated 되더라도 부모 프로세스가 명시적으로 wait 하지 않은 채로 terminated 되면 자식 프로세스는 좀비 프로세스가 된다.</li>
+<li><code>sleep</code>은 유명하지. 몇초동안 프로세스를 중단한다.</li>
+<li></li>
+</ul>
+</li>
+<li><a href="../%E2%AD%90%EF%B8%8F%208.5.%20Signals/">⭐️ 8.5. Signals</a></li>
+<li>8.6. Nonlocal Jumps<ul>
+<li><code>setjmp</code>, <code>longjmp</code>를 통한 예외적인 실행흐름을 유저 프로세스 단에서 만들어낼 수 있다. </li>
+<li><code>setjmp</code>는 이 함수를 호출하는 프로세스의 환경을 <code>env</code> 버퍼에 담아 저장하는 역할을 한다. <code>switch</code>문을 활용해 <code>longjmp</code> 호출 시 넣었던 인자 <code>retval</code>을 구분할 수 있다.</li>
+<li><code>longjmp</code>는 <code>env</code> 버퍼로부터 다시 <code>setjmp</code>를 호출했던 시점으로 돌아간다. 대표적으로 깊게 호출된 재귀함수 안에서 특정한 상황에서 빠르게 기존 위치로 돌아와야 할 때 사용할 수 있다.</li>
+</ul>
+</li>
 <li>8.7. Tools for Manipulating Processes</li>
 <li>8.8. Summary</li>
 </ul>
+<h2 id="misc">MISC<a class="headerlink" href="#misc" title="Permanent link">#</a></h2>
+<p>8.2.3. Private Address Space 에서 참조한 Process address space 도식표<br />
+<a class="glightbox" href="../assets/Pasted%20image%2020230908204804.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230908204804.png" src="../assets/Pasted%20image%2020230908204804.png" /></a></p>
 
 
 
