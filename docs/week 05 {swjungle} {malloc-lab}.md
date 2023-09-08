@@ -4,14 +4,14 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-08T11:35:56
+updated: 2023-09-08T11:43:02
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP {swjungle}]]
 	- WEEK04 못다 읽은 챕터들
-		- 3장, 기계수준 표현
-			- 3.4
-			- 3.7
+		- [[3. Machine Level Representation of Programs]]
+			- [[⭐️ 3.4 Accessing Information]]
+			- [[⭐️ 3.7 Procedures]]
 			- 3.8
 		- 7장, 링커
 			- 7.1
