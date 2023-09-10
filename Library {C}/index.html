@@ -14009,6 +14009,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C%20%7B7.%20Linking%7D%20%7BCSAPP%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  발표자료 {7. Linking} {CSAPP}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EB%B0%A9%EC%96%B4%EA%B8%B0%EC%A0%9C%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%A3%BC%EC%A7%80%ED%99%94%20-%20%EC%96%B4%EB%A0%B5%EA%B2%8C%20%EC%83%9D%EA%B0%81%ED%95%98%EA%B8%B0/" class="md-tabs__link">
         
   
@@ -34195,6 +34212,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C%20%7B7.%20Linking%7D%20%7BCSAPP%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    발표자료 {7. Linking} {CSAPP}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EB%B0%A9%EC%96%B4%EA%B8%B0%EC%A0%9C%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%A3%BC%EC%A7%80%ED%99%94%20-%20%EC%96%B4%EB%A0%B5%EA%B2%8C%20%EC%83%9D%EA%B0%81%ED%95%98%EA%B8%B0/" class="md-nav__link">
         
   
@@ -36792,11 +36828,11 @@ being added.</p>
 </code></pre></div>
 <h1 id="shared-library">shared library<a class="headerlink" href="#shared-library" title="Permanent link">#</a></h1>
 <p>이번엔 동적 라이브러리를 만들어 빌드과정에 어떻게 포함되는지 알아볼 것이다. 먼저 손수 작업하는 방법을 먼저 해보자. <a href="https://medium.com/meatandmachines/shared-dynamic-libraries-in-the-c-programming-language-8c2c03311756">https://medium.com/meatandmachines/shared-dynamic-libraries-in-the-c-programming-language-8c2c03311756</a> 를 참고했다.</p>
-<div class="highlight"><pre><span></span><code>**➜  lib git:(master) ✗ g++ -g -fPIC -Wall -Werror -Wextra -pedantic sample_lib*.cpp -shared -o libMyLib.so
-➜  lib git:(master) ✗ ls**
+<div class="highlight"><pre><span></span><code>➜  lib git:(master) ✗ g++ -g -fPIC -Wall -Werror -Wextra -pedantic sample_lib*.cpp -shared -o libMyLib.so
+➜  lib git:(master) ✗ ls
 CMakeLists.txt  libMyLib.so  lib_test_main.cpp  sample_lib1.cpp  sample_lib2.cpp
-**➜  lib git:(master) ✗ g++ -g -Wall lib_test_main.cpp libMyLib.so
-➜  lib git:(master) ✗ l**
+➜  lib git:(master) ✗ g++ -g -Wall lib_test_main.cpp libMyLib.so
+➜  lib git:(master) ✗ l
 total 84
 drwxr-xr-x 2 chltm chltm  4096 Jul 18 18:13 ./
 drwxr-xr-x 6 chltm chltm  4096 Jul 18 17:15 ../
@@ -36806,7 +36842,7 @@ drwxr-xr-x 6 chltm chltm  4096 Jul 18 17:15 ../
 -rw-r--r-- 1 chltm chltm   142 Jul 18 16:05 lib_test_main.cpp
 -rw-r--r-- 1 chltm chltm    75 Jul 18 16:06 sample_lib1.cpp
 -rw-r--r-- 1 chltm chltm    60 Jul 18 17:08 sample_lib2.cpp
-**➜  lib git:(master) ✗ ./a.out**
+➜  lib git:(master) ✗ ./a.out
 ./a.out: error while loading shared libraries: libMyLib.so: cannot open shared object file: No such file or directory
 </code></pre></div>
 <p><a href="https://www.lesstif.com/lpt/shared-library-dependencies-linux-ldd-95880421.html">https://www.lesstif.com/lpt/shared-library-dependencies-linux-ldd-95880421.html</a></p>

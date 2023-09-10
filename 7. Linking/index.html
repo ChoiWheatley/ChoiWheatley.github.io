@@ -14009,6 +14009,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C%20%7B7.%20Linking%7D%20%7BCSAPP%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  발표자료 {7. Linking} {CSAPP}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EB%B0%A9%EC%96%B4%EA%B8%B0%EC%A0%9C%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%A3%BC%EC%A7%80%ED%99%94%20-%20%EC%96%B4%EB%A0%B5%EA%B2%8C%20%EC%83%9D%EA%B0%81%ED%95%98%EA%B8%B0/" class="md-tabs__link">
         
   
@@ -34161,6 +34178,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C%20%7B7.%20Linking%7D%20%7BCSAPP%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    발표자료 {7. Linking} {CSAPP}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EB%B0%A9%EC%96%B4%EA%B8%B0%EC%A0%9C%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%A3%BC%EC%A7%80%ED%99%94%20-%20%EC%96%B4%EB%A0%B5%EA%B2%8C%20%EC%83%9D%EA%B0%81%ED%95%98%EA%B8%B0/" class="md-nav__link">
         
   
@@ -36496,12 +36532,13 @@
 <p>링커가 중요한 역할을 맡게 된 데에는 모노리식으로는 감당하기 어려운 크기의 프로젝트들이 생겨나기 시작했고, 모듈이라는 개념과 독립적인 컴파일을 분리시키기 시작한 데에 있다. 그래서 모듈 하나를 수정하면 몽땅 다 컴파일 하는 것이 아니라 해당 모듈만 컴파일 하고, 링크만 잘 하는 식으로 이루어진다.</p>
 <p><strong>WHY</strong> 링킹을 배워야 하는가?</p>
 <ul>
-<li>큰 프로그램을 작성하고 빌드하기 위해서임.</li>
-<li>위험한 프로그래밍 에러를 피하기 위해서임. </li>
-<li>Language Scoping Rules들이 구현되는 것을 이해하기 위해서임 ??????</li>
+<li>다중 모듈로 이루어진 큰 프로그램을 작성하고 빌드하기 위해서임.</li>
+<li>잘못된 전역변수나 함수 따위를 참조하는 위험한 프로그래밍 에러를 피하기 위해서임.</li>
+<li>전역변수와 지역변수의 차이점, static 변수나 함수를 정의하는 이유에 대해 알 수 있기 때문!</li>
 <li>중요한 다른 시스템 컨셉을 이해하기 위해서임 로더, 가상메모리, 페이징, 메모리 매핑 어우 하나같이 다들 굵직하구만</li>
 <li>공유 라이브러리를 적극적으로 활용하기 위해서임.</li>
 </ul>
+<p><a href="../%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C%20%7B7.%20Linking%7D%20%7BCSAPP%7D/">발표자료 {7. Linking} {CSAPP}</a></p>
 <h2 id="dump">DUMP<a class="headerlink" href="#dump" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../%E2%AD%90%EF%B8%8F%207.1.%20Compiler%20Drivers/">⭐️ 7.1. Compiler Drivers</a></li>
@@ -36519,10 +36556,10 @@
 </li>
 <li><a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/">⭐️ 7.4. Relocatable Object Files</a></li>
 <li>7.5. Symbols and Symbol Tables<ul>
-<li>같은 이름의 다른 함수에 들어있는 정적변수는 에러가 난다? 안난다?</li>
-<li>global symbols that are defined by module <em>m</em></li>
-<li>global symbols that are referenced by module <em>m</em></li>
-<li>local symbols that are defined and referenced exclusively by module <em>m</em></li>
+<li>같은 이름의 다른 함수에 들어있는 정적변수는 에러가 난다? 안난다? =&gt; 안나요 서로 다른 이름을 가지게 됩니다.</li>
+<li>global symbols that are defined by module <em>m</em> and that can be referenced by other modules → nonstatic functions and global variables</li>
+<li>global symbols that are referenced by module <em>m</em>  but defined by some other module <code>extern</code></li>
+<li>local symbols that are defined and referenced exclusively by module <em>m</em> <code>static</code> </li>
 </ul>
 </li>
 <li>7.6. Symbol Resolution<ul>
@@ -36545,6 +36582,7 @@
 <li>그 안에는 꽤 많은 것들이 relocatable object file과 비슷하지만, 이젠 relocation 작업 덕분에 <code>.text</code>, <code>.rodata</code>, <code>.data</code> 영역들의 위치가 결정이 난 상태가 되었다.</li>
 <li><code>.init</code> 섹션이 추가가 됐는데, <code>_init</code>이라는 작은 함수를 프로그램 실행시 처음 호출하게 된다. <code>.rel</code> 섹션은 이제 더 이상 필요가 없다.</li>
 <li>program header table 안에는 섹션들이 로드되어 세그먼트가 될 때의 매핑에 대한 정보가 들어간다. ELF 파일에서 섹션이었던 애들이 프로세스가 되면 세그먼트가 되는 식.</li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230910104459.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230910104459.png" src="../assets/Pasted%20image%2020230910104459.png" width="700" /></a></li>
 </ul>
 </li>
 <li><a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/">⭐️ 7.9. Loading Executable Files</a></li>
