@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-10T21:41:49
+updated: 2023-09-10T21:49:41
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -49,5 +49,7 @@ Perf index = 46 (util) + 25 (thru) = 71/10
 ```
 
 ## Explicit Free List
+
+`MINIMUM_BLOCK_SIZE` 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다.
 
 ## Segregated Free List :: Buddy System
