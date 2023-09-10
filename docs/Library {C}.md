@@ -4,7 +4,7 @@ tags:
 description:
 title: Library {C}
 created: 2023-09-02T13:44:48
-updated: 2023-09-02T22:46:34
+updated: 2023-09-10T11:02:04
 ---
 - parent: [[0017 C 🍎]]
 - 설명: shared library를 만들고 링크하는 법을 터득한다.
@@ -288,11 +288,11 @@ ar qc libMyLib.1.0.a  CMakeFiles/MyLib.1.0.dir/sample_lib1.cpp.o CMakeFiles/MyLi
 이번엔 동적 라이브러리를 만들어 빌드과정에 어떻게 포함되는지 알아볼 것이다. 먼저 손수 작업하는 방법을 먼저 해보자. [https://medium.com/meatandmachines/shared-dynamic-libraries-in-the-c-programming-language-8c2c03311756](https://medium.com/meatandmachines/shared-dynamic-libraries-in-the-c-programming-language-8c2c03311756) 를 참고했다.
 
 ```
-**➜  lib git:(master) ✗ g++ -g -fPIC -Wall -Werror -Wextra -pedantic sample_lib*.cpp -shared -o libMyLib.so
-➜  lib git:(master) ✗ ls**
+➜  lib git:(master) ✗ g++ -g -fPIC -Wall -Werror -Wextra -pedantic sample_lib*.cpp -shared -o libMyLib.so
+➜  lib git:(master) ✗ ls
 CMakeLists.txt  libMyLib.so  lib_test_main.cpp  sample_lib1.cpp  sample_lib2.cpp
-**➜  lib git:(master) ✗ g++ -g -Wall lib_test_main.cpp libMyLib.so
-➜  lib git:(master) ✗ l**
+➜  lib git:(master) ✗ g++ -g -Wall lib_test_main.cpp libMyLib.so
+➜  lib git:(master) ✗ l
 total 84
 drwxr-xr-x 2 chltm chltm  4096 Jul 18 18:13 ./
 drwxr-xr-x 6 chltm chltm  4096 Jul 18 17:15 ../
@@ -302,7 +302,7 @@ drwxr-xr-x 6 chltm chltm  4096 Jul 18 17:15 ../
 -rw-r--r-- 1 chltm chltm   142 Jul 18 16:05 lib_test_main.cpp
 -rw-r--r-- 1 chltm chltm    75 Jul 18 16:06 sample_lib1.cpp
 -rw-r--r-- 1 chltm chltm    60 Jul 18 17:08 sample_lib2.cpp
-**➜  lib git:(master) ✗ ./a.out**
+➜  lib git:(master) ✗ ./a.out
 ./a.out: error while loading shared libraries: libMyLib.so: cannot open shared object file: No such file or directory
 ```
 
