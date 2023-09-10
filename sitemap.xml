@@ -2776,6 +2776,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/malloclab/</loc>
+         <lastmod>2023-09-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/map%20an%20array%20of%20objects%20to%20a%20dictionary%20%7Bjs%7D/</loc>
          <lastmod>2023-09-10</lastmod>
          <changefreq>daily</changefreq>

@@ -9655,6 +9655,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../malloclab/" class="md-tabs__link">
+        
+  
+    
+  
+  malloclab
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../map%20an%20array%20of%20objects%20to%20a%20dictionary%20%7Bjs%7D/" class="md-tabs__link">
         
   
@@ -29305,6 +29322,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../malloclab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    malloclab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../map%20an%20array%20of%20objects%20to%20a%20dictionary%20%7Bjs%7D/" class="md-nav__link">
         
   
@@ -36880,7 +36916,7 @@
 <h3 id="9911-coalescing-with-boundary-tags">9.9.11. Coalescing with Boundary Tags<a class="headerlink" href="#9911-coalescing-with-boundary-tags" title="Permanent link">#</a></h3>
 <p><strong>footer</strong>의 도입으로 prev, post free blocks에 대한 병합이 상수 시간 안에 가능해졌다. 다만, 불필요한 메모리 오버헤드가 발생할 우려가 있다. 물론 이전 블럭이 해제되지 않은 경우라면 자기 블럭의 푸터를 사용하지 않는 방식으로 최적화를 도모할 수 있기는 하다. 아니면 아예 요청할 때 버퍼나 메모리 풀 따위를 두어서 큼직큼직하게 받던가</p>
 <h3 id="9912-putting-it-together-implementing-a-simple-allocator">9.9.12. Putting It Together: Implementing a Simple Allocator<a class="headerlink" href="#9912-putting-it-together-implementing-a-simple-allocator" title="Permanent link">#</a></h3>
-<p><a href="https://github.com/ChoiWheatley/swjungle-week05-malloc-lab">ChoiWheatley/swjungle-week05-malloc-lab</a> 에서 진행한 실습 확인바람.</p>
+<p><a href="../malloclab/">malloclab</a>에서 진행한 실습 확인바람.</p>
 <h3 id="9913-explicit-free-lists">9.9.13. Explicit Free Lists<a class="headerlink" href="#9913-explicit-free-lists" title="Permanent link">#</a></h3>
 <p>Implicit Free Lists 기법은 모든 블럭들을 순회하며 free block을 찾아야 해서 선형시간이 걸린다. 이 시간을 줄이기 위해 free block들의 페이로드 첫 두 바이트를 할애해 각각 predecessor와 successor를 두어 연결리스트로 만들어 버리는 방법이 있다.</p>
 <p>하지만 결국 free block을 연결해봤자 선형시간인 건 똑같은데, 최적화 방법은 없을까?</p>
