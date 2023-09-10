@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-10T13:02:55
+updated: 2023-09-10T13:39:41
 ---
 
 <iframe title="Quick Intro to gdb" src="https://www.youtube.com/embed/xQ0ONbt-qPs?feature=oembed" height="150" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.33333 / 1; width: 100%; height: 100%;"></iframe>
@@ -25,6 +25,11 @@ x/10b - 1바이트씩 10 개를 examine 하겠소.
 
 watch, rwatch - set a watch for when a variable is written or read: return to the debugger once this happens  
 break - set a breakpoint: return to the debugger when this line of code is about to be executed  
+
+```
+gdb> break /Full/path/to/service.cpp:45
+```
+
 info watch - show info on watchpoints  
 info break - show info on breakpoints  
 delete # - delete watchpoint or breakpoint "#"
