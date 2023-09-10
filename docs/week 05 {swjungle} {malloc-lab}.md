@@ -4,7 +4,7 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-08T17:35:40
+updated: 2023-09-10T19:00:32
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP {swjungle}]]
@@ -18,11 +18,11 @@ updated: 2023-09-08T17:35:40
 			- [[⭐️ 7.4. Relocatable Object Files]]
 			- [[⭐️ 7.9. Loading Executable Files]]
 		- [[8. Exceptional Control Flow]]
-			- 8.1
-			- 8.5
+			- [[⭐️ 8.1 Exceptions]]
+			- [[⭐️ 8.5. Signals]]
 		- [[9. Virtual Memory]]
-			- **9.9**
-			- 9.11
+			- [[⭐️ 9.9. Dynamic Memory Allocation]]
+			- [[⭐️ 9.11. Common Memory-Related Bugs in C Programs]]
 	- WEEK05 읽어두면 좋을 챕터들 
 		- 9.9장, 동적 메모리 할당부터
 		- 6장, 메모리 계층구조
@@ -78,3 +78,5 @@ ___
 **09/12 화**  
 
 **09/13 수**
+
+## [[malloclab]]

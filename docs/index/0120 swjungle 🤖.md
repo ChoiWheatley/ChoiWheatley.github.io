@@ -4,7 +4,7 @@ tags:
 description:
 title: 0120 swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2023-08-31T14:41:36
+updated: 2023-09-10T19:06:14
 ---
 
 # INDEX
@@ -19,6 +19,7 @@ updated: 2023-08-31T14:41:36
 		- [[Linux IPC Programming {inflearn archive}]]
 	- [[week 04 {swjungle} {Red Black Tree}]]
 	- [[week 05 {swjungle} {malloc-lab}]]
+	- [[week06 {swjungle}{proxy-lab}]] | [cmu.edu/proxylab](http://csapp.cs.cmu.edu/3e/README-proxylab)을 구현하는 것이 목표이지 않을까?
 
 # QUESTIONS and TEATIMES
 

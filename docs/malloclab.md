@@ -1,0 +1,36 @@
+---
+aliases: 
+tags: 
+description:
+title: malloclab
+created: 2023-09-10T19:01:28
+updated: 2023-09-10T19:33:29
+---
+- [[week 05 {swjungle} {malloc-lab}]]
+- [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
+- [ChoiWheatley/swjungle-week05-malloc-lab {GH}](https://github.com/ChoiWheatley/swjungle-week05-malloc-lab)
+- [[0121 CSAPP {swjungle}]] / [[9. Virtual Memory]] / [[⭐️ 9.9. Dynamic Memory Allocation]] 실습을 기반으로 한 과제.
+___
+
+## README
+
+본 문서는 카네기 멜론 대학에서 출판한 CSAPP 교재의 malloc-lab 과제를 직접 체험해 보면서 알게된 것들을 기록하는 공간입니다. 실제로 쓰이는 `malloc`을 구현하는 것은 아니고, 가상의 힙 영역(과제 시스템이 생성한 20MB크기의 메모리 공간)에 `mm_malloc`, `mm_free`, `mm_realloc` 인터페이스를 구현하며 request throughput과 memory utilization을 모두 챙길 수 있는 방법에 대해서 연구합니다.
+
+교재에서 당부한 것과 같이 본 프로젝트는 1워드의 길이(`WSIZE`)를 4byte로 두고 더블 워드의 길이(`DSIZE`)를 8byte로 둔 채로 진행합니다. 원래 x86-64 시스템에서의 `WSIZE`는 64bit = 8byte입니다.
+
+## Implicit Free List
+
+여기에서 'Implicit'이란, 프로그래머 기준에서 묵시적으로 가용 블럭을 찾는다는 의미입니다. 따라서, `mm_malloc`이 요청이 들어오면 해당 사이즈(바이트) 만큼의 가용 공간이 남는지 찾아야 합니다. 이때 블럭 자체의 메타데이터(size, allocated)를 저장하기 위해 블럭 앞 1워드를 할애하게 되는데, 그 구간을 _Header_ 라고 부릅니다.
+
+- `coalesce`
+
+병합 기능을 구현하면 메모리 사용성이 높아집니다. 외부 파편화가 줄어들기 때문인데, 이를 구현하기 위해 인접 블럭(특히 이전 블럭)을 참조해야 합니다. 따라서 헤더와 동일한 정보를 가지고 있지만 블럭 끝에 1 워드를 차지하는 _Footer_ 를 두어 현재 `bp`(block pointer)에 2 워드 뒤로 가면 바로 푸터를 참조할 수 있게 만들었습니다. 
+
+```c
+#define HEADER_PTR(bp) (void *)((byte_p)(bp)-WSIZE)
+#define FOOTER_PTR(bp) ((byte_p)(bp) + GET_SIZE(HEADER_PTR(bp)) - DSIZE)
+```
+
+## Explicit Free List
+
+## Segregated Free List :: Buddy System
