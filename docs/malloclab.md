@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-10T21:35:10
+updated: 2023-09-10T21:41:49
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -28,13 +28,25 @@ ___
 
 ### 개선사항
 
-performance index: `Perf index = 44 (util) + 21 (thru) = 66/100` 유틸 점수는 만점이지만 throughput 점수가 낮습니다. `mm_malloc`을 호출할 때마다 first fit을 찾아 처음부터 순회하기 때문에 속도가 느린 겁니다. 이번엔 가용블럭을 연결리스트로 만들어 가용블럭 안에서만 순회하는 **Explicit Free List** 기법으로 성능을 올려보겠습니다.
+**performance index** 
+
+```
+Perf index = 44 (util) + 21 (thru) = 66/100
+``` 
+
+유틸 점수는 만점이지만 throughput 점수가 낮습니다. `mm_malloc`을 호출할 때마다 first fit을 찾아 처음부터 순회하기 때문에 속도가 느린 겁니다. 이번엔 가용블럭을 연결리스트로 만들어 가용블럭 안에서만 순회하는 **Explicit Free List** 기법으로 성능을 올려보겠습니다.
 
 ## Smart Realloc
 
 `realloc` 코드가 바로 옆 공간이 충분한데도 항상 `malloc`을 호출하는 것이 눈에 띄어 최적화를 해봤습니다. 인자로 들어온 사이즈는 단순 payload의 바이트 크기이므로 `adjust_size` 함수를 사용하여 헤더,푸터,8의 배수로 만들었습니다. 
 
 여기가 버그의 원인인데, `!next.alloc && new_size <= bp.size + next.size`  조건을 잘못 걸었던 것이 문제였습니다. 별 생각없이 사이즈의 합보다 작기만 하면 되는거 아냐? 할 수 있겠는데, 항상 생각해야 하는, **MINIMUM_BLOCK_SIZE**를 만족하지 못하면 할당할 수 없습니다.
+
+**performance index**
+
+```
+Perf index = 46 (util) + 25 (thru) = 71/10
+```
 
 ## Explicit Free List
 
