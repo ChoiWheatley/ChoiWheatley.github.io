@@ -4,7 +4,7 @@ tags:
 description:
 title: Library {C}
 created: 2023-09-02T13:44:48
-updated: 2023-09-10T11:02:04
+updated: 2023-09-10T11:02:16
 ---
 - parent: [[0017 C 🍎]]
 - 설명: shared library를 만들고 링크하는 법을 터득한다.
@@ -311,7 +311,7 @@ drwxr-xr-x 6 chltm chltm  4096 Jul 18 17:15 ../
 ldd 명령어를 사용하면 필요한 공유 라이브러리의 의존성을 출력해 준다고 한다. 현재 a.out 의 의존성을 확인해보자.
 
 ```
-**➜  lib git:(master) ✗ ldd ./a.out**
+➜  lib git:(master) ✗ ldd ./a.out
         linux-vdso.so.1 (0x00007fffb64d5000)
         libMyLib.so => not found
         libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f8a7b103000)
