@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-10T14:26:53
+updated: 2023-09-10T14:45:39
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
@@ -30,6 +30,11 @@ updated: 2023-09-10T14:26:53
 - finish // 함수 실행하고 빠져나온다  
 - return / 함수 마저 실행하지 않고 빠져나온다  
 ---  
+
+## watch and display
+
+<https://www.cse.unsw.edu.au/~learn/debugging/modules/gdb_watch_display/>
+
 - watch bCheck // bCheck 값이 변경될 때마다 브레이크가 걸리도록  
 - rwatch bCheck // bCheck 값이 읽혀질 때마다 브레이크가 걸리도록  
 - awatch bCheck // bCheck 값이 읽기, 쓰기 경우 모두 브레이크  
