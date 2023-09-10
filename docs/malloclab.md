@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-10T19:33:29
+updated: 2023-09-10T19:47:11
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -26,8 +26,9 @@ ___
 
 병합 기능을 구현하면 메모리 사용성이 높아집니다. 외부 파편화가 줄어들기 때문인데, 이를 구현하기 위해 인접 블럭(특히 이전 블럭)을 참조해야 합니다. 따라서 헤더와 동일한 정보를 가지고 있지만 블럭 끝에 1 워드를 차지하는 _Footer_ 를 두어 현재 `bp`(block pointer)에 2 워드 뒤로 가면 바로 푸터를 참조할 수 있게 만들었습니다.
 
+### 개선사항
 
-
+performance index: `Perf index = 44 (util) + 21 (thru) = 66/100` 유틸 점수는 만점이지만 throughput 점수가 낮습니다. `mm_malloc`을 호출할 때마다 first fit을 찾아 처음부터 순회하기 때문에 속도가 느린 겁니다. 이번엔 가용블럭을 연결리스트로 만들어 가용블럭 안에서만 순회하는 **Explicit Free List** 기법으로 성능을 올려보겠습니다.
 
 ## Explicit Free List
 
