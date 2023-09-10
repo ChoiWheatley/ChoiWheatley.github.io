@@ -29,6 +29,7 @@ title: 0110 Utility 🔧
 ## dev utils (mostly linux)
 
 - [[GDB 디버거 공부하기]]
+- [[GNU 개발유틸 {C}{C++}{UNIX}{LINUX}]]
 
 ## mac utils
 
