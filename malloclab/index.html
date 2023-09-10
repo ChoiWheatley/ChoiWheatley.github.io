@@ -29375,6 +29375,19 @@
     Implicit Free List
   </a>
   
+    <nav class="md-nav" aria-label="Implicit Free List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개선사항
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -36636,6 +36649,19 @@
     Implicit Free List
   </a>
   
+    <nav class="md-nav" aria-label="Implicit Free List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    개선사항
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -36685,6 +36711,8 @@
 <li><code>coalesce</code></li>
 </ul>
 <p>병합 기능을 구현하면 메모리 사용성이 높아집니다. 외부 파편화가 줄어들기 때문인데, 이를 구현하기 위해 인접 블럭(특히 이전 블럭)을 참조해야 합니다. 따라서 헤더와 동일한 정보를 가지고 있지만 블럭 끝에 1 워드를 차지하는 <em>Footer</em> 를 두어 현재 <code>bp</code>(block pointer)에 2 워드 뒤로 가면 바로 푸터를 참조할 수 있게 만들었습니다.</p>
+<h3 id="_1">개선사항<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<p>performance index: <code>Perf index = 44 (util) + 21 (thru) = 66/100</code> 유틸 점수는 만점이지만 throughput 점수가 낮습니다. <code>mm_malloc</code>을 호출할 때마다 first fit을 찾아 처음부터 순회하기 때문에 속도가 느린 겁니다. 이번엔 가용블럭을 연결리스트로 만들어 가용블럭 안에서만 순회하는 <strong>Explicit Free List</strong> 기법으로 성능을 올려보겠습니다.</p>
 <h2 id="explicit-free-list">Explicit Free List<a class="headerlink" href="#explicit-free-list" title="Permanent link">#</a></h2>
 <h2 id="segregated-free-list-buddy-system">Segregated Free List :: Buddy System<a class="headerlink" href="#segregated-free-list-buddy-system" title="Permanent link">#</a></h2>
 
