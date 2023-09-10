@@ -26,6 +26,10 @@ title: 0110 Utility 🔧
 - [[tldr, man보다 간결한 명령어 사용법 매뉴얼]]
 - [[zip, unzip, cli 압축 프로그램]]
 
+## dev utils (mostly linux)
+
+- [[GDB 디버거 공부하기]]
+
 ## mac utils
 
 - [[Witch, Alt tab for window switching {macos}]]
