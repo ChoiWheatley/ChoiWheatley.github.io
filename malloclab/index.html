@@ -29398,6 +29398,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#next-fit" class="md-nav__link">
+    Next Fit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explicit-free-list" class="md-nav__link">
     Explicit Free List
   </a>
@@ -36679,6 +36686,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#next-fit" class="md-nav__link">
+    Next Fit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#explicit-free-list" class="md-nav__link">
     Explicit Free List
   </a>
@@ -36720,6 +36734,7 @@
 <p>본 문서는 카네기 멜론 대학에서 출판한 CSAPP 교재의 malloc-lab 과제를 직접 체험해 보면서 알게된 것들을 기록하는 공간입니다. 실제로 쓰이는 <code>malloc</code>을 구현하는 것은 아니고, 가상의 힙 영역(과제 시스템이 생성한 20MB크기의 메모리 공간)에 <code>mm_malloc</code>, <code>mm_free</code>, <code>mm_realloc</code> 인터페이스를 구현하며 request throughput과 memory utilization을 모두 챙길 수 있는 방법에 대해서 연구합니다.</p>
 <p>교재에서 당부한 것과 같이 본 프로젝트는 1워드의 길이(<code>WSIZE</code>)를 4byte로 두고 더블 워드의 길이(<code>DSIZE</code>)를 8byte로 둔 채로 진행합니다. 원래 x86-64 시스템에서의 <code>WSIZE</code>는 64bit = 8byte입니다.</p>
 <h2 id="implicit-free-list">Implicit Free List<a class="headerlink" href="#implicit-free-list" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/1">https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/1</a></p>
 <p>여기에서 'Implicit'이란, 프로그래머 기준에서 묵시적으로 가용 블럭을 찾는다는 의미입니다. 따라서, <code>mm_malloc</code>이 요청이 들어오면 해당 사이즈(바이트) 만큼의 가용 공간이 남는지 찾아야 합니다. 이때 블럭 자체의 메타데이터(size, allocated)를 저장하기 위해 블럭 앞 1워드를 할애하게 되는데, 그 구간을 <em>Header</em> 라고 부릅니다.</p>
 <ul>
 <li><code>coalesce</code></li>
@@ -36731,12 +36746,22 @@
 </code></pre></div>
 <p>유틸 점수는 만점이지만 throughput 점수가 낮습니다. <code>mm_malloc</code>을 호출할 때마다 first fit을 찾아 처음부터 순회하기 때문에 속도가 느린 겁니다. 이번엔 가용블럭을 연결리스트로 만들어 가용블럭 안에서만 순회하는 <strong>Explicit Free List</strong> 기법으로 성능을 올려보겠습니다.</p>
 <h2 id="smart-realloc">Smart Realloc<a class="headerlink" href="#smart-realloc" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/2">https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/2</a></p>
 <p><code>realloc</code> 코드가 바로 옆 공간이 충분한데도 항상 <code>malloc</code>을 호출하는 것이 눈에 띄어 최적화를 해봤습니다. 인자로 들어온 사이즈는 단순 payload의 바이트 크기이므로 <code>adjust_size</code> 함수를 사용하여 헤더,푸터,8의 배수로 만들었습니다. </p>
 <p>여기가 버그의 원인인데, <code>!next.alloc &amp;&amp; new_size &lt;= bp.size + next.size</code>  조건을 잘못 걸었던 것이 문제였습니다. 별 생각없이 사이즈의 합보다 작기만 하면 되는거 아냐? 할 수 있겠는데, 항상 생각해야 하는, <strong>MINIMUM_BLOCK_SIZE</strong>를 만족하지 못하면 할당할 수 없습니다.</p>
 <p><strong>performance index</strong></p>
 <div class="highlight"><pre><span></span><code>Perf index = 46 (util) + 25 (thru) = 71/10
 </code></pre></div>
+<h2 id="next-fit">Next Fit<a class="headerlink" href="#next-fit" title="Permanent link">#</a></h2>
+<p><a href="https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/4">https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/4</a></p>
+<p>cur의 위치를 전역변수 <code>g_cur</code>로 보존한 뒤에 <code>find_fit</code> 호출 시 처음부터 탐색하는 것이 아니라 <code>g_cur</code>의 위치부터 탐색을 시작합니다.</p>
+<p><strong>performance index</strong></p>
+<div class="highlight"><pre><span></span><code>Perf index = 45 (util) + 40 (thru) = 85/100
+</code></pre></div>
 <h2 id="explicit-free-list">Explicit Free List<a class="headerlink" href="#explicit-free-list" title="Permanent link">#</a></h2>
+<p><code>MINIMUM_BLOCK_SIZE</code> 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다.</p>
+<p><a href="assets/explicit-free-list.excalidraw.md">explicit-free-list.excalidraw</a><br />
+<a class="glightbox" href="../assets/Pasted%20image%2020230911150410.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230911150410.png" src="../assets/Pasted%20image%2020230911150410.png" /></a></p>
 <h2 id="segregated-free-list-buddy-system">Segregated Free List :: Buddy System<a class="headerlink" href="#segregated-free-list-buddy-system" title="Permanent link">#</a></h2>
 
 
