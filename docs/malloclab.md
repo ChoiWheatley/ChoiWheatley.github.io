@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-11T15:26:00
+updated: 2023-09-11T16:13:43
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -66,9 +66,9 @@ Perf index = 45 (util) + 40 (thru) = 85/100
 
 ## Explicit Free List
 
-`MINIMUM_BLOCK_SIZE` 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다.
+`MINIMUM_BLOCK_SIZE` 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다. free block은 payload 자리에 있는 prev, next 필드를 가지며, 할당된 블럭은 굳이 필요없습니다. 따라서 header를 기준으로 메모리가 정렬이 되어있게 됩니다.
 
 [[explicit-free-list.excalidraw]]  
-![[Pasted image 20230911150410.png]]
+![[Pasted image 20230911161238.png]]
 
 ## Segregated Free List :: Buddy System
