@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-11T13:59:41
+updated: 2023-09-11T15:04:15
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -55,5 +55,8 @@ cur의 위치를 전역변수 `g_cur`로 보존한 뒤에 `find_fit` 호출 시 
 ## Explicit Free List
 
 `MINIMUM_BLOCK_SIZE` 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다.
+
+[[explicit-free-list.excalidraw]]  
+![[Pasted image 20230911150410.png]]
 
 ## Segregated Free List :: Buddy System
