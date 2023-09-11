@@ -32766,6 +32766,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#syscall" class="md-nav__link">
+    syscall @이인복
+  </a>
+  
+    <nav class="md-nav" aria-label="syscall @이인복">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-syscall" class="md-nav__link">
+    WHY syscall?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kind-of-syscalls" class="md-nav__link">
+    Kind of syscalls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-diagram" class="md-nav__link">
+    state machine diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -36638,6 +36672,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#syscall" class="md-nav__link">
+    syscall @이인복
+  </a>
+  
+    <nav class="md-nav" aria-label="syscall @이인복">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-syscall" class="md-nav__link">
+    WHY syscall?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kind-of-syscalls" class="md-nav__link">
+    Kind of syscalls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-diagram" class="md-nav__link">
+    state machine diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -36755,6 +36823,31 @@
 <p><strong>09/12 화</strong>  </p>
 <p><strong>09/13 수</strong></p>
 <h2 id="malloclab"><a href="../malloclab/">malloclab</a><a class="headerlink" href="#malloclab" title="Permanent link">#</a></h2>
+<h2 id="syscall">syscall @이인복<a class="headerlink" href="#syscall" title="Permanent link">#</a></h2>
+<p>user mode by programmer VERSUS previledge mode by kernel</p>
+<p>중간에 이벤트가 발생해서 인터럽트 or 시스템 콜 발생했을 때 커널코드쪽으로 실행 흐름이 옮겨갔다가 다시 돌아옴.</p>
+<p>CPU의 상태를 저장. 나중에 실행을 이어가야 하니까. </p>
+<h3 id="why-syscall">WHY syscall?<a class="headerlink" href="#why-syscall" title="Permanent link">#</a></h3>
+<p>부팅하면 BIOS 화면 나타나고, Power self test? 같은게 나타난다. 정상인지 확인하고 보조기억장치 (DISK, ROM)에 접근한다. </p>
+<blockquote>
+<p>OS또한 프로그램이고 RAM에 올라가야 실행이 된다.</p>
+</blockquote>
+<p>interface between Kernel and Programmer, actually not that directly, proxy such as shell, stdio libraries</p>
+<h3 id="kind-of-syscalls">Kind of syscalls<a class="headerlink" href="#kind-of-syscalls" title="Permanent link">#</a></h3>
+<p><strong>Interrupt</strong></p>
+<ul>
+<li>hardware level (=Interrupt)<br />
+    power, io, timer, </li>
+<li>program level (=Trap)<br />
+    div by 0, unauthorized memory access</li>
+</ul>
+<p><strong>Process/Threads</strong></p>
+<p><strong>File IO</strong></p>
+<p><strong>Socket</strong></p>
+<p><strong>Device</strong></p>
+<p><strong>IPC</strong></p>
+<h3 id="state-machine-diagram">state machine diagram<a class="headerlink" href="#state-machine-diagram" title="Permanent link">#</a></h3>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-11%20%EC%98%A4%ED%9B%84%205.21.38.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-11 오후 5.21.38.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-11%20%EC%98%A4%ED%9B%84%205.21.38.png" width="500" /></a></p>
 
 
 

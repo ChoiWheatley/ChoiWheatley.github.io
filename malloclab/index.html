@@ -36759,9 +36759,9 @@
 <div class="highlight"><pre><span></span><code>Perf index = 45 (util) + 40 (thru) = 85/100
 </code></pre></div>
 <h2 id="explicit-free-list">Explicit Free List<a class="headerlink" href="#explicit-free-list" title="Permanent link">#</a></h2>
-<p><code>MINIMUM_BLOCK_SIZE</code> 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다.</p>
+<p><code>MINIMUM_BLOCK_SIZE</code> 값을 증가시키는 대신, 포인터 두개를 더 두어 가용 블럭끼리 순회가 가능하도록 만든 연결리스트를 Explicit Free List라고 부릅니다. free block은 payload 자리에 있는 prev, next 필드를 가지며, 할당된 블럭은 굳이 필요없습니다. 따라서 header를 기준으로 메모리가 정렬이 되어있게 됩니다.</p>
 <p><a href="assets/explicit-free-list.excalidraw.md">explicit-free-list.excalidraw</a><br />
-<a class="glightbox" href="../assets/Pasted%20image%2020230911150410.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230911150410.png" src="../assets/Pasted%20image%2020230911150410.png" /></a></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230911161238.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230911161238.png" src="../assets/Pasted%20image%2020230911161238.png" /></a></p>
 <h2 id="segregated-free-list-buddy-system">Segregated Free List :: Buddy System<a class="headerlink" href="#segregated-free-list-buddy-system" title="Permanent link">#</a></h2>
 
 
