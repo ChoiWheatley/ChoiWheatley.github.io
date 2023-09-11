@@ -4,7 +4,7 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-10T19:00:32
+updated: 2023-09-11T17:22:13
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP {swjungle}]]
@@ -80,3 +80,43 @@ ___
 **09/13 수**
 
 ## [[malloclab]]
+
+## syscall @이인복
+
+user mode by programmer VERSUS previledge mode by kernel
+
+중간에 이벤트가 발생해서 인터럽트 or 시스템 콜 발생했을 때 커널코드쪽으로 실행 흐름이 옮겨갔다가 다시 돌아옴.
+
+CPU의 상태를 저장. 나중에 실행을 이어가야 하니까. 
+
+### WHY syscall?
+
+부팅하면 BIOS 화면 나타나고, Power self test? 같은게 나타난다. 정상인지 확인하고 보조기억장치 (DISK, ROM)에 접근한다. 
+
+> OS또한 프로그램이고 RAM에 올라가야 실행이 된다.
+
+interface between Kernel and Programmer, actually not that directly, proxy such as shell, stdio libraries
+
+### Kind of syscalls
+
+**Interrupt**
+
+- hardware level (=Interrupt)  
+	power, io, timer, 
+- program level (=Trap)  
+	div by 0, unauthorized memory access
+
+**Process/Threads**
+
+**File IO**
+
+**Socket**
+
+**Device**
+
+**IPC**
+
+### state machine diagram
+
+![[스크린샷 2023-09-11 오후 5.21.38.png|500]]
+
