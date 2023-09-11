@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-11T23:57:03
+updated: 2023-09-12T02:13:38
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
@@ -41,6 +41,7 @@ updated: 2023-09-11T23:57:03
 - watch, rwatch - set a watch for when a variable is written or read: return to the debugger once this happens  
 - delete # - delete watchpoint or breakpoint "#"
 - print (p) <statement / func / structure / ... >  
+	- `p $eax` - 마지막 함수가 호출한 값 출력
 - list (l) // 소스코드 보기  
 - display pVal // pVal을 매번 화면에 표시  
 - undisplay 1 // 1번 디스플레이 설정을 지운다.  
