@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-11T15:04:15
+updated: 2023-09-11T15:26:00
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -19,6 +19,8 @@ ___
 교재에서 당부한 것과 같이 본 프로젝트는 1워드의 길이(`WSIZE`)를 4byte로 두고 더블 워드의 길이(`DSIZE`)를 8byte로 둔 채로 진행합니다. 원래 x86-64 시스템에서의 `WSIZE`는 64bit = 8byte입니다.
 
 ## Implicit Free List
+
+<https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/1>
 
 여기에서 'Implicit'이란, 프로그래머 기준에서 묵시적으로 가용 블럭을 찾는다는 의미입니다. 따라서, `mm_malloc`이 요청이 들어오면 해당 사이즈(바이트) 만큼의 가용 공간이 남는지 찾아야 합니다. 이때 블럭 자체의 메타데이터(size, allocated)를 저장하기 위해 블럭 앞 1워드를 할애하게 되는데, 그 구간을 _Header_ 라고 부릅니다.
 
@@ -38,6 +40,8 @@ Perf index = 44 (util) + 21 (thru) = 66/100
 
 ## Smart Realloc
 
+<https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/2>
+
 `realloc` 코드가 바로 옆 공간이 충분한데도 항상 `malloc`을 호출하는 것이 눈에 띄어 최적화를 해봤습니다. 인자로 들어온 사이즈는 단순 payload의 바이트 크기이므로 `adjust_size` 함수를 사용하여 헤더,푸터,8의 배수로 만들었습니다. 
 
 여기가 버그의 원인인데, `!next.alloc && new_size <= bp.size + next.size`  조건을 잘못 걸었던 것이 문제였습니다. 별 생각없이 사이즈의 합보다 작기만 하면 되는거 아냐? 할 수 있겠는데, 항상 생각해야 하는, **MINIMUM_BLOCK_SIZE**를 만족하지 못하면 할당할 수 없습니다.
@@ -50,7 +54,15 @@ Perf index = 46 (util) + 25 (thru) = 71/10
 
 ## Next Fit
 
+<https://github.com/ChoiWheatley/swjungle-week05-malloc-lab/pull/4>
+
 cur의 위치를 전역변수 `g_cur`로 보존한 뒤에 `find_fit` 호출 시 처음부터 탐색하는 것이 아니라 `g_cur`의 위치부터 탐색을 시작합니다.
+
+**performance index**
+
+```
+Perf index = 45 (util) + 40 (thru) = 85/100
+```
 
 ## Explicit Free List
 
