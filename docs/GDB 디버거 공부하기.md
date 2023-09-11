@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-10T14:45:39
+updated: 2023-09-11T23:57:03
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
@@ -56,6 +56,7 @@ updated: 2023-09-10T14:45:39
 - x/b - 1 바이트씩 examine 하겠소  
 - x/10b - 1바이트씩 10 개를 examine 하겠소.
 - set var name=value   set the value of variable "name" to "value"
+- `directory` - 현 디렉토리에 있는 파일들을 새로고침
 ---
 
 ## TUI
