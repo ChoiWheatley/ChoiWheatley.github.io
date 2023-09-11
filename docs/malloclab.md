@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-10T21:49:41
+updated: 2023-09-11T13:59:41
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -47,6 +47,10 @@ Perf index = 44 (util) + 21 (thru) = 66/100
 ```
 Perf index = 46 (util) + 25 (thru) = 71/10
 ```
+
+## Next Fit
+
+cur의 위치를 전역변수 `g_cur`로 보존한 뒤에 `find_fit` 호출 시 처음부터 탐색하는 것이 아니라 `g_cur`의 위치부터 탐색을 시작합니다.
 
 ## Explicit Free List
 
