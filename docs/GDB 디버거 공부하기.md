@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-12T10:58:14
+updated: 2023-09-12T13:57:38
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
@@ -52,10 +52,11 @@ updated: 2023-09-12T10:58:14
 
 ## MISC
 
-- frame # - set the current frame to #. Variables you reference etc. will be those within that context.
-- x - examine memory directly  
-- x/b - 1 바이트씩 examine 하겠소  
-- x/10b - 1바이트씩 10 개를 examine 하겠소.
+- `frame #` - set the current frame to #. Variables you reference etc. will be those within that context.
+- `x` - examine memory directly  -- 주로 배열, 문자열 검사할 때 유용함.
+	- <https://stackoverflow.com/a/29528983/21369350>
+	- `x/b` - 1 바이트씩 examine 하겠소  
+	- `x/10b` - 1바이트씩 10 개를 examine 하겠소.
 - set var name=value   set the value of variable "name" to "value"
 - `directory` - 현 디렉토리에 있는 파일들을 새로고침
 ---
