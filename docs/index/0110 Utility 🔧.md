@@ -25,6 +25,7 @@ title: 0110 Utility 🔧
 - [[trash-cli, 위험천만한 rm 명령어를 대체해줍니다]]
 - [[tldr, man보다 간결한 명령어 사용법 매뉴얼]]
 - [[zip, unzip, cli 압축 프로그램]]
+- [[ripgrep, grep, battery included]]
 
 ## dev utils (mostly linux)
 
