@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-12T14:33:24
+updated: 2023-09-12T20:39:19
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
@@ -20,7 +20,7 @@ updated: 2023-09-12T14:33:24
 	gdb> break /Full/path/to/service.cpp:45
 	```
 
-- info <b / locals / variables / registers / frame / args / catch / signals / set / functions >  
+- `info <b / locals / variables / registers / frame / args / catch / signals / set / functions >`
 - start - begin exexuting your program
 ---
 - step (s)  execute the next line of your program  
