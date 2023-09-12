@@ -4,14 +4,14 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-12T02:13:38
+updated: 2023-09-12T10:58:14
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
 - <iframe title="Quick Intro to gdb" src="https://www.youtube.com/embed/xQ0ONbt-qPs?feature=oembed" height="150" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.33333 / 1; width: 50%; height: 50%;"></iframe>
 - <iframe title="CppCon 2016: Greg Law “GDB - A Lot More Than You Knew&quot;" src="https://www.youtube.com/embed/-n9Fkq1e6sg?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 50%; height: 50%;"></iframe>
 ---  
-- run (r)  
+- `run (r)  [additional command line args]`
 - quit  
 - kill (k)  
 - break (b) <function / file:function / file:line number / Class::memberFunction >  
