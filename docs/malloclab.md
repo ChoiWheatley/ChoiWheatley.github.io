@@ -4,7 +4,7 @@ tags:
 description:
 title: malloclab
 created: 2023-09-10T19:01:28
-updated: 2023-09-11T16:13:43
+updated: 2023-09-12T22:29:55
 ---
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
@@ -70,5 +70,7 @@ Perf index = 45 (util) + 40 (thru) = 85/100
 
 [[explicit-free-list.excalidraw]]  
 ![[Pasted image 20230911161238.png]]
+
+구현이 조금 빡세네요. 한 번 갈아엎고 [다른 사람 코드](https://github.com/Ashwin0794/15-213_malloc_lab_explicit_list/blob/master/mm.c) 참고하면서 다시 작성했습니다.
 
 ## Segregated Free List :: Buddy System
