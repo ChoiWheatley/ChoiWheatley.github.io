@@ -31,6 +31,7 @@ title: 0110 Utility 🔧
 
 - [[GDB 디버거 공부하기]]
 - [[GNU 개발유틸 {C}{C++}{UNIX}{LINUX}]]
+- [[Segmentation fault (core dumped) 덤프 파일 뜯어보는 방법]]
 
 ## mac utils
 
