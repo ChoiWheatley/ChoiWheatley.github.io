@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="site_description">
+        <meta name="description" content="`fork`와 `execve`, shared library를 여러 프로세스가 공유하는 기법인 Copy on Write 기법, 대망의 `mmap`">
       
       
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/10.%20System-Level%20IO/">
+        <link rel="canonical" href="https://choiwheatley.github.io/11.%20memory%20mapping%20and%20Copy-on-write%20%28COW%29%20%7BSP%7D/">
       
       
-        <link rel="prev" href="../1.%20A%20Tour%20of%20Computer%20Systems/">
+        <link rel="prev" href="../11.%20Network%20Programming/">
       
       
-        <link rel="next" href="../1005%20ACM%20Craft/">
+        <link rel="next" href="../11049%20%ED%96%89%EB%A0%AC%20%EA%B3%B1%EC%85%88%20%EC%88%9C%EC%84%9C%20%7Bboj%7D/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>10. System Level IO - Choi Wheatley's Second Brain</title>
+        <title>11. memory mapping and Copy-on-write (COW) {SP} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#readme" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -113,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. System Level IO
+              11. memory mapping and Copy-on-write (COW) {SP}
             
           </span>
         </div>
@@ -334,6 +339,40 @@
   
   
     <li class="md-tabs__item">
+      <a href="../04.%20process%20%7BSP%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  04. process {SP}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../07.%20Input%20Output%20%7BSP%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  07. Input Output {SP}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../1.%20A%20Tour%20of%20Computer%20Systems/" class="md-tabs__link">
         
   
@@ -349,16 +388,14 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../10.%20System-Level%20IO%20%7BCSAPP%7D/" class="md-tabs__link">
         
   
     
   
-  10. System Level IO
+  10. System-Level IO {CSAPP}
 
       </a>
     </li>
@@ -444,6 +481,25 @@
     
   
   11. Network Programming
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  11. memory mapping and Copy-on-write (COW) {SP}
 
       </a>
     </li>
@@ -2512,12 +2568,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../7.%20Linking/" class="md-tabs__link">
+      <a href="../7.%20Linking%20%7BCSAPP%7D/" class="md-tabs__link">
         
   
     
   
-  7. Linking
+  7. Linking {CSAPP}
 
       </a>
     </li>
@@ -10661,23 +10717,6 @@
     
   
   private attributes (python)
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../process%20%7BSP%7D%7B04%7D/" class="md-tabs__link">
-        
-  
-    
-  
-  process {SP}{04}
 
       </a>
     </li>
@@ -18898,6 +18937,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-09-14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -19044,6 +19103,44 @@
   
   
     <li class="md-nav__item">
+      <a href="../04.%20process%20%7BSP%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. process {SP}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07.%20Input%20Output%20%7BSP%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. Input Output {SP}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20A%20Tour%20of%20Computer%20Systems/" class="md-nav__link">
         
   
@@ -19061,25 +19158,17 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../10.%20System-Level%20IO%20%7BCSAPP%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10. System Level IO
+    10. System-Level IO {CSAPP}
   </span>
   
 
       </a>
-      
     </li>
   
 
@@ -19175,6 +19264,89 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. memory mapping and Copy-on-write (COW) {SP}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. memory mapping and Copy-on-write (COW) {SP}
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-level-memory-mapping-mmap" class="md-nav__link">
+    User-Level Memory Mapping mmap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#address-translation-with-a-page-table" class="md-nav__link">
+    Address Translation with a Page Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-memory" class="md-nav__link">
+    Stack Memory
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -21484,11 +21656,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../7.%20Linking/" class="md-nav__link">
+      <a href="../7.%20Linking%20%7BCSAPP%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Linking
+    7. Linking {CSAPP}
   </span>
   
 
@@ -30604,25 +30776,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../process%20%7BSP%7D%7B04%7D/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    process {SP}{04}
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../products%2C%20purchases%20app%20%7Bdjango%7D/" class="md-nav__link">
         
   
@@ -36829,6 +36982,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-level-memory-mapping-mmap" class="md-nav__link">
+    User-Level Memory Mapping mmap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#address-translation-with-a-page-table" class="md-nav__link">
+    Address Translation with a Page Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-memory" class="md-nav__link">
+    Stack Memory
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -36842,9 +37031,53 @@
                   
 
 
-  <h1>10. System Level IO</h1>
+  <h1>11. memory mapping and Copy-on-write (COW) {SP}</h1>
 
+<h2 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">#</a></h2>
+<p><a href="../7.%20Linking%20%7BCSAPP%7D/">7. Linking {CSAPP}</a>에서 shared object (<code>.so</code>)는 런타임에 메모리에서 참조될 수 있다고 이야기 했다. 그러면 이제 그것이 <em>어떻게</em>돌아가는지를 알아야겠지? shell이 새 프로그램을 실행시킬 수 있었던 이유는 바로 <code>execve</code> 덕분임. fork한 프로세스는 초기에는 부모와 완전히 동일한 메모리 주소를 사용하고 있기에 새 코드를 로드하여야 한다. 이 과정에서 COW(Copy On Write) 메커니즘이 들어간다. </p>
+<p><a href="../7.%20Linking%20%7BCSAPP%7D/">7. Linking {CSAPP}</a> 에서 shared libraries에 대한 내용이 있었다. 두 프로세스가 공유자원인 glib에 접근하는데 굳이 복제하지 않고도 각자의 프로세스의 <strong>가상 메모리의 어느 공간</strong>에 해당 위치를 매핑하기만 한다면 자유로이 그 공유공간을 쓸 수 있을 것이다.  </p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-14%20%EC%98%A4%ED%9B%84%2010.32.50.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-14 오후 10.32.50.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-14%20%EC%98%A4%ED%9B%84%2010.32.50.png" /></a>  </p>
+<p>가상메모리 안에서 공유 메모리 공간과 매핑을 담당하는 공간이 존재하더라. <code>vm_area_struct</code>가 하는 일이 뭐지?  </p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-14%20%EC%98%A4%ED%9B%84%209.44.01.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-14 오후 9.44.01.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-14%20%EC%98%A4%ED%9B%84%209.44.01.png" width="800" /></a></p>
+<h2 id="user-level-memory-mapping-mmap">User-Level Memory Mapping <code>mmap</code><a class="headerlink" href="#user-level-memory-mapping-mmap" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">mmap</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">prot</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>map <code>len</code> bytes starting at <code>offset</code> of the file specified by file description <code>fd</code>, preferably at address <code>start</code></p>
+</blockquote>
+<p>파일 디스크립터의 내용을 매핑하여 <code>start</code>주소를 리턴하는 것이라서 프로세스별로 정확한 가상메모리 상의 위치는 다를 수 있다.</p>
+<p><strong>mmcopy.c</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;csapp.h&quot;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">mmapcopy</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Ptr to memory mapped area */</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">bufp</span><span class="p">;</span>
+<span class="w">    </span><span class="n">bufp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mmap</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">PROT_READ</span><span class="p">,</span><span class="w"> </span><span class="n">MAP_PRIVATE</span><span class="p">,</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">bufp</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
 
+<span class="cm">/* mmapcopy driver */</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">stat</span><span class="w"> </span><span class="n">stat</span><span class="p">;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/* Check for required cmd line arg */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;usage: %s &lt;filename&gt;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w"> </span>
+<span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="cm">/* Copy input file to stdout */</span>
+<span class="w">    </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">fstat</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">stat</span><span class="p">);</span>
+<span class="w">    </span><span class="n">mmapcopy</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">stat</span><span class="p">.</span><span class="n">st_size</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="address-translation-with-a-page-table">Address Translation with a Page Table<a class="headerlink" href="#address-translation-with-a-page-table" title="Permanent link">#</a></h2>
+<p>너가 여기서 왜 나와?</p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-14%20%EC%98%A4%ED%9B%84%2010.45.47.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-14 오후 10.45.47.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-14%20%EC%98%A4%ED%9B%84%2010.45.47.png" /></a></p>
+<h2 id="stack-memory">Stack Memory<a class="headerlink" href="#stack-memory" title="Permanent link">#</a></h2>
+<p>프로세스의 스택 영역은 자동으로 관리가 된다고 했다! 커널이 MMU를 통해서 프로그램 스택을 관리해주기 때문에 우리는 단순히 <code>call</code>, <code>brk</code>만 잘 쓰면 된다.</p>
 
 
 

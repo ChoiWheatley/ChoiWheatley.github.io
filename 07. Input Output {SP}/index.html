@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="site_description">
+        <meta name="description" content="standard io가 사용하는 FILE은 버퍼를 사용한다. UNIX 시스템 콜은 File Descriptor를 사용하여 파일을 식별한다.">
       
       
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/7.%20Linking/">
+        <link rel="canonical" href="https://choiwheatley.github.io/07.%20Input%20Output%20%7BSP%7D/">
       
       
-        <link rel="prev" href="../40Hz%20Binaural%20Beats%EC%9D%98%20%ED%9A%A8%EA%B3%BC%20-%20%7B%EC%95%A4%EB%93%9C%EB%A5%98%20%ED%9B%84%EB%B2%84%EB%A7%8C%7D/">
+        <link rel="prev" href="../04.%20process%20%7BSP%7D/">
       
       
-        <link rel="next" href="../8.%20Exceptional%20Control%20Flow/">
+        <link rel="next" href="../1.%20A%20Tour%20of%20Computer%20Systems/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>7. Linking - Choi Wheatley's Second Brain</title>
+        <title>07. Input Output {SP} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dump" class="md-skip">
+        <a href="#readme" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Linking
+              07. Input Output {SP}
             
           </span>
         </div>
@@ -339,6 +339,42 @@
   
   
     <li class="md-tabs__item">
+      <a href="../04.%20process%20%7BSP%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  04. process {SP}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  07. Input Output {SP}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../1.%20A%20Tour%20of%20Computer%20Systems/" class="md-tabs__link">
         
   
@@ -356,12 +392,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../10.%20System-Level%20IO/" class="md-tabs__link">
+      <a href="../10.%20System-Level%20IO%20%7BCSAPP%7D/" class="md-tabs__link">
         
   
     
   
-  10. System Level IO
+  10. System-Level IO {CSAPP}
 
       </a>
     </li>
@@ -447,6 +483,23 @@
     
   
   11. Network Programming
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../11.%20memory%20mapping%20and%20Copy-on-write%20%28COW%29%20%7BSP%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  11. memory mapping and Copy-on-write (COW) {SP}
 
       </a>
     </li>
@@ -2513,16 +2566,14 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../7.%20Linking%20%7BCSAPP%7D/" class="md-tabs__link">
         
   
     
   
-  7. Linking
+  7. Linking {CSAPP}
 
       </a>
     </li>
@@ -10666,23 +10717,6 @@
     
   
   private attributes (python)
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../process%20%7BSP%7D%7B04%7D/" class="md-tabs__link">
-        
-  
-    
-  
-  process {SP}{04}
 
       </a>
     </li>
@@ -18903,6 +18937,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-09-14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -19049,6 +19103,87 @@
   
   
     <li class="md-nav__item">
+      <a href="../04.%20process%20%7BSP%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. process {SP}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    07. Input Output {SP}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    07. Input Output {SP}
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#readme" class="md-nav__link">
+    README
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1.%20A%20Tour%20of%20Computer%20Systems/" class="md-nav__link">
         
   
@@ -19068,11 +19203,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../10.%20System-Level%20IO/" class="md-nav__link">
+      <a href="../10.%20System-Level%20IO%20%7BCSAPP%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    10. System Level IO
+    10. System-Level IO {CSAPP}
   </span>
   
 
@@ -19168,6 +19303,25 @@
   
   <span class="md-ellipsis">
     11. Network Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.%20memory%20mapping%20and%20Copy-on-write%20%28COW%29%20%7BSP%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. memory mapping and Copy-on-write (COW) {SP}
   </span>
   
 
@@ -21479,60 +21633,17 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    7. Linking
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../7.%20Linking%20%7BCSAPP%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    7. Linking
+    7. Linking {CSAPP}
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dump" class="md-nav__link">
-    DUMP
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -30644,25 +30755,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../process%20%7BSP%7D%7B04%7D/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    process {SP}{04}
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../products%2C%20purchases%20app%20%7Bdjango%7D/" class="md-nav__link">
         
   
@@ -36876,8 +36968,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dump" class="md-nav__link">
-    DUMP
+  <a href="#readme" class="md-nav__link">
+    README
   </a>
   
 </li>
@@ -36897,112 +36989,14 @@
                   
 
 
-  <h1>7. Linking</h1>
+  <h1>07. Input Output {SP}</h1>
 
+<h2 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">#</a></h2>
+<p>모든 IO는 커널코드이다. 우리는 커널의 존재여부도 눈치채지 못했던 이유는 standard IO라고 불리우는 래퍼 함수들만 써와서 그래.</p>
 <ul>
-<li><a href="../index/0120%20swjungle%20%F0%9F%A4%96/">0120 swjungle 🤖</a></li>
-<li><a href="../index/0121%20CSAPP%20%7Bswjungle%7D/">0121 CSAPP {swjungle}</a></li>
-</ul>
-<hr />
-<ul>
-<li>traditional static linking at compile time</li>
-<li>Dynamic linking of shared libraries at load time </li>
-<li>Dynamic linking of shared libraries at runtime</li>
-</ul>
-<p>링커가 중요한 역할을 맡게 된 데에는 모노리식으로는 감당하기 어려운 크기의 프로젝트들이 생겨나기 시작했고, 모듈이라는 개념과 독립적인 컴파일을 분리시키기 시작한 데에 있다. 그래서 모듈 하나를 수정하면 몽땅 다 컴파일 하는 것이 아니라 해당 모듈만 컴파일 하고, 링크만 잘 하는 식으로 이루어진다.</p>
-<p><strong>WHY</strong> 링킹을 배워야 하는가?</p>
-<ul>
-<li>다중 모듈로 이루어진 큰 프로그램을 작성하고 빌드하기 위해서임.</li>
-<li>잘못된 전역변수나 함수 따위를 참조하는 위험한 프로그래밍 에러를 피하기 위해서임.</li>
-<li>전역변수와 지역변수의 차이점, static 변수나 함수를 정의하는 이유에 대해 알 수 있기 때문!</li>
-<li>중요한 다른 시스템 컨셉을 이해하기 위해서임 로더, 가상메모리, 페이징, 메모리 매핑 어우 하나같이 다들 굵직하구만</li>
-<li>공유 라이브러리를 적극적으로 활용하기 위해서임.</li>
-</ul>
-<p><a href="../%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C%20%7B7.%20Linking%7D%20%7BCSAPP%7D/">발표자료 {7. Linking} {CSAPP}</a></p>
-<h2 id="dump">DUMP<a class="headerlink" href="#dump" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="../%E2%AD%90%EF%B8%8F%207.1.%20Compiler%20Drivers/">⭐️ 7.1. Compiler Drivers</a></li>
-<li>7.2. Static Linking<ul>
-<li><code>ld</code>에 의해서 필요한 모든 객체파일들이 하나의 실행파일로 담기는 형태를 말한다.</li>
-<li><em>symbol resolution</em>, 목적파일들은 'symbol'이란 이름의 레퍼런스로 정의된다. 그 안에 함수, 전역변수, 정적변수 등에 대한 정의가 들어있다.</li>
-<li><em>relocation</em> 컴파일러와 어셈블러가 뽑아낸 산물은 주소값이 0번지부터 시작한다. 링커는 이 여러 목적파일들의 위치를 재정의한다.</li>
-</ul>
-</li>
-<li>7.3. Object Files<ol>
-<li><em>relocatable object file</em>, 컴파일이 된 바이너리이지만 그 자체로 실행할 수는 없는 목적파일. 반드시 링커에 의해 컴파일 타임에 링크 되어야 한다.</li>
-<li><em>executable object file</em>, 실행 가능한 목적파일로, 메모리에 곧장 복붙해서 실행될 수 있는 목적파일</li>
-<li><em>shared object file</em>, 특별한 종류의 relocatable object file인데, 메모리에 올라가 동적으로 링크될 수 있음. 심지어 로드타임, 런타임 모두 가능.</li>
-</ol>
-</li>
-<li><a href="../%E2%AD%90%EF%B8%8F%207.4.%20Relocatable%20Object%20Files/">⭐️ 7.4. Relocatable Object Files</a></li>
-<li>7.5. Symbols and Symbol Tables<ul>
-<li>같은 이름의 다른 함수에 들어있는 정적변수는 에러가 난다? 안난다? =&gt; 안나요 서로 다른 이름을 가지게 됩니다.</li>
-<li>global symbols that are defined by module <em>m</em> and that can be referenced by other modules → nonstatic functions and global variables</li>
-<li>global symbols that are referenced by module <em>m</em>  but defined by some other module <code>extern</code></li>
-<li>local symbols that are defined and referenced exclusively by module <em>m</em> <code>static</code> </li>
-</ul>
-</li>
-<li>7.6. Symbol Resolution<ul>
-<li>심볼 참조작업은 먼저 모든 모듈을 돌면서 로컬 심볼이 모듈 안에서 유일한지 여부를 검사하는 것으로 시작한다.</li>
-<li>전역적으로 정의된 글로벌 심볼은 좀 더 까다로운데, 현재 모듈에 정의되어있지 않은 심볼 (선언만 되어있음)을 단순 외부에 정의되어 있다고 간주할 수밖에 없음.</li>
-<li>그러한 '정의되어있다고 간주한 심볼'들의 위치를 <em>linker symbol table entry</em> 에 보관한다. 컴파일러 책임은 아님. 링커의 책임임.</li>
-<li>7.6.1. 링커가 중복된 심볼 이름에 대처하는 방법</li>
-<li>7.6.2. 링커가 정적 라이브러리를 링크하는 방법</li>
-<li>7.6.3. 링커가 정적 라이브러리의 참조를 resolve 하는 방법</li>
-</ul>
-</li>
-<li>7.7. Relocation<ul>
-<li>symbol resolution 작업을 마치면 relocation 작업을 수행한다. 링커 할 일도 많다.</li>
-<li>링커는 이미 연관 모듈들의 모든 <code>.data</code> 섹션들에 대한 정확한 사이즈를 알고있다.</li>
-<li>각각의 심볼들에게 '실행 시 위치할 주소'를 정의한다. (물론 그것이 실제 메모리 주소를 의미하는 것은 아닐 것이다.)</li>
-</ul>
-</li>
-<li>7.8. Executable Object Files<ul>
-<li>링커가 symbol resolution과 relocation 작업을 통해 relocatable object file을 executable object file로 만들었다. 👏👏👏👏👏👏</li>
-<li>그 안에는 꽤 많은 것들이 relocatable object file과 비슷하지만, 이젠 relocation 작업 덕분에 <code>.text</code>, <code>.rodata</code>, <code>.data</code> 영역들의 위치가 결정이 난 상태가 되었다.</li>
-<li><code>.init</code> 섹션이 추가가 됐는데, <code>_init</code>이라는 작은 함수를 프로그램 실행시 처음 호출하게 된다. <code>.rel</code> 섹션은 이제 더 이상 필요가 없다.</li>
-<li>program header table 안에는 섹션들이 로드되어 세그먼트가 될 때의 매핑에 대한 정보가 들어간다. ELF 파일에서 섹션이었던 애들이 프로세스가 되면 세그먼트가 되는 식.</li>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230910104459.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230910104459.png" src="../assets/Pasted%20image%2020230910104459.png" width="700" /></a></li>
-</ul>
-</li>
-<li><a href="../%E2%AD%90%EF%B8%8F%207.9.%20Loading%20Executable%20Files/">⭐️ 7.9. Loading Executable Files</a></li>
-<li>7.10. Dynamic Linking with Shared Libraries<ul>
-<li>공유 라이브러리는 메모리에 한 번만 로드되면 다른 프로세스들이 얼마든지 가져다 쓸 수 있다. (COW 안나오나?) 컴파일 시 <code>-fpic</code> 플래그를 달면 컴파일러가 PIC를 생성하며, <code>-shared</code> 플래그를 달면 링커에게 shared object file을 생성하라고 명령할 수 있다.</li>
-</ul>
-</li>
-<li>7.11. Loading and Linking Shared Libraries from Applications<ul>
-<li>리눅스는 동적 링커를 위한 간단한(?) 인터페이스를 제공한다. <code>dlfcn.h</code> 안에 <code>dlopen</code>, <code>dlsym</code>, <code>dlclose</code>, <code>dlerror</code> 함수. </li>
-<li>컴파일 시 <code>-rdynamic</code> 옵션을 넣어야 한다.</li>
-</ul>
-</li>
-<li>
-<p>7.12. Position Independent Code (PIC)</p>
-<ul>
-<li>메모리에 상주해 있는 라이브러리 코드를 공유하기 위해서 PIC가 존재한다. </li>
-</ul>
-<blockquote>
-<p>한 가지 접근 방식은 각 공유 라이브러리에 전용 주소 공간 청크를 선험적으로 할당하고 로더가 항상 해당 주소에서 공유 라이브러리를 로드하도록 하는 것입니다.</p>
-</blockquote>
-</li>
-<li>
-<p>7.13. Library Interpositioning</p>
-<ul>
-<li>라이브러리 교차? 공유 라이브러리 함수호출을 훔쳐다 내 코드를 호출하도록 만드는 기법을 의미함. 일종의 후크처럼 생각해도 좋겠다.</li>
-<li>compile time interpositioning, link time interpositioning, run time interpositioning </li>
-</ul>
-</li>
-<li>7.14. Tools for manipulating Object Files<ul>
-<li><code>ar</code> 정적 라이브러리 생성툴</li>
-<li><code>strings</code> 목적파일 안에 들어있는 모든 문자열 리터럴들을 출력</li>
-<li><code>strip</code> 목적파일에서 symbol 테이블 정보를 제거</li>
-<li><code>nm</code> 목적파일 내 심볼 테이블 안에 정의된 모든 심볼 출력</li>
-<li><code>size</code> 목적파일의 각 섹션의 사이즈와 이름을 출력</li>
-<li><code>readelf</code> ELF 헤더로부터 목적파일을 인간이 볼 수 있게 디코딩해줌</li>
-<li><code>objdump</code> 목적파일의 모든 정보를 보여준다.</li>
-<li><code>ldd</code> 런타임에 필요한 공유 라이브러리들의 정보를 출력한다.</li>
-</ul>
-</li>
-<li>7.15. Summary</li>
+<li><code>fread</code>, <code>fgets</code>, <code>printf</code> 등등은 모두 <code>&lt;stdio.h&gt;</code> 안에 들어있는 IO 함수들이다. 그 자체로 모든 기능을 담당한 것이 아닌, 내부적으로 시스템 콜을 호출하여 입출력을 담당하고 있었다. 얘네들은 file descriptor 대신 추상화된 객체인 <code>FILE</code>을 사용하여 파일을 식별한다.</li>
+<li><code>read</code>, <code>write</code>, <code>puts</code>와 같은 함수들이 시스템 콜인데, 얘네들은 모두 파일 디스크립터 <code>fd</code>를 통해 파일을 식별한다. </li>
+<li>standard io는 버퍼링이란 기능을 제공하여 너무 자주 시스템 콜이 호출되는 것을 막는다. -&gt; 오버헤드를 줄일 수 있음.</li>
 </ul>
 
 

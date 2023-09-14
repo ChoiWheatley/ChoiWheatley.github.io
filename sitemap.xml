@@ -36,12 +36,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/04.%20process%20%7BSP%7D/</loc>
+         <lastmod>2023-09-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/07.%20Input%20Output%20%7BSP%7D/</loc>
+         <lastmod>2023-09-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/1.%20A%20Tour%20of%20Computer%20Systems/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/10.%20System-Level%20IO/</loc>
+         <loc>https://choiwheatley.github.io/10.%20System-Level%20IO%20%7BCSAPP%7D/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -67,6 +77,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/11.%20Network%20Programming/</loc>
+         <lastmod>2023-09-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/11.%20memory%20mapping%20and%20Copy-on-write%20%28COW%29%20%7BSP%7D/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -676,7 +691,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/7.%20Linking/</loc>
+         <loc>https://choiwheatley.github.io/7.%20Linking%20%7BCSAPP%7D/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3076,11 +3091,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/process%20%7BSP%7D%7B04%7D/</loc>
-         <lastmod>2023-09-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/products%2C%20purchases%20app%20%7Bdjango%7D/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
@@ -5237,6 +5247,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2023-09-12%20%F0%9F%A4%AF/</loc>
+         <lastmod>2023-09-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2023-09-14/</loc>
          <lastmod>2023-09-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
