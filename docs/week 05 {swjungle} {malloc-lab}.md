@@ -4,7 +4,7 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-11T17:22:13
+updated: 2023-09-14T19:52:28
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP {swjungle}]]
@@ -120,3 +120,32 @@ interface between Kernel and Programmer, actually not that directly, proxy such 
 
 ![[스크린샷 2023-09-11 오후 5.21.38.png|500]]
 
+## Quiz
+
+### 5. 
+
+다음과 같은 함수를 실행하면 어떤 문제가 생기는지 논하시오  
+(msg 로 전달되는 문자열의 길이가 64 이상인 경우를 가정하시오.)  
+이와 유사한 코드를 포함한 소프트웨어는 어떤 문제가 발생할 수 있을까?  
+아래 코드를 어떻게 수정하면 문제가 발생하지 않을 수 있을까?  
+
+```c
+void print_err(char *msg) {  
+	char *s = (char *) malloc(10);  
+	sprintf(s, "%s\n", msg);  
+	fprintf(stderr, s);  
+	free(s);  
+};
+```
+
+**문제의 요지**  
+malloc을 구현해봤기 때문에 malloc이 지정해준 영역보다 넘치는 공간을 사용했을 시 어떤 영향이 가해지는지 알 수 있다.
+
+**정답**  
+페이로드 밖의 영역에 있는 footer, 다음 블럭의 header가 깨진다. malloc 관리정보가 파괴되므로 추후 malloc/free 호출 시 엉뚱한 주소를 참조할 수 있으며, 나중에 디버깅도 어려워진다.
+
+**모범코드**
+
+```c
+char *s = (char *)malloc(strlen(msg) + 2);
+```
