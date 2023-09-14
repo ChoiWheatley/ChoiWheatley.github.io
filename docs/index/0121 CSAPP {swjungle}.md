@@ -13,6 +13,6 @@ updated: 2023-09-08T18:55:09
 
 - [[1. A Tour of Computer Systems]]
 - [[3. Machine Level Representation of Programs]]
-- [[7. Linking]]
+- [[7. Linking {CSAPP}]]
 - [[8. Exceptional Control Flow]]
 - [[9. Virtual Memory]]

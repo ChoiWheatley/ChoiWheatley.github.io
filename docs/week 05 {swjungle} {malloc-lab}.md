@@ -13,7 +13,7 @@ updated: 2023-09-14T19:59:26
 			- [[⭐️ 3.4 Accessing Information]]
 			- [[⭐️ 3.7 Procedures]]
 			- [[⭐️ 3.8 Array Allocation and Access]]
-		- [[7. Linking]]
+		- [[7. Linking {CSAPP}]]
 			- [[⭐️ 7.1. Compiler Drivers]]
 			- [[⭐️ 7.4. Relocatable Object Files]]
 			- [[⭐️ 7.9. Loading Executable Files]]
@@ -70,7 +70,7 @@ ___
 [[⭐️ 9.9. Dynamic Memory Allocation]] 발표 @안상언
 
 **09/10 일**  
-[[7. Linking]] 발표 @최승현
+[[7. Linking {CSAPP}]] 발표 @최승현
 
 **09/11 월**  
 시스템 콜 발표 @이인복
