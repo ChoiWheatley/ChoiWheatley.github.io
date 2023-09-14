@@ -4,7 +4,7 @@ tags:
 description:
 title: 0120 swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2023-09-14T19:43:07
+updated: 2023-09-14T20:44:01
 ---
 
 # INDEX
@@ -18,7 +18,7 @@ updated: 2023-09-14T19:43:07
 	- [[week 05 {swjungle} {malloc-lab}]]
 		- [[⭐️ 9.9. Dynamic Memory Allocation]]
 		- [[malloclab]]
-	- [[week06 {swjungle}{proxy-lab}]] | [cmu.edu/proxylab](http://csapp.cs.cmu.edu/3e/README-proxylab)을 구현하는 것이 목표이지 않을까?
+	- [[week06 {swjungle}{proxy-lab}]]
 - [[0015 OS {ssu2021-2nd} 💻]]
 - [[0121 CSAPP {swjungle}]]
 - [[Linux IPC Programming {inflearn archive}]]
