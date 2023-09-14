@@ -70,7 +70,7 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 	- [[8. Exceptional Control Flow]]
 		- [[⭐️ 8.1 Exceptions]]
 		- [[⭐️ 8.5. Signals]]
-	- [[10. System-Level IO]]
+	- [[10. System-Level IO {CSAPP}]]
 		- 10.5 Robust Reading and Writing with the RIO Package | 과제할 때 필요한 `rio_read`, `rio_write` 접두어 함수들
 	- [[12. Concurrent Programming]]
 - 지난주 못 다 읽은 챕터들
