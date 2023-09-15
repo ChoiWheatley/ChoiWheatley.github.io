@@ -10,7 +10,7 @@ aliases:
 tags: [" index obsidian ", index, obsidian]
 date created: Friday, February 10th 2023, 6:11:21 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:32:55
+updated: 2023-09-15T22:28:27
 ---
 parent link: [[docs/index/index|index]]
 
@@ -18,9 +18,9 @@ parent link: [[docs/index/index|index]]
 
 # 유용한 정보 모음
 
+
 - [config 싱크 기능의 부재](https://forum.obsidian.md/t/copy-settings-from-existing-vault-option/11082)
   - 세팅 싱크를 그냥 `.obsidian` 폴더로 하라는데? [link](https://forum.obsidian.md/t/copy-current-vault-settings-to-new-one/36134/2)
-- [Obsidian Linter](https://github.com/platers/obsidian-linter)
 - [[각종 콜아웃들]]
 - [[두 번째 뇌 만들기]]
 - [[[Obsidian Basic Formatting Syntax]]
@@ -33,6 +33,8 @@ parent link: [[docs/index/index|index]]
 - [[dataview]]
 - [[MarkDownload - Markdown Web Clipper - Share & showcase - Obsidian Forum|마크다운 웹 클리퍼 - 웹 브라우저 플러그인]]
 - [[outliner and zoom {bullet list 기반 문서}]]
+- [[Obsidian Linter]] | yaml frontmatter 자동생성, 
+- [Copy Url to Preview (iframe)](obsidian://show-plugin?id=convert-url-to-iframe) | 링크를 `<iframe>` 태그로 변환해준다.
 
 # 옵시디언 튜토리얼
 
