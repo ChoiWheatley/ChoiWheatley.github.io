@@ -2356,6 +2356,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/excalidraw%2C%20%EA%B0%80%EB%B2%BC%EC%9A%B4%20JSON%20%EA%B8%B0%EB%B0%98%20%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8%20%ED%8E%B8%EC%A7%91%EA%B8%B0/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/exception%20safety%20with%20rust/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
@@ -3206,6 +3211,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/quick%20switcher%20obsidian%20plugin/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/quickcheck/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
@@ -3232,6 +3242,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/realloc%20%7BC%7D/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/recent%20files%20obsidian%20plugin/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3457,6 +3472,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/template%20%ED%82%A4%EC%9B%8C%EB%93%9C%EB%A5%BC%20%EC%84%A0%EC%96%B8%EB%A7%8C%20%ED%95%98%EB%A9%B4%20%EC%95%88%20%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%20C%2B%2B/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/templater%20obsidian%20plugin%2C%20%EB%A7%9B%ED%83%B1%EC%9D%B4%EA%B0%80%20%EA%B0%84%20%EA%B8%B0%EB%B3%B8%20%ED%85%9C%ED%94%8C%EB%A6%BF%20%EC%83%9D%EC%84%B1%EA%B8%B0%20%EB%8C%80%EC%B2%B4%EC%A0%9C/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
