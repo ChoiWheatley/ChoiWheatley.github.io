@@ -19383,6 +19383,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1153-http-transactions" class="md-nav__link">
+    11.5.3. Http Transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1154-serving-dynamic-content" class="md-nav__link">
+    11.5.4. Serving Dynamic Content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-putting-it-together-the-tiny-web-server" class="md-nav__link">
+    11.6 Putting It Together: The TINY Web Server
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -37196,6 +37217,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#1153-http-transactions" class="md-nav__link">
+    11.5.3. Http Transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1154-serving-dynamic-content" class="md-nav__link">
+    11.5.4. Serving Dynamic Content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-putting-it-together-the-tiny-web-server" class="md-nav__link">
+    11.6 Putting It Together: The TINY Web Server
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -37312,6 +37354,33 @@
 </ul>
 <p><strong>실습결과</strong></p>
 <p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-15%20%EC%98%A4%ED%9B%84%203.38.34.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-15 오후 3.38.34.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-15%20%EC%98%A4%ED%9B%84%203.38.34.png" /></a></p>
+<h3 id="1153-http-transactions">11.5.3. Http Transactions<a class="headerlink" href="#1153-http-transactions" title="Permanent link">#</a></h3>
+<p><strong><code>telnet</code> 실습 결과</strong></p>
+<p><www.aol.com> 쪽은 403 Redirected가 떠서 구글로 바꿨다.</p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-15%20%EC%98%A4%ED%9B%84%203.57.30.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-15 오후 3.57.30.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-15%20%EC%98%A4%ED%9B%84%203.57.30.png" /></a></p>
+<h3 id="1154-serving-dynamic-content">11.5.4. Serving Dynamic Content<a class="headerlink" href="#1154-serving-dynamic-content" title="Permanent link">#</a></h3>
+<p><strong><code>tiny/cgi-bin/adder.c</code></strong></p>
+<ul>
+<li>[?] <a href="https://www.man7.org/linux/man-pages/man3/strchr.3.html">man strchr(3)</a> - returns a pointer to the first occurence of the character <code>c</code> in the string <code>s</code></li>
+<li>[?] <del>아, <code>sprintf</code>를 여러번 호출해도 타겟 인자의 출발위치를 굳이 바꾸지 않아도 알아서 뒤에 append 되는갑다보다.</del> 아니, 매번 문자열 앞에다 <code>%s</code> 하고 뒤에 자기 자신을 인자로 넣고 있었다</li>
+</ul>
+<h3 id="116-putting-it-together-the-tiny-web-server">11.6 Putting It Together: The <code>TINY</code> Web Server<a class="headerlink" href="#116-putting-it-together-the-tiny-web-server" title="Permanent link">#</a></h3>
+<p><strong><code>tiny/tiny.c:main</code></strong>  </p>
+<ul>
+<li>[?] 도대체 <code>struct socketaddr_storage</code>는 뭐하는 녀석이냐? 쟤한테 <code>sizeof</code>는 왜 다는거지?</li>
+<li>[?] <code>stat.h</code><ul>
+<li><code>S_ISREG</code> macro function</li>
+<li><code>S_IRUSR</code>, <code>S_IXUSR</code></li>
+<li><code>stat</code> function</li>
+<li><code>struct stat::st_mode</code></li>
+</ul>
+</li>
+</ul>
+<p><strong><code>tiny/tiny.c:doit</code></strong><br />
+<strong><code>tiny/tiny.c:clienterror</code></strong><br />
+<strong><code>tiny/tiny.c:parse_uri</code></strong><br />
+<strong><code>tiny/tiny.c:serve_static</code></strong><br />
+<strong><code>tiny/tiny.c:serve_dynamic</code></strong></p>
 <h2 id="14-web-servers">14. Web Servers<a class="headerlink" href="#14-web-servers" title="Permanent link">#</a></h2>
 <ul>
 <li><em>HTML</em>, Hyper Text Markup Language, 그래픽 화면에 띄울 내용을 인간도, 컴퓨터도 읽을 수 있게 만든 규격. 특징으로는 하이퍼링크를 걸어 다른 곳으로도 이동할 수 있다.</li>
@@ -37324,7 +37393,33 @@
 <li>다음 URL은 <code>bluefish.ics.cs.cmu.edu</code> 호스트의 8000번 포트에 상주하고 있는 프로세스에게 <code>adder</code>라는 이름의 실행파일을 실행시킨다. 이때 두 인자 <code>16000</code>과 <code>213</code>을 넣었다.</li>
 </ul>
 </li>
+<li>HTTP Requests<ul>
+<li>request headers<ul>
+<li><code>&lt;method&gt; &lt;uri&gt; &lt;version&gt;</code></li>
+<li><code>&lt;header-name&gt;: &lt;header-data&gt;</code></li>
 </ul>
+</li>
+<li>[?] Persistent connection?</li>
+<li>[?] proxy cache?</li>
+</ul>
+</li>
+<li>HTTP Responses<ul>
+<li>response headers<ul>
+<li><code>&lt;version&gt; &lt;status-code&gt; &lt;status-message&gt;</code></li>
+</ul>
+</li>
+<li>response body</li>
+</ul>
+</li>
+</ul>
+<p><strong>CGI (Common Gateway Interface)</strong></p>
+<p>Dynamic Content를 생성하기 위해서 클라이언트는 URL 리소스 뒤에 인자를 추가한다고 했다. 그러면 서버가 이를 분리하고 별도의 변수(또는 리스트)에 담았다고 치자. 서버에서는 무슨 일이 일어날까?</p>
+<ol>
+<li>CGI 환경변수 중 <code>QUERY_STRING</code>에 인자목록을 걍 넣는다.</li>
+<li>사전에 등록된 CGI program을 서버가 fork하고 execve하여 자식 프로세스를 생성한다.</li>
+<li>CGI 프로세스는 해당 환경변수를 읽음으로써 자연스럽게 인자를 읽을 수 있다. 파싱까지 해주나?</li>
+<li>[?] <code>dup2</code> fd 리디렉션 덕분에 CGI 프로세스는 별 생각없이 stdout으로 리턴하기만 해도 알아서 클라이언트에게 응답이 간다고!</li>
+</ol>
 <h2 id="homework-problems">Homework Problems<a class="headerlink" href="#homework-problems" title="Permanent link">#</a></h2>
 <p><a href="../week06%20%7Bswjungle%7D%7Bproxy-lab%7D/">week06 {swjungle}{proxy-lab}</a>에서 제안한 과제만 아래에 적어두었다.</p>
 <h3 id="116c">11.6c<a class="headerlink" href="#116c" title="Permanent link">#</a></h3>
