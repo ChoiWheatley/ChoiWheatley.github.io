@@ -10,7 +10,7 @@ aliases:
 tags: [" index obsidian ", index, obsidian]
 date created: Friday, February 10th 2023, 6:11:21 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-15T22:47:09
+updated: 2023-09-15T22:56:16
 ---
 parent link: [[docs/index/index|index]]
 
@@ -25,7 +25,6 @@ parent link: [[docs/index/index|index]]
 - [[[Obsidian Basic Formatting Syntax]]
 - [[obsidian으로 프리젠테이션 하기 - no boilerplate]]
 - [[latex]]
-- [[obsidian-git]]
 
 # 플러그인
 
@@ -34,6 +33,11 @@ parent link: [[docs/index/index|index]]
 - [[outliner and zoom {bullet list 기반 문서}]]
 - [[Obsidian Linter]] | yaml frontmatter 자동생성, 표준 마크다운 형식으로 변환
 - [Copy Url to Preview (iframe)](obsidian://show-plugin?id=convert-url-to-iframe) | 링크를 `<iframe>` 태그로 변환해준다.
+- [[excalidraw, 가벼운 JSON 기반 다이어그램 편집기]]
+- [[obsidian-git]]
+- [[recent files obsidian plugin]]
+- [[quick switcher obsidian plugin]]
+- [[templater obsidian plugin, 맛탱이가 간 기본 템플릿 생성기 대체제]]
 
 # 옵시디언 튜토리얼
 
