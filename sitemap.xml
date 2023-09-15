@@ -1321,6 +1321,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Obsidian%20Linter/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Obsidian%EC%9C%BC%EB%A1%9C%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
@@ -5262,6 +5267,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2023-09-14/</loc>
+         <lastmod>2023-09-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2023-09-15/</loc>
          <lastmod>2023-09-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
