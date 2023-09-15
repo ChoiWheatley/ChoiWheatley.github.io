@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-20T05:53:42
+updated: 2023-09-15T23:21:38
 ---
 
 parent link: [[docs/index/index|index]]
@@ -50,6 +50,15 @@ ___
 - <https://www.kmooc.kr/coursera>
 - [[개발자가 꼭 알아야할 GitHub 리포지토리 모음]]
 ---
+
+# 교재
+
+- [[0121 CSAPP {swjungle}]]
+- [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
+- [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
+- [[Operating System Concepts - Silberschatz, 8th edition]]
+
+___
 
 # Utilities
 
