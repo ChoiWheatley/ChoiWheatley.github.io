@@ -4,7 +4,7 @@ tags:
 description:
 title: make
 created: 2023-09-15T13:44:24
-updated: 2023-09-15T14:02:11
+updated: 2023-09-15T14:10:16
 ---
 - [[0110 Utility 🔧]]
 ___
@@ -21,3 +21,7 @@ make가 할 수 있는 일은...
 ## [Make 기반 빌드 시스템 (2): Makefile 기초]
 
 ## [Make 기반 빌드 시스템 (3): 소스 목록 관리를 조금 편리하게](http://developinghappiness.com/?p=174)
+
+## 자동변수
+
+<http://korea.gnu.org/manual/4check/make-3.77/ko/make_10.html#SEC97>
