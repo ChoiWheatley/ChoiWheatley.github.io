@@ -1,10 +1,10 @@
 ---
-aliases: 
-tags: 
-description:
+aliases: []
+tags: []
+description: 
 title: Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.
 created: 2023-09-15T23:17:59
-updated: 2023-09-16T14:54:20
+updated: 2023-09-16T15:01:27
 ---
 
 ## README
