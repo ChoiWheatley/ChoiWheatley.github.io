@@ -4,7 +4,7 @@ tags:
 description:
 title: Socket Programming C API
 created: 2023-09-16T16:57:23
-updated: 2023-09-16T17:16:50
+updated: 2023-09-16T17:31:44
 ---
 
 ## Socket Programming Tutorial In C For Beginners
@@ -39,4 +39,5 @@ accept --> send
 accept --> recv
 ```
 
-- `bind(socket, struct sockaddr *, size of address)`: 
+- `bind(socket, struct sockaddr *, size of address)`:  소켓에 ip, port쌍을 바인드 한다.
+- `listen(socket, backlog)`: `accept`를 통해 들어오는 연결들을 관리한다. `backlog`를 사용하여 최대 들어오는 요청 수를 정의할 수는 있는데, 동시접속을 허용하려면 동시성 프로그래밍을 다뤄야 한다...
