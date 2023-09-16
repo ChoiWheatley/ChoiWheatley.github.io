@@ -4,10 +4,12 @@ tags:
 description:
 title: week06 {swjungle}{proxy-lab}
 created: 2023-09-14T13:34:26
-updated: 2023-09-14T21:16:07
+updated: 2023-09-16T19:14:27
 ---
 - [[0120 swjungle 🤖]]
-- [[0121 CSAPP {swjungle}]]
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[10. System-Level IO {CSAPP}]]
+- [[11. Network Programming {CSAPP}]]
 ___
 
 ## README
@@ -62,10 +64,10 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 
 ## CSAPP
 
-[[0121 CSAPP {swjungle}]]
+[[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 
 - 이번주 필수
-	- [[11. Network Programming]]
+	- [[11. Network Programming {CSAPP}]]
 - 읽어두면 좋은 챕터들
 	- [[8. Exceptional Control Flow]]
 		- [[⭐️ 8.1 Exceptions]]
@@ -81,4 +83,3 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 		- [[⭐️ 9.11. Common Memory-Related Bugs in C Programs]]
 
 ## [[Socket Programming C API]]
-

@@ -20,7 +20,7 @@ updated: 2023-09-14T20:44:01
 		- [[malloclab]]
 	- [[week06 {swjungle}{proxy-lab}]]
 - [[0015 OS {ssu2021-2nd} 💻]]
-- [[0121 CSAPP {swjungle}]]
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[Linux IPC Programming {inflearn archive}]]
 
 # QUESTIONS and TEATIMES

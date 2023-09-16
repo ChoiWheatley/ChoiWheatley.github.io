@@ -7,7 +7,7 @@ created: 2023-09-07T22:10:12
 updated: 2023-09-14T19:59:26
 ---
 - [[0120 swjungle 🤖]]
-- [[0121 CSAPP {swjungle}]]
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 	- WEEK04 못다 읽은 챕터들
 		- [[3. Machine Level Representation of Programs]]
 			- [[⭐️ 3.4 Accessing Information]]

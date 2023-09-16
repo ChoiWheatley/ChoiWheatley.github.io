@@ -54,7 +54,7 @@ ___
 
 # 교재
 
-- [[0121 CSAPP {swjungle}]]
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
 - [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
 - [[Operating System Concepts - Silberschatz, 8th edition]]
