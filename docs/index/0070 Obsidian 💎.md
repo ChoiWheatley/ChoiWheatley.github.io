@@ -10,7 +10,7 @@ aliases:
 tags: [" index obsidian ", index, obsidian]
 date created: Friday, February 10th 2023, 6:11:21 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-15T22:56:16
+updated: 2023-09-16T15:46:16
 ---
 parent link: [[docs/index/index|index]]
 
@@ -18,11 +18,7 @@ parent link: [[docs/index/index|index]]
 
 # 유용한 정보 모음
 
-- [config 싱크 기능의 부재](https://forum.obsidian.md/t/copy-settings-from-existing-vault-option/11082)
-  - 세팅 싱크를 그냥 `.obsidian` 폴더로 하라는데? [link](https://forum.obsidian.md/t/copy-current-vault-settings-to-new-one/36134/2)
-- [[각종 콜아웃들]]
 - [[두 번째 뇌 만들기]]
-- [[[Obsidian Basic Formatting Syntax]]
 - [[obsidian으로 프리젠테이션 하기 - no boilerplate]]
 - [[latex]]
 
@@ -43,13 +39,15 @@ parent link: [[docs/index/index|index]]
 
 - [[A Guide On Links vs. Tags In Obsidian - Knowledge management - Obsidian Forum|링크 vs 태그]]
 - [[Use Obsidian Like a Pro]]
-- [[A beginner's guide to using the Obsidian Notes application]]
 - [[Quick Tip Footnotes in Obsidian - Obsidian Rocks]]
+- [[Obsidian Basic Formatting Syntax]]
 
 # 커뮤니티
 
 - [[Has anyone created a bookmarking system in obsidian   ObsidianMD|북마크 관리자로써의 옵시디언]]
 - [[tab reuse on link opening, tab management {Obsidian}]]
+- [config 싱크 기능의 부재](https://forum.obsidian.md/t/copy-settings-from-existing-vault-option/11082)
+  - 세팅 싱크를 그냥 `.obsidian` 폴더로 하라는데? [link](https://forum.obsidian.md/t/copy-current-vault-settings-to-new-one/36134/2)
 
 # 아무래도
 

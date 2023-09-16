@@ -1,21 +1,14 @@
 ---
-<%*
-const title = tp.file.title;
-const today = moment(title).format("YYYY-MM-DD");
-const yesterday = moment(title).subtract(1, 'days').format("YYYY-MM-DD");
-const tomorrow = moment(title).add(1, 'days').format("YYYY-MM-DD");
--%>
 tags:
 - " DailyNote "
 ---
 
-## <% today %>
+## 2001-08-01
 
-- [[<% yesterday %>]] 
-- [[<% tomorrow %>]]
+<< [[2001-07-31]] | [[2001-08-02]]>>
 
 ---
-## 📅 <% today %> Daily Briefing
+## 📅 2001-08-01 Daily Briefing
 
 ### 🎵 오늘의 추천곡
 
@@ -48,6 +41,6 @@ FROM #scrap
 
 ```dataview
 List FROM "" 
-WHERE striptime(date(file.frontmatter.updated)) = date("<%today%>") 
+WHERE striptime(date(file.frontmatter.updated)) = date("2001-08-01") 
 SORT file.mtime asc
 ```
