@@ -4,7 +4,7 @@ tags: []
 description: 
 title: Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.
 created: 2023-09-15T23:17:59
-updated: 2023-09-16T16:47:49
+updated: 2023-09-16T20:49:23
 ---
 
 ## README
@@ -61,7 +61,7 @@ LAN을 벗어난 통신을 위한 레이어이다. IP(Internet Protocol)이 이 
 	- 라우팅 테이블
 	- 정적 라우팅 VS 동적 라우팅
 	- IPv4의 부족한 대역을 극복하기 위한 사설 네트워크
-	- DHCP(Dynamic Host C? Protocol)
+	- DHCP(Dynamic Host Configuration Protocol)
 
 **Link Layer**
 
