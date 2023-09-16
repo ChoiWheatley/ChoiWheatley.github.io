@@ -55,6 +55,7 @@ Pending
 	- [[roasted corn and bacon]]
 	- [[돼지고기카레 전기밥솥 취사 2번이면 끝 {YT}]]
 	- [[홈메이드 치킨 4KG 치킨 튀기기 {YT}]]
+	- [[드립 커피 레시피]]
 
 - Activities
 	- [[안양천 - 한강 따라 걷기코스]]
