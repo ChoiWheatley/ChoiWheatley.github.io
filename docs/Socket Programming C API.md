@@ -41,3 +41,4 @@ accept --> recv
 
 - `bind(socket, struct sockaddr *, size of address)`:  소켓에 ip, port쌍을 바인드 한다.
 - `listen(socket, backlog)`: `accept`를 통해 들어오는 연결들을 관리한다. `backlog`를 사용하여 최대 들어오는 요청 수를 정의할 수는 있는데, 동시접속을 허용하려면 동시성 프로그래밍을 다뤄야 한다...
+- `accept(socket, struct sockaddr *, socklen_t *)`: 
