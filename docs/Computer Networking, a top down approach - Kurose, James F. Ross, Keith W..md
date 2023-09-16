@@ -4,7 +4,7 @@ tags: []
 description: 
 title: Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.
 created: 2023-09-15T23:17:59
-updated: 2023-09-16T16:27:06
+updated: 2023-09-16T16:47:49
 ---
 
 ## README
@@ -37,6 +37,12 @@ FTP, SSH, SMTP, HTTP 등 다양한 응용 프로그램들에서 페이로드 (�
 TCP와 UDP가 가장 대표적이다. 데이터 세그먼트를 구체적인 호스트 내 프로세스로 연결짓는 책임을 가지고 있다. 메시지를 신뢰도 있게 전송/수신하도록 connection으로 관리하는 프로토콜을 TCP, connection 없이 빠르게 도착하기만 하면 장땡인 UDP로 나뉜다. 해당 레이어에서 다루는 패킷은 *Segment*이다.
 
 포트번호 (1~65535)를 사용하여 두 프로세스 간에 연결을 보장한다. 
+
+- 더 알아볼 키워드
+	- TCP
+		- Establish connection (Three way handshaking)
+		- Close connection
+	- Segment 분리 및 조립과정
 
 **Network Layer**
 
