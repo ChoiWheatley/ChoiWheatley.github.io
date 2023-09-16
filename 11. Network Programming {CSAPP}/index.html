@@ -19252,6 +19252,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-09-17%20%EC%A7%80%EC%8B%9D%EC%9D%84%20%EB%A8%B8%EB%A6%AC%EC%97%90%20%EB%84%A3%EB%8A%94%20%ED%9E%98%EC%9D%84%20%EA%B8%B0%EB%A5%B4%EC%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-17 지식을 머리에 넣는 힘을 기르자
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -19688,8 +19708,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-web-servers" class="md-nav__link">
-    14. Web Servers
+  <a href="#111-the-client-server-programming-model_1" class="md-nav__link">
+    11.1. The Client-Server Programming Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-networks_1" class="md-nav__link">
+    11.2. Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1114-web-servers" class="md-nav__link">
+    11.14. Web Servers
   </a>
   
 </li>
@@ -37788,8 +37822,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-web-servers" class="md-nav__link">
-    14. Web Servers
+  <a href="#111-the-client-server-programming-model_1" class="md-nav__link">
+    11.1. The Client-Server Programming Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-networks_1" class="md-nav__link">
+    11.2. Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1114-web-servers" class="md-nav__link">
+    11.14. Web Servers
   </a>
   
 </li>
@@ -37929,7 +37977,27 @@
 <strong><code>tiny/tiny.c:parse_uri</code></strong><br />
 <strong><code>tiny/tiny.c:serve_static</code></strong><br />
 <strong><code>tiny/tiny.c:serve_dynamic</code></strong></p>
-<h2 id="14-web-servers">14. Web Servers<a class="headerlink" href="#14-web-servers" title="Permanent link">#</a></h2>
+<h2 id="111-the-client-server-programming-model_1">11.1. The Client-Server Programming Model<a class="headerlink" href="#111-the-client-server-programming-model_1" title="Permanent link">#</a></h2>
+<ul>
+<li><em>cardinality</em>: Client : server = N : 1, client_process : server_process = 1 : 1, 즉, 서버 프로세스는 요청이 들어올 때마다 하나씩 생성된다.</li>
+<li><em>Request</em>: 클라이언트는 서버에게 서비스를 요청한다. 서비스는 구체적으로 서버에게 요청을 보내는 트랜잭션으로 시작될 수 있다. (≠ DB의 ACID 규칙에 따른 트랜잭션)</li>
+<li><em>Response</em>: 서버는 (서버 프로세스) request에 따라 동작을 수행한다. file을 읽을 수도 있고, 프로그램을 실행시킬 수도 있다. 하지만 반드시 클라이언트에게 응답을 보내야 하며, 파일이나 바이트 스트림을 보내주게 된다.</li>
+</ul>
+<h2 id="112-networks_1">11.2. Networks<a class="headerlink" href="#112-networks_1" title="Permanent link">#</a></h2>
+<p>NIC(Network Interface Card), 쉽게말해 랜카드를 메인보드에 꽂으면 인터넷을 사용할 수 있게 된다. 그런데 랜카드를 "꽂는다"는 것이 정확히 무엇을 하는 일일까?</p>
+<blockquote>
+<p>IO 버스에 달려있는 어댑터는 하드웨어 인터페이스를 제공한다. DMA 기술로 CPU 간섭 없이 어댑터에서 받은 신호를 IO버스를 통해 메모리로 복사할 수 있으며, 마찬가지로 데이터를 메모리에서 어댑터로 복사할 수도 있다.</p>
+</blockquote>
+<p>네트워크는 계층구조를 가지고 있다. 제일먼저 가장 작은 단위의 네트워크인 LAN이 있다. 허브나 스위치를 통해 서로 물리적으로 연결되어있다. 모든 이더넷 어댑터(랜카드)는 데이터를 frame 단위로 보게 되는데, frame 안에는 출발주소, 목적지 주소가 담긴 헤더, 페이로드, 프레임 길이정보가 담겨있다. 호스트의 모든 하위 레이어가 그렇겠지만, 이더넷 어댑터를 예로 들면 어댑터는 오로지 페이로드를 제외한 헤더, frame length에만 관심을 갖는다. 진짜 페이로드는 오로지 호스트만 볼 수 있다.</p>
+<p><strong>bridges</strong></p>
+<p>브릿지는 이더넷 세그먼트들 사이를 연결하는 역할을 가지고 있다. 방 한 칸을 LAN이 담당했다면 건물 하나 또는 캠퍼스 하나를 묶어주기 위해 브릿지가 들어간다. 브릿지-브릿지 연결도 있고 브릿지-허브 연결도 존재한다. 브릿지는 한 세그먼트에서 다른 세그먼트로 넘어가야 하는 신호를 선별적으로 골라 필요한 놈만 복제하여 신호를 전파한다.</p>
+<p>예를 들어 하나의 허브에 묶인 두 호스트 A, B는 같은 이더넷 세그먼트에 있다. A가 B에게 프레임을 보내면 허브는 항상 모든 링크로 같은 신호를 복제한다고 했지. (허브가 영향을 미치는 구간을 Collision Domain이라고도 한다.) 그래서 B또한 프레임을 받아 원하는 목적을 달성할 수 있다. 문제는 허브는 브릿지에게도 신호를 쏴버렸다는 것이다. 이때 브릿지는 똑똑하게 신호를 무시하는데, 같은 이더넷 세그먼트에 있는 신호를 굳이 밖으로 전파해봤자 무의미하기 때문이다.</p>
+<blockquote>
+<p>[!question]- 그래서, 이더넷 세그먼트가 뭔데?<br />
+<a href="https://en.wikipedia.org/wiki/Network_segment">Network Segment {wiki}</a>에 따라, 공유 매질에 따라 전기적으로 연결된 네트워크 기기들을 <strong>네트워크 세그먼트</strong>라고 부른다. 그러니까 랜선으로 직접 연결이 되던, 스위치나 허브에 의해 간접적으로 연결이 되던 결국 같은 매질에 의해 전기적으로 연결이 되어있다는 것을 의미하는듯.<br />
+네트워크 세그먼트는 OSI 레이어와 같이 가는데, 이더넷 세그먼트는 물리영역인 OSI 1에 해당하는 네트워크 세그먼트이다. </p>
+</blockquote>
+<h2 id="1114-web-servers">11.14. Web Servers<a class="headerlink" href="#1114-web-servers" title="Permanent link">#</a></h2>
 <ul>
 <li><em>HTML</em>, Hyper Text Markup Language, 그래픽 화면에 띄울 내용을 인간도, 컴퓨터도 읽을 수 있게 만든 규격. 특징으로는 하이퍼링크를 걸어 다른 곳으로도 이동할 수 있다.</li>
 <li><em>MIME Type</em>, Multipurpose Internet Mail Extensions로, 연속된 바이트로 전송된 문자열이 어떤 방식으로 해석될 수 있는지에 대한 일종의 해독지이다.</li>
