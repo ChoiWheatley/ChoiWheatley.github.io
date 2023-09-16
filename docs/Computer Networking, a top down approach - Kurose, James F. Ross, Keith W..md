@@ -4,7 +4,7 @@ tags: []
 description: 
 title: Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.
 created: 2023-09-15T23:17:59
-updated: 2023-09-16T15:39:45
+updated: 2023-09-16T15:52:57
 ---
 
 ## README
@@ -46,9 +46,10 @@ TCP와 UDP가 가장 대표적이다. 데이터 세그먼트를 구체적인 호
 
 TCP의 신뢰성과는 다른게, 링크 레이어에서는 전기신호 자체의 노이즈를 극복하는 데에 초점을 맞춘다. 트레일러에 오류검출을 위한 비트를 추가하여 이전 링크에서 보낸 신호가 올바른지 판단한다.
 
-MAC(Media Address Control) 주소를 활용하여 링크 간 네트워크 인터페이스들을 식별한다.
+MAC(Media Address Control) 주소를 활용하여 링크 간 네트워크 인터페이스들을 식별한다. MAC 주소의 앞쪽 6개의 16진수는 vendor를, 뒤쪽 6개의 16진수는 식별자를 의미한다. 
 
->  hello
+> [!question]- 그러면 한 회사당 $16^6=16777216$ 밖에 사용하지 못하는 거 아니냐?  
+>  애플같이 억단위의 전자기기를 만들어 파는 회사는 벤더를 여러개 갖추는 경우가 있지 않을까?
 
 **Physical Layer**
 
