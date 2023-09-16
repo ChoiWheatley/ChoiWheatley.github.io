@@ -4,7 +4,7 @@ tags: []
 description: 
 title: Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.
 created: 2023-09-15T23:17:59
-updated: 2023-09-16T15:52:57
+updated: 2023-09-16T16:27:06
 ---
 
 ## README
@@ -38,7 +38,22 @@ TCP와 UDP가 가장 대표적이다. 데이터 세그먼트를 구체적인 호
 
 **Network Layer**
 
-데이터그램을 한 호스트에서 어떤 호스트로 보내야 하는지에 대한 책임을 지닌 레이어이다. IP(Internet Protocol)이 이 레이어를 담당하는 유일한 프로토콜이다. 이 레이어에서는 패킷을 *datagram*으로 보는데, 모든 데이터그램에는 source host와 destination host에 대한 정보, 효율적인 라우팅 프로토콜이 명시되어 있다.
+LAN을 벗어난 통신을 위한 레이어이다. IP(Internet Protocol)이 이 레이어를 담당하는 유일한 프로토콜이다. 이 레이어에서는 패킷을 *datagram*으로 보는데, 모든 데이터그램에는 source host와 destination host에 대한 정보가 들어있다.
+
+라우팅 프로토콜을 사용해 데이터그램을 효율적으로 전달하기 위한 최적 경로를 계산한다.
+
+데이터그램 안에는 MAC 주소 정보가 없다. 그 대신에 목적지 네트워크에게 "이 IP 가지고 있는 기기의 MAC 주소를 알려주세요" 라는 브로드캐스트를 보내게 된다.
+
+![[스크린샷 2023-09-16 오후 4.19.18.png|700]]  
+
+- 더 알아볼 키워드들
+	- IP의 여러 class들
+	- IGMP(Internet Group Management Protocol)과 브로드캐스트, 유니캐스트, 멀티캐스트
+	- ICMP(Internet Control Message Protocol)과 PING
+	- 라우팅 테이블
+	- 정적 라우팅 VS 동적 라우팅
+	- IPv4의 부족한 대역을 극복하기 위한 사설 네트워크
+	- DHCP(Dynamic Host C? Protocol)
 
 **Link Layer**
 
@@ -51,6 +66,18 @@ MAC(Media Address Control) 주소를 활용하여 링크 간 네트워크 인터
 > [!question]- 그러면 한 회사당 $16^6=16777216$ 밖에 사용하지 못하는 거 아니냐?  
 >  애플같이 억단위의 전자기기를 만들어 파는 회사는 벤더를 여러개 갖추는 경우가 있지 않을까?
 
+- Bridge
+	- 랜과 랜을 연결하는 초기 네트워크 장치. 네트워크와 네트워크 사이에서 데이터를 복사하는 역할을 맡는다.
+	- [?] 않이, 랜과 랜을 연결한다고? 그러면 네트워크 레이어 아니냐?
+- Switch
+	- Hub의 단점인 높은 Collision을 막기 위해 링크 레이어의 특징인 MAC 주소를 사용한다. 구체적인 라우터로만 프레임을 보낸다.
+	- MAC 주소 테이블을 가지고 있어 구체적으로 어느 포트 (≠ 네트워크 레이어의 포트)로 보내야 하는지 알고있음. [네이버 블로그 참고](https://m.post.naver.com/viewer/postView.nhn?volumeNo=9327793&memberNo=15488377)
+
 **Physical Layer**
 
 물리적으로 비트들의 집합인 frame을 링크 간에 전송하기 위한 구체적인 프로토콜을 명시한다. 대표적으로 구리선, 동축케이블, 유리섬유와 같이 전기적 신호로 변환된 비트열을 어떤 방식으로든 다음 링크로 전달하기만 하면 된다.
+
+- Repeater
+	- 케이블의 길이가 늘어남에 따라 줄어드는 전기신호를 증폭
+- Hub
+	- 하나의 링크에서 발생한 패킷을 연결된 모든 링크에 전달함. → Collision이 자주 일어남.
