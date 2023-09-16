@@ -1,0 +1,42 @@
+---
+aliases: 
+tags: 
+description:
+title: Socket Programming C API
+created: 2023-09-16T16:57:23
+updated: 2023-09-16T17:16:50
+---
+
+## Socket Programming Tutorial In C For Beginners
+
+<iframe title="Socket Programming Tutorial In C For Beginners | Part 1 | Eduonix" src="https://www.youtube.com/embed/LtXEMwSG5-8?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 50%; height: 50%;"></iframe>
+
+**Client socket workflow**
+
+```mermaid
+graph LR;
+socket --> connect --> recv
+```
+
+- `socket(AF_INET, SOCK_STREAM, 0)`: 소켓을 생성하여 file descriptor를 리턴받는다.
+- `struct sockaddr_in`: 소켓에 구체적인 주소를 지정한다. (IP, port)
+	- `.sin_family`
+	- `.sin_port`
+		- `htons(int port)`: 포트번호를 변환한다.
+	- `.sin_addr.s_addr`: 클라이언트가 허용할 IP주소를 지정한다. `INADDR_ANY`는 `0.0.0.0`과 동일하다.
+- `connect(socket, struct sockaddr *, size of address)`: establish connection, return 0 on success, -1 on failure
+- `recv(socket, char * server_response, size of buffer, 0)`: recieve data from the server
+- `close(socket)`
+
+**Server socket workflow**
+
+```mermaid
+graph LR;
+socket --> bind
+bind --> listen
+listen --> accept
+accept --> send
+accept --> recv
+```
+
+- `bind(socket, struct sockaddr *, size of address)`: 

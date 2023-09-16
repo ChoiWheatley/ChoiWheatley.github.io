@@ -79,3 +79,6 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 		- [[⭐️ 9.9. Dynamic Memory Allocation]] 중 Segregated free list 중 **Buddy System**
 		- 9.10  garbage collection
 		- [[⭐️ 9.11. Common Memory-Related Bugs in C Programs]]
+
+## [[Socket Programming C API]]
+
