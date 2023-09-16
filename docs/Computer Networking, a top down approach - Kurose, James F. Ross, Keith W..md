@@ -36,6 +36,8 @@ FTP, SSH, SMTP, HTTP 등 다양한 응용 프로그램들에서 페이로드 (�
 
 TCP와 UDP가 가장 대표적이다. 데이터 세그먼트를 구체적인 호스트 내 프로세스로 연결짓는 책임을 가지고 있다. 메시지를 신뢰도 있게 전송/수신하도록 connection으로 관리하는 프로토콜을 TCP, connection 없이 빠르게 도착하기만 하면 장땡인 UDP로 나뉜다. 해당 레이어에서 다루는 패킷은 *Segment*이다.
 
+포트번호 (1~65535)를 사용하여 두 프로세스 간에 연결을 보장한다. 
+
 **Network Layer**
 
 LAN을 벗어난 통신을 위한 레이어이다. IP(Internet Protocol)이 이 레이어를 담당하는 유일한 프로토콜이다. 이 레이어에서는 패킷을 *datagram*으로 보는데, 모든 데이터그램에는 source host와 destination host에 대한 정보가 들어있다.
