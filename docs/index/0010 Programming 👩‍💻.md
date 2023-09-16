@@ -33,6 +33,7 @@ parent link: [[docs/index/index|index]]
 	- [[get fetch --prune]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
 - [[ssh into WSL2 & vs-code]]
+- [[port forwarding WSL2]]
 
 ---
 

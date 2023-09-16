@@ -6,7 +6,7 @@ title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
 updated: 2023-08-21T16:45:25
 ---
-
+[[0010 Programming 👩‍💻|programming]]
 # ssh into WSL2 & vs-code
 
 생성일: 2022년 3월 2일 오후 11:30
