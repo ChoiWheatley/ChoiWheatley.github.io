@@ -4,7 +4,7 @@ tags:
 description:
 title: port forwarding WSL2
 created: 2023-09-16T13:01:58
-updated: 2023-09-16T13:22:40
+updated: 2023-09-18T00:38:24
 ---
 
 ## TL;DR
@@ -38,3 +38,9 @@ PS>wsl -l -v
 ```
 
 그래서 [Stack Exchange](https://superuser.com/a/1603307) 대화를 참조해 구체적인 wsl 디스트로를 명시한 IP 주소를 달라고 하니 그제서야 제대로 된 값이 나왔고, 실제로 wsl 안에서 `ip addr show | grep eth0`으로 나온 주소값과 일치했다.
+
+## Easy Way
+
+그냥 VScode에서 Port를 열어버리니까 localhost에서 그냥 열리네... 💦
+
+![[스크린샷 2023-09-18 오전 12.37.28.png]]
