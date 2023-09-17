@@ -4,12 +4,14 @@ tags:
 description:
 title: week06 {swjungle}{proxy-lab}
 created: 2023-09-14T13:34:26
-updated: 2023-09-16T19:14:27
+updated: 2023-09-17T22:48:13
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[10. System-Level IO {CSAPP}]]
 - [[11. Network Programming {CSAPP}]]
+- [[Socket Programming C API]]
+- [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
 ___
 
 ## README
@@ -52,9 +54,27 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 
 ### 2023-09-15 금
 
+**내일 오후 8시까지**
+
+- 동영상 강의 시청(2개) : 가벼운 퀴즈를 준비해오기. 진짜 궁금한것들 정리해오기.
+- osi 7 계층 : 이것저것 공부하기
+- 책읽기 준비 : 10장(가볍게) 11장(딥하게) 11장에 있는 구현문제를 제외한 간단한 문제만 풀어보기
+
+**일요일**
+
+- 연습문제를 몰아서 풀기!!! (안되면 월요일 오전)
+
+월요일부터 프록시 시작하기
+
 ### 2023-09-16 토
 
+- 내일 오후 8시까지 연습문제를 다 풀어보자.
+- 구현문제는 가능한 많이
+
 ### 2023-09-17 일
+
+- 월요일 15:00까지 숙제 문제 적어도 3 문제씩 풀고 풀이경험 공유하기
+- 프록시 랩 발제
 
 ### 2023-09-18 월
 
@@ -81,5 +101,3 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 		- [[⭐️ 9.9. Dynamic Memory Allocation]] 중 Segregated free list 중 **Buddy System**
 		- 9.10  garbage collection
 		- [[⭐️ 9.11. Common Memory-Related Bugs in C Programs]]
-
-## [[Socket Programming C API]]
