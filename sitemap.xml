@@ -2526,7 +2526,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/getaddrinfo/</loc>
+         <lastmod>2023-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/getattr%2C%20setattr%20%7Bpython%7D/</loc>
+         <lastmod>2023-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/getnameinfo/</loc>
          <lastmod>2023-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2902,6 +2912,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/mkdocs/</loc>
+         <lastmod>2023-09-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/mmap%282%29/</loc>
          <lastmod>2023-09-18</lastmod>
          <changefreq>daily</changefreq>
     </url>

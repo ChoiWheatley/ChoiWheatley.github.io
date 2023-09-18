@@ -8807,12 +8807,46 @@
   
   
     <li class="md-tabs__item">
+      <a href="../getaddrinfo/" class="md-tabs__link">
+        
+  
+    
+  
+  getaddrinfo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../getattr%2C%20setattr%20%7Bpython%7D/" class="md-tabs__link">
         
   
     
   
   getattr, setattr {python}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getnameinfo/" class="md-tabs__link">
+        
+  
+    
+  
+  getnameinfo
 
       </a>
     </li>
@@ -10088,6 +10122,23 @@
     
   
   mkdocs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mmap%282%29/" class="md-tabs__link">
+        
+  
+    
+  
+  mmap(2)
 
       </a>
     </li>
@@ -29172,11 +29223,49 @@
   
   
     <li class="md-nav__item">
+      <a href="../getaddrinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getaddrinfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getattr%2C%20setattr%20%7Bpython%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     getattr, setattr {python}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getnameinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getnameinfo
   </span>
   
 
@@ -30602,6 +30691,25 @@
   
   <span class="md-ellipsis">
     mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mmap%282%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mmap(2)
   </span>
   
 
@@ -38264,22 +38372,8 @@
 <li>서버는 block 상태에서 벗어나 <code>accept</code>를 호출하여 connected descriptor를 획득한다. accept 응답이 클라이언트에게 날아가 클라이언트로 block 상태에서 벗어나 client desciptor를 획득한다. 이제 서버는 connected descriptor를 이용하여, 클라이언트는 client desciptor를 이용하여 소통할 수 있게 된다.</li>
 </ol>
 <h3 id="1147-host-and-service-conversion">11.4.7. Host and Service Conversion<a class="headerlink" href="#1147-host-and-service-conversion" title="Permanent link">#</a></h3>
-<p><a href="https://man7.org/linux/man-pages/man3/getaddrinfo.3.html"><strong><code>getaddrinfo</code></strong></a></p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/types.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/socket.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;netdb.h&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">getaddrinfo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="kr">restrict</span><span class="w"> </span><span class="n">node</span><span class="p">,</span>
-<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="kr">restrict</span><span class="w"> </span><span class="n">service</span><span class="p">,</span>
-<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">*</span><span class="kr">restrict</span><span class="w"> </span><span class="n">hints</span><span class="p">,</span>
-<span class="w">                </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">**</span><span class="kr">restrict</span><span class="w"> </span><span class="n">res</span><span class="p">);</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">freeaddrinfo</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">*</span><span class="n">res</span><span class="p">);</span>
-
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">gai_strerror</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">errcode</span><span class="p">);</span>
-</code></pre></div>
-<p>hostname, host address, service name, port number를 한데모아 하나의 <code>struct addrinfo</code> 구조체에 담아주는 친절한 함수이다.</p>
-<p><strong><code>getnameinfo</code></strong></p>
+<p><strong><a href="../getaddrinfo/">getaddrinfo</a></strong></p>
+<p><strong><a href="../getnameinfo/">getnameinfo</a></strong></p>
 <h2 id="115-web-servers_1">11.5. Web Servers<a class="headerlink" href="#115-web-servers_1" title="Permanent link">#</a></h2>
 <ul>
 <li><em>HTML</em>, Hyper Text Markup Language, 그래픽 화면에 띄울 내용을 인간도, 컴퓨터도 읽을 수 있게 만든 규격. 특징으로는 하이퍼링크를 걸어 다른 곳으로도 이동할 수 있다.</li>
@@ -38361,6 +38455,7 @@ Sec-Fetch-User: ?1
 <p>→ <a href="../10.%20System-Level%20IO%20%7BCSAPP%7D/">10. System-Level IO {CSAPP}</a>에 제안된 <strong>R</strong>obust <strong>IO</strong> 패키지였다...! 11장의 디펜던시가 10장에 있었다니... 이부분도 읽어야 하나?</p>
 <p><strong>2023-09-18T11:12:45</strong></p>
 <p>쉽게 말해 <code>mmap</code> 쓰지말고 너가 <code>malloc</code> 써서 직접 메모리를 매핑하라 이 말인듯.</p>
+<p><strong>2023-09-18T14:26:55</strong></p>
 <iframe src="https://github.com/ChoiWheatley/swjungle-week06-proxy-lab/commit/c276f608a994f76b38cbaa32c9e5d50e5ed331c6#" allow="fullscreen" allowfullscreen="" style="height: 100%; width: 70%; aspect-ratio: 4 / 3;"></iframe>
 
 <h3 id="1110">11.10<a class="headerlink" href="#1110" title="Permanent link">#</a></h3>
@@ -38368,13 +38463,55 @@ Sec-Fetch-User: ?1
 <p>Write an HTML form for the CGI <code>adder</code> function in Figure 11.27. Your form should include two text boxes that users fill in with the two numbers to be added together. Your form should request content using <code>GET</code> method.<br />
 <code>adder</code> 함수를 위한 폼 HTML을 작성하세요. 폼은 두개의 텍스트 박스로 이루어져 있으며 유저가 각각의 숫자를 채워 넣어 두 숫자를 더한 값을 확인하도록 해보세요. 폼은 <code>GET</code> 메서드를 이용하여 요청되어야 합니다.</p>
 </blockquote>
-<p>❓ CGI? Computer Graphics Interface?</p>
+<p>❓ CGI? Computer Graphics Interface? 아니, Common Gateway Interface이다</p>
 <h3 id="1111">11.11<a class="headerlink" href="#1111" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Extend <code>Tiny</code> to support the HTTP <code>HEAD</code> method. Check your work using TELNET as a web client.<br />
 <code>Tiny</code>가 <code>HEAD</code> 메서드를 지원하도록 확장해보세요. 텔넷을 웹 클라이언트로 결과를 확인해 보세요. </p>
 </blockquote>
 <p>아니 요즘 누가 텔넷을 쓰냐? 맛좋은 포스트맨이 있는데!</p>
+<p>일단 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Request_header">request header</a>의 구성을 조사해 볼 필요가 있다.</p>
+<blockquote>
+<p>A request header is an HTTP header that can be used in an HTTP request to provide information about the request context, so that the server can tailor the response.</p>
+</blockquote>
+<p>GET 메서드에 대한 request header 예시. 첫 줄에는 무조건 메서드, 엔드포인트, HTTP 버전이 들어가는구나.</p>
+<div class="highlight"><pre><span></span><code><span class="nf">GET</span> <span class="nn">/home.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">developer.mozilla.org</span>
+<span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span>
+<span class="na">Accept-Language</span><span class="o">:</span> <span class="l">en-US,en;q=0.5</span>
+<span class="na">Accept-Encoding</span><span class="o">:</span> <span class="l">gzip, deflate, br</span>
+<span class="na">Referer</span><span class="o">:</span> <span class="l">https://developer.mozilla.org/testpage.html</span>
+<span class="na">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
+<span class="na">Upgrade-Insecure-Requests</span><span class="o">:</span> <span class="l">1</span>
+<span class="na">If-Modified-Since</span><span class="o">:</span> <span class="l">Mon, 18 Jul 2016 02:36:04 GMT</span>
+<span class="na">If-None-Match</span><span class="o">:</span> <span class="l">&quot;c561c68d0ba92bbeb8b0fff2a9199f722e3a621a&quot;</span>
+<span class="na">Cache-Control</span><span class="o">:</span> <span class="l">max-age=0</span>
+</code></pre></div>
+<p>생각해 보니 <code>serve_static</code>에서 body를 제외한 부분만 보내면 되는 아주 간단한 문제였다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">/// @brief response header against HEAD request</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">serve_static_head</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">filesize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">srcfd</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">srcp</span><span class="p">,</span><span class="w"> </span><span class="n">filetype</span><span class="p">[</span><span class="n">MAXLINE</span><span class="p">],</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="n">MAXBUF</span><span class="p">];</span>
+
+<span class="w">  </span><span class="c1">// Send response headers to client</span>
+<span class="w">  </span><span class="n">get_filetype</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">filetype</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HTTP/1.0 200 OK</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%sServer: Tiny Web Server</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%sConnection: close</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%sContent-Length: %d</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">filesize</span><span class="p">);</span>
+<span class="w">  </span><span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%sContent-Type: %s</span><span class="se">\r\n\r\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">filetype</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// send to client response header</span>
+<span class="w">  </span><span class="n">Rio_writen</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>
+
+<span class="w">  </span><span class="c1">// just for me</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Response headers: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// there are no body in this response! end function</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 

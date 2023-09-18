@@ -8805,12 +8805,46 @@
   
   
     <li class="md-tabs__item">
+      <a href="../getaddrinfo/" class="md-tabs__link">
+        
+  
+    
+  
+  getaddrinfo
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../getattr%2C%20setattr%20%7Bpython%7D/" class="md-tabs__link">
         
   
     
   
   getattr, setattr {python}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getnameinfo/" class="md-tabs__link">
+        
+  
+    
+  
+  getnameinfo
 
       </a>
     </li>
@@ -10086,6 +10120,23 @@
     
   
   mkdocs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mmap%282%29/" class="md-tabs__link">
+        
+  
+    
+  
+  mmap(2)
 
       </a>
     </li>
@@ -28931,11 +28982,49 @@
   
   
     <li class="md-nav__item">
+      <a href="../getaddrinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getaddrinfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getattr%2C%20setattr%20%7Bpython%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     getattr, setattr {python}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getnameinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getnameinfo
   </span>
   
 
@@ -30361,6 +30450,25 @@
   
   <span class="md-ellipsis">
     mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mmap%282%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mmap(2)
   </span>
   
 
@@ -37716,9 +37824,12 @@
 <ul>
 <li><a href="../week06%20%7Bswjungle%7D%7Bproxy-lab%7D/">week06 {swjungle}{proxy-lab}</a></li>
 <li><a href="http://csapp.cs.cmu.edu/3e/proxylab.pdf">proxylab.pdf</a></li>
+<li><a href="https://www.geeksforgeeks.org/creating-a-proxy-webserver-in-python-set-1/">Tutorial from GFG</a></li>
+<li><a href="https://github.com/anapeksha/python-proxy-server/blob/main/src/server.py">python-proxy-server {GH}</a></li>
+<li><a href="https://thepythoncode.com/article/writing-http-proxy-in-python-with-mitmproxy">python mitmproxy practice</a></li>
 </ul>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h2>
-<p>Correctness(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이다.</p>
+<p>Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이다.</p>
 <h2 id="01-introduction">01. Introduction<a class="headerlink" href="#01-introduction" title="Permanent link">#</a></h2>
 <p>웹 프록시는 웹 브라우저와 웹 서버 사이를 중개하는 미들웨어의 역할을 담당한다. 유저가 직접 웹 페이지와 접속하는 대신에, 유저는 프록시에게 요청을 보내게 된다. 프록시는 해당 요청을 받아 웹 서버로 요청을 전달하게 되고, 응답을 받아 다시 클라이언트로 응답을 전달하게 된다.</p>
 <p>프록시는 여러 측면에서 유용한데, 먼저 방화벽 뒤에 웹 브라우저가 있을 때에 프록시를 사용하여 방화벽 너머에 있는 웹 페이지에 접속할 수 있다. 그리고 프록시가 사용자 정보와 쿠키를 의도적으로 저장하지 않으면서 익명성을 만족시킬 수도 있다. 프록시는 캐싱도 지원하는데, 한 번 캐싱된 자원에 한하여 굳이 리모트 서버에 요청을 전달할 필요가 없기 때문이다.</p>
