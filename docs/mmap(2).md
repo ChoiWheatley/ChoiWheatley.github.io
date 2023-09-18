@@ -4,7 +4,7 @@ tags:
 description:
 title: mmap(2)
 created: 2023-09-18T19:22:29
-updated: 2023-09-18T20:10:54
+updated: 2023-09-18T20:55:57
 ---
 - <https://www.man7.org/linux/man-pages/man2/mmap.2.html>
 - <https://en.wikipedia.org/wiki/Mmap>
@@ -48,3 +48,16 @@ int munmap(void addr[.length], size_t length);
 > 메모리 공간은 랜덤 액세스가 가능하기에 pointer arithmetic또한 가능합니다. `mmap`을 사용하여 파일과 메모리를 매핑하면 파일(디스크파일, 소켓)도 pointer arithmetic을 사용한 랜덤 액세스가 가능해지나요?
 
 질문의 의도는 Unix IO만을 사용하면 순차읽기밖에 허용하지 않는데, `mmap`을 사용하면서 랜덤 액세스가 가능해지는 것이 아닌가 궁금했다. 디스크는 랜덤액세스가 가능한 반면, 소켓은 랜덤 액세스가 안되는 거 아닌가?
+
+### Answer by @신병철
+
+디스크도 sequential access이다. 다만 그 속도가 (상대적으로) 빨라서 랜덤 액세스 인것처럼 보이는 것이고. lazy demand한 속성으로 인해 메모리 맵 공간은 초기에는 아무것도 메모리에 올라와 있지 않다가 맵 공간 안 임의주소를 참조하면 시작지점부터 해당 주소(가 들어있는 페이지)까지를 읽어들인 뒤에 비로소 그 위치의 값을 참조하게 될 것이다.
+
+stdin과 같이 스트림으로 들어오는 파일은 어떻게 될까? 실험을 해봐야 알겠지만 내 생각엔 해당 메모리 위치가 나올 때까지 Blocking 상태가 될 것 같다.
+
+## 실험 with `mmap` & `stdin`
+
+1. stdin을 `mmap`한다. 그 첫 주소의 위치를 `stdin_p`라고 하자.
+2. `*(stdin_p + 10)`의 값을 출력한다. 그러면 분명 blocking 상태가 되겠지.
+3. 의도적으로 터미널에 한 글자만(1 byte) 넣고 엔터를 쳐보자.
+4. 긴 문자열 (적어도 10byte는 넘는)을 터미널에 넣고 엔터를 쳐보자.
