@@ -4,9 +4,10 @@ tags:
 description:
 title: port forwarding WSL2
 created: 2023-09-16T13:01:58
-updated: 2023-09-18T09:55:06
+updated: 2023-09-18T10:17:45
 ---
 - [allow server running inside wsl to be accecible outside windows 10 host](https://www.nextofwindows.com/allow-server-running-inside-wsl-to-be-accessible-outside-windows-10-host)
+- [기존 방화벽/netsh 설정 제거 및 새 WSL2 아이피 기반으로 방화벽/netsh 설정 추가 스크립트 {GH issue} {script}](https://github.com/microsoft/WSL/issues/4150#issuecomment-504209723)
 
 ## TL;DR
 
