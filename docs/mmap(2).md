@@ -4,9 +4,10 @@ tags:
 description:
 title: mmap(2)
 created: 2023-09-18T19:22:29
-updated: 2023-09-18T19:52:48
+updated: 2023-09-18T20:10:54
 ---
 - <https://www.man7.org/linux/man-pages/man2/mmap.2.html>
+- <https://en.wikipedia.org/wiki/Mmap>
 - [[9. Virtual Memory]]
 
 ```c
@@ -34,6 +35,13 @@ int munmap(void addr[.length], size_t length);
 ## Notes
 
 `mmap`으로 매핑한 메모리 영역은 [[fork(2)]] 를 통해 공유될 수 있다.
+
+## wiki
+
+- `mmap`으로 할당받은 영역은 언제나 게으르게 파일을 읽거나 쓴다. 이것을 *Lazy demanding*이라고 부른다.
+- `MAP_SHARED`로 매핑한 영역은 `fork`에 의한 영역을 보존하여 부모(또는 자식) 프로세스가 그 영역을 수정하면 다른 프로세스도 수정된 내용을 볼 수 있다.
+- `MAP_PRIVATE`으로 매핑한 영역은 `fork`를 하게되면 Copy On Write 메커니즘으로 인해 프로세스마다 다른 값을 가지게 된다.
+- [[msync(2)]] 시스템 콜을 호출하면 강제로 수정한 메모리 맵 영역을 파일로 밀어넣게 된다. `MAP_SHARED`로 매핑한 영역도 다른 프로세스들이 나의 수정사항을 보게 만들고 싶다면 수정 후`msync`를 호출해야 한다.
 
 ## Question
 
