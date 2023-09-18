@@ -4,14 +4,14 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-17T22:40:37
+updated: 2023-09-18T17:50:01
 ---
 - [[week06 {swjungle}{proxy-lab}]]
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
 
 ## TL;DR
 
-Correctness(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이다.
+Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이다.
 
 ## 01. Introduction
 
