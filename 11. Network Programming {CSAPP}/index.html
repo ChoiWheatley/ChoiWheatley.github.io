@@ -11408,6 +11408,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../read%282%29/" class="md-tabs__link">
+        
+  
+    
+  
+  read(2)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../realloc%20%7BC%7D/" class="md-tabs__link">
         
   
@@ -32062,6 +32079,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../read%282%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    read(2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../realloc%20%7BC%7D/" class="md-nav__link">
         
   
@@ -38315,6 +38351,7 @@ Sec-Fetch-User: ?1
 <code>Tiny</code>가 <code>MPG</code> 영상파일을 제공하도록 기능을 확장해 보세요. 실제 브라우저를 활용해 시도해 보세요.</p>
 </blockquote>
 <p>❗️ <code>MPG</code> 포맷이 아닌, <code>MP4</code> 포맷을 사용하도록 변경.</p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-18%20%EC%98%A4%EC%A0%84%2011.12.07.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-09-18 오전 11.12.07.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-18%20%EC%98%A4%EC%A0%84%2011.12.07.png" /></a></p>
 <h3 id="119">11.9<a class="headerlink" href="#119" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Modify <code>Tiny</code> so that when it serves static content, it copies the requested file to the connected descriptor using <code>malloc</code>, <code>rio_readn</code>, and <code>rio_writen</code>, instead of <code>mmap</code> and <code>rio_written</code>.<br />
@@ -38322,6 +38359,10 @@ Sec-Fetch-User: ?1
 </blockquote>
 <p>어려운 용어들 나온다. descriptor는 file desciptor를 의미하나? <code>rio</code> 접두어는 무엇을 하는 녀석일까?</p>
 <p>→ <a href="../10.%20System-Level%20IO%20%7BCSAPP%7D/">10. System-Level IO {CSAPP}</a>에 제안된 <strong>R</strong>obust <strong>IO</strong> 패키지였다...! 11장의 디펜던시가 10장에 있었다니... 이부분도 읽어야 하나?</p>
+<p><strong>2023-09-18T11:12:45</strong></p>
+<p>쉽게 말해 <code>mmap</code> 쓰지말고 너가 <code>malloc</code> 써서 직접 메모리를 매핑하라 이 말인듯.</p>
+<iframe src="https://github.com/ChoiWheatley/swjungle-week06-proxy-lab/commit/c276f608a994f76b38cbaa32c9e5d50e5ed331c6#" allow="fullscreen" allowfullscreen="" style="height: 100%; width: 70%; aspect-ratio: 4 / 3;"></iframe>
+
 <h3 id="1110">11.10<a class="headerlink" href="#1110" title="Permanent link">#</a></h3>
 <blockquote>
 <p>Write an HTML form for the CGI <code>adder</code> function in Figure 11.27. Your form should include two text boxes that users fill in with the two numbers to be added together. Your form should request content using <code>GET</code> method.<br />
