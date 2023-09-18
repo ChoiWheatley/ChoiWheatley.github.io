@@ -4,10 +4,13 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-18T17:50:01
+updated: 2023-09-18T21:30:02
 ---
 - [[week06 {swjungle}{proxy-lab}]]
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
+- [Tutorial from GFG](https://www.geeksforgeeks.org/creating-a-proxy-webserver-in-python-set-1/)
+- [python-proxy-server {GH}](https://github.com/anapeksha/python-proxy-server/blob/main/src/server.py)
+- [python mitmproxy practice](https://thepythoncode.com/article/writing-http-proxy-in-python-with-mitmproxy)
 
 ## TL;DR
 

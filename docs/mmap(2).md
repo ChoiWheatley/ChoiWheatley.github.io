@@ -4,7 +4,7 @@ tags:
 description:
 title: mmap(2)
 created: 2023-09-18T19:22:29
-updated: 2023-09-18T21:16:42
+updated: 2023-09-18T21:27:11
 ---
 - <https://www.man7.org/linux/man-pages/man2/mmap.2.html>
 - <https://en.wikipedia.org/wiki/Mmap>
@@ -65,3 +65,5 @@ stdin과 같이 스트림으로 들어오는 파일은 어떻게 될까? 실험�
 결과: SEGFAULT
 
 커널 단에서 유저의 입력을 대기할 줄 알았는데, 초기화 되지 않은 맵 영역을 출력하지도 않고 곧장 죽어버린다. 다만 `./a.out < driver.c` 와 같이 디스크파일을 프로세스의 stdin으로 리디렉션 하게 만들자 정상적으로 출력이 됐다. 역시 포인터 연산은 아무렇게나 한다고 되는 것이 아니구나. `read` 따위를 써야겠다.
+
+[관련 질문](https://stackoverflow.com/questions/70053097/why-memory-mapping-to-stdout-fileno-failed)
