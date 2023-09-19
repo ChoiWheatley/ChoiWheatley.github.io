@@ -4,7 +4,7 @@ tags:
 description:
 title: Socket Programming C API
 created: 2023-09-16T16:57:23
-updated: 2023-09-19T17:35:14
+updated: 2023-09-19T21:10:56
 ---
 - [[0017 C 🍎]]
 ___
@@ -46,3 +46,5 @@ accept --> id2["recv or read"]
 
 - [[getnameinfo(3)]]
 - [[getaddrinfo(3)]]
+- [[htonl, htons, ntohl, ntohs {htonl(3)}]]
+- [[sockaddr(3type)]]
