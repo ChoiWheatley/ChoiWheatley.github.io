@@ -38041,7 +38041,20 @@
 
 <span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">gai_strerror</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">errcode</span><span class="p">);</span>
 </code></pre></div>
-<p>hostname, host address, service name, port number를 한데모아 하나의 <code>struct addrinfo</code> 구조체에 담아주는 친절한 함수이다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">              </span><span class="n">ai_flags</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">              </span><span class="n">ai_family</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">              </span><span class="n">ai_socktype</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w">              </span><span class="n">ai_protocol</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">socklen_t</span><span class="w">        </span><span class="n">ai_addrlen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">sockaddr</span><span class="w"> </span><span class="o">*</span><span class="n">ai_addr</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w">            </span><span class="o">*</span><span class="n">ai_canonname</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="o">*</span><span class="n">ai_next</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>hostname, host address, service name, port number를 한데모아 하나의 <code>struct addrinfo</code> 구조체에 담아주는 친절한 함수이다. 이중 포인터인 이유는 CSAPP Figure 11.15에서 볼 수 있다시피 연결리스트의 첫 주소를 가리키고 있기 때문이다. 연결리스트 head를 이중 포인터로 만든 덕분에 포인터의 값을 <code>getaddrinfo</code>가 스스로 할당해서 그 위치를 먹일 수 있게 되었다. </p>
+<p><code>getaddrinfo</code>는 힙 메모리 영역 위에 할당받은 연결리스트를 사용하기 때문에 <code>freeaddrinfo</code> 함수를 호출하여 제거해 주어야 한다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230919190726.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230919190726.png" src="../assets/Pasted%20image%2020230919190726.png" /></a></p>
 
 
 
