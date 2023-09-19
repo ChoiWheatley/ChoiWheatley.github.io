@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
       
 
@@ -7005,6 +7005,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../bind%282%29/" class="md-tabs__link">
+        
+  
+    
+  
+  bind(2)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../black%20formatter%20%7Bpython%7D%20%7Bvscode%7D/" class="md-tabs__link">
         
   
@@ -7368,6 +7385,23 @@
     
   
   conda, pyenv, pipenv, venv와의 차이점
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../connect%282%29/" class="md-tabs__link">
+        
+  
+    
+  
+  connect(2)
 
       </a>
     </li>
@@ -11272,6 +11306,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../python%20proxy%20server/" class="md-tabs__link">
+        
+  
+    
+  
+  python proxy server
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../python%20venv%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/" class="md-tabs__link">
         
   
@@ -12026,6 +12077,23 @@
     
   
   snake game with rust
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sockaddr%283type%29/" class="md-tabs__link">
+        
+  
+    
+  
+  sockaddr(3type)
 
       </a>
     </li>
@@ -27065,6 +27133,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../bind%282%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bind(2)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../black%20formatter%20%7Bpython%7D%20%7Bvscode%7D/" class="md-nav__link">
         
   
@@ -27469,6 +27556,25 @@
   
   <span class="md-ellipsis">
     conda, pyenv, pipenv, venv와의 차이점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../connect%282%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    connect(2)
   </span>
   
 
@@ -31834,6 +31940,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../python%20proxy%20server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python proxy server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../python%20venv%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/" class="md-nav__link">
         
   
@@ -32675,6 +32800,25 @@
   
   <span class="md-ellipsis">
     snake game with rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sockaddr%283type%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sockaddr(3type)
   </span>
   
 
@@ -37899,25 +38043,21 @@
 
   <h1>Socket Programming C API</h1>
 
+<ul>
+<li><a href="../index/0017%20C%20%F0%9F%8D%8E/">0017 C 🍎</a></li>
+</ul>
+<hr />
 <h2 id="socket-programming-tutorial-in-c-for-beginners">Socket Programming Tutorial In C For Beginners<a class="headerlink" href="#socket-programming-tutorial-in-c-for-beginners" title="Permanent link">#</a></h2>
 <iframe title="Socket Programming Tutorial In C For Beginners | Part 1 | Eduonix" src="https://www.youtube.com/embed/LtXEMwSG5-8?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 50%; height: 50%;"></iframe>
 
 <p><strong>Client socket workflow</strong></p>
 <pre class="mermaid"><code>graph LR;
-socket --&gt; connect --&gt; recv
-connect --&gt; send</code></pre>
+socket --&gt; connect
+connect --&gt; id1["send or write"]
+connect --&gt; id2["recv or read"]</code></pre>
 <ul>
-<li><code>socket(AF_INET, SOCK_STREAM, 0)</code>: 소켓을 생성하여 file descriptor를 리턴받는다.</li>
-<li><code>struct sockaddr_in</code>: 소켓에 구체적인 주소를 지정한다. (IP, port)<ul>
-<li><code>.sin_family</code></li>
-<li><code>.sin_port</code><ul>
-<li><code>htons(int port)</code>: 포트번호를 변환한다.</li>
-</ul>
-</li>
-<li><code>.sin_addr.s_addr</code>: 클라이언트가 허용할 IP주소를 지정한다. <code>INADDR_ANY</code>는 <code>0.0.0.0</code>과 동일하다.</li>
-</ul>
-</li>
-<li><code>connect(socket, struct sockaddr *, size of address)</code>: establish connection, return 0 on success, -1 on failure</li>
+<li>[[socket(2)]] <code>socket(AF_INET, SOCK_STREAM, 0)</code>: 소켓을 생성하여 file descriptor를 리턴받는다.</li>
+<li><a href="../connect%282%29/">connect(2)</a></li>
 <li><code>recv(socket, char * server_response, size of buffer, 0)</code>: recieve data from the server</li>
 <li><code>close(socket)</code></li>
 </ul>
@@ -37926,10 +38066,10 @@ connect --&gt; send</code></pre>
 socket --&gt; bind
 bind --&gt; listen
 listen --&gt; accept
-accept --&gt; send
-accept --&gt; recv</code></pre>
+accept --&gt; id1["send or write"]
+accept --&gt; id2["recv or read"]</code></pre>
 <ul>
-<li><code>bind(socket, struct sockaddr *, size of address)</code>:  소켓에 ip, port쌍을 바인드 한다.</li>
+<li><a href="../bind%282%29/">bind(2)</a> :  소켓에 ip, port쌍을 바인드 한다.</li>
 <li><code>listen(socket, backlog)</code>: <code>accept</code>를 통해 들어오는 연결들을 관리한다. <code>backlog</code>를 사용하여 최대 들어오는 요청 수를 정의할 수는 있는데, 동시접속을 허용하려면 동시성 프로그래밍을 다뤄야 한다...</li>
 <li><code>accept(socket, struct sockaddr *, socklen_t *)</code>: 클라이언트 소켓을 받는다. 두 번째, 세 번째 인자를 넣어 클라이언트의 주소를 얻을 수 있다.</li>
 <li><code>send(socket, char *buf, int buflen, flag)</code>: 지정한 소켓으로 메시지를 보낸다.</li>

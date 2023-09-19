@@ -1996,6 +1996,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/bind%282%29/</loc>
+         <lastmod>2023-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/black%20formatter%20%7Bpython%7D%20%7Bvscode%7D/</loc>
          <lastmod>2023-09-19</lastmod>
          <changefreq>daily</changefreq>
@@ -2102,6 +2107,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/conda%2C%20pyenv%2C%20pipenv%2C%20venv%EC%99%80%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/</loc>
+         <lastmod>2023-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/connect%282%29/</loc>
          <lastmod>2023-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3251,6 +3261,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/python%20proxy%20server/</loc>
+         <lastmod>2023-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/python%20venv%20%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/</loc>
          <lastmod>2023-09-19</lastmod>
          <changefreq>daily</changefreq>
@@ -3472,6 +3487,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/snake%20game%20with%20rust/</loc>
+         <lastmod>2023-09-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/sockaddr%283type%29/</loc>
          <lastmod>2023-09-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
