@@ -4,7 +4,7 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-19T19:49:19
+updated: 2023-09-19T21:48:40
 ---
 - [[week06 {swjungle}{proxy-lab}]]
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
@@ -48,6 +48,27 @@ Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이�
 3. 클라이언트가 본래 보내려고 하던 웹서버와 연결을 체결하라.
 4. 클라이언트가 본래 보내려고 하던 요청을 웹서버에게 전달하라.
 5. 웹서버의 응답을 클라이언트에게 전달하라.
+
+**요구사항**
+
+- 언제나 `HOST` 헤더를 추가하세요. 웹 브라우저가 목적지 서버에 대한 정보를 `HOST`에 담아서 준다면 그 정보를 그대로 쓰고, 그렇지 않다면 uri에 명시된 호스트를 사용하세요.
+- (Optional) 다음 `User-Agent` 헤더를 추가하세요.
+
+	```
+	User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:10.0.3) Gecko/20120305 Firefox/10.0.3
+	```
+
+- 언제나 다음 `Connection` 헤더를 추가하세요.
+
+	```
+	Connection: close
+	```
+
+- 언제나 다음 `Proxy-Connection` 헤더를 추가하세요.
+
+	```
+	Proxy-Connection: close
+	```
 
 [[proxylab1.excalidraw]]
 
