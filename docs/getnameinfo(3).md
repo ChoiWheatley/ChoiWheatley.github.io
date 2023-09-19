@@ -4,7 +4,7 @@ tags:
 description:
 title: getnameinfo(3)
 created: 2023-09-18T14:33:17
-updated: 2023-09-19T17:35:43
+updated: 2023-09-19T19:05:43
 ---
 - <https://www.man7.org/linux/man-pages/man3/getnameinfo.3.html>
 - [[0017 C 🍎]]
@@ -27,7 +27,7 @@ int getnameinfo(const struct sockaddr *restrict addr,
 
 ## description
 
-`getnameinfo`는 `getaddrinfo`의 반대역할을 수행합니다. 이 함수는 소켓 주소를 프로토콜-독립적인 방법으로 각각 호스트, 서비스 주소로 변환합니다. 
+`getnameinfo`는 [[getaddrinfo(3)]]의 반대역할을 수행합니다. 이 함수는 소켓 주소를 프로토콜-독립적인 방법으로 각각 호스트, 서비스 주소로 변환합니다. 
 
 `host`, `serv` 인자는 호출자가 할당하여야 하며, `getnameinfo` 호출시 주소 이름이 들어가게 됩니다.
 
