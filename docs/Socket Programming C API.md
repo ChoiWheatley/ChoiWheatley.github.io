@@ -24,12 +24,12 @@ connect --> id2["recv or read"]
 
 - [[socket(2)]] `socket(AF_INET, SOCK_STREAM, 0)`: 소켓을 생성하여 file descriptor를 리턴받는다.
 - `struct in_addr`: 네트워크 바이트 오더(빅 엔디언)으로 저장된 IP주소를 담는 구조체이다. 32비트 정수 멤버 하나를 갖고있다.
-- `struct sockaddr_in`: 소켓에 구체적인 주소를 지정한다. (IP, port)
+- `struct sockaddr`: 소켓에 구체적인 주소를 지정한다. (IP, port)
 	- `.sin_family`: Internet Family를 설정한다. IPv4인 경우 `AF_INET`, IPv6인 경우 `AP_INET6`이고 다른 옵션들도 많다.
 	- `.sin_port`: 네트워크 바이트 오더(빅 엔디언)로 변환된 `uint16_t` 타입 정수
 		- [`htons(uint16_t hostshort)`](https://www.man7.org/linux/man-pages/man3/htons.3.html): 포트번호를 변환한다.
 	- `.sin_addr`: 클라이언트가 허용할 IP주소를 지정한다. `INADDR_ANY`는 `0.0.0.0`과 동일하다.
-- `connect(socket, struct sockaddr *, size of address)`: establish connection, return 0 on success, -1 on failure | 서버에게 커넥션을 요청하는 시스템콜. 소켓을 그대로 인자에 넣는거 유의
+- [[connect(2)]]
 - `recv(socket, char * server_response, size of buffer, 0)`: recieve data from the server
 - `close(socket)`
 
