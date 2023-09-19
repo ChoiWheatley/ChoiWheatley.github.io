@@ -4,7 +4,7 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-19T13:03:31
+updated: 2023-09-19T16:29:38
 ---
 - [[week06 {swjungle}{proxy-lab}]]
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
@@ -31,6 +31,10 @@ Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이�
 - 플로우를 알기 위해 파이썬 코드를 읽어가보는 것을 먼저 해보기로 했다. | [[#python proxy web server]]
 - HTTPS 접속이 불가하다. eavesdropping을 원칙적으로 금지하기 때문에 프록시 서버가 SSL 인증 없이는 중간 패킷을 볼 수 없기 때문이다. | [HTTPS connections over proxy servers {SO}](https://stackoverflow.com/questions/516323/https-connections-over-proxy-servers)
 
-## python proxy web server
+### python proxy web server
 
 [[python proxy server]]
+
+### Client and Server Socket Programming
+
+[[Socket Programming C API]]
