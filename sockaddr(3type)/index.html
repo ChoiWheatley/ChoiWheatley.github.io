@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#description" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -9163,6 +9168,23 @@
     
   
   html table
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  htonl, htons, ntohl, ntohs {htonl(3)}
 
       </a>
     </li>
@@ -29517,6 +29539,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    htonl, htons, ntohl, ntohs {htonl(3)}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hyper%20Server/" class="md-nav__link">
         
   
@@ -32773,6 +32814,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    sockaddr(3type)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -32782,6 +32834,30 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -37973,6 +38049,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -37988,7 +38079,10 @@
 
   <h1>sockaddr(3type)</h1>
 
-<p><a href="https://www.man7.org/linux/man-pages/man3/sockaddr.3type.html">https://www.man7.org/linux/man-pages/man3/sockaddr.3type.html</a></p>
+<ul>
+<li><a href="https://www.man7.org/linux/man-pages/man3/sockaddr.3type.html">https://www.man7.org/linux/man-pages/man3/sockaddr.3type.html</a></li>
+<li><a href="../index/0017%20C%20%F0%9F%8D%8E/">0017 C 🍎</a></li>
+</ul>
 <hr />
 <div class="highlight"><pre><span></span><code><span class="w">       </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/socket.h&gt;</span>
 
@@ -38040,6 +38134,19 @@
 <span class="w">           </span><span class="kt">char</span><span class="w">            </span><span class="n">sun_path</span><span class="p">[];</span><span class="w">     </span><span class="cm">/* Socket pathname */</span>
 <span class="w">       </span><span class="p">};</span>
 </code></pre></div>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">#</a></h2>
+<ul>
+<li><code>sockaddr</code>: 소켓 주소를 정의하는 <strong>제네릭</strong> 타입</li>
+<li><code>sa_family_t</code>: socket address family, 즉 어떤 구체적인 소켓 프로토콜을 의미하는지를 정의한다. 대표적으로 <code>AF_INET</code>, <code>AF_INET6</code>가 있고, 각각 IPv4, IPv6를 의미한다.</li>
+<li><code>sockaddr_in</code>: IPv4 인터넷 도메인 소켓 주소를 정의하는 <strong>구체</strong>타입<ul>
+<li><code>struct in_addr</code>: 네트워크 바이트 오더(빅 엔디언)으로 저장된 IP주소를 담는 구조체이다. 32비트 정수 멤버 하나 (<code>in_addr_t</code>) 를 갖고있다.</li>
+<li><code>in_port_t</code>: 네트워크 바이트 오더(빅 엔디언)로 변환된 <code>uint16_t</code> 타입 정수</li>
+</ul>
+</li>
+<li><code>sockaddr_in6</code>: IPv6 인터넷 도메인 소켓 주소를 정의하는 <strong>구체</strong>타입</li>
+<li><code>sockaddr_un</code>: UNIX 도메인 소켓 주소를 정의하는 <strong>구체</strong>타입</li>
+</ul>
+<p>모든 주소값(IP주소, Port)은 네트워크 바이트 오더로 구성되어 있으며, <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/">htonl, htons, ntohl, ntohs {htonl(3)}</a>로 호스트 주소와 네트워크 주소를 변환할 수 있다.</p>
 
 
 

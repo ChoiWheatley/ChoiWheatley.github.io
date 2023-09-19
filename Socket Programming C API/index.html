@@ -9181,6 +9181,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  htonl, htons, ntohl, ntohs {htonl(3)}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../hyper%20Server/" class="md-tabs__link">
         
   
@@ -29565,6 +29582,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    htonl, htons, ntohl, ntohs {htonl(3)}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hyper%20Server/" class="md-nav__link">
         
   
@@ -38056,10 +38092,9 @@ socket --&gt; connect
 connect --&gt; id1["send or write"]
 connect --&gt; id2["recv or read"]</code></pre>
 <ul>
-<li>[[socket(2)]] <code>socket(AF_INET, SOCK_STREAM, 0)</code>: 소켓을 생성하여 file descriptor를 리턴받는다.</li>
-<li><a href="../connect%282%29/">connect(2)</a></li>
-<li><code>recv(socket, char * server_response, size of buffer, 0)</code>: recieve data from the server</li>
-<li><code>close(socket)</code></li>
+<li>[[socket(2)]] | 소켓을 생성하여 file descriptor를 리턴받는다.</li>
+<li><a href="../connect%282%29/">connect(2)</a> | 서버에게 커넥션을 요청한다.</li>
+<li>[[recv(2)]] | recieve data from the server</li>
 </ul>
 <p><strong>Server socket workflow</strong></p>
 <pre class="mermaid"><code>graph LR;
@@ -38069,9 +38104,9 @@ listen --&gt; accept
 accept --&gt; id1["send or write"]
 accept --&gt; id2["recv or read"]</code></pre>
 <ul>
-<li><a href="../bind%282%29/">bind(2)</a> :  소켓에 ip, port쌍을 바인드 한다.</li>
+<li><a href="../bind%282%29/">bind(2)</a> | 소켓에 ip, port쌍을 바인드 한다.</li>
 <li><code>listen(socket, backlog)</code>: <code>accept</code>를 통해 들어오는 연결들을 관리한다. <code>backlog</code>를 사용하여 최대 들어오는 요청 수를 정의할 수는 있는데, 동시접속을 허용하려면 동시성 프로그래밍을 다뤄야 한다...</li>
-<li><code>accept(socket, struct sockaddr *, socklen_t *)</code>: 클라이언트 소켓을 받는다. 두 번째, 세 번째 인자를 넣어 클라이언트의 주소를 얻을 수 있다.</li>
+<li>[[accept(2)]] <code>accept(socket, struct sockaddr *, socklen_t *)</code>: 클라이언트 소켓을 받는다. 두 번째, 세 번째 인자를 넣어 클라이언트의 주소를 얻을 수 있다.</li>
 <li><code>send(socket, char *buf, int buflen, flag)</code>: 지정한 소켓으로 메시지를 보낸다.</li>
 </ul>
 

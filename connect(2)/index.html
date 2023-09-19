@@ -9176,6 +9176,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  htonl, htons, ntohl, ntohs {htonl(3)}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../hyper%20Server/" class="md-tabs__link">
         
   
@@ -29525,6 +29542,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../htonl%2C%20htons%2C%20ntohl%2C%20ntohs%20%7Bhtonl%283%29%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    htonl, htons, ntohl, ntohs {htonl(3)}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hyper%20Server/" class="md-nav__link">
         
   
@@ -37990,6 +38026,7 @@
 
 <ul>
 <li><a href="https://man7.org/linux/man-pages/man2/connect.2.html">https://man7.org/linux/man-pages/man2/connect.2.html</a></li>
+<li><a href="../index/0017%20C%20%F0%9F%8D%8E/">0017 C 🍎</a></li>
 </ul>
 <hr />
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/socket.h&gt;</span>
@@ -38006,20 +38043,8 @@
 서버에게 커넥션을 요청하는 시스템콜. 소켓을 그대로 인자에 넣는거 유의</p>
 </blockquote>
 <p><code>addr</code> 주소와 연결을 요청한 뒤 연결이 체결되면 <code>sockfd</code>로 스트림/데이터그램 접근이 가능하다.</p>
-<p><a href="../sockaddr%283type%29/">sockaddr(3type)</a>
+<p><a href="../sockaddr%283type%29/">sockaddr(3type)</a><br />
 <code>sockaddr</code> 타입은 제네릭 타입으로 각각 <code>sockaddr_in</code>과 <code>sockaddr_in6</code> 따위로 분리될 수 있다. </p>
-<ul>
-<li><code>struct in_addr</code>: 네트워크 바이트 오더(빅 엔디언)으로 저장된 IP주소를 담는 구조체이다. 32비트 정수 멤버 하나를 갖고있다.</li>
-<li><code>struct sockaddr_in</code>: 소켓에 구체적인 주소를 지정한다. (IP, port)<ul>
-<li><code>.sin_family</code>: Internet Family를 설정한다. IPv4인 경우 <code>AF_INET</code>, IPv6인 경우 <code>AP_INET6</code>이고 다른 옵션들도 많다.</li>
-<li><code>.sin_port</code>: 네트워크 바이트 오더(빅 엔디언)로 변환된 <code>uint16_t</code> 타입 정수<ul>
-<li><a href="https://www.man7.org/linux/man-pages/man3/htons.3.html"><code>htons(uint16_t hostshort)</code></a>: 포트번호를 변환한다.</li>
-</ul>
-</li>
-<li><code>.sin_addr</code>: 클라이언트가 허용할 IP주소를 지정한다. <code>INADDR_ANY</code>는 <code>0.0.0.0</code>과 동일하다.</li>
-</ul>
-</li>
-</ul>
 
 
 
