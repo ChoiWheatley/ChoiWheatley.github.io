@@ -4,7 +4,7 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-19T16:29:38
+updated: 2023-09-19T19:49:19
 ---
 - [[week06 {swjungle}{proxy-lab}]]
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
@@ -38,3 +38,17 @@ Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이�
 ### Client and Server Socket Programming
 
 [[Socket Programming C API]]
+
+## 04. Part I: Implementing a sequential web proxy
+
+`HTTP/1.0 GET` 요청을 처리하는 순차적 프록시 서버를 구현해 봅시다. 
+
+1. 포트번호를 인자로 넣은 프록시 서버를 실행시켜라.
+2. 클라이언트의 요청을 파싱하고 그것이 유효한지 판단하라.
+3. 클라이언트가 본래 보내려고 하던 웹서버와 연결을 체결하라.
+4. 클라이언트가 본래 보내려고 하던 요청을 웹서버에게 전달하라.
+5. 웹서버의 응답을 클라이언트에게 전달하라.
+
+[[proxylab1.excalidraw]]
+
+![[Pasted image 20230919194918.png]]
