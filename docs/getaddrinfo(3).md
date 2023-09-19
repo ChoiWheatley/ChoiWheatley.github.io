@@ -4,9 +4,9 @@ tags:
 description:
 title: getaddrinfo(3)
 created: 2023-09-18T14:32:25
-updated: 2023-09-19T19:14:55
+updated: 2023-09-19T23:24:12
 ---
-- <https://man7.org/linux/man-pages/man3/getaddrinfo.3.html)>
+- <https://man7.org/linux/man-pages/man3/getaddrinfo.3.html>
 - [[0017 C 🍎]]
 
 ```c
