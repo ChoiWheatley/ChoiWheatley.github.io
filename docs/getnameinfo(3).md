@@ -2,11 +2,12 @@
 aliases: 
 tags: 
 description:
-title: getnameinfo
+title: getnameinfo(3)
 created: 2023-09-18T14:33:17
-updated: 2023-09-18T14:48:26
+updated: 2023-09-19T17:35:43
 ---
-<https://www.man7.org/linux/man-pages/man3/getnameinfo.3.html>
+- <https://www.man7.org/linux/man-pages/man3/getnameinfo.3.html>
+- [[0017 C 🍎]]
 
 > address-to-name translation in protocol independent  
 > 프로토콜 독립적으로 서버 주소를 이름으로 변환해주는 녀석.

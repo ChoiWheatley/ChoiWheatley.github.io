@@ -2,11 +2,12 @@
 aliases: 
 tags: 
 description:
-title: getaddrinfo
+title: getaddrinfo(3)
 created: 2023-09-18T14:32:25
-updated: 2023-09-18T14:32:27
+updated: 2023-09-19T17:36:24
 ---
-<https://man7.org/linux/man-pages/man3/getaddrinfo.3.html)>
+- <https://man7.org/linux/man-pages/man3/getaddrinfo.3.html)>
+- [[0017 C 🍎]]
 
 ```c
 #include <sys/types.h>
