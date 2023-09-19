@@ -4,7 +4,7 @@ tags:
 description:
 title: python proxy server
 created: 2023-09-19T12:28:13
-updated: 2023-09-19T13:49:15
+updated: 2023-09-19T14:36:14
 ---
 
 ## README
@@ -86,4 +86,19 @@ class Proxy(Thread):
 			# kickstart two threads
 			self.g2p.start()
 			self.p2s.start()
+```
+
+**main routine**
+
+게임 서버쪽에서 포트를 다섯개나 사용할 수도 있구나
+
+```python
+master_server = Proxy(config['LISTEN_ADDR'], config['SERVER_ADDR'], config['PORT'])
+master_server.start()
+
+game_servers = []
+for port in range(3000, 3006):
+	_game_server = Proxy(config['LISTEN_ADDR'], config['SERVER_ADDR'], port)
+	_game_server.start()
+	game_servers.append(_game_server)
 ```
