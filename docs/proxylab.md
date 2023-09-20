@@ -4,7 +4,7 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-20T18:54:47
+updated: 2023-09-20T21:47:09
 ---
 - [[week06 {swjungle}{proxy-lab}]]
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
@@ -52,7 +52,12 @@ Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이�
 **요구사항**
 
 - 현대적인 브라우저들은 HTTP/1.1 요청을 보낼 것이지만 당신이 작성할 프록시 서버는 HTTP/1.0 요청으로 전달하여야 합니다.
-- 언제나 `HOST` 헤더를 추가하세요. 웹 브라우저가 목적지 서버에 대한 정보를 `HOST`에 담아서 준다면 그 정보를 그대로 쓰고, 그렇지 않다면 uri에 명시된 호스트를 사용하세요.
+- 언제나 `HOST` 헤더를 추가하세요. 웹 브라우저가 목적지 서버에 대한 정보를 `HOST`에 담아서 준다면 그 정보를 그대로 쓰고, 그렇지 않다면 uri에 명시된 호스트를 사용하세요. 예를 들어 `http://www.cmu.edu/hub/index.html`에 접속하기 위해서 프록시 서버는 다음 헤더를 전송해야 합니다.
+
+	```
+	Host: www.cmu.edu
+	```
+
 - (Optional) 다음 `User-Agent` 헤더를 추가하세요.
 
 	```
