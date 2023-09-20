@@ -12241,6 +12241,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../split%20%7BC%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  split {C}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../ssh%20into%20WSL2%20%26%20vs-code/" class="md-tabs__link">
         
   
@@ -12264,6 +12281,23 @@
     
   
   stack {C}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../stat%282%29/" class="md-tabs__link">
+        
+  
+    
+  
+  stat(2)
 
       </a>
     </li>
@@ -32036,6 +32070,19 @@
     04. Part I: Implementing a sequential web proxy
   </a>
   
+    <nav class="md-nav" aria-label="04. Part I: Implementing a sequential web proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parse-uri" class="md-nav__link">
+    parse uri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -33192,6 +33239,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../split%20%7BC%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    split {C}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ssh%20into%20WSL2%20%26%20vs-code/" class="md-nav__link">
         
   
@@ -33216,6 +33282,25 @@
   
   <span class="md-ellipsis">
     stack {C}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stat%282%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    stat(2)
   </span>
   
 
@@ -38456,6 +38541,19 @@
     04. Part I: Implementing a sequential web proxy
   </a>
   
+    <nav class="md-nav" aria-label="04. Part I: Implementing a sequential web proxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parse-uri" class="md-nav__link">
+    parse uri
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -38509,6 +38607,7 @@
 </ol>
 <p><strong>요구사항</strong></p>
 <ul>
+<li>현대적인 브라우저들은 HTTP/1.1 요청을 보낼 것이지만 당신이 작성할 프록시 서버는 HTTP/1.0 요청으로 전달하여야 합니다.</li>
 <li>언제나 <code>HOST</code> 헤더를 추가하세요. 웹 브라우저가 목적지 서버에 대한 정보를 <code>HOST</code>에 담아서 준다면 그 정보를 그대로 쓰고, 그렇지 않다면 uri에 명시된 호스트를 사용하세요.</li>
 <li>
 <p>(Optional) 다음 <code>User-Agent</code> 헤더를 추가하세요.</p>
@@ -38528,6 +38627,10 @@
 </ul>
 <p><a href="assets/proxylab1.excalidraw.md">proxylab1.excalidraw</a></p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230919194918.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230919194918.png" src="../assets/Pasted%20image%2020230919194918.png" /></a></p>
+<h3 id="parse-uri">parse uri<a class="headerlink" href="#parse-uri" title="Permanent link">#</a></h3>
+<p>클라이언트로부터 수신된 HTTP 요청의 첫번째 줄은 언제나 메서드, URI, 버전이 명시되어 있다.</p>
+<div class="highlight"><pre><span></span><code>GET http://www.example.com/index.html HTTP/1.1
+</code></pre></div>
 
 
 
