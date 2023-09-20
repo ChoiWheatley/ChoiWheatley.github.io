@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gpt-question" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -29369,6 +29374,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    getaddrinfo(3)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -29378,6 +29394,30 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-question" class="md-nav__link">
+    gpt question
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -38369,6 +38409,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-question" class="md-nav__link">
+    gpt question
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -38415,6 +38470,72 @@
 <p>hostname, host address, service name, port number를 한데모아 하나의 <code>struct addrinfo</code> 구조체에 담아주는 친절한 함수이다. 이중 포인터인 이유는 CSAPP Figure 11.15에서 볼 수 있다시피 연결리스트의 첫 주소를 가리키고 있기 때문이다. 연결리스트 head를 이중 포인터로 만든 덕분에 포인터의 값을 <code>getaddrinfo</code>가 스스로 할당해서 그 위치를 먹일 수 있게 되었다. </p>
 <p><code>getaddrinfo</code>는 힙 메모리 영역 위에 할당받은 연결리스트를 사용하기 때문에 <code>freeaddrinfo</code> 함수를 호출하여 제거해 주어야 한다.</p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230919190726.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230919190726.png" src="../assets/Pasted%20image%2020230919190726.png" /></a></p>
+<h2 id="gpt-question">gpt question<a class="headerlink" href="#gpt-question" title="Permanent link">#</a></h2>
+<p><strong>Question</strong></p>
+<p>다음 함수는 getaddrinfo를 사용하여 struct addrinfo 리스트를 얻어내 순회를 돌면서 socket, bind 함수를 호출해. 여기서 궁금한 점은 왜 getaddrinfo 첫번째 인자를 NULL로 주는거야? ip주소가 들어가는 자리인 걸로 아는데 NULL이 들어가면 무엇으로 대체되는지 궁금해.</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*  </span>
+<span class="cm"> * open_listenfd - Open and return a listening socket on port. This</span>
+<span class="cm"> *     function is reentrant and protocol-independent.</span>
+<span class="cm"> *</span>
+<span class="cm"> *     On error, returns: </span>
+<span class="cm"> *       -2 for getaddrinfo error</span>
+<span class="cm"> *       -1 with errno set for other errors.</span>
+<span class="cm"> */</span>
+<span class="cm">/* $begin open_listenfd */</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">open_listenfd</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">port</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="w"> </span><span class="n">hints</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">listp</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">listenfd</span><span class="p">,</span><span class="w"> </span><span class="n">rc</span><span class="p">,</span><span class="w"> </span><span class="n">optval</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Get a list of potential server addresses */</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">hints</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">addrinfo</span><span class="p">));</span>
+<span class="w">    </span><span class="n">hints</span><span class="p">.</span><span class="n">ai_socktype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SOCK_STREAM</span><span class="p">;</span><span class="w">             </span><span class="cm">/* Accept connections */</span>
+<span class="w">    </span><span class="n">hints</span><span class="p">.</span><span class="n">ai_flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AI_PASSIVE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">AI_ADDRCONFIG</span><span class="p">;</span><span class="w"> </span><span class="cm">/* ... on any IP address */</span>
+<span class="w">    </span><span class="n">hints</span><span class="p">.</span><span class="n">ai_flags</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="n">AI_NUMERICSERV</span><span class="p">;</span><span class="w">            </span><span class="cm">/* ... using port number */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">rc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getaddrinfo</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">hints</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">listp</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;getaddrinfo failed (port %s): %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">,</span><span class="w"> </span><span class="n">gai_strerror</span><span class="p">(</span><span class="n">rc</span><span class="p">));</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/* Walk the list for one that we can bind to */</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listp</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">ai_next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="cm">/* Create a socket descriptor */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">listenfd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">socket</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">ai_family</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">ai_socktype</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">ai_protocol</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="k">continue</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Socket failed, try the next */</span>
+
+<span class="w">        </span><span class="cm">/* Eliminates &quot;Address already in use&quot; error from bind */</span>
+<span class="w">        </span><span class="n">setsockopt</span><span class="p">(</span><span class="n">listenfd</span><span class="p">,</span><span class="w"> </span><span class="n">SOL_SOCKET</span><span class="p">,</span><span class="w"> </span><span class="n">SO_REUSEADDR</span><span class="p">,</span><span class="w">    </span><span class="c1">//line:netp:csapp:setsockopt</span>
+<span class="w">                   </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">optval</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+
+<span class="w">        </span><span class="cm">/* Bind the descriptor to the address */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bind</span><span class="p">(</span><span class="n">listenfd</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">ai_addr</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">ai_addrlen</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Success */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">close</span><span class="p">(</span><span class="n">listenfd</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* Bind failed, try the next */</span>
+<span class="w">            </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;open_listenfd close failed: %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="cm">/* Clean up */</span>
+<span class="w">    </span><span class="n">freeaddrinfo</span><span class="p">(</span><span class="n">listp</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="cm">/* No address worked */</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Make it a listening socket ready to accept connection requests */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">listen</span><span class="p">(</span><span class="n">listenfd</span><span class="p">,</span><span class="w"> </span><span class="n">LISTENQ</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">close</span><span class="p">(</span><span class="n">listenfd</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">listenfd</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>answer</strong></p>
+<p><code>getaddrinfo</code> 함수에서 첫 번째 인자를 <code>NULL</code>로 전달하는 이유는 서버 소켓을 생성하고, 해당 소켓을 모든 사용 가능한 네트워크 인터페이스(로컬 주소)에 바인딩하기를 원하기 때문입니다.</p>
+<p><code>getaddrinfo</code> 함수의 첫 번째 인자는 호스트 이름이나 IP 주소를 나타냅니다. 만약 이 인자에 <code>NULL</code>을 전달하면, <code>getaddrinfo</code>는 현재 호스트(로컬 시스템)에 대한 네트워크 인터페이스 주소를 가져오게 됩니다. 이는 서버가 현재 호스트의 모든 네트워크 인터페이스(예: 모든 IP 주소)에서 들어오는 연결을 수락하고자 할 때 유용합니다. 즉, 서버는 모든 네트워크 인터페이스에 대한 연결을 수신하려고 할 때 <code>NULL</code>을 사용하여 <code>getaddrinfo</code>를 호출할 수 있습니다.</p>
+<p>따라서 <code>getaddrinfo(NULL, port, &amp;hints, &amp;listp)</code>는 현재 호스트의 모든 네트워크 인터페이스에서 <code>port</code> 번호로 들어오는 연결을 수락하기 위한 주소 정보를 얻는 데 사용됩니다. 이렇게 얻은 주소 정보를 이용하여 서버 소켓을 생성하고 해당 주소로 바인딩합니다. 결과적으로 서버는 모든 네트워크 인터페이스에서 들어오는 연결을 수신할 수 있게 됩니다.</p>
+<p><strong>정리</strong></p>
+<p>bind를 할 때 넣는 <code>struct addrinfo</code> 구조체 안에 들어가는 주소와 포트에 대하여 주소를 NULL로 주면 알아서 "해당 포트로 들어오는 모든 호스트로부터의 접속을 허용합니다"라고 뜻하는 것 같다.</p>
 
 
 
