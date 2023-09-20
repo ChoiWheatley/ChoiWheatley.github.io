@@ -4,7 +4,7 @@ tags:
 description:
 title: getaddrinfo(3)
 created: 2023-09-18T14:32:25
-updated: 2023-09-21T00:17:40
+updated: 2023-09-21T00:30:13
 ---
 - <https://man7.org/linux/man-pages/man3/getaddrinfo.3.html>
 - [[0017 C 🍎]]
@@ -44,11 +44,11 @@ hostname, host address, service name, port number를 한데모아 하나의 `str
 
 ![[Pasted image 20230919190726.png]]
 
-## gpt question
+## gpt question: `getaddrinfo(NULL, ...)` 하는 이유
 
 **Question**
 
-다음 함수는 getaddrinfo를 사용하여 struct addrinfo 리스트를 얻어내 순회를 돌면서 socket, bind 함수를 호출해. 여기서 궁금한 점은 왜 getaddrinfo 첫번째 인자를 NULL로 주는거야? ip주소가 들어가는 자리인 걸로 아는데 NULL이 들어가면 무엇으로 대체되는지 궁금해.
+> 다음 함수는 getaddrinfo를 사용하여 struct addrinfo 리스트를 얻어내 순회를 돌면서 socket, bind 함수를 호출해. 여기서 궁금한 점은 왜 getaddrinfo 첫번째 인자를 NULL로 주는거야? ip주소가 들어가는 자리인 걸로 아는데 NULL이 들어가면 무엇으로 대체되는지 궁금해.
 
 ```c
 /*  
@@ -120,3 +120,54 @@ int open_listenfd(char *port)
 **정리**
 
 bind를 할 때 넣는 `struct addrinfo` 구조체 안에 들어가는 주소와 포트에 대하여 주소를 NULL로 주면 알아서 "해당 포트로 들어오는 모든 호스트로부터의 접속을 허용합니다"라고 뜻하는 것 같다.
+
+## gpt question `getaddrinfo` hint 넣는법
+
+**question**
+
+> 서버에게 HTTP GET 요청을 전송하려고 하는데 getaddrinfo 함수 인자를 어떻게 넣어야 올바른 struct addrinfo 리스트를 얻을 수 있을까?
+
+**answer**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <netdb.h>
+
+int main() {
+    struct addrinfo hints, *res;
+    int status;
+
+    // 서버 호스트 이름 또는 IP 주소, 포트 번호, 힌트 초기화
+    const char *hostname = "www.example.com"; // 대상 서버 주소
+    const char *port = "80"; // HTTP 포트 번호
+    memset(&hints, 0, sizeof hints);
+    hints.ai_family = AF_UNSPEC; // IPv4 또는 IPv6
+    hints.ai_socktype = SOCK_STREAM; // TCP 소켓
+
+    // getaddrinfo 함수를 사용하여 서버 주소 정보 얻기
+    if ((status = getaddrinfo(hostname, port, &hints, &res)) != 0) {
+        fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
+        return 1;
+    }
+
+    // addrinfo 리스트(res)를 사용하여 서버에 HTTP GET 요청을 전송할 수 있음
+
+    // addrinfo 리스트를 사용한 후 메모리 해제
+    freeaddrinfo(res);
+
+    return 0;
+}
+
+```
+
+위 예제에서 주요한 부분은 다음과 같습니다:
+
+1. `getaddrinfo` 함수를 호출할 때 `hostname` 변수에 대상 서버의 호스트 이름 또는 IP 주소를 지정하고, `port` 변수에는 HTTP 포트 번호(일반적으로 80)를 지정합니다.
+2. `hints` 구조체를 초기화하고, 필요한 네트워크 속성을 설정합니다. 위의 예제에서는 IPv4 또는 IPv6 주소를 사용하고, TCP 소켓을 지정했습니다.
+3. `getaddrinfo` 함수를 호출하여 `res` 포인터를 통해 주소 정보를 얻습니다. 이렇게 얻은 `struct addrinfo` 리스트(`res`)에는 서버의 주소 정보가 들어 있습니다.
+4. `addrinfo` 리스트를 사용하여 HTTP GET 요청을 서버에 전송할 수 있습니다. 이 부분은 HTTP 라이브러리나 소켓 프로그래밍을 통해 수행할 수 있습니다.
+5. 작업이 끝난 후, 메모리 누수를 방지하기 위해 `freeaddrinfo` 함수를 사용하여 `res`에 할당된 메모리를 해제합니다.
+
+이렇게 설정된 `getaddrinfo` 함수 호출을 통해 올바른 서버 주소 정보를 얻고, 이를 사용하여 HTTP GET 요청을 전송할 수 있게 됩니다.
