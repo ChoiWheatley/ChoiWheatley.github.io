@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: trimwhitespace
+title: trimwhitespace {C}
 created: 2023-09-20T14:14:59
-updated: 2023-09-20T14:17:17
+updated: 2023-09-20T14:421287:17
 ---
 - <https://stackoverflow.com/a/122721/21369350> 참고함.
 - [[0017 C 🍎]]
