@@ -4,10 +4,11 @@ tags:
 description:
 title: getaddrinfo(3)
 created: 2023-09-18T14:32:25
-updated: 2023-09-20T22:49:57
+updated: 2023-09-21T00:17:40
 ---
 - <https://man7.org/linux/man-pages/man3/getaddrinfo.3.html>
 - [[0017 C 🍎]]
+- [[11. Network Programming {CSAPP}#11.4.7. Host and Service Conversion]] 에서 건너옴
 
 ```c
 #include <sys/types.h>
