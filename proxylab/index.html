@@ -38219,6 +38219,25 @@
 <li>클라이언트가 본래 보내려고 하던 요청을 웹서버에게 전달하라.</li>
 <li>웹서버의 응답을 클라이언트에게 전달하라.</li>
 </ol>
+<p><strong>요구사항</strong></p>
+<ul>
+<li>언제나 <code>HOST</code> 헤더를 추가하세요. 웹 브라우저가 목적지 서버에 대한 정보를 <code>HOST</code>에 담아서 준다면 그 정보를 그대로 쓰고, 그렇지 않다면 uri에 명시된 호스트를 사용하세요.</li>
+<li>
+<p>(Optional) 다음 <code>User-Agent</code> 헤더를 추가하세요.</p>
+<div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:10.0.3) Gecko/20120305 Firefox/10.0.3
+</code></pre></div>
+</li>
+<li>
+<p>언제나 다음 <code>Connection</code> 헤더를 추가하세요.</p>
+<div class="highlight"><pre><span></span><code>Connection: close
+</code></pre></div>
+</li>
+<li>
+<p>언제나 다음 <code>Proxy-Connection</code> 헤더를 추가하세요.</p>
+<div class="highlight"><pre><span></span><code>Proxy-Connection: close
+</code></pre></div>
+</li>
+</ul>
 <p><a href="assets/proxylab1.excalidraw.md">proxylab1.excalidraw</a></p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020230919194918.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230919194918.png" src="../assets/Pasted%20image%2020230919194918.png" /></a></p>
 
