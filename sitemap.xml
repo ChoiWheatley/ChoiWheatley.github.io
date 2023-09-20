@@ -3066,6 +3066,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/open_clientfd%20%7Bsocket%7D%20%7Bconnect%7D/</loc>
+         <lastmod>2023-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/open_listenfd%20%7Bsocket%7D%7Bbind%7D%7Blisten%7D/</loc>
+         <lastmod>2023-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/opine/</loc>
          <lastmod>2023-09-20</lastmod>
          <changefreq>daily</changefreq>
@@ -3992,6 +4002,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%E2%AD%90%EF%B8%8F%208.5.%20Signals/</loc>
+         <lastmod>2023-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%E2%AD%90%EF%B8%8F%209.11.%20Common%20Memory-Related%20Bugs%20in%20C%20Programs/</loc>
          <lastmod>2023-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
