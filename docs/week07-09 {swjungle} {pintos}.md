@@ -7,6 +7,9 @@ created: 2023-09-21T16:20:48
 updated: 2023-09-21T16:31:18
 ---
 - [[0120 swjungle 🤖]]
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
+- [kaist pintos assignment specification](https://casys-kaist.github.io/pintos-kaist/)
+- 
 ___
 
 ## dump
