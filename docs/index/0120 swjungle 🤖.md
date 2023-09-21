@@ -4,7 +4,7 @@ tags:
 description:
 title: 0120 swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2023-09-21T19:56:26
+updated: 2023-09-21T20:25:56
 ---
 
 # INDEX
@@ -35,15 +35,23 @@ updated: 2023-09-21T19:56:26
 
 ### [[week 03 teatime questions {swjungle}{coding test trend}]]
 
+![[week 03 teatime questions {swjungle}{coding test trend}#^tc6q8p]]
+
+→ 아............................. 목표는 현실적으로, 계획은 여유롭게.
+
+### week06 ending, week07 starting
+
+> Talk is cheap, show me the code - Linus Torvalds
+
+주변 자원을 적극적으로 활용해가면서 하래두. 고립보다는 함께가는 것에 집중하고 자존심 내세우지말고 얻어갈 것 하나만 집중하자.
+
 ## 협력사 Q&A
 
 이번 주부터 협력사 분들께서 회사 소개 및 여러분들을 보기 위해 방문하십니다. (오후 5시 ~) 회사에 대해서 궁금했던 사항이나 실제 개발자가 어떤 일을 하는지 등의 궁금한 내용들을 미리 질문으로 만들어 놓으면 좋지 않을까요?현재 확정된 방문 일정은 다음과 같습니다.  
 
-- 9/14(목) 17:00 컬리
+- 9/14(목) 17:00 컬리 [[컬리 협력사 Q&A {swjungle}]]
 - 11/2(목) 17:00 크래프톤
 - 11/9(목) 17:00 니어스랩
 - 11/14(화) 17:00 채널코퍼레이션
 - 11/16(목) 17:00 팀스파르타
 - 11/28(화) 17:00 보이저엑스
-
-[[컬리 협력사 Q&A {swjungle}]]
