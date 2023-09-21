@@ -19,6 +19,7 @@ updated: 2023-09-14T20:44:01
 		- [[⭐️ 9.9. Dynamic Memory Allocation]]
 		- [[malloclab]]
 	- [[week06 {swjungle}{proxy-lab}]]
+	- [[week07-09 {swjungle} {pintos}]]
 - [[0015 OS {ssu2021-2nd} 💻]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[Linux IPC Programming {inflearn archive}]]
