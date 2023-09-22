@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/3.%20Machine%20Level%20Representation%20of%20Programs/">
+        <link rel="canonical" href="https://choiwheatley.github.io/3.%20Machine%20Level%20Representation%20of%20Programs%20%7BCSAPP%7D/">
       
       
         <link rel="prev" href="../2%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%2C%20%EA%B8%B0%EC%88%A0%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0%20-%20estsoft%20%7BDjango%7D/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>3. Machine Level Representation of Programs - Choi Wheatley's Second Brain</title>
+        <title>3. Machine Level Representation of Programs {CSAPP} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Machine Level Representation of Programs
+              3. Machine Level Representation of Programs {CSAPP}
             
           </span>
         </div>
@@ -2505,7 +2505,7 @@
   
     
   
-  3. Machine Level Representation of Programs
+  3. Machine Level Representation of Programs {CSAPP}
 
       </a>
     </li>
@@ -5855,6 +5855,23 @@
     
   
   The Book -- Rust
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../The%20C10K%20problem/" class="md-tabs__link">
+        
+  
+    
+  
+  The C10K problem
 
       </a>
     </li>
@@ -9646,6 +9663,23 @@
     
   
   json-patch
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kaist%20pintos%20assignment%20specification%20%7Bcasys-kaist.github.io%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  kaist pintos assignment specification {casys-kaist.github.io}
 
       </a>
     </li>
@@ -22358,7 +22392,7 @@
           
   
   <span class="md-ellipsis">
-    3. Machine Level Representation of Programs
+    3. Machine Level Representation of Programs {CSAPP}
   </span>
   
 
@@ -22369,7 +22403,7 @@
         
   
   <span class="md-ellipsis">
-    3. Machine Level Representation of Programs
+    3. Machine Level Representation of Programs {CSAPP}
   </span>
   
 
@@ -22391,6 +22425,13 @@
         <li class="md-nav__item">
   <a href="#index" class="md-nav__link">
     INDEX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coach-questions" class="md-nav__link">
+    Coach questions
   </a>
   
 </li>
@@ -26138,6 +26179,25 @@
   
   <span class="md-ellipsis">
     The Book -- Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20C10K%20problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The C10K problem
   </span>
   
 
@@ -30375,6 +30435,25 @@
   
   <span class="md-ellipsis">
     json-patch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kaist%20pintos%20assignment%20specification%20%7Bcasys-kaist.github.io%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    kaist pintos assignment specification {casys-kaist.github.io}
   </span>
   
 
@@ -38622,6 +38701,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#coach-questions" class="md-nav__link">
+    Coach questions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -38637,7 +38723,7 @@
                   
 
 
-  <h1>3. Machine Level Representation of Programs</h1>
+  <h1>3. Machine Level Representation of Programs {CSAPP}</h1>
 
 <ul>
 <li>parent: <a href="../index/0121%20CSAPP%20Third%20Edition%20Bryant%2C%20Randal%20E.%20O%27Hallaron%2C%20David./">0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.</a></li>
@@ -38694,6 +38780,27 @@
 </ul>
 </li>
 <li>3.12 Summary</li>
+</ul>
+<h2 id="coach-questions">Coach questions<a class="headerlink" href="#coach-questions" title="Permanent link">#</a></h2>
+<p>OS가 hardware와 software 사이에 있는 software다 보니 hardware에 대해서 좀 알아야 이해할 수 있는 것들이 많습니다.<br />
+최소한 다음 질문에는 대답할 수 있는게 앞으로 프로젝트를 진행하는데 도움이 될 것이라 생각합니다.<br />
+(사실 CS:APP 3장을 차근차근 읽어 놨다면 아는 내용입니다.)</p>
+<ul>
+<li>%rip, %rsp register의 의미와 CPU 동작에서의 역할</li>
+<li>assembly 명령어 JMP와 CALL의 차이점</li>
+<li>JMP, CALL, RET, PUSH, POP, IRET 명령에서 %rip, %rsp는 어떻게 값이 변하는가?</li>
+<li>interrupt 발생 시 CPU는 어떻게 동작하는가? register 값 및 연관된 memory는?</li>
+<li>interrupt를 처리한 후에는 어떻게 되는가?</li>
+<li>interrupt는 어떻게 enable/disable 시킬 수 있는가? enable/disable 되면 뭐가 달라지는가?<ul>
+<li>Option: NMI (Non-Maskable Interrupt)는 무엇인가?</li>
+</ul>
+</li>
+<li>timer interrupt는 누가 발생시키는가?</li>
+<li>EFLAGS register는 무엇인가?<ul>
+<li>Option: "플래그 세우지 마라"의 그 flag인가?</li>
+<li>Option: 왜 다른 64bit register처럼 r로 시작하지 않고 e로 시작하는가?</li>
+</ul>
+</li>
 </ul>
 
 
