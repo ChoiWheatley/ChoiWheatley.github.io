@@ -11,7 +11,7 @@ updated: 2023-09-21T20:43:38
 	- [[3. Machine Level Representation of Programs]]
 	- [[8. Exceptional Control Flow]]
 	- [[12. Concurrent Programming]]
-- [kaist pintos assignment specification](https://casys-kaist.github.io/pintos-kaist/)
+- [[kaist pintos assignment specification {casys-kaist.github.io}]]
 	- [kaist pintos 과제 설명서 한글 번역본](https://yjohdev.notion.site/KAIST-PINTOS-ebdc8be9d02d4475a4675c7b920e3653)
 - 
 ___
