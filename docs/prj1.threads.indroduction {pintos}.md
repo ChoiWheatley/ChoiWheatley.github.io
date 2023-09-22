@@ -4,7 +4,7 @@ tags:
 description:
 title: prj1.threads.indroduction {pintos}
 created: 2023-09-22T16:46:46
-updated: 2023-09-22T17:06:33
+updated: 2023-09-22T17:36:29
 ---
 <https://casys-kaist.github.io/pintos-kaist/project1/introduction.html>
 ___
@@ -13,7 +13,7 @@ ___
 
 - synchronization primitives: {semaphors, lock, conditional vars, optimazation barriers}
 - 더 이상 실행할 스레드가 없으면 (스레드 스케줄링?) 특수한 스레드인 `idle`을 실행시킨다.
-- [[synchronization {pintos}]]
+- [[synchronization {pintos}]] 부터 읽고 스레드 기본 개념 이해
 
 ## file structure in `threads/`
 
@@ -28,5 +28,5 @@ ___
 		- `run_actions`
 		- `usage`
 	- `print_stats`: ???? 어떤 상태를 출력함?
-	- `main`
+	- **`main`**
 		- bss 초기화, 명령줄 파싱, 스레드 초기화 콘솔 lock, 메모리
