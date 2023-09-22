@@ -9,7 +9,7 @@ updated: 2023-09-14T19:59:26
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 	- WEEK04 못다 읽은 챕터들
-		- [[3. Machine Level Representation of Programs]]
+		- [[3. Machine Level Representation of Programs {CSAPP}]]
 			- [[⭐️ 3.4 Accessing Information]]
 			- [[⭐️ 3.7 Procedures]]
 			- [[⭐️ 3.8 Array Allocation and Access]]
