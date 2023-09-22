@@ -13,7 +13,7 @@ updated: 2023-09-22T14:57:42
 	- [[12. Concurrent Programming]]
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 	- [kaist pintos 과제 설명서 한글 번역본](https://yjohdev.notion.site/KAIST-PINTOS-ebdc8be9d02d4475a4675c7b920e3653)
-- [swjungle-week07-09 {GH}](https://github.com/ChoiWheatley/swjungle-week07-09) | 학습관련 정리를 이번엔 깃허브 마크다운으로 관리해볼 예정.
+- [swjungle-week07-09 {GH}](https://github.com/ChoiWheatley/swjungle-week07-09) | 학습관련 정리를 이번엔 깃허브 마크다운으로 공용으로 관리해볼 예정.
 ___
 
 ## README
