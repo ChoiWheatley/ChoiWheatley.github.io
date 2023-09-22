@@ -31,3 +31,5 @@ ___
 
 ## Getting Started
 
+- source tree overview
+	- `threads/`: project 1에서 수정할 
