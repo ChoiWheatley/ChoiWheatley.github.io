@@ -4,12 +4,12 @@ tags:
 description:
 title: kaist pintos assignment specification {casys-kaist.github.io}
 created: 2023-09-22T10:42:50
-updated: 2023-09-22T10:43:09
+updated: 2023-09-22T10:53:40
 ---
 - <https://casys-kaist.github.io/pintos-kaist/>
 ___
 
-## Getting Started
+## Overview
 
 1. **소개 (INTRODUCTION):** 이 섹션에서는 전반적인 내용 소개와 시작 방법, 평가 방법, 법적 및 윤리적 문제에 대한 정보를 제공합니다.
     
@@ -28,3 +28,6 @@ ___
 5. **프로젝트 4: 파일 시스템 (PROJECT4: FILE SYSTEM):** 파일 시스템과 관련된 프로젝트에 대한 정보를 제공합니다. 색인화된 파일 및 확장 가능한 파일, 하위 디렉토리와 소프트 링크, 버퍼 캐시, 동기화 등에 대한 내용을 다루며 FAQ 섹션도 포함되어 있습니다.
     
 6. **부록 (APPENDIX):** 스레드, 동기화, 메모리 할당, 가상 주소, 페이지 테이블, 디버깅 도구, 개발 도구, 해시 테이블 등과 같은 부록 내용을 포함합니다.
+
+## Getting Started
+
