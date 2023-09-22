@@ -4,9 +4,10 @@ tags:
 description:
 title: synchronization {pintos}
 created: 2023-09-22T16:52:18
-updated: 2023-09-22T22:06:50
+updated: 2023-09-22T22:22:43
 ---
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
+- [[0015 OS {ssu2021-2nd} 💻|OS]] | [[Synchronization {2021OS}]]
 ___
 
 ## README
@@ -20,4 +21,5 @@ ___
 - preemptible kernel (pintos) & nonpreemptible kernel (traditional UNIX)의 차이점
 - NMI (Non-Maskable Interrupts)란? 응급 상황에서(서버실에 불이 났을 때)만 사용되는 인터럽트가 중간에 중단되지 않는 인터럽트를 의미.
 - **semaphores**
-	- 
+- **mutex** as MUTual EXclsion, 상호배제라는 뜻임.
+	- Mutual Exclusion with Test-and-Set
