@@ -35,3 +35,5 @@ ___
 	- owner: release monitor lock and get out of the monitor
 	- *condition variable*: ?? waits until condition variable comes true
 		- signals the condition or broadcasts the condition to wake all of them
+- **optimizational barriers**
+	- 
