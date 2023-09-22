@@ -4,9 +4,10 @@ tags:
 description:
 title: prj1.threads.introduction {pintos}
 created: 2023-09-22T16:46:46
-updated: 2023-09-22T22:44:33
+updated: 2023-09-22T23:04:37
 ---
-<https://casys-kaist.github.io/pintos-kaist/project1/introduction.html>
+<https://casys-kaist.github.io/pintos-kaist/project1/introduction.html>  
+[[synchronization {pintos}]]
 ___
 
 ## dump

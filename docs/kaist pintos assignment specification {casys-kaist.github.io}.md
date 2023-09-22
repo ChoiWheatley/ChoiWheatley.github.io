@@ -4,11 +4,10 @@ tags:
 description:
 title: kaist pintos assignment specification {casys-kaist.github.io}
 created: 2023-09-22T10:42:50
-updated: 2023-09-22T21:49:05
+updated: 2023-09-22T23:03:59
 ---
 - <https://casys-kaist.github.io/pintos-kaist/>
 - [swjungle-week07-09](https://github.com/ChoiWheatley/swjungle-week07-09)
-- [[prj1.threads.introduction {pintos}]]
 ___
 
 ## README
@@ -17,4 +16,5 @@ ___
 
 ## INDEX
 
+- [[prj1.threads.introduction {pintos}]]
 - [[Debugging Tools {pintos}]]
