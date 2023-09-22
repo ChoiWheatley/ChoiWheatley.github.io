@@ -4,7 +4,7 @@ tags:
 description:
 title: kaist pintos assignment specification {casys-kaist.github.io}
 created: 2023-09-22T10:42:50
-updated: 2023-09-22T10:53:40
+updated: 2023-09-22T14:56:06
 ---
 - <https://casys-kaist.github.io/pintos-kaist/>
 ___
@@ -30,6 +30,3 @@ ___
 6. **부록 (APPENDIX):** 스레드, 동기화, 메모리 할당, 가상 주소, 페이지 테이블, 디버깅 도구, 개발 도구, 해시 테이블 등과 같은 부록 내용을 포함합니다.
 
 ## Getting Started
-
-- source tree overview
-	- `threads/`: project 1에서 수정할 
