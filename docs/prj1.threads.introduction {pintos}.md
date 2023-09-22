@@ -2,14 +2,24 @@
 aliases: 
 tags: 
 description:
-title: prj1.threads.indroduction {pintos}
+title: prj1.threads.introduction {pintos}
 created: 2023-09-22T16:46:46
-updated: 2023-09-22T21:57:08
+updated: 2023-09-22T22:44:33
 ---
 <https://casys-kaist.github.io/pintos-kaist/project1/introduction.html>
 ___
 
 ## dump
+
+스레드가 생성될 때마다 스케줄에 컨텍스트가 하나씩 추가된다. `thread_create` 함수를 호출하며 넣은 함수 포인터는 스레드 단위의 main 함수가 되어 해당 함수를 벗어나면 스레드가 종료된다.
+
+스케줄러는 스레드가 정확히 하나씩 실행할 수 있도록 스케줄링을 한다. 아무 스레드도 돌지 않는다면, 특수 스레드인 `idle` 스레드를 만들어 돌린다.
+
+스레드, 컨텍스트는 1대1로 존재하며, 스케줄러가 강제적으로 한 스레드에서 다른 스레드로 문맥전환(context-switch) 하기 위해 기존 스레드의 컨텍스트를 저장하고 다음 스레드를 복원하는 작업을 수행하여야 한다. 이 작업을 [thread_launch](../threads/thread.c#thread_launch) 함수에서 수행한다.
+
+GDB를 사용하면서 컨텍스트 스위칭이 일어나는 타이밍을 확인할 수도 있다. 대표적으로 [`do_iret()`](../threads/thread.c#do_iret) 함수에서 `iret`을 실행할 때 어떻게 되는지 확인해보자.
+
+기본적으로, PintOS는 새 스레드를 만들때 고정 크기의 실행스택이 할당된다. 따라서 유저 프로그램이 너무 큰 지역변수를 스레드 안에서 선언해버리면 커널패닉이 발생할 수도 있다. 대안으로 블록/페이지 할당자가 있다고. ([Memory Allocation](https://casys-kaist.github.io/pintos-kaist/appendix/memory_allocation.html))
 
 - synchronization primitives: {semaphors, lock, conditional vars, optimazation barriers}
 - 더 이상 실행할 스레드가 없으면 (스레드 스케줄링?) 특수한 스레드인 `idle`을 실행시킨다.

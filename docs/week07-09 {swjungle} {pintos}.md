@@ -39,5 +39,5 @@ ___
 ## dump
 
 - pintos prj01 \<thread\> 설명 <https://youtu.be/myO2bs5LMak?si=8SmqdzUOKnTZO2dc>
-- [[prj1.threads.indroduction {pintos}]]
+- [[prj1.threads.introduction {pintos}]]
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)

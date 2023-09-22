@@ -8,7 +8,7 @@ updated: 2023-09-22T21:49:05
 ---
 - <https://casys-kaist.github.io/pintos-kaist/>
 - [swjungle-week07-09](https://github.com/ChoiWheatley/swjungle-week07-09)
-- [[prj1.threads.indroduction {pintos}]]
+- [[prj1.threads.introduction {pintos}]]
 ___
 
 ## README
