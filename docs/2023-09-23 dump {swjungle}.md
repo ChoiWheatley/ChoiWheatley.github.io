@@ -27,3 +27,5 @@ updated: 2023-09-23T20:06:00
 ![[Pasted image 20230923200404.png]]
 
 - busy waiting 방식을 사용하지 않게 타이머를 만들어라.
+
+- tick, timer_sleep이 뭐하는 놈인가, tick은 어떻게 올라가는가, 스레드 호출의 실행을 중단한다고 했는데
