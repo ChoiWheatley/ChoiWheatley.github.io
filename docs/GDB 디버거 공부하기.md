@@ -4,7 +4,7 @@ tags:
 description:
 title: GDB 디버거 공부하기
 created: 2023-09-10T13:01:48
-updated: 2023-09-12T20:39:19
+updated: 2023-09-23T23:33:04
 ---
 - 참조 사이트들
 - [https://freemmer.tistory.com/31](https://freemmer.tistory.com/31)  
@@ -70,3 +70,7 @@ updated: 2023-09-12T20:39:19
 - focus src : 소스창 이동가능  
 - focus cmd : 커맨드 창으로 포커스 이동  
 - refresh : tui 창 새로고침
+
+## gdb-dashboard
+
+<https://github.com/cyrus-and/gdb-dashboard>
