@@ -4,7 +4,7 @@ tags:
 description:
 title: 2023-09-23 dump {swjungle}
 created: 2023-09-23T18:55:55
-updated: 2023-09-23T20:39:10
+updated: 2023-09-23T20:59:06
 ---
 
 ## appendix thread
@@ -30,3 +30,7 @@ updated: 2023-09-23T20:39:10
 - busy waiting 방식을 사용하지 않게 타이머를 만들어라.
 
 - tick, timer_sleep이 뭐하는 놈인가, tick은 어떻게 올라가는가, 스레드 호출의 실행을 중단한다고 했는데
+	- 하드웨어 주파수에 일정 보정을 해서 `uint16_t count = (1193180 + TIMER_FREQ / 2) / TIMER_FREQ;` 인터럽트를 발생시키면 어떤 상황에서도 (심지어 인터럽트가 꺼져있어도) tick 값을 1 증가 시키는`timer_interrupt`와  
+	- thread_ticks는 TIME_SLICE를 초과할 때마다 인터럽트를 발생시키고 thread_ticks를 0으로 초기화한다.
+	- ticks는 단순 증가만 한다.
+	- 
