@@ -38,7 +38,7 @@ ___
 
 ## dump
 
-- pintos prj01 \<thread\> 설명 <https://youtu.be/myO2bs5LMak?si=8SmqdzUOKnTZO2dc>
+- <iframe src="https://youtu.be/myO2bs5LMak?si=jZeqP0oC_rdzYda9" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
 - [[prj1.threads.introduction {pintos}]]
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)
 
