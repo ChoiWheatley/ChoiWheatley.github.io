@@ -10,7 +10,7 @@ updated: 2023-09-23T19:04:32
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
 	- [[3. Machine Level Representation of Programs {CSAPP}]]
 	- [[8. Exceptional Control Flow]]
-	- [[12. Concurrent Programming]]
+	- [[12. Concurrent Programming {csapp}]]
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 	- [kaist pintos 과제 설명서 한글 번역본](https://yjohdev.notion.site/KAIST-PINTOS-ebdc8be9d02d4475a4675c7b920e3653)
 - [swjungle-week07-09 {GH}](https://github.com/ChoiWheatley/swjungle-week07-09) | 학습관련 정리를 이번엔 깃허브 마크다운으로 공용으로 관리해볼 예정.
