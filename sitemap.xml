@@ -116,7 +116,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/12.%20Concurrent%20Programming/</loc>
+         <loc>https://choiwheatley.github.io/12.%20Concurrent%20Programming%20%7Bcsapp%7D/</loc>
+         <lastmod>2023-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/12.3.%20Concurrent%20Programming%20with%20Threads%20%7Bcsapp%7D/</loc>
          <lastmod>2023-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
