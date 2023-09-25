@@ -4,7 +4,7 @@ tags:
 description:
 title: 01_os_review.pdf {swjungle}
 created: 2023-09-25T23:23:13
-updated: 2023-09-26T01:36:42
+updated: 2023-09-26T02:04:55
 ---
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
@@ -98,4 +98,9 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 		- Con: 기아상태
 	- Round Robin 시간을 쪼개놓고 공정하게 분배
 		- Pro: 공정한 실행으로 높은 응답시간
-		- Con: 
+		- Con: 프로세스가 많아질수록 turnaround time 증가
+
+- paging
+	- ![[Pasted image 20230926020453.png]]
+	- page replacement algorithm!
+	- 
