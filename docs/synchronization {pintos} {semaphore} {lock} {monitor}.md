@@ -4,7 +4,7 @@ tags:
 description:
 title: synchronization {pintos} {semaphore} {lock} {monitor}
 created: 2023-09-22T16:52:18
-updated: 2023-09-25T20:01:42
+updated: 2023-09-25T20:30:51
 ---
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 - [[0015 OS {ssu2021-2nd} 💻|OS]] | [[Synchronization {2021OS}]]
@@ -24,8 +24,9 @@ ___
 - preemptible kernel (pintos) & nonpreemptible kernel (traditional UNIX)의 차이점
 - NMI (Non-Maskable Interrupts)란? 응급 상황에서(서버실에 불이 났을 때)만 사용되는 인터럽트가 중간에 중단되지 않는 인터럽트를 의미.
 - **mutex** as MUTual EXclsion, 상호배제라는 뜻임.
-	- Mutual Exclusion with Test-and-Set
+	- Mutual Exclusion with Test-and-Set, ByteSwap
 - **semaphores**
+	- 세마포어는 기다리는 스레드들의 연결 순서를 보장해준다.
 	- 세마포어 연산들 (`sema_down`, `sema_try_down`, `sema_up`)은 기본적으로 원자성을 유지하기 위해서 인터럽트를 끄고 진행하는구나. thread blocking/unblocking도 끈대.
 
 ```c
@@ -67,7 +68,7 @@ struct lock {
 	```
 
 - **optimizational barriers**
-	- 
+	- 컴파일러는 코드의 순서를 바꾸거나 아예 생략해 버리는 방식으로 최적화를 하는 경우가 있다. 이 경우 우리가 의도하지 않은 사이드 이펙트가 발생할 수 있기에, 어떤 장벽을 세워두고, reorder, deletion, infinite loop 등의 최적화를 수행하지 못하도록 컴파일러에게 정보를 넘긴다.
 
 ## semaphores
 

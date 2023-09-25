@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-09-24T22:11:20
+updated: 2023-09-25T20:34:15
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -29,11 +29,13 @@ ___
 - 조가람: 2023-09-30 ~ 2023-10-01 빠진다. 
 - 최승현: 하루 날잡고 등산할 예정.
 
-권영진 교수님의 OS 강의일정
+**권영진 교수님의 OS 강의**
+
 - 2023-09-26T10:30:00
 - 2023-10-10T10:30:00
 - OS abstraction 개념에 초점을 맞추어 진행.
-- 강의 슬라이드는 swjungle 페이지에서.
+- [Pintos_1.pdf](https://drive.google.com/file/d/1rr1VobnaR8QiWq3TVImvzzHWWdB5d4B5/view)
+- [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [CS 6200: Introduction to Operating Systems Course Videos (Georgia Tech College of Computing)](https://omscs.gatech.edu/cs-6200-introduction-operating-systems-course-videos)
 
 ## dump
@@ -45,3 +47,5 @@ ___
 [[2023-09-23 dump {swjungle}]]
 
 [[2023-09-24 dump {swjungle}]]
+
+## [[2023-09-26 권영진 교수님의 OS 강의 (1차)]]
