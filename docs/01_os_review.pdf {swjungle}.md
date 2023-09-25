@@ -4,7 +4,7 @@ tags:
 description:
 title: 01_os_review.pdf {swjungle}
 created: 2023-09-25T23:23:13
-updated: 2023-09-25T23:24:32
+updated: 2023-09-26T01:36:42
 ---
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
@@ -55,3 +55,47 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 			- 디스크에 데이터를 쓰는 작업은 순서 트리를 가진다. 각 노드가 의미하는 건 뭐냐?
 
 ## Protection & Isolation
+
+- protection
+	- privileged instruction... HOW?
+	- memory protection
+	- interrupts
+- address translation concept by MMU
+	- 두 가지 작업으로 분리가 될 줄은 몰랐는데... 각각 Segmentation 과정과 Paging 과정으로 나뉜다.
+	- [?] CSAPP 책에서 다룬 가상메모리는 segmentation 과정이 없다. CPU가 처음부터 가상 메모리를 요청해 오는게 아니었다는 건가?
+	- Segment Descriptor (x86)
+		- ![[Pasted image 20230926010140.png]]
+	- Page table entry
+		- ![[Pasted image 20230926010437.png]]
+- Dual mode OS
+- Isolation by protection domain
+	- memory isolation: virtual memory address protection, switch virtual address space between process
+	- file isolation: file permission system
+	- access control method?
+		- [DAC](https://en.wikipedia.org/wiki/Discretionary_access_control), [MAC](https://en.wikipedia.org/wiki/Mandatory_access_control) 이게머고?
+			- 컴퓨터 보안에서 임의 액세스 제어(DAC)는 신뢰할 수 있는 컴퓨터 시스템 평가 기준[1](TCSEC)에 정의된 액세스 제어의 한 유형으로, 대상 및/또는 대상에 속한 그룹의 신원을 기반으로 대상에 대한 액세스를 제한하는 수단입니다. 특정 액세스 권한을 가진 주체가 다른 주체에게 해당 권한을 (간접적으로) 전달할 수 있다는 점에서 이러한 제어는 재량에 따른 것입니다(필수 액세스 제어에 의해 제한되지 않는 한). 
+		- authentication of user and system (mutually distrust)
+		- protected IPC
+			- shared memory
+			- pipe
+
+## sharing resources
+
+> But my machine has only a single CPU and limited memory So, processes must share the resources
+
+- two types of sharing
+	- space sharing
+		- memory by virtual memory + space reclamation(replacement)
+	- time sharing
+		- cpu by scheduling
+
+- scheduler 종류와 그 특징
+	- FIFO: 가장 먼저 들어온 프로세스 먼저 실행
+		- Pro: 구현이 간단함
+		- Con: [convoy effect](https://en.wikipedia.org/wiki/Lock_convoy) 잦은 문맥전환으로 인한 응답지연
+	- SJF 또는 [SJN](https://en.wikipedia.org/wiki/Shortest_job_next) 
+		- Pro: 응답시간에서 탁월함
+		- Con: 기아상태
+	- Round Robin 시간을 쪼개놓고 공정하게 분배
+		- Pro: 공정한 실행으로 높은 응답시간
+		- Con: 
