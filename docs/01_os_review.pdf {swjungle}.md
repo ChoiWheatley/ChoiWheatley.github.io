@@ -4,7 +4,7 @@ tags:
 description:
 title: 01_os_review.pdf {swjungle}
 created: 2023-09-25T23:23:13
-updated: 2023-09-26T02:04:55
+updated: 2023-09-26T02:09:54
 ---
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
