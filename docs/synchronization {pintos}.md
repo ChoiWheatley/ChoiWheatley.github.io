@@ -4,7 +4,7 @@ tags:
 description:
 title: synchronization {pintos}
 created: 2023-09-22T16:52:18
-updated: 2023-09-25T15:06:37
+updated: 2023-09-25T15:26:04
 ---
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 - [[0015 OS {ssu2021-2nd} 💻|OS]] | [[Synchronization {2021OS}]]
@@ -51,7 +51,7 @@ struct lock {
 - **monitors**
 	- *condition variable*
 		- *signals* the condition or *broadcasts* the condition to wake all of them
-		- 모니터 안에서 cond 조건이 만족할 때 signal을 받아 탈출할 수 있도록 block한다. 즉, 일반적인 lock과는 다르게 
+		- 모니터 안에서 cond 조건이 만족할 때 signal을 받아 탈출할 수 있도록 block한다. 즉, 일반적인 lock과는 다르게 스레드가 wait 하면 다른 스레드가 깨워주어야 한다.
 	- *lock*
 		- Before thread access the protected data, it first acquires the monitor lock.
 		- It is then said to be "in the monitor". While in the monitor, the thread has control over all the protected data, which it may freely examine or modify. When access to the protected data is complete, it releases the monitor lock.
@@ -96,4 +96,8 @@ lock_init (struct lock *lock) {
 }
 ```
 
-주석에서 중요한 내용이 들어있다. semaphore는 이진 세마포어로 쓴다면 lock과 동일하다. 다만 lock과 semaphore와의 차이점은 세마포어 자체는 그것을 관리하는 주인이 없다는 것이다. 세마포어는 단순히 
+lock은 1로 초기화한 세마포어이다. 다만, 스레드 주인에 의해서 lock, unlock할 수 있다는 점이 단순 세마포어와 차이가 있다. 단순 세마포어는 이진일 필요가 없어 동시에 여러 스레드가 같은 데이터를 공유할 수 있다. 심지어 다른 스레드에 의해서 unlock될 수도 있다.
+
+> [!question] When to use lock or semaphore?
+
+- lock을 사용할 때는 mutual exclusion을 필수로 지켜야 하는 상황에서 써야 한다.
