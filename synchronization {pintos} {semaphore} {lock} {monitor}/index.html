@@ -339,6 +339,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../01_os_review.pdf%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  01_os_review.pdf {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../04.%20process%20%7BSP%7D/" class="md-tabs__link">
         
   
@@ -1212,6 +1229,23 @@
     
   
   2023-09-24 dump {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2023-09-26%20%EA%B6%8C%EC%98%81%EC%A7%84%20%EA%B5%90%EC%88%98%EB%8B%98%EC%9D%98%20OS%20%EA%B0%95%EC%9D%98%20%281%EC%B0%A8%29%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
 
       </a>
     </li>
@@ -20165,6 +20199,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../01_os_review.pdf%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01_os_review.pdf {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../04.%20process%20%7BSP%7D/" class="md-nav__link">
         
   
@@ -21139,6 +21192,25 @@
   
   <span class="md-ellipsis">
     2023-09-24 dump {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-26%20%EA%B6%8C%EC%98%81%EC%A7%84%20%EA%B5%90%EC%88%98%EB%8B%98%EC%9D%98%20OS%20%EA%B0%95%EC%9D%98%20%281%EC%B0%A8%29%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
   </span>
   
 
@@ -39190,10 +39262,11 @@
 <li>preemptible kernel (pintos) &amp; nonpreemptible kernel (traditional UNIX)의 차이점</li>
 <li>NMI (Non-Maskable Interrupts)란? 응급 상황에서(서버실에 불이 났을 때)만 사용되는 인터럽트가 중간에 중단되지 않는 인터럽트를 의미.</li>
 <li><strong>mutex</strong> as MUTual EXclsion, 상호배제라는 뜻임.<ul>
-<li>Mutual Exclusion with Test-and-Set</li>
+<li>Mutual Exclusion with Test-and-Set, ByteSwap</li>
 </ul>
 </li>
 <li><strong>semaphores</strong><ul>
+<li>세마포어는 기다리는 스레드들의 연결 순서를 보장해준다.</li>
 <li>세마포어 연산들 (<code>sema_down</code>, <code>sema_try_down</code>, <code>sema_up</code>)은 기본적으로 원자성을 유지하기 위해서 인터럽트를 끄고 진행하는구나. thread blocking/unblocking도 끈대.</li>
 </ul>
 </li>
@@ -39246,7 +39319,7 @@
 <li>
 <p><strong>optimizational barriers</strong></p>
 <ul>
-<li></li>
+<li>컴파일러는 코드의 순서를 바꾸거나 아예 생략해 버리는 방식으로 최적화를 하는 경우가 있다. 이 경우 우리가 의도하지 않은 사이드 이펙트가 발생할 수 있기에, 어떤 장벽을 세워두고, reorder, deletion, infinite loop 등의 최적화를 수행하지 못하도록 컴파일러에게 정보를 넘긴다.</li>
 </ul>
 </li>
 </ul>
@@ -39355,9 +39428,7 @@
 <li>위의 제약조건이 필요 없는경우, 여러 스레드들의 접근을 허용하는 경우, lock을 걸었던 스레드와 unlock하는 스레드가 굳이 일치할 필요가 없는 경우 단순 세마포어를 사용하면 된다.</li>
 </ul>
 <h2 id="monitors">monitors<a class="headerlink" href="#monitors" title="Permanent link">#</a></h2>
-<p><a href="../monitors%20%7Bsynchronization%7D/">monitors {synchronization}</a></p>
-<p>모니터는 다양한 조건을 감지하는 스레드를 위해서 사용할 수 있다. condition variable과 lock을 함께 쓴다. 모니터에 접근하기 위해서 lock이 사용되고, 한 번에 하나의 스레드만 모니터에 들어갈 수 있다. 모니터 안에서 데이터베이스 트랜잭션 커밋이라던가 유저 입력, 타이머 같은 어떤 조건이 만족될 때까지 condition variable이 제공하는 waiters 컨테이너에 들어가 대기상태가 된다.</p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230925194140.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925194140.png" src="../assets/Pasted%20image%2020230925194140.png" /></a></p>
+<p><a href="../monitors%20%7Bsynchronization%7D/">monitors {synchronization}</a>으로 가세요.</p>
 
 
 

@@ -334,6 +334,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../01_os_review.pdf%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  01_os_review.pdf {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../04.%20process%20%7BSP%7D/" class="md-tabs__link">
         
   
@@ -1207,6 +1224,23 @@
     
   
   2023-09-24 dump {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2023-09-26%20%EA%B6%8C%EC%98%81%EC%A7%84%20%EA%B5%90%EC%88%98%EB%8B%98%EC%9D%98%20OS%20%EA%B0%95%EC%9D%98%20%281%EC%B0%A8%29%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
 
       </a>
     </li>
@@ -20160,6 +20194,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../01_os_review.pdf%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01_os_review.pdf {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../04.%20process%20%7BSP%7D/" class="md-nav__link">
         
   
@@ -21134,6 +21187,25 @@
   
   <span class="md-ellipsis">
     2023-09-24 dump {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-26%20%EA%B6%8C%EC%98%81%EC%A7%84%20%EA%B5%90%EC%88%98%EB%8B%98%EC%9D%98%20OS%20%EA%B0%95%EC%9D%98%20%281%EC%B0%A8%29%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
   </span>
   
 
@@ -39062,8 +39134,16 @@
 
   <h1>monitors {synchronization}</h1>
 
-<p><a href="https://en.wikipedia.org/wiki/Monitor_(synchronization)">https://en.wikipedia.org/wiki/Monitor_(synchronization)</a><br />
-<a href="../synchronization%20%7Bpintos%7D%20%7Bsemaphore%7D%20%7Block%7D%20%7Bmonitor%7D/">synchronization {pintos} {semaphore} {lock} {monitor}</a>에서 조사하다가 발견한 문서</p>
+<ul>
+<li>&lt;<a href="https://en.wikipedia.org/wiki/Monitor_(synchronization">https://en.wikipedia.org/wiki/Monitor_(synchronization</a>)&gt;  </li>
+<li><a href="../synchronization%20%7Bpintos%7D%20%7Bsemaphore%7D%20%7Block%7D%20%7Bmonitor%7D/">synchronization {pintos} {semaphore} {lock} {monitor}</a>에서 조사하다가 발견한 문서</li>
+<li><a href="https://casys-kaist.github.io/pintos-kaist/appendix/synchronization.html#monitor-example">https://casys-kaist.github.io/pintos-kaist/appendix/synchronization.html#monitor-example</a></li>
+</ul>
+<hr />
+<p>모니터는 다양한 조건을 감지하는 스레드를 위해서 사용할 수 있다. condition variable과 lock을 함께 쓴다. 모니터에 접근하기 위해서 lock이 사용되고, 한 번에 하나의 스레드만 모니터에 들어갈 수 있다. 모니터 안에서 데이터베이스 트랜잭션 커밋이라던가 유저 입력, 타이머 같은 어떤 조건이 만족될 때까지 condition variable이 제공하는 waiters 컨테이너에 들어가 대기상태가 된다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230925194140.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925194140.png" src="../assets/Pasted%20image%2020230925194140.png" /></a></p>
+<p>대표적인 모니터 활용방법으로는 Producer &amp; Consumer 패턴이 있다. <a href="https://casys-kaist.github.io/pintos-kaist/appendix/synchronization.html#monitor-example">pintos-kaist</a>에 좋은 예제가 있으니 확인바란다.</p>
+<p>간략하게 정리하자면 읽기만 하는 스레드, 쓰기만 하는 스레드 각각 모니터에 들어가 주어진 조건이 만족할 때에만 본연의 작업을 수행한다. 예를 들어 Producer는 <code>put</code> 함수를 사용해 상호배제적으로 모니터에 들어간 뒤 문자를 넣을 수 있는 조건을 가진 <code>not_full</code> condition variable 컨테이너에 들어가 대기한다. 반대편(Consumer)에서 문자를 읽은 뒤 시그널을 보내면 대기명단 중 첫번째 스레드가 깨어나 조건이 일치하는 경우 버퍼에 문자를 넣는다. Producer가 모니터를 나가기 전에, 적어도 하나의 문자가 추가됐으므로 Consumer들에게 이를 알리기 위해 <code>not_empty</code> condition variable에 시그널을 보낸다. </p>
 
 
 
