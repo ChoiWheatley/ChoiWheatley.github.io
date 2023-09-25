@@ -4,10 +4,11 @@ tags:
 description:
 title: prj1.threads.introduction {pintos}
 created: 2023-09-22T16:46:46
-updated: 2023-09-22T23:23:09
+updated: 2023-09-25T13:45:48
 ---
-<https://casys-kaist.github.io/pintos-kaist/project1/introduction.html>  
-[[synchronization {pintos}]]
+- [[week07-09 {swjungle} {pintos}]]
+- [pintos-kaist/project1/introduction (GH.io)](https://casys-kaist.github.io/pintos-kaist/project1/introduction.html)  
+- [[synchronization {pintos}]]
 ___
 
 ## dump
@@ -36,7 +37,7 @@ GDB를 사용하면서 컨텍스트 스위칭이 일어나는 타이밍을 확�
 - [[synchronization {pintos}]] 부터 읽고 스레드 기본 개념 이해
 - [?] [page allocator](https://casys-kaist.github.io/pintos-kaist/appendix/memory_allocation.html#Page%20Allocator) 와 [block allocator](https://casys-kaist.github.io/pintos-kaist/appendix/memory_allocation.html#Block%20Allocator)와의 차이점?
 - 아니, 인터럽트를 꺼서 race condition을 아예 원칙상 발생하지 않게 만들 수도 있대.
-	- 극히 예외적인 케이스인 인터럽트 핸들러에서만 인터럽트를 끄고 사용한다고. `synch.c` 안에 있는 동기화 코드들도 인터럽트를 껐다고 가정한 채로 쓰여져 있다.
+	- 극히 예외적인 케이스인 인터럽트 핸들러에서만 인터럽트를 끄고 사용한다고. `synch.c` 안에 있는 동기화 코드들은 인터럽트를 끈 상태로 
 - `synch.c` => [Synchronization](https://casys-kaist.github.io/pintos-kaist/appendix/synchronization.html) 파트에서 다루는 다양한 개념인 semaphore, lock, condvar, optimization barriers 구현체. 
 - `devices/`: 하드웨어 관리드라이버들. 키보드, 콘솔 출력, 인풋 레이어, 인터럽트 큐, 디스크 및 파티션, 시리얼 포트 드라이버, 블록 디바이스
 - `kernel/list.c`, `kernel/list.h`  
