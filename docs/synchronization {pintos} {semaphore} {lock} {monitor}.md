@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: synchronization {pintos}
+title: synchronization {pintos} {semaphore} {lock} {monitor}
 created: 2023-09-22T16:52:18
-updated: 2023-09-25T17:12:31
+updated: 2023-09-25T17:31:21
 ---
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 - [[0015 OS {ssu2021-2nd} 💻|OS]] | [[Synchronization {2021OS}]]
@@ -71,6 +71,60 @@ struct lock {
 
 ## semaphores
 
+**sema_down**
+
+```c
+/* Down or "P" operation on a semaphore.  Waits for SEMA's value
+   to become positive and then atomically decrements it.
+
+   This function may sleep, so it must not be called within an
+   interrupt handler.  This function may be called with
+   interrupts disabled, but if it sleeps then the next scheduled
+   thread will probably turn interrupts back on. This is
+   sema_down function. */
+void
+sema_down (struct semaphore *sema) {
+	enum intr_level old_level;
+
+	ASSERT (sema != NULL);
+	ASSERT (!intr_context ());
+
+	old_level = intr_disable ();
+	while (sema->value == 0) {
+		list_push_back (&sema->waiters, &thread_current ()->elem);
+		thread_block ();
+	}
+	sema->value--;
+	intr_set_level (old_level);
+}
+```
+
+세마포어의 값을 낮추기 전에 sleep 여부를 결정한다. `while`문을 넣은 이유는 `thread_unblock`에 의해 깨어난 스레드가 당장 실행되는 것이 아니라 ready list에 올라가 선점되기까지를 기다리는 동안 그새 다른 스레드에 의해 세마포어가 0이 될 수도 있기 때문이다.
+
+**`sema_up`**
+
+```c
+/* Up or "V" operation on a semaphore.  Increments SEMA's value
+   and wakes up one thread of those waiting for SEMA, if any.
+
+   This function may be called from an interrupt handler. */
+void
+sema_up (struct semaphore *sema) {
+	enum intr_level old_level;
+
+	ASSERT (sema != NULL);
+
+	old_level = intr_disable ();
+	if (!list_empty (&sema->waiters))
+		thread_unblock (list_entry (list_pop_front (&sema->waiters),
+					struct thread, elem));
+	sema->value++;
+	intr_set_level (old_level);
+}
+```
+
+세마포어는 위에서도 봤겠지만 해당 세마포어를 기다리는 `waiters` 리스트를 가지고 있다. 이 함수를 호출하게 되면 waiters 중 첫번째 스레드를 unblock 시켜 ready 상태로 만든 뒤에 value를 1 증가시킨다.
+
 ## locks
 
 **`lock_init`**
@@ -132,5 +186,9 @@ critical section으로 진입하기 전에 lock을 거는 코드, 세마포어�
 
 > [!question] When to use lock or semaphore?
 
-- 한 스레드만이 데이터를 점유해야 하는 경우, lock을 건 슬레드가 lock을 풀어야 하는 경우 lock을 쓴다.
+- 한 스레드만이 데이터를 점유해야 하는 경우, lock을 건 스레드가 lock을 풀어야 하는 경우 lock을 쓴다.
 - 위의 제약조건이 필요 없는경우, 여러 스레드들의 접근을 허용하는 경우, lock을 걸었던 스레드와 unlock하는 스레드가 굳이 일치할 필요가 없는 경우 단순 세마포어를 사용하면 된다.
+
+## monitors
+
+모니터는 데이터베이스 트랜잭션이나 

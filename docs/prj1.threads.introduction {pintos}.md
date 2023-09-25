@@ -8,7 +8,7 @@ updated: 2023-09-25T13:56:32
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/project1/introduction (GH.io)](https://casys-kaist.github.io/pintos-kaist/project1/introduction.html)  
-- [[synchronization {pintos}]]
+- [[synchronization {pintos} {semaphore} {lock} {monitor}]]
 ___
 
 ## dump
@@ -34,7 +34,7 @@ GDB를 사용하면서 컨텍스트 스위칭이 일어나는 타이밍을 확�
 
 - synchronization primitives: {semaphors, lock, conditional vars, optimazation barriers}
 - 더 이상 실행할 스레드가 없으면 (스레드 스케줄링?) 특수한 스레드인 `idle`을 실행시킨다.
-- [[synchronization {pintos}]] 부터 읽고 스레드 기본 개념 이해
+- [[synchronization {pintos} {semaphore} {lock} {monitor}]] 부터 읽고 스레드 기본 개념 이해
 - [?] [page allocator](https://casys-kaist.github.io/pintos-kaist/appendix/memory_allocation.html#Page%20Allocator) 와 [block allocator](https://casys-kaist.github.io/pintos-kaist/appendix/memory_allocation.html#Block%20Allocator)와의 차이점?
 - 아니, 인터럽트를 꺼서 race condition을 아예 원칙상 발생하지 않게 만들 수도 있대.
 	- 극히 예외적인 케이스인 인터럽트 핸들러에서만 인터럽트를 끄고 사용한다고. `synch.c` 안에 있는 동기화 코드들은 인터럽트를 끈 상태로 
@@ -57,4 +57,4 @@ GDB를 사용하면서 컨텍스트 스위칭이 일어나는 타이밍을 확�
 	- `print_stats`: ???? 어떤 상태를 출력함?
 	- **`main`**
 		- bss 초기화, 명령줄 파싱, 스레드 초기화 콘솔 lock, 메모리
-- `synch.c` => [[synchronization {pintos}]] 파트에서 다루는 다양한 개념인 semaphore, lock, condvar, optimization barriers 구현체. 
+- `synch.c` => [[synchronization {pintos} {semaphore} {lock} {monitor}]] 파트에서 다루는 다양한 개념인 semaphore, lock, condvar, optimization barriers 구현체. 
