@@ -4,7 +4,7 @@ tags:
 description:
 title: synchronization {pintos}
 created: 2023-09-22T16:52:18
-updated: 2023-09-25T15:26:04
+updated: 2023-09-25T15:45:10
 ---
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 - [[0015 OS {ssu2021-2nd} 💻|OS]] | [[Synchronization {2021OS}]]
@@ -16,6 +16,8 @@ ___
 > 코드 먼저 읽으세요 - 코치
 
 코드를 먼저 읽고, 흐름을 이해하자. 동기화 기본(semaphore, lock, condvar, optimazation barriers)들에 대해서 이해가 필요하다.
+
+[interrupt.c](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/threads/interrupt.c)에서 구체적인 코드를 확인하면서 읽어주세요. 이해가 되지 않는 함수에 대해서는 끝까지 파고드세요.
 
 ## DUMPS
 
@@ -67,7 +69,9 @@ struct lock {
 - **optimizational barriers**
 	- 
 
-## lock
+## semaphores
+
+## locks
 
 **`lock_init`**
 
@@ -98,6 +102,31 @@ lock_init (struct lock *lock) {
 
 lock은 1로 초기화한 세마포어이다. 다만, 스레드 주인에 의해서 lock, unlock할 수 있다는 점이 단순 세마포어와 차이가 있다. 단순 세마포어는 이진일 필요가 없어 동시에 여러 스레드가 같은 데이터를 공유할 수 있다. 심지어 다른 스레드에 의해서 unlock될 수도 있다.
 
+**`lock_acquire`**
+
+```c
+/* Acquires LOCK, sleeping until it becomes available if
+   necessary.  The lock must not already be held by the current
+   thread.
+
+   This function may sleep, so it must not be called within an
+   interrupt handler.  This function may be called with
+   interrupts disabled, but interrupts will be turned back on if
+   we need to sleep. */
+void
+lock_acquire (struct lock *lock) {
+	ASSERT (lock != NULL);
+	ASSERT (!intr_context ());
+	ASSERT (!lock_held_by_current_thread (lock));
+
+	sema_down (&lock->semaphore);
+	lock->holder = thread_current ();
+}
+```
+
+critical section으로 진입하기 전에 
+
 > [!question] When to use lock or semaphore?
 
-- lock을 사용할 때는 mutual exclusion을 필수로 지켜야 하는 상황에서 써야 한다.
+- 한 스레드만이 데이터를 점유해야 하는 경우, lock을 건 슬레드가 lock을 풀어야 하는 경우 lock을 쓴다.
+- 위의 제약조건이 필요 없는경우, 여러 스레드들의 접근을 허용하는 경우, lock을 걸었던 스레드와 unlock하는 스레드가 굳이 일치할 필요가 없는 경우 단순 세마포어를 사용하면 된다.
