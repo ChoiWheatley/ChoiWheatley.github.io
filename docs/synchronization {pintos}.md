@@ -4,7 +4,7 @@ tags:
 description:
 title: synchronization {pintos}
 created: 2023-09-22T16:52:18
-updated: 2023-09-25T14:12:35
+updated: 2023-09-25T15:06:37
 ---
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 - [[0015 OS {ssu2021-2nd} 💻|OS]] | [[Synchronization {2021OS}]]
@@ -51,7 +51,11 @@ struct lock {
 - **monitors**
 	- *condition variable*
 		- *signals* the condition or *broadcasts* the condition to wake all of them
-	- It is then said to be "in the monitor". While in the monitor, the thread has control over all the protected data, which it may freely examine or modify. When access to the protected data is complete, it releases the monitor lock.
+		- 모니터 안에서 cond 조건이 만족할 때 signal을 받아 탈출할 수 있도록 block한다. 즉, 일반적인 lock과는 다르게 
+	- *lock*
+		- Before thread access the protected data, it first acquires the monitor lock.
+		- It is then said to be "in the monitor". While in the monitor, the thread has control over all the protected data, which it may freely examine or modify. When access to the protected data is complete, it releases the monitor lock.
+	- 
 
 	```c
 	/* Condition variable. */
