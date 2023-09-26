@@ -4,7 +4,7 @@ tags:
 description:
 title: 01_os_review.pdf {swjungle}
 created: 2023-09-25T23:23:13
-updated: 2023-09-26T02:09:54
+updated: 2023-09-26T12:25:49
 ---
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
@@ -32,9 +32,11 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 	-  Location of data is identified by **(file system)**
 	- OS subsystem maps the file to physical storage. Let's call it **(file???)** >> file이란 단어 자체가 추상화된 개념인데..?
 	- How to create the mappings from file to storage? >> 연속적으로, 연결리스트로, 물리 블록을 가리키는 포인터들을 저장한 블록으로, 계층노드로
-	- Where are the internal nodes in the index? | 인덱스의 내부노드(리프가 아닌 노드)는 어디에 있는가? >> 똑같이 스토리지 안에 있는거 아닌가? 이걸 메인 메모리로 캐싱하는 건 read할 때에서야 일어나는거 아님?
+	- Where are the internal nodes in the index? | 인덱스의 내부노드(리프가 아닌 노드)는 어디에 있는가? >> 똑같이 스토리지 안에 있는거 아닌가? 이걸 메인 메모리로 캐싱하는 건 read할 때에서야 일어나는거 아님? 
+		- storage는 전원이 꺼져도 인덱스를 잃지 않아야 함.
 	- Does hardware help for the indexing? If yes, what is roles of hardware? If not, why? >> 스토리지 자체 캐시 플래시 드라이브가 있다고 들었는데 [page cache {wiki}](https://en.wikipedia.org/wiki/Page_cache) 에 따르면 disk controller 또는 disk array controller 안에 자체 RAM 혹은 NVRAM이 캐싱을 담당한다고 한다.
 		- 그래서 첫번째 질문에 답을 하자면, 하드웨어는 인덱싱을 도와준다고 말할 수 있다. 그 하드웨어는 파일과 실제 디스크 위치 (섹터, 페이지)를 매핑한다.
+		- 답변: 인덱싱 자체는 SW가 처리한다. ext, fat, ....같은 소프트웨어들이 그것을 처리한다.
 	- When to allocate physical block? >> read
 	- Any performance optimization for slow storage device? >> multi-level cache 말고 더 있으려나?
 - File System overview
