@@ -3,7 +3,7 @@ description: 매일매일 나의 삶을 부트스트랩 할 수 있는 도구들
 aliases: 유틸리티 아카이브 archive hack
 tags: utility
 created: 2023-03-15T14:30:15
-updated: 2023-09-16T22:02:42
+updated: 2023-09-28T17:38:47
 title: 0110 Utility 🔧
 ---
 
@@ -49,4 +49,4 @@ title: 0110 Utility 🔧
 - [[neovim 설정 관련 {NvChad}]]
 - [[tree, cli command for directory structure]]
 - [[zellij, terminal multiplexer built with rust]]
-- 
+- [[swap memory increase {linux}]]
