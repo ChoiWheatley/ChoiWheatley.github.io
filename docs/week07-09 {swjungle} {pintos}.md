@@ -48,4 +48,6 @@ ___
 
 [[2023-09-28 dump {swjungle}]]
 
+[[2023-09-29 dump {swjungle}{priority-donate-nest}{chain}]]
+
 ## [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
