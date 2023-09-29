@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#generic-linked-list" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1241,6 +1246,40 @@
     
   
   2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2023-09-28%20dump%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  2023-09-28 dump {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2023-09-29%20dump%20%7Bswjungle%7D%7Bpriority-donate-nest%7D%7Bchain%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  2023-09-29 dump {swjungle}{priority-donate-nest}{chain}
 
       </a>
     </li>
@@ -12729,6 +12768,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../swap%20memory%20increase%20%7Blinux%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  swap memory increase {linux}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sweeping/" class="md-tabs__link">
         
   
@@ -21226,6 +21282,44 @@
   
   <span class="md-ellipsis">
     2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-28%20dump%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-28 dump {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-29%20dump%20%7Bswjungle%7D%7Bpriority-donate-nest%7D%7Bchain%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-29 dump {swjungle}{priority-donate-nest}{chain}
   </span>
   
 
@@ -31203,6 +31297,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    list {C}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -31212,6 +31317,30 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generic-linked-list" class="md-nav__link">
+    Generic Linked List
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -34059,6 +34188,25 @@
   
   <span class="md-ellipsis">
     structures in C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../swap%20memory%20increase%20%7Blinux%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swap memory increase {linux}
   </span>
   
 
@@ -39139,6 +39287,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generic-linked-list" class="md-nav__link">
+    Generic Linked List
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -39230,6 +39393,17 @@
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">cnt</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<h2 id="generic-linked-list">Generic Linked List<a class="headerlink" href="#generic-linked-list" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/lib/kernel/list.c">lib/kernel/list.c</a><ul>
+<li>순회, empty 여부, list size, 원소 삭제 (임의 위치, front, back), 원소 삽입 (front, back, ordered), type definition of less predicate function, sort, unique, max, min에 대한 구현이 들어가 있다.</li>
+</ul>
+</li>
+<li><code>list_entry</code> 매크로 함수를 사용한 outer structure 획득<ul>
+<li><iframe src="https://github.com/ChoiWheatley/swjungle-week07-09/blob/8d6026ff4ea0823b5d98ed109ee98790b60ce026/include/lib/kernel/list.h#L98-L105" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe></li>
+</ul>
+</li>
+</ul>
 
 
 

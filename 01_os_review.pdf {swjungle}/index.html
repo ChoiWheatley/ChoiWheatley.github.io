@@ -1259,6 +1259,40 @@
   
   
     <li class="md-tabs__item">
+      <a href="../2023-09-28%20dump%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  2023-09-28 dump {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../2023-09-29%20dump%20%7Bswjungle%7D%7Bpriority-donate-nest%7D%7Bchain%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  2023-09-29 dump {swjungle}{priority-donate-nest}{chain}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../20230424%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9D%98%20%EC%A0%95%EC%83%81%EC%9D%84%20%ED%96%A5%ED%95%B4%20%EC%96%B4%EB%96%A4%20%EC%84%A4%EA%B3%84%EB%A5%BC%20%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%9D%84%EA%B9%8C%20%2B%20%EC%9C%84%EB%8B%88%EB%B8%8C%20%EA%B0%95%EC%82%AC%20%EC%9D%B4%ED%98%B8%EC%A4%80/" class="md-tabs__link">
         
   
@@ -12734,6 +12768,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../swap%20memory%20increase%20%7Blinux%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  swap memory increase {linux}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sweeping/" class="md-tabs__link">
         
   
@@ -21288,6 +21339,44 @@
   
   <span class="md-ellipsis">
     2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-28%20dump%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-28 dump {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-29%20dump%20%7Bswjungle%7D%7Bpriority-donate-nest%7D%7Bchain%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-09-29 dump {swjungle}{priority-donate-nest}{chain}
   </span>
   
 
@@ -34127,6 +34216,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../swap%20memory%20increase%20%7Blinux%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    swap memory increase {linux}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sweeping/" class="md-nav__link">
         
   
@@ -39270,9 +39378,13 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 <li>Location of data is identified by <strong>(file system)</strong></li>
 <li>OS subsystem maps the file to physical storage. Let's call it <strong>(file???)</strong> &gt;&gt; file이란 단어 자체가 추상화된 개념인데..?</li>
 <li>How to create the mappings from file to storage? &gt;&gt; 연속적으로, 연결리스트로, 물리 블록을 가리키는 포인터들을 저장한 블록으로, 계층노드로</li>
-<li>Where are the internal nodes in the index? | 인덱스의 내부노드(리프가 아닌 노드)는 어디에 있는가? &gt;&gt; 똑같이 스토리지 안에 있는거 아닌가? 이걸 메인 메모리로 캐싱하는 건 read할 때에서야 일어나는거 아님?</li>
+<li>Where are the internal nodes in the index? | 인덱스의 내부노드(리프가 아닌 노드)는 어디에 있는가? &gt;&gt; 똑같이 스토리지 안에 있는거 아닌가? 이걸 메인 메모리로 캐싱하는 건 read할 때에서야 일어나는거 아님? <ul>
+<li>storage는 전원이 꺼져도 인덱스를 잃지 않아야 함.</li>
+</ul>
+</li>
 <li>Does hardware help for the indexing? If yes, what is roles of hardware? If not, why? &gt;&gt; 스토리지 자체 캐시 플래시 드라이브가 있다고 들었는데 <a href="https://en.wikipedia.org/wiki/Page_cache">page cache {wiki}</a> 에 따르면 disk controller 또는 disk array controller 안에 자체 RAM 혹은 NVRAM이 캐싱을 담당한다고 한다.<ul>
 <li>그래서 첫번째 질문에 답을 하자면, 하드웨어는 인덱싱을 도와준다고 말할 수 있다. 그 하드웨어는 파일과 실제 디스크 위치 (섹터, 페이지)를 매핑한다.</li>
+<li>답변: 인덱싱 자체는 SW가 처리한다. ext, fat, ....같은 소프트웨어들이 그것을 처리한다.</li>
 </ul>
 </li>
 <li>When to allocate physical block? &gt;&gt; read</li>
