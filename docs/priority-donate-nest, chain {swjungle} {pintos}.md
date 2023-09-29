@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 2023-09-29 dump {swjungle}{priority-donate-nest}{chain}
+title: priority-donate-nest, chain {swjungle} {pintos}
 created: 2023-09-29T21:17:33
-updated: 2023-09-29T22:05:38
+updated: 2023-09-29T22:09:31
 ---
 - <https://github.com/ChoiWheatley/swjungle-week07-09/pull/23>
 - [[week07-09 {swjungle} {pintos}]]
@@ -14,7 +14,8 @@ ___
 
 priority-donate-chain 예제를 기준으로 설명합니다. 지면이 부족하므로 `NESTING_DEPTH == 3`으로 놓고 진행합니다.
 
-![[priority-donate-chain.excalidraw|800]]
+[[priority-donate-chain.excalidraw]]  
+![[Pasted image 20230929220928.png]]
 
 `main` 스레드는 0번 lock을 소유합니다. 이를 'h' 달린 화살표료 표기합니다. T1 스레드는 1번 lock을 소유하고 0번 lock을 기다립니다. 이를 w 달린 화살표로 표기합니다. 다시 main에 의해 T2가 실행됩니다. T2 스레드는 2번 lock을 소유하고 1번 lock을 기다립니다. T3 스레드는 3번 lock을 소유하고 2번 lock을 기다립니다. 
 
