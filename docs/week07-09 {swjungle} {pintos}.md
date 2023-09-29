@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-09-25T20:34:15
+updated: 2023-09-29T19:43:21
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -45,8 +45,6 @@ ___
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)
 
 [[2023-09-23 dump {swjungle}]]
-
-[[2023-09-24 dump {swjungle}]]
 
 [[2023-09-28 dump {swjungle}]]
 
