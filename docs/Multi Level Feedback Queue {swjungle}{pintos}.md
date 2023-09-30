@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-09-30T18:44:22
+updated: 2023-09-30T20:20:57
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -52,8 +52,22 @@ $$
 
 ### Calculating `recent_cpu`
 
+스레드가 지금까지 잡아먹은 시간을 리턴한다. 단순히 선형적으로 증가하는 것이 아니라 decay를 고려하여 점점 증가속도가 감소하도록 만들었다.
+
+```c
+recent_cpu = (2 * load_avg)/(2 * load_avg + 1) * recent_cpu + nice
+```
+
+`load_avg`는 대기하는 스레드의 개수의 평균을 의미한다.
+
 ### Calculating `load_avg`
 
-### Summary
+지수적으로 가중치가 쌓이는 형태의 평균 대기 스레드 수를 리턴한다.
+
+```c
+load_avg = (59/60) * load_avg + (1/60) * read_threads
+```
 
 ### Fixed-Point Real Arithmetic
+
+17.14 고정소수점 실수연산을 사용해야 한다. 여기에서 32비트 정수형을 기준으로 LSB부터 14개의 비트는 fractional bits, 즉 분모를 의미하고 17개의 비트는 decimal points, 분자를 의미한다. 나머지 1 비트는 당연하게도 부호비트.
