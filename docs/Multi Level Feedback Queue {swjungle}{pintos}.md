@@ -75,7 +75,7 @@ load_avg = (59/60) * load_avg + (1/60) * read_threads
 ## Tests
 
 - load-1: 하나의 스레드를 45초동안 재운다(busy waiting). 그 뒤에 `load_avg`를 검사하는데, 0.5가 나오게 만들어주어야 한다. 그 다음으로 10초동안 재운다(block). 그 뒤에 `load_avg`를 검사하는데, 0.5보다 작게 나오게 만들어야 주어야 한다.
-- load-60: 60개의 스레드를 
+- load-60: 60개의 스레드를 시작하여 각각 10초동안 sleep한다. 그리고 60초동안 
 - load-avg
 - recent-1
 - fair-2
