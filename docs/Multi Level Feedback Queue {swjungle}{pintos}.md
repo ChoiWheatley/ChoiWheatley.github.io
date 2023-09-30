@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-09-30T17:04:18
+updated: 2023-09-30T18:17:08
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -35,6 +35,10 @@ mlfqs는 우선순위 기부를 하지 않기 때문에 우선순위 기부를 �
 
 ### Niceness
 
+Nice는 직역하자면 "친절한"이란 뜻이다. Nice 값이 높은 스레드는 다른 스레드에게 자신의 CPU 자원을 "친절하게" 퍼다준다. Nice의 값은 -20부터 20까지의 값을 가지며, 음수일 경우 반대로 다른 스레드의 CPU 시간을 빼앗는다. 스케줄러는 Nice 값에 기반한 공식을 사용하여 여러 스레드들의 우선순위를 동적으로 매겨 전체적인 response time을 줄이는 데 힘쓴다.
+
+구현하여야 하는 코드는 [`threads/thread.c`](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/threads/thread.c) 파일 안에 있다.
+
 ### Calculatiing Priority
 
 ### Calculating `recent_cpu`
@@ -44,4 +48,3 @@ mlfqs는 우선순위 기부를 하지 않기 때문에 우선순위 기부를 �
 ### Summary
 
 ### Fixed-Point Real Arithmetic
-
