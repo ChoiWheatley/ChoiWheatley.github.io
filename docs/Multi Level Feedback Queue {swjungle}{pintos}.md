@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-09-30T18:17:08
+updated: 2023-09-30T18:44:22
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -39,7 +39,16 @@ Nice는 직역하자면 "친절한"이란 뜻이다. Nice 값이 높은 스레�
 
 구현하여야 하는 코드는 [`threads/thread.c`](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/threads/thread.c) 파일 안에 있다.
 
+- `thread_get_nice`
+- `thread_set_nice`
+
 ### Calculatiing Priority
+
+$$
+\text{priority}=\text{PRI\_MAX}-\frac{\text{recent\_cpu}}{4}-\text{nice} \times 2
+$$
+
+`recent_cpu`는 해당 스레드가 점유한 시간을 의미한다. 따라서 한 스레드가 오랜 시간 CPU를 점유할수록 우선순위는 떨어지게 된다. nice 값이 높으면 재선점될 일이 자주 찾아오지 않을 것이다. priority 값은 매 4 틱마다 계산을 수행하게 된다.
 
 ### Calculating `recent_cpu`
 
