@@ -42,7 +42,7 @@ Nice는 직역하자면 "친절한"이란 뜻이다. Nice 값이 높은 스레�
 - `thread_get_nice`
 - `thread_set_nice`
 
-### Calculatiing Priority
+### Calculating Priority
 
 $$
 \text{priority}=\text{PRI\_MAX}-\frac{\text{recent\_cpu}}{4}-\text{nice} \times 2
