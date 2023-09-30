@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-09-30T20:20:57
+updated: 2023-09-30T21:23:45
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -70,4 +70,4 @@ load_avg = (59/60) * load_avg + (1/60) * read_threads
 
 ### Fixed-Point Real Arithmetic
 
-17.14 고정소수점 실수연산을 사용해야 한다. 여기에서 32비트 정수형을 기준으로 LSB부터 14개의 비트는 fractional bits, 즉 분모를 의미하고 17개의 비트는 decimal points, 분자를 의미한다. 나머지 1 비트는 당연하게도 부호비트.
+17.14 고정소수점 실수연산을 사용해야 한다. 여기에서 32비트 정수형을 기준으로 LSB부터 14개의 비트는 fractional bits, 즉 소수부를 의미하고 17개의 비트는 decimal points, 정수부를 의미한다. 나머지 1 비트는 당연하게도 부호비트.
