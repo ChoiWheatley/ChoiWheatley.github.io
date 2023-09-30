@@ -4,7 +4,7 @@ tags:
 description:
 title: list {C}
 created: 2023-09-20T14:38:29
-updated: 2023-09-29T22:03:38
+updated: 2023-09-30T15:25:35
 ---
 **depends on**: [[mymalloc.h {C}]]
 
@@ -87,7 +87,6 @@ int __len__(const NodePtr first) {
 
 ## Generic Linked List
 
-- [lib/kernel/list.c](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/lib/kernel/list.c)
+- [lib/kernel/list.c](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/lib/kernel/list.c), [lib/kernel/list.h](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/include/lib/kernel/list.h)
 	- 순회, empty 여부, list size, 원소 삭제 (임의 위치, front, back), 원소 삽입 (front, back, ordered), type definition of less predicate function, sort, unique, max, min에 대한 구현이 들어가 있다.
-- `list_entry` 매크로 함수를 사용한 outer structure 획득
-	- <iframe src="https://github.com/ChoiWheatley/swjungle-week07-09/blob/8d6026ff4ea0823b5d98ed109ee98790b60ce026/include/lib/kernel/list.h#L98-L105" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
+	- `list_entry` 매크로 함수를 사용한 outer structure 획득 

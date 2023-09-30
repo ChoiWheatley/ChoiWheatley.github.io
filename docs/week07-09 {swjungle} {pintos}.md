@@ -44,7 +44,7 @@ ___
 - [[prj1.threads.introduction {pintos}]]
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)
 
-[[2023-09-23 dump {swjungle}]]
+[[2023-09-23 dump {swjungle} {priority-scheduling} {alarm-clock}]]
 
 [[2023-09-28 dump {swjungle}]]
 
