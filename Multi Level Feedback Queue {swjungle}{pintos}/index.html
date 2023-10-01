@@ -39607,6 +39607,21 @@ $$</p>
 <div class="highlight"><pre><span></span><code><span class="n">recent_cpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">recent_cpu</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nice</span>
 </code></pre></div>
 <p><code>load_avg</code>는 대기하는 스레드의 개수의 평균을 의미한다.</p>
+<blockquote>
+<p>exponentially weighted moving average란 뭐야?</p>
+</blockquote>
+<p><strong>gpt의 답변:</strong></p>
+<p>지수 가중 이동 평균(Exponentially Weighted Moving Average, EWMA)는 시계열 데이터의 평균을 계산하는 방법 중 하나로, 최근 데이터에 높은 가중치를 주는 방법입니다. 이것은 과거 데이터보다 최신 데이터에 더 큰 중요성을 부여하여 시계열 데이터의 추세와 패턴을 민감하게 파악할 수 있도록 도와줍니다.</p>
+<p>EWMA는 데이터 포인트를 가중치로 곱한 다음 이를 지수적으로 평활화하여 평균을 계산합니다. 가장 최근 데이터 포인트에는 더 높은 가중치가 부여되고, 시간이 지남에 따라 가중치는 지수적으로 감소합니다. 이를 통해 EWMA는 시계열 데이터의 빠른 변화를 민감하게 반영하면서도 잡음과 불안정성을 줄이는 데 도움이 됩니다.</p>
+<p>EWMA를 사용하는 주요 이유 중 하나는 이동 평균을 계산할 때 지연(lag)을 최소화하기 위해서입니다. 일반적인 이동 평균 방법은 데이터의 일부를 버려야 하며, 이로 인해 지연이 발생할 수 있습니다. 그러나 EWMA는 모든 데이터 포인트를 사용하므로 지연이 줄어듭니다.</p>
+<p>EWMA의 수식은 다음과 같습니다:</p>
+<p>$$ EMA_t = \alpha \cdot x_t + (1 - \alpha) \cdot EMA_{t-1} $$</p>
+<p>여기서,
+- ( EMA_t )는 현재 시간 ( t )에서의 지수 가중 이동 평균 값입니다.
+- ( x_t )는 현재 시간 ( t )의 데이터 포인트입니다.
+- ( EMA_{t-1} )은 이전 시간 ( t-1 )에서의 지수 가중 이동 평균 값입니다.
+- ( \alpha )는 평활화 상수(0과 1 사이의 값)로, 높은 값일수록 최신 데이터에 높은 가중치를 부여합니다.</p>
+<p>이러한 방식으로 EWMA는 최근 데이터에 민감하게 반응하면서도 지연을 최소화하여 시계열 데이터의 추세를 추정하는 데 유용합니다. 예를 들어, 주식 시장에서 주가 데이터를 분석하거나 수요 예측 모델을 개발할 때 EWMA는 많이 사용되는 기법 중 하나입니다.</p>
 <h3 id="calculating-load_avg">Calculating <code>load_avg</code><a class="headerlink" href="#calculating-load_avg" title="Permanent link">#</a></h3>
 <p>지수적으로 가중치가 쌓이는 형태의 평균 대기 스레드 수를 리턴한다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">load_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">59</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">read_threads</span>
@@ -39623,10 +39638,16 @@ $$</p>
 </li>
 <li>load-avg: 60개의 스레드를 시작하는데 i번째 스레드는 <code>10 + i</code>초를 잔 뒤에 60초동안 busy waiting을 한다. 그리고 main 시작을 기점으로 120초가 지난 시점까지 다시 sleep한다. main 스레드는 매 2초마다 전체 <code>load_avg</code>를 검사한다. 예상결과를 파싱하여 그래프로 그려봤는데 다음과 같다. <ul>
 <li><a class="glightbox" href="../assets/Pasted%20image%2020231001145637.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001145637.png" src="../assets/Pasted%20image%2020231001145637.png" /></a></li>
-<li>처음 70초 까지는 waiting thread의 수가 점점 늘어나 지수적으로 <code>load_avg</code> 가 증가했지만 70초 이후부터는 깨어난 순서대로 스레드가 잠에 들기 때문에 변화량이 음수가 되어 서서히 줄어드는 모습을 볼 수 있다.180초에 다가갈수록 <code>load_avg</code>가 다시 0으로 수렴하지 않는 이유는 아무래도 평균을 기억하고 있어서 그런 것 같다.</li>
+<li>처음 70초 까지는 waiting thread의 수가 점점 늘어나 지수적으로 <code>load_avg</code> 가 증가했지만 70초 이후부터는 깨어난 순서대로 스레드가 잠에 들기 때문에 변화량이 음수가 되어 서서히 줄어드는 모습을 볼 수 있다. 180초에 다가갈수록 <code>load_avg</code>가 다시 0으로 수렴하지 않는 이유는 아무래도 평균을 기억하고 있어서 그런 것 같다.</li>
 </ul>
 </li>
-<li>recent-1</li>
+<li>recent-1<ul>
+<li><code>recent_cpu</code>가 올바르게 성장하는지 여부를 체크하는 테스트이다. 맨 처음 10초 sleep하여 <code>recent_cpu</code>를 decay 시킨다. 그 뒤부터 180초동안 2초 간격으로 <code>recent_cpu</code>, <code>load_avg</code>를 측정한다. 다음은 예제 결과를 그래프로 옮긴 결과이다.</li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020231001231726.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001231726.png" src="../assets/Pasted%20image%2020231001231726.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020231001231735.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001231735.png" src="../assets/Pasted%20image%2020231001231735.png" /></a></li>
+<li><code>recent_cpu</code>던, <code>load_avg</code>던 로그수준으로 증가하는 것을 알 수 있다. </li>
+</ul>
+</li>
 <li>fair-2</li>
 <li>fair-20</li>
 <li>nice-2</li>
