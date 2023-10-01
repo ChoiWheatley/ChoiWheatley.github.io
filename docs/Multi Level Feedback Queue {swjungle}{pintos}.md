@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-10-01T23:09:53
+updated: 2023-10-01T23:17:38
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -105,6 +105,9 @@ load_avg = (59/60) * load_avg + (1/60) * read_threads
 	- 처음 70초 까지는 waiting thread의 수가 점점 늘어나 지수적으로 `load_avg` 가 증가했지만 70초 이후부터는 깨어난 순서대로 스레드가 잠에 들기 때문에 변화량이 음수가 되어 서서히 줄어드는 모습을 볼 수 있다. 180초에 다가갈수록 `load_avg`가 다시 0으로 수렴하지 않는 이유는 아무래도 평균을 기억하고 있어서 그런 것 같다.
 - recent-1
 	- `recent_cpu`가 올바르게 성장하는지 여부를 체크하는 테스트이다. 맨 처음 10초 sleep하여 `recent_cpu`를 decay 시킨다. 그 뒤부터 180초동안 2초 간격으로 `recent_cpu`, `load_avg`를 측정한다. 다음은 예제 결과를 그래프로 옮긴 결과이다.
+	- ![[Pasted image 20231001231726.png]]
+	- ![[Pasted image 20231001231735.png]]
+	- `recent_cpu`던, `load_avg`던 로그수준으로 증가하는 것을 알 수 있다. 
 - fair-2
 - fair-20
 - nice-2
