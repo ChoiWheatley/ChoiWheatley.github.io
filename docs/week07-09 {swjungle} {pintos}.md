@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-09-29T19:43:21
+updated: 2023-10-01T14:38:20
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -52,5 +52,9 @@ ___
 
 - [[priority-donate-multiple {swjungle} {pintos}]]
 - [[priority-donate-nest, chain {swjungle} {pintos}]]
+
+**2023-10-01**
+
+- [[Multi Level Feedback Queue {swjungle}{pintos}]]
 
 ## [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
