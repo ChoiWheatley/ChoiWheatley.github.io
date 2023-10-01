@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-10-01T20:58:20
+updated: 2023-10-01T21:23:51
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -59,6 +59,26 @@ recent_cpu = (2 * load_avg)/(2 * load_avg + 1) * recent_cpu + nice
 ```
 
 `load_avg`는 대기하는 스레드의 개수의 평균을 의미한다.
+
+> exponentially weighted moving average란 뭐야?
+
+지수 가중 이동 평균(Exponentially Weighted Moving Average, EWMA)는 시계열 데이터의 평균을 계산하는 방법 중 하나로, 최근 데이터에 높은 가중치를 주는 방법입니다. 이것은 과거 데이터보다 최신 데이터에 더 큰 중요성을 부여하여 시계열 데이터의 추세와 패턴을 민감하게 파악할 수 있도록 도와줍니다.
+
+EWMA는 데이터 포인트를 가중치로 곱한 다음 이를 지수적으로 평활화하여 평균을 계산합니다. 가장 최근 데이터 포인트에는 더 높은 가중치가 부여되고, 시간이 지남에 따라 가중치는 지수적으로 감소합니다. 이를 통해 EWMA는 시계열 데이터의 빠른 변화를 민감하게 반영하면서도 잡음과 불안정성을 줄이는 데 도움이 됩니다.
+
+EWMA를 사용하는 주요 이유 중 하나는 이동 평균을 계산할 때 지연(lag)을 최소화하기 위해서입니다. 일반적인 이동 평균 방법은 데이터의 일부를 버려야 하며, 이로 인해 지연이 발생할 수 있습니다. 그러나 EWMA는 모든 데이터 포인트를 사용하므로 지연이 줄어듭니다.
+
+EWMA의 수식은 다음과 같습니다:
+
+$$ EMA_t = \alpha \cdot x_t + (1 - \alpha) \cdot EMA_{t-1} $$
+
+여기서,
+- \( EMA_t \)는 현재 시간 \( t \)에서의 지수 가중 이동 평균 값입니다.
+- \( x_t \)는 현재 시간 \( t \)의 데이터 포인트입니다.
+- \( EMA_{t-1} \)은 이전 시간 \( t-1 \)에서의 지수 가중 이동 평균 값입니다.
+- \( \alpha \)는 평활화 상수(0과 1 사이의 값)로, 높은 값일수록 최신 데이터에 높은 가중치를 부여합니다.
+
+이러한 방식으로 EWMA는 최근 데이터에 민감하게 반응하면서도 지연을 최소화하여 시계열 데이터의 추세를 추정하는 데 유용합니다. 예를 들어, 주식 시장에서 주가 데이터를 분석하거나 수요 예측 모델을 개발할 때 EWMA는 많이 사용되는 기법 중 하나입니다.
 
 ### Calculating `load_avg`
 
