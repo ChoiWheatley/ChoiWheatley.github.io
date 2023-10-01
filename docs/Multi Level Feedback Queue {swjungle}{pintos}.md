@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-10-01T21:33:24
+updated: 2023-10-01T23:09:53
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -61,6 +61,8 @@ recent_cpu = (2 * load_avg)/(2 * load_avg + 1) * recent_cpu + nice
 `load_avg`는 대기하는 스레드의 개수의 평균을 의미한다.
 
 > exponentially weighted moving average란 뭐야?
+
+**gpt의 답변:**
 
 지수 가중 이동 평균(Exponentially Weighted Moving Average, EWMA)는 시계열 데이터의 평균을 계산하는 방법 중 하나로, 최근 데이터에 높은 가중치를 주는 방법입니다. 이것은 과거 데이터보다 최신 데이터에 더 큰 중요성을 부여하여 시계열 데이터의 추세와 패턴을 민감하게 파악할 수 있도록 도와줍니다.
 
