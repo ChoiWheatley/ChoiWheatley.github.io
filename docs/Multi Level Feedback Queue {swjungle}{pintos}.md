@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-10-01T23:22:12
+updated: 2023-10-01T23:37:54
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -108,11 +108,8 @@ load_avg = (59/60) * load_avg + (1/60) * read_threads
 	- ![[Pasted image 20231001231726.png]]
 	- ![[Pasted image 20231001231735.png]]
 	- `recent_cpu`던, `load_avg`던 로그수준으로 증가하는 것을 알 수 있다. priority 계산 공식에 따르면 `recent_cpu`가 증가할수록 priority가 낮아진다. 따라서 내가 연속적으로 CPU 자원을 점유하지 못하도록 만들어준다.
-- fair 시리즈
-	- nice 공식이 올바른지 여부를 판단한다. nice 값에 따라 스레드들이 점유한 tick의 개수를 비교한다.
-	- fair-2
-		- 
-	- fair-20
-- nice-2
-- nice-10
+- fair/nice 시리즈
+	- nice 공식이 올바른지 여부를 판단한다. nice 값에 따라 스레드들이 점유한 tick의 개수를 비교한다. fair 시리즈는 n개의 스레드들이 공평하게 nice = 0으로 경쟁했을 때 tick의 숫자가 일정한지를 판단하며, nice 시리즈는 n개의 스레드들이 `nice_step`만큼 산술급수적으로 증가한다.
+	- nice-2
+	- nice-10
 - block
