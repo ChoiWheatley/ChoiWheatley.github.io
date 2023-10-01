@@ -9130,6 +9130,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../getopt%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC%20%EA%B8%B4%20%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A5%BC%20%ED%8C%8C%EC%8B%B1%ED%95%98%EB%8A%94%20%EC%85%B8%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90/" class="md-tabs__link">
+        
+  
+    
+  
+  getopt를 사용하여 긴 명령어를 파싱하는 셸 스크립트를 만들어보자
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20commit%20message%20%EA%B7%9C%EC%B9%99/" class="md-tabs__link">
         
   
@@ -25240,8 +25257,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calculatiing-priority" class="md-nav__link">
-    Calculatiing Priority
+  <a href="#calculating-priority" class="md-nav__link">
+    Calculating Priority
   </a>
   
 </li>
@@ -25261,13 +25278,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary_1" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#fixed-point-real-arithmetic" class="md-nav__link">
     Fixed-Point Real Arithmetic
   </a>
@@ -25276,6 +25286,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    Tests
+  </a>
   
 </li>
       
@@ -30238,6 +30255,25 @@
   
   <span class="md-ellipsis">
     getnameinfo(3)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getopt%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC%20%EA%B8%B4%20%EB%AA%85%EB%A0%B9%EC%96%B4%EB%A5%BC%20%ED%8C%8C%EC%8B%B1%ED%95%98%EB%8A%94%20%EC%85%B8%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    getopt를 사용하여 긴 명령어를 파싱하는 셸 스크립트를 만들어보자
   </span>
   
 
@@ -39477,8 +39513,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calculatiing-priority" class="md-nav__link">
-    Calculatiing Priority
+  <a href="#calculating-priority" class="md-nav__link">
+    Calculating Priority
   </a>
   
 </li>
@@ -39498,13 +39534,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#summary_1" class="md-nav__link">
-    Summary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#fixed-point-real-arithmetic" class="md-nav__link">
     Fixed-Point Real Arithmetic
   </a>
@@ -39513,6 +39542,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    Tests
+  </a>
   
 </li>
       
@@ -39555,11 +39591,48 @@
 </blockquote>
 <p>...?</p>
 <h3 id="niceness">Niceness<a class="headerlink" href="#niceness" title="Permanent link">#</a></h3>
-<h3 id="calculatiing-priority">Calculatiing Priority<a class="headerlink" href="#calculatiing-priority" title="Permanent link">#</a></h3>
+<p>Nice는 직역하자면 "친절한"이란 뜻이다. Nice 값이 높은 스레드는 다른 스레드에게 자신의 CPU 자원을 "친절하게" 퍼다준다. Nice의 값은 -20부터 20까지의 값을 가지며, 음수일 경우 반대로 다른 스레드의 CPU 시간을 빼앗는다. 스케줄러는 Nice 값에 기반한 공식을 사용하여 여러 스레드들의 우선순위를 동적으로 매겨 전체적인 response time을 줄이는 데 힘쓴다.</p>
+<p>구현하여야 하는 코드는 <a href="https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/threads/thread.c"><code>threads/thread.c</code></a> 파일 안에 있다.</p>
+<ul>
+<li><code>thread_get_nice</code></li>
+<li><code>thread_set_nice</code></li>
+</ul>
+<h3 id="calculating-priority">Calculating Priority<a class="headerlink" href="#calculating-priority" title="Permanent link">#</a></h3>
+<p>$$
+\text{priority}=\text{PRI_MAX}-\frac{\text{recent_cpu}}{4}-\text{nice} \times 2
+$$</p>
+<p><code>recent_cpu</code>는 해당 스레드가 점유한 시간을 의미한다. 따라서 한 스레드가 오랜 시간 CPU를 점유할수록 우선순위는 떨어지게 된다. nice 값이 높으면 재선점될 일이 자주 찾아오지 않을 것이다. priority 값은 매 4 틱마다 계산을 수행하게 된다.</p>
 <h3 id="calculating-recent_cpu">Calculating <code>recent_cpu</code><a class="headerlink" href="#calculating-recent_cpu" title="Permanent link">#</a></h3>
+<p>스레드가 지금까지 잡아먹은 시간을 리턴한다. 단순히 선형적으로 증가하는 것이 아니라 decay를 고려하여 점점 증가속도가 감소하도록 만들었다.</p>
+<div class="highlight"><pre><span></span><code><span class="n">recent_cpu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">recent_cpu</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nice</span>
+</code></pre></div>
+<p><code>load_avg</code>는 대기하는 스레드의 개수의 평균을 의미한다.</p>
 <h3 id="calculating-load_avg">Calculating <code>load_avg</code><a class="headerlink" href="#calculating-load_avg" title="Permanent link">#</a></h3>
-<h3 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">#</a></h3>
+<p>지수적으로 가중치가 쌓이는 형태의 평균 대기 스레드 수를 리턴한다.</p>
+<div class="highlight"><pre><span></span><code><span class="n">load_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">59</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">read_threads</span>
+</code></pre></div>
 <h3 id="fixed-point-real-arithmetic">Fixed-Point Real Arithmetic<a class="headerlink" href="#fixed-point-real-arithmetic" title="Permanent link">#</a></h3>
+<p>17.14 고정소수점 실수연산을 사용해야 한다. 여기에서 32비트 정수형을 기준으로 LSB부터 14개의 비트는 fractional bits, 즉 소수부를 의미하고 17개의 비트는 decimal points, 정수부를 의미한다. 나머지 1 비트는 당연하게도 부호비트.</p>
+<h2 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">#</a></h2>
+<ul>
+<li>load-1: 하나의 스레드를 45초동안 재운다(busy waiting). 그 뒤에 <code>load_avg</code>를 검사하는데, 0.5가 나오게 만들어주어야 한다. 그 다음으로 10초동안 재운다(block). 그 뒤에 <code>load_avg</code>를 검사하는데, 0.5보다 작게 나오게 만들어야 주어야 한다.</li>
+<li>load-60: 60개의 스레드를 시작하여 동시에 10초동안 sleep 한다. 그리고 60초동안 busy wait를 하고 다시 60초동안 sleep한다. 세 과정 모두 60개의 스레드가 동시에 참여한다. main 스레드는 매 2초마다 전체 <code>load_avg</code>를 검사하는데, 처음 60초 까지는 계속 증가하다가 그 이후부터 감소해야 한다.<ul>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020231001150942.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001150942.png" src="../assets/Pasted%20image%2020231001150942.png" /></a></li>
+<li>정확히 60초까지</li>
+</ul>
+</li>
+<li>load-avg: 60개의 스레드를 시작하는데 i번째 스레드는 <code>10 + i</code>초를 잔 뒤에 60초동안 busy waiting을 한다. 그리고 main 시작을 기점으로 120초가 지난 시점까지 다시 sleep한다. main 스레드는 매 2초마다 전체 <code>load_avg</code>를 검사한다. 예상결과를 파싱하여 그래프로 그려봤는데 다음과 같다. <ul>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020231001145637.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001145637.png" src="../assets/Pasted%20image%2020231001145637.png" /></a></li>
+<li>처음 70초 까지는 waiting thread의 수가 점점 늘어나 지수적으로 <code>load_avg</code> 가 증가했지만 70초 이후부터는 깨어난 순서대로 스레드가 잠에 들기 때문에 변화량이 음수가 되어 서서히 줄어드는 모습을 볼 수 있다.180초에 다가갈수록 <code>load_avg</code>가 다시 0으로 수렴하지 않는 이유는 아무래도 평균을 기억하고 있어서 그런 것 같다.</li>
+</ul>
+</li>
+<li>recent-1</li>
+<li>fair-2</li>
+<li>fair-20</li>
+<li>nice-2</li>
+<li>nice-10</li>
+<li>block</li>
+</ul>
 
 
 
