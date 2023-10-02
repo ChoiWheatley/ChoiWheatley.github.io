@@ -4,7 +4,7 @@ tags:
 description:
 title: priority-donate-nest, chain {swjungle} {pintos}
 created: 2023-09-29T21:17:33
-updated: 2023-09-29T22:09:31
+updated: 2023-10-02T20:22:13
 ---
 - <https://github.com/ChoiWheatley/swjungle-week07-09/pull/23>
 - [[week07-09 {swjungle} {pintos}]]
@@ -27,22 +27,11 @@ priority-donate-chain 예제를 기준으로 설명합니다. 지면이 부족�
 
 하지만 명시적으로 main 스레드가 받은 donation은 T1으로부터 받은것에 불과하므로 `get_priority`를 재귀적으로 호출하여 donate list가 없는 스레드가 나올 때까지, 즉 기부받은 스레드가 없을 때까지 반복적으로 `get_priority`를 호출하게 됩니다.
 
-```c
-/**
- * @brief Get the donated priority RECURSIVELY
- */
-int get_priority(struct thread *target) {
-  if (list_empty(&target->donation_list)) {
-    // original priority
-    return target->priority;
-  }
-  // not empty list
-  struct list_elem *max_elem = list_max(&target->donation_list, priority_asc_d, NULL);
-
-  return get_priority(get_thread_d_elem(max_elem));
-}
+```python
+def get_priority(thread):
+	if list_empty(thread.donation_list):
+		return target.priority
+	# not empty list
+	max_donor = max(thread.donation_list, key=priority)
+	return get_priority(max_donor)
 ```
-
-`priority_asc_d`는 두 `d_elem`끼리 비교하여 두번째 인자가 첫번째 인자보다 더 큰 우선순위(기부받은 것을 포함하여)를 가진 경우 `TRUE`를 리턴하는 predicate 함수입니다.
-
-`get_thread_d_elem` 함수는 일반화된 연결리스트 특성상 outer structure를 참조할 수밖에 없어 `list_entry`라는 매크로 함수를 사용해야 하는데, 이를 래핑한 헬퍼함수입니다. [[list {C}#Generic Linked List]]
