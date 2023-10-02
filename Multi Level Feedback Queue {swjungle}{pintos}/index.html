@@ -39618,9 +39618,8 @@
 <li><code>thread_set_nice</code></li>
 </ul>
 <h3 id="calculating-priority">Calculating Priority<a class="headerlink" href="#calculating-priority" title="Permanent link">#</a></h3>
-<p>$$
-\text{priority}=\text{PRI_MAX}-\frac{\text{recent_cpu}}{4}-\text{nice} \times 2
-$$</p>
+<div class="highlight"><pre><span></span><code><span class="n">priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PRI_MAX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">recent_cpu</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">nice</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
 <p><code>recent_cpu</code>는 해당 스레드가 점유한 시간을 의미한다. 따라서 한 스레드가 오랜 시간 CPU를 점유할수록 우선순위는 떨어지게 된다. nice 값이 높으면 재선점될 일이 자주 찾아오지 않을 것이다. priority 값은 매 4 틱마다 계산을 수행하게 된다.</p>
 <h3 id="calculating-recent_cpu">Calculating <code>recent_cpu</code><a class="headerlink" href="#calculating-recent_cpu" title="Permanent link">#</a></h3>
 <p>스레드가 지금까지 잡아먹은 시간을 리턴한다. 단순히 선형적으로 증가하는 것이 아니라 decay를 고려하여 점점 증가속도가 감소하도록 만들었다.</p>
@@ -39636,11 +39635,13 @@ $$</p>
 <p>EWMA를 사용하는 주요 이유 중 하나는 이동 평균을 계산할 때 지연(lag)을 최소화하기 위해서입니다. 일반적인 이동 평균 방법은 데이터의 일부를 버려야 하며, 이로 인해 지연이 발생할 수 있습니다. 그러나 EWMA는 모든 데이터 포인트를 사용하므로 지연이 줄어듭니다.</p>
 <p>EWMA의 수식은 다음과 같습니다:</p>
 <p>$$ EMA_t = \alpha \cdot x_t + (1 - \alpha) \cdot EMA_{t-1} $$</p>
-<p>여기서,
-- ( EMA_t )는 현재 시간 ( t )에서의 지수 가중 이동 평균 값입니다.
-- ( x_t )는 현재 시간 ( t )의 데이터 포인트입니다.
-- ( EMA_{t-1} )은 이전 시간 ( t-1 )에서의 지수 가중 이동 평균 값입니다.
-- ( \alpha )는 평활화 상수(0과 1 사이의 값)로, 높은 값일수록 최신 데이터에 높은 가중치를 부여합니다.</p>
+<p>여기서,</p>
+<ul>
+<li>( EMA_t )는 현재 시간 ( t )에서의 지수 가중 이동 평균 값입니다.</li>
+<li>( x_t )는 현재 시간 ( t )의 데이터 포인트입니다.</li>
+<li>( EMA_{t-1} )은 이전 시간 ( t-1 )에서의 지수 가중 이동 평균 값입니다.</li>
+<li>( \alpha )는 평활화 상수(0과 1 사이의 값)로, 높은 값일수록 최신 데이터에 높은 가중치를 부여합니다.</li>
+</ul>
 <p>이러한 방식으로 EWMA는 최근 데이터에 민감하게 반응하면서도 지연을 최소화하여 시계열 데이터의 추세를 추정하는 데 유용합니다. 예를 들어, 주식 시장에서 주가 데이터를 분석하거나 수요 예측 모델을 개발할 때 EWMA는 많이 사용되는 기법 중 하나입니다.</p>
 <h3 id="calculating-load_avg">Calculating <code>load_avg</code><a class="headerlink" href="#calculating-load_avg" title="Permanent link">#</a></h3>
 <p>지수적으로 가중치가 쌓이는 형태의 평균 대기 스레드 수를 리턴한다.</p>
