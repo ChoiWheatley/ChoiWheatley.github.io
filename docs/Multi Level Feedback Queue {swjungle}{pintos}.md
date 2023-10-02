@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-10-02T17:11:55
+updated: 2023-10-02T17:49:17
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -124,4 +124,8 @@ load_avg = (59/60) * load_avg + (1/60) * read_threads
 - `recent_cpu` 값을 1씩 증가시키는 코드 작성
 - 모든 스레드들의 priority와 `recent_cpu`값을 업데이트 하는 코드 작성
 
-현재는 ready queue에 들어가는 스레드들이 정렬이 되어 들어간다. 
+현재는 ready queue에 들어가는 스레드들이 정렬이 되어 들어간다. `thread_mlfqs`가 참일 경우, 정렬을 해서는 안되고 언제나 push back, pop front 해야한다.
+
+매 틱마다 호출되는 `timer_interrupt` 안에서 Running thread의 `recent_cpu`를 1씩 증가시킨다. 매초 (100틱)마다 모든 스레드(running, waiting, blocking)들의 `recent_cpu`를 위에서 설명한 공식으로 갱신한다. 
+
+⟶ 아니, 그런데 어떻게 모든 스레드를 전부 순회하지? ready list는 그렇다고 쳐도, blocking 상태인 스레드는 lock acquire, sema down, sleep 다양한 조건에서 각자의 위치에서 blocking 상태에 있을건데 얘네들을 어떻게 찾지?
