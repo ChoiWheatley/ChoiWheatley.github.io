@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.79e020e9.min.css">
       
       
 
@@ -13879,6 +13879,23 @@
     
   
   week06 {swjungle}{proxy-lab}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../week07%20WIL%20%EC%A0%95%EB%A6%AC%2C%20%EB%B0%9C%ED%91%9C%EC%A4%80%EB%B9%84%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  week07 WIL 정리, 발표준비 {swjungle}
 
       </a>
     </li>
@@ -35547,6 +35564,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../week07%20WIL%20%EC%A0%95%EB%A6%AC%2C%20%EB%B0%9C%ED%91%9C%EC%A4%80%EB%B9%84%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    week07 WIL 정리, 발표준비 {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-nav__link">
         
   
@@ -39479,22 +39515,13 @@
 <p>예제에서 모든 자식 스레드를 만든 경우, 위의 도식과 같은 모양이 됩니다. 청록색 곡선은 스레드에 걸려있는 donation list의 원소를 나타냅니다. 예를 들어 T2 스레드의 donation list는 T3입니다. 따라서 <code>get_priority(T2)</code>의 결과는 <code>max(T2.donation_list) = T2.original_priority = 9</code>가 됩니다.</p>
 <p><code>get_priority</code> 함수는 재귀적으로 작동해야 합니다. 연쇄적으로 서로의 lock을 물고 있는 경우가 대표적입니다. 가장 높은 우선순위를 가진 T3가 빠르게 실행되기 위해선 2번 lock을 해제해야 하고, 그러기 위해선 T2가 빠르게 실행되어야 하고, 그러기 위해선 1번 lock을 해제해야 합니다. 그러기 위해선 T1이 빠르게 실행되어야 하고, 그러기 위해선 0번 lock을 해제해야 합니다. 결국 main이 T1, T2, T3 모두의 donation list 중 최고 priority로 힘입어 동작하게 되며, 결과적으로 main 스레드는 마치 T3의 우선순위를 기부받은 것처럼 동작하게 될 것입니다.</p>
 <p>하지만 명시적으로 main 스레드가 받은 donation은 T1으로부터 받은것에 불과하므로 <code>get_priority</code>를 재귀적으로 호출하여 donate list가 없는 스레드가 나올 때까지, 즉 기부받은 스레드가 없을 때까지 반복적으로 <code>get_priority</code>를 호출하게 됩니다.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
-<span class="cm"> * @brief Get the donated priority RECURSIVELY</span>
-<span class="cm"> */</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">get_priority</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">thread</span><span class="w"> </span><span class="o">*</span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">list_empty</span><span class="p">(</span><span class="o">&amp;</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">donation_list</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// original priority</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">target</span><span class="o">-&gt;</span><span class="n">priority</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="w">  </span><span class="c1">// not empty list</span>
-<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_elem</span><span class="w"> </span><span class="o">*</span><span class="n">max_elem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list_max</span><span class="p">(</span><span class="o">&amp;</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">donation_list</span><span class="p">,</span><span class="w"> </span><span class="n">priority_asc_d</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">get_priority</span><span class="p">(</span><span class="n">get_thread_d_elem</span><span class="p">(</span><span class="n">max_elem</span><span class="p">));</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_priority</span><span class="p">(</span><span class="n">thread</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">list_empty</span><span class="p">(</span><span class="n">thread</span><span class="o">.</span><span class="n">donation_list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">target</span><span class="o">.</span><span class="n">priority</span>
+    <span class="c1"># not empty list</span>
+    <span class="n">max_donor</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">thread</span><span class="o">.</span><span class="n">donation_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">priority</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">get_priority</span><span class="p">(</span><span class="n">max_donor</span><span class="p">)</span>
 </code></pre></div>
-<p><code>priority_asc_d</code>는 두 <code>d_elem</code>끼리 비교하여 두번째 인자가 첫번째 인자보다 더 큰 우선순위(기부받은 것을 포함하여)를 가진 경우 <code>TRUE</code>를 리턴하는 predicate 함수입니다.</p>
-<p><code>get_thread_d_elem</code> 함수는 일반화된 연결리스트 특성상 outer structure를 참조할 수밖에 없어 <code>list_entry</code>라는 매크로 함수를 사용해야 하는데, 이를 래핑한 헬퍼함수입니다. <a href="../list%20%7BC%7D/#generic-linked-list">list {C}#Generic Linked List</a></p>
 
 
 
@@ -39508,10 +39535,10 @@
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Back to top
-          </button>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -39538,10 +39565,11 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+    
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../assets/javascripts/bundle.6eac0284.min.js"></script>
       
         <script src="../javascripts/katex.js"></script>
       
