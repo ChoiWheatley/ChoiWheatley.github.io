@@ -4,7 +4,7 @@ tags:
 description:
 title: Multi Level Feedback Queue {swjungle}{pintos}
 created: 2023-09-30T15:05:14
-updated: 2023-10-02T17:49:17
+updated: 2023-10-03T00:21:54
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/Advanced Scheduler](https://casys-kaist.github.io/pintos-kaist/project1/advanced_scheduler.html)
@@ -88,7 +88,7 @@ $$ EMA_t = \alpha \cdot x_t + (1 - \alpha) \cdot EMA_{t-1} $$
 지수적으로 가중치가 쌓이는 형태의 평균 대기 스레드 수를 리턴한다.
 
 ```c
-load_avg = (59/60) * load_avg + (1/60) * read_threads
+load_avg = (59/60) * load_avg + (1/60) * ready_threads
 ```
 
 ### Fixed-Point Real Arithmetic
@@ -129,3 +129,5 @@ load_avg = (59/60) * load_avg + (1/60) * read_threads
 매 틱마다 호출되는 `timer_interrupt` 안에서 Running thread의 `recent_cpu`를 1씩 증가시킨다. 매초 (100틱)마다 모든 스레드(running, waiting, blocking)들의 `recent_cpu`를 위에서 설명한 공식으로 갱신한다. 
 
 ⟶ 아니, 그런데 어떻게 모든 스레드를 전부 순회하지? ready list는 그렇다고 쳐도, blocking 상태인 스레드는 lock acquire, sema down, sleep 다양한 조건에서 각자의 위치에서 blocking 상태에 있을건데 얘네들을 어떻게 찾지?
+
+- 모든 스레드를 관리하는 `g_thread_pool` 을 둬서 `d_elem`으로 연결지어주면 된다.
