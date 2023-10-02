@@ -4,7 +4,7 @@ tags:
 description:
 title: week07 WIL 정리, 발표준비 {swjungle}
 created: 2023-10-02T19:12:43
-updated: 2023-10-02T19:23:00
+updated: 2023-10-02T19:35:36
 ---
 - [[week07-09 {swjungle} {pintos}]]
 ___
@@ -23,5 +23,7 @@ ___
 ## brainstorming
 
 - Debugging tools, git 협업하면서 얻은 지식들: 도구 사용방법을 배웠다고 그걸 발표하는게 좋으려나.. 방법론 이야기 꺼내기 좋은 자리는 아닌 것 같기도 하다
+	- `debug_panic`에 breakpoint를 달아놓아 커널패닉시 backtrace 하기 유리하게
 - `priority-donate-sema`
+	- 
 - `priority-donate-chain`에서 lock acquire 시점이 아니라 
