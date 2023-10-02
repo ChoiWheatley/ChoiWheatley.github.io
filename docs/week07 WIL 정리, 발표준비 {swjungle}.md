@@ -4,7 +4,7 @@ tags:
 description:
 title: week07 WIL 정리, 발표준비 {swjungle}
 created: 2023-10-02T19:12:43
-updated: 2023-10-02T22:07:03
+updated: 2023-10-02T22:34:43
 ---
 - [[week07-09 {swjungle} {pintos}]]
 ___
@@ -31,10 +31,12 @@ ___
 
 ## debugging tool: gdb
 
-1. pintos-intentional-panic: 의도적으로 ready list에 스레드 추가하는 코드를 주석처리함
+1. pintos-intentional-panic: 의도적으로 ready list에 스레드 추가하는 코드를 주석처리함  
+
 ![[pintos-intentional-panic.png]]
-2. pintos-backtrace-on-die: Kernel Panic시, `backtrace` 명령어를 치면 스택프레임이 나오는데 그 당시 스레드 상태를 알 수 없다는 단점이 있음
 
-3. pintos-bt-on-gdb: 그래서 `debug_panic`에 breakpoint를 걸고 `c` 명령어로 Kernel Panic이 발생하기 직전으로 이동함
+1. pintos-backtrace-on-die: Kernel Panic시, `backtrace` 명령어를 치면 스택프레임이 나오는데 그 당시 스레드 상태를 알 수 없다는 단점이 있음
 
-4. pintos-f-on-gdb: `f` 명령어로 스택프레임을 이동하며 `p` 명령어로 지역변수나 인자들의 값을 출력해 볼 수 있음.
+2. pintos-bt-on-gdb: 그래서 `debug_panic`에 breakpoint를 걸고 `c` 명령어로 Kernel Panic이 발생하기 직전으로 이동함
+
+3. pintos-f-on-gdb: `f` 명령어로 스택프레임을 이동하며 `p` 명령어로 지역변수나 인자들의 값을 출력해 볼 수 있음.
