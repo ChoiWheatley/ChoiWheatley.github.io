@@ -25316,6 +25316,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mlfqs-recent-1" class="md-nav__link">
+    mlfqs-recent-1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -39572,6 +39592,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mlfqs-recent-1" class="md-nav__link">
+    mlfqs-recent-1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -39656,7 +39696,7 @@
 <li><a class="glightbox" href="../assets/Pasted%20image%2020231001150942.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001150942.png" src="../assets/Pasted%20image%2020231001150942.png" /></a></li>
 </ul>
 </li>
-<li>**mlfqs-load-avg: **<ul>
+<li><strong>mlfqs-load-avg</strong><ul>
 <li>60개의 스레드를 시작하는데 i번째 스레드는 <code>10 + i</code>초를 잔 뒤에 60초동안 busy waiting을 한다. 그리고 main 시작을 기점으로 120초가 지난 시점까지 다시 sleep한다. main 스레드는 매 2초마다 전체 <code>load_avg</code>를 검사한다. 예상결과를 파싱하여 그래프로 그려봤는데 다음과 같다. </li>
 <li><a class="glightbox" href="../assets/Pasted%20image%2020231001145637.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231001145637.png" src="../assets/Pasted%20image%2020231001145637.png" /></a></li>
 <li>처음 70초 까지는 waiting thread의 수가 점점 늘어나 지수적으로 <code>load_avg</code> 가 증가했지만 70초 이후부터는 깨어난 순서대로 스레드가 잠에 들기 때문에 변화량이 음수가 되어 서서히 줄어드는 모습을 볼 수 있다. 180초에 다가갈수록 <code>load_avg</code>가 다시 0으로 수렴하지 않는 이유는 아무래도 평균을 기억하고 있어서 그런 것 같다.</li>
@@ -39679,6 +39719,15 @@
 </li>
 <li>block</li>
 </ul>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">#</a></h2>
+<h3 id="mlfqs-recent-1">mlfqs-recent-1<a class="headerlink" href="#mlfqs-recent-1" title="Permanent link">#</a></h3>
+<ul>
+<li><code>recent_cpu</code> 값을 1씩 증가시키는 코드 작성</li>
+<li>모든 스레드들의 priority와 <code>recent_cpu</code>값을 업데이트 하는 코드 작성</li>
+</ul>
+<p>현재는 ready queue에 들어가는 스레드들이 정렬이 되어 들어간다. <code>thread_mlfqs</code>가 참일 경우, 정렬을 해서는 안되고 언제나 push back, pop front 해야한다.</p>
+<p>매 틱마다 호출되는 <code>timer_interrupt</code> 안에서 Running thread의 <code>recent_cpu</code>를 1씩 증가시킨다. 매초 (100틱)마다 모든 스레드(running, waiting, blocking)들의 <code>recent_cpu</code>를 위에서 설명한 공식으로 갱신한다. </p>
+<p>⟶ 아니, 그런데 어떻게 모든 스레드를 전부 순회하지? ready list는 그렇다고 쳐도, blocking 상태인 스레드는 lock acquire, sema down, sleep 다양한 조건에서 각자의 위치에서 blocking 상태에 있을건데 얘네들을 어떻게 찾지?</p>
 
 
 
