@@ -4,7 +4,7 @@ tags:
 description:
 title: week07 WIL 정리, 발표준비 {swjungle}
 created: 2023-10-02T19:12:43
-updated: 2023-10-02T19:35:36
+updated: 2023-10-02T19:53:12
 ---
 - [[week07-09 {swjungle} {pintos}]]
 ___
@@ -25,5 +25,6 @@ ___
 - Debugging tools, git 협업하면서 얻은 지식들: 도구 사용방법을 배웠다고 그걸 발표하는게 좋으려나.. 방법론 이야기 꺼내기 좋은 자리는 아닌 것 같기도 하다
 	- `debug_panic`에 breakpoint를 달아놓아 커널패닉시 backtrace 하기 유리하게
 - `priority-donate-sema`
-	- 
-- `priority-donate-chain`에서 lock acquire 시점이 아니라 
+	- ready list는 정렬해서 넣는데 waiters(lock, cond)도 정렬해서 넣었더니 중간에 들어오는 donation에 의해 순서가 뒤바뀌는 경우 발생. ⟶ waiters에 넣을때 push back, lock release 또는 cond signal 할 때 max pop
+- `priority-donate-chain`
+	- lock acquire 시점이 아니라 get_priority시점에 연쇄적으로 기부받은 우선순위를 재귀적으로 찾아들어간다.
