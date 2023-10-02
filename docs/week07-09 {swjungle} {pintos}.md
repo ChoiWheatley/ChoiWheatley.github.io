@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-01T14:38:20
+updated: 2023-10-02T19:09:04
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -38,10 +38,10 @@ ___
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [CS 6200: Introduction to Operating Systems Course Videos (Georgia Tech College of Computing)](https://omscs.gatech.edu/cs-6200-introduction-operating-systems-course-videos)
 
-## dump
+## week07
 
 - <https://youtu.be/myO2bs5LMak?si=jZeqP0oC_rdzYda9>
-- [[prj1.threads.introduction {pintos}]]
+- [[prj1.threa ~ 2023-10-02ds.introduction {pintos}]]
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)
 
 [[2023-09-23 dump {swjungle} {priority-scheduling} {alarm-clock}]]
@@ -53,8 +53,9 @@ ___
 - [[priority-donate-multiple {swjungle} {pintos}]]
 - [[priority-donate-nest, chain {swjungle} {pintos}]]
 
-**2023-10-01**
+**2023-10-01 ~ 2023-10-02**
 
 - [[Multi Level Feedback Queue {swjungle}{pintos}]]
+- [[week07 WIL 정리, 발표준비 {swjungle}]]
 
 ## [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]

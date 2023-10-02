@@ -4,7 +4,7 @@ tags:
 description:
 title: 2023-09-23 dump {swjungle} {priority-scheduling} {alarm-clock}
 created: 2023-09-23T18:55:55
-updated: 2023-09-20315:T20:859:06
+updated: 2023-10-02T19:16:21
 ---
 
 ## appendix thread
@@ -25,7 +25,7 @@ updated: 2023-09-20315:T20:859:06
 
 - 낮은 우선순위의 waiting 스레드 but 높은 우선순위의 blocking 스레드는 기부 당해서 running 상태로 먼저 올라가지 않을까?  
 
-![[Pasted image 20230923200404.png]]
+![[Pasted image 20230923200404.png|300]]
 
 - busy waiting 방식을 사용하지 않게 타이머를 만들어라.
 
@@ -34,3 +34,5 @@ updated: 2023-09-20315:T20:859:06
 	- thread_ticks는 TIME_SLICE를 초과할 때마다 인터럽트를 발생시키고 thread_ticks를 0으로 초기화한다.
 	- ticks는 단순 증가만 한다.
 	- 
+
+## `list_entry`
