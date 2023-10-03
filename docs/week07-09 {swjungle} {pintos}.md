@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-03T14:32:20
+updated: 2023-10-03T14:59:16
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -15,6 +15,7 @@ updated: 2023-10-03T14:32:20
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 	- [kaist pintos 과제 설명서 한글 번역본](https://yjohdev.notion.site/KAIST-PINTOS-ebdc8be9d02d4475a4675c7b920e3653)
 - [swjungle-week07-09 {GH}](https://github.com/ChoiWheatley/swjungle-week07-09) | 학습관련 정리를 이번엔 깃허브 마크다운으로 공용으로 관리해볼 예정.
+- [[Operating Systems Three Easy Pieces]]
 ___
 
 ## README
@@ -83,3 +84,18 @@ ___
 - [?] Monitor의 condvar가 하나일 필요가 없나?
 - PRJ2 질문목록을 옆에 끼고, GPT와 여러 생성형 AI를 옆에 끼고 살자. 내가 할 질문은 이미 누군가가 했을수도 있다.
 - [[3. Machine Level Representation of Programs {CSAPP}]]에서 나오는 레지스터들과 기타 하드웨어 알아둘 지식들 [[Hardware Knowledges for PintOS {swjungle}]]
+- [[8. Exceptional Control Flow]]
+	- 8.2. Processes
+	- 8.3. System Call Error Handling
+	- 8.4. Process Control
+- Argument Passing
+	- 기본적인 function call에서조차 단순 `call` 과 `ret` 만으로 함수 호출 / 반환이 이루어지지 않는다. 반드시 레지스터의 도움을 필요로 한다.
+	- 실행파일이 인자와 함께 메모리에 올라가는 과정에 대한 이해가 필요할 것이다.
+- Process
+	- Abstraction of Machine
+	- Protection --- HW의 도움을 받아야 해.
+	- system call --- 총 14개나 되는데, 그걸 다 구현해야 해. 근데 그게 다가 아니야. arg passing, user mem access를 다루고 난 뒤에야 진행할 수 있음
+	- Process가 끝날 때엔 무슨 일이 일어나지?
+	- fd 복제 with [[dup2(2)]]
+
+![[Pasted image 20231003145914.png]]
