@@ -11425,6 +11425,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../priority%20inversion%20on%20lock%20release%20%7Bswjungle%7D%7Bpintos%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  priority inversion on lock release {swjungle}{pintos}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../priority%20queue%20-%20python/" class="md-tabs__link">
         
   
@@ -11465,6 +11482,23 @@
     
   
   priority-donate-nest, chain {swjungle} {pintos}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../priority-donate-sema%20%7Bswjungle%7D%7Bpintos%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  priority-donate-sema {swjungle}{pintos}
 
       </a>
     </li>
@@ -32891,6 +32925,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../priority%20inversion%20on%20lock%20release%20%7Bswjungle%7D%7Bpintos%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    priority inversion on lock release {swjungle}{pintos}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../priority%20queue%20-%20python/" class="md-nav__link">
         
   
@@ -32934,6 +32987,25 @@
   
   <span class="md-ellipsis">
     priority-donate-nest, chain {swjungle} {pintos}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../priority-donate-sema%20%7Bswjungle%7D%7Bpintos%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    priority-donate-sema {swjungle}{pintos}
   </span>
   
 
@@ -39721,7 +39793,7 @@
 <p>이러한 방식으로 EWMA는 최근 데이터에 민감하게 반응하면서도 지연을 최소화하여 시계열 데이터의 추세를 추정하는 데 유용합니다. 예를 들어, 주식 시장에서 주가 데이터를 분석하거나 수요 예측 모델을 개발할 때 EWMA는 많이 사용되는 기법 중 하나입니다.</p>
 <h3 id="calculating-load_avg">Calculating <code>load_avg</code><a class="headerlink" href="#calculating-load_avg" title="Permanent link">#</a></h3>
 <p>지수적으로 가중치가 쌓이는 형태의 평균 대기 스레드 수를 리턴한다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">load_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">59</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">read_threads</span>
+<div class="highlight"><pre><span></span><code><span class="n">load_avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">59</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">load_avg</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ready_threads</span>
 </code></pre></div>
 <h3 id="fixed-point-real-arithmetic">Fixed-Point Real Arithmetic<a class="headerlink" href="#fixed-point-real-arithmetic" title="Permanent link">#</a></h3>
 <p>17.14 고정소수점 실수연산을 사용해야 한다. 여기에서 32비트 정수형을 기준으로 LSB부터 14개의 비트는 fractional bits, 즉 소수부를 의미하고 17개의 비트는 decimal points, 정수부를 의미한다. 나머지 1 비트는 당연하게도 부호비트.</p>
@@ -39761,9 +39833,12 @@
 <li><code>recent_cpu</code> 값을 1씩 증가시키는 코드 작성</li>
 <li>모든 스레드들의 priority와 <code>recent_cpu</code>값을 업데이트 하는 코드 작성</li>
 </ul>
-<p>현재는 ready queue에 들어가는 스레드들이 정렬이 되어 들어간다. <code>thread_mlfqs</code>가 참일 경우, 정렬을 해서는 안되고 언제나 push back, pop front 해야한다.</p>
+<p><del>현재는 ready queue에 들어가는 스레드들이 정렬이 되어 들어간다. <code>thread_mlfqs</code>가 참일 경우, 정렬을 해서는 안되고 언제나 push back, pop front 해야한다.</del></p>
 <p>매 틱마다 호출되는 <code>timer_interrupt</code> 안에서 Running thread의 <code>recent_cpu</code>를 1씩 증가시킨다. 매초 (100틱)마다 모든 스레드(running, waiting, blocking)들의 <code>recent_cpu</code>를 위에서 설명한 공식으로 갱신한다. </p>
 <p>⟶ 아니, 그런데 어떻게 모든 스레드를 전부 순회하지? ready list는 그렇다고 쳐도, blocking 상태인 스레드는 lock acquire, sema down, sleep 다양한 조건에서 각자의 위치에서 blocking 상태에 있을건데 얘네들을 어떻게 찾지?</p>
+<ul>
+<li>모든 스레드를 관리하는 <code>g_thread_pool</code> 을 둬서 <code>d_elem</code>으로 연결지어주면 된다.</li>
+</ul>
 
 
 
