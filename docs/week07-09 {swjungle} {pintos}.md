@@ -57,6 +57,9 @@ ___
 
 - [[Multi Level Feedback Queue {swjungle}{pintos}]]
 - [[week07 WIL 정리, 발표준비 {swjungle}]]
-- 
+
+**2023-10-03**
+
+- [[priority-donate-sema {swjungle}{pintos}]]
 
 ## [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
