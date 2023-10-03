@@ -4,11 +4,12 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-02T19:09:04
+updated: 2023-10-03T14:32:20
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
 	- [[3. Machine Level Representation of Programs {CSAPP}]]
+		- [[Hardware Knowledges for PintOS {swjungle}]]
 	- [[8. Exceptional Control Flow]]
 	- [[12. Concurrent Programming {csapp}]]
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
@@ -29,24 +30,31 @@ ___
 - 조가람: 2023-09-30 ~ 2023-10-01 빠진다. 
 - 최승현: 하루 날잡고 등산할 예정.
 
-**권영진 교수님의 OS 강의**
+## 권영진 교수님의 OS 강의
 
-- 2023-09-26T10:30:00
+- ~~2023-09-26T10:30:00~~
+	- [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
 - 2023-10-10T10:30:00
 - OS abstraction 개념에 초점을 맞추어 진행.
 - [Pintos_1.pdf](https://drive.google.com/file/d/1rr1VobnaR8QiWq3TVImvzzHWWdB5d4B5/view)
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [CS 6200: Introduction to Operating Systems Course Videos (Georgia Tech College of Computing)](https://omscs.gatech.edu/cs-6200-introduction-operating-systems-course-videos)
 
-## week07
+## week07 - Threads
 
-- <https://youtu.be/myO2bs5LMak?si=jZeqP0oC_rdzYda9>
-- [[prj1.threa ~ 2023-10-02ds.introduction {pintos}]]
+**INDEX**
+
+- [Pintos Project1-1 Thread by Yujip Won {YT}](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/doc/Project1%20Threads.md)
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)
 
-[[2023-09-23 dump {swjungle} {priority-scheduling} {alarm-clock}]]
+**2023-09-23**
 
-[[2023-09-28 dump {swjungle}]]
+- [[2023-09-23 dump {swjungle} {priority-scheduling} {alarm-clock}]]
+
+
+**2023-09-28**
+
+- [[2023-09-28 dump {swjungle}]]
 
 **2023-09-29**
 
@@ -57,10 +65,21 @@ ___
 
 - [[Multi Level Feedback Queue {swjungle}{pintos}]]
 - [[week07 WIL 정리, 발표준비 {swjungle}]]
+	- [Project1 Threads.md {GH}](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/doc/Project1%20Threads.md)
 
 **2023-10-03**
 
 - [[priority-donate-sema {swjungle}{pintos}]]
 - [[priority inversion on lock release {swjungle}{pintos}]]
 
-## [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
+## week08 - User Program
+
+**2023-10-03 발제 아카이브**
+
+- gpt, bing chat, bard, 클로바 x 등등 가리지 말고 다 써봐라. 생성형 AI가 언제나 정답을 이야기해주지는 않으니.
+- TDD spec이라고 불리우는 엔티티는 specification의 약자로, "이렇게 이렇게 돌아갔으면 좋겠어요" 요구사항을 명세로 작성할 때부터 이미 테스트케이스로 만들어버린다. 그리고 테스트 코드를 통과하도록 코드를 작성한다.
+	- TDD가 좋은 점은 컴퓨터에게 단순 노가다를 맡길 수 있다는 점이다. TDD를 맹신하면 안되는게, 테스트 코드 통과에만 목을 매다는 경우가 발생할 수 있기 때문이다.
+- week07 Thread을 구현하면서 느낀점 - Timer HW가 없으면 스레드도 없다. ⟶ preemptive scheduling
+- [?] Monitor의 condvar가 하나일 필요가 없나?
+- PRJ2 질문목록을 옆에 끼고, GPT와 여러 생성형 AI를 옆에 끼고 살자. 내가 할 질문은 이미 누군가가 했을수도 있다.
+- [[3. Machine Level Representation of Programs {CSAPP}]]에서 나오는 레지스터들과 기타 하드웨어 알아둘 지식들 [[Hardware Knowledges for PintOS {swjungle}]]
