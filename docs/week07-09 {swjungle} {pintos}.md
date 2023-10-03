@@ -61,5 +61,6 @@ ___
 **2023-10-03**
 
 - [[priority-donate-sema {swjungle}{pintos}]]
+- [[priority inversion on lock release {swjungle}{pintos}]]
 
 ## [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
