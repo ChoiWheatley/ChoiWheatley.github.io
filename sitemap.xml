@@ -1131,6 +1131,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Hardware%20Knowledges%20for%20PintOS%20%7Bswjungle%7D/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Has%20anyone%20created%20a%20bookmarking%20system%20in%20obsidian%20%20%20ObsidianMD/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
@@ -1412,6 +1417,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Operating%20System%20Concepts%20-%20Silberschatz%2C%208th%20edition/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Operating%20Systems%20Three%20Easy%20Pieces/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2442,6 +2452,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/drf%20%EC%97%90%EC%84%9C%20redirect%20url%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20ViewSet%EC%97%90%20%EB%8B%B4%EB%8A%94%EB%B2%95%20%7Bdrf%7D/</loc>
+         <lastmod>2023-10-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/dup2%282%29/</loc>
          <lastmod>2023-10-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
