@@ -4,7 +4,7 @@ tags:
 description:
 title: 이전기수 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T18:33:22
+updated: 2023-10-04T18:53:35
 ---
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
@@ -27,4 +27,11 @@ updated: 2023-10-04T18:33:22
  
 - 프로그램에서 처음 실행되는 함수는 리턴 주소가 없어서 fake address를 넣는다.
 - 커널이 호출하는 `printf`는 `lib/kernel/console.c:vprintf`를 참조한다. 반면에 유저 프로그램이 호출하는 `printf`는 `lib/user/console.c:vprintf`를 참조한다. 이 차이를 알아야 `write` 시스템 콜을 만들 수 있다.
-- `pid_t`와 `tid_t`와의 차이점: `tid_t`는 프로세스 안에서 식별할 수 있는 스레드 식별자이고 `pid_t`는 프로세스와 커널에서 식별할 수 있는 프로세스 식별자이다. 
+- `pid_t`와 `tid_t`와의 차이점: `tid_t`는 커널 스레드 식별자이고 커널에서만 사용될 수 있다. `pid_t`는 사용자 프로세스를 식별한다. `exec`, `wait` 시스템콜에서 이를 사용한다. 둘 다 int형이고 tid, pid 관계를 일대일 매핑으로 만들거나 복잡한 매핑을 만들 수 있다.
+- `e_entry`는 elf 바이너리 파일에서 응용 프로그램이 처음 시작되어야 하는 명령어의 위치가 담겨있다.
+- rox: Read Only for eXecutable
+- `process_init`: 프로세스 처음 만들 때 초기화하는 함수. 초기에는 `initd`에서만 호출하지만 필요에 따라서 프로세스를 만들거나 복제할 때 호출해도 된다.
+
+- **fork**
+	- `tf` : thread parent가 가지고 있는 `struct intr_frame tf`
+	- `f`: 시스템 콜 핸들러가 `process_fork`에게 인자로 넘기는 `struct intr_frame f`
