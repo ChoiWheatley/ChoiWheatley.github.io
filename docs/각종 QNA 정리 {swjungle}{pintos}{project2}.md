@@ -4,7 +4,7 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T20:06:21
+updated: 2023-10-04T20:37:59
 ---
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
@@ -16,6 +16,9 @@ updated: 2023-10-04T20:06:21
 	- `userprog/syscall-entry.S:syscall_entry` 플래그로 문맥이 이어간다는 점. `userprog/syscall.c:syscall_init`의 주석을 확인하자.
 
 		> 시스템 호출. 이전에 시스템 호출 서비스는 인터럽트 핸들러에 의해 처리되었습니다 (예: 리눅스에서의 int 0x80). 그러나 x86-64에서는 제조업체가 시스템 호출을 요청하기 위한 효율적인 경로인 'syscall' 명령을 제공합니다. 'syscall' 명령은 Model Specific Register (MSR)에서 값을 읽는 방식으로 작동합니다. 자세한 내용은 매뉴얼을 참조하십시오
+
+	- syscall handler는 인터럽트를 끄지 않는다.
+	- 
 
 - **어셈블리**
 	- `$Imm(%reg)`: `%reg` 에 저장되어있는 주소에 `$Imm`만큼 더한 위치
@@ -45,3 +48,9 @@ updated: 2023-10-04T20:06:21
 
 - *eflag*
 	- extended flag의 약자로, 프로그램 실행에 있어서 필요한 다양한 상태를 저장하고 있는 레지스터이다. 프로그래머는 에러 핸들링, 대수연산, 분기 따위를 다룰때 
+
+- *argument passing*
+	- **Calling convention에 따르면 %rdi는 함수의 첫 번째 인자, %rsi는 함수의 두 번째 인자에 해당합니다.** argument passing을 하고 나서 유저 프로그램이 처음 실행되면 프로그램의 entry point에 해당하는 함수가 가장 먼저 실행되는데, 여기서 main함수를 호출합니다. main함수는 `int main(int argc, char **argv)` 와 같은 식으로 선언하다시피, **argument passing에서 %rdi와 %rsi에 저장한 argc와 argv의 값이 main함수로 전달되어 일반 프로그래머가 프로그램을 실행하는 데 사용된 parameter를 분석할 때 사용할 수 있습니다.**
+
+- *pintos program*
+	- 명령어를 하나씩 실행시키고 싶다면 `make tests/threads/alarm-multiple.result`와 같은식으로 .result파일을 직접 입력해주면 됩니다. 더 자세한 정보는 [https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf](https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf) 여기에 가셔서 5페이지를 참고하시면 될 것 같습니다.

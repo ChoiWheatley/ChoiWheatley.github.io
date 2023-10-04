@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-04T19:59:16
+updated: 2023-10-04T20:38:41
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -15,6 +15,7 @@ updated: 2023-10-04T19:59:16
 - [[kaist pintos assignment specification {casys-kaist.github.io}]]
 	- [kaist pintos 과제 설명서 한글 번역본](https://yjohdev.notion.site/KAIST-PINTOS-ebdc8be9d02d4475a4675c7b920e3653)
 	- [pintos slides by Yujip Won](https://oslab.kaist.ac.kr/pintosslides/)
+- [stanford pintos.pdf](https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf)
 - [swjungle-week07-09 {GH}](https://github.com/ChoiWheatley/swjungle-week07-09) | 학습관련 정리를 이번엔 깃허브 마크다운으로 공용으로 관리해볼 예정.
 - [[Operating Systems Three Easy Pieces]]
 ___
