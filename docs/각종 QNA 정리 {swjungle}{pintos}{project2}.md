@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 이전기수 QNA 정리 {swjungle}{pintos}{project2}
+title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T18:53:35
+updated: 2023-10-04T19:35:49
 ---
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
@@ -21,6 +21,8 @@ updated: 2023-10-04T18:53:35
 	- `$Imm(%reg)`: `%reg` 에 저장되어있는 주소에 `$Imm`만큼 더한 위치
 	- [?] `moveabs`
 	- `$tss`는 `userprog/tss.c` 안에 정의된 `struct task_state *tss`라는 전역변수가 저장된 메모리 주소를 가져옵니다.
+	- [rsi, rdi registers {SO}](https://stackoverflow.com/questions/23367624/intel-64-rsi-and-rdi-registers): source index, destination index reg 들의 용법
+		- `movsb`는 `DS:SI` (DataSegment:SourceIndex) 부터 `ES:DI` (ExtraSegment:DestinationIndex) 사이의 바이트를 복사하기 위한 연산자이다. 그런데 calling convention에 따라야만 하는 건 아니라서...
  
 - `intr_frame`과 `plm4` 테이블은 커널 영역에 있다. plm4는 유저 가상 주소를 물리 주소로 매핑하는 자료를 가지고 있다. (page table과 동일한건가?)
 	- 그래서 USER_PROGRAM이 실행되면 발생되는 일이... User virtual address를 가리키는 plm4 테이블을 찾아 그 위치로 rsp의 값을 변경한다. 그 뒤에 rip 값을 유저 프로그램 첫 위치로 옮긴 뒤 usermode로 실행.
@@ -33,5 +35,11 @@ updated: 2023-10-04T18:53:35
 - `process_init`: 프로세스 처음 만들 때 초기화하는 함수. 초기에는 `initd`에서만 호출하지만 필요에 따라서 프로세스를 만들거나 복제할 때 호출해도 된다.
 
 - **fork**
-	- `tf` : thread parent가 가지고 있는 `struct intr_frame tf`
-	- `f`: 시스템 콜 핸들러가 `process_fork`에게 인자로 넘기는 `struct intr_frame f`
+	- `tf` : fork를 수행하던 커널이 어디까지 작업했는지에 대한 정보가 저장된다. `threads/thread.c:thread_launch()` 참고.
+	- `f`: 시스템 콜 핸들러가 `process_fork`에게 인자로 넘기는 부모의 user-level 정보가 담긴 `struct intr_frame f`
+	- ![[IMG_2858.jpg]]
+		- user-level information에는 레지스터 정보 (rax, rbx, rcx, rip, etc)가 들어있고 스택 포인터가 들어있고 Code Segment Selector (CS), Stack Segment Selector(SS), User Flags, User Data Segment Selectors(DS, ES, FS, GS), User stack 등이 저장된다.
+		- *CS* : 유저 프로그램의 Code Segment를 결정하는데 사용된다. 허가되지 않은 메모리 영역 내에 액세스 하지 못하도록 하는 데 사용된다.
+		- *SS*: CS와 마찬가지로 스텍 세그먼트를 결정하는 데 사용된다.
+		- *DS, ES, FS, GS*: 유저 프로그램의 Data Segment들을 결정하는데 사용된다. 각각 DataSegment, ExtraSegment(요즘 안쓰는 string operation을 위한 세그먼트), Function specific Segment(프로세스 안 스레드(Thread Local Storage)를 위해서), General purpose Segment
+		- User Stack: 

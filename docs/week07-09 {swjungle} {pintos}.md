@@ -112,4 +112,4 @@ ___
 
 **2023-10-04**
 
-- [[이전기수 QNA 정리 {swjungle}{pintos}{project2}]]
+- [[각종 QNA 정리 {swjungle}{pintos}{project2}]]
