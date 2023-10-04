@@ -4,7 +4,7 @@ tags:
 description:
 title: 이전기수 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T16:42:43
+updated: 2023-10-04T16:47:12
 ---
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
@@ -17,4 +17,4 @@ updated: 2023-10-04T16:42:43
 	- [?] `moveabs`
 	- `$tss`는 `userprog/tss.c` 안에 정의된 `struct task_state *tss`라는 전역변수가 저장된 메모리 주소를 가져옵니다.
 - `intr_frame`과 `plm4` 테이블은 커널 영역에 있다. plm4는 유저 가상 주소를 물리 주소로 매핑하는 자료를 가지고 있다. (page table과 동일한건가?)
-	- 그래서 USER_PROGRAM이 실행되면 발생되는 일이... User virtual address를 가리키는 plm4 테이블을 찾아 그 위치로 rsp의 값을 변경한다. 그 뒤에 rip 값을 유저 프로그램 
+	- 그래서 USER_PROGRAM이 실행되면 발생되는 일이... User virtual address를 가리키는 plm4 테이블을 찾아 그 위치로 rsp의 값을 변경한다. 그 뒤에 rip 값을 유저 프로그램 첫 위치로 옮긴 뒤 usermode로 실행.
