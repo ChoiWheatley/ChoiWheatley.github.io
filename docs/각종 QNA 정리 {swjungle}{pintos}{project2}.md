@@ -4,7 +4,7 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T20:37:59
+updated: 2023-10-04T20:54:28
 ---
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
@@ -47,7 +47,7 @@ updated: 2023-10-04T20:37:59
 		- *DS, ES, FS, GS*: 유저 프로그램의 Data Segment들을 결정하는데 사용된다. 각각 DataSegment, ExtraSegment(요즘 안쓰는 string operation을 위한 세그먼트), Function specific Segment(프로세스 안 스레드(Thread Local Storage)를 위해서), General purpose Segment
 
 - *eflag*
-	- extended flag의 약자로, 프로그램 실행에 있어서 필요한 다양한 상태를 저장하고 있는 레지스터이다. 프로그래머는 에러 핸들링, 대수연산, 분기 따위를 다룰때 
+	- extended flag의 약자로, 프로그램 실행에 있어서 필요한 다양한 상태를 저장하고 있는 레지스터이다. 프로그래머는 에러 핸들링, 대수연산, 분기 따위를 다룰때 사용된다. 대표적으로 zero flag(ZF), carry flag(CF), overflow flag(OF), **interrupt flag(IF)**, sign flag(SF), parity flag(PF), direction flag(DF), trap flag(TF), alighment check(AC), resume flag(RF)가 있다.
 
 - *argument passing*
 	- **Calling convention에 따르면 %rdi는 함수의 첫 번째 인자, %rsi는 함수의 두 번째 인자에 해당합니다.** argument passing을 하고 나서 유저 프로그램이 처음 실행되면 프로그램의 entry point에 해당하는 함수가 가장 먼저 실행되는데, 여기서 main함수를 호출합니다. main함수는 `int main(int argc, char **argv)` 와 같은 식으로 선언하다시피, **argument passing에서 %rdi와 %rsi에 저장한 argc와 argv의 값이 main함수로 전달되어 일반 프로그래머가 프로그램을 실행하는 데 사용된 parameter를 분석할 때 사용할 수 있습니다.**

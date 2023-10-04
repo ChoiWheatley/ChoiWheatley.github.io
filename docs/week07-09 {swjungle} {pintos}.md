@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-04T20:38:41
+updated: 2023-10-04T21:02:58
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -17,6 +17,7 @@ updated: 2023-10-04T20:38:41
 	- [pintos slides by Yujip Won](https://oslab.kaist.ac.kr/pintosslides/)
 - [stanford pintos.pdf](https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf)
 - [swjungle-week07-09 {GH}](https://github.com/ChoiWheatley/swjungle-week07-09) | 학습관련 정리를 이번엔 깃허브 마크다운으로 공용으로 관리해볼 예정.
+- [[Hardware Knowledges for PintOS {swjungle}]]
 - [[Operating Systems Three Easy Pieces]]
 ___
 
@@ -85,7 +86,11 @@ ___
 - faq
 	- [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
 	- [지난 기수의 질문 아카이브](https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions2.html)
-- 
+	- [[각종 QNA 정리 {swjungle}{pintos}{project2}]]
+- pintos-kaist
+	- [gitbook :: Project 2 Introduction](https://casys-kaist.github.io/pintos-kaist/project2/introduction.html)
+	- [gitbook :: Appendix :: Virtual Address](https://casys-kaist.github.io/pintos-kaist/appendix/virtual_address.html)
+	- [gitbook 한글번역 {Notion}](https://www.notion.so/PROJECT-2-USER-PROGRAM-b019874b02f645d7813c554bd7377770)
 
 **2023-10-03 발제 아카이브**
 
@@ -115,3 +120,4 @@ ___
 **2023-10-04**
 
 - [[각종 QNA 정리 {swjungle}{pintos}{project2}]]
+- 
