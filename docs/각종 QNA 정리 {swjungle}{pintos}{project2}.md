@@ -4,8 +4,12 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T20:54:28
+updated: 2023-10-04T21026:054:28
 ---
+- [[week07-09 {swjungle} {pintos}]]
+- [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
+- [지난 기수의 질문 아카이브](https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions2.html)
+___
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
 
