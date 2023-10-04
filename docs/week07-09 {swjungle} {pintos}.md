@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-04T21:33:03
+updated: 2023-10-04T22:23:57
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -120,4 +120,5 @@ ___
 **2023-10-04**
 
 - [[각종 QNA 정리 {swjungle}{pintos}{project2}]]
-- 
+- limitation from simple file system
+	- 파일 시스템 코드를 사용하는 동안 internal synchronization을 사용하지 마세요. Project4가 진행되기 전까지는 한 번에 하나의 프로세스가 파일 시스템 코드를 실행한다는 것을 보장하는 용도로만 synchronization을 사용하세요.

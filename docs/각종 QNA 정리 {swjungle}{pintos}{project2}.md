@@ -4,7 +4,7 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T22:01:40
+updated: 2023-10-04T22:20:39
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
@@ -27,7 +27,10 @@ ___
 - **어셈블리**
 	- `$Imm(%reg)`: `%reg` 에 저장되어있는 주소에 `$Imm`만큼 더한 위치
 	- [?] `moveabs`
-	- `$tss`는 `userprog/tss.c` 안에 정의된 `struct task_state *tss`라는 전역변수가 저장된 메모리 주소를 가져옵니다.
+	- `$tss`는 `userprog/tss.c` 안에 정의된 `struct task_state *tss`라는 전역변수가 저장된 메모리 주소를 가져옵니다. 
+
+		> Task-State Segment (TSS)는 x86 아키텍쳐의 문맥교환에 사용됩니다. 하지만 x86-64에서 문맥교환(context switching = task switching)은 지원이 중단된 기능입니다. 그래도 TSS는 여전히 ring switching 동안 스택 포인터를 찾아내기 위해 사용되고 있습니다.
+
 	- [rsi, rdi registers {SO}](https://stackoverflow.com/questions/23367624/intel-64-rsi-and-rdi-registers): source index, destination index reg 들의 용법
 		- `movsb`는 `DS:SI` (DataSegment:SourceIndex) 부터 `ES:DI` (ExtraSegment:DestinationIndex) 사이의 바이트를 복사하기 위한 연산자이다. 그런데 calling convention에 따라야만 하는 건 아니라서... 꼭 저 이름대로 쓸 필요는 없대.
 
@@ -35,6 +38,7 @@ ___
 	- `intr_frame`과 `plm4` 테이블은 커널 영역에 있다. plm4는 유저 가상 주소를 물리 주소로 매핑하는 자료를 가지고 있다. (page table과 동일한건가?)
 		- 그래서 USER_PROGRAM이 실행되면 발생되는 일이... User virtual address를 가리키는 plm4 테이블을 찾아 그 위치로 rsp의 값을 변경한다. 그 뒤에 rip 값을 유저 프로그램 첫 위치로 옮긴 뒤 usermode로 실행.
 	- [plm4, page map level 4의 유래](https://www.pagetable.com/?p=14)
+	- [[plm4 virtual address coverage formula {pintos}]]
  
 - 유저 프로그램에서 처음 실행되는 함수는 리턴 주소가 없어서 fake address를 넣는다.
 - 커널이 호출하는 `printf`는 `lib/kernel/console.c:vprintf`를 참조한다. 반면에 유저 프로그램이 호출하는 `printf`는 `lib/user/console.c:vprintf`를 참조한다. 이 차이를 알아야 `write` 시스템 콜을 만들 수 있다.
