@@ -4,7 +4,7 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T21:48:59
+updated: 2023-10-04T22:01:40
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
@@ -34,7 +34,7 @@ ___
  - **plm4 and intr_frame** 
 	- `intr_frame`과 `plm4` 테이블은 커널 영역에 있다. plm4는 유저 가상 주소를 물리 주소로 매핑하는 자료를 가지고 있다. (page table과 동일한건가?)
 		- 그래서 USER_PROGRAM이 실행되면 발생되는 일이... User virtual address를 가리키는 plm4 테이블을 찾아 그 위치로 rsp의 값을 변경한다. 그 뒤에 rip 값을 유저 프로그램 첫 위치로 옮긴 뒤 usermode로 실행.
-	- [plm4](https://www.pagetable.com/?p=14)
+	- [plm4, page map level 4의 유래](https://www.pagetable.com/?p=14)
  
 - 유저 프로그램에서 처음 실행되는 함수는 리턴 주소가 없어서 fake address를 넣는다.
 - 커널이 호출하는 `printf`는 `lib/kernel/console.c:vprintf`를 참조한다. 반면에 유저 프로그램이 호출하는 `printf`는 `lib/user/console.c:vprintf`를 참조한다. 이 차이를 알아야 `write` 시스템 콜을 만들 수 있다.

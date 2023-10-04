@@ -15,7 +15,7 @@ updated: 2023-09-14T19:59:26
 			- [[⭐️ 3.8 Array Allocation and Access]]
 		- [[7. Linking {CSAPP}]]
 			- [[⭐️ 7.1. Compiler Drivers]]
-			- [[⭐️ 7.4. Relocatable Object Files]]
+			- [[⭐️ 7.4. Relocatable Object Files (ELF File Format)]]
 			- [[⭐️ 7.9. Loading Executable Files]]
 		- [[8. Exceptional Control Flow]]
 			- [[⭐️ 8.1 Exceptions]]
