@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-03T14:59:16
+updated: 2023-10-04T15:17:43
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -75,6 +75,16 @@ ___
 
 ## week08 - User Program
 
+### INDEX
+
+- csapp
+	- [[3. Machine Level Representation of Programs {CSAPP}]]
+	- [[8. Exceptional Control Flow]]  | 8.2, 8.3, 8.4
+- faq
+	- [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
+	- [지난 기수의 질문 아카이브](https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions2.html)
+- 
+
 **2023-10-03 발제 아카이브**
 
 - gpt, bing chat, bard, 클로바 x 등등 가리지 말고 다 써봐라. 생성형 AI가 언제나 정답을 이야기해주지는 않으니.
@@ -99,3 +109,7 @@ ___
 	- fd 복제 with [[dup2(2)]]
 
 ![[Pasted image 20231003145914.png]]
+
+**2023-10-04**
+
+- [[이전기수 QNA 정리 {swjungle}{pintos}{project2}]]
