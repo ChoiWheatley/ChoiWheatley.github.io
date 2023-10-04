@@ -42,3 +42,6 @@ updated: 2023-10-04T20:06:21
 		- *CS* : 유저 프로그램의 Code Segment를 결정하는데 사용된다. 허가되지 않은 메모리 영역 내에 액세스 하지 못하도록 하는 데 사용된다.
 		- *SS*: CS와 마찬가지로 스텍 세그먼트를 결정하는 데 사용된다.
 		- *DS, ES, FS, GS*: 유저 프로그램의 Data Segment들을 결정하는데 사용된다. 각각 DataSegment, ExtraSegment(요즘 안쓰는 string operation을 위한 세그먼트), Function specific Segment(프로세스 안 스레드(Thread Local Storage)를 위해서), General purpose Segment
+
+- *eflag*
+	- extended flag의 약자로, 프로그램 실행에 있어서 필요한 다양한 상태를 저장하고 있는 레지스터이다. 프로그래머는 에러 핸들링, 대수연산, 분기 따위를 다룰때 
