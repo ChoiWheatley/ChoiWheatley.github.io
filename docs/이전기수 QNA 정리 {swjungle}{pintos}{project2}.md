@@ -4,7 +4,7 @@ tags:
 description:
 title: 이전기수 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T17:05:34
+updated: 2023-10-04T18:33:22
 ---
 - 권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.
 - 함수 인자는 최대 6개까지만 레지스터 `rdi, rsi, rdx, rcx, r8, r9`에 저장되고 그보다 많은 인자는 스택에 넣어 전달된다.
@@ -27,3 +27,4 @@ updated: 2023-10-04T17:05:34
  
 - 프로그램에서 처음 실행되는 함수는 리턴 주소가 없어서 fake address를 넣는다.
 - 커널이 호출하는 `printf`는 `lib/kernel/console.c:vprintf`를 참조한다. 반면에 유저 프로그램이 호출하는 `printf`는 `lib/user/console.c:vprintf`를 참조한다. 이 차이를 알아야 `write` 시스템 콜을 만들 수 있다.
+- `pid_t`와 `tid_t`와의 차이점: `tid_t`는 프로세스 안에서 식별할 수 있는 스레드 식별자이고 `pid_t`는 프로세스와 커널에서 식별할 수 있는 프로세스 식별자이다. 
