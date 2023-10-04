@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#-syscall-handler" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -36177,6 +36182,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    각종 QNA 정리 {swjungle}{pintos}{project2}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -36186,6 +36202,30 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-syscall-handler" class="md-nav__link">
+    - syscall handler는 인터럽트를 끄지 않는다.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -39667,6 +39707,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-syscall-handler" class="md-nav__link">
+    - syscall handler는 인터럽트를 끄지 않는다.
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -39682,6 +39737,12 @@
 
   <h1>각종 QNA 정리 {swjungle}{pintos}{project2}</h1>
 
+<ul>
+<li><a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/">week07-09 {swjungle} {pintos}</a></li>
+<li><a href="https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html">pintos-kaist/project2/FAQ.html</a></li>
+<li><a href="https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions2.html">지난 기수의 질문 아카이브</a></li>
+</ul>
+<hr />
 <ul>
 <li>권유집 교수님의 자료는 original pintos를 기준으로 진행. 즉 32비트 운영체제를 기준으로 진행한다. 또 각종 메서드-like 함수들의 이름이 바뀌었으니 이 점 참고하면서 다루어야 한다.</li>
 <li>
@@ -39700,6 +39761,7 @@
 </blockquote>
 </li>
 </ul>
+<h2 id="-syscall-handler">- syscall handler는 인터럽트를 끄지 않는다.<a class="headerlink" href="#-syscall-handler" title="Permanent link">#</a></h2>
 </li>
 <li>
 <p><strong>어셈블리</strong></p>
@@ -39708,7 +39770,7 @@
 <li>[?] <code>moveabs</code></li>
 <li><code>$tss</code>는 <code>userprog/tss.c</code> 안에 정의된 <code>struct task_state *tss</code>라는 전역변수가 저장된 메모리 주소를 가져옵니다.</li>
 <li><a href="https://stackoverflow.com/questions/23367624/intel-64-rsi-and-rdi-registers">rsi, rdi registers {SO}</a>: source index, destination index reg 들의 용법<ul>
-<li><code>movsb</code>는 <code>DS:SI</code> (DataSegment:SourceIndex) 부터 <code>ES:DI</code> (ExtraSegment:DestinationIndex) 사이의 바이트를 복사하기 위한 연산자이다. 그런데 calling convention에 따라야만 하는 건 아니라서...</li>
+<li><code>movsb</code>는 <code>DS:SI</code> (DataSegment:SourceIndex) 부터 <code>ES:DI</code> (ExtraSegment:DestinationIndex) 사이의 바이트를 복사하기 위한 연산자이다. 그런데 calling convention에 따라야만 하는 건 아니라서... 꼭 저 이름대로 쓸 필요는 없대.</li>
 </ul>
 </li>
 </ul>
@@ -39720,7 +39782,7 @@
 </ul>
 </li>
 <li>
-<p>프로그램에서 처음 실행되는 함수는 리턴 주소가 없어서 fake address를 넣는다.</p>
+<p>유저 프로그램에서 처음 실행되는 함수는 리턴 주소가 없어서 fake address를 넣는다.</p>
 </li>
 <li>커널이 호출하는 <code>printf</code>는 <code>lib/kernel/console.c:vprintf</code>를 참조한다. 반면에 유저 프로그램이 호출하는 <code>printf</code>는 <code>lib/user/console.c:vprintf</code>를 참조한다. 이 차이를 알아야 <code>write</code> 시스템 콜을 만들 수 있다.</li>
 <li><code>pid_t</code>와 <code>tid_t</code>와의 차이점: <code>tid_t</code>는 커널 스레드 식별자이고 커널에서만 사용될 수 있다. <code>pid_t</code>는 사용자 프로세스를 식별한다. <code>exec</code>, <code>wait</code> 시스템콜에서 이를 사용한다. 둘 다 int형이고 tid, pid 관계를 일대일 매핑으로 만들거나 복잡한 매핑을 만들 수 있다.</li>
@@ -39739,9 +39801,26 @@
 <li><em>CS</em> : 유저 프로그램의 Code Segment를 결정하는데 사용된다. 허가되지 않은 메모리 영역 내에 액세스 하지 못하도록 하는 데 사용된다.</li>
 <li><em>SS</em>: CS와 마찬가지로 스텍 세그먼트를 결정하는 데 사용된다.</li>
 <li><em>DS, ES, FS, GS</em>: 유저 프로그램의 Data Segment들을 결정하는데 사용된다. 각각 DataSegment, ExtraSegment(요즘 안쓰는 string operation을 위한 세그먼트), Function specific Segment(프로세스 안 스레드(Thread Local Storage)를 위해서), General purpose Segment</li>
-<li>User Stack: </li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<p><em>eflag</em></p>
+<ul>
+<li>extended flag의 약자로, 프로그램 실행에 있어서 필요한 다양한 상태를 저장하고 있는 레지스터이다. 프로그래머는 에러 핸들링, 대수연산, 분기 따위를 다룰때 사용된다. 대표적으로 zero flag(ZF), carry flag(CF), overflow flag(OF), <strong>interrupt flag(IF)</strong>, sign flag(SF), parity flag(PF), direction flag(DF), trap flag(TF), alighment check(AC), resume flag(RF)가 있다.</li>
+</ul>
+</li>
+<li>
+<p><em>argument passing</em></p>
+<ul>
+<li><strong>Calling convention에 따르면 %rdi는 함수의 첫 번째 인자, %rsi는 함수의 두 번째 인자에 해당합니다.</strong> argument passing을 하고 나서 유저 프로그램이 처음 실행되면 프로그램의 entry point에 해당하는 함수가 가장 먼저 실행되는데, 여기서 main함수를 호출합니다. main함수는 <code>int main(int argc, char **argv)</code> 와 같은 식으로 선언하다시피, <strong>argument passing에서 %rdi와 %rsi에 저장한 argc와 argv의 값이 main함수로 전달되어 일반 프로그래머가 프로그램을 실행하는 데 사용된 parameter를 분석할 때 사용할 수 있습니다.</strong></li>
+</ul>
+</li>
+<li>
+<p><em>pintos program</em></p>
+<ul>
+<li>명령어를 하나씩 실행시키고 싶다면 <code>make tests/threads/alarm-multiple.result</code>와 같은식으로 .result파일을 직접 입력해주면 됩니다. 더 자세한 정보는 <a href="https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf">https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf</a> 여기에 가셔서 5페이지를 참고하시면 될 것 같습니다.</li>
 </ul>
 </li>
 </ul>
