@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-04T22:23:57
+updated: 2023-10-04T22:58:24
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -92,7 +92,7 @@ ___
 	- [gitbook :: Appendix :: Virtual Address](https://casys-kaist.github.io/pintos-kaist/appendix/virtual_address.html)
 	- [gitbook 한글번역 {Notion}](https://www.notion.so/PROJECT-2-USER-PROGRAM-b019874b02f645d7813c554bd7377770)
 
-**2023-10-03 발제 아카이브**
+### 2023-10-03 발제 아카이브
 
 - gpt, bing chat, bard, 클로바 x 등등 가리지 말고 다 써봐라. 생성형 AI가 언제나 정답을 이야기해주지는 않으니.
 - TDD spec이라고 불리우는 엔티티는 specification의 약자로, "이렇게 이렇게 돌아갔으면 좋겠어요" 요구사항을 명세로 작성할 때부터 이미 테스트케이스로 만들어버린다. 그리고 테스트 코드를 통과하도록 코드를 작성한다.
@@ -117,8 +117,11 @@ ___
 
 ![[Pasted image 20231003145914.png]]
 
-**2023-10-04**
+### 2023-10-04
 
 - [[각종 QNA 정리 {swjungle}{pintos}{project2}]]
 - limitation from simple file system
 	- 파일 시스템 코드를 사용하는 동안 internal synchronization을 사용하지 마세요. Project4가 진행되기 전까지는 한 번에 하나의 프로세스가 파일 시스템 코드를 실행한다는 것을 보장하는 용도로만 synchronization을 사용하세요.
+
+- **argument passing**
+	- `process_exec()` 함수는 새로운 프로세스에 인자를 전달하는 것을 지원하지 않음. 따라서 이를 확장구현하여 공백을 기준으로 여러 단어로 나누어지게 만들어라.
