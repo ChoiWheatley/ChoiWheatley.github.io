@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-04T23:55:24
+updated: 2023-10-05T09:39:39
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -125,3 +125,12 @@ ___
 
 - **argument passing**
 	- `process_exec()` 함수는 새로운 프로세스에 인자를 전달하는 것을 지원하지 않음. 따라서 이를 확장구현하여 공백을 기준으로 여러 단어로 나누어지게 만들어라.
+
+### 2023-10-05
+
+- how to run?
+	- to run and grade a single test, `make` the `'.result'` file explicitly from the `build` directory.
+
+	 ```shell
+	make tests/threads/alarm-multiple.result 
+	```

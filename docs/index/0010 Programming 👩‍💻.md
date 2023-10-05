@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-09-15T23:21:38
+updated: 2023-10-05T09:36:50
 ---
 
 parent link: [[docs/index/index|index]]
@@ -99,6 +99,7 @@ ___
 - [[신입 개발자 전공 지식 & 기술 면접 백과사전]]
 - [[T2 보안칩이 내장된 맥북에 리눅스 설치하기]]
 - [[Sentinel Node]]
+- [[command line cursor moving shortcuts]]
 
 # Glosarry
 

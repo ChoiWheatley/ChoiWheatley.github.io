@@ -34,6 +34,7 @@ title: 0110 Utility 🔧
 - [[Segmentation fault (core dumped) 덤프 파일 뜯어보는 방법]]
 - [[CMake]]
 - [[make]]
+- [[command line cursor moving shortcuts]]
 
 ## mac utils
 
