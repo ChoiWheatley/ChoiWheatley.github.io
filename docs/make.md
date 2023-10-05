@@ -4,7 +4,7 @@ tags:
 description:
 title: make
 created: 2023-09-15T13:44:24
-updated: 2023-09-15T14:10:16
+updated: 2023-10-05T09:51:52
 ---
 - [[0110 Utility 🔧]]
 ___
@@ -25,3 +25,7 @@ make가 할 수 있는 일은...
 ## 자동변수
 
 <http://korea.gnu.org/manual/4check/make-3.77/ko/make_10.html#SEC97>
+
+## make faster with `-j $(nproc --all)` option
+
+`-j`에 대한 설명은 [gnu.org :: Parallel](https://www.gnu.org/software/make/manual/html_node/Parallel.html)에서 확인바람. `nproc`에 대한 설명은 [다음 stack overflow 답변](https://stackoverflow.com/a/17089001/21369350)을 참고. 현재 시스템의 CPU 수만큼의 job을 생성해 병렬적으로 컴파일하게된다.
