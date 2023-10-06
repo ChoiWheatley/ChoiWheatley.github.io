@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.79e020e9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bd3936ea.min.css">
       
       
 
@@ -7570,6 +7570,23 @@
     
   
   collections.defaultdict   인덱스 조회 실패 시 디폴트 객체 생성
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../command%20line%20cursor%20moving%20shortcuts/" class="md-tabs__link">
+        
+  
+    
+  
+  command line cursor moving shortcuts
 
       </a>
     </li>
@@ -28645,6 +28662,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../command%20line%20cursor%20moving%20shortcuts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    command line cursor moving shortcuts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../compare%20two%20iterators/" class="md-nav__link">
         
   
@@ -39923,7 +39959,7 @@
 <p>위의 예제는 이중 for문을 활용하여 nested token 분리를 수행하는 방법을 나타내고 있다.</p>
 <p>delim은 파이썬 식의 delimiter와는 조금 다르다. 개별적인 char 바이트 중 하나라도 일치하는 것이 있다면 통과하기 때문이다. 예를 들어 위의 사용예제에서 첫번째 delim을 <code>:;</code>으로 주었는데 <code>:</code> 또는 <code>;</code>에 대하여 모두 분리를 수행했다. </p>
 <p><code>strtok</code>는 토큰화할 문자열이 더 이상 남아있지 않는 경우에는 NULL을 리턴하고 그 외에는 비어있지 않은 문자열의 첫번째 주소를 리턴한다. 모든 delim들은 Null-terminated character로 <strong>수정</strong>된다는 점 유의.</p>
-<p>반복문에서 볼 수 있다시피 같은 함수를 반복하여 호출하지만 <code>saveptr</code> 안에 현재 위치 정보를 가지고 있기 때문에 괜찮다. 공식문서에서는 처음 호출에만 첫번째 인자 <code>str</code>이 필요하고 두 번째 호출서부터는 NULL이어야 한다고는 하지만 예제코드에서 버젓이 for문 안에 그냥 넣은 걸 보면 <code>saveptr</code>가 set 된 이후부터는 무시하는걸지도 모르겠다. 구현에 따라 첫 호출에는 <code>saveptr</code>를 NULL로 두는 경우가 있다고도 하는데 구체적인 얘기가 없는 걸 보면 무시해도 좋을지도.</p>
+<p>처음 호출에만 인자 <code>str</code>이 필요하고 두 번째 호출부터는 <code>NULL</code>로 바꿔서 집어넣는 코드를 확인할 수 있다.</p>
 
 
 
@@ -39968,10 +40004,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6eac0284.min.js"></script>
+      <script src="../assets/javascripts/bundle.94c44541.min.js"></script>
       
         <script src="../javascripts/katex.js"></script>
       
