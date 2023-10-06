@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-05T09:39:39
+updated: 2023-10-06T19:25:49
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -135,7 +135,18 @@ ___
 	make tests/threads/alarm-multiple.result 
 	```
 
-
 ### 2023-10-06
 
 - [[argument passing flow {pintos}]]
+
+- 자주 보이는 주솟값들 모음
+	- `KERN_BASE`: 0x8004000000 | 549822922752 | 가상메모리 상에서 커널 주솟값의 시작주소
+	- `USER_STACK`: 0x47480000 | 1195900928 | 가상메모리 상에서 유저 프로세스 스택영역의 출발지점
+
+- syscall_handler에는 syscall 번호와 인자가 들어간다.
+
+	> Thus, when the system call handler `syscall_handler()` gets control, the system call number is in the **rax**, and arguments are passed with the order **%rdi, %rsi, %rdx, %r10, %r8, and %r9**.
+
+- system calls + user memory access
+	- @세준: file based system calls
+	- @승현 + @가람: user memory access, process related system calls
