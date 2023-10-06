@@ -134,3 +134,8 @@ ___
 	 ```shell
 	make tests/threads/alarm-multiple.result 
 	```
+
+
+### 2023-10-06
+
+- [[argument passing flow {pintos}]]
