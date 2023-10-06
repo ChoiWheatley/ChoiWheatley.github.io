@@ -4,7 +4,7 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-04T22:20:39
+updated: 2023-10-06T10:57:55
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
@@ -33,6 +33,7 @@ ___
 
 	- [rsi, rdi registers {SO}](https://stackoverflow.com/questions/23367624/intel-64-rsi-and-rdi-registers): source index, destination index reg 들의 용법
 		- `movsb`는 `DS:SI` (DataSegment:SourceIndex) 부터 `ES:DI` (ExtraSegment:DestinationIndex) 사이의 바이트를 복사하기 위한 연산자이다. 그런데 calling convention에 따라야만 하는 건 아니라서... 꼭 저 이름대로 쓸 필요는 없대.
+	- `push`: call을 하기 전 callee 스택에 인자들을 등록하는 과정. immediate operand, memory location을 push 할 수 있다. push가 일어날 때마다 rsp가 해당 인자의 크기만큼 줄어든다. 반대로 스택으로부터 값을 회수하는 명령어는 `pop`이다.
 
  - **plm4 and intr_frame** 
 	- `intr_frame`과 `plm4` 테이블은 커널 영역에 있다. plm4는 유저 가상 주소를 물리 주소로 매핑하는 자료를 가지고 있다. (page table과 동일한건가?)
