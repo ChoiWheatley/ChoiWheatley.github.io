@@ -40197,7 +40197,29 @@ make tests/threads/alarm-multiple.result</code></p>
 </ul>
 <h3 id="2023-10-06">2023-10-06<a class="headerlink" href="#2023-10-06" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="../argument%20passing%20flow%20%7Bpintos%7D/">argument passing flow {pintos}</a></li>
+<li>
+<p><a href="../argument%20passing%20flow%20%7Bpintos%7D/">argument passing flow {pintos}</a></p>
+</li>
+<li>
+<p>자주 보이는 주솟값들 모음</p>
+<ul>
+<li><code>KERN_BASE</code>: 0x8004000000 | 549822922752 | 가상메모리 상에서 커널 주솟값의 시작주소</li>
+<li><code>USER_STACK</code>: 0x47480000 | 1195900928 | 가상메모리 상에서 유저 프로세스 스택영역의 출발지점</li>
+</ul>
+</li>
+<li>
+<p>syscall_handler에는 syscall 번호와 인자가 들어간다.</p>
+<blockquote>
+<p>Thus, when the system call handler <code>syscall_handler()</code> gets control, the system call number is in the <strong>rax</strong>, and arguments are passed with the order <strong>%rdi, %rsi, %rdx, %r10, %r8, and %r9</strong>.</p>
+</blockquote>
+</li>
+<li>
+<p>system calls + user memory access</p>
+<ul>
+<li>@세준: file based system calls</li>
+<li>@승현 + @가람: user memory access, process related system calls</li>
+</ul>
+</li>
 </ul>
 
 
