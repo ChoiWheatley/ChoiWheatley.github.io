@@ -4,7 +4,7 @@ tags:
 description:
 title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
-updated: 2023-10-06T10:57:55
+updated: 2023-10-08T17:20:56
 ---
 - [[week07-09 {swjungle} {pintos}]]
 - [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
@@ -51,7 +51,9 @@ ___
 - **fork**
 	- `tf` : fork를 수행하던 커널이 어디까지 작업했는지에 대한 정보가 저장된다. `threads/thread.c:thread_launch()` 참고.
 	- `f`: 시스템 콜 핸들러가 `process_fork`에게 인자로 넘기는 부모의 user-level 정보가 담긴 `struct intr_frame f`
+	- 
 	- ![[IMG_2858.jpg]]
+		- 부모 프로세스가 fork를 호출하던 당시의 컨텍스트를 `f`, `process_fork` 안에서 `thread_create`를 호출할 당시의 컨텍스트를 `tf`라고 부른다. 이때 `tf`를 자식 프로세스에게 줄 것이 아니라 `f`를 전달해야 올바르게 `fork`를 호출했던 시점의 PC부터 시작할 것이다. 이 정보는 `syscall_handler(f)`의 인자로 전달되고 `thread::bf` 백업 인터럽트 프레임 멤버에 저장되어 자식 프로세스 생성을 위한 첫 스레드 `__do_fork`에서 복제된다 [`process.c:__do_fork`](https://github.com/ChoiWheatley/swjungle-week07-09/blob/5ac563a178c6314a7a41104aa15e280981dff40c/userprog/process.c#L175), [`syscall.c:syscall_handler`](https://github.com/ChoiWheatley/swjungle-week07-09/blob/5ac563a178c6314a7a41104aa15e280981dff40c/userprog/syscall.c#L100-L103)
 		- user-level information에는 레지스터 정보 (rax, rbx, rcx, rip, etc)가 들어있고 스택 포인터가 들어있고 Code Segment Selector (CS), Stack Segment Selector(SS), User Flags, User Data Segment Selectors(DS, ES, FS, GS), User stack 등이 저장된다.
 		- *CS* : 유저 프로그램의 Code Segment를 결정하는데 사용된다. 허가되지 않은 메모리 영역 내에 액세스 하지 못하도록 하는 데 사용된다.
 		- *SS*: CS와 마찬가지로 스텍 세그먼트를 결정하는 데 사용된다.

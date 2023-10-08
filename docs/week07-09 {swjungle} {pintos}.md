@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-06T19:25:49
+updated: 2023-10-06T22:50:13
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -150,3 +150,9 @@ ___
 - system calls + user memory access
 	- @세준: file based system calls
 	- @승현 + @가람: user memory access, process related system calls
+
+- `page_fault()`
+	- cr3: page directory base register.
+	- cr2: page fault linear address ⟶ 어디에서 fault가 발생했는지를 저장하는 `fault_addr` 변수에 저장  
+	- `exception_init()` 안에서 해당 함수를 인터럽트 핸들러로 등록한다.  
+`
