@@ -40220,6 +40220,15 @@ make tests/threads/alarm-multiple.result</code></p>
 <li>@승현 + @가람: user memory access, process related system calls</li>
 </ul>
 </li>
+<li>
+<p><code>page_fault()</code></p>
+<ul>
+<li>cr3: page directory base register.</li>
+<li>cr2: page fault linear address ⟶ 어디에서 fault가 발생했는지를 저장하는 <code>fault_addr</code> 변수에 저장  </li>
+<li><code>exception_init()</code> 안에서 해당 함수를 인터럽트 핸들러로 등록한다.<br />
+`</li>
+</ul>
+</li>
 </ul>
 
 
