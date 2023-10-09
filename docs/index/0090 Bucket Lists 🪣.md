@@ -9,13 +9,13 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-08-27T21:26:14
+updated: 2023-10809-297T21:926:14
 ---
 parent link: 
 - [[docs/index/index|index]]
 
-Pending
----
+## Pending
+
 - With Computer
 	- [[내가 가지고 있는 지식으로'만' 할 수 있는 토이프로젝트엔 무엇이 있을까]]
 		- 잘 알려진 자료구조 (템플릿 컨테이너 클래스), 이터레이터 클래스, 알고리즘 라이브러리
