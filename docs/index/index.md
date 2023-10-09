@@ -10,13 +10,14 @@ aliases:
 tags: index
 date created: Thursday, February 9th 2023, 11:01:44 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-30T16:53:12
+updated: 2023-10-09T19:05:54
 ---
 
 parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
+
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
 - [[0011 Algorithms ♾️]]
@@ -37,6 +38,5 @@ parent link: [[docs/index]]
 - [[0100 English 👻]]
 - [[0110 Utility 🔧]]
 - [[0120 swjungle 🤖]]
-- [[0[[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]n, David.]]
 
 %% End Waypoint %%
