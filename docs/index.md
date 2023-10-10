@@ -8,7 +8,7 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-10-10T02:51:09
+updated: 2023-10-10T20:40:08
 ---
 
 ## Self Introduction
@@ -25,7 +25,7 @@ I'm native Korean, but I can understand English at reading, listening. Speaking 
 
 ### Featured Posts
 
-- If you want to see the level-zero index, go [[docs/index/index]].
+- If you want to see the level-zero index, go [index](docs/index/index).
 - [[week07-09 {swjungle} {pintos}]] is working area for WIL (Weekly I learned) PintOS KAIST project.
 - [[0090 Bucket Lists 🪣|Bucketlist]] is my curious tank! go and see my weird ideas and stuffs
 - [[Daily Notes|Daily Notes]] is for scribbing daily thoughts and plans, music recommendations, etc.

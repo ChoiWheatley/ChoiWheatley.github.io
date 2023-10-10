@@ -4,7 +4,7 @@ tags:
 description:
 title: 01_os_review.pdf {swjungle}
 created: 2023-09-25T23:23:13
-updated: 2023-09-26T12:25:49
+updated: 2023-10-10T12:30:36
 ---
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
@@ -101,6 +101,7 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 	- Round Robin 시간을 쪼개놓고 공정하게 분배
 		- Pro: 공정한 실행으로 높은 응답시간
 		- Con: 프로세스가 많아질수록 turnaround time 증가
+			- 어떤 결점이 MLFQ를 만들게 됐다? Priority의 차이 (time slice가 길수록 cpu burst time이 긴 작업에 유리, 짧을수록 반응성이 중요한 io작업에 유리.)  ^g34tuq
 
 - paging
 	- ![[Pasted image 20230926020453.png]]

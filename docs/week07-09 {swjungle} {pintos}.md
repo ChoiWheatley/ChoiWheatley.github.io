@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-06T22:50:13
+updated: 2023-10-10T15:47:43
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -39,6 +39,7 @@ ___
 - ~~2023-09-26T10:30:00~~
 	- [[2023-09-26 권영진 교수님의 OS 강의 (1차) {swjungle}]]
 - 2023-10-10T10:30:00
+	- [[2023-10-10 권영진 교수님 OS 강의 (2차) {swjungle}]]
 - OS abstraction 개념에 초점을 맞추어 진행.
 - [Pintos_1.pdf](https://drive.google.com/file/d/1rr1VobnaR8QiWq3TVImvzzHWWdB5d4B5/view)
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
@@ -156,3 +157,25 @@ ___
 	- cr2: page fault linear address ⟶ 어디에서 fault가 발생했는지를 저장하는 `fault_addr` 변수에 저장  
 	- `exception_init()` 안에서 해당 함수를 인터럽트 핸들러로 등록한다.  
 `
+
+### Weekly I learned
+
+[[Project2 User Program {wil}]]
+
+## week09 - Virtual Memory
+
+### 2023-10-10 발제
+
+- 지난주에는...
+	- stack argument passing을 했었지 function call을 흉내낸 것이다.
+	- intel의 ring 구조, privileged inst를 사용하기 위해 시스템 콜을 만들었다
+- 이번주에는...
+	- virtual memory의 4-level tree구조 특별히 radix tree라고..!
+	- SPT (Supplemental page table) : 페이지 테이블 말고 뭔가를 더 만들어야 한다. 가상메모리의 존재 이유를 다시 생각해보자.
+		- isolation
+		- **space sharing** ⟶ swap에 도움이 되는 정보
+		- stack growth: 스택 전용 페이지를 따로 줘. 페이지가 터지면 다른 페이지 할당해서 붙여서 유지. 이젠 페이지가 스택용인지, text용인지 힙용인지
+	- `mmap`, `munmap` 구현
+	- 스와핑 구현
+
+PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 도움이 될것.
