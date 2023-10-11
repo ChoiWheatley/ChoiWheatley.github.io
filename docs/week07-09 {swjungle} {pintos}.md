@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-11T16:20:48
+updated: 2023-10-11T16:31:04
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -170,10 +170,11 @@ ___
 	- [pintos-kaist/project3/FAQ.html]()
 	- [지난 기수의 질문 아카이브]()
 	- [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
-- pintos-kaist
-	- [gitbook :: Project 3 Introduction]()
-	- [gitbook :: Appendix :: Virtual Address]()
-	- [gitbook 한글번역 {Notion}]()
+- pintos-kaist gitbook
+	- [gitbook :: Project 3 Introduction](https://casys-kaist.github.io/pintos-kaist/project3/introduction.html)
+	- [한글번역 {Notion}](https://www.notion.so/PROJECT-3-VIRTUAL-MEMORY-d16fc8d04f4d4829b7e25691a235901c)
+- 기타
+	- [[Pintos_3.pdf]]
 
 ### 2023-10-10 발제
 
@@ -201,5 +202,3 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 	- clone repo
 	- [?] code review from Project 1 & 2
 	- [?] live coding show
-
-**Introduction - GitBook**
