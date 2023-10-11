@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-10T15:47:43
+updated: 2023-10-11T16:20:48
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -164,6 +164,17 @@ ___
 
 ## week09 - Virtual Memory
 
+### INDEX
+
+- faq
+	- [pintos-kaist/project3/FAQ.html]()
+	- [지난 기수의 질문 아카이브]()
+	- [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
+- pintos-kaist
+	- [gitbook :: Project 3 Introduction]()
+	- [gitbook :: Appendix :: Virtual Address]()
+	- [gitbook 한글번역 {Notion}]()
+
 ### 2023-10-10 발제
 
 - 지난주에는...
@@ -179,3 +190,16 @@ ___
 	- 스와핑 구현
 
 PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 도움이 될것.
+
+### 2023-10-11
+
+- Introduction & Memory Management 파트 읽고
+	- supplemental page table 만들기
+	- union 공부
+	- page operations 생성 (struct page는 이미 있음.)
+- before impl...
+	- clone repo
+	- [?] code review from Project 1 & 2
+	- [?] live coding show
+
+**Introduction - GitBook**
