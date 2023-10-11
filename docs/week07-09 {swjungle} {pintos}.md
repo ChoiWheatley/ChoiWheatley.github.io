@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-11T16:41:33
+updated: 2023-10-11T16:45:30
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -167,7 +167,7 @@ ___
 ### INDEX
 
 - [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
-- [[Pintos_3.pdf]]
+- [[Pintos_3.pdf]] ⟶ Top-Down Approach
 - pintos-kaist gitbook
 	- [Introduction](https://casys-kaist.github.io/pintos-kaist/project3/introduction.html)
 	- [FAQ](https://casys-kaist.github.io/pintos-kaist/project3/FAQ.html)
@@ -200,3 +200,6 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 	- clone repo
 	- [?] code review from Project 1 & 2
 	- [?] live coding show
+
+**[[Pintos_3.pdf]]**
+
