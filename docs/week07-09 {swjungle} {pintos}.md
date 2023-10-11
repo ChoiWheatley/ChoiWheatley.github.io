@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-11T16:45:30
+updated: 2023-10-11T22:06:29
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -203,3 +203,11 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 
 **[[Pintos_3.pdf]]**
 
+- Things to do
+	- supplemental page table
+	- physical frame management **frame table**: global data structure that keeps track of physical frames that are allocated / free
+	- modifying the page fault handler for lazy loading (demand paging)
+		- stack growth
+		- file-mapped **file-mapped table**
+	- mmap, munmap
+	- swap in/out **swap table**
