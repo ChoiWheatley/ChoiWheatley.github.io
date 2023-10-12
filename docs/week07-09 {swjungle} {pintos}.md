@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-12T15:02:06
+updated: 2023-10-12T18:35:15
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -226,3 +226,5 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 		- 페이지와 프레임을 분리한 덕분에 뒤에 나올 lazy loading이 가능해졌다.
 
 - [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
+
+#### [[정글 대 토론회 {swjungle} {pintos}]]
