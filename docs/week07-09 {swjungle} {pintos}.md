@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-12T14:19:22
+updated: 2023-10-12T14:39:06
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -192,8 +192,8 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 
 ### 2023-10-11
 
-- Introduction & Memory Management 파트 읽고
-	- supplemental page table 만들기
+- Introduction 파트 읽고
+	- [[supplemental page table 만들기 {pintos} {swjungle}]]
 	- union 공부
 	- page operations 생성 (struct page는 이미 있음.)
 - before impl...
@@ -214,4 +214,6 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 
 ### 2023-10-12
 
-- [[supplemental page table 만들기 {pintos} {swjungle}]]
+- Introduction & Memory Management 파트 다시 읽는중
+	- [[supplemental page table 만들기 {pintos} {swjungle}]]
+	- 
