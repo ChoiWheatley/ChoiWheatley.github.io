@@ -4,7 +4,7 @@ tags:
 description: threads
 title: week07-09 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-13T15:15:57
+updated: 2023-10-14T05:30:18
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
@@ -167,14 +167,15 @@ ___
 ### INDEX
 
 - [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
-- [[Pintos_3.pdf]] ⟶ Top-Down Approach
+- [[pintos3 {pdf} {pintos}]] ⟶ Top-Down Approach
 - pintos-kaist gitbook
 	- [Introduction](https://casys-kaist.github.io/pintos-kaist/project3/introduction.html)
 	- [FAQ](https://casys-kaist.github.io/pintos-kaist/project3/FAQ.html)
 	- [한글번역 {Notion}](https://www.notion.so/PROJECT-3-VIRTUAL-MEMORY-d16fc8d04f4d4829b7e25691a235901c)
 - CSAPP: [[9. Virtual Memory]]
-- Yujip Kwon slides
-	- 
+- Yujip Won slides
+	- [[2022_Pintos_Part3_VirtualMemory_01_DemandPaging 1.pdf]]
+	- [[2022_Pintos_Part3_VirtualMemory_02_Swapping_etc.pdf]]
 
 ### 2023-10-10 발제
 
@@ -203,16 +204,7 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 	- [p] code review from Project 1 & 2
 	- [p] live coding show
 
-**[[Pintos_3.pdf]]**
-
-- Things to do
-	- supplemental page table
-	- physical frame management **frame table**: global data structure that keeps track of physical frames that are allocated / free
-	- modifying the page fault handler for lazy loading (demand paging)
-		- stack growth
-		- file-mapped **file-mapped table**
-	- mmap, munmap
-	- swap in/out **swap table**
+#### [[pintos3 {pdf} {pintos}]]
 
 ### 2023-10-12
 
@@ -232,3 +224,11 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 #### [[정글 대 토론회 {swjungle} {pintos}]]
 
 ### 2023-10-13
+
+- [[lazy load segment {pintos}]]
+- [[try handle fault + page claiming {pintos}]]
+- [[virtual address, physical address, user pool, kernel pool {pintos}]]
+
+### 2023-10-14
+
+[[pintos3 {pdf} {pintos}]]
