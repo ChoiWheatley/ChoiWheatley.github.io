@@ -228,3 +228,6 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 - [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
 
 #### [[정글 대 토론회 {swjungle} {pintos}]]
+
+### 2023-10-13
+

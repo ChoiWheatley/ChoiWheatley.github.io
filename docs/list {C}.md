@@ -4,7 +4,7 @@ tags:
 description:
 title: list {C}
 created: 2023-09-20T14:38:29
-updated: 2023-10-12T19:57:20
+updated: 2023-10-12T20:37:58
 ---
 **depends on**: [[mymalloc.h {C}]]
 
@@ -97,7 +97,6 @@ int __len__(const NodePtr first) {
 #define list_entry(LIST_ELEM, STRUCT, MEMBER) ((STRUCT *) ((uint8_t *) &(LIST_ELEM)->next - offsetof (STRUCT, MEMBER.next)))
 ```
 
-![[스크린샷 2023-09-23 오후 2.52.01.png]]
 
 한 줄 요약: `list_elem`타입 변수의 outer structure를 참조하기 위해서 구조체의 leaf-member의 offset을 구해 그만큼의 바이트를 빼줍니다.
 
@@ -114,4 +113,16 @@ int __len__(const NodePtr first) {
 [[Drawing 2023-10-12 19.22.01.excalidraw]]  
 ![[Pasted image 20231012192414.png]]
 
-`elem->next`의 값은 110, `&elem->next`의 값은 18이다. 따라서 `&(LIST_ELEM)->next`를 할지라도 다음 `list_elem`을 참조하는 것이 아니라는 점 유의하자.
+`elem->next`의 값은 110, `&(elem->next)`의 값은 18이다. 따라서 `&(LIST_ELEM)->next`를 할지라도 다음 `list_elem`을 참조하는 것이 아니라는 점 유의하자.
+
+## helper function
+
+```c
+struct thread *elem_to_thread(const struct list_elem *e) {
+  return list_entry(e, struct thread, elem);
+}
+
+struct thread *d_elem_to_thread(const struct list_elem *e) {
+  return list_entry(e, struct thread, d_elem);
+}
+```
