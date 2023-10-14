@@ -232,3 +232,4 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 ### 2023-10-14
 
 [[pintos3 {pdf} {pintos}]]
+[[Exploring Virtual Memory and Page Structures {blog}]]
