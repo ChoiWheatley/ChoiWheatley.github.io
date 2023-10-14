@@ -4,7 +4,7 @@ tags:
 description:
 title: Exploring Virtual Memory and Page Structures {blog}
 created: 2023-10-14T14:20:06
-updated: 2023-10-14T14:41:31
+updated: 2023-10-14T15:46:33
 ---
 - <https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html>
 - [[week07-09 {swjungle} {pintos}]]
@@ -22,4 +22,14 @@ ___
 
 ![img](https://blog.xenoscr.net/resources/images/2021-09-06-Exploring-Virtual-Memory-and-Page-Structures/image-20210906150913412.png)
 
-> [!question] 어째서 pml4e가 pdpt base address를 찾는데 25비트밖에 사용하지 않는거지?? 물리주소를 담고 있어야 하잖아
+- [?] 어째서 pml4e가 pdpt base address를 찾는데 24비트밖에 사용하지 않는거지?? 물리주소를 담고 있어야 하잖아
+
+12~36비트만이 PDPT Base address를 찾는데 쓰인다. 24개의 base address 비트 from PML4E + 9개의 비트의 오프셋 from va
+
+```
+PML4E + PDPT_Offset * 8
+```
+
+![[Pasted image 20231014154612.png]]
+
+- [?] 왜 40비트인가?
