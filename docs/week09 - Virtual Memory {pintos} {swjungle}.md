@@ -4,7 +4,7 @@ tags:
 description:
 title: week09 - Virtual Memory {pintos} {swjungle}
 created: 2023-10-15T04:47:57
-updated: 2023-10-15T04:48726:59
+updated: 2023-10-15T19:52:32
 ---
 
 ### INDEX
@@ -19,8 +19,6 @@ updated: 2023-10-15T04:48726:59
 - Yujip Won slides
 	- [[2022_Pintos_Part3_VirtualMemory_01_DemandPaging 1.pdf]]
 	- [[2022_Pintos_Part3_VirtualMemory_02_Swapping_etc.pdf]]
-
-
 
 ### 2023-10-10 발제
 
@@ -53,17 +51,7 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 
 ### 2023-10-12
 
-- Introduction & Memory Management 파트 다시 읽는중
-	- [[supplemental page table 만들기 {pintos} {swjungle}]]
-	- `struct page_operations` 안에 있는 세 함수 포인터는 일종의 인터페이스로 활용된다. `VM_ANON`, `VM_UNINIT`, `VM_FILE` 종류에 따라 다른 구현체를 사용하도록 만든 케이스.
-	- [x] 새로운 프로세스가 시작될 때 `__do_fork`에서 호출하는 `supplemental_page_table_init`을 구현하세요.
-	- frame management
-		- struct frame 안에 kva(kernel virtual addr)과 page(page 구조체 포인터)를 가지고 있다.
-		- `palloc_get_page`에서 호출한다. 새로운 프레임을 가져오기 위해서 `frame` 정보를 활용한다. by `vm_get_frame(void) -> frame *` | swap out 구현은 뒤의 일이므로 해당 케이스에 대해서는 `PANIC("todo")` 이렇게 작성하래.
-		- `vm_do_claim_page(page) -> bool` : 페이지와 프레임을 할당 (매핑?)해주는 함수. MMU가 보는 페이지 테이블의 정보를 수정해야 한다.
-		- `vm_claim_page(va) -> bool`: va에 페이지를 할당하고 프레임을 할당해준다.
-		- 페이지와 프레임을 분리한 덕분에 뒤에 나올 lazy loading이 가능해졌다.
-
+- [[Memory Management {pintos} {gitbook}]]
 - [[각종 QNA 정리 {swjungle}{pintos}{project3}]]
 
 #### [[정글 대 토론회 {swjungle} {pintos}]]
@@ -81,4 +69,9 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 
 ### 2023-10-15
 
-[[2023-10-15 pintos briefing {lazy_load_segment} {stack growth} {swjungle}]]
+- [[2023-10-15 pintos briefing {lazy_load_segment} {stack growth} {swjungle}]]
+- pml4 get page와 set page의 차이점은 안에서 create 옵션을 끄고 켠 채로 pmlt walk를 수행하는 것밖에 없다.
+- [[upage vs kpage vs physical memory {pintos} {swjungle} {qna archieve}]]
+- [[Memory Management {pintos} {gitbook}]]
+- [[Anonymous Page {pintos} {gitbook}]]
+- [[Stack Growth {pintos} {gitbook}]]

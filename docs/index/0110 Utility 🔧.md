@@ -52,3 +52,7 @@ title: 0110 Utility 🔧
 - [[zellij, terminal multiplexer built with rust]]
 - [[swap memory increase {linux}]]
 - [[getopt를 사용하여 긴 명령어를 파싱하는 셸 스크립트를 만들어보자]]
+
+## rust utils
+
+[[0013.2 Crates 🦀|rust crates]]로 가세요
