@@ -75,3 +75,7 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 - [[Memory Management {pintos} {gitbook}]]
 - [[Anonymous Page {pintos} {gitbook}]]
 - [[Stack Growth {pintos} {gitbook}]]
+
+### 2023-10-16
+
+- [[args-many debugging {pintos} {swjungle}]]
