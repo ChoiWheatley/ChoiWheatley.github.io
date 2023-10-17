@@ -79,3 +79,7 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 ### 2023-10-16
 
 - [[args-many debugging {pintos} {swjungle}]]
+
+### 2023-10-17
+
+- [[mmap {pintos}{swjungle}]]
