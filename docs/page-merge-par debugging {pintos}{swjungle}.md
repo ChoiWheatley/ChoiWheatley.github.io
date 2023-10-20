@@ -4,7 +4,7 @@ tags:
 description:
 title: page-merge-par debugging {pintos}{swjungle}
 created: 2023-10-20T15:56:25
-updated: 2023-10-20T19:26:20
+updated: 2023-10-20T23:06:36
 ---
 - [[week09 - Virtual Memory {pintos} {swjungle}]]
 ___
@@ -93,3 +93,7 @@ page-merge-par: exit(1)
     
     정도의 추가 가이드를 드릴 수 있을 것 같습니다. 낮은 확률로 메모리 부족이 원인일 수 있는데, 원인이 너무 무궁무진해서 이정도의 답변이 최선인 것 같습니다.  
     도움이 되셨기를 바라며, 추가 질문 있으시면 편하게 해주세요.
+
+## 수정 
+
+[PR Link](https://github.com/ChoiWheatley/swjungle-week07-09/pull/76)
