@@ -4,7 +4,7 @@ tags:
 description:
 title: page-merge-par debugging {pintos}{swjungle}
 created: 2023-10-20T15:56:25
-updated: 2023-10-20T17:38:24
+updated: 2023-10-20T17:41:35
 ---
 - [[week09 - Virtual Memory {pintos} {swjungle}]]
 ___
@@ -34,7 +34,7 @@ void load_lock_release() {
 
 ## 닫은 파일을 다시 열지 못하는 문제
 
-부모와 자식 프로세스 모두 파일을 잘 닫아줬는데, wait한 이후에 파일을 다시 열지 못한다.
+부모와 자식 프로세스 모두 파일을 잘 닫아줬는데, wait한 이후에 파일을 다시 열지 못한다. 다음 디버그 메시지는 `open` 시스템 콜에서 추가했다. 파일 이름 멤버변수도 `file` 구조체에 추가하였다.
 
 ```
 (page-merge-par) begin
