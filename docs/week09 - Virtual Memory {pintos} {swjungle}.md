@@ -4,7 +4,7 @@ tags:
 description:
 title: week09 - Virtual Memory {pintos} {swjungle}
 created: 2023-10-15T04:47:57
-updated: 2023-10-15T19:52:32
+updated: 2023-10-20T14:53:26
 ---
 
 ### INDEX
@@ -19,6 +19,7 @@ updated: 2023-10-15T19:52:32
 - Yujip Won slides
 	- [[2022_Pintos_Part3_VirtualMemory_01_DemandPaging 1.pdf]]
 	- [[2022_Pintos_Part3_VirtualMemory_02_Swapping_etc.pdf]]
+- [github repository link](https://github.com/ChoiWheatley/swjungle-week07-09)
 
 ### 2023-10-10 발제
 
