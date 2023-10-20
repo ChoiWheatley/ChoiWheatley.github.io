@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-10-05T09:36:50
+updated: 2023-10-20T20:03:02
 ---
 
 parent link: [[docs/index/index|index]]
@@ -31,6 +31,11 @@ parent link: [[docs/index/index|index]]
 - [[neovim]]
 - git 관련
 	- [[get fetch --prune]]
+	- [[git submodule 개념 잡기]]
+	- [[github chart]]
+	- [[git commit message 규칙]]
+	- [[알잘딱 GitHub 핵심개념]]
+	- [[git selectively merge or pick changes from another branch]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
 - [[ssh into WSL2 & vs-code]]
 - [[port forwarding WSL2]]
