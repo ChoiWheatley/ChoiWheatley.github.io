@@ -84,3 +84,7 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 ### 2023-10-17
 
 - [[mmap {pintos}{swjungle}]]
+
+### 2023-10-20
+
+- [[page-merge-par debugging {pintos}{swjungle}]]
