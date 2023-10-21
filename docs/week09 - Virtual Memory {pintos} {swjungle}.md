@@ -89,4 +89,6 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 
 - [[page-merge-par debugging {pintos}{swjungle}]]
 
-###
+### 2023-10-22
+
+- [[Copy On Write {pintos}{swjungle}]]
