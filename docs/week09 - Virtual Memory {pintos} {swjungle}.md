@@ -94,3 +94,5 @@ PintOS 취지 ⟶ debugging 하는 법을 배워가야 아이디어 구현에 �
 - [[Copy On Write {pintos}{swjungle}]]
 
 ### 2023-10-23
+
+- [[week 09 WIL 및 발표준비 {swjungle}]]
