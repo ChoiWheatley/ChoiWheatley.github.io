@@ -6,7 +6,7 @@ title: Operating Systems Three Easy Pieces
 created: 2023-10-03T14:46:36
 updated: 2023-10-03T14:49:05
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - [OSTEP index page](https://pages.cs.wisc.edu/~remzi/OSTEP/)
 ___
 

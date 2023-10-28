@@ -6,7 +6,7 @@ title: prj1.threads.introduction {pintos}
 created: 2023-09-22T16:46:46
 updated: 2023-09-25T13:56:32
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - [pintos-kaist/project1/introduction (GH.io)](https://casys-kaist.github.io/pintos-kaist/project1/introduction.html)  
 - [[synchronization {pintos} {semaphore} {lock} {monitor}]]
 ___

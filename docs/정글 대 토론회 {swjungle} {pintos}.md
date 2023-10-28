@@ -6,7 +6,7 @@ title: 정글 대 토론회 {swjungle} {pintos}
 created: 2023-10-12T18:35:43
 updated: 2023-10-13T14:15:57
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## README

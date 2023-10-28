@@ -6,7 +6,7 @@ title: priority-donate-sema {swjungle}{pintos}
 created: 2023-10-03T13:17:50
 updated: 2023-10-03T13:52:07
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## README

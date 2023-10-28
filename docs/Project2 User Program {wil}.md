@@ -7,7 +7,7 @@ created: 2023-10-10T13:29:26
 updated: 2023-10-10T13:30:49
 ---
 
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 # Weekly I learned

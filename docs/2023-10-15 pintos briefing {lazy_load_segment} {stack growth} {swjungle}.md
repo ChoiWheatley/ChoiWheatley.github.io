@@ -6,7 +6,7 @@ title: 2023-10-15 pintos briefing {lazy_load_segment} {stack growth} {swjungle}
 created: 2023-10-15T02:32:23
 updated: 2023-10-15T04:39:29
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - [Pull Request Link]()
 ___
 

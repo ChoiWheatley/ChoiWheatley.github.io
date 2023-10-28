@@ -6,7 +6,7 @@ title: try handle fault + page claiming {pintos}
 created: 2023-10-13T16:59:50
 updated: 2023-10-13T17:43:10
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - <https://casys-kaist.github.io/pintos-kaist/project3/anon.html>
 - <https://casys-kaist.github.io/pintos-kaist/project3/vm_management.html>
 ___

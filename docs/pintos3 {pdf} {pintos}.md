@@ -7,7 +7,7 @@ created: 2023-10-14T04:57:15
 updated: 2023-10-14T05:29:06
 ---
 - [[Pintos_3.pdf]]
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ---
 
 ## TLDR

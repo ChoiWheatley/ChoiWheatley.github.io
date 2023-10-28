@@ -6,7 +6,7 @@ title: virtual address, physical address, user pool, kernel pool {pintos}
 created: 2023-10-13T17:43:57
 updated: 2023-10-14T04:33:13
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## `pml4e_walk`

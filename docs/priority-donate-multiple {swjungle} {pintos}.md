@@ -6,7 +6,7 @@ title: priority-donate-multiple {swjungle} {pintos}
 created: 2023-09-29T22:08:20
 updated: 2023-10-02T20:52:30
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## diagram

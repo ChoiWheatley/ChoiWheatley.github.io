@@ -6,7 +6,7 @@ title: week07 WIL 정리, 발표준비 {swjungle}
 created: 2023-10-02T19:12:43
 updated: 2023-10-03T12:38:43
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - [Project1 Threads.md {GH}](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/doc/Project1%20Threads.md)
 ___
 

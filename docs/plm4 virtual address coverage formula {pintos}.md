@@ -6,7 +6,7 @@ title: plm4 virtual address coverage formula {pintos}
 created: 2023-10-04T22:15:55
 updated: 2023-10-04T22:16:53
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 > how much space can plm4 (page map level 4) cover? give me a detailed formula

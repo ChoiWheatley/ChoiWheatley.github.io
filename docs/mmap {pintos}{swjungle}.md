@@ -6,7 +6,7 @@ title: mmap {pintos}{swjungle}
 created: 2023-10-17T22:45:32
 updated: 2023-10-17T23:23:10
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - [[week09 - Virtual Memory {pintos} {swjungle}]]
 - [[mmap(2)]]
 - <https://casys-kaist.github.io/pintos-kaist/project3/memory_mapped_files.html>

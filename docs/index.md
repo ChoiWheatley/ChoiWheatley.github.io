@@ -26,7 +26,7 @@ I'm native Korean, but I can understand English at reading, listening. Speaking 
 ### Featured Posts
 
 - If you want to see the level-zero index, go [index](docs/index/index).
-- [[week07-09 {swjungle} {pintos}]] is working area for WIL (Weekly I learned) PintOS KAIST project.
+- [[week07-10 {swjungle} {pintos}]] is working area for WIL (Weekly I learned) PintOS KAIST project.
 - [[0090 Bucket Lists 🪣|Bucketlist]] is my curious tank! go and see my weird ideas and stuffs
 - [[Daily Notes|Daily Notes]] is for scribbing daily thoughts and plans, music recommendations, etc.
 - [[0070 Obsidian 💎|obsidian]] for obsidian

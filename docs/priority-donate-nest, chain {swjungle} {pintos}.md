@@ -7,7 +7,7 @@ created: 2023-09-29T21:17:33
 updated: 2023-10-02T20:22:13
 ---
 - <https://github.com/ChoiWheatley/swjungle-week07-09/pull/23>
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## donate-nest / donate-chain

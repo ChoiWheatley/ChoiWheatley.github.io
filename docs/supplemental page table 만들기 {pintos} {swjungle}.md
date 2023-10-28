@@ -6,7 +6,7 @@ title: supplemental page table 만들기 {pintos} {swjungle}
 created: 2023-10-12T14:24:35
 updated: 2023-10-12T14:27:38
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## 정의

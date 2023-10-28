@@ -6,7 +6,7 @@ title: priority inversion on lock release {swjungle}{pintos}
 created: 2023-10-03T13:52:30
 updated: 2023-10-03T14:09:26
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## README

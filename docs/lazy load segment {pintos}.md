@@ -6,7 +6,7 @@ title: lazy load segment {pintos}
 created: 2023-10-13T16:45:13
 updated: 2023-10-13T16:59:29
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - <https://casys-kaist.github.io/pintos-kaist/project3/anon.html> 참고
 ___
 

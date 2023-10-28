@@ -6,7 +6,7 @@ title: 각종 QNA 정리 {swjungle}{pintos}{project2}
 created: 2023-10-04T15:45:02
 updated: 2023-10-08T17:20:56
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 - [pintos-kaist/project2/FAQ.html](https://casys-kaist.github.io/pintos-kaist/project2/FAQ.html)
 - [지난 기수의 질문 아카이브](https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions2.html)
 ___

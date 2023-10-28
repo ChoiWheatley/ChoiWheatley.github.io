@@ -6,7 +6,7 @@ title: Hardware Knowledges for PintOS {swjungle}
 created: 2023-10-03T14:27:58
 updated: 2023-10-03T14:32:06
 ---
-- [[week07-09 {swjungle} {pintos}]]
+- [[week07-10 {swjungle} {pintos}]]
 ___
 
 ## README
