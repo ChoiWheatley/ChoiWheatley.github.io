@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
       
 
@@ -14383,6 +14383,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../week%2009%20WIL%20%EB%B0%8F%20%EB%B0%9C%ED%91%9C%EC%A4%80%EB%B9%84%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  week 09 WIL 및 발표준비 {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../week06%20%7Bswjungle%7D%7Bproxy-lab%7D/" class="md-tabs__link">
         
   
@@ -14434,12 +14451,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-tabs__link">
+      <a href="../week07-10%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-tabs__link">
         
   
     
   
-  week07-09 {swjungle} {pintos}
+  week07-109 {swjungle} {pintos}
 
       </a>
     </li>
@@ -14474,6 +14491,23 @@
     
   
   week09 - Virtual Memory {pintos} {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../week12%20%7Bswjungle%7D%7BALGORITHMS%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  week12 {swjungle}{ALGORITHMS}
 
       </a>
     </li>
@@ -36774,6 +36808,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../week%2009%20WIL%20%EB%B0%8F%20%EB%B0%9C%ED%91%9C%EC%A4%80%EB%B9%84%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    week 09 WIL 및 발표준비 {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../week06%20%7Bswjungle%7D%7Bproxy-lab%7D/" class="md-nav__link">
         
   
@@ -36831,11 +36884,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-nav__link">
+      <a href="../week07-10%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    week07-09 {swjungle} {pintos}
+    week07-109 {swjungle} {pintos}
   </span>
   
 
@@ -36874,6 +36927,25 @@
   
   <span class="md-ellipsis">
     week09 - Virtual Memory {pintos} {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week12%20%7Bswjungle%7D%7BALGORITHMS%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    week12 {swjungle}{ALGORITHMS}
   </span>
   
 
@@ -40873,7 +40945,7 @@
 <li>테스트케이스는 유저프로그램의 입장에서 실행되는건데, 유저 프로그램이 특정 페이지가 swap in되었는지 out되었는지 알기는 힘들 것 같습니다. 그것은 커널이 관리하는 영역이지, 유저 프로그램한테 노출하는 정보는 아니기 때문입니다.</li>
 </ul>
 </li>
-<li>syscall을 통해서 간접적으로 cow를 테스트할 수도 있을 것 같습니다. 저희 코드는 현재 CR0 레지스터의 write protect bit를 꺼놓은 상태로 구현을 했습니다. 이 경우 유저 프로세스가 직접 write 요청을 통한 페이지 복제는 가능하지만 <code>read</code>, <code>write</code>를 통한 간접적인 버퍼 쓰기요청에는 page fault가 발생하지 않을 것으로 예상됩니다.<ul>
+<li>syscall을 통해서 간접적으로 cow를 테스트할 수도 있을 것 같습니다. 저희 코드는 현재 CR0 레지스터의 write protect bit를 꺼놓은 상태로 구현을 했습니다. 이 경우 유저 프로세스가 직접 write 요청을 통한 페이지 복제는 가능하지만 <code>read</code>를 통한 간접적인 버퍼 쓰기요청에는 page fault가 발생하지 않을 것으로 예상됩니다.<ul>
 <li>네 syscall을 이용한 테스트케이스는 필요해 보입니다. 말씀해주신 상황에서 커널이 값을 쓰는 경우에도 page fault가 발생하여 copy-on-write를 해야합니다.</li>
 </ul>
 </li>

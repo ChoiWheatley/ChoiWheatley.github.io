@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
       
       
 
@@ -14383,6 +14383,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../week%2009%20WIL%20%EB%B0%8F%20%EB%B0%9C%ED%91%9C%EC%A4%80%EB%B9%84%20%7Bswjungle%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  week 09 WIL 및 발표준비 {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../week06%20%7Bswjungle%7D%7Bproxy-lab%7D/" class="md-tabs__link">
         
   
@@ -14434,12 +14451,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-tabs__link">
+      <a href="../week07-10%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-tabs__link">
         
   
     
   
-  week07-09 {swjungle} {pintos}
+  week07-109 {swjungle} {pintos}
 
       </a>
     </li>
@@ -14474,6 +14491,23 @@
     
   
   week09 - Virtual Memory {pintos} {swjungle}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../week12%20%7Bswjungle%7D%7BALGORITHMS%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  week12 {swjungle}{ALGORITHMS}
 
       </a>
     </li>
@@ -36767,6 +36801,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../week%2009%20WIL%20%EB%B0%8F%20%EB%B0%9C%ED%91%9C%EC%A4%80%EB%B9%84%20%7Bswjungle%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    week 09 WIL 및 발표준비 {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../week06%20%7Bswjungle%7D%7Bproxy-lab%7D/" class="md-nav__link">
         
   
@@ -36824,11 +36877,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-nav__link">
+      <a href="../week07-10%20%7Bswjungle%7D%20%7Bpintos%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    week07-09 {swjungle} {pintos}
+    week07-109 {swjungle} {pintos}
   </span>
   
 
@@ -36867,6 +36920,25 @@
   
   <span class="md-ellipsis">
     week09 - Virtual Memory {pintos} {swjungle}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week12%20%7Bswjungle%7D%7BALGORITHMS%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    week12 {swjungle}{ALGORITHMS}
   </span>
   
 
@@ -40839,12 +40911,12 @@
 
 <ul>
 <li><a href="https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html">https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html</a></li>
-<li><a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/">week07-09 {swjungle} {pintos}</a></li>
+<li><a href="../week07-10%20%7Bswjungle%7D%20%7Bpintos%7D/">week07-10 {swjungle} {pintos}</a></li>
 </ul>
 <hr />
 <h2 id="_1">요약<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>프로세스마다 독립적인 가상메모리 공간을 제공하기 위해서 인텔은 CR3라는 레지스터를 사용한다. 이 레지스터는 PML4T base address를 가리키는 값으로, 프로세스별로 고유하다. 이 값을 기준으로 가상주소로부터 PDPT base address를 가리키는 PML4E (E for entry)를, PDT base address를 가리키는 PDPE를, PT base address를 가리키는 PDE를, 물리페이지 base address를 가리키는 PTE를, 마지막으로 물리주소를 가리키도록 만들 수 있게된다.</p>
-<p>참고로, 모든 페이지 엔트리들이 가지고 있는 값들은 가상주소가 아니라 물리주소이다. <a href="../week07-09%20%7Bswjungle%7D%20%7Bpintos%7D/">week07-09 {swjungle} {pintos}</a>에서 페이지 테이블을 walk하면서 알아냈다.</p>
+<p>참고로, 모든 페이지 엔트리들이 가지고 있는 값들은 가상주소가 아니라 물리주소이다. <a href="../week07-10%20%7Bswjungle%7D%20%7Bpintos%7D/">week07-10 {swjungle} {pintos}</a>에서 페이지 테이블을 walk하면서 알아냈다.</p>
 <blockquote>
 <p>[!question] CR3 레지스터가 담고있는 값도 물리주소임?</p>
 </blockquote>
