@@ -4,7 +4,7 @@ tags:
 description: leet code와 백준에서 30+100문제를 풀어보자
 title: week12 {swjungle}{ALGORITHMS}
 created: 2023-10-28T17:25:47
-updated: 2023-10-28T17:29:39
+updated: 2023-10-28T17:43:52
 ---
 - [[0120 swjungle 🤖]]
 - [[0011 Algorithms ♾️|algorithms]]
@@ -12,7 +12,29 @@ updated: 2023-10-28T17:29:39
 
 ## README
 
-알고리즘 주차, leet code 문제를 푼다. 
+알고리즘 주차, leet code 문제를 푼다. 나는 예비군을 다녀와서 목, 금 실시한 테스트를 실시하지 못했다. 그래도 좋은 문제들이기 때문에 반드시 풀어보는 시간을 가져보자. 한 시간 안에 다 풀어야 한다.
+
+## weekly contests & bi-weekly contests
+
+2023-10-28 코치님의 제안:
+
+> Leetcode weekly 혹은 bi-weekly에 참가해 보기를 권장합니다.  
+> **매주 일요일 11:30 ~ 13:00 (KST)** 에 Leetcode weekly contest가 열립니다. (4문제 출제)  
+> 또한 2주에 한번씩 지구 반대편 사람들의 시간에 맞추어 **토요일 23:30 ~ 25:00 (그 다음날 01:00)도 bi-weekly contest**가 열립니다.  
+> 마침 오늘 저녁 11시 반에 [bi-weekly contest 116](https://leetcode.com/contest/biweekly-contest-116/)이, 내일 오전 11시 반에 [weekly contest 369](https://leetcode.com/contest/weekly-contest-369/)가 열립니다.1시간 30분동안 최선을 다해 문제를 풀고 내 실력이 어느 정도인지 Ranking을 통해 확인해 보시고  
+> 나는 이렇게 풀었는데 다른 사람들은 어떻게 풀었는지 다른 사람들의 코드를 보고 비교해 보시는 것도 좋습니다.  
+> 현재 나의 코딩 실력이 어느 정도인지 객관화 하는데 도움이 될 것이라 봅니다.
+
+## TEST01
+
+- [2475. Number of Unequal Triplets in Array](https://leetcode.com/contest/weekly-contest-320/problems/number-of-unequal-triplets-in-array/)
+- [2476. Closest Nodes Queries in a Binary Search Tree](https://leetcode.com/contest/weekly-contest-320/problems/closest-nodes-queries-in-a-binary-search-tree/)
+
+## TEST02
+
+- 필수: [2733. Neither Minimum nor Maximum](https://leetcode.com/contest/weekly-contest-349/problems/neither-minimum-nor-maximum/)
+- 선택: [1481. Least Number of Unique Integers after K Removals](https://leetcode.com/contest/weekly-contest-193/problems/least-number-of-unique-integers-after-k-removals/)
+- 선택: [1482. Minimum Number of Days to Make m Bouquets](https://leetcode.com/contest/weekly-contest-193/problems/minimum-number-of-days-to-make-m-bouquets/)
 
 ## 문제 목록
 
