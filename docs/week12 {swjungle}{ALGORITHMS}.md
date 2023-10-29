@@ -4,7 +4,7 @@ tags:
 description: leet code와 백준에서 30+100문제를 풀어보자
 title: week12 {swjungle}{ALGORITHMS}
 created: 2023-10-28T17:25:47
-updated: 2023-10-29T20:03:13
+updated: 2023-10-29T23:44:20
 ---
 - [[0120 swjungle 🤖]]
 - [[0011 Algorithms ♾️|algorithms]]
@@ -41,7 +41,7 @@ updated: 2023-10-29T20:03:13
 |#|문제번호|난이도|다루는 주제|문제 제목|풀이여부|
 |---|---|---|---|---|---|
 |1|[1](https://leetcode.com/problems/two-sum/)|Easy|Hash Table|Two Sum|✅|
-|2|[15](https://leetcode.com/problems/3sum/)|Medium|Two pointer, Sorting|[[3 Sum {leetcode}]]|
+|2|[15](https://leetcode.com/problems/3sum/)|Medium|Two pointer, Sorting|[[3 Sum {leetcode}]]|✅
 |3|[9](https://leetcode.com/problems/palindrome-number/)|Easy|Math|Palindrome Number|
 |4|[7](https://leetcode.com/problems/reverse-integer/)|Medium|Math|Reverse Integer|
 |5|[412](https://leetcode.com/problems/fizz-buzz/)|Easy|String|Fizz Buzz|
