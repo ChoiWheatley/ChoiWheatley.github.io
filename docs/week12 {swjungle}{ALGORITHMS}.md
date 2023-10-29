@@ -41,7 +41,7 @@ updated: 2023-10-29T20:03:13
 |#|문제번호|난이도|다루는 주제|문제 제목|풀이여부|
 |---|---|---|---|---|---|
 |1|[1](https://leetcode.com/problems/two-sum/)|Easy|Hash Table|Two Sum|✅|
-|2|[15](https://leetcode.com/problems/3sum/)|Medium|Two pointer, Sorting|3 Sum|
+|2|[15](https://leetcode.com/problems/3sum/)|Medium|Two pointer, Sorting|[[3 Sum {leetcode}]]|
 |3|[9](https://leetcode.com/problems/palindrome-number/)|Easy|Math|Palindrome Number|
 |4|[7](https://leetcode.com/problems/reverse-integer/)|Medium|Math|Reverse Integer|
 |5|[412](https://leetcode.com/problems/fizz-buzz/)|Easy|String|Fizz Buzz|
