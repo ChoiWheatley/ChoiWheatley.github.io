@@ -4,7 +4,7 @@ tags:
 description: leet code와 백준에서 30+100문제를 풀어보자
 title: week12 {swjungle}{ALGORITHMS}
 created: 2023-10-28T17:25:47
-updated: 2023-10-30T09:52:45
+updated: 2023-10-30T20:11:36
 ---
 - [[0120 swjungle 🤖]]
 - [[0011 Algorithms ♾️|algorithms]]
@@ -35,6 +35,13 @@ updated: 2023-10-30T09:52:45
 - 필수: [2733. Neither Minimum nor Maximum](https://leetcode.com/contest/weekly-contest-349/problems/neither-minimum-nor-maximum/)
 - 선택: [1481. Least Number of Unique Integers after K Removals](https://leetcode.com/contest/weekly-contest-193/problems/least-number-of-unique-integers-after-k-removals/)
 - 선택: [1482. Minimum Number of Days to Make m Bouquets](https://leetcode.com/contest/weekly-contest-193/problems/minimum-number-of-days-to-make-m-bouquets/)
+
+## TEST03
+
+- [2215. Find the Difference of Two Arrays](https://leetcode.com/contest/weekly-contest-286/problems/find-the-difference-of-two-arrays/)
+- [[2259. Remove Digit From Number to Maximize Result]]
+- [2260. Minimum Consecutive Cards to Pick Up](https://leetcode.com/contest/weekly-contest-291/problems/minimum-consecutive-cards-to-pick-up/)
+- [2211. Count Collisions on a Road](https://leetcode.com/contest/weekly-contest-285/problems/count-collisions-on-a-road/)
 
 ## 문제 목록
 
