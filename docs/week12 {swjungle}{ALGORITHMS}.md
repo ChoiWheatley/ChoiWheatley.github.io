@@ -53,7 +53,7 @@ updated: 2023-10-30T21:49:39
 |2|[15](https://leetcode.com/problems/3sum/)|Medium|Two pointer, Sorting|[[3 Sum {leetcode}]]|✅
 |3|[9](https://leetcode.com/problems/palindrome-number/)|Easy|Math|Palindrome Number|✅
 |4|[7](https://leetcode.com/problems/reverse-integer/)|Medium|Math|Reverse Integer|✅
-|5|[412](https://leetcode.com/problems/fizz-buzz/)|Easy|String|Fizz Buzz|
+|5|[412](https://leetcode.com/problems/fizz-buzz/)|Easy|String|Fizz Buzz|✅
 |6|[14](https://leetcode.com/problems/longest-common-prefix/)|Easy|String, Trie|Longest Common Prefix|
 |7|[20](https://leetcode.com/problems/valid-parentheses/description/)|Easy|Stack|Valid Parenthesis|
 |8|[42](https://leetcode.com/problems/trapping-rain-water/)|Hard|Stack|Trapping Rain Water|
