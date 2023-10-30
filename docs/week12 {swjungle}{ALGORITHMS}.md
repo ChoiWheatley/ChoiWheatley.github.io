@@ -4,7 +4,7 @@ tags:
 description: leet code와 백준에서 30+100문제를 풀어보자
 title: week12 {swjungle}{ALGORITHMS}
 created: 2023-10-28T17:25:47
-updated: 2023-10-30T20:11:36
+updated: 2023-10-30T21:49:39
 ---
 - [[0120 swjungle 🤖]]
 - [[0011 Algorithms ♾️|algorithms]]
@@ -37,6 +37,8 @@ updated: 2023-10-30T20:11:36
 - 선택: [1482. Minimum Number of Days to Make m Bouquets](https://leetcode.com/contest/weekly-contest-193/problems/minimum-number-of-days-to-make-m-bouquets/)
 
 ## TEST03
+
+[문제 풀이링크](https://github.com/ChoiWheatley/swjungle-week12/tree/main/test-3)
 
 - [2215. Find the Difference of Two Arrays](https://leetcode.com/contest/weekly-contest-286/problems/find-the-difference-of-two-arrays/)
 - [[2259. Remove Digit From Number to Maximize Result]]
