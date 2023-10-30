@@ -42,7 +42,7 @@ updated: 2023-10-29T23:44:20
 |---|---|---|---|---|---|
 |1|[1](https://leetcode.com/problems/two-sum/)|Easy|Hash Table|Two Sum|✅|
 |2|[15](https://leetcode.com/problems/3sum/)|Medium|Two pointer, Sorting|[[3 Sum {leetcode}]]|✅
-|3|[9](https://leetcode.com/problems/palindrome-number/)|Easy|Math|Palindrome Number|
+|3|[9](https://leetcode.com/problems/palindrome-number/)|Easy|Math|Palindrome Number|✅
 |4|[7](https://leetcode.com/problems/reverse-integer/)|Medium|Math|Reverse Integer|
 |5|[412](https://leetcode.com/problems/fizz-buzz/)|Easy|String|Fizz Buzz|
 |6|[14](https://leetcode.com/problems/longest-common-prefix/)|Easy|String, Trie|Longest Common Prefix|
