@@ -1206,6 +1206,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/How%20to%20Stop%20Sucking%20And%20Be%20Awesome%20Instead%20-%20%EC%BD%94%EB%94%A9%20%ED%98%B8%EB%9F%AC%EA%B0%80%20%EB%93%A4%EB%A0%A4%EC%A3%BC%EB%8A%94%20%EC%A7%84%EC%A7%9C%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EC%9D%B4%EC%95%BC%EA%B8%B0/</loc>
+         <lastmod>2023-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/How%20to%20add%20between%20different%20types%20-%20rust/</loc>
          <lastmod>2023-10-31</lastmod>
          <changefreq>daily</changefreq>
@@ -1427,6 +1432,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/No.%2027%20Social%20Media/</loc>
+         <lastmod>2023-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Node.js%20%EA%B5%90%EA%B3%BC%EC%84%9C%20%EA%B0%9C%EC%A0%95%203%ED%8C%90%20%EC%9B%B9%EB%B6%81/</loc>
          <lastmod>2023-10-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
