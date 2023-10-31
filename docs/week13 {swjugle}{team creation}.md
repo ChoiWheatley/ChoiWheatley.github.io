@@ -4,7 +4,7 @@ tags:
 description:
 title: week13 {swjugle}{team creation}
 created: 2023-10-31T10:06:41
-updated: 2023-10-31T19:02:55
+updated: 2023-10-31T21:53:29
 ---
 - [[0120 swjungle 🤖]]
 ___
@@ -49,3 +49,13 @@ express.js와 nest.js의 차이점은 아키텍처의 자유도가 있다.
 [[Node.js 교과서 개정 3판 웹북]]
 
 - [?] node.js와 express.js의 차이점은? 현재 내가 생각하기로는, node.js는 자바스크립트를 웹 브라우저가 아닌 다른 프로그램에서도 실행하기 위한 프로젝트이고, express.js는 그 node.js를 기반으로 웹애플리케이션을 만들어낼 수 있는 프레임워크이다.
+
+## DUMP
+
+[면접관이 알려주는 포트폴리오 작성 팁 {YT}](https://www.youtube.com/watch?v=FGe5QhrbhKc)
+
+- 
+
+[개발자 취업에서 성공할 프로젝트 유형 {YT}](https://www.youtube.com/watch?v=2ESQqZ_Ec6k&ab_channel=%EC%BD%94%EB%94%A9%EB%A3%A8%ED%8C%A1CodingLupine)
+
+- 가고싶은 회사의 채용공고 중 '우대사항'을 유심히 읽어봐라. 거기에 있는 기술스택들을 활용하여 내 프로젝트를 개선시켜보고 그 과정과 구체적인 변화를 스토리텔링할 것
