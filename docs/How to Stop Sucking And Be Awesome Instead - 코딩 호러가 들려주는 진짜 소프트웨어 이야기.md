@@ -4,7 +4,7 @@ tags:
 description:
 title: How to Stop Sucking And Be Awesome Instead - 코딩 호러가 들려주는 진짜 소프트웨어 이야기
 created: 2023-10-31T19:04:14
-updated: 2023-10-31T19:28:51
+updated: 2023-10-31T19:47:44
 ---
 - [[0010 Programming 👩‍💻]]
 ___
@@ -39,7 +39,7 @@ ___
 
 **추천 도서 목록**
 
-https://blog.codinghorror.com/recommended-reading-for-developers/ 를 참고했습니다.
+<https://blog.codinghorror.com/recommended-reading-for-developers/> 를 참고했습니다.
 
 - Code Complete 2 
 - 
