@@ -41,6 +41,7 @@ ___
 
 https://blog.codinghorror.com/recommended-reading-for-developers/ 를 참고했습니다.
 
+- Code Complete 2 
 - 
 
 ## 
