@@ -63,6 +63,7 @@ ___
 - [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
 - [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
 - [[Operating System Concepts - Silberschatz, 8th edition]]
+- [[How to Stop Sucking And Be Awesome Instead - 코딩 호러가 들려주는 진짜 소프트웨어 이야기]]
 
 ___
 
