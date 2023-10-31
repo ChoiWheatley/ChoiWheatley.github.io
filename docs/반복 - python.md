@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-01T13:06:02
-updated: 2023-07-15T21:33:02
+updated: 2023-10-31T20:29:30
 title: 반복 - python
 ---
 - `for`
@@ -13,6 +13,7 @@ title: 반복 - python
 - `pass`?
 	- 단순히 실행할 코드가 없을때 적는 저시기임. 함수, 반복문에서 사용가능.
 - `else`? 반복문에 `else` 키워드?
+	- <https://www.w3schools.com/python/gloss_python_for_else.asp>
 	- `for` 문 끝에 `else`를 붙이면 루프가 정상 종료 되거나 처음부터 자료형이 비어있을 때 실행한다. `break`를 만나면 `else`를 실행하지 않고 빠져나간다.
 	- `while`문에도 사용가능하고 심지어 `try-except-else`로 사용할 수도 있다.
 - list comprehension
