@@ -1,19 +1,18 @@
-일
 ---
-description:
-created: 2023-02-26T20:14:43
+description:  
+created: 2023-08-10T09:24:38
 categories: 
  - 독서
  - 책
- - book
+ - book  
 aliases: 
  - 독서
  - 책
  - book
  - 스크랩
- - 읽기목록
+ - 읽기목록  
 tags: book scrap
-updated: 2023-09-02T23:46:03
+updated: 2023-10-31T14:05:33
 title: 0080 Scraps 📚
 ---
 - parent link: [[docs/index/index]]

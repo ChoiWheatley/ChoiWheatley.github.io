@@ -105,6 +105,7 @@ ___
 - [[T2 보안칩이 내장된 맥북에 리눅스 설치하기]]
 - [[Sentinel Node]]
 - [[command line cursor moving shortcuts]]
+- [[A Philosopy of Software Design - John Ousterhout - Talks at Google]]
 
 # Glosarry
 
