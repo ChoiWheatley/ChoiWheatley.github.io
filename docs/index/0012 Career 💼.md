@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:32:55
+updated: 2023-10-31T20:21:25
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -22,13 +22,18 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 ___
 
-# Active
+## 정신무장
 
-- [[SSAFY 10기]]
+- <https://www.youtube.com/watch?v=2ESQqZ_Ec6k&ab_channel=%EC%BD%94%EB%94%A9%EB%A3%A8%ED%8C%A1CodingLupine>
+	- 가고싶은 회사의 채용공고 중 '우대사항'을 유심히 읽어봐라. 거기에 있는 기술스택들을 활용하여 내 프로젝트를 개선시켜보고 그 과정과 구체적인 변화를 스토리텔링할 것
+
+## Active
+
+- 
 
 ---
 
-# Ended
+## Ended
 
 -  ~~[펄 어비스 테크 인턴십](https://www.pearlabyss.com/ko-KR/Company/Careers/detail?_jobOpeningNo=309)~~
 	- 담당업무
@@ -53,6 +58,7 @@ ___
 - [[원티드 프리온보딩 프론트엔드 인턴십 - 4월]]
 - [[신도리코 채용연계형 인턴 및 경력직 모집_전산개발 부문]]
 - [[카카오 클라우드 스쿨 3기]]
+- [[SSAFY 10기]]
 
 ___
 
@@ -71,9 +77,9 @@ ___
 	- 입학: 2016-03
 	- 졸업: 2023-08
 - IT 활용능력
-	- https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6
+	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6>
 - 프로젝트 경험
-	- https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576
+	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
 
 # 진로 관련
 
