@@ -37,3 +37,11 @@ ___
 개인적으로 각각 문제를 해결. 다만 마일스톤은 공유.
 
 23-11-07(화) 개인별로 3분씩만 과제 결과를 발표한다. 
+
+## express.js
+
+### [typescript를 활용한 서비스 개발 - 당근마켓](https://medium.com/daangn/typescript%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%9C%EB%B0%9C-73877a741dbc#ffdb)
+
+express.js와 nest.js의 차이점은 아키텍처의 자유도가 있다. 
+
+
