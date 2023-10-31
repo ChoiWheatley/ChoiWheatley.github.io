@@ -40,9 +40,11 @@ ___
 
 ## express.js
 
-### [typescript를 활용한 서비스 개발 - 당근마켓](https://medium.com/daangn/typescript%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%9C%EB%B0%9C-73877a741dbc#ffdb)
+- [typescript를 활용한 서비스 개발 - 당근마켓](https://medium.com/daangn/typescript%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%9C%EB%B0%9C-73877a741dbc#ffdb)
+	- express.js와 nest.js의 차이점은 아키텍처의 자유도가 있다. 
+- [[path variable VS query parameter]]
 
-express.js와 nest.js의 차이점은 아키텍처의 자유도가 있다. 
+
 
 ## node.js
 
