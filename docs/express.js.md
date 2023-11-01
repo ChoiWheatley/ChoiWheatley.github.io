@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T00:22:48
+updated: 2023-11-02T01:19:35
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -104,3 +104,10 @@ wsl에 mongodb 설치를 하는데 애를 먹고 있다. [다음 askubuntu.com](
 
 도커를 WSL2에서 사용할 수 없길래 좀 찾아봤다. [[Use docker in WSL2 distro]]
 
+도커로 mongodb 실행시킨 뒤에 연결까지 확인했으나 127.0.0.1:27017로 연결이 안되길래 포트가 열려있지 않았음을 알았다. 그래서 포트 옵션 `-p`를 줬더니 돌아가는 것을 확인했다.
+
+```
+docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:latest
+```
+
+![[스크린샷 2023-11-02 011628.png]]
