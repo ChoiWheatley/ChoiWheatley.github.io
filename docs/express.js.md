@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T00:11:42
+updated: 2023-11-02T00:22:48
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -102,8 +102,5 @@ wsl에 mongodb 설치를 하는데 애를 먹고 있다. [다음 askubuntu.com](
 
 <https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/>
 
-설치하려고 봤더니 WSL distro 안에서 `docker` 앱을 사용할 수 없다고 나온다. 분명히 예전에 WSL 안에서 도커 쓴 기억이 있어서 좀 찾아봤더니...
+도커를 WSL2에서 사용할 수 없길래 좀 찾아봤다. [[Use docker in WSL2 distro]]
 
-<https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers>
-
-도커 데스크톱 설정에서 `Settings > Resources > Wsl Integration` 탭으로 가서 원하는 디스트로를 토글하면 도커 명령어를 사용할 수 있게 만들어준다고!
