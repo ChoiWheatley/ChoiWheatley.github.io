@@ -4,9 +4,11 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-01T16:39:37
+updated: 2023-11-01T16:56:30
 ---
 - [[0018 Javascript ☕️]]
+- [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
+- <https://expressjs.com/>
 ___
 
 ## README
@@ -14,6 +16,8 @@ ___
 node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하면서 배운 내용을 아카이브 합니다. 빠른 지식습득을 위해 과제를 먼저 진행하고 부족한 부분은 그때그때 찾아가는 식으로 진행할 예정입니다.
 
 ## Structure of express.js
+
+### file structure
 
 ```
 .
@@ -31,3 +35,40 @@ node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하�
 - **`package.json`** 패키지 메타데이터를 정의한 파일. 
 - **`node_modules`** npm을 통해 패키지 의존성들이 들어있는 디렉토리
 - **`routes`** 내가 임의로 생성한 디렉토리. 하위 모듈들을 담는 디렉토리.
+
+### app.js
+
+express 객체와 다른 모듈들을 임포트
+
+```js
+const express = require("express");
+const goodsRouter = require("./routes/goods");
+```
+
+express app 실행 및 listening
+
+```js
+const app = express();
+
+app.listen(port, () => {
+  console.log(port, "포트로 서버가 열렸어요! ♥️");
+});
+```
+
+라우팅
+
+<https://expressjs.com/en/starter/basic-routing.html> 참조
+
+```js
+app.get("/", (_req, res) => {
+  res.send("Hello, World!");
+});
+```
+
+타 모듈 라우팅
+
+<https://expressjs.com/en/starter/static-files.html> 참조
+
+```js
+app.use("api/", [goodsRouter]);
+```
