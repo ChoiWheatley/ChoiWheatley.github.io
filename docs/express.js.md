@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-01T22:10:01
+updated: 2023-11-01T22:29:18
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -46,6 +46,8 @@ node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하�
 
 express 객체와 다른 모듈들을 임포트
 
+- [?] 그런데, `require`도 임포트인데, `import`를 쓰지 않는 이유가 뭘까?
+
 ```js
 const express = require("express");
 const goodsRouter = require("./routes/goods");
@@ -71,17 +73,18 @@ app.get("/", (_req, res) => {
 });
 ```
 
-타 모듈 라우팅
+타 모듈(미들웨어)를 app에 등록시키는 과정
 
 <https://expressjs.com/en/starter/static-files.html> 참조
 
 ```js
+app.use(express.json());
 app.use("api/", [goodsRouter]);
 ```
 
 ### routes/goods.js module
 
-라우터 미들웨어
+라우터 미들웨어를 사용하기 위해 객체를 받아오는 코드
 
 ```js
 const router = express.Router();
