@@ -4,7 +4,7 @@ tags:
 description:
 title: count-servers-that-communicate
 created: 2023-11-01T12:47:34
-updated: 2023-11-01T12:47:57
+updated: 2023-11-01T14:24:11
 ---
 - [문제링크](https://leetcode.com/contest/weekly-contest-164/problems/count-servers-that-communicate/)
 - [[week12 {swjungle}{ALGORITHMS}]]
@@ -18,6 +18,8 @@ ___
 
 [[이차원 리스트 전치행렬로 만들기 {python}]]의 도움을 받았다.
 
-[[i, j nested for loop with {itertools.product} {python}]]
+## 다른 유저의 풀이
+
+[[i, j nested for loop with {itertools.product} {python}]] 이거 신박한데
 
 
