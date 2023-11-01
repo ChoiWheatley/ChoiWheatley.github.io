@@ -1921,6 +1921,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Use%20docker%20in%20WSL2%20distro/</loc>
+         <lastmod>2023-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/User%20authentication%20%EA%B4%80%EB%A0%A8%20%EC%97%90%EB%9F%AC%20%28%EC%9D%B8%EC%A6%9D%2C%20%EC%9D%B8%EA%B0%80%29%7Bdjango%7D/</loc>
          <lastmod>2023-11-01</lastmod>
          <changefreq>daily</changefreq>

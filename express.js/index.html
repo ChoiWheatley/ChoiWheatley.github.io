@@ -6748,6 +6748,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Use%20docker%20in%20WSL2%20distro/" class="md-tabs__link">
+        
+  
+    
+  
+  Use docker in WSL2 distro
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../User%20authentication%20%EA%B4%80%EB%A0%A8%20%EC%97%90%EB%9F%AC%20%28%EC%9D%B8%EC%A6%9D%2C%20%EC%9D%B8%EA%B0%80%29%7Bdjango%7D/" class="md-tabs__link">
         
   
@@ -28505,6 +28522,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../Use%20docker%20in%20WSL2%20distro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use docker in WSL2 distro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../User%20authentication%20%EA%B4%80%EB%A0%A8%20%EC%97%90%EB%9F%AC%20%28%EC%9D%B8%EC%A6%9D%2C%20%EC%9D%B8%EA%B0%80%29%7Bdjango%7D/" class="md-nav__link">
         
   
@@ -31168,6 +31204,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    mongodb
+  </a>
   
 </li>
       
@@ -41504,6 +41547,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    mongodb
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -41555,6 +41605,9 @@
 </ul>
 <h3 id="appjs">app.js<a class="headerlink" href="#appjs" title="Permanent link">#</a></h3>
 <p>express 객체와 다른 모듈들을 임포트</p>
+<ul>
+<li>[?] 그런데, <code>require</code>도 임포트인데, <code>import</code>를 쓰지 않는 이유가 뭘까?</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">goodsRouter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes/goods&quot;</span><span class="p">);</span>
 </code></pre></div>
@@ -41571,17 +41624,26 @@
 <span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>타 모듈 라우팅</p>
+<p>타 모듈(미들웨어)를 app에 등록시키는 과정</p>
 <p><a href="https://expressjs.com/en/starter/static-files.html">https://expressjs.com/en/starter/static-files.html</a> 참조</p>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;api/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">goodsRouter</span><span class="p">]);</span>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;api/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">goodsRouter</span><span class="p">]);</span>
 </code></pre></div>
 <h3 id="routesgoodsjs-module">routes/goods.js module<a class="headerlink" href="#routesgoodsjs-module" title="Permanent link">#</a></h3>
-<p>라우터 미들웨어</p>
+<p>라우터 미들웨어를 사용하기 위해 객체를 받아오는 코드</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
 </code></pre></div>
 <p>라우터 export를 해야 타 모듈에서 볼 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">router</span><span class="p">;</span>
 </code></pre></div>
+<h2 id="mongodb">mongodb<a class="headerlink" href="#mongodb" title="Permanent link">#</a></h2>
+<p>wsl에 mongodb 설치를 하는데 애를 먹고 있다. <a href="https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate">다음 askubuntu.com</a>의 내용을 읽어보면, WSL은 기본값으로 systemd 사용을 막아두고 있다. 그래서 몇가지 방법을 제안했는데, 그 중에서 가장 간편해 보이는 방법인 docker를 활용해 보려고 한다.</p>
+<p><a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/">https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/</a></p>
+<p>도커를 WSL2에서 사용할 수 없길래 좀 찾아봤다. <a href="../Use%20docker%20in%20WSL2%20distro/">Use docker in WSL2 distro</a></p>
+<p>도커로 mongodb 실행시킨 뒤에 연결까지 확인했으나 127.0.0.1:27017로 연결이 안되길래 포트가 열려있지 않았음을 알았다. 그래서 포트 옵션 <code>-p</code>를 줬더니 돌아가는 것을 확인했다.</p>
+<div class="highlight"><pre><span></span><code>docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:latest
+</code></pre></div>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-02%20011628.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-11-02 011628.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-02%20011628.png" /></a></p>
 
 
 
