@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-01T17:05:34
+updated: 2023-11-01T22:10:01
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -14,6 +14,12 @@ ___
 ## README
 
 node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하면서 배운 내용을 아카이브 합니다. 빠른 지식습득을 위해 과제를 먼저 진행하고 부족한 부분은 그때그때 찾아가는 식으로 진행할 예정입니다.
+
+**목표**
+
+- HTTP 요청에 대하여 적절한 응답을 보낼 수 있다.
+- 데이터베이스(처음엔 MongoDB, 나중엔 MySQL)에 ORM을 사용하여 쿼리문을 날릴 수 있다.
+- 요구사항에 따라 게시판 사이트를 위한 백엔드 서버를 만들 수 있다.
 
 ## Structure of express.js
 
