@@ -49,7 +49,7 @@ updated: 2023-11-01T12:06:13
 
 - [find-winner-on-a-tic-tac-toe-game](https://leetcode.com/contest/weekly-contest-165/problems/find-winner-on-a-tic-tac-toe-game/)
 - [minimum-time-visiting-all-points](https://leetcode.com/contest/weekly-contest-164/problems/minimum-time-visiting-all-points/)
-- [count-servers-that-communicate](https://leetcode.com/contest/weekly-contest-164/problems/count-servers-that-communicate/)
+- [[count-servers-that-communicate]]
 - [search-suggestions-system](https://leetcode.com/contest/weekly-contest-164/problems/search-suggestions-system/)
 
 ## 문제 목록
