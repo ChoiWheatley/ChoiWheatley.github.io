@@ -18,4 +18,6 @@ ___
 
 [[이차원 리스트 전치행렬로 만들기 {python}]]의 도움을 받았다.
 
+[[i, j nested for loop with {itertools.product} {python}]]
+
 

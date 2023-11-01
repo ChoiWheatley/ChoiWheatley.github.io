@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-08-24T09:55:56
+updated: 2023-11-01T14:17:37
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -32,6 +32,7 @@ title: 0014 Python 🐍
 - useful
 	- standard lib
 		- [[itertools module]]
+			- [[i, j nested for loop with {itertools.product} {python}]]
 		- [[re - regex python package]]
 		- [[os module (미완성)]]
 		- [[dataclasses python module]]
