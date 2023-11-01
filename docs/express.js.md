@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-01T16:56:30
+updated: 2023-11-01T17:05:34
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -71,4 +71,18 @@ app.get("/", (_req, res) => {
 
 ```js
 app.use("api/", [goodsRouter]);
+```
+
+### routes/goods.js module
+
+라우터 미들웨어
+
+```js
+const router = express.Router();
+```
+
+라우터 export를 해야 타 모듈에서 볼 수 있다.
+
+```js
+module.exports = router;
 ```
