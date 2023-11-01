@@ -4,7 +4,7 @@ tags:
 description:
 title: 크래프톤 채용설명회 {swjungle}
 created: 2023-11-01T14:32:20
-updated: 2023-11-01T21:09:20
+updated: 2023-11-01T21:47:23
 ---
 - [[0120 swjungle 🤖]]
 
