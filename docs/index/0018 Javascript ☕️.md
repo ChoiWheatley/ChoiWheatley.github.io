@@ -3,21 +3,21 @@ description:
 aliases: 
 tags: 
 created: 2023-05-22T21:37:49
-updated: 2023-11-01T16:22:42
+updated: 2023-11-01T21:55:22
 title: 0018 Javascript ☕️
 ---
 
 ## 강의자료
 
-- [30분 요약강좌 유튜브 강의와 연관된 노션](https://paullabworkspace.notion.site/2022-30-1-4bc6b655c6054b2db3ad175789ead72b)
-- [JS 수업교안 노션](https://www.notion.so/JS-22-6-8723b46e0cde4d90b020b689e5cb9f0a)
-- [알잘딱 JS 핵심개념 노션](https://morning-heart-e2a.notion.site/JavaScript-f037c206e538471f9a9f1915b2139a60)
+- [30분 요약강좌 유튜브 강의와 연관된 {Notion}](https://paullabworkspace.notion.site/2022-30-1-4bc6b655c6054b2db3ad175789ead72b)
+- [JS 수업교안 {Notion}](https://www.notion.so/JS-22-6-8723b46e0cde4d90b020b689e5cb9f0a)
+- [알잘딱 JS 핵심개념 {Notion}](https://morning-heart-e2a.notion.site/JavaScript-f037c206e538471f9a9f1915b2139a60)
+- [JS Deep Dive {GH 제주코딩베이스}](https://github.com/weniv/BackendOrmi/blob/main/JavaScript/%EB%B3%B5%EC%8A%B5.md)
 
 ## 참고하면 좋은 사이트
 
 - 모던 자바스크립트 튜토리얼을 심지어 한글로 제공 | [javascript.info](https://ko.javascript.info/)
 - 프론트엔드 개발자의 정석 (모던 자바스크립트) 저자의 강의 사이트 | <https://poiemaweb.com/>
-- [JS Deep Dive {GH 제주코딩베이스}](https://github.com/weniv/BackendOrmi/blob/main/JavaScript/%EB%B3%B5%EC%8A%B5.md)
 
 ## 기초
 

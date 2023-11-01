@@ -26,6 +26,8 @@ title: 0110 Utility 🔧
 - [[tldr, man보다 간결한 명령어 사용법 매뉴얼]]
 - [[zip, unzip, cli 압축 프로그램]]
 - [[ripgrep, grep, battery included]]
+- 협업도구
+	- [[slido, live polls, quizzes, qna session]]
 
 ## dev utils (mostly linux)
 
