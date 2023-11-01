@@ -95,3 +95,7 @@ const router = express.Router();
 ```js
 module.exports = router;
 ```
+
+## mongodb
+
+wsl에 mongodb 설치를 하는데 애를 먹고 있다. [다음 askubuntu.com](https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate)의 내용을 읽어보면, WSL은 기본값으로 systemd 사용을 막아두고 있다.
