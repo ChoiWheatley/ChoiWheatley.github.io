@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-01T23:52:49
+updated: 2023-11-02T00:11:42
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -101,3 +101,9 @@ module.exports = router;
 wsl에 mongodb 설치를 하는데 애를 먹고 있다. [다음 askubuntu.com](https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate)의 내용을 읽어보면, WSL은 기본값으로 systemd 사용을 막아두고 있다. 그래서 몇가지 방법을 제안했는데, 그 중에서 가장 간편해 보이는 방법인 docker를 활용해 보려고 한다.
 
 <https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/>
+
+설치하려고 봤더니 WSL distro 안에서 `docker` 앱을 사용할 수 없다고 나온다. 분명히 예전에 WSL 안에서 도커 쓴 기억이 있어서 좀 찾아봤더니...
+
+<https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers>
+
+도커 데스크톱 설정에서 `Settings > Resources > Wsl Integration` 탭으로 가서 원하는 디스트로를 토글하면 도커 명령어를 사용할 수 있게 만들어준다고!
