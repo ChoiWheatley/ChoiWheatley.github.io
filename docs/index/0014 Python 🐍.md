@@ -118,6 +118,7 @@ title: 0014 Python 🐍
 - [[try - except - else - finally (python)]]
 - `__contains__`: `in` 문법 사용 가능
 - [[dataclass ValueError mutable default class list is not allowed, use default_factory {python}]]
+- [[이차원 리스트 전치행렬로 만들기 {python}]]
 
 ---
 
