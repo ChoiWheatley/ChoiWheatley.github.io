@@ -17,7 +17,6 @@ parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
-
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
 - [[0011 Algorithms ♾️]]
@@ -29,6 +28,7 @@ parent link: [[docs/index]]
 - [[0015 OS {ssu2021-2nd} 💻]]
 - [[0016 Systems Programming {ssu2021-1st} 🐼]]
 - [[0017 C 🍎]]
+- [[0018 Javascript ☕️]]
 - [[0020 Games 🎮]]
 - [[0030 Health 💪]]
 - [[0031 Emotions 🤔]]
@@ -38,5 +38,6 @@ parent link: [[docs/index]]
 - [[0100 English 👻]]
 - [[0110 Utility 🔧]]
 - [[0120 swjungle 🤖]]
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 
 %% End Waypoint %%

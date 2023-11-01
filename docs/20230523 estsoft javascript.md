@@ -35,4 +35,4 @@ webpack: HTML/CSS/JS를 하나의 파일로 묶어준다. 장점: 난독화, 최
 
 [[JS instance method]]
 
-![[Javascript#개꿀팁]]
+![[0018 Javascript ☕️#개꿀팁]]

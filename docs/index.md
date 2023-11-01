@@ -8,16 +8,16 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-10-10T20:40:08
+updated: 2023-11-01T16:04:27
 ---
 
-## Self Introduction
+# Introduction
 
 Hi, my name is Choi Wheatley(최승현). I'm a junior backend developer looking for better understanding of programming paradigms, computer knowledgements, agile cultures.
 
 I'm highly interested in knowledge making process. I have a pipeline from casting idea to archiving for further retrieval. With [Obsidian](https://obsidian.md), I can create notes with hyperlinks!
 
-I'm native Korean, but I can understand English at reading, listening. Speaking is not good tho.
+I'm native Korean, but I can understand English at reading, listening.
 
 **Contact me**
 
