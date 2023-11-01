@@ -4,7 +4,7 @@ tags:
 description: leet code와 백준에서 30+100문제를 풀어보자
 title: week12 {swjungle}{ALGORITHMS}
 created: 2023-10-28T17:25:47
-updated: 2023-10-30T21:49:39
+updated: 2023-11-01T12:06:13
 ---
 - [[0120 swjungle 🤖]]
 - [[0011 Algorithms ♾️|algorithms]]
@@ -44,6 +44,13 @@ updated: 2023-10-30T21:49:39
 - [[2259. Remove Digit From Number to Maximize Result]]
 - [2260. Minimum Consecutive Cards to Pick Up](https://leetcode.com/contest/weekly-contest-291/problems/minimum-consecutive-cards-to-pick-up/)
 - [2211. Count Collisions on a Road](https://leetcode.com/contest/weekly-contest-285/problems/count-collisions-on-a-road/)
+
+## TEST04
+
+- [find-winner-on-a-tic-tac-toe-game](https://leetcode.com/contest/weekly-contest-165/problems/find-winner-on-a-tic-tac-toe-game/)
+- [minimum-time-visiting-all-points](https://leetcode.com/contest/weekly-contest-164/problems/minimum-time-visiting-all-points/)
+- [count-servers-that-communicate](https://leetcode.com/contest/weekly-contest-164/problems/count-servers-that-communicate/)
+- [search-suggestions-system](https://leetcode.com/contest/weekly-contest-164/problems/search-suggestions-system/)
 
 ## 문제 목록
 
