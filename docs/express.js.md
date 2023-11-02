@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T22:54:49
+updated: 2023-11-03T08:46:22
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -73,7 +73,7 @@ app.get("/", (_req, res) => {
 });
 ```
 
-타 모듈(미들웨어)를 app에 등록시키는 과정
+타 모듈([[middleware {expressjs}]])를 app에 등록시키는 과정
 
 <https://expressjs.com/en/starter/static-files.html> 참조
 
