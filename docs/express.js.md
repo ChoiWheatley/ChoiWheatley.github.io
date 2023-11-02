@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T14:40:39
+updated: 2023-11-02T16:31:23
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -114,4 +114,9 @@ docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:lat
 
 그리고 이번에도 마찬가지로 [[port forwarding WSL2]]에서 명시한 바와 같이 파워쉘 스크립트에 포트 27017을 추가하여 원격지에서도 웹 브라우저로는 물론 3T로도 연결해 볼 수 있게 되었다.
 
-이전 챕터와 마찬가지로 app.js 안에서 `mongoose`를 임포트 하고, 
+**튜토리얼 흐름**
+
+goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에서 connect 함수를 불러온다. 그리고 `schemas/goods.js` 안에 도큐먼트 스키마를 정의하고, 정의한 스키마대로 데이터를 JSON 형식으로 읽어들이고 mongodb에 도큐먼트를 추가하는 코드를 `routes/goods.js` 안에 넣는다. 그러면 이제 사용자가 다음과 같이 요청을 날리게 된다면...
+
+![[스크린샷 2023-11-02 오후 4.32.29 1.png]]
+
