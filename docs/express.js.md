@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T01:19:35
+updated: 2023-11-02T14:40:39
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -111,3 +111,5 @@ docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:lat
 ```
 
 ![[스크린샷 2023-11-02 011628.png]]
+
+그리고 이번에도 마찬가지로 [[port forwarding WSL2]]에서 명시한 바와 같이 파워쉘 스크립트에 포트 27017을 추가하여 원격지에서도 웹 브라우저로는 물론 3T로도 연결해 볼 수 있게 되었다.
