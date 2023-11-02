@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T16:59:21
+updated: 2023-11-02T22:30:06
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -98,6 +98,9 @@ module.exports = router;
 
 ## mongodb
 
+- [mongoose docs](https://mongoosejs.com/docs/)
+- [mongodb docs](https://www.mongodb.com/docs/)
+
 wsl에 mongodb 설치를 하는데 애를 먹고 있다. [다음 askubuntu.com](https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate)의 내용을 읽어보면, WSL은 기본값으로 systemd 사용을 막아두고 있다. 그래서 몇가지 방법을 제안했는데, 그 중에서 가장 간편해 보이는 방법인 docker를 활용해 보려고 한다.
 
 <https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/>
@@ -126,6 +129,3 @@ goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에
 지금 현재 mongodb는 별도의 인증절차가 없다. 지금 Compass를 통해서 데이터베이스들을 확인하고 있는데, 내가 만들지 않은 "READ__ME_TO_RECOVER_YOUR_DATA"라는 데이터베이스가 생성됐음을 확인했다. 당신의 데이터가 암호화 되었으니 0.01 BTC를 달라는 내용의 도큐먼트와 함께. 근데 정작 다른 데이터베이스들은 접근이 가능했다. 
 
 - [ ] mongodb 인증절차 추가하기
-
-- [mongoose docs](https://mongoosejs.com/docs/)
-- [mongodb docs](https://www.mongodb.com/docs/)
