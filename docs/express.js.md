@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T16:51:30
+updated: 2023-11-02T16:59:21
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -128,4 +128,4 @@ goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에
 - [ ] mongodb 인증절차 추가하기
 
 - [mongoose docs](https://mongoosejs.com/docs/)
-- 
+- [mongodb docs](https://www.mongodb.com/docs/)
