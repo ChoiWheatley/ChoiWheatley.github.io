@@ -21199,6 +21199,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-11-02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-11-02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -41644,6 +41664,29 @@
 <div class="highlight"><pre><span></span><code>docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:latest
 </code></pre></div>
 <p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-02%20011628.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-11-02 011628.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-02%20011628.png" /></a></p>
+<p>그리고 이번에도 마찬가지로 <a href="../port%20forwarding%20WSL2/">port forwarding WSL2</a>에서 명시한 바와 같이 파워쉘 스크립트에 포트 27017을 추가하여 원격지에서도 웹 브라우저로는 물론 3T로도 연결해 볼 수 있게 되었다.</p>
+<p><strong>튜토리얼 흐름</strong></p>
+<p>goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에서 connect 함수를 불러온다. 그리고 <code>schemas/goods.js</code> 안에 도큐먼트 스키마를 정의하고, 정의한 스키마대로 데이터를 JSON 형식으로 읽어들이고 mongodb에 도큐먼트를 추가하는 코드를 <code>routes/goods.js</code> 안에 넣는다. 그러면 이제 사용자가 다음과 같이 요청을 날리게 된다면...</p>
+<ul>
+<li>request: <ul>
+<li><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-02%20%EC%98%A4%ED%9B%84%204.32.29%201.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2023-11-02 오후 4.32.29 1.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-02%20%EC%98%A4%ED%9B%84%204.32.29%201.png" /></a></li>
+</ul>
+</li>
+<li>response:<ul>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020231102164255.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231102164255.png" src="../assets/Pasted%20image%2020231102164255.png" /></a></li>
+</ul>
+</li>
+</ul>
+<p>지금 현재 mongodb는 별도의 인증절차가 없다. 지금 Compass를 통해서 데이터베이스들을 확인하고 있는데, 내가 만들지 않은 "READ__ME_TO_RECOVER_YOUR_DATA"라는 데이터베이스가 생성됐음을 확인했다. 당신의 데이터가 암호화 되었으니 0.01 BTC를 달라는 내용의 도큐먼트와 함께. 근데 정작 다른 데이터베이스들은 접근이 가능했다. </p>
+<ul>
+<li>
+<p>[ ] mongodb 인증절차 추가하기</p>
+</li>
+<li>
+<p><a href="https://mongoosejs.com/docs/">mongoose docs</a></p>
+</li>
+<li><a href="https://www.mongodb.com/docs/">mongodb docs</a></li>
+</ul>
 
 
 

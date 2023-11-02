@@ -21199,6 +21199,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-11-02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-11-02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -41509,8 +41529,9 @@
 <p><code>for</code> and <code>extend</code> with 10_000 * 10 class objects =&gt; 2.7347ms</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">flat_map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xs</span><span class="p">):</span>
     <span class="n">ys</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">return</span> <span class="n">yskofor</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
-    <span class="n">ys</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
+        <span class="n">ys</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ys</span>
 </code></pre></div>
 <h2 id="2023-08-15-2-1">2023-08-15 추가: 2차원 리스트를 1차원 리스트로<a class="headerlink" href="#2023-08-15-2-1" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">wholelist</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sublist</span><span class="p">],</span>
