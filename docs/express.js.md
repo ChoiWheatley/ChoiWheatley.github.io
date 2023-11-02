@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T22:30:06
+updated: 2023-11-02T22:54:49
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -129,3 +129,7 @@ goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에
 지금 현재 mongodb는 별도의 인증절차가 없다. 지금 Compass를 통해서 데이터베이스들을 확인하고 있는데, 내가 만들지 않은 "READ__ME_TO_RECOVER_YOUR_DATA"라는 데이터베이스가 생성됐음을 확인했다. 당신의 데이터가 암호화 되었으니 0.01 BTC를 달라는 내용의 도큐먼트와 함께. 근데 정작 다른 데이터베이스들은 접근이 가능했다. 
 
 - [ ] mongodb 인증절차 추가하기
+
+- [?] 언제는 `return res.json(...)`를 하고 언제는 그냥 `res.json(...)`만 하고 뭐냐?
+	- 전자: POST 요청이 유효하지 않은 경우
+	- 후자: GET, POST 정상적인 리턴일때
