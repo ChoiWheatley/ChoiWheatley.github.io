@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-10-31T20:21:25
+updated: 2023-11-02T20:46:18
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -31,7 +31,35 @@ ___
 
 - 
 
----
+## Personal Information
+
+- 공군 기수 입대일, 제대일
+	- 2018-11-12
+	- 2020-09-16
+- Opic 2022
+	- 시험일시 2022-12-21
+	- 취득일시 2022-12-28
+	- 수험번호 2B4750835297
+- 숭실대학교
+	- 성적: 3.33 / 4.5
+	- 이수학점: 134
+	- 입학: 2016-03
+	- 졸업: 2023-08
+- IT 활용능력
+	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6>
+- 프로젝트 경험
+	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
+
+## 진로 관련
+
+[[채움 HRD 📈]] 로 이동하세요  
+[[2023-05-14 정민영 교수님의 진로상담]]
+
+## 취업설명회
+
+- swjungle
+	- [[컬리 협력사 Q&A {swjungle}]]
+	- [[크래프톤 채용설명회 {swjungle}]]
 
 ## Ended
 
@@ -59,29 +87,3 @@ ___
 - [[신도리코 채용연계형 인턴 및 경력직 모집_전산개발 부문]]
 - [[카카오 클라우드 스쿨 3기]]
 - [[SSAFY 10기]]
-
-___
-
-# Personal Information
-
-- 공군 기수 입대일, 제대일
-	- 2018-11-12
-	- 2020-09-16
-- Opic 2022
-	- 시험일시 2022-12-21
-	- 취득일시 2022-12-28
-	- 수험번호 2B4750835297
-- 숭실대학교
-	- 성적: 3.33 / 4.5
-	- 이수학점: 134
-	- 입학: 2016-03
-	- 졸업: 2023-08
-- IT 활용능력
-	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6>
-- 프로젝트 경험
-	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
-
-# 진로 관련
-
-[[채움 HRD 📈]] 로 이동하세요  
-[[2023-05-14 정민영 교수님의 진로상담]]
