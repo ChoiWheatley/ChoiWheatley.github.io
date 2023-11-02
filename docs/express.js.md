@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-02T16:31:23
+updated: 2023-11-02T16:51:30
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -118,5 +118,14 @@ docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:lat
 
 goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에서 connect 함수를 불러온다. 그리고 `schemas/goods.js` 안에 도큐먼트 스키마를 정의하고, 정의한 스키마대로 데이터를 JSON 형식으로 읽어들이고 mongodb에 도큐먼트를 추가하는 코드를 `routes/goods.js` 안에 넣는다. 그러면 이제 사용자가 다음과 같이 요청을 날리게 된다면...
 
-![[스크린샷 2023-11-02 오후 4.32.29 1.png]]
+- request: 
+	- ![[스크린샷 2023-11-02 오후 4.32.29 1.png]]
+- response:
+	- ![[Pasted image 20231102164255.png]]
 
+지금 현재 mongodb는 별도의 인증절차가 없다. 지금 Compass를 통해서 데이터베이스들을 확인하고 있는데, 내가 만들지 않은 "READ__ME_TO_RECOVER_YOUR_DATA"라는 데이터베이스가 생성됐음을 확인했다. 당신의 데이터가 암호화 되었으니 0.01 BTC를 달라는 내용의 도큐먼트와 함께. 근데 정작 다른 데이터베이스들은 접근이 가능했다. 
+
+- [ ] mongodb 인증절차 추가하기
+
+- [mongoose docs](https://mongoosejs.com/docs/)
+- 
