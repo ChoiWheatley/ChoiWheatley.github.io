@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-03T08:46:22
+updated: 2023-11-03T09:04:29
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -133,3 +133,15 @@ goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에
 - [?] 언제는 `return res.json(...)`를 하고 언제는 그냥 `res.json(...)`만 하고 뭐냐?
 	- 전자: POST 요청이 유효하지 않은 경우
 	- 후자: GET, POST 정상적인 리턴일때
+
+**장바구니에 상품 추가**
+
+**장바구니 상품 수량 변경**
+
+PUT 요청을 받아 `$set`으로 업데이트.  <https://www.mongodb.com/docs/manual/reference/operator/update-field/>
+
+```js
+await Cart.updateOne({ goodsId: goodsId }, { $set: { quantity } });
+```
+
+**장바구니 조회**
