@@ -28,7 +28,7 @@ updated: 2023-11-01T12:06:13
 ## TEST01
 
 - [2475. Number of Unequal Triplets in Array](https://leetcode.com/contest/weekly-contest-320/problems/number-of-unequal-triplets-in-array/)
-- [[2476. Closest Nodes Queries in a Binary Search Tree]]
+- [[2476. Closest Nodes Queries in a Binary Search Tree {코멘트 있음}]]
 
 ## TEST02
 
