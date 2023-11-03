@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-22T21:37:49
-updated: 2023-11-01T21:55:22
+updated: 2023-11-03T21:26:07
 title: 0018 Javascript ☕️
 ---
 
@@ -34,9 +34,10 @@ title: 0018 Javascript ☕️
 - [[clear cache in javascript]]
 - [[map an array of objects to a dictionary {js}]]
 
-## FRAMEWORKS
+## Libraries / Frameworks / Packages
 
 - [[express.js]]
+- [[nodemon, auto reload nodejs server {npm}]]
 
 ## 이호준 강사님의 한마디 (ormi)
 
