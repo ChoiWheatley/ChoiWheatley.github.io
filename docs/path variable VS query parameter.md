@@ -7,7 +7,7 @@ title: path variable VS query parameter
 created: 2023-10-31T22:03:18
 updated: 2023-10-31T22:06:28
 ---
-- [[week13 {swjugle}{team creation}]]
+- [[week13 {swjugle}{team creation} {expressjs}]]
 - <https://ryan-han.com/post/translated/pathvariable_queryparam/>
 ___
 #scrap 

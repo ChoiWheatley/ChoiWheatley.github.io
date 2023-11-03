@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: week13 {swjugle}{team creation}
+title: week13 {swjugle}{team creation} {expressjs}
 created: 2023-10-31T10:06:41
-updated: 2023-10-31T21:53:29
+updated: 2023-1100-319T042041:53:29
 ---
 - [[0120 swjungle 🤖]]
 ___
@@ -44,7 +44,6 @@ ___
 	- express.js와 nest.js의 차이점은 아키텍처의 자유도가 있다. 
 - [[path variable VS query parameter]]
 - [[express.js]]
-
 
 ## node.js
 
