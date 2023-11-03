@@ -30,3 +30,6 @@ title: vim 관련 꿀팁
 - [[Easymotion Vim cheatsheat]]
 
 <iframe src="http://www.fprintf.net/vimCheatSheet.html" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
+## Advanced
+
+- [[vim selectively find and replace text]]
