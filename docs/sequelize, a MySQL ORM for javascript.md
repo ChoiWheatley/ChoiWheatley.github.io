@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T08:12:31
+updated: 2023-11-04T08:52:21
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -13,6 +13,8 @@ updated: 2023-11-04T08:12:31
 ___
 
 ## 설치 및 마이그레이션
+
+[sequelize 문서](https://sequelize.org/docs/v6/other-topics/migrations/)
 
 ```shell
 npm install sequelize # js 파일 안에서 사용하기 위한 패키지
@@ -32,7 +34,7 @@ npx sequelize init
 npx sequelize db:create
 ```
 
-아래 npx 명령줄을 실행하여 `Posts` 모델에 대한 마이그레이션 파일을 생성한다. 얘가 있어야 실제 DB에 테이블을 만들어낼 수 있음. [sequelize 문서](https://sequelize.org/docs/v6/other-topics/migrations/)
+아래 npx 명령줄을 실행하여 `Posts` 모델에 대한 마이그레이션 파일을 생성한다. 얘가 있어야 실제 DB에 테이블을 만들어낼 수 있음. 
 
 ```shell
 npx sequelize model:generate --name Posts --attributes title:string,content:string,password:string
@@ -43,6 +45,19 @@ npx sequelize model:generate --name Posts --attributes title:string,content:stri
 ```shell
 npx sequelize db:migrate
 ```
+
+나중에 스키마를 바꾸고 싶을때가 온다면 마이그레이션 파일을 하나 새로 만든 뒤에 `db:migrate`를 하면 된다. 새 마이그레이션 파일을 생성하는 명령어는 다음과 같다.
+
+```
+npx sequelize migration:create --name <Name>
+```
+
+다음 [query interface {doc}](https://sequelize.org/docs/v6/other-topics/query-interface/) 문서를 확인하여 컬럼을 추가하거나 속성을 수정하는 등 다양한 수정을 해보자. `up`에는 우리가 수정하고자 하는 것들을, `down`에는 원상복구를 하기 위한 작업을 작성해 넣는것이다!
+
+- `createTable` ⟷ `dropTable`
+- `addColumn` ⟷ `removeColumn`
+- `changeColumn` 
+- 
 
 ### 🧩  Sequelize CLI 간단하게 살펴보기!
 
