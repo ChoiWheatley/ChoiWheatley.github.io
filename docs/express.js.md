@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-03T20:13:56
+updated: 2023-11-03T20:22:54
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -78,3 +78,5 @@ JWT는 누구나 복호화할 수 있기 때문에 비밀번호와 같은 민감
 	- 그래서 저 `next` 함수의 역할은 뭔데?
 - 노션으로 작성된 API 명세서 예제
 	- ![[Pasted image 20231103201414.png]]
+- [ ] AWS RDS 하나 생성하자 (MySQL) + `npm install sequelize`
+- 과제 내용 다시 생각해보면.. 게시판 ⟶ 회원가입 ⟶ 사용자 인증 / 인가 ⟶ extra
