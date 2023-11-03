@@ -37,6 +37,7 @@ title: 0018 Javascript ☕️
 ## Libraries / Frameworks / Packages
 
 - [[express.js]]
+- [[sequelize, a MySQL ORM for javascript]]
 - [[nodemon, auto reload nodejs server {npm}]]
 
 ## 이호준 강사님의 한마디 (ormi)
