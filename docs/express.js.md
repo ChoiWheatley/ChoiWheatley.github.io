@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-03T09:50:40
+updated: 2023-11-03T10:13:16
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -148,4 +148,5 @@ await Cart.updateOne({ goodsId: goodsId }, { $set: { quantity } });
 
 ## DUMP
 
-- path에 인자를 집어넣는 방식이 장고와는 다르게 타입을 따로 집어넣을 수 없나? 예를 들어 "/goods/carts"와 "/goods/2"를 구분하고 싶은데
+- path에 인자를 집어넣는 방식이 장고와는 다르게 타입을 따로 집어넣을 수 없나? 예를 들어 "/goods/carts"와 "/goods/2"를 구분하고 싶은데 
+	- [`router.param(name, callback)`](https://expressjs.com/en/4x/api.html#router) 을 사용하면 `router.<method>(path, callback)`에 정의된 path의 파라메터를 처리하는 로직을 정의할 수 있다고 한다. 내가 별도로 호출할 필요도 없다는게 신기하네.
