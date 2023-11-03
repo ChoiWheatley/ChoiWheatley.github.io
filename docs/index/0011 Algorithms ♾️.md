@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-20T22:03:39
+updated: 2023-11-03T16:44:47
 ---
 parent link: [[docs/index/index]] [[0010 Programming 👩‍💻]] 
 
@@ -48,6 +48,9 @@ ___
 	- [ChoiSeungHyeon](https://github.com/OrmiCodeRanger/ChoiSeunghyeon) | Python 문제풀이 오르미 코드레인저 
 	- [choi-workspace](https://github.com/ChoiWheatley/choi-workspace) | C++ 문제풀이 (파일구조가 조금 개판이긴 함)
 	- [AlgorithmCheatSheet](https://github.com/OrmiCodeRanger/AlgorithmCheatSheet) | 오르미 코드레인저 팀원들이 사용하는 파이썬 기반 알고리즘 치트시트
+- swjungle
+	- [[week 01~03 {swjungle} {ALGORITHMS}]]
+	- [[week12 {swjungle}{ALGORITHMS}]]
 ---
 
 - [[Heap]]
