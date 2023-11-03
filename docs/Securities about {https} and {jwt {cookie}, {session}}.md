@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-24T08:33:57
-updated: 2023-07-15T21:33:03
+updated: 2023-01-037-9152T4621:33:03
 title: Securities about {https} and {jwt {cookie}, {session}}
 ---
 
@@ -17,8 +17,8 @@ wireshark, nmap과 같은 소프트웨어를 사용하면 패킷을 통해 헤�
 
 ## JSON Web Token
 
-- https://en.wikipedia.org/wiki/JSON_Web_Token
-- https://jwt.io/introduction
+- <https://en.wikipedia.org/wiki/JSON_Web_Token>
+- <https://jwt.io/introduction>
 
 JWT는 인증/인가(authentication/authorization)의 여러 방법 중 하나입니다. 대표적인 인증 방법으로는 쿠키(세션), 토큰, Third-party(OAuth, API-token), SAML, OpenID 등이  있습니다. JWT는 이 중에서 토큰 기반 기법을 사용합니다.
 
@@ -64,7 +64,7 @@ token = base64UrlEncode(header) + '.' +
 ---
 이 아래는 집필 프로젝트 외적으로 다루는 공간임
 - [얄코 HTTPS와 대칭키, 비대칭키](https://youtu.be/H6lpFRpyl14)
-- [얄코 JWT](https://youtu.be/1QiOXWEbqYQ
+- [얄코 JWT](<https://youtu.be/1QiOXWEbqYQ>
 - [포프TV JWT](https://youtu.be/MUUqogMpGiA)
 - [코딩애플 JWT 대충 쓰면 코딩인생 끝남](https://youtu.be/XXseiON9CV0)
 - [medium.com](https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a)

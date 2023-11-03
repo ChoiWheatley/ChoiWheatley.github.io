@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-03T11:23:36
+updated: 2023-11-03T19:44:06
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -23,128 +23,53 @@ node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하�
 
 ## Structure of express.js
 
-### file structure
+[[structure of express.js]]
 
-```
-.
-├── app.js
-├── package-lock.json
-├── package.json
-├── node_modules
-│   └── ...
-└── routes
-    └── goods.js
-```
+**ai 요약**
 
-- **`app.js`** main 루틴이 들어있는 곳. 다른 모듈을 임포트(`require`)하여 URL을 라우팅 할 수 있다.
-- **`package-lock.json`** 설치된 패키지 메타데이터들을 저장한 파일, 이 파일만 있으면 다른 개발자도 같은 패키지 설정을 공유할 수 있다.
-- **`package.json`** 패키지 메타데이터를 정의한 파일. 
-- **`node_modules`** npm을 통해 패키지 의존성들이 들어있는 디렉토리
-- **`routes`** 내가 임의로 생성한 디렉토리. 하위 모듈들을 담는 디렉토리.
+- `app.js` 파일에는 메인 루틴이 포함되어 있으며, 다른 모듈을 가져와 URL을 라우팅할 수 있습니다.
+- `package-lock.json` 파일은 설치된 패키지의 메타데이터를 저장하며, 이 파일을 통해 다른 개발자도 동일한 패키지 설정을 공유할 수 있습니다.
+- `package.json` 파일은 패키지의 메타데이터를 정의합니다.
+- `node_modules` 폴더는 npm을 통해 설치된 패키지 의존성이 포함되어 있습니다.
+- `routes` 폴더는 사용자가 만든 디렉토리로, 하위 모듈들을 포함합니다.
 
-### app.js
+`app.js` 파일은 express 객체와 다른 모듈을 가져와 express 앱을 실행하고 듣습니다. 또한 라우팅을 처리하고 다른 모듈을 등록합니다. 이때, `require` 문법이 사용되는 이유는 CommonJS 스펙에 따라 Node.js 환경에서 모듈을 가져오기 위해서입니다.
 
-express 객체와 다른 모듈들을 임포트
+라우팅은 `express` 모듈을 통해 기본 라우팅을 설정하며, 타 모듈을 `app`에 등록시키기 위해 미들웨어를 사용합니다.
 
-- [?] 그런데, `require`도 임포트인데, `import`를 쓰지 않는 이유가 뭘까?
-
-```js
-const express = require("express");
-const goodsRouter = require("./routes/goods");
-```
-
-express app 실행 및 listening
-
-```js
-const app = express();
-
-app.listen(port, () => {
-  console.log(port, "포트로 서버가 열렸어요! ♥️");
-});
-```
-
-라우팅
-
-<https://expressjs.com/en/starter/basic-routing.html> 참조
-
-```js
-app.get("/", (_req, res) => {
-  res.send("Hello, World!");
-});
-```
-
-타 모듈([[middleware {expressjs}]])를 app에 등록시키는 과정
-
-<https://expressjs.com/en/starter/static-files.html> 참조
-
-```js
-app.use(express.json());
-app.use("api/", [goodsRouter]);
-```
-
-### routes/goods.js module
-
-라우터 미들웨어를 사용하기 위해 객체를 받아오는 코드
-
-```js
-const router = express.Router();
-```
-
-라우터 export를 해야 타 모듈에서 볼 수 있다.
-
-```js
-module.exports = router;
-```
+`routes/goods.js` 모듈은 라우터 미들웨어를 사용하기 위해 `express.Router()` 객체를 가져오고, 해당 라우터를 export하여 다른 모듈에서 사용할 수 있도록 합니다.
 
 ## mongodb
 
-- [mongoose docs](https://mongoosejs.com/docs/)
-- [mongodb docs](https://www.mongodb.com/docs/)
+[[mongoose, a mongodb ODM for javascript]]
 
-wsl에 mongodb 설치를 하는데 애를 먹고 있다. [다음 askubuntu.com](https://askubuntu.com/questions/1379425/system-has-not-been-booted-with-systemd-as-init-system-pid-1-cant-operate)의 내용을 읽어보면, WSL은 기본값으로 systemd 사용을 막아두고 있다. 그래서 몇가지 방법을 제안했는데, 그 중에서 가장 간편해 보이는 방법인 docker를 활용해 보려고 한다.
+**ai 요약**
 
-<https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/>
+웬만한 경우에, MongoDB를 WSL2에서 실행할 때 포트가 열려있지 않은 문제가 발생할 수 있습니다. 이 경우 Docker를 사용하여 간단하게 문제를 해결할 수 있습니다. 더 자세한 내용은 [이 링크](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/)를 참조하십시오.
 
-도커를 WSL2에서 사용할 수 없길래 좀 찾아봤다. [[Use docker in WSL2 distro]]
+또한, API를 통해 새로운 상품을 추가하고 장바구니에 상품을 추가하거나 수량을 변경하는 방법에 대한 내용도 포함되어 있습니다. 또한 보안을 강화하기 위해 MongoDB에 인증 절차를 추가해야 합니다.
 
-도커로 mongodb 실행시킨 뒤에 연결까지 확인했으나 127.0.0.1:27017로 연결이 안되길래 포트가 열려있지 않았음을 알았다. 그래서 포트 옵션 `-p`를 줬더니 돌아가는 것을 확인했다.
+`return res.json(...)`와 `res.json(...)`의 사용은 요청이 유효하지 않은 경우와 정상적인 경우에 각각 사용됩니다. 전자는 오류가 발생했음을 나타내고, 후자는 요청이 성공적으로 처리되었음을 나타냅니다.
 
-```
-docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:latest
-```
+## MySQL
 
-![[스크린샷 2023-11-02 011628.png]]
+[[sequlize, a MySQL ORM for javascript]]
 
-그리고 이번에도 마찬가지로 [[port forwarding WSL2]]에서 명시한 바와 같이 파워쉘 스크립트에 포트 27017을 추가하여 원격지에서도 웹 브라우저로는 물론 3T로도 연결해 볼 수 있게 되었다.
+## JWT
 
-**튜토리얼 흐름**
+[[jsonwebtoken npm]]
 
-goods를 추가할 수 있는 HTTP POST 요청을 만들어보자. app.js 안에서 connect 함수를 불러온다. 그리고 `schemas/goods.js` 안에 도큐먼트 스키마를 정의하고, 정의한 스키마대로 데이터를 JSON 형식으로 읽어들이고 mongodb에 도큐먼트를 추가하는 코드를 `routes/goods.js` 안에 넣는다. 그러면 이제 사용자가 다음과 같이 요청을 날리게 된다면...
+**ai 요약**
 
-- request: 
-	- ![[스크린샷 2023-11-02 오후 4.32.29 1.png]]
-- response:
-	- ![[Pasted image 20231102164255.png]]
+**jsonwebtoken 패키지**는 JSON 웹 토큰(JWT)을 생성하고 검증하는 데 사용되는 Node.js의 라이브러리입니다. 이 라이브러리를 사용하면 암호화된 정보를 포함하는 JWT를 생성하고, 해당 토큰을 복호화하여 원래 정보를 추출할 수 있습니다. 
 
-지금 현재 mongodb는 별도의 인증절차가 없다. 지금 Compass를 통해서 데이터베이스들을 확인하고 있는데, 내가 만들지 않은 "READ__ME_TO_RECOVER_YOUR_DATA"라는 데이터베이스가 생성됐음을 확인했다. 당신의 데이터가 암호화 되었으니 0.01 BTC를 달라는 내용의 도큐먼트와 함께. 근데 정작 다른 데이터베이스들은 접근이 가능했다. 
+JWT는 누구나 복호화할 수 있기 때문에 비밀번호와 같은 민감한 정보를 저장해서는 안 됩니다. JWT의 주요 목적은 페이로드의 변조 여부를 확인하기 위한 것이므로 주의가 필요합니다.
 
-- [ ] mongodb 인증절차 추가하기
+**Express.js**는 Node.js 웹 애플리케이션 프레임워크로, 웹 서버 및 API를 쉽게 작성하고 구축할 수 있도록 도와줍니다. Express.js는 미들웨어를 활용하여 다양한 기능을 구현할 수 있으며, 강력한 라우팅 기능을 제공합니다.
 
-- [?] 언제는 `return res.json(...)`를 하고 언제는 그냥 `res.json(...)`만 하고 뭐냐?
-	- 전자: POST 요청이 유효하지 않은 경우
-	- 후자: GET, POST 정상적인 리턴일때
+**HTTPS와 JWT, 쿠키, 세션에 관한 보안**은 웹 보안에 관한 중요한 주제입니다. HTTPS는 데이터를 암호화하여 보호하고, JWT는 토큰 기반의 인증을 제공합니다. 쿠키와 세션은 사용자 인증과 관련된 데이터를 유지하고 관리하는 데 사용됩니다. 이러한 보안 기술들은 개발자가 안전한 웹 애플리케이션을 구축하는 데 중요한 역할을 합니다. 
 
-**장바구니에 상품 추가**
-
-**장바구니 상품 수량 변경**
-
-PUT 요청을 받아 `$set`으로 업데이트.  <https://www.mongodb.com/docs/manual/reference/operator/update-field/>
-
-```js
-await Cart.updateOne({ goodsId: goodsId }, { $set: { quantity } });
-```
-
-**장바구니 조회**
+로그인 API 예제에서는 사용자 정보를 JWT로 생성하고, 해당 토큰을 쿠키에 할당하여 사용자에게 반환하는 과정을 보여줍니다. Bearer 토큰 형식으로 JWT를 전달하여 인증을 수행합니다. 
 
 ## DUMP
 
