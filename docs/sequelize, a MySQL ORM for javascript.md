@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-03T22:00:20
+updated: 2023-11-04T07:46:44
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -12,7 +12,7 @@ updated: 2023-11-03T22:00:20
 - <https://sequelize.org/api/v6/identifiers>
 ___
 
-## 설치
+## 설치 및 마이그레이션
 
 ```shell
 npm install sequelize # js 파일 안에서 사용하기 위한 패키지
@@ -32,7 +32,7 @@ npx sequelize init
 npx sequelize db:create
 ```
 
-아래 npx 명령줄을 실행하여 `Posts` 모델에 대한 마이그레이션 파일을 생성한다. 얘가 있어야 실제 DB에 테이블을 만들어낼 수 있음.
+아래 npx 명령줄을 실행하여 `Posts` 모델에 대한 마이그레이션 파일을 생성한다. 얘가 있어야 실제 DB에 테이블을 만들어낼 수 있음. [sequelize 문서](https://sequelize.org/docs/v6/other-topics/migrations/)
 
 ```shell
 npx sequelize model:generate --name Posts --attributes title:string,content:string,password:string
