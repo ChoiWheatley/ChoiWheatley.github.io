@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-11T18:50:08
-updated: 2023-07-26T16:18:22
+updated: 2023-11-047-3240633T16:18:22
 title: Data Modeling {book-project}
 ---
 

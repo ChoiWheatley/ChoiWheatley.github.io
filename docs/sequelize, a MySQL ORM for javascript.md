@@ -4,12 +4,13 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T13:29:58
+updated: 2023-11-04T13:53:44
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
 - <https://www.npmjs.com/package/sequelize>
 - <https://sequelize.org/api/v6/identifiers>
+- [[Data Modeling {book-project}]]
 ___
 
 ## 설치 및 마이그레이션
@@ -119,7 +120,7 @@ MySQL의 경우 defaultValue를 현재 시간(`CURRENT_TIMESTAMP`)로 등록하�
 
 ### `sequelize-cli` 사용하지 않고 마이그레이션 하기
 
-cli 말고 일반 패키지 `sequelize`에서도 테이블 생성기능이 존재하다. 
+cli 말고 일반 패키지 `sequelize`에서도 테이블 생성기능이 존재하다. `sequelize.sync`를 사용하면 되기는 하지만 문제는 테이블을 몽땅 초기화한다는 문제가 있다.
 
 ```js
 // app.js
@@ -170,7 +171,7 @@ granularity를 정의하는 코드는 model에서 진행된다.
 - `hasOne` 메서드를 사용하는 모델은 참조컬럼이 생성 ❌
 - `belongsTo` 메서드를 사용하는 모델은 참조컬럼이 생성 ⭕️
 
-`Users` 모델은 `UserInfos` 모델을 가지고 있고 (has one), `UserInfos` 모델은 `Users`에게 소유된다 (belongs to). 약타입인 `UserInfo`가 FK를 가지고 있다. 
+`Users` 모델은 `UserInfos` 모델을 가지고 있고 (has one), `UserInfos` 모델은 `Users`에게 소유된다 (belongs to). 약타입인 `UserInfo`가 FK를 가지고 있다.
 
 - [?] 약성타입이 FK를 가지고 있어야 하는 이유는?
 
@@ -209,7 +210,10 @@ this.belongsTo(models.Users, { // 2. Users 모델에게 1:1 관계 설정을 합
 
 #### 1:N
 
-1 유저는 N개의 포스트를 쓸 수 있어야 한다. 따라서 
+1 유저는 N개의 포스트를 쓸 수 있어야 한다. 따라서
+
+- `Users`는 `hasMany`를 사용하여야 하고
+- `Posts`는 `belongsTo`를 사용하여 FK를 가지게 만들어야 한다.
 
 ```js
 // models/users.js
@@ -228,5 +232,24 @@ this.hasMany(models.Posts, { // 2. Posts 모델에게 1:N 관계 설정을 합�
 this.belongsTo(models.Users, { // 2. Users 모델에게 N:1 관계 설정을 합니다.
   targetKey: 'userId', // 3. Users 모델의 userId 컬럼을
   foreignKey: 'UserId', // 4. Posts 모델의 UserId 컬럼과 연결합니다.
+});
+```
+
+## Join two tables using `include`
+
+<https://sequelize.org/docs/v6/core-concepts/model-querying-finders/>
+
+```js
+Users.findOne({
+  attributes: ["userId", "email", "createdAt", "updatedAt"],
+  include: [
+    {
+      model: UserInfos, // Join할 모델
+      attributes: [     // 조회할 컬럼
+	      "name", "age", "gender", "profileImage"
+	  ],
+    }
+  ],
+  where: { userId }
 });
 ```
