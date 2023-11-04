@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T13:53:44
+updated: 2023-11-04T14:12:59
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -136,6 +136,8 @@ main();
 
 ## Relational feature with sequelize
 
+<https://sequelize.org/docs/v6/core-concepts/assocs/>
+
 SQL인데 JOIN을 안할 수가 없겠지? 그래서 foreign key(FK)가 필요하다. 이 FK를 정의하는것이 바로 `references`다.
 
 `onDelete`도 눈여겨 볼 필요가 있다. 튜플이 제거될 경우 이와 연결된 튜플들을 어떻게 할건지에 대한 정의도 같이 이루어져있다.
@@ -253,3 +255,9 @@ Users.findOne({
   where: { userId }
 });
 ```
+
+### N+1 Problem
+
+<https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading>
+
+[[Data Modeling {book-project}#N+1 Problem]]을 참조. `Users` ⇄ `UserInfos`를 한 번씩만 조회하기 위해 `include`를 사용한다. Django 기본 ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 
