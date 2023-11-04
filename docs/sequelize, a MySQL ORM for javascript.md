@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T08:52:21
+updated: 2023-11-04T13:29:58
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -52,12 +52,13 @@ npx sequelize db:migrate
 npx sequelize migration:create --name <Name>
 ```
 
-다음 [query interface {doc}](https://sequelize.org/docs/v6/other-topics/query-interface/) 문서를 확인하여 컬럼을 추가하거나 속성을 수정하는 등 다양한 수정을 해보자. `up`에는 우리가 수정하고자 하는 것들을, `down`에는 원상복구를 하기 위한 작업을 작성해 넣는것이다!
+#### query interfaces
+
+다음 [query interface {doc}](https://sequelize.org/docs/v6/other-topics/query-interface/) 문서를 확인하여 컬럼을 추가하거나 속성을 수정하는 등 다양한 수정을 해보자. 마이그레이션 파일을 새로 만들었다면 `up`에는 우리가 수정하고자 하는 것들을, `down`에는 원상복구를 하기 위한 작업을 작성해 넣는것이다!
 
 - `createTable` ⟷ `dropTable`
 - `addColumn` ⟷ `removeColumn`
 - `changeColumn` 
-- 
 
 ### 🧩  Sequelize CLI 간단하게 살펴보기!
 
@@ -130,4 +131,102 @@ async function main() {
 }
 
 main();
+```
+
+## Relational feature with sequelize
+
+SQL인데 JOIN을 안할 수가 없겠지? 그래서 foreign key(FK)가 필요하다. 이 FK를 정의하는것이 바로 `references`다.
+
+`onDelete`도 눈여겨 볼 필요가 있다. 튜플이 제거될 경우 이와 연결된 튜플들을 어떻게 할건지에 대한 정의도 같이 이루어져있다.
+
+```js
+// migrations/XXXXXXXX-create-posts.js
+
+'use strict';
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Posts', {
+      ...
+      UserId: {
+        allowNull: false, // NOT NULL
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Users', // Users 모델을 참조합니다.
+          key: 'userId', // Users 모델의 userId를 참조합니다.
+        },
+        onDelete: 'CASCADE', // 만약 Users 모델의 userId가 삭제되면, Posts 모델의 데이터가 삭제됩니다.
+      },
+      ...
+    });
+  },
+};
+```
+
+granularity를 정의하는 코드는 model에서 진행된다.
+
+#### 1:1
+
+- `hasOne` 메서드를 사용하는 모델은 참조컬럼이 생성 ❌
+- `belongsTo` 메서드를 사용하는 모델은 참조컬럼이 생성 ⭕️
+
+`Users` 모델은 `UserInfos` 모델을 가지고 있고 (has one), `UserInfos` 모델은 `Users`에게 소유된다 (belongs to). 약타입인 `UserInfo`가 FK를 가지고 있다. 
+
+- [?] 약성타입이 FK를 가지고 있어야 하는 이유는?
+
+```js
+// models/users.js
+
+'use strict';
+const { Model } = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Users extends Model {
+
+    static associate(models) {
+      // define association here
+
+      // 1. Users 모델에서
+      this.hasOne(models.UserInfos, { // 2. UserInfos 모델에게 1:1 관계 설정을 합니다.
+        sourceKey: 'userId', // 3. Users 모델의 userId 컬럼을
+        foreignKey: 'UserId', // 4. UserInfos 모델의 UserId 컬럼과 연결합니다.
+      });
+    }
+  }
+  ...
+};
+```
+
+```js
+// models/userInfos.js
+
+...
+// 1. UserInfos 모델에서
+this.belongsTo(models.Users, { // 2. Users 모델에게 1:1 관계 설정을 합니다.
+  targetKey: 'userId', // 3. Users 모델의 userId 컬럼을
+  foreignKey: 'UserId', // 4. UserInfos 모델의 UserId 컬럼과 연결합니다.
+});
+```
+
+#### 1:N
+
+1 유저는 N개의 포스트를 쓸 수 있어야 한다. 따라서 
+
+```js
+// models/users.js
+
+// 1. Users 모델에서
+this.hasMany(models.Posts, { // 2. Posts 모델에게 1:N 관계 설정을 합니다.
+  sourceKey: 'userId', // 3. Users 모델의 userId 컬럼을
+  foreignKey: 'UserId', // 4. Posts 모델의 UserId 컬럼과 연결합니다.
+});
+```
+
+```js
+// models/posts.js
+
+// 1. Posts 모델에서
+this.belongsTo(models.Users, { // 2. Users 모델에게 N:1 관계 설정을 합니다.
+  targetKey: 'userId', // 3. Users 모델의 userId 컬럼을
+  foreignKey: 'UserId', // 4. Posts 모델의 UserId 컬럼과 연결합니다.
+});
 ```
