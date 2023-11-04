@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T14:35:29
+updated: 2023-11-04T14:44:06
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -256,9 +256,11 @@ Users.findOne({
 });
 ```
 
-### N+1 Problem
+### Lazy / Eager loading
 
-- [basics-of-queries-involving-associations](https://sequelize.org/docs/v6/core-concepts/assocs/#basics-of-queries-involving-associations)
-- [eager-loading](https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading)
+- [Fetching associations - Eager Loading vs Lazy Loading](https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading)
+- [eager-loading, advanced](https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading)
 
-[[Data Modeling {book-project}#N+1 Problem]]을 참조. `Users` ⇄ `UserInfos`를 한 번씩만 조회하기 위해 `include`를 사용한다. Django 기본 ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 
+[[Data Modeling {book-project}#N+1 Problem]]을 참조. `Users` ⇄ `UserInfos`를 한 번씩만 조회하기 위해 `include`를 사용한다. Django ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 기본동작은 Lazy loading이다. 처음에 모델의 인스턴스를 불러올때 ORM은 연관테이블을 조회하지 않는다. 인스턴스의 연관테이블을 `.` 연산을 통해서 참조하려고 할 때 그제서야 쿼리를 날리게 되고 두 테이블을 JOIN한 뒤 그 튜플의 컬럼을 조사하는 것은 상황에 따라 더 낮은 성능결과를 낳을 수 있다.
+
+만약 인스턴스가 N개의 연관 테이블의 컬럼을 참조한다면 
