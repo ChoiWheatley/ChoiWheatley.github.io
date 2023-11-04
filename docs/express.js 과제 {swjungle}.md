@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-04T16:19:56
+updated: 2023-11-04T20:06:15
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -17,9 +17,9 @@ ___
 ### Mandatory
 
 - APIs
-	- 전체 게시글 조회
+	- [x] 전체 게시글 조회
 	- 게시글 조회
-	- 게시글 작성
+	- [x] 게시글 작성
 	- 게시글 수정
 	- 게시글 삭제
 	- 댓글목록 조회
