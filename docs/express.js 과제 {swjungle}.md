@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-04T15:38:44
+updated: 2023-11-04T16:19:56
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -28,3 +28,19 @@ ___
 	- 댓글삭제
 	- 회원가입
 	- 로그인
+
+- data
+	- Post
+		- title
+		- content
+		- author
+		- createdAt
+		- updatedAt
+	- Comment
+		- content
+		- author
+		- createdAt
+		- updateAt
+	- User
+		- nickname
+		- password ~~비밀번호를 그대로?~~
