@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T14:12:59
+updated: 2023-11-04T14:35:29
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -258,6 +258,7 @@ Users.findOne({
 
 ### N+1 Problem
 
-<https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading>
+- [basics-of-queries-involving-associations](https://sequelize.org/docs/v6/core-concepts/assocs/#basics-of-queries-involving-associations)
+- [eager-loading](https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading)
 
 [[Data Modeling {book-project}#N+1 Problem]]을 참조. `Users` ⇄ `UserInfos`를 한 번씩만 조회하기 위해 `include`를 사용한다. Django 기본 ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 
