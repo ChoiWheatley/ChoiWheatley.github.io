@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T14:44:06
+updated: 2023-11-04T15:04:05
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -263,4 +263,20 @@ Users.findOne({
 
 [[Data Modeling {book-project}#N+1 Problem]]을 참조. `Users` ⇄ `UserInfos`를 한 번씩만 조회하기 위해 `include`를 사용한다. Django ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 기본동작은 Lazy loading이다. 처음에 모델의 인스턴스를 불러올때 ORM은 연관테이블을 조회하지 않는다. 인스턴스의 연관테이블을 `.` 연산을 통해서 참조하려고 할 때 그제서야 쿼리를 날리게 되고 두 테이블을 JOIN한 뒤 그 튜플의 컬럼을 조사하는 것은 상황에 따라 더 낮은 성능결과를 낳을 수 있다.
 
-만약 인스턴스가 N개의 연관 테이블의 컬럼을 참조한다면 
+만약 인스턴스가 하나의 연관테이블의 컬럼을 N번 참조하게 된다면 JOIN을 N번 수행하게 되고, 즉 똑같은 테이블을 N번 쿼리하게 된다는 것이다. 이 경우 프로그래머는 인스턴스를 쿼리할 때 아예 JOIN을 완료한 커다란 테이블을 로드하는 편이 성능향상에 도움이 될 것이다. 이것을 **Eager Loading**이라고 부른다.
+
+express는 eager loading을 명시적으로 할 수 있는데, finder 함수의 인자로 `include` 속성을 추가하면 된다.
+
+```js
+const awesomeCaptain = await Captain.findOne({
+  where: {
+    name: "Jack Sparrow"
+  },
+  include: Ship
+});
+// Now the ship comes with it
+console.log('Name:', awesomeCaptain.name);
+console.log('Skill Level:', awesomeCaptain.skillLevel);
+console.log('Ship Name:', awesomeCaptain.ship.name);
+console.log('Amount of Sails:', awesomeCaptain.ship.amountOfSails);
+```
