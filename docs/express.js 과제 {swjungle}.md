@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-06T00:03:08
+updated: 2023-11-06T00:12:14
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -86,3 +86,5 @@ ___
 				}
 			]
 			```
+
+			- 저장은 잘 됐는데, 이걸 어떻게 꺼낼 수 있을지 모르겠다.
