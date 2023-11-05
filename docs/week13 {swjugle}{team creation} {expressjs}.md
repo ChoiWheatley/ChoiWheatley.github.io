@@ -4,7 +4,7 @@ tags:
 description:
 title: week13 {swjugle}{team creation} {expressjs}
 created: 2023-10-31T10:06:41
-updated: 2023-11-04T13:09:20
+updated: 2023-11-05T17:12:22
 ---
 - [[0120 swjungle 🤖]]
 ___
@@ -65,3 +65,4 @@ ___
 **2023-11-05**
 
 - [[나만의 무기 갖기, 서로 소개 에세이 {swjungle}]]
+- 
