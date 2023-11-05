@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-05T22:35:32
+updated: 2023-11-05T22:45:17
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -166,7 +166,7 @@ module.exports = {
 };
 ```
 
-granularity를 정의하는 코드는 model에서 진행된다.
+cardinality를 정의하는 코드는 **model**에서 진행된다.
 
 #### 1:1
 
