@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-05T23:16:17
+updated: 2023-11-05T23:47:52
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -248,6 +248,10 @@ this.belongsTo(models.Users, { // 2. Users 모델에게 N:1 관계 설정을 합
 });
 ```
 
+#### M:N
+
+[[Many-To-Many relationships {sequelize} {todo}]]
+
 ## Join two tables using `include`
 
 <https://sequelize.org/docs/v6/core-concepts/model-querying-finders/>
@@ -267,7 +271,7 @@ Users.findOne({
 });
 ```
 
-### Lazy / Eager loading
+### Lazy / Eager loading and N+1 Problem
 
 - [Fetching associations - Eager Loading vs Lazy Loading](https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading)
 - [eager-loading, advanced](https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading)

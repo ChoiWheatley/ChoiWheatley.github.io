@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-05T20:32:35
+updated: 2023-11-06T00:03:08
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -55,15 +55,34 @@ ___
 
 - Post **has many** Comment 관계
 	- 일단 migration이 필요함. 스키마를 바꿔야한다.
-	- Post
-		- title
-		- content
-		- author
-		- createdAt
-		- updatedAt
-		- **comment**
+	- Comment
+		- ...
+		- postId (FK)
 
-```mermaid
-erDiagram
-	Post ||--o{ Comment : ""
-```
+	 ```mermaid
+		erDiagram
+		Post ||--o{ Comment : ""
+	```
+
+	- 바뀌는 Posts api routing
+		- `GET /post/:postId/comment`  
+			- response: 
+
+			```json
+			"data": [
+				{
+					"author": "ChoiWheatley",
+					"commentId": 2,
+					"content": "my first comment",
+					"createdAt": "2023-11-05T14:29:44.000Z",
+					"updatedAt": "2023-11-05T14:29:44.000Z"
+				},
+				{
+					"author": "ChoiWheatley",
+					"commentId": 2,
+					"content": "my first comment2",
+					"createdAt": "2023-11-05T14:29:44.000Z",
+					"updatedAt": "2023-11-05T14:29:44.000Z"
+				}
+			]
+			```
