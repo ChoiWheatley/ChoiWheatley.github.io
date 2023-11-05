@@ -61,7 +61,7 @@ ___
 		- author
 		- createdAt
 		- updatedAt
-		- **
+		- **comment**
 
 ```mermaid
 erDiagram
