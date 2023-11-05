@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-05T23:47:52
+updated: 2023-11-06T00:47:39
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -252,29 +252,46 @@ this.belongsTo(models.Users, { // 2. Users 모델에게 N:1 관계 설정을 합
 
 [[Many-To-Many relationships {sequelize} {todo}]]
 
-## Join two tables using `include`
+## Lazy / Eager loading and N+1 Problem
 
-<https://sequelize.org/docs/v6/core-concepts/model-querying-finders/>
+- [Fetching associations - Eager Loading vs Lazy Loading](https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading)
+- [eager-loading, advanced](https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading)
+- [model-querying-finders](https://sequelize.org/docs/v6/core-concepts/model-querying-finders/)
+
+Lazy Loading 예제코드:
 
 ```js
-Users.findOne({
+const user = await Users.findOne({
+	where { userId }
+});
+
+user.nickname;
+user.password;
+await user.getPosts(); // automatically created method `[get|set|create]<Model>[s]
+await user.getComments(); // automatically created method
+```
+
+Eager Loading 예제코드:
+
+```js
+const user = await Users.findOne({
   attributes: ["userId", "email", "createdAt", "updatedAt"],
   include: [
     {
-      model: UserInfos, // Join할 모델
-      attributes: [     // 조회할 컬럼
+      model: UserInfos, // Join할 모델 (mandatory)
+      attributes: [     // 조회할 컬럼 (optional)
 	      "name", "age", "gender", "profileImage"
 	  ],
     }
   ],
   where: { userId }
 });
+
+user.nickname;
+user.password;
+user.posts; // 자동으로 복수형 이름을 가진 필드가 생성!
+user.comments; // 자동으로 복수형 이름을 가진 필드가 생성!
 ```
-
-### Lazy / Eager loading and N+1 Problem
-
-- [Fetching associations - Eager Loading vs Lazy Loading](https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading)
-- [eager-loading, advanced](https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading)
 
 [[Data Modeling {book-project}#N+1 Problem]]을 참조. `Users` ⇄ `UserInfos`를 한 번씩만 조회하기 위해 `include`를 사용한다. Django ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 기본동작은 Lazy loading이다. 처음에 모델의 인스턴스를 불러올때 ORM은 연관테이블을 조회하지 않는다. 인스턴스의 연관테이블을 `.` 연산을 통해서 참조하려고 할 때 그제서야 쿼리를 날리게 되고 두 테이블을 JOIN한 뒤 그 튜플의 컬럼을 조사하는 것은 상황에 따라 더 낮은 성능결과를 낳을 수 있다.
 
