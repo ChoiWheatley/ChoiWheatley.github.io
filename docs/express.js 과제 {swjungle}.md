@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-05T17:17:49
+updated: 2023-11-05T20:32:35
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -30,21 +30,20 @@ ___
 	- 회원가입
 	- 로그인
 
-- data
-	- Post
-		- title
-		- content
-		- author
-		- createdAt
-		- updatedAt
-	- Comment
-		- content
-		- author
-		- createdAt
-		- updateAt
-	- User
-		- nickname
-		- password ~~비밀번호를 그대로?~~
+- Post
+	- title
+	- content
+	- author
+	- createdAt
+	- updatedAt
+- Comment
+	- content
+	- author
+	- createdAt
+	- updateAt
+- User
+	- nickname
+	- password ~~비밀번호를 그대로?~~
 
 ## milestone
 
@@ -52,4 +51,19 @@ ___
 
 ### 게시글 + 댓글 회원없이 연결
 
-회원없이 CRUD 가능한 Post, Comment 빠르게 구현하고 DB에 잘 들어가는지 테스트.
+- ~~회원없이 CRUD 가능한 Post, Comment 빠르게 구현하고 DB에 잘 들어가는지 테스트.~~
+
+- Post **has many** Comment 관계
+	- 일단 migration이 필요함. 스키마를 바꿔야한다.
+	- Post
+		- title
+		- content
+		- author
+		- createdAt
+		- updatedAt
+		- **
+
+```mermaid
+erDiagram
+	Post ||--o{ Comment : ""
+```
