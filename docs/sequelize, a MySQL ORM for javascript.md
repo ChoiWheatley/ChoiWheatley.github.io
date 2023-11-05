@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-05T22:45:17
+updated: 2023-11-05T23:16:17
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -15,8 +15,8 @@ ___
 
 ## 설치 및 마이그레이션
 
-- https://sequelize.org/docs/v6/other-topics/migrations/
-- https://sequelize.org/docs/v6/core-concepts/model-basics/
+- <https://sequelize.org/docs/v6/other-topics/migrations/>
+- <https://sequelize.org/docs/v6/core-concepts/model-basics/>
 
 ```shell
 npm install sequelize # js 파일 안에서 사용하기 위한 패키지
@@ -135,9 +135,13 @@ async function main() {
 main();
 ```
 
+### `Users` table == `User` model
 
+<https://sequelize.org/docs/v6/core-concepts/model-basics/#concept>
 
 > A model in Sequelize has a name. This name does not have to be the same name of the table it represents in the database. Usually, models have singular names (such as User) while tables have pluralized names (such as Users), although this is fully configurable.
+
+마이그레이션 파일에 정의한 테이블의 이름은 복수형으로 쓰고 모델 파일에 정의한 모델의 이름은 단수형으로 써버리는 불상사가 일어났지만 한동안 발각되지 않았다. 심지어 진짜 DB 테이블에 잘 써지기도 해서 도대체 어디서 이 둘을 엮는건지 알 수가 없었다. 공식문서를 통해 알게된 것은, 굳이 모델 이름과 테이블 이름이 일치할 필요가 없다는 것이었다. 그마저도 모델 이름은 단수, 테이블 이름은 복수여도 **fully configurable**하다고... 진짜 이런 우연의 일치가.....
 
 ## Relational feature with sequelize
 
@@ -170,6 +174,8 @@ module.exports = {
   },
 };
 ```
+
+___
 
 cardinality를 정의하는 코드는 **model**에서 진행된다.
 
