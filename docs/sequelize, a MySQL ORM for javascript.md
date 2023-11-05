@@ -15,7 +15,8 @@ ___
 
 ## 설치 및 마이그레이션
 
-[sequelize 문서](https://sequelize.org/docs/v6/other-topics/migrations/)
+- https://sequelize.org/docs/v6/other-topics/migrations/
+- https://sequelize.org/docs/v6/core-concepts/model-basics/
 
 ```shell
 npm install sequelize # js 파일 안에서 사용하기 위한 패키지
@@ -133,6 +134,10 @@ async function main() {
 
 main();
 ```
+
+
+
+> A model in Sequelize has a name. This name does not have to be the same name of the table it represents in the database. Usually, models have singular names (such as User) while tables have pluralized names (such as Users), although this is fully configurable.
 
 ## Relational feature with sequelize
 
