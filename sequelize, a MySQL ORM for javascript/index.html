@@ -4793,6 +4793,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Many-To-Many%20relationships%20%7Bsequelize%7D%20%7Btodo%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  Many-To-Many relationships {sequelize} {todo}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../ManyToManyField%20%7Bdjango%7D/" class="md-tabs__link">
         
   
@@ -26604,6 +26621,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../Many-To-Many%20relationships%20%7Bsequelize%7D%20%7Btodo%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Many-To-Many relationships {sequelize} {todo}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ManyToManyField%20%7Bdjango%7D/" class="md-nav__link">
         
   
@@ -35896,6 +35932,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#users-table-user-model" class="md-nav__link">
+    Users table == User model
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -35923,28 +35966,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mn" class="md-nav__link">
+    M:N
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#join-two-tables-using-include" class="md-nav__link">
-    Join two tables using include
+  <a href="#lazy-eager-loading-and-n1-problem" class="md-nav__link">
+    Lazy / Eager loading and N+1 Problem
   </a>
-  
-    <nav class="md-nav" aria-label="Join two tables using include">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lazy-eager-loading" class="md-nav__link">
-    Lazy / Eager loading
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -42058,6 +42095,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#users-table-user-model" class="md-nav__link">
+    Users table == User model
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -42085,28 +42129,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mn" class="md-nav__link">
+    M:N
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#join-two-tables-using-include" class="md-nav__link">
-    Join two tables using include
+  <a href="#lazy-eager-loading-and-n1-problem" class="md-nav__link">
+    Lazy / Eager loading and N+1 Problem
   </a>
-  
-    <nav class="md-nav" aria-label="Join two tables using include">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lazy-eager-loading" class="md-nav__link">
-    Lazy / Eager loading
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -42136,7 +42174,10 @@
 </ul>
 <hr />
 <h2 id="_1">설치 및 마이그레이션<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><a href="https://sequelize.org/docs/v6/other-topics/migrations/">sequelize 문서</a></p>
+<ul>
+<li><a href="https://sequelize.org/docs/v6/other-topics/migrations/">https://sequelize.org/docs/v6/other-topics/migrations/</a></li>
+<li><a href="https://sequelize.org/docs/v6/core-concepts/model-basics/">https://sequelize.org/docs/v6/core-concepts/model-basics/</a></li>
+</ul>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>sequelize<span class="w"> </span><span class="c1"># js 파일 안에서 사용하기 위한 패키지</span>
 npm<span class="w"> </span>install<span class="w"> </span>mysql2<span class="w"> </span><span class="c1"># sequelize가 의존하는 패키지</span>
 
@@ -42241,10 +42282,16 @@ Please specify a command
 
 <span class="nx">main</span><span class="p">();</span>
 </code></pre></div>
+<h3 id="users-table-user-model"><code>Users</code> table == <code>User</code> model<a class="headerlink" href="#users-table-user-model" title="Permanent link">#</a></h3>
+<p><a href="https://sequelize.org/docs/v6/core-concepts/model-basics/#concept">https://sequelize.org/docs/v6/core-concepts/model-basics/#concept</a></p>
+<blockquote>
+<p>A model in Sequelize has a name. This name does not have to be the same name of the table it represents in the database. Usually, models have singular names (such as User) while tables have pluralized names (such as Users), although this is fully configurable.</p>
+</blockquote>
+<p>마이그레이션 파일에 정의한 테이블의 이름은 복수형으로 쓰고 모델 파일에 정의한 모델의 이름은 단수형으로 써버리는 불상사가 일어났지만 한동안 발각되지 않았다. 심지어 진짜 DB 테이블에 잘 써지기도 해서 도대체 어디서 이 둘을 엮는건지 알 수가 없었다. 공식문서를 통해 알게된 것은, 굳이 모델 이름과 테이블 이름이 일치할 필요가 없다는 것이었다. 그마저도 모델 이름은 단수, 테이블 이름은 복수여도 <strong>fully configurable</strong>하다고... 진짜 이런 우연의 일치가.....</p>
 <h2 id="relational-feature-with-sequelize">Relational feature with sequelize<a class="headerlink" href="#relational-feature-with-sequelize" title="Permanent link">#</a></h2>
 <p><a href="https://sequelize.org/docs/v6/core-concepts/assocs/">https://sequelize.org/docs/v6/core-concepts/assocs/</a></p>
-<p>SQL인데 JOIN을 안할 수가 없겠지? 그래서 foreign key(FK)가 필요하다. 이 FK를 정의하는것이 바로 <code>references</code>다.</p>
-<p><code>onDelete</code>도 눈여겨 볼 필요가 있다. 튜플이 제거될 경우 이와 연결된 튜플들을 어떻게 할건지에 대한 정의도 같이 이루어져있다.</p>
+<p>SQL인데 JOIN을 안할 수가 없겠지? 그래서 foreign key(FK)가 필요하다. 이 FK를 정의하는것이 바로 <code>references</code>다. 아래 코드는 migration을 통해 데이터베이스에 스키마를 정의한다. <strong>데이터베이스를 위한 마이그레이션과 sequelize를 위한 모델은 엄연히 다르다!!!</strong></p>
+<p>참고로, FK를 컬럼에 넣는것은 불가능하다. 왜냐하면 FK Constraint에 저촉되기 때문이란다.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// migrations/XXXXXXXX-create-posts.js</span>
 
 <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
@@ -42267,7 +42314,8 @@ Please specify a command
 <span class="w">  </span><span class="p">},</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>granularity를 정의하는 코드는 model에서 진행된다.</p>
+<hr />
+<p>cardinality를 정의하는 코드는 <strong>model</strong>에서 진행된다.</p>
 <h4 id="11">1:1<a class="headerlink" href="#11" title="Permanent link">#</a></h4>
 <ul>
 <li><code>hasOne</code> 메서드를 사용하는 모델은 참조컬럼이 생성 ❌</li>
@@ -42328,26 +42376,44 @@ Please specify a command
 <span class="w">  </span><span class="nx">foreignKey</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;UserId&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// 4. Posts 모델의 UserId 컬럼과 연결합니다.</span>
 <span class="p">});</span>
 </code></pre></div>
-<h2 id="join-two-tables-using-include">Join two tables using <code>include</code><a class="headerlink" href="#join-two-tables-using-include" title="Permanent link">#</a></h2>
-<p><a href="https://sequelize.org/docs/v6/core-concepts/model-querying-finders/">https://sequelize.org/docs/v6/core-concepts/model-querying-finders/</a></p>
-<div class="highlight"><pre><span></span><code><span class="nx">Users</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span>
+<h4 id="mn">M:N<a class="headerlink" href="#mn" title="Permanent link">#</a></h4>
+<p><a href="../Many-To-Many%20relationships%20%7Bsequelize%7D%20%7Btodo%7D/">Many-To-Many relationships {sequelize} {todo}</a></p>
+<h2 id="lazy-eager-loading-and-n1-problem">Lazy / Eager loading and N+1 Problem<a class="headerlink" href="#lazy-eager-loading-and-n1-problem" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading">Fetching associations - Eager Loading vs Lazy Loading</a></li>
+<li><a href="https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading">eager-loading, advanced</a></li>
+<li><a href="https://sequelize.org/docs/v6/core-concepts/model-querying-finders/">model-querying-finders</a></li>
+</ul>
+<p>Lazy Loading 예제코드:</p>
+<p>자동으로 생성된 <code>[get|set|create]&lt;Model&gt;[s]</code> 메서드 (<code>getPosts</code>, <code>getComments</code>, ...) 들에 관한 자세한 정보는 <a href="https://sequelize.org/docs/v6/core-concepts/assocs/#special-methodsmixins-added-to-instances">Special methods/mixins added to instances</a>에서 확인바람. 문서에는 확인하지 못했으나, 일반 쿼리처리 메서드와 동일하게 옵션 필드를 넣을 수 있다. </p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Users</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">where</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">userId</span><span class="w"> </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">user</span><span class="p">.</span><span class="nx">nickname</span><span class="p">;</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">getPosts</span><span class="p">();</span><span class="w"> </span><span class="c1">// automatically created method</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">getComments</span><span class="p">({</span><span class="w"> </span><span class="nx">order</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DESC&quot;</span><span class="p">]]</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// option 넣을 수 있다~!</span>
+</code></pre></div>
+<p>Eager Loading 예제코드:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Users</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;userId&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;updatedAt&quot;</span><span class="p">],</span>
 <span class="w">  </span><span class="nx">include</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="nx">UserInfos</span><span class="p">,</span><span class="w"> </span><span class="c1">// Join할 모델</span>
-<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">     </span><span class="c1">// 조회할 컬럼</span>
+<span class="w">      </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="nx">UserInfos</span><span class="p">,</span><span class="w"> </span><span class="c1">// Join할 모델 (mandatory)</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">     </span><span class="c1">// 조회할 컬럼 (optional)</span>
 <span class="w">          </span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gender&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;profileImage&quot;</span>
 <span class="w">      </span><span class="p">],</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">userId</span><span class="w"> </span><span class="p">}</span>
 <span class="p">});</span>
+
+<span class="nx">user</span><span class="p">.</span><span class="nx">nickname</span><span class="p">;</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">posts</span><span class="p">;</span><span class="w"> </span><span class="c1">// 자동으로 복수형 이름을 가진 필드가 생성!</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">comments</span><span class="p">;</span><span class="w"> </span><span class="c1">// 자동으로 복수형 이름을 가진 필드가 생성!</span>
 </code></pre></div>
-<h3 id="lazy-eager-loading">Lazy / Eager loading<a class="headerlink" href="#lazy-eager-loading" title="Permanent link">#</a></h3>
-<ul>
-<li><a href="https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading">Fetching associations - Eager Loading vs Lazy Loading</a></li>
-<li><a href="https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading">eager-loading, advanced</a></li>
-</ul>
 <p><a href="../Data%20Modeling%20%7Bbook-project%7D/#n1-problem">Data Modeling {book-project}#N+1 Problem</a>을 참조. <code>Users</code> ⇄ <code>UserInfos</code>를 한 번씩만 조회하기 위해 <code>include</code>를 사용한다. Django ORM이 N+1 문제를 어떻게 해결했는지는 기억이 잘 안나지만 여튼 기본동작은 Lazy loading이다. 처음에 모델의 인스턴스를 불러올때 ORM은 연관테이블을 조회하지 않는다. 인스턴스의 연관테이블을 <code>.</code> 연산을 통해서 참조하려고 할 때 그제서야 쿼리를 날리게 되고 두 테이블을 JOIN한 뒤 그 튜플의 컬럼을 조사하는 것은 상황에 따라 더 낮은 성능결과를 낳을 수 있다.</p>
 <p>만약 인스턴스가 하나의 연관테이블의 컬럼을 N번 참조하게 된다면 JOIN을 N번 수행하게 되고, 즉 똑같은 테이블을 N번 쿼리하게 된다는 것이다. 이 경우 프로그래머는 인스턴스를 쿼리할 때 아예 JOIN을 완료한 커다란 테이블을 로드하는 편이 성능향상에 도움이 될 것이다. 이것을 <strong>Eager Loading</strong>이라고 부른다.</p>
 <p>express는 eager loading을 명시적으로 할 수 있는데, finder 함수의 인자로 <code>include</code> 속성을 추가하면 된다.</p>

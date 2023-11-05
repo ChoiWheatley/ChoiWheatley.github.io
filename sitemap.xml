@@ -1346,6 +1346,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Many-To-Many%20relationships%20%7Bsequelize%7D%20%7Btodo%7D/</loc>
+         <lastmod>2023-11-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/ManyToManyField%20%7Bdjango%7D/</loc>
          <lastmod>2023-11-05</lastmod>
          <changefreq>daily</changefreq>

@@ -4793,6 +4793,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Many-To-Many%20relationships%20%7Bsequelize%7D%20%7Btodo%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  Many-To-Many relationships {sequelize} {todo}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../ManyToManyField%20%7Bdjango%7D/" class="md-tabs__link">
         
   
@@ -26604,6 +26621,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../Many-To-Many%20relationships%20%7Bsequelize%7D%20%7Btodo%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Many-To-Many relationships {sequelize} {todo}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ManyToManyField%20%7Bdjango%7D/" class="md-nav__link">
         
   
@@ -42060,9 +42096,8 @@
 </ul>
 </li>
 <li>
-<p>data</p>
+<p>Post</p>
 <ul>
-<li>Post<ul>
 <li>title</li>
 <li>content</li>
 <li>author</li>
@@ -42083,14 +42118,61 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h2 id="milestone">milestone<a class="headerlink" href="#milestone" title="Permanent link">#</a></h2>
 <blockquote>
 <p>게시글 + 댓글 회원없이 연결 ⟶ 회원관리 with <a href="../Securities%20about%20%7Bhttps%7D%20and%20%7Bjwt%20%7Bcookie%7D%2C%20%7Bsession%7D%7D/">JWT</a> ⟶ Post, Comment에 <code>author</code> FK로 변경 ⟶ 배포</p>
 </blockquote>
 <h3 id="_1">게시글 + 댓글 회원없이 연결<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
-<p>회원없이 CRUD 가능한 Post, Comment 빠르게 구현하고 DB에 잘 들어가는지 테스트.</p>
+<ul>
+<li>
+<p><del>회원없이 CRUD 가능한 Post, Comment 빠르게 구현하고 DB에 잘 들어가는지 테스트.</del></p>
+</li>
+<li>
+<p>Post <strong>has many</strong> Comment 관계</p>
+<ul>
+<li>일단 migration이 필요함. 스키마를 바꿔야한다.</li>
+<li>Comment<ul>
+<li>...</li>
+<li>postId (FK)</li>
+</ul>
+</li>
+</ul>
+<p><code>mermaid
+    erDiagram
+    Post ||--o{ Comment : ""</code></p>
+<ul>
+<li>바뀌는 Posts api routing<ul>
+<li>
+<p><code>GET /post/:postId/comment</code>  </p>
+<ul>
+<li>response: </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChoiWheatley&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;commentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my first comment&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-11-05T14:29:44.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-11-05T14:29:44.000Z&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ChoiWheatley&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;commentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my first comment2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;createdAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-11-05T14:29:44.000Z&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;updatedAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-11-05T14:29:44.000Z&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<ul>
+<li>저장은 잘 됐는데, 이걸 어떻게 꺼낼 수 있을지 모르겠다. <a href="https://sequelize.org/docs/v6/core-concepts/assocs/#fetching-associations---eager-loading-vs-lazy-loading">fetching associations</a> 참고</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
