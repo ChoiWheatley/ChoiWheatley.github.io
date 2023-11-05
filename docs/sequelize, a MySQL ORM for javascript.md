@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-06T01:04:52
+updated: 2023-11-06T01:14:30
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -260,7 +260,7 @@ this.belongsTo(models.Users, { // 2. Users 모델에게 N:1 관계 설정을 합
 
 Lazy Loading 예제코드:
 
-자동으로 생성된 `[get|set|create]<Model>[s]` 메서드 (`getPosts`, `getComments`, ...) 들에 관한 자세한 정보는 [Special methods/mixins added to instances](https://sequelize.org/docs/v6/core-concepts/assocs/#special-methodsmixins-added-to-instances)에서 확인바람.
+자동으로 생성된 `[get|set|create]<Model>[s]` 메서드 (`getPosts`, `getComments`, ...) 들에 관한 자세한 정보는 [Special methods/mixins added to instances](https://sequelize.org/docs/v6/core-concepts/assocs/#special-methodsmixins-added-to-instances)에서 확인바람. 문서에는 확인하지 못했으나, 일반 쿼리처리 메서드와 동일하게 옵션 필드를 넣을 수 있다. 
 
 ```js
 const user = await Users.findOne({
@@ -270,7 +270,7 @@ const user = await Users.findOne({
 user.nickname;
 user.password;
 await user.getPosts(); // automatically created method
-await user.getComments(); // automatically created method
+await user.getComments({ order: [["createdAt", "DESC"]] }); // option 넣을 수 있다~!
 ```
 
 Eager Loading 예제코드:
