@@ -4,7 +4,7 @@ tags:
 description:
 title: sequelize, a MySQL ORM for javascript
 created: 2023-11-03T19:47:03
-updated: 2023-11-04T15:04:05
+updated: 2023-11-05T22:35:32
 ---
 - [[0018 Javascript ☕️]]
 - [[express.js]]
@@ -138,9 +138,9 @@ main();
 
 <https://sequelize.org/docs/v6/core-concepts/assocs/>
 
-SQL인데 JOIN을 안할 수가 없겠지? 그래서 foreign key(FK)가 필요하다. 이 FK를 정의하는것이 바로 `references`다.
+SQL인데 JOIN을 안할 수가 없겠지? 그래서 foreign key(FK)가 필요하다. 이 FK를 정의하는것이 바로 `references`다. 아래 코드는 migration을 통해 데이터베이스에 스키마를 정의한다. <strong>데이터베이스를 위한 마이그레이션과 sequelize를 위한 모델은 엄연히 다르다!!!</strong>
 
-`onDelete`도 눈여겨 볼 필요가 있다. 튜플이 제거될 경우 이와 연결된 튜플들을 어떻게 할건지에 대한 정의도 같이 이루어져있다.
+참고로, FK를 컬럼에 넣는것은 불가능하다. 왜냐하면 FK Constraint에 저촉되기 때문이란다.
 
 ```js
 // migrations/XXXXXXXX-create-posts.js
