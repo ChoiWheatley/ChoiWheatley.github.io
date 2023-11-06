@@ -4,7 +4,7 @@ tags:
 description:
 title: jsonwebtoken npm + user authentication authorization api
 created: 2023-11-03T19:29:19
-updated: 2023-11-06T17:52:36
+updated: 2023-11-06T18:03:34
 ---
 - <https://www.npmjs.com/package/jsonwebtoken>
 - [[express.js]]
@@ -15,6 +15,30 @@ ___
 JWT 라이브러리.
 
 JWT는 누구나 복호화가 가능하기 때문에 비밀번호 같은걸 저장하면 안된다. JWT의 목적은 페이로드가 변조됐는지 여부를 검사하기 위해 탄생했다는 거 명심
+
+## jsonwebtoken API
+
+- 암호화
+
+```js
+const jwt = require("jsonwebtoken");
+const token = jwt.sign(mydata, secretKey);
+```
+
+- 복호화
+
+```js
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteVBheWxvYWREYXRhIjoxMjM0LCJpYXQiOjE2Njc1NjE0NDB9.nvYSsLsT8jp7IfkbB2seCNeuLqRBgrrzDjKRFXjvoUE";
+const decodedValue = jwt.decode(token);
+```
+
+- [검사](https://www.npmjs.com/package/jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback)
+
+> Returns the payload decoded if the signature is valid and optional expiration, audience, or issuer are valid. If not, it will throw the error.
+
+```js
+
+```
 
 ## Login API with JWT
 
@@ -37,22 +61,6 @@ app.post("/login", async (req, res) => {
 	res.cookie("sparta", `Bearer ${userJWT}`);
 	return res.status(200).end();
 });
-```
-
-## jsonwebtoken API
-
-- 암호화
-
-```js
-const jwt = require("jsonwebtoken");
-const token = jwt.sign(mydata, secretKey);
-```
-
-- 복호화
-
-```js
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteVBheWxvYWREYXRhIjoxMjM0LCJpYXQiOjE2Njc1NjE0NDB9.nvYSsLsT8jp7IfkbB2seCNeuLqRBgrrzDjKRFXjvoUE";
-const decodedValue = jwt.decode(token);
 ```
 
 - login
