@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T07:31:58
+updated: 2023-11-07T07:39:34
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -163,6 +163,8 @@ erDiagram
 
 안해. 대신 postman에 문서를 만들어주는 기능을 활용할거야
 
+- [ ] Postman Document 여기에 붙여넣으세요
+
 ### Token Blacklist for Logged Out User
 
 - [ ] **access token & refresh token**
@@ -180,7 +182,7 @@ erDiagram
 }
 ```
 
-먼저 api부터. `/api/token/refresh`는 access token과 refresh token 모두를 발급한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.
+먼저 api부터. `/api/token/refresh`는 access token과 refresh token 모두를 발급하고 기존 토큰들을 무효화 처리해야한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.
 
 `/api/login` 또한 access token, refresh token을 모두 발급해야겠다.
 
