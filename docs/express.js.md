@@ -58,7 +58,7 @@ node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하�
 
 ## JWT
 
-[[jsonwebtoken npm]]
+[[jsonwebtoken npm + user authentication authorization api]]
 
 **ai 요약**
 
