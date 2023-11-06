@@ -4,11 +4,12 @@ tags:
 description:
 title: jsonwebtoken npm
 created: 2023-11-03T19:29:19
-updated: 2023-11-03T19:39:20
+updated: 2023-11-06T13:33:35
 ---
 - <https://www.npmjs.com/package/jsonwebtoken>
 - [[express.js]]
 - [[Securities about {https} and {jwt {cookie}, {session}}]]
+- might depends on [cookie-parser](https://www.npmjs.com/package/cookie-parser)
 ___
 
 JWT 라이브러리.
@@ -16,7 +17,7 @@ JWT 라이브러리.
 ```js
 // 암호화
 const jwt = require("jsonwebtoken");
-const token = jwt.sign({ myPayloadData: 1234 }, "mysecretkey");
+const token = jwt.sign({ myPayloadData: 1234 }, "<PrivateKey>");
 console.log(token); // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteVBheWxvYWREYXRhIjoxMjM0LCJpYXQiOjE2Njc1NjE0NDB9.nvYSsLsT8jp7IfkbB2seCNeuLqRBgrrzDjKRFXjvoUE
 
 // 복호화
