@@ -4,12 +4,12 @@ tags:
 description:
 title: jsonwebtoken npm
 created: 2023-11-03T19:29:19
-updated: 2023-11-06T13:43:40
+updated: 2023-11-06T13:53:53
 ---
 - <https://www.npmjs.com/package/jsonwebtoken>
 - [[express.js]]
 - [[Securities about {https} and {jwt {cookie}, {session}}]]
-- might depends on [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+- might depends on [[cookie-parser]] 
 ___
 
 JWT 라이브러리.
@@ -62,5 +62,5 @@ const token = jwt.sign(mydata, secretKey);
 
 ```js
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteVBheWxvYWREYXRhIjoxMjM0LCJpYXQiOjE2Njc1NjE0NDB9.nvYSsLsT8jp7IfkbB2seCNeuLqRBgrrzDjKRFXjvoUE";
-const decodedValue = 
+const decodedValue = jwt.decode(token);
 ```
