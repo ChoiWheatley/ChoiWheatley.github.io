@@ -4,7 +4,7 @@ tags:
 description:
 title: jsonwebtoken npm + user authentication authorization api
 created: 2023-11-03T19:29:19
-updated: 2023-11-06T18:03:34
+updated: 2023-11-06T20:45:37
 ---
 - <https://www.npmjs.com/package/jsonwebtoken>
 - [[express.js]]
@@ -35,10 +35,6 @@ const decodedValue = jwt.decode(token);
 - [검사](https://www.npmjs.com/package/jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback)
 
 > Returns the payload decoded if the signature is valid and optional expiration, audience, or issuer are valid. If not, it will throw the error.
-
-```js
-
-```
 
 ## Login API with JWT
 

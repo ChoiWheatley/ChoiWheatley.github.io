@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-06T20:24:17
+updated: 2023-11-06T20:46:46
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -50,6 +50,8 @@ ___
 > 게시글 + 댓글 회원없이 연결 ⟶ 회원관리 with [[Securities about {https} and {jwt {cookie}, {session}}|JWT]] ⟶ Post, Comment에 `author` FK로 변경 ⟶ 배포
 
 ### 게시글 + 댓글 회원없이 연결
+
+[[sequelize, a MySQL ORM for javascript]]
 
 - ~~회원없이 CRUD 가능한 Post, Comment 빠르게 구현하고 DB에 잘 들어가는지 테스트.~~
 
