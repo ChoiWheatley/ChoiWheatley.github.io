@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-06T19:40:21
+updated: 2023-11-06T20:24:17
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -112,4 +112,39 @@ router.get("/testjwt", (req, res) => {
 });
 ```
 
-- [ ] plain password가 그대로 저장되는 문제, 
+- [ ] plain password가 그대로 저장되는 문제. [[bcypt npm]]
+- [ ] secret key를 .env 또는 환경변수에 저장해서 보안성을 높이자.
+- [ ] refresh token을 발급하여 access token 만료시 재발급에 활용하자.
+
+### Authorization
+
+테이블 간에 연관관계를 재설정해야함. Posts, Comments 테이블에 Users에 대한 FK가 들어가야 한다.
+
+```mermaid
+erDiagram
+	Users ||--o{ Posts: posts
+	Users ||--o{ Comments: comments
+	Posts ||--o{ Comments: ""
+
+	Users {
+		int userId PK
+		string nickname
+		string password
+	}
+
+	Posts {
+		int postId PK
+		int userId FK
+		string title
+		string content
+	}
+ 
+	Comments {
+		int commentId PK
+		int postId FK
+		int userId FK
+		string content
+	}
+```
+
+### 배포
