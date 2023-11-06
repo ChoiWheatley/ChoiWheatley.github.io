@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T02:48:13
+updated: 2023-11-07T04:03:30
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -155,4 +155,5 @@ erDiagram
 
 - ec2 생성 및 리포지토리 클론해오기
 - [nodesource](https://github.com/nodesource/distributions#installation-instructions)를 참조하여 nodejs 바이너리 설치하기 (어차피 개발자 도구가 설치될 필요가 없으므로)
+- [pm2](https://www.npmjs.com/package/pm2)를 사용하여 백그라운드 프로세스로 실행시킨다. [pm2 명령어 모음](https://pm2.keymetrics.io/docs/usage/process-management/)
 - 
