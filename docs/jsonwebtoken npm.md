@@ -4,7 +4,7 @@ tags:
 description:
 title: jsonwebtoken npm
 created: 2023-11-03T19:29:19
-updated: 2023-11-06T13:33:35
+updated: 2023-11-06T13:43:40
 ---
 - <https://www.npmjs.com/package/jsonwebtoken>
 - [[express.js]]
@@ -47,4 +47,20 @@ app.post("/login", async (req, res) => {
 	res.cookie("sparta", `Bearer ${userJWT}`);
 	return res.status(200).end();
 });
+```
+
+## jsonwebtoken API
+
+- 암호화
+
+```js
+const jwt = require("jsonwebtoken");
+const token = jwt.sign(mydata, secretKey);
+```
+
+- 복호화
+
+```js
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteVBheWxvYWREYXRhIjoxMjM0LCJpYXQiOjE2Njc1NjE0NDB9.nvYSsLsT8jp7IfkbB2seCNeuLqRBgrrzDjKRFXjvoUE";
+const decodedValue = 
 ```
