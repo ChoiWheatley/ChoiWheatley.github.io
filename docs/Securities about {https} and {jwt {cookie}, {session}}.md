@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-24T08:33:57
-updated: 2023-11-06T16:31:13
+updated: 2023-11-07T05:37:40
 title: Securities about {https} and {jwt {cookie}, {session}}
 ---
 
