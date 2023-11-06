@@ -111,3 +111,5 @@ router.get("/testjwt", (req, res) => {
   }
 });
 ```
+
+- [ ] plain password가 그대로 저장되는 문제, 
