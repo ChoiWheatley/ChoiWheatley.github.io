@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T04:03:30
+updated: 2023-11-07T04:35:40
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -115,7 +115,9 @@ router.get("/testjwt", (req, res) => {
 ```
 
 - [ ] plain password가 그대로 저장되는 문제. [[bcypt npm]]
-- [ ] secret key를 .env 또는 환경변수에 저장해서 보안성을 높이자.
+- [x] secret key를 .env 또는 환경변수에 저장해서 보안성을 높이자. 
+	- `openssl rand -base64 32`
+	- [npm install dotenv](https://www.npmjs.com/package/dotenv)
 - [ ] refresh token을 발급하여 access token 만료시 재발급에 활용하자.
 
 ### Authorization
@@ -157,3 +159,7 @@ erDiagram
 - [nodesource](https://github.com/nodesource/distributions#installation-instructions)를 참조하여 nodejs 바이너리 설치하기 (어차피 개발자 도구가 설치될 필요가 없으므로)
 - [pm2](https://www.npmjs.com/package/pm2)를 사용하여 백그라운드 프로세스로 실행시킨다. [pm2 명령어 모음](https://pm2.keymetrics.io/docs/usage/process-management/)
 - 
+
+### Swagger
+
+### Token Blacklist for Logged Out User
