@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 나만의 무기 갖기, 서로 소개 에세이 {swjungle}
+title: 나만의 무기 갖기, 서로 소개 에세이 {swjungle} {왜 나를 선택해야 하는가}
 created: 2023-11-05T15:56:49
-updated: 2023-11-05T16:58:18
+updated: 2023-11-06T12:29:56
 ---
 - [[week13 {swjugle}{team creation} {expressjs}]]
 ___
