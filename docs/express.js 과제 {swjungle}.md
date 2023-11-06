@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T04:35:40
+updated: 2023-11-07T05:00:37
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -151,15 +151,19 @@ erDiagram
 	}
 ```
 
-- [ ] `/logout` api가 현재 하는 일이 없다. GPT한테 물어보니 블랙리스트 테이블을 갖추어 아직 만료가 덜된 토큰 중에서 로그아웃을 요청한 토큰을 저장한다. jwt 미들웨어에서 블랙리스트를 검사하는 코드를 추가한다.
+- [ ] `/logout` api가 현재 하는 일이 없다. GPT한테 물어보니 블랙리스트 테이블을 갖추어 아직 만료가 덜된 토큰 중에서 로그아웃을 요청한 토큰을 저장한다. jwt 미들웨어에서 블랙리스트를 검사하는 코드를 추가한다. [[#Token Blacklist for Logged Out User]]
 
 ### 배포
 
 - ec2 생성 및 리포지토리 클론해오기
 - [nodesource](https://github.com/nodesource/distributions#installation-instructions)를 참조하여 nodejs 바이너리 설치하기 (어차피 개발자 도구가 설치될 필요가 없으므로)
 - [pm2](https://www.npmjs.com/package/pm2)를 사용하여 백그라운드 프로세스로 실행시킨다. [pm2 명령어 모음](https://pm2.keymetrics.io/docs/usage/process-management/)
-- 
 
 ### Swagger
 
+안해
+
 ### Token Blacklist for Logged Out User
+
+- [ ] access token & refresh token
+- [ ] blacklist
