@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js
 created: 2023-11-01T16:02:37
-updated: 2023-11-04T21:37:20
+updated: 2023-11-06T22:54:07
 ---
 - [[0018 Javascript ☕️]]
 - [Node.js 교과서 개정 3판 - 웹 아카이브 링크](https://thebook.io/080334/)
@@ -39,6 +39,31 @@ node.js 환경의 웹 개발 프레임워크중 하나인 express를 공부하�
 라우팅은 `express` 모듈을 통해 기본 라우팅을 설정하며, 타 모듈을 `app`에 등록시키기 위해 미들웨어를 사용합니다.
 
 `routes/goods.js` 모듈은 라우터 미들웨어를 사용하기 위해 `express.Router()` 객체를 가져오고, 해당 라우터를 export하여 다른 모듈에서 사용할 수 있도록 합니다.
+
+## middlewares
+
+- router level middlewares
+
+`express.Router()`를 사용해 라우터 객체를 불러올 수 있다.
+
+아래 코드는 미들웨어 재사용을 위해 두 번째 인자에 Array로 미들웨어를 넣는 모습이다.
+
+```javascript
+function logOriginalUrl (req, res, next) {
+  console.log('Request URL:', req.originalUrl)
+  next()
+}
+
+function logMethod (req, res, next) {
+  console.log('Request Type:', req.method)
+  next()
+}
+
+const logStuff = [logOriginalUrl, logMethod]
+app.get('/user/:id', logStuff, (req, res, next) => {
+  res.send('User Info')
+})
+```
 
 ## mongodb
 
