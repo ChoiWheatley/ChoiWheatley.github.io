@@ -42399,12 +42399,32 @@
 <li><a href="https://www.npmjs.com/package/pm2">pm2</a>를 사용하여 백그라운드 프로세스로 실행시킨다. <a href="https://pm2.keymetrics.io/docs/usage/process-management/">pm2 명령어 모음</a></li>
 </ul>
 <h3 id="swagger">Swagger<a class="headerlink" href="#swagger" title="Permanent link">#</a></h3>
-<p>안해</p>
+<p>안해. 대신 postman에 문서를 만들어주는 기능을 활용할거야</p>
 <h3 id="token-blacklist-for-logged-out-user">Token Blacklist for Logged Out User<a class="headerlink" href="#token-blacklist-for-logged-out-user" title="Permanent link">#</a></h3>
 <ul>
-<li>[ ] access token &amp; refresh token</li>
-<li>[ ] blacklist</li>
+<li>[ ] <strong>access token &amp; refresh token</strong></li>
 </ul>
+<p><a href="../Simple%20JWT%20package%20%7Bdrf%7D%7Brest_framework_simplejwt%7D/">Simple JWT package {drf}{rest_framework_simplejwt}</a>를 조금 참고했다. 한 서버에서 access, refresh token을 발급하는 사례가 있어 이대로 진행하려고 한다.</p>
+<p>참고로, access token은 기존 그대로 <code>req.headers["authorization"]</code> 헤더에 담아서 보관할 것이고, refresh 할 때에나 POST요청의 body에 refresh token을 넣도록 할 것이다. 아래는 예상되는 페이로드 JSON이다.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;tokenType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;access&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>먼저 api부터. <code>/api/token/refresh</code>는 access token과 refresh token 모두를 발급한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.</p>
+<p><code>/api/login</code> 또한 access token, refresh token을 모두 발급해야겠다.</p>
+<p><code>/api/logout</code> 엔드포인트는 두 토큰을 무효화해야겠다. 블랙리스트에서 진행할 사항이다.</p>
+<ul>
+<li>[ ] <strong>blacklist</strong></li>
+</ul>
+<p><a href="https://velog.io/@boo105/Redis-%EB%A5%BC-%ED%86%B5%ED%95%9C-JWT-Blacklist-%EA%B5%AC%ED%98%84">redis 메모리 데이터베이스에 블랙리스트 관리</a></p>
+<p>블랙리스트는 만약의 경우에 둘 중의 어느 하나의 토큰이라도 갈취되는 경우 access token의 유효기간이 끝나기 전에 나쁜짓을 하는 것을 차단하기 위한 용도로 사용된다. 로그아웃울 해도 명시적으로 토큰을 비활성화할 수 없다. 서버는 무상태이기 때문이다. 따라서 클라이언트가 스스로 토큰을 비우도록 만들어야 한다. </p>
+<ol>
+<li>일단 용량걱정말고 <code>/api/logout</code> 요청에 대해서 access token과 refresh token 모두를 블랙리스트 테이블에 넣는다. jwt 미들웨어에서 항상 블랙리스트 테이블을 쿼리하여 무효화된 토큰이 있는지 여부를 검사한다.</li>
+<li>expired token을 찾아서 제거하는 기능을 추가한다.</li>
+</ol>
 
 
 
