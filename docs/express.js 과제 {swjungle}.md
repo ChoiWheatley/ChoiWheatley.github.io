@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T06:58:02
+updated: 2023-11-07T07:13:34
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -169,6 +169,8 @@ erDiagram
 
 [[Simple JWT package {drf}{rest_framework_simplejwt}]]를 조금 참고했다. 한 서버에서 access, refresh token을 발급하는 사례가 있어 이대로 진행하려고 한다.
 
+참고로, access token은 기존 그대로 `req.headers["authorization"]` 헤더에 담아서 보관할 것이고, refresh 할 때에나 POST요청의 body에 refresh token을 넣도록 할 것이다. 두 토큰 모두 `tokenType`키값을 추가할 것이다. 각각 `access`, `refresh`가 될 것이다.
+
 먼저 api부터. `/api/token/refresh`는 access token과 refresh token 모두를 발급한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.
 
 `/api/login` 또한 access token, refresh token을 모두 발급해야겠다.
@@ -176,6 +178,8 @@ erDiagram
 `/api/logout` 엔드포인트는 두 토큰을 무효화해야겠다. 블랙리스트에서 진행할 사항이다.
 
 - [ ] **blacklist**
+
+[redis 메모리 데이터베이스에 블랙리스트 관리](https://velog.io/@boo105/Redis-%EB%A5%BC-%ED%86%B5%ED%95%9C-JWT-Blacklist-%EA%B5%AC%ED%98%84)
 
 블랙리스트는 만약의 경우에 둘 중의 어느 하나의 토큰이라도 갈취되는 경우 access token의 유효기간이 끝나기 전에 나쁜짓을 하는 것을 차단하기 위한 용도로 사용된다. 로그아웃울 해도 명시적으로 토큰을 비활성화할 수 없다. 서버는 무상태이기 때문이다. 따라서 클라이언트가 스스로 토큰을 비우도록 만들어야 한다. 
 
