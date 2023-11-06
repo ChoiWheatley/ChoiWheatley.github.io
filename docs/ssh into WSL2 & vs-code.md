@@ -4,9 +4,10 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2023-08-21T16:45:25
+updated: 2023-11-07T06:12:13
 ---
 [[0010 Programming 👩‍💻|programming]]
+
 # ssh into WSL2 & vs-code
 
 생성일: 2022년 3월 2일 오후 11:30
@@ -134,3 +135,5 @@ Debian/Ubuntu:  sudo apt-get install ca-certificates
 물론 언젠간 저 `ca-certificates` 관련 문제가 다시 찾아올 것이고, vscode-server 업데이트가 막혀 같은 문제가 찾아오리란 사실은 변치 않을 것이다. 지금도 `code` 명령어를 치면 프로세스가 스폰되지 않고 에러메시지가 출력된다.
 
 그래서 그냥 기본으로 깔려있던 wget을 지우고 brew를 사용하여 최신버전을 설치하니 문제가 해결되었다!
+
+- 2023-11-07T06:11:59 도움받음. 과거의 나에게 압도적 감사.
