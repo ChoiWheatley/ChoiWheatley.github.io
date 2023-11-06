@@ -166,4 +166,10 @@ erDiagram
 ### Token Blacklist for Logged Out User
 
 - [ ] access token & refresh token
+
+[[Simple JWT package {drf}{rest_framework_simplejwt}]]를 조금 참고했다. 한 서버에서 access, refresh token을 발급하는 사례가 있어 이대로 진행하려고 한다.
+
+먼저 api부터. `/api/token/refresh`는 access token과 refresh token 모두를 발급한다. 
+
+
 - [ ] blacklist
