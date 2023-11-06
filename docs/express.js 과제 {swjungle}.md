@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T05:00:37
+updated: 2023-11-07T06:48:35
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -161,7 +161,7 @@ erDiagram
 
 ### Swagger
 
-안해
+안해. 대신 postman에 문서를 만들어주는 기능을 활용할거야
 
 ### Token Blacklist for Logged Out User
 
@@ -169,7 +169,9 @@ erDiagram
 
 [[Simple JWT package {drf}{rest_framework_simplejwt}]]를 조금 참고했다. 한 서버에서 access, refresh token을 발급하는 사례가 있어 이대로 진행하려고 한다.
 
-먼저 api부터. `/api/token/refresh`는 access token과 refresh token 모두를 발급한다. 
-
+먼저 api부터. `/api/token/refresh`는 access token과 refresh token 모두를 발급한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.
 
 - [ ] blacklist
+
+1. 일단 용량걱정말고 `/api/logout` 요청에 대해서 access token과 refresh token 모두를 블랙리스트 테이블에 넣는다. jwt 미들웨어에서 항상 블랙리스트 테이블을 쿼리하여 무효화된 토큰이 있는지 여부를 검사한다.
+2. expired token을 찾아서 제거하는 기능을 추가한다.
