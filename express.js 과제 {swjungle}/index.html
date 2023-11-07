@@ -42456,7 +42456,7 @@
 <p><code>/api/login</code> 또한 access token, refresh token을 모두 발급해야겠다.</p>
 <p><code>/api/logout</code> 엔드포인트는 두 토큰을 무효화해야겠다. 블랙리스트에서 진행할 사항이다.</p>
 <ul>
-<li>[ ] <strong>blacklist</strong></li>
+<li>[x] <strong>blacklist (MySQL version)</strong></li>
 </ul>
 <p>MySQL에 블랙리스트 테이블을 추가하여 구현했다. </p>
 <pre class="mermaid"><code>erDiagram
@@ -42512,6 +42512,21 @@
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>login, logout, refreshToken에서 <code>req.headers["authorization"]</code> 헤더가 blacklist에 존재하는지 검사하는 코드가 추가되었다.</p>
+<div class="highlight"><pre><span></span><code><span class="p">...</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s2">&quot;authorization&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">accessToken</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">accessToken</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">BlackLists</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span><span class="w"> </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accessToken</span><span class="o">:</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">found</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">BlackLists</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="w"> </span><span class="nx">accessToken</span><span class="o">:</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">...</span>
+</code></pre></div>
+<ul>
+<li>[ ] <strong>blacklist(Redis version)</strong></li>
+</ul>
 <p>아래는 자동삭제를 지원하는 redis를 활용하여 access token blacklist를 구현한 내용을 담고있다. </p>
 <p><a href="../redis%EB%A1%9C%20access%20token%20blacklist%20%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0%20%7Bnodejs%7D%20%7Btodo%7D/">redis로 access token blacklist 관리하기 {nodejs} {todo}</a></p>
 
