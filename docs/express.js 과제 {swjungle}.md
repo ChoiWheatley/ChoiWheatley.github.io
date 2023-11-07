@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T09:37:27
+updated: 2023-11-07T09:58:03
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -249,6 +249,21 @@ async function authenticateToken(req, res, next) {
     next(); // Token is valid, continue with the next middleware
   });
 }
+```
+
+login, logout, refreshToken에서 `req.headers["authorization"]` 헤더가 blacklist에 존재하는지 검사하는 코드가 추가되었다.
+
+```js
+...
+  const accessToken = req.headers["authorization"];
+  if (accessToken) {
+    const token = accessToken.split(" ")[1];
+    const found = BlackLists.findOne({ where: { accessToken: token } })
+    if (!found) {
+      BlackLists.create({ accessToken: token });
+    }
+  }
+...
 ```
 
 - [ ] **blacklist(Redis version)**
