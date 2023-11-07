@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T08:46:12
+updated: 2023-11-07T08:57:07
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -197,7 +197,6 @@ erDiagram
 	Users ||--o{ Posts: ""
 	Users ||--o{ Comments: ""
 	Posts ||--o{ Comments: ""
-	BlackLists ||--o{ Users: ""
 
 	BlackLists {
 		int blackListId PK
