@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T09:15:02
+updated: 2023-11-07T09:37:27
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -188,7 +188,7 @@ erDiagram
 
 `/api/logout` 엔드포인트는 두 토큰을 무효화해야겠다. 블랙리스트에서 진행할 사항이다.
 
-- [ ] **blacklist**
+- [x] **blacklist (MySQL version)**
 
 MySQL에 블랙리스트 테이블을 추가하여 구현했다. 
 
@@ -250,6 +250,8 @@ async function authenticateToken(req, res, next) {
   });
 }
 ```
+
+- [ ] **blacklist(Redis version)**
 
 아래는 자동삭제를 지원하는 redis를 활용하여 access token blacklist를 구현한 내용을 담고있다. 
 
