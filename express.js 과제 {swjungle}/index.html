@@ -12836,6 +12836,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../redis%EB%A1%9C%20access%20token%20blacklist%20%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0%20%7Bnodejs%7D%20%7Btodo%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  redis로 access token blacklist 관리하기 {nodejs} {todo}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../regex/" class="md-tabs__link">
         
   
@@ -35773,6 +35790,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis%EB%A1%9C%20access%20token%20blacklist%20%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0%20%7Bnodejs%7D%20%7Btodo%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    redis로 access token blacklist 관리하기 {nodejs} {todo}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../regex/" class="md-nav__link">
         
   
@@ -42400,9 +42436,12 @@
 </ul>
 <h3 id="swagger">Swagger<a class="headerlink" href="#swagger" title="Permanent link">#</a></h3>
 <p>안해. 대신 postman에 문서를 만들어주는 기능을 활용할거야</p>
+<ul>
+<li>[ ] Postman Document 여기에 붙여넣으세요</li>
+</ul>
 <h3 id="token-blacklist-for-logged-out-user">Token Blacklist for Logged Out User<a class="headerlink" href="#token-blacklist-for-logged-out-user" title="Permanent link">#</a></h3>
 <ul>
-<li>[ ] <strong>access token &amp; refresh token</strong></li>
+<li>[x] <strong>access token &amp; refresh token</strong></li>
 </ul>
 <p><a href="../Simple%20JWT%20package%20%7Bdrf%7D%7Brest_framework_simplejwt%7D/">Simple JWT package {drf}{rest_framework_simplejwt}</a>를 조금 참고했다. 한 서버에서 access, refresh token을 발급하는 사례가 있어 이대로 진행하려고 한다.</p>
 <p>참고로, access token은 기존 그대로 <code>req.headers["authorization"]</code> 헤더에 담아서 보관할 것이고, refresh 할 때에나 POST요청의 body에 refresh token을 넣도록 할 것이다. 아래는 예상되는 페이로드 JSON이다.</p>
@@ -42413,18 +42452,68 @@
 <span class="w">    </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>먼저 api부터. <code>/api/token/refresh</code>는 access token과 refresh token 모두를 발급한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.</p>
+<p>먼저 api부터. <code>/api/token/refresh</code>는 access token과 refresh token 모두를 발급하고 기존 토큰들을 무효화 처리해야한다. 클라이언트는 access token이 만료가 됐을시 refresh token을 활용해 이 엔드포인트로 접근하여 두 토큰을 갱신할 수 있다.</p>
 <p><code>/api/login</code> 또한 access token, refresh token을 모두 발급해야겠다.</p>
 <p><code>/api/logout</code> 엔드포인트는 두 토큰을 무효화해야겠다. 블랙리스트에서 진행할 사항이다.</p>
 <ul>
 <li>[ ] <strong>blacklist</strong></li>
 </ul>
-<p><a href="https://velog.io/@boo105/Redis-%EB%A5%BC-%ED%86%B5%ED%95%9C-JWT-Blacklist-%EA%B5%AC%ED%98%84">redis 메모리 데이터베이스에 블랙리스트 관리</a></p>
-<p>블랙리스트는 만약의 경우에 둘 중의 어느 하나의 토큰이라도 갈취되는 경우 access token의 유효기간이 끝나기 전에 나쁜짓을 하는 것을 차단하기 위한 용도로 사용된다. 로그아웃울 해도 명시적으로 토큰을 비활성화할 수 없다. 서버는 무상태이기 때문이다. 따라서 클라이언트가 스스로 토큰을 비우도록 만들어야 한다. </p>
-<ol>
-<li>일단 용량걱정말고 <code>/api/logout</code> 요청에 대해서 access token과 refresh token 모두를 블랙리스트 테이블에 넣는다. jwt 미들웨어에서 항상 블랙리스트 테이블을 쿼리하여 무효화된 토큰이 있는지 여부를 검사한다.</li>
-<li>expired token을 찾아서 제거하는 기능을 추가한다.</li>
-</ol>
+<p>MySQL에 블랙리스트 테이블을 추가하여 구현했다. </p>
+<pre class="mermaid"><code>erDiagram
+    Users ||--o{ Posts: ""
+    Users ||--o{ Comments: ""
+    Posts ||--o{ Comments: ""
+
+    BlackLists {
+        int blackListId PK
+        string accessToken
+    }
+
+    Users {
+        int userId PK
+        int blackListId FK
+        string nickname
+        string password
+    }
+
+    Posts {
+        int postId PK
+        int userId FK
+        string title
+        string content
+    }
+
+    Comments {
+        int commentId PK
+        int postId FK
+        int userId FK
+        string content
+    }</code></pre>
+<p>JWT 인증을 담당하는 미들웨어 코드의 중간에 블랙리스트를 쿼리하는 코드가 추가되었다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">authenticateToken</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">authHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s2">&quot;authorization&quot;</span><span class="p">];</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">authHeader</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">authHeader</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mf">1</span><span class="p">];</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">token</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="mf">401</span><span class="p">);</span><span class="w"> </span><span class="c1">// No token provided</span>
+
+<span class="w">  </span><span class="nx">jwt</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">[</span><span class="s2">&quot;SECRET_KEY&quot;</span><span class="p">],</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="mf">403</span><span class="p">);</span><span class="w"> </span><span class="c1">// Token is invalid</span>
+
+<span class="w">    </span><span class="c1">// search token from blacklist</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">blacklist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">BlackLists</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">accessToken</span><span class="o">:</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">blacklist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">403</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">errorMessage</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;토큰이 블랙리스트에 있습니다.&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">req</span><span class="p">.</span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">next</span><span class="p">();</span><span class="w"> </span><span class="c1">// Token is valid, continue with the next middleware</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>아래는 자동삭제를 지원하는 redis를 활용하여 access token blacklist를 구현한 내용을 담고있다. </p>
+<p><a href="../redis%EB%A1%9C%20access%20token%20blacklist%20%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0%20%7Bnodejs%7D%20%7Btodo%7D/">redis로 access token blacklist 관리하기 {nodejs} {todo}</a></p>
 
 
 
