@@ -161,8 +161,6 @@ erDiagram
 
 ### Swagger
 
-안해. 대신 postman에 문서를 만들어주는 기능을 활용할거야
-
 - [ ] Postman Document 여기에 붙여넣으세요
 
 ### Token Blacklist for Logged Out User
