@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T08:57:07
+updated: 2023-11-07T09:15:02
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -223,6 +223,32 @@ erDiagram
 		int userId FK
 		string content
 	}
+```
+
+JWT 인증을 담당하는 미들웨어 코드의 중간에 블랙리스트를 쿼리하는 코드가 추가되었다.
+
+```js
+async function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (token == null) return res.sendStatus(401); // No token provided
+
+  jwt.verify(token, process.env["SECRET_KEY"], async (err, user) => {
+    if (err) return res.sendStatus(403); // Token is invalid
+
+    // search token from blacklist
+    const blacklist = await BlackLists.findOne(
+      { where: { accessToken: token } }
+    );
+    if (blacklist) {
+      return res.status(403).json({ errorMessage: "토큰이 블랙리스트에 있습니다." });
+    }
+
+    req.user = user;
+    next(); // Token is valid, continue with the next middleware
+  });
+}
 ```
 
 아래는 자동삭제를 지원하는 redis를 활용하여 access token blacklist를 구현한 내용을 담고있다. 
