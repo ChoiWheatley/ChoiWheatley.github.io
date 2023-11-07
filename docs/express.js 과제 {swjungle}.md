@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T09:58:03
+updated: 2023-11-07T10:24:42
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -263,6 +263,10 @@ login, logout, refreshToken에서 `req.headers["authorization"]` 헤더가 black
   }
 ...
 ```
+
+![[스크린샷 2023-11-07 오전 9.13.34.png]]
+
+![[스크린샷 2023-11-07 오전 8.15.42.png]]
 
 - [ ] **blacklist(Redis version)**
 
