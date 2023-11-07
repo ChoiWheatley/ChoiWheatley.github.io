@@ -4,7 +4,7 @@ tags:
 description:
 title: express.js 과제 {swjungle}
 created: 2023-11-04T15:30:02
-updated: 2023-11-07T10:24:42
+updated: 2023-11-07T11:03:14
 ---
 - [[express.js]]
 - [[week13 {swjugle}{team creation} {expressjs}]]
@@ -18,17 +18,18 @@ ___
 ### Mandatory
 
 - APIs
-	- [x] 전체 게시글 조회
-	- [x] 게시글 조회
-	- [x] 게시글 작성
-	- [x] 게시글 수정
-	- [x] 게시글 삭제
-	- [x]  댓글목록 조회
-	- [x]  댓글작성
-	- [x]  댓글수정
-	- [x]  댓글삭제
-	- [x] 회원가입
-	- [x] 로그인
+	- [x] 전체 게시글 조회 `GET /api/post`
+	- [x] 게시글 조회 `GET /api/post/:postId`
+	- [x] 게시글 작성 `POST /api/post` 
+	- [x] 게시글 수정 `PUT /api/post/:postId`
+	- [x] 게시글 삭제 `DELETE /api/post/:postId`
+	- [x]  댓글목록 조회 `GET /api/comment`
+	- [x]  댓글작성 `POST /api/comment`
+	- [x]  댓글수정 `PUT /api/comment/:commentId`
+	- [x]  댓글삭제 `DELETE /api/comment:commentId`
+	- [x] 회원가입 `POST /api/signup`
+	- [x] 로그인 `POST /api/login`
+	- [x] 로그아웃 `POST /api/logout`
 
 - Post
 	- title
