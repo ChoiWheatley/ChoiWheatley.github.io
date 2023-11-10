@@ -4,7 +4,7 @@ tags:
 description:
 title: 니어스랩 채용설명회 {swjungle}
 created: 2023-11-09T16:26:42
-updated: 2023-11-10T14:27:30
+updated: 2023-11-10T14:50:42
 ---
 - [[0120 swjungle 🤖]]
 - [[0012 Career 💼]]
@@ -52,3 +52,5 @@ ___
 		- Web squad
 		- AI
 		- Drone
+
+> HW가 점점 인류에게 가까워지고 있습니다. 수많은 SW기업들이 자율주행 자동차와 드론을 연구하는 덴 다 이유가 있습니다.
