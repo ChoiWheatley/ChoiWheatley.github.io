@@ -42484,16 +42484,18 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 <code>@Res</code>, <code>@Next</code>, <code>@Session</code>, <code>@Param</code>, <code>@Body</code>, <code>@Query</code>, <code>@Headers</code> 등이 있고 <a href="https://docs.nestjs.com/controllers#request-object">다음 링크</a>를 참고하시오.</li>
+</li>
+<li>
+<p>이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 <code>@Res</code>, <code>@Next</code>, <code>@Session</code>, <code>@Param</code>, <code>@Body</code>, <code>@Query</code>, <code>@Headers</code> 등이 있고 <a href="https://docs.nestjs.com/controllers#request-object">다음 링크</a>를 참고하시오.</p>
+</li>
 <li>deferred response를 리턴해도 된다고. Promise 타입 객체를 리턴하게 되면 <a href="#rxjs">#RxJS</a>의 observable stream으로 리턴이 되고, 스트림이 끝날경우 해당 소스에 알림이 간다고는 하는데 뭔 소린지 잘 모르겠음.</li>
-<li><strong><a href="https://docs.nestjs.com/controllers#request-payloads">Request Paloads</a></strong></li>
+<li><strong><a href="https://docs.nestjs.com/controllers#request-payloads">Request Paloads</a></strong><ul>
 <li>DTO, Data Transfer Object라고 불리우는, 네트워크 전송을 위해 존재하는 객체타입은 클래스로 정의가 되어있다고. DTO 클래스 멤버들은 직렬화 가능한 타입만 들어올 수 있나?</li>
 <li><a href="../../express.js/">express.js</a>에서 POST요청에 대한 요청의 body를 뜯어 원하는 키값들을 직접 획득했다면, Nest.js는 DTO 객체를 인자로 받아와 곧바로 사용할 수 있다.</li>
 <li>`@Post() create(@Body() createCatDto: CreateCatDto) {...}</li>
-<li>app.module.ts 파일에 내가 정의한 컨트롤러들을 <code>@Module()</code> 데코레이터 안에 넣을 수 있다.</li>
 </ul>
 </li>
+<li>app.module.ts 파일에 내가 정의한 컨트롤러들을 <code>@Module()</code> 데코레이터 안에 넣을 수 있다.</li>
 </ul>
 <h3 id="providers"><a href="https://docs.nestjs.com/providers">Providers</a><a class="headerlink" href="#providers" title="Permanent link">#</a></h3>
 <p>의존성 주입될 수 있는 다양한 클래스들이다. 대표적으로 Service, Repository, Factory, Helper, Middleware가 있다. 컨트롤러가 처리할 수 없는 복잡한 작업을 Provider들에게 넘겨주는 예시를 보여주고 있다.</p>
