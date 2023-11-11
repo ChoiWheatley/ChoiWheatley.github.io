@@ -18997,21 +18997,42 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    Providers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    Middleware
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#-res-next-session-param-body-query-headers" class="md-nav__link">
-    - 이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 @Res, @Next, @Session, @Param, @Body, @Query, @Headers 등이 있고 다음 링크를 참고하시오.
+  <a href="#js-async-await-promise" class="md-nav__link">
+    JS async, await, promise
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#js-async-await-promise" class="md-nav__link">
-    JS async, await, promise
+  <a href="#rxjs" class="md-nav__link">
+    RxJS
   </a>
   
 </li>
@@ -42345,21 +42366,42 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    Providers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    Modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    Middleware
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#-res-next-session-param-body-query-headers" class="md-nav__link">
-    - 이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 @Res, @Next, @Session, @Param, @Body, @Query, @Headers 등이 있고 다음 링크를 참고하시오.
+  <a href="#js-async-await-promise" class="md-nav__link">
+    JS async, await, promise
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#js-async-await-promise" class="md-nav__link">
-    JS async, await, promise
+  <a href="#rxjs" class="md-nav__link">
+    RxJS
   </a>
   
 </li>
@@ -42424,7 +42466,7 @@
 </ul>
 </li>
 <li>
-<p>Request Object</p>
+<p><strong><a href="https://docs.nestjs.com/controllers#request-object">Request Object</a></strong></p>
 <ul>
 <li>Path 인자는 <code>@Get(:id)</code> 어노테이션으로 정의하고 파싱된 인자는 메서드 인자로 들어온다.</li>
 </ul>
@@ -42442,9 +42484,80 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="-res-next-session-param-body-query-headers">- 이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 <code>@Res</code>, <code>@Next</code>, <code>@Session</code>, <code>@Param</code>, <code>@Body</code>, <code>@Query</code>, <code>@Headers</code> 등이 있고 <a href="https://docs.nestjs.com/controllers#request-object">다음 링크</a>를 참고하시오.<a class="headerlink" href="#-res-next-session-param-body-query-headers" title="Permanent link">#</a></h2>
+<ul>
+<li>이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 <code>@Res</code>, <code>@Next</code>, <code>@Session</code>, <code>@Param</code>, <code>@Body</code>, <code>@Query</code>, <code>@Headers</code> 등이 있고 <a href="https://docs.nestjs.com/controllers#request-object">다음 링크</a>를 참고하시오.</li>
+<li>deferred response를 리턴해도 된다고. Promise 타입 객체를 리턴하게 되면 <a href="#rxjs">#RxJS</a>의 observable stream으로 리턴이 되고, 스트림이 끝날경우 해당 소스에 알림이 간다고는 하는데 뭔 소린지 잘 모르겠음.</li>
+<li><strong><a href="https://docs.nestjs.com/controllers#request-payloads">Request Paloads</a></strong></li>
+<li>DTO, Data Transfer Object라고 불리우는, 네트워크 전송을 위해 존재하는 객체타입은 클래스로 정의가 되어있다고. DTO 클래스 멤버들은 직렬화 가능한 타입만 들어올 수 있나?</li>
+<li><a href="../../express.js/">express.js</a>에서 POST요청에 대한 요청의 body를 뜯어 원하는 키값들을 직접 획득했다면, Nest.js는 DTO 객체를 인자로 받아와 곧바로 사용할 수 있다.</li>
+<li>`@Post() create(@Body() createCatDto: CreateCatDto) {...}</li>
+<li>app.module.ts 파일에 내가 정의한 컨트롤러들을 <code>@Module()</code> 데코레이터 안에 넣을 수 있다.</li>
+</ul>
 </li>
 </ul>
+<h3 id="providers"><a href="https://docs.nestjs.com/providers">Providers</a><a class="headerlink" href="#providers" title="Permanent link">#</a></h3>
+<p>의존성 주입될 수 있는 다양한 클래스들이다. 대표적으로 Service, Repository, Factory, Helper, Middleware가 있다. 컨트롤러가 처리할 수 없는 복잡한 작업을 Provider들에게 넘겨주는 예시를 보여주고 있다.</p>
+<p><strong>Inversion of Control</strong></p>
+<p><a href="https://en.wikipedia.org/wiki/Inversion_of_control">https://en.wikipedia.org/wiki/Inversion_of_control</a></p>
+<p>원래는 유저가 라이브러리 코드를 호출하지만 라이브러리 코드가 인터페이스를 기준으로 유저 코드를 호출할 수 있게 만드는 패턴을 IoC라고 부른다.</p>
+<p>Dependency Injection이라고, 생성자 타임에 의존성 Provider를 주입하는 과정을 의미. 아래의 코드의 Provider인 <code>CatsService</code>는 <code>@Injectable</code> 데코레이터를 달고있기 때문에 컨트롤러의 생성타임에 주입될 수 있다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// interfaces/cats.interface.ts</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">Cat</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">breed</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// cats/cats.service.ts</span>
+<span class="kd">@Injectable</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">CatsService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="nx">cats</span><span class="o">:</span><span class="w"> </span><span class="kt">Cat</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="nx">create</span><span class="p">(</span><span class="nx">cat</span><span class="o">:</span><span class="w"> </span><span class="kt">Cat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">cats</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">cat</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">findall</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">Cat</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">cats</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="nx">catsService</span><span class="o">:</span><span class="w"> </span><span class="kt">CatsService</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p>생성자에 의존성을 넣고싶지 않다면 <a href="https://docs.nestjs.com/providers#property-based-injection">Property-based injection</a>을 참고.</p>
+<h3 id="modules"><a href="https://docs.nestjs.com/modules">Modules</a><a class="headerlink" href="#modules" title="Permanent link">#</a></h3>
+<p>각각의 도메인들 (users, cats, posts, comments, ...)은 각각의 app으로 관리된다. 이때 app의 메타데이터를 저장하는 코드들의 집합을 모듈이라고 부른다. <code>nest g module &lt;module-name&gt;</code> CLI 명령어로 새 모듈 생성이 가능하다. 그리고 루트모듈에 import를 해야한다.</p>
+<p><code>exports</code> 속성으로 모듈 내 provider를 다른 모듈에서도 사용할 수 있게 만든다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Module</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">controllers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CatsController</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">providers</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CatsService</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">exports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CatsService</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">CatsModule</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p><code>@Global</code> 어노테이션 달면 providers를 다른 모든 모듈에서 사용할 수 있다.</p>
+<h3 id="middleware"><a href="https://docs.nestjs.com/middleware">Middleware</a><a class="headerlink" href="#middleware" title="Permanent link">#</a></h3>
+<p>express.js의 미들웨어의 스킴을 고스란히 따라가고 있다. 단순 함수를 사용하여 <code>next()</code> 를 사용, 다음 미들웨어로 요청을 전달할 수도 있으며, <code>NestMiddleware</code> 인터페이스를 구현한 클래스를 사용하여 컨트롤러에 의존성 주입을 할 수도 있다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// logger.middleware.ts</span>
+<span class="kd">@Injectable</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">LoggerMiddleware</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">NestMiddleware</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">use</span><span class="p">(</span><span class="nx">req</span><span class="o">:</span><span class="w"> </span><span class="kt">Request</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="o">:</span><span class="w"> </span><span class="kt">Response</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="o">:</span><span class="w"> </span><span class="kt">NextFunction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;reqest...&#39;</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// app.module.ts</span>
+<span class="kd">@Module</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">CatsModule</span><span class="p">],</span>
+<span class="p">})</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppModule</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">NestModule</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">configure</span><span class="p">(</span><span class="nx">consumer</span><span class="o">:</span><span class="w"> </span><span class="kt">MiddlewareConsumer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">consumer</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">LoogerMiddleware</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">forRoutes</span><span class="p">(</span><span class="s1">&#39;cats&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>consumer.forRoutes</code> 의 인자로 좀 더 구체적인 path, method, 심지어는 controller를 설정할 수도 있다.</p>
 <h2 id="js-async-await-promise">JS async, await, promise<a class="headerlink" href="#js-async-await-promise" title="Permanent link">#</a></h2>
 <p><a href="https://springfall.cc/article/2022-11/easy-promise-async-await">https://springfall.cc/article/2022-11/easy-promise-async-await</a></p>
 <blockquote>
@@ -42455,6 +42568,10 @@
 <p>JS에서 기다리는 것은 동시에 할 수 있지만, 처리하는 것은 동시에 하지 못한다.</p>
 </blockquote>
 <p><a href="../../tasks%2C%20microtasks%2C%20queues%20and%20schedules%20%7Bjs%7D/">tasks, microtasks, queues and schedules {js}</a></p>
+<h2 id="rxjs">RxJS<a class="headerlink" href="#rxjs" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">observable streams</a></li>
+</ul>
 
 
 
