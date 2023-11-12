@@ -42556,7 +42556,24 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="nx">catsService</span><span class="o">:</span><span class="w"> </span><span class="kt">CatsService</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="c1">// cats/cats.controller.ts</span>
+<span class="kd">@Controller</span><span class="p">(</span><span class="s1">&#39;cats&#39;</span><span class="p">)</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">CatsController</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * 자동으로 주입되는 CatsService</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="nx">catsService</span><span class="o">:</span><span class="w"> </span><span class="kt">CatsService</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="kd">@Post</span><span class="p">()</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">create</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span><span class="w"> </span><span class="nx">createCatDto</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateCatDto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">catsService</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">createCatDto</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">@Get</span><span class="p">()</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="nx">findAll</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Cat</span><span class="p">[]</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">catsService</span><span class="p">.</span><span class="nx">findAll</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>생성자에 의존성을 넣고싶지 않다면 <a href="https://docs.nestjs.com/providers#property-based-injection">Property-based injection</a>을 참고.</p>
 <h3 id="modules"><a href="https://docs.nestjs.com/modules">Modules</a><a class="headerlink" href="#modules" title="Permanent link">#</a></h3>
