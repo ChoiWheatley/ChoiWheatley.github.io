@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-11-02T20:46:18
+updated: 2023-11-12T18:49:15
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -27,9 +27,9 @@ ___
 - <https://www.youtube.com/watch?v=2ESQqZ_Ec6k&ab_channel=%EC%BD%94%EB%94%A9%EB%A3%A8%ED%8C%A1CodingLupine>
 	- 가고싶은 회사의 채용공고 중 '우대사항'을 유심히 읽어봐라. 거기에 있는 기술스택들을 활용하여 내 프로젝트를 개선시켜보고 그 과정과 구체적인 변화를 스토리텔링할 것
 
-## Active
+## 관심있는 기업
 
-- 
+- [넷텐션](https://www.proudnet.com/) C++ 게임서버 프레임워크인 프라우드넷을 만든 회사 
 
 ## Personal Information
 
