@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-11-12T18:49:15
+updated: 2023-11-12T23:08:32
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -26,6 +26,7 @@ ___
 
 - <https://www.youtube.com/watch?v=2ESQqZ_Ec6k&ab_channel=%EC%BD%94%EB%94%A9%EB%A3%A8%ED%8C%A1CodingLupine>
 	- 가고싶은 회사의 채용공고 중 '우대사항'을 유심히 읽어봐라. 거기에 있는 기술스택들을 활용하여 내 프로젝트를 개선시켜보고 그 과정과 구체적인 변화를 스토리텔링할 것
+- [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]] 나만의 무기 만들기 프로젝트를 진행하며 게시판 기능을 구현해보지 못한채로 바로 토이 프로젝트를 구현하게 되었다. 그런데 거의 대부분의 업계에서 기본적으로 게시판 기능만큼은 만들어봤을 거라고 기대하기 때문에 나만무 외적으로도 [[0018.1 Nest.js 🪺|NestJS]]를 활용해 게시판을 만들어볼 줄은 알아야 한다고 생각한다. 거기에 더해 User Roles와 복잡한 데이터베이스 (댓글과 추천기능 등)까지 수월하게 만들 줄은 알아야 할 것이다.  [[2023-11-12]]
 
 ## 관심있는 기업
 
