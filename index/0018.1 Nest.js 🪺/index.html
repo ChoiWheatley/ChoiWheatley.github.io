@@ -19018,6 +19018,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exception-filters" class="md-nav__link">
+    Exception Filters (이해부족)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    Pipes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -42387,6 +42401,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exception-filters" class="md-nav__link">
+    Exception Filters (이해부족)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipes" class="md-nav__link">
+    Pipes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -42465,6 +42493,9 @@
 <li>아무 status나 반환하고 싶을땐 express의 코드를 사용하라고..</li>
 </ul>
 </li>
+</ul>
+<hr />
+<ul>
 <li>
 <p><strong><a href="https://docs.nestjs.com/controllers#request-object">Request Object</a></strong></p>
 <ul>
@@ -42489,7 +42520,10 @@
 <p>이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 <code>@Res</code>, <code>@Next</code>, <code>@Session</code>, <code>@Param</code>, <code>@Body</code>, <code>@Query</code>, <code>@Headers</code> 등이 있고 <a href="https://docs.nestjs.com/controllers#request-object">다음 링크</a>를 참고하시오.</p>
 </li>
 <li>deferred response를 리턴해도 된다고. Promise 타입 객체를 리턴하게 되면 <a href="#rxjs">#RxJS</a>의 observable stream으로 리턴이 되고, 스트림이 끝날경우 해당 소스에 알림이 간다고는 하는데 뭔 소린지 잘 모르겠음.</li>
-<li><strong><a href="https://docs.nestjs.com/controllers#request-payloads">Request Paloads</a></strong><ul>
+</ul>
+<hr />
+<ul>
+<li><strong><a href="https://docs.nestjs.com/controllers#request-payloads">Request Payloads</a></strong><ul>
 <li>DTO, Data Transfer Object라고 불리우는, 네트워크 전송을 위해 존재하는 객체타입은 클래스로 정의가 되어있다고. DTO 클래스 멤버들은 직렬화 가능한 타입만 들어올 수 있나?</li>
 <li><a href="../../express.js/">express.js</a>에서 POST요청에 대한 요청의 body를 뜯어 원하는 키값들을 직접 획득했다면, Nest.js는 DTO 객체를 인자로 받아와 곧바로 사용할 수 있다.</li>
 <li>`@Post() create(@Body() createCatDto: CreateCatDto) {...}</li>
@@ -42560,6 +42594,97 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><code>consumer.forRoutes</code> 의 인자로 좀 더 구체적인 path, method, 심지어는 controller를 설정할 수도 있다.</p>
+<h3 id="exception-filters"><a href="https://docs.nestjs.com/exception-filters">Exception Filters</a> (이해부족)<a class="headerlink" href="#exception-filters" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Nest에는 애플리케이션 전체에서 처리되지 않은 모든 예외를 처리하는 예외 계층이 내장되어 있습니다. 예외가 애플리케이션 코드에서 처리되지 않으면 이 계층에서 예외를 포착하여 적절한 사용자 친화적인 응답을 자동으로 전송합니다.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExceptionFilter</span><span class="p">,</span><span class="w"> </span><span class="nx">Catch</span><span class="p">,</span><span class="w"> </span><span class="nx">ArgumentsHost</span><span class="p">,</span><span class="w"> </span><span class="nx">HttpException</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@nestjs/common&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Request</span><span class="p">,</span><span class="w"> </span><span class="nx">Response</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;express&#39;</span><span class="p">;</span>
+
+<span class="kd">@Catch</span><span class="p">(</span><span class="nx">HttpException</span><span class="p">)</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">HttpExceptionFilter</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">ExceptionFilter</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">catch</span><span class="p">(</span><span class="nx">exception</span><span class="o">:</span><span class="w"> </span><span class="kt">HttpException</span><span class="p">,</span><span class="w"> </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="kt">ArgumentsHost</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">host</span><span class="p">.</span><span class="nx">switchToHttp</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">getResponse</span><span class="o">&lt;</span><span class="nx">Response</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">getRequest</span><span class="o">&lt;</span><span class="nx">Request</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">exception</span><span class="p">.</span><span class="nx">getStatus</span><span class="p">();</span>
+
+<span class="w">    </span><span class="nx">response</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="nx">status</span><span class="p">)</span>
+<span class="w">      </span><span class="p">.</span><span class="nx">json</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">statusCode</span><span class="o">:</span><span class="w"> </span><span class="kt">status</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
+<span class="w">        </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="kt">request.url</span><span class="p">,</span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>getRequest&lt;Request&gt;</code>와 <code>getResponse&lt;Response&gt;</code>를 사용, 예외 안에서도 요청과 응답 객체의 참조를 얻어올 수 있다.</li>
+<li><code>exception</code>은 현재 처리중인 예외객체</li>
+<li>
+<p><code>host</code>는 <code>ArgumentHost</code>객체로, 아직 잘 모르것다</p>
+<ul>
+<li>HTTP 예외 뿐만 아니라 다양한 예외 (MSA, WebSocket)에 대응하기 위해 <code>ArgumentHost</code>를 사용한다는 점만큼은 알고 넘어가자</li>
+</ul>
+</li>
+<li>
+<p>필터 연결법: 컨트롤러 (혹은 메서드)(혹은 <code>bootstrap</code> 안에)의 어노테이션으로 <code>@UseFilters()</code>를 추가한다. </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">@Post</span><span class="p">()</span>
+<span class="kd">@UseFilters</span><span class="p">(</span><span class="nx">HttpExceptionFilter</span><span class="p">)</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">create</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span><span class="w"> </span><span class="nx">createCatDto</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateCatDto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ForbiddenException</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="pipes"><a href="https://docs.nestjs.com/pipes">Pipes</a><a class="headerlink" href="#pipes" title="Permanent link">#</a></h3>
+<p>파이프는 컨트롤러가 라우팅을 하기 전 두 가지 역할을 수행한다.</p>
+<ol>
+<li>데이터 변환 (예시. string ⟶ number)</li>
+<li>데이터 검증</li>
+</ol>
+<p>모든 <code>PipeTransform</code> 인터페이스를 구현하고 <code>@Injectable()</code> 어노테이션을 갖고있는 클래스는 Pipe이다.</p>
+<p>path variable을 원하는 타입으로 파싱해야할 경우, 예를 들어 인자에 들어올 <code>@Param</code>에 <code>ParseXXXPipe</code>를 넣어주면 된다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;:id&#39;</span><span class="p">)</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">findOne</span><span class="p">(</span><span class="kd">@Param</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ParseIntPipe</span><span class="p">)</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">catsService</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>path variable만 되냐? query parameter도 된다!</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Get</span><span class="p">()</span>
+<span class="k">async</span><span class="w"> </span><span class="nx">findOne</span><span class="p">(</span><span class="kd">@Query</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span><span class="w"> </span><span class="nx">ParseIntPipe</span><span class="p">)</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>파싱에 실패한 경우 (예를 들어 <code>GET cats/hello</code>가 들어온 경우) 예외를 던진다. 그 예외는 위에서 설명한 <a href="#exception-filtershttps-docsnestjscomexception-filters-이해부족">Exception Filter</a>에서 처리되어 에러 메시지를 응답하게 된다.</p>
+<ul>
+<li>
+<p>[?] 그래도 메서드 선언 순서가 문제가 될 것 같은데? <code>@Get('cat/:id')</code>와 <code>@Get('cat/breed')</code> 이 순서로 라우팅을 처리해버리면 전부 첫번째 컨트롤러로 들어갈 것이고 예외가 발생할 것이다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// not ok</span>
+<span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;:id&#39;</span><span class="p">)</span>
+<span class="nx">findOne</span><span class="p">(</span><span class="kd">@Param</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ParseIntPipe</span><span class="p">)</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`meowingtone #</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;breed&#39;</span><span class="p">)</span>
+<span class="nx">findBreed</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;you requested breed!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// ok</span>
+<span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;breed&#39;</span><span class="p">)</span>
+<span class="nx">findBreed</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;you requested breed!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">@Get</span><span class="p">(</span><span class="s1">&#39;:id&#39;</span><span class="p">)</span>
+<span class="nx">findOne</span><span class="p">(</span><span class="kd">@Param</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ParseIntPipe</span><span class="p">)</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`meowingtone #</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
 <h2 id="js-async-await-promise">JS async, await, promise<a class="headerlink" href="#js-async-await-promise" title="Permanent link">#</a></h2>
 <p><a href="https://springfall.cc/article/2022-11/easy-promise-async-await">https://springfall.cc/article/2022-11/easy-promise-async-await</a></p>
 <blockquote>
