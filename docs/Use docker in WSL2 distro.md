@@ -4,7 +4,7 @@ tags:
 description:
 title: Use docker in WSL2 distro
 created: 2023-11-02T00:21:13
-updated: 2023-11-02T00:22:08
+updated: 2023-11-13T16:08:32
 ---
 - [[0110 Utility 🔧]]
 - [[0010 Programming 👩‍💻|programming]]
@@ -23,3 +23,13 @@ ___
 <https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers>
 
 도커 데스크톱 설정에서 `Settings > Resources > Wsl Integration` 탭으로 가서 원하는 디스트로를 토글하면 도커 명령어를 사용할 수 있게 만들어준다고!
+
+## Plus Alpha: port forwarding
+
+`-p <inbound-port>:<destination-port>`를 `docker run` 명령어 사이에 끼워넣어주면 된다.
+
+```
+docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS                    NAMES
+fd3697bcf65c   postgres   "docker-entrypoint.s…"   2 seconds ago   Up 2 seconds   0.0.0.0:5432->5432/tcp   recre-db
+```
