@@ -73,6 +73,7 @@ export class AuthController {
 
 - service가 하는 일
 	- `AuthGuard`가 authorization server에 요청을 날려 얻은 유저정보를 `req.user` 에 넣었을 것임.
+	- 
 
 ## Strategy
 
