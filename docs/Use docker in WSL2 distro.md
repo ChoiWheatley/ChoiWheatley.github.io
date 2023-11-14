@@ -4,7 +4,7 @@ tags:
 description:
 title: Use docker in WSL2 distro
 created: 2023-11-02T00:21:13
-updated: 2023-11-13T16:08:32
+updated: 2023-11-14T08:56:28
 ---
 - [[0110 Utility 🔧]]
 - [[0010 Programming 👩‍💻|programming]]
@@ -33,3 +33,7 @@ docker ps
 CONTAINER ID   IMAGE      COMMAND                  CREATED         STATUS         PORTS                    NAMES
 fd3697bcf65c   postgres   "docker-entrypoint.s…"   2 seconds ago   Up 2 seconds   0.0.0.0:5432->5432/tcp   recre-db
 ```
+
+## 매번 원격 데스크톱을 켜서 docker desktop을 켜야하는 문제
+
+<https://stackoverflow.com/questions/51252181/how-to-start-docker-daemon-windows-service-at-startup-without-the-need-to-log> 다음 대화에서 Task Scheduler를 사용하여 컴퓨터 부팅 1분 뒤에 자동으로 태스크를 실행하도록 만들 수 있었다.
