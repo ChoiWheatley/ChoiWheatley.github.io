@@ -4,7 +4,7 @@ tags:
 description:
 title: oauth2 {nest.js} {passport}
 created: 2023-11-13T20:38:32
-updated: 2023-11-14T14:39:09
+updated: 2023-11-14T15:15:25
 ---
 - [[0018.1 Nest.js 🪺]]
 - [dev.to 블로그글](https://dev.to/tugascript/nestjs-authentication-with-oauth20-configuration-and-operations-41k)
@@ -17,10 +17,62 @@ ___
 
 strategy 생성하고 모듈과 서비스 생성하고, 직접적으로 strategy 코드를 호출하지는 않고 `AuthModule`이라는 가드를 어노테이션으로 붙여놓는걸로 구현 가능. controller에서 인가가 필요한 엔드포인트에 가드를 걸어놓는다. 실제 authenticate 단계를 위해서 built-in passport guards를 사용함.
 
-- guards가 하는 일
+- strategy가 하는 일
 	- retrieving credentials
 	- running verify function
 	- creating `user` property
+
+```ts
+// src/auth/kakao.strategy.ts
+export class KakaoStrategy extends PassportStrategy(Strategy, 'kakao') {
+  constructor() {
+    super({
+      clientID: process.env.KAKAO_CLIENT_ID,
+      clientSecret: process.env.KAKAO_CLIENT_SECRET,
+      callbackURL: 'http://chltm.mooo.com:3000/auth/kakao',
+    });
+  }
+  async validate(
+    accessToken: string,
+    refreshToken: string,
+    profile: any,
+    done: any,
+  ) {
+    const { id, username, email, provider } = profile;
+    console.log(profile);
+    const user = {
+      id,
+      username,
+      provider,
+      email,
+      accessToken,
+      refreshToken,
+    };
+    done(null, user);
+  }
+}
+```
+
+- controller가 하는 일
+	- `AuthGard`를 등록하여 사용자 인가작업에 대한 책임을 회피
+	- 주입받은 service 메서드를 호출하여 원하는 작업을 대신함.
+	- 결국 얘는 책임전가만 열심히 하는 녀석임
+
+```ts
+@Controller('auth')
+export class AuthController {
+  constructor(private readonly authService: AuthService) {}
+
+  @Get('kakao')
+  @UseGuards(AuthGuard('kakao'))
+  async kakaoAuth(@Req() req): Promise<any> {
+    return this.authService.kakaoLogin(req);
+  }
+}
+```
+
+- service가 하는 일
+	- `AuthGuard`가 authorization server에 요청을 날려 얻은 유저정보를 `req.user` 에 넣었을 것임.
 
 ## Strategy
 
