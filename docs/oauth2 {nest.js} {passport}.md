@@ -4,7 +4,7 @@ tags:
 description:
 title: oauth2 {nest.js} {passport}
 created: 2023-11-13T20:38:32
-updated: 2023-11-14T12:54:43
+updated: 2023-11-14T13:27:19
 ---
 - [[0018.1 Nest.js 🪺]]
 - [dev.to 블로그글](https://dev.to/tugascript/nestjs-authentication-with-oauth20-configuration-and-operations-41k)
@@ -22,8 +22,11 @@ strategy 생성하고 모듈과 서비스 생성하고, 직접적으로 strategy
 	- running verify function
 	- creating `user` property
 
-
 ## Strategy
 
 1. 인증 단계를 JWT, OAuth, username/password strategy로 선택할 수 있음.
 2. 검증단계는 verify callback을 사용하게 된다.
+
+## Kakao Oauth2
+
+새 애플리케이션을 등록 ⟶ 카카오 로그인 탭에서 활성화 + OpenID Connect + Redirect URI 설정 ⟶ 플랫폼 탭에서 Web 사이트 도메인 추가 ⟶ 앱 키 탭에서 각각 REST API 키와 Admin 키를 Client ID & Secrete Key에 대응하여 접속

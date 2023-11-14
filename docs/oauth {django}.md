@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-21T20:39:04
-updated: 2023-07-15T21:33:04
+updated: 2023-11-14T13:26:59
 title: oauth {django}
 ---
 - [YT](https://www.youtube.com/watch?v=Gk9tsLHMMsM&list=WL&index=1&t=812s)
@@ -12,6 +12,6 @@ title: oauth {django}
 - `AUTHENTICATION_BACKENDS`라는 걸 설정하네? 
 
 - [allauth {python module}](https://django-allauth.readthedocs.io/en/latest/providers.html#naver)
-	- https://console.cloud.google.com/
-	- https://developers.naver.com/main/
-	- https://developers.kakao.com/
+	- <https://console.cloud.google.com/>
+	- <https://developers.naver.com/main/>
+	- <https://developers.kakao.com/console>
