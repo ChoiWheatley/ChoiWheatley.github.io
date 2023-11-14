@@ -91,3 +91,7 @@ npm i passport-kakao
 새 애플리케이션을 등록 ⟶ 카카오 로그인 탭에서 활성화 + OpenID Connect + Redirect URI 설정 ⟶ 플랫폼 탭에서 Web 사이트 도메인 추가 ⟶ 앱 키 탭에서 각각 REST API 키와 Admin 키를 Client ID & Secrete Key에 대응하여 접속
 
 email이 필수동의가 안될 것이다. 이 경우, *비즈니스* 탭으로 가서 개인 개발자 비즈 앱을 등록하면 된다.
+
+## Google OAuth2
+
+- [[redirect URI mismatch 문제 {OAUTH2} {nest.js}]]
