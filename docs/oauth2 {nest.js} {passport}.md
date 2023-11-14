@@ -4,7 +4,7 @@ tags:
 description:
 title: oauth2 {nest.js} {passport}
 created: 2023-11-13T20:38:32
-updated: 2023-11-14T13:53:30
+updated: 2023-11-14T14:39:09
 ---
 - [[0018.1 Nest.js 🪺]]
 - [dev.to 블로그글](https://dev.to/tugascript/nestjs-authentication-with-oauth20-configuration-and-operations-41k)
@@ -36,3 +36,5 @@ npm i passport-kakao
 ```
 
 새 애플리케이션을 등록 ⟶ 카카오 로그인 탭에서 활성화 + OpenID Connect + Redirect URI 설정 ⟶ 플랫폼 탭에서 Web 사이트 도메인 추가 ⟶ 앱 키 탭에서 각각 REST API 키와 Admin 키를 Client ID & Secrete Key에 대응하여 접속
+
+email이 필수동의가 안될 것이다. 이 경우, *비즈니스* 탭으로 가서 개인 개발자 비즈 앱을 등록하면 된다.
