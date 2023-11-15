@@ -21,5 +21,8 @@ ___
 
 ## 팀 관련하여 생각한 것들
 
-- [ ] [[git commit message 규칙]] 알려줘야겠다.
-- 
+- [x] [[git commit message 규칙]] 알려줘야겠다.
+
+## Daily Notes
+
+- [[2023-11-15 {swjungle}{recre}]]
