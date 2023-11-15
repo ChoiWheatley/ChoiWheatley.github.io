@@ -35981,6 +35981,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    구현 플로우
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     TroubleShooting
   </a>
@@ -42468,6 +42475,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    구현 플로우
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     TroubleShooting
   </a>
@@ -42509,6 +42523,12 @@
 </ul>
 <p>![[Drawing 2023-11-14 22.36.56.excalidraw]]<br />
 <a class="glightbox" href="../assets/Pasted%20image%2020231114232402.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20231114232402.png" src="../assets/Pasted%20image%2020231114232402.png" /></a></p>
+<h2 id="_2">구현 플로우<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<ul>
+<li><code>PassportStrategy</code>를 상속한 google/kakao/naver strategy의 역할은 컨트롤러에게 컨텍스트가 넘어가기 전에 유저 데이터를 넘긴다. (여러가지 더 있긴 함) <a href="https://docs.nestjs.com/recipes/passport#implementing-passport-strategies">implementing passport strategies</a></li>
+<li><code>auth.service.ts</code> 파일은 유저 데이터가 담긴 req의 email를 기반으로 DB에 쿼리를 날린다. 만약 유저가 존재한다면 그대로 리턴하고, 없다면 회원가입을 시켜 리턴한다.</li>
+<li><code>auth.controller.ts</code>는 각 strategy 별로 두개씩 엔드포인트를 정의한다. 예를 들어 구글 strategy라면, <code>/auth/google</code>, <code>/auth/google/redirect</code>인 식이다. 이렇게 만드는 이유는 OAUTH2.0 기반 인증방식의 특징과 연관이 있다. 아래 이미지를 본다면 처음에 유저가 본 서버에 요청할 때에는 전자를, 구글 로그인을 마친 뒤에 다시 본 서버에 authorization code를 추가한 채로 요청할 때에는 후자를 사용한다.</li>
+</ul>
 <h2 id="troubleshooting">TroubleShooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
 <p>엔드포인트 정의부 마지막에는 꼭 <code>/</code>를 붙여주세요.</p>
 <p><strong>before</strong></p>
