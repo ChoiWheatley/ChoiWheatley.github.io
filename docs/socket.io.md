@@ -4,7 +4,7 @@ tags:
 description:
 title: socket.io
 created: 2023-11-16T08:35:45
-updated: 2023-11-16T10:18:34
+updated: 2023-11-16T11:56:52
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [socket.io document](https://socket.io/docs/v4/)
@@ -27,11 +27,11 @@ socket.emit('hello', 'world');
 socket.on('hello', (arg) => console.log(arg)) // world
 ```
 
-- 위처럼 일대일로 연결할 수도 있지만 **브로드캐스팅**도 수행할 수 있다고...!
+- **브로드캐스팅**은 서버가 연결된 클라이언트들에게 메시지를 보낼때 사용
 
 ```js
 io.emit('hello'); // to all connected clients
-io.to('news').emit('hello'); // to all connected clients in the 'news' room
+socket.broadcast.emit('hello'); // 본인을 제외한 모두에게
 ```
 
 - [client options](https://socket.io/docs/v4/client-options/)
@@ -75,5 +75,3 @@ io.of('/my-namespace').on('connection', (socket) => {
 	// ...
 });
 ```
-
-- [express-session](https://socket.io/how-to/use-with-express-session)을 함께 쓰면 
