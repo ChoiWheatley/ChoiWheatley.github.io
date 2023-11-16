@@ -4,7 +4,7 @@ tags:
 description:
 title: 2023-11-15 {swjungle}{recre}
 created: 2023-11-15T21:02:17
-updated: 2023-11-15T21:57:07
+updated: 2023-11-16T08:36:00
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 ___
@@ -12,24 +12,4 @@ ___
 
 ## socket.io 겉핥기
 
-- sender
-
-```js
-socket.emit('hello', 'world', response => console.log(response)); // got it
-```
-
-- receiver
-
-```js
-socket.on('hello', (arg, callback) => {
-	console.log(arg); // world
-	callback('got it');
-})
-```
-
-- 위처럼 일대일로 연결할 수도 있지만 **브로드캐스팅**도 수행할 수 있다고...!
-
-```js
-io.emit('hello'); // to all connected clients
-io.to('news').emit('hello'); // to all connected clients in the 'news' room
-```
+[[socket.io]]로 가세요
