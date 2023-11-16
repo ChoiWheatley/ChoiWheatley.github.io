@@ -4,7 +4,7 @@ tags:
 description:
 title: socket.io
 created: 2023-11-16T08:35:45
-updated: 2023-11-16T15:58:23
+updated: 2023-11-16T17:46:17
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [socket.io document](https://socket.io/docs/v4/)
@@ -79,3 +79,34 @@ io.of('/my-namespace').on('connection', (socket) => {
 ## socket.io 품은 NestJS
 
 [docs.nestjs.com/websockets](https://docs.nestjs.com/websockets/gateways)
+
+`@WebSocketGetway(80, { namespace: 'events', transports: ['websocket'] })` 어노테이션을 가지는 게이트웨이 클래스를 활용.
+
+[세 개의 인터페이스](https://docs.nestjs.com/websockets/gateways#lifecycle-hooks)를 사용하여 들어오는 connection 요청에 대한 루틴 실행
+
+```ts
+@WebSocketGetway(80, { namespace: 'events', transports: ['websocket'] })
+class GameSessionGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
+	private afterInit() {}
+	private handleConnection() {}
+	private handleDisconnect() {}
+}
+```
+
+서버 인스턴스를 주입받을 수 있다. socket.io 에서의 io와 동일한 타입의 객체.
+
+```js
+	@WebSocketServer()
+	io: Server;
+```
+
+HTTP때와 거의 비슷하게 파이프, 예외필터, 가드, 인터셉터 모두 달 수 있다.
+
+```js
+	@UsePipes(ValidationPipe)
+	@SubscribeMessage('host')
+	handleEvent(client: Client, data): WsResponse<unknown> {
+		const event = 'events';
+		return { event, data };
+	}
+```
