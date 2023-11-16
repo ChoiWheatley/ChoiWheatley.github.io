@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-11-16T15:11:15
+updated: 2023-11-16T15:57:53
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -42,3 +42,7 @@ ___
 **game start**
 
 ![[Pasted image 20231116151003.png]]
+
+추가: 리디렉션을 안해도 된다. QR코드, 대기화면 아래에 게임루틴을 함께 로드할 수 있기 때문.
+
+NestJS 코드로 넘어가자.

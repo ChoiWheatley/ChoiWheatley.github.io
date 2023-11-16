@@ -4,7 +4,7 @@ tags:
 description:
 title: socket.io
 created: 2023-11-16T08:35:45
-updated: 2023-11-16T11:56:52
+updated: 2023-11-16T15:58:23
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [socket.io document](https://socket.io/docs/v4/)
@@ -75,3 +75,7 @@ io.of('/my-namespace').on('connection', (socket) => {
 	// ...
 });
 ```
+
+## socket.io 품은 NestJS
+
+[docs.nestjs.com/websockets](https://docs.nestjs.com/websockets/gateways)
