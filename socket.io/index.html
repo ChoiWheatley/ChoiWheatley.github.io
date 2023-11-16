@@ -83,6 +83,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cheatsheet" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -6630,6 +6635,23 @@
     
   
   Untitled 10
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Untitled%2011/" class="md-tabs__link">
+        
+  
+    
+  
+  Untitled 11
 
       </a>
     </li>
@@ -29005,6 +29027,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../Untitled%2011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Untitled 11
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Untitled%202/" class="md-nav__link">
         
   
@@ -36669,6 +36710,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    socket.io
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -36678,6 +36730,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cheatsheet" class="md-nav__link">
+    CHEATSHEET
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socketio-nestjs" class="md-nav__link">
+    socket.io 품은 NestJS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -42515,6 +42598,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cheatsheet" class="md-nav__link">
+    CHEATSHEET
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#socketio-nestjs" class="md-nav__link">
+    socket.io 품은 NestJS
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -42535,6 +42640,10 @@
 <li><a href="https://socket.io/docs/v4/">socket.io document</a></li>
 </ul>
 <hr />
+<iframe src="https://socket.io/images/logo.svg" allow="fullscreen" allowfullscreen="" style="height: 20%; width: 20%; aspect-ratio: 1 / 1;"></iframe>
+
+<h2 id="cheatsheet">CHEATSHEET<a class="headerlink" href="#cheatsheet" title="Permanent link">#</a></h2>
+<p><a href="https://socket.io/docs/v4/emit-cheatsheet">https://socket.io/docs/v4/emit-cheatsheet</a></p>
 <ul>
 <li>sender</li>
 </ul>
@@ -42546,10 +42655,10 @@
 <div class="highlight"><pre><span></span><code><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">))</span><span class="w"> </span><span class="c1">// world</span>
 </code></pre></div>
 <ul>
-<li>위처럼 일대일로 연결할 수도 있지만 <strong>브로드캐스팅</strong>도 수행할 수 있다고...!</li>
+<li><strong>브로드캐스팅</strong>은 서버가 연결된 클라이언트들에게 메시지를 보낼때 사용</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nx">io</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// to all connected clients</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">to</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">).</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// to all connected clients in the &#39;news&#39; room</span>
+<span class="nx">socket</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 본인을 제외한 모두에게</span>
 </code></pre></div>
 <ul>
 <li><a href="https://socket.io/docs/v4/client-options/">client options</a></li>
@@ -42573,6 +42682,49 @@
 <span class="w">        </span><span class="nx">callback</span><span class="p">(</span><span class="s1">&#39;got it&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="p">});</span>
+</code></pre></div>
+<ul>
+<li>
+<p>room</p>
+<ul>
+<li>서버 ⟶ 클라 in room 메시지 보낼때: <code>io.to('my room').emit('hello')</code></li>
+</ul>
+</li>
+<li>
+<p>namespace</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// server</span>
+<span class="nx">io</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s1">&#39;/my-namespace&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">socket</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arg</span><span class="p">));</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="socketio-nestjs">socket.io 품은 NestJS<a class="headerlink" href="#socketio-nestjs" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://docs.nestjs.com/websockets/gateways">docs.nestjs.com/websockets</a></li>
+<li><a href="https://dev.to/jfrancai/demystifying-nestjs-websocket-gateways-a-step-by-step-guide-to-effective-testing-1a1f">step by step guide to effective testing with nestjs websocket</a></li>
+</ul>
+<p><code>@WebSocketGetway(80, { namespace: 'events', transports: ['websocket'] })</code> 어노테이션을 가지는 게이트웨이 클래스를 활용. </p>
+<p><a href="https://docs.nestjs.com/websockets/gateways#lifecycle-hooks">세 개의 인터페이스</a>를 사용하여 들어오는 connection 요청에 대한 루틴 실행</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@WebSocketGetway</span><span class="p">(</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;events&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">transports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;websocket&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">})</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">GameSessionGateway</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">OnGatewayInit</span><span class="p">,</span><span class="w"> </span><span class="nx">OnGatewayConnection</span><span class="p">,</span><span class="w"> </span><span class="nx">OnGatewayDisconnect</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">afterInit</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">handleConnection</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">handleDisconnect</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>서버 인스턴스를 주입받을 수 있다. socket.io 에서의 io와 동일한 타입의 객체. 서버객체는 게이트웨이 포트마다 하나씩 존재한다. <a href="https://stackoverflow.com/a/53658286/21369350">출처</a></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="err">@</span><span class="nx">WebSocketServer</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">io</span><span class="o">:</span><span class="w"> </span><span class="nx">Server</span><span class="p">;</span>
+</code></pre></div>
+<p>HTTP때와 거의 비슷하게 파이프, 예외필터, 가드, 인터셉터 모두 달 수 있다.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="err">@</span><span class="nx">UsePipes</span><span class="p">(</span><span class="nx">ValidationPipe</span><span class="p">)</span>
+<span class="w">    </span><span class="err">@</span><span class="nx">SubscribeMessage</span><span class="p">(</span><span class="s1">&#39;host&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">handleEvent</span><span class="p">(</span><span class="nx">client</span><span class="o">:</span><span class="w"> </span><span class="nx">Client</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">WsResponse</span><span class="o">&lt;</span><span class="nx">unknown</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;events&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 
 
