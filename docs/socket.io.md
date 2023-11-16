@@ -4,7 +4,7 @@ tags:
 description:
 title: socket.io
 created: 2023-11-16T08:35:45
-updated: 2023-11-16T17:46:17
+updated: 2023-11-16T20:27:13
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [socket.io document](https://socket.io/docs/v4/)
@@ -78,9 +78,10 @@ io.of('/my-namespace').on('connection', (socket) => {
 
 ## socket.io 품은 NestJS
 
-[docs.nestjs.com/websockets](https://docs.nestjs.com/websockets/gateways)
+- [docs.nestjs.com/websockets](https://docs.nestjs.com/websockets/gateways)
+- [step by step guide to effective testing with nestjs websocket](https://dev.to/jfrancai/demystifying-nestjs-websocket-gateways-a-step-by-step-guide-to-effective-testing-1a1f)
 
-`@WebSocketGetway(80, { namespace: 'events', transports: ['websocket'] })` 어노테이션을 가지는 게이트웨이 클래스를 활용.
+`@WebSocketGetway(80, { namespace: 'events', transports: ['websocket'] })` 어노테이션을 가지는 게이트웨이 클래스를 활용. 
 
 [세 개의 인터페이스](https://docs.nestjs.com/websockets/gateways#lifecycle-hooks)를 사용하여 들어오는 connection 요청에 대한 루틴 실행
 
@@ -93,7 +94,7 @@ class GameSessionGateway implements OnGatewayInit, OnGatewayConnection, OnGatewa
 }
 ```
 
-서버 인스턴스를 주입받을 수 있다. socket.io 에서의 io와 동일한 타입의 객체.
+서버 인스턴스를 주입받을 수 있다. socket.io 에서의 io와 동일한 타입의 객체. 서버객체는 게이트웨이 포트마다 하나씩 존재한다. [출처](https://stackoverflow.com/a/53658286/21369350)
 
 ```js
 	@WebSocketServer()
