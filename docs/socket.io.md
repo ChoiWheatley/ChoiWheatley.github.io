@@ -4,11 +4,17 @@ tags:
 description:
 title: socket.io
 created: 2023-11-16T08:35:45
-updated: 2023-11-16T09:28:06
+updated: 2023-11-16T10:18:34
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [socket.io document](https://socket.io/docs/v4/)
 ___
+<iframe src="https://socket.io/images/logo.svg" allow="fullscreen" allowfullscreen="" style="height: 20%; width: 20%; aspect-ratio: 1 / 1;"></iframe>
+
+## CHEATSHEET
+
+<https://socket.io/docs/v4/emit-cheatsheet>
+
 - sender
 
 ```js
@@ -56,3 +62,18 @@ io.on('connection', (socket) => {
 	});
 });
 ```
+
+- room
+	- 서버 ⟶ 클라 in room 메시지 보낼때: `io.to('my room').emit('hello')`
+ 
+- namespace
+
+```js
+// server
+io.of('/my-namespace').on('connection', (socket) => {
+	socket.on('hello', (arg) => console.log(arg));
+	// ...
+});
+```
+
+- [express-session](https://socket.io/how-to/use-with-express-session)을 함께 쓰면 
