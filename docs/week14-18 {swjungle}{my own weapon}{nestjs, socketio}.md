@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-11-18T21:34:42
+updated: 2023-11-18T22:31:33
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -39,3 +39,4 @@ ___
 
 - 2023-11-18
 	- [ ] github issue 왜 다들 안쓰지.. 노션에 데이터베이스를 더 선호하는 것 같은데 깃허브 이슈 사용문화를 스며들게 만들기 위해선 뭘 하는것이 좋을까?
+	- [[2023-11-18 auth-redirect {swjungle}{nestjs}]]

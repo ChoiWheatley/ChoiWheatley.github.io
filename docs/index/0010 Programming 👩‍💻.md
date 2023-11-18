@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-11-02T14:33:10
+updated: 2023-11-18T23:00:34
 ---
 
 parent link: [[docs/index/index|index]]
@@ -36,6 +36,7 @@ parent link: [[docs/index/index|index]]
 	- [[git commit message 규칙]]
 	- [[알잘딱 GitHub 핵심개념]]
 	- [[git selectively merge or pick changes from another branch]]
+	- [[ssh-keygen for github]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
 - wsl
 	- [[ssh into WSL2 & vs-code]]
