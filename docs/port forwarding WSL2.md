@@ -4,7 +4,7 @@ tags:
 description:
 title: port forwarding WSL2
 created: 2023-09-16T13:01:58
-updated: 2023-11-02T14:37:21
+updated: 2023-11-19T20:43:13
 ---
 - [[0010 Programming 👩‍💻|programming]]
 - [allow server running inside wsl to be accecible outside windows 10 host](https://www.nextofwindows.com/allow-server-running-inside-wsl-to-be-accessible-outside-windows-10-host)
