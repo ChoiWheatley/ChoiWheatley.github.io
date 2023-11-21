@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-11-19T21:56:04
+updated: 2023-11-21T14:17:16
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -32,7 +32,7 @@ ___
 
 - 2023-11-17
 	- [[HTTPS EC2 {devops}]]
-	- [ ] @박동호 EC2 SSH 연결하게 프라이빗키 부탁하기 (아니면 `ssh-keygen`)
+	- [ ] ~~@박동호 EC2 SSH 연결하게 프라이빗키 부탁하기 (아니면 `ssh-keygen`)~~
 
  - 2023-11-18
 	- [ ] [api nestjs chat websockets](https://wanago.io/2021/01/25/api-nestjs-chat-websockets/) 튜토리얼
@@ -42,4 +42,4 @@ ___
 	- [[2023-11-18 auth-redirect {swjungle}{nestjs}]]
 
 - 2023-11-19
-	- [ ] cookie 로컬 스토리지에 저장하는 코드 별개의 PR로 만들어버리자. 
+	- [x] cookie 로컬 스토리지에 저장하는 코드 별개의 PR로 만들어버리자. 
