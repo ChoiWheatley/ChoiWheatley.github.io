@@ -1226,6 +1226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/How%20great%20leadrs%20inspire%20action%2C%20Simon%20Sinek%20%EC%82%AC%EC%9D%B4%EB%A8%BC%20%EC%82%AC%EC%9D%B4%EB%84%A5%EC%9D%98%20%22%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%99%9C%20%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80%22%20%7BMission%2C%20Vision%2C%20Goal%7D%20%7BWhat%2C%20How%2C%20Why%7D/</loc>
+         <lastmod>2023-11-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/How%20to%20Get%20Around%20OpenAI%20GPT-3%20Token%20Limits%20%7BBLOG%7D/</loc>
          <lastmod>2023-11-23</lastmod>
          <changefreq>daily</changefreq>
@@ -4882,11 +4887,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%EB%BC%88%20%EC%A3%BC%EC%82%AC%20%EA%B8%B0%EC%A0%84%EA%B3%BC%20%EB%B6%80%EC%9E%91%EC%9A%A9/</loc>
-         <lastmod>2023-11-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/%EC%82%AC%EC%9D%B4%EB%A8%BC%20%EC%82%AC%EC%9D%B4%EB%84%A5%EC%9D%98%20%22%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%99%9C%20%EC%9D%BC%ED%95%98%EB%8A%94%EA%B0%80%22%20%7BMission%2C%20Vision%2C%20Goal%7D%20%7BWhat%2C%20How%2C%20Why%7D/</loc>
          <lastmod>2023-11-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
