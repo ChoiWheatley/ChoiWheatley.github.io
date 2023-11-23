@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-11-21T14:17:16
+updated: 2023-11-23T09:19:31
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -43,3 +43,6 @@ ___
 
 - 2023-11-19
 	- [x] cookie 로컬 스토리지에 저장하는 코드 별개의 PR로 만들어버리자. 
+
+- 2023-11-23
+	- [Application Load Balancer를 사용하여 web socket 로드밸런서 연결하기](https://stackoverflow.com/questions/39336033/does-an-application-load-balancer-support-websockets)
