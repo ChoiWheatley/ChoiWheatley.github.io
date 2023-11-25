@@ -47,3 +47,6 @@ ___
 - 2023-11-23
 	- [Application Load Balancer를 사용하여 web socket 로드밸런서 연결하기](https://stackoverflow.com/questions/39336033/does-an-application-load-balancer-support-websockets) ⟶ 실패하여 그냥 집컴으로 중간발표 진행함.
 	- [[중간발표 피드백, 회고, 앞으로, 코어타임 변동, 기술적 챌린지 고민 나 혼자 요약ver {swjungle}]]
+
+- 2023-11-25
+	- [[web socket ec2 {devops}]]
