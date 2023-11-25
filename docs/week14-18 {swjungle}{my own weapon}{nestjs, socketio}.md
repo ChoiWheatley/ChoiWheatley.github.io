@@ -50,3 +50,4 @@ ___
 
 - 2023-11-25
 	- [[web socket ec2 {devops}]]
+	- [[imdb with NestJS]]
