@@ -4,7 +4,7 @@ tags:
 description:
 title: web socket ec2 {devops}
 created: 2023-11-25T09:55:44
-updated: 2023-11-25T10:17:26
+updated: 2023-11-25T13:34:54
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 ___
@@ -28,3 +28,9 @@ ___
 ![[recre-websocket-tg.jpg]]
 
 브라우저는 wss 프로토콜로 요청을 계속 보내는데, Nestjs 서버는 반응을 안한다..
+
+이게 보니까 타겟그룹을 HTTPS:3002 포트로 보내버려서 Nestjs 서버가 요청을 받지 못했던 것이다. 따라서 이를 HTTP:3000으로 수정했더니 101 Switching Protocols 응답을 확인했다.
+
+하지만,
+
+프로토콜 변경 이후에 Nestjs 콘솔에 로그가 찍히지 않는다..! nmap으로 ec2에 소켓 포트로 요청이 들어오는지 검사해봐야겠다.
