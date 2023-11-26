@@ -51,3 +51,6 @@ ___
 - 2023-11-25
 	- [[web socket ec2 {devops}]]
 	- [[imdb with NestJS]]
+
+- 2023-11-26
+	- [[무궁화꽃이피었습니다 {swjungle}{my own weapon}]]
