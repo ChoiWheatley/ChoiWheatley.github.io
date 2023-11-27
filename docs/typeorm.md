@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2023-11-27T17:24:45
+updated: 2023-11-27T17:54:24
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -160,5 +160,67 @@ export class PhotoMetadata {
 	@OneToOne(type => Photo)
 	@JoinColumn()
 	photo: Photo;
+}
+```
+
+> Let's save a photo, and its metadata and attach them to each other.
+
+```ts
+const photo = new Photo();
+const metadata = new PhotoMetadata();
+...
+// get entity relationships
+const photoRepository = AppDataSource.getRepository(Photo);
+const metadataRepository = AppDataSource.getRepository(PhotoMetadata);
+
+// first we should save a photo
+await photoRepository.save(photo);
+
+// photo is saved. Now we need to save a photo metadata
+await metadataRepository.save(metadata);
+```
+
+> `cascade` 옵션을 주어 부모 테이블에 일어난 변화를 자식 테이블도 같이 수정되도록 만들 수 있다.
+
+```ts
+export class Photo {
+	...
+	@OneToOne(type => PhotoMetadata, (metadata) => metadata.photo, {
+		cascade: true,
+	})
+	metadata: PhotoMetadata;
+}
+
+///
+
+const photo = new Photo();
+const metadata = new PhotoMetadata();
+...
+photo.metadata = metadata; // this way we CONNECT them
+
+await photoRepository.save(photo);
+```
+
+
+> Bidirectional relationships using *inverse relation*
+
+```ts
+// entity/PhotoMetadata.ts
+
+@Entity()
+export class PhotoMetadata {
+	...
+	@OneToOne(type => Photo, (photo) => photo.metadata)
+	@JoinColumn()
+	photo: Photo;
+}
+
+// entity/Photo.ts
+
+@Entity()
+export class Photo {
+	...
+	@OneToOne(type => PhotoMetadata, (photoMetadata) => photoMetadata.photo)
+	metadata: PhotoMetadata;
 }
 ```
