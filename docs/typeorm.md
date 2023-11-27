@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2023-11-27T17:54:24
+updated: 2023-11-27T21:46:37
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -153,6 +153,8 @@ const savedPhotos = await photoRepository.find()
 
 `JoinColumn` 데코레이터는 두 테이블의 관계를 **소유**하고 있음을 나타낸다. 관계는 단방향일수도 있고 양방향일 수도 있으나, 소유는 반드시 하나의 테이블만이 가지게 된다. 아래의 예제에서 `PhotoMetadata` 모델은 `Photo`와의 관계를 소유한다. 즉, `PhotoMetadata` 모델이 `Photo` id를 FK로 가지게 된다는 것을 의미한다.
 
+> Relations can be unidirectional or bidirectional. Only one side of relational can be owning. Using `@JoinColumn` decorator is required on the owner side of the relationship.
+
 ```ts
 @Entity()
 export class PhotoMetadata {
@@ -200,7 +202,6 @@ photo.metadata = metadata; // this way we CONNECT them
 
 await photoRepository.save(photo);
 ```
-
 
 > Bidirectional relationships using *inverse relation*
 
