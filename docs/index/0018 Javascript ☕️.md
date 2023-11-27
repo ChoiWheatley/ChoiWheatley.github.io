@@ -38,6 +38,7 @@ title: 0018 Javascript ☕️
 
 - [[express.js]]
 - [[sequelize, a MySQL ORM for javascript]]
+- [[typeorm]]
 - [[nodemon, auto reload nodejs server {npm}]]
 
 ## 이호준 강사님의 한마디 (ormi)

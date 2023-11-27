@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-11-27T10:32:16
+updated: 2023-11-27T16:21:57
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -57,3 +57,4 @@ ___
 
 - 2023-11-27
 	- [ALB socket.io 관련 질문](https://stackoverflow.com/questions/43702043/aws-application-load-balancer-and-socket-io) | Redis adapter를 사용하여 여러 채팅룸을 만들 수 있다고 한다. 이거는 프로세스나 서버를 넘나드는 브로드캐스팅을 위한 전략이고.
+	- [[typeorm]]으로 IMDB 사용할거임. 근데 오늘은 월요일이네? 발표는 수요일인데?
