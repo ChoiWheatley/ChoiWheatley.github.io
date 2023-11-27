@@ -44539,12 +44539,73 @@
 </blockquote>
 <p><code>type =&gt; Photo</code> 노테이션은 우리가 연관관계를 맺고 싶은 대상 클래스의 이름을 적는 것으로, <code>() =&gt; Photo</code> 이렇게 적을 수도 있다.</p>
 <p><code>JoinColumn</code> 데코레이터는 두 테이블의 관계를 <strong>소유</strong>하고 있음을 나타낸다. 관계는 단방향일수도 있고 양방향일 수도 있으나, 소유는 반드시 하나의 테이블만이 가지게 된다. 아래의 예제에서 <code>PhotoMetadata</code> 모델은 <code>Photo</code>와의 관계를 소유한다. 즉, <code>PhotoMetadata</code> 모델이 <code>Photo</code> id를 FK로 가지게 된다는 것을 의미한다.</p>
+<blockquote>
+<p>Relations can be unidirectional or bidirectional. Only one side of relational can be owning. Using <code>@JoinColumn</code> decorator is required on the owner side of the relationship.</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">@Entity</span><span class="p">()</span>
 <span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="w">    </span><span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Photo</span><span class="p">)</span>
 <span class="w">    </span><span class="kd">@JoinColumn</span><span class="p">()</span>
 <span class="w">    </span><span class="nx">photo</span><span class="o">:</span><span class="w"> </span><span class="kt">Photo</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Let's save a photo, and its metadata and attach them to each other.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">photo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Photo</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="c1">// get entity relationships</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">photoRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Photo</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">metadataRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">PhotoMetadata</span><span class="p">);</span>
+
+<span class="c1">// first we should save a photo</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photo</span><span class="p">);</span>
+
+<span class="c1">// photo is saved. Now we need to save a photo metadata</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">metadataRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">metadata</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p><code>cascade</code> 옵션을 주어 부모 테이블에 일어난 변화를 자식 테이블도 같이 수정되도록 만들 수 있다.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Photo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">metadata</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">metadata</span><span class="p">.</span><span class="nx">photo</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">cascade</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="kt">PhotoMetadata</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">///</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">photo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Photo</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="p">();</span>
+<span class="p">...</span>
+<span class="nx">photo</span><span class="p">.</span><span class="nx">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">metadata</span><span class="p">;</span><span class="w"> </span><span class="c1">// this way we CONNECT them</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photo</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<p>Bidirectional relationships using <em>inverse relation</em></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1">// entity/PhotoMetadata.ts</span>
+
+<span class="kd">@Entity</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Photo</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">photo</span><span class="p">.</span><span class="nx">metadata</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">@JoinColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">photo</span><span class="o">:</span><span class="w"> </span><span class="kt">Photo</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// entity/Photo.ts</span>
+
+<span class="kd">@Entity</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Photo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">photoMetadata</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">photoMetadata</span><span class="p">.</span><span class="nx">photo</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="kt">PhotoMetadata</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
