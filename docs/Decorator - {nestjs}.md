@@ -4,7 +4,7 @@ tags:
 description:
 title: Decorator - {nestjs}
 created: 2023-12-01T02:17:57
-updated: 2023-12-01T12:13:55
+updated: 2023-12-01T12:52:28
 ---
 - [[0018.1 Nest.js 🪺]]
 - [공식문서 링크](https://docs.nestjs.com/custom-decorators)
@@ -37,4 +37,3 @@ async stop(client: Socket, payload: { cur_time: Date }, @Query('uuId') uuid: str
 <https://docs.nestjs.com/fundamentals/execution-context#reflection-and-metadata>
 
 새로운 `Reflector#createDecorator`를 사용할 수도 있고, 가드를 걸고싶은 컨텍스트에`@SetMetadata()` 데코레이터를 직접 사용해도 된다. 
-
