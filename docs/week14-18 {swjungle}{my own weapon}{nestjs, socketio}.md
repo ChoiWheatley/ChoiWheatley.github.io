@@ -86,3 +86,5 @@ ___
 			- Deploy Server: `npm run start`
 	- 자동배포
 		- main에 푸시한 소스를 github action을 사용하여 자동으로 aws에 배포하게 만드려면?
+
+	- 
