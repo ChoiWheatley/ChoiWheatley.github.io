@@ -11542,6 +11542,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../next%20build%ED%95%B4%EC%84%9C%20%60.next%60%20%EB%94%94%EB%A0%89%ED%84%B0%EB%A6%AC%EB%A5%BC%20EC2%EC%97%90%20%EC%98%AC%EB%A6%AC%EA%B8%B0/" class="md-tabs__link">
+        
+  
+    
+  
+  next build해서 `.next` 디렉터리를 EC2에 올리기
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../next_combination%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/" class="md-tabs__link">
         
   
@@ -35652,6 +35669,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../next%20build%ED%95%B4%EC%84%9C%20%60.next%60%20%EB%94%94%EB%A0%89%ED%84%B0%EB%A6%AC%EB%A5%BC%20EC2%EC%97%90%20%EC%98%AC%EB%A6%AC%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    next build해서 `.next` 디렉터리를 EC2에 올리기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../next_combination%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/" class="md-nav__link">
         
   
@@ -44654,6 +44691,38 @@
 </li>
 <li><a href="../room%2C%20player%2C%20host%20ER%20%7Bswjungle%7D%20%7Bmy%20own%20weapon%7D/">room, player, host ER {swjungle} {my own weapon}</a></li>
 <li>[ ] 이모티콘 날리는 이벤트 in redgreen</li>
+</ul>
+</li>
+<li>
+<p>2023-12-02 토</p>
+<ul>
+<li>✅ build &amp; deploy manually<ul>
+<li>EC2가 빌드할 필요 없게, 로컬(혹은 본가컴에서)에서 빌드하고 빌드 폴더만 scp 따위를 사용하여 업로드 한 결과를 EC2는 실행만 시키게 만들고 싶다.</li>
+<li>중요한 관건은 <code>.env</code> 혹은 <code>.env.local</code>을 어떻게 프로덕션 모드로 바꾸냐는 것에 있다.<ul>
+<li><a href="https://www.npmjs.com/package/env-cmd">env-cmd</a>를 활용한 방법  ⟶ 실패. 똑같이 redirect url이 본가 컴퓨터로 향한다.</li>
+</ul>
+</li>
+<li>nest build 해서 <code>dist/main.js</code> 파일을 EC2에 올리기<ul>
+<li>Build Server: <code>npm run build</code> 또는 <code>nest build --builder webpack</code></li>
+<li>Build Server: <code>scp -r dist &lt;deploy-server-domain&gt;:/path/to/repo</code> -- 이때 <code>deploy-server-domain</code>이 <code>~/.ssh/config</code> 안에 등록되어있어야 합니다.</li>
+<li>Deploy Server: <code>npm run start:prod</code></li>
+</ul>
+</li>
+<li><a href="./next build해서 .next 디렉터리를 EC2에 올리기.md">next build해서 <code>.next</code> 디렉터리를 EC2에 올리기</a><ul>
+<li>Build Server: <code>npm run build</code></li>
+<li>Build Server: <code>scp -r dist &lt;deploy-server-domain&gt;:/path/to/repo</code> -- 이때 <code>deploy-server-domain</code>이 <code>~/.ssh/config</code> 안에 등록되어있어야 합니다.</li>
+<li>Deploy Server: <code>npm run start</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>자동배포</p>
+<ul>
+<li>main에 푸시한 소스를 github action을 사용하여 자동으로 aws에 배포하게 만드려면?</li>
+</ul>
+</li>
+<li></li>
 </ul>
 </li>
 </ul>
