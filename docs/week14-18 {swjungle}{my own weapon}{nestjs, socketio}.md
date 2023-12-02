@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-02T17:27:47
+updated: 2023-12-02T20:05:55
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -77,8 +77,12 @@ ___
 		- 중요한 관건은 `.env` 혹은 `.env.local`을 어떻게 프로덕션 모드로 바꾸냐는 것에 있다.
 			- [env-cmd](https://www.npmjs.com/package/env-cmd)를 활용한 방법  ⟶ 실패. 똑같이 redirect url이 본가 컴퓨터로 향한다.
 		- nest build 해서 `dist/main.js` 파일을 EC2에 올리기
-			- 이 친구 문제는 없었음. 간단히 말해 NestJS는 매번 `.env` 파일을 찾는다.
+			- Build Server: `npm run build` 또는 `nest build --builder webpack`
+			- Build Server: `scp -r dist <deploy-server-domain>:/path/to/repo` -- 이때 `deploy-server-domain`이 `~/.ssh/config` 안에 등록되어있어야 합니다.
+			- Deploy Server: `npm run start:prod`
 		- [[next build해서 `.next` 디렉터리를 EC2에 올리기]]
-			- `.env.development` 와 `.env.production` 환경변수 파일을 따로 사용하기로 결정.
+			- Build Server: `npm run build`
+			- Build Server: `scp -r dist <deploy-server-domain>:/path/to/repo` -- 이때 `deploy-server-domain`이 `~/.ssh/config` 안에 등록되어있어야 합니다.
+			- Deploy Server: `npm run start`
 	- 자동배포
 		- main에 푸시한 소스를 github action을 사용하여 자동으로 aws에 배포하게 만드려면?
