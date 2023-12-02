@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-11-30T16:28:03
+updated: 2023-12-02T15:05:34
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -70,3 +70,10 @@ ___
 		- 모든 이벤트에 대하여 상태 다이어그램을 기준으로 유효성 여부를 판단한다.
 	- [[room, player, host ER {swjungle} {my own weapon}]]
 	- [ ] 이모티콘 날리는 이벤트 in redgreen
+
+- 2023-12-02 토
+	- build & deploy
+		- 중요한 관건은 `.env` 혹은 `.env.local`을 어떻게 프로덕션 모드로 바꾸냐는 것에 있다.
+		- nest build 해서 `dist/main.js` 파일을 EC2에 올리기
+		- next build해서 `.next/` 디렉터리를 EC2에 올리기
+		- main에 푸시한 소스를 github action을 사용하여 자동으로 aws에 배포하게 만드려면?
