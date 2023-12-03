@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-02T20:05:55
+updated: 2023-12-03T15:12:04
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -87,4 +87,6 @@ ___
 	- 자동배포
 		- main에 푸시한 소스를 github action을 사용하여 자동으로 aws에 배포하게 만드려면?
 
-	- 
+- 2023-12-03 일
+	- [[artillery {nodejs}]] 와 [[locust]] 사용하여 NestJS 부하분산테스트 진행하기. 특히 Socket.io 부분!
+	- [노마드 코더 NextJS 이론](https://nomadcoders.co/nextjs-fundamentals) 공부하고 프론트쪽에 달라붙기 (5 frontend 체제로 젼환)
