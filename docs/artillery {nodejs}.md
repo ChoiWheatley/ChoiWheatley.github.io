@@ -4,7 +4,7 @@ tags:
 description:
 title: artillery {nodejs}
 created: 2023-12-03T15:16:02
-updated: 2023-12-03T23:26:14
+updated: 2023-12-04T00:57:17
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - <https://www.artillery.io/docs>
@@ -102,3 +102,9 @@ scenarios:
             room_id: 8
             nickname: {{ $randFullName() }}
 ```
+
+이게 보니까, falso의 모든 함수를 지원하는 것이 아니었다... `scenarios.flow.log`를 사용하며 삽질을 할 수 있었는데, 그 와중에 하나 건진것이 `randomString(10)`이었다. 이제 `ready` 요청을 보낼때 랜덤한 값의 페이로드를 보낼 수 있게 되었다.
+
+## multiple target
+
+산 넘어 산이다. <https://github.com/artilleryio/artillery/discussions/1471> 대화에 따르면 **Multiple `config` or `scenarios` sections in on YAML file are not supported**라고 못을 박아놨다. 따라서, 100명의 유저가 100개의 uuId를 query param에 담아서 보내는 건 어쩌면 불가능 할지도 모르겠다.
