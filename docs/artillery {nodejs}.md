@@ -4,7 +4,7 @@ tags:
 description:
 title: artillery {nodejs}
 created: 2023-12-03T15:16:02
-updated: 2023-12-03T17:13:18
+updated: 2023-12-03T17:55:27
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - <https://www.artillery.io/docs>
@@ -73,4 +73,4 @@ vusers.session_length:
 
 이제 본론으로 들어가보자.
 
-제일 먼저, 캐치마인드 방을 100명이 만들어 보는 코드부터 작성해보자.
+제일 먼저, 열려있는 캐치마인드 방에 100명이 들어가는 코드부터 작성해보자. 가짜 uuid와 가짜 닉네임을 만드는 데 적격인 [falso](https://ngneat.github.io/falso/docs) 라이브러리를 사용할 수 있다니 대단하군
