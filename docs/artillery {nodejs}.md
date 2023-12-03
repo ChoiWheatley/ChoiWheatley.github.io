@@ -4,7 +4,7 @@ tags:
 description:
 title: artillery {nodejs}
 created: 2023-12-03T15:16:02
-updated: 2023-12-03T17:55:27
+updated: 2023-12-03T23:26:14
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - <https://www.artillery.io/docs>
@@ -73,4 +73,32 @@ vusers.session_length:
 
 이제 본론으로 들어가보자.
 
-제일 먼저, 열려있는 캐치마인드 방에 100명이 들어가는 코드부터 작성해보자. 가짜 uuid와 가짜 닉네임을 만드는 데 적격인 [falso](https://ngneat.github.io/falso/docs) 라이브러리를 사용할 수 있다니 대단하군
+제일 먼저, 열려있는 캐치마인드 방에 100명이 들어가는 코드부터 작성해보자. 가짜 uuid와 가짜 닉네임을 만드는 데 적격인 [falso](https://ngneat.github.io/falso/docs/getting-started) 라이브러리를 사용할 수 있다니 대단하군
+
+**안된다.**
+
+아래 코드는 내가 직접 작성한 열린 캐치마인드 방에 `ready` 요청을 날리는 테스트를 수행한다.
+
+```yml
+config:
+  plugins:
+    fake-data: {}
+  target: "https://api.choiwheatley.store"
+  phases:
+    - name: "join room"
+      duration: 10
+      arrivalRate: 1
+  socketio:
+    transports: ["websocket"]
+    query: "uuId={{ $randUuid() }}"
+scenarios:
+  - name: random player joins
+    engine: socketio
+    flow:
+      - namespace: "/catch"
+        emit:
+          channel: "ready"
+          data: 
+            room_id: 8
+            nickname: {{ $randFullName() }}
+```
