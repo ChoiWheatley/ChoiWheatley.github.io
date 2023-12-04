@@ -4,7 +4,7 @@ tags:
 description:
 title: artillery {nodejs}
 created: 2023-12-03T15:16:02
-updated: 2023-12-04T00:57:17
+updated: 2023-12-04T01:54:29
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - <https://www.artillery.io/docs>
@@ -105,6 +105,34 @@ scenarios:
 
 이게 보니까, falso의 모든 함수를 지원하는 것이 아니었다... `scenarios.flow.log`를 사용하며 삽질을 할 수 있었는데, 그 와중에 하나 건진것이 `randomString(10)`이었다. 이제 `ready` 요청을 보낼때 랜덤한 값의 페이로드를 보낼 수 있게 되었다.
 
-## multiple target
+참고로, [artillery-engine-socketio-v3](https://www.npmjs.com/package/artillery-engine-socketio-v3/v/1.1.3)을 사용했다. 이제 emit을 할때 `channel`과 `data`를 사용하지 못하는 대신 리스트를 활용하여 보내게 된다. 좋은 점은, 페이로드를 보낼때 js object 형태로 보내도 된다는 것이다.  `- emit: ["login", { username: "creds", password: "secretPword" }]`
 
-산 넘어 산이다. <https://github.com/artilleryio/artillery/discussions/1471> 대화에 따르면 **Multiple `config` or `scenarios` sections in on YAML file are not supported**라고 못을 박아놨다. 따라서, 100명의 유저가 100개의 uuId를 query param에 담아서 보내는 건 어쩌면 불가능 할지도 모르겠다.
+```yaml
+config:
+  target: "https://api.choiwheatley.store"
+  phases:
+    - name: "join room"
+      duration: 5
+      arrivalRate: 1
+  engines:
+    socketio-v3:
+      query: "uuId=uuId-choiwheatley"
+      transports: ["websocket"]
+  plugins:
+    fake-data: {}
+scenarios:
+  - name: random player joins
+    engine: socketio-v3
+    flow:
+      - log: "{{ $randomString(10) }}"
+      - emit: 
+        - join
+        - "{{ $randomString(10) }}"
+        namespace: "/catch"
+```
+
+## multiple target 적어도 multiple query만이라도..
+
+산 넘어 산이다. <https://github.com/artilleryio/artillery/discussions/1471> 대화에 따르면 **Multiple `config` or `scenarios` sections in on YAML file are not supported**라고 못을 박아놨다. 따라서, 100명의 유저가 100개의 uuId를 query param에 담아서 보내는 건 어쩌면 불가능 할지도 모르겠다. [HTTP engine](https://www.artillery.io/docs/reference/engines/http)은 개별적인 flow에 query param을 따로 설정할 수 있는 것은 물론, 아예 별개의 url을 설정할 수도 있었는데...
+
+없다. 생각한 방식대로 하려면 별도의 JS 파일을 사용하여 artillery를 직접 호출해야한다. 이때 환경변수를 따로 설정하여야 하는데, 이러면 artillery를 사용하는 의미가 없지않나?
