@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-03T15:12:04
+updated: 2023-12-04T15:29:42
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -90,3 +90,10 @@ ___
 - 2023-12-03 일
 	- [[artillery {nodejs}]] 와 [[locust]] 사용하여 NestJS 부하분산테스트 진행하기. 특히 Socket.io 부분!
 	- [노마드 코더 NextJS 이론](https://nomadcoders.co/nextjs-fundamentals) 공부하고 프론트쪽에 달라붙기 (5 frontend 체제로 젼환)
+
+- 2023-12-04 월
+	- 정신적 피로와 두통을 느끼는 중이다. [[2023-12-04]]
+	- 오랜만에 팀원과 산책을 조지고 왔다. 햇살쬔게 이게 얼마만인지
+	- 테스팅 보다 중요한 **지연시간 극복**에 초점을 옮겨 구현.
+		- 지연시간을 끊임없이 계산하는 요즘 게임처럼 구현할 정도는 아니지 않을까? 
+		- start_game호스트 이벤트를 받으면 3초의 시간여유 사이에 한 번만 브로드캐스트를 돌려 모든 응답이 돌아올때까지의 시간을 측정하는 것이다.
