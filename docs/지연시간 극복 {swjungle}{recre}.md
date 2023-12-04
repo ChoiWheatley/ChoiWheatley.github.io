@@ -4,7 +4,7 @@ tags:
 description:
 title: 지연시간 극복 {swjungle}{recre}
 created: 2023-12-04T17:39:07
-updated: 2023-12-04T18:05:54
+updated: 2023-12-04T21:42:07
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 ---
@@ -33,4 +33,14 @@ pong: {
 	client_ts: number,
 	server_ack_ts: number
 }
+```
+
+수상할정도로 지연시간이 크게 나온다. 다음은 지연시간 계산결과를 측정한 뒤 각종 통계를 내본 결과다. 통계내는 numpy 코드는 GPT한테 부탁했다.
+
+```
+평균: 67.1118869296637ms
+최소: 5.526527002512012ms
+최대: 348.7045019865036ms
+99% 백분위수: 200.6986215996742ms
+95% 백분위수: 124.32711260021168ms
 ```
