@@ -4,7 +4,7 @@ tags:
 description:
 title: 지연시간 극복 {swjungle}{recre}
 created: 2023-12-04T17:39:07
-updated: 2023-12-04T22:13:17
+updated: 2023-12-05T19:33:11
 ---
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 ---
@@ -59,3 +59,6 @@ pong: {
 
 생각해보니까, 위의 블로그가 소개해준 지연시간은 서버 - 플레이어 - 서버 - 플레이어 3-way 이벤트에 걸리는 시간을 측정한 거고, 플레이어가 run 요청을 쏴서 서버가 받기까지의 시간이 우리가 익히 아는 지연시간이었다.
 
+![[Drawing 2023-12-05 19.24.48.excalidraw]]
+
+![[Pasted image 20231205193318.png]]
