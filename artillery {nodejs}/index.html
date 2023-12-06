@@ -18157,6 +18157,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%EC%A7%80%EC%97%B0%EC%8B%9C%EA%B0%84%20%EA%B7%B9%EB%B3%B5%20%7Bswjungle%7D%7Brecre%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  지연시간 극복 {swjungle}{recre}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EC%B0%B8%EC%A1%B0%EC%99%80%20%EC%97%AD%EC%B0%B8%EC%A1%B0/" class="md-tabs__link">
         
   
@@ -22322,6 +22339,48 @@
   
   <span class="md-ellipsis">
     2023-12-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-12-04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-12-04
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2023-12-05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023-12-05
   </span>
   
 
@@ -31135,9 +31194,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-target" class="md-nav__link">
+  <a href="#multiple-target-multiple-query" class="md-nav__link">
     <span class="md-ellipsis">
-      multiple target
+      multiple target 적어도 multiple query만이라도..
     </span>
   </a>
   
@@ -43538,6 +43597,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../%EC%A7%80%EC%97%B0%EC%8B%9C%EA%B0%84%20%EA%B7%B9%EB%B3%B5%20%7Bswjungle%7D%7Brecre%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    지연시간 극복 {swjungle}{recre}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EC%B0%B8%EC%A1%B0%EC%99%80%20%EC%97%AD%EC%B0%B8%EC%A1%B0/" class="md-nav__link">
         
   
@@ -44623,9 +44702,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-target" class="md-nav__link">
+  <a href="#multiple-target-multiple-query" class="md-nav__link">
     <span class="md-ellipsis">
-      multiple target
+      multiple target 적어도 multiple query만이라도..
     </span>
   </a>
   
@@ -44727,8 +44806,32 @@ scenarios:
             nickname: {{ $randFullName() }}
 </code></pre></div>
 <p>이게 보니까, falso의 모든 함수를 지원하는 것이 아니었다... <code>scenarios.flow.log</code>를 사용하며 삽질을 할 수 있었는데, 그 와중에 하나 건진것이 <code>randomString(10)</code>이었다. 이제 <code>ready</code> 요청을 보낼때 랜덤한 값의 페이로드를 보낼 수 있게 되었다.</p>
-<h2 id="multiple-target">multiple target<a class="headerlink" href="#multiple-target" title="Permanent link">#</a></h2>
-<p>산 넘어 산이다. <a href="https://github.com/artilleryio/artillery/discussions/1471">https://github.com/artilleryio/artillery/discussions/1471</a> 대화에 따르면 <strong>Multiple <code>config</code> or <code>scenarios</code> sections in on YAML file are not supported</strong>라고 못을 박아놨다. 따라서, 100명의 유저가 100개의 uuId를 query param에 담아서 보내는 건 어쩌면 불가능 할지도 모르겠다.</p>
+<p>참고로, <a href="https://www.npmjs.com/package/artillery-engine-socketio-v3/v/1.1.3">artillery-engine-socketio-v3</a>을 사용했다. 이제 emit을 할때 <code>channel</code>과 <code>data</code>를 사용하지 못하는 대신 리스트를 활용하여 보내게 된다. 좋은 점은, 페이로드를 보낼때 js object 형태로 보내도 된다는 것이다.  <code>- emit: ["login", { username: "creds", password: "secretPword" }]</code></p>
+<div class="highlight"><pre><span></span><code><span class="nt">config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://api.choiwheatley.store&quot;</span>
+<span class="w">  </span><span class="nt">phases</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;join</span><span class="nv"> </span><span class="s">room&quot;</span>
+<span class="w">      </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">      </span><span class="nt">arrivalRate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">engines</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">socketio-v3</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">query</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;uuId=uuId-choiwheatley&quot;</span>
+<span class="w">      </span><span class="nt">transports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;websocket&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">fake-data</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+<span class="nt">scenarios</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random player joins</span>
+<span class="w">    </span><span class="nt">engine</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">socketio-v3</span>
+<span class="w">    </span><span class="nt">flow</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">$randomString(10)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">emit</span><span class="p">:</span><span class="w"> </span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">join</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">$randomString(10)</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/catch&quot;</span>
+</code></pre></div>
+<h2 id="multiple-target-multiple-query">multiple target 적어도 multiple query만이라도..<a class="headerlink" href="#multiple-target-multiple-query" title="Permanent link">#</a></h2>
+<p>산 넘어 산이다. <a href="https://github.com/artilleryio/artillery/discussions/1471">https://github.com/artilleryio/artillery/discussions/1471</a> 대화에 따르면 <strong>Multiple <code>config</code> or <code>scenarios</code> sections in on YAML file are not supported</strong>라고 못을 박아놨다. 따라서, 100명의 유저가 100개의 uuId를 query param에 담아서 보내는 건 어쩌면 불가능 할지도 모르겠다. <a href="https://www.artillery.io/docs/reference/engines/http">HTTP engine</a>은 개별적인 flow에 query param을 따로 설정할 수 있는 것은 물론, 아예 별개의 url을 설정할 수도 있었는데...</p>
+<p>없다. 생각한 방식대로 하려면 별도의 JS 파일을 사용하여 artillery를 직접 호출해야한다. 이때 환경변수를 따로 설정하여야 하는데, 이러면 artillery를 사용하는 의미가 없지않나?</p>
 
 
 
