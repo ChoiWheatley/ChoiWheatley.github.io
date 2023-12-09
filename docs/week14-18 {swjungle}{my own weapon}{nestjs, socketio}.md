@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-06T18:49:37
+updated: 2023-12-09T17:04:29
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -103,3 +103,13 @@ ___
 
 - 2023-12-09 토
 	- [[네트워크 불안정으로 재연결 로직 {swjungle}{socketio}]]
+	- 없는 방에 run 요청 보내면 null exception 발생함
+
+	```
+	[Nest] 18415  - 12/09/2023, 5:02:49 PM   ERROR [WsExceptionsHandler] Cannot read properties of null (reading 'room')
+	
+	TypeError: Cannot read properties of null (reading 'room')
+	    at RedGreenGateway.run (/home/chltm/workspace/CSH/recre-backend/src/session/redgreen.gateway.ts:321:50)
+	    at RedGreenGateway.<anonymous> (/home/chltm/workspace/CSH/recre-backend/node_modules/@nestjs/websockets/context/ws-proxy.js:12:32)
+	    at WebSocketsController.pickResult (/home/chltm/workspace/CSH/recre-backend/node_modules/@nestjs/websockets/web-sockets-controller.js:96:24)
+	```
