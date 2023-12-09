@@ -16185,6 +16185,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EB%B6%88%EC%95%88%EC%A0%95%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EC%97%B0%EA%B2%B0%20%EB%A1%9C%EC%A7%81%20%7Bswjungle%7D%7Bsocketio%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  네트워크 불안정으로 재연결 로직 {swjungle}{socketio}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EB%87%8C%20%EA%B0%80%EC%86%8C%EC%84%B1/" class="md-tabs__link">
         
   
@@ -41289,6 +41306,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EB%B6%88%EC%95%88%EC%A0%95%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EC%97%B0%EA%B2%B0%20%EB%A1%9C%EC%A7%81%20%7Bswjungle%7D%7Bsocketio%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    네트워크 불안정으로 재연결 로직 {swjungle}{socketio}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EB%87%8C%20%EA%B0%80%EC%86%8C%EC%84%B1/" class="md-nav__link">
         
   
@@ -44881,6 +44918,20 @@
 <li>[FE] 자기가 finish라면 더 이상 run을 보내지 말아야 함.</li>
 <li>[BE] run을 보낸 플레이어가 finished 상태라면 finish 루틴을 실행시키지 말아야 함. -&gt; too much</li>
 </ul>
+</li>
+<li>
+<p>2023-12-09 토</p>
+<ul>
+<li><a href="../%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EB%B6%88%EC%95%88%EC%A0%95%EC%9C%BC%EB%A1%9C%20%EC%9E%AC%EC%97%B0%EA%B2%B0%20%EB%A1%9C%EC%A7%81%20%7Bswjungle%7D%7Bsocketio%7D/">네트워크 불안정으로 재연결 로직 {swjungle}{socketio}</a></li>
+<li>없는 방에 run 요청 보내면 null exception 발생함</li>
+</ul>
+<div class="highlight"><pre><span></span><code>[Nest] 18415  - 12/09/2023, 5:02:49 PM   ERROR [WsExceptionsHandler] Cannot read properties of null (reading &#39;room&#39;)
+
+TypeError: Cannot read properties of null (reading &#39;room&#39;)
+    at RedGreenGateway.run (/home/chltm/workspace/CSH/recre-backend/src/session/redgreen.gateway.ts:321:50)
+    at RedGreenGateway.&lt;anonymous&gt; (/home/chltm/workspace/CSH/recre-backend/node_modules/@nestjs/websockets/context/ws-proxy.js:12:32)
+    at WebSocketsController.pickResult (/home/chltm/workspace/CSH/recre-backend/node_modules/@nestjs/websockets/web-sockets-controller.js:96:24)
+</code></pre></div>
 </li>
 </ul>
 
