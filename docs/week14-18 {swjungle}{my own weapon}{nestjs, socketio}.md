@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-09T17:04:29
+updated: 2023-12-10T15:14:00
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -113,3 +113,7 @@ ___
 	    at RedGreenGateway.<anonymous> (/home/chltm/workspace/CSH/recre-backend/node_modules/@nestjs/websockets/context/ws-proxy.js:12:32)
 	    at WebSocketsController.pickResult (/home/chltm/workspace/CSH/recre-backend/node_modules/@nestjs/websockets/web-sockets-controller.js:96:24)
 	```
+
+- 2023-12-10 일
+	- nvchad nerd font 해제하는 방법?
+	- 게임 세팅 글자를 바꾸자마자 alert를 띄우지 말고, 게임시작 누를때 검사하는 방식으로 바꾸면 안되나?
