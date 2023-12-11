@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-10T15:14:00
+updated: 2023-12-12T01:23:18
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -117,3 +117,8 @@ ___
 - 2023-12-10 일
 	- nvchad nerd font 해제하는 방법?
 	- 게임 세팅 글자를 바꾸자마자 alert를 띄우지 말고, 게임시작 누를때 검사하는 방식으로 바꾸면 안되나?
+
+![[Drawing 2023-12-11 23.32.41.excalidraw]]
+
+
+![[Drawing 2023-12-12 00.29.48.excalidraw]]
