@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-12T16:42:22
+updated: 2023-12-12T20:05:04
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -132,3 +132,13 @@ ___
 	- 앞으로 남은 건 구현 외적인 부분에서 발표자료 다듬기와 발표영상 제작 (최종발표 대안)
 	- 팀장인 내가 해야 할 건 발표준비. README.md 파일 작성해서 본 프로젝트의 WHY, HOW, WHAT을 어필하고 포트폴리오로 활용가치를 만들어내는 것. 실제 발표를 준비하면서 레그리에이션 강사들의 말빨을 터득하고 발표 진행중 공백이 생기지 않도록 대비한다.
 	- [[Team-def.recre-backend.README.md {swjungle}]]
+	- [[Team-dev.recre-frontend.README.md {swjungle}]]
+	- 예상질문들
+		- 캐치마인드 draw 이벤트 관련한 예상질문
+			- 이벤트 발생주기가 어떻게 되나요? - 마우스 움직임 이벤트가 발생하는 주기가 곧 socketio 이벤트 전송주기인데 얼마나 자주 발생하는건지 질문이 들어올 수도 있겠다
+		- 무궁화꽃이피었습니다 예상질문
+			- 핸드폰을 흔들어서 캐릭터를 이동시키는 방법이 궁금하다.  
+			- 애니메이션 어떻게 했나?
+	- 다른 팀의 조언
+		- 이 앱을 전혀 모르는 사람한테 피드백을 받아봐라. 우리자식은 예뻐보일 수밖에 없으므로 제삼자의 시선으로 객관적으로 도움받는게 좋을것. 친구나 가족한테.
+	- 
