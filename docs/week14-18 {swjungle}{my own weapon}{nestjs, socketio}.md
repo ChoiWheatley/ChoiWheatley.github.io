@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-12T01:23:18
+updated: 2023-12-12T15:25:03
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -118,7 +118,16 @@ ___
 	- nvchad nerd font 해제하는 방법?
 	- 게임 세팅 글자를 바꾸자마자 alert를 띄우지 말고, 게임시작 누를때 검사하는 방식으로 바꾸면 안되나?
 
-![[Drawing 2023-12-11 23.32.41.excalidraw]]
+[[Drawing 2023-12-11 23.32.41.excalidraw]]  
+![[Pasted image 20231212152458.png]]
 
 
-![[Drawing 2023-12-12 00.29.48.excalidraw]]
+[[Drawing 2023-12-12 00.29.48.excalidraw]]  
+![[Pasted image 20231212152442.png]]
+
+- 2023-12-12 화
+	- 포스터 제출완료, 게임 두개 구현 완료, 호스트 유저 관리 및 게임 룸과 같은 게임을 돌리기 위해 필요한 기반 구현완료. 
+	- 앞으로 남은 건 구현 방면에서 사용자 경험 향상과 비주얼 적인 측면 향상
+	- 앞으로 남은 건 구현 외적인 부분에서 발표자료 다듬기와 발표영상 제작 (최종발표 대안)
+	- 팀장인 내가 해야 할 건 발표준비. README.md 파일 작성해서 본 프로젝트의 WHY, HOW, WHAT을 어필하고 포트폴리오로 활용가치를 만들어내는 것. 실제 발표를 준비하면서 레그리에이션 강사들의 말빨을 터득하고 발표 진행중 공백이 생기지 않도록 대비한다.
+	- [[Team-def.recre-backend.README.md {swjungle}]]
