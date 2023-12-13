@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-12T20:05:04
+updated: 2023-12-13T18:10:02
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -159,4 +159,5 @@ ___
 		- 시연:
 			- 캐치마인드
 				- 호스트가 그림을 그리면, 플레이어가 정답을 맞추면 되는 게임. 쉽죠?
-				- 50명으로 해놓고 플레이를 진행하게 되면 분명히 시간이 붕 뜬다. 
+				- 50명으로 해놓고 플레이를 진행하게 되면 기다리는 동안 분명히 시간이 붕 뜬다. 그동안 풀 썰을 마련하자. 
+				- 정답자에게는 소정의 상품 제공한다는 내용 공지
