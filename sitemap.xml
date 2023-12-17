@@ -1151,6 +1151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Focus%2C%20A%20Guided%20Meditaion%20Unofficial%20Visualizer%20%EA%B3%84%ED%9A%8D/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/ForeignKey%20%7Bdjango%7D/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -2052,6 +2057,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Web%20Crawling%20with%20Beautiful%20Soup%20%26%20requests/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/What%20Are%20Sessions%3F%20How%20Do%20They%20Work%3F/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3826,6 +3836,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/redis%EB%A1%9C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%ED%86%A0%ED%81%B0%20%EB%B8%94%EB%9E%99%EB%A6%AC%EC%8A%A4%ED%8A%B8/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/regex/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -4092,6 +4107,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/swjungle%20%EB%82%98%EB%A7%8C%EB%AC%B4%20%EB%A6%AC%EB%8D%94%EC%A7%80%EC%9B%90/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/swjungle%20%EB%AC%B8%EC%A0%9C%EC%A0%90/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4491,6 +4511,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/win32yank.exe%20%EA%B0%80%20nvim%20%EB%B3%B5%EC%82%AC%EC%86%8D%EB%8F%84%EA%B0%80%20%EB%8A%90%EB%A0%A4%EC%A7%80%EA%B2%8C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EC%9B%90%EC%9D%B8/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/writing%20a%20manager%20for%20a%20custom%20user%20model%20%7Bdjangodoc%7D/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -4756,7 +4781,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/%EB%8B%B9%EC%9E%A5%20%EB%8F%8C%EC%95%84%EA%B0%80%EB%8A%94%20%EC%BD%94%EB%93%9C%EB%A5%BC%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EA%B2%83%EC%9D%B4%20%EC%B2%AB%EB%B2%88%EC%A7%B8%EB%9D%BC%EB%A9%B4%2C%20%EB%82%B4%EA%B0%80%20%EC%84%A0%ED%83%9D%ED%95%9C%20%EA%B2%83%EB%93%A4%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%A6%AC%20%EB%B0%8F%20%ED%9A%8C%EA%B3%A0%EA%B0%80%20%EB%91%90%EB%B2%88%EC%A7%B8%EB%8B%A4.%20%EB%AC%B8%EC%84%9C%ED%99%94%EA%B0%80%20%EC%A4%91%EC%9A%94%ED%95%98%EB%8B%A8%20%EB%9C%BB%EC%9E%84./</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/%EB%8F%84%EC%88%98%EC%A0%95%EB%A0%AC%20%28Counting%20Sort%29%20%7Brust%7D%20%7Bpython%7D/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%EB%8F%84%ED%8C%8C%EB%AF%BC%EC%97%90%20%EB%B0%95%EC%82%B4%EB%82%9C%20MZ%EC%9D%98%20%EB%87%8C%2C%20%EC%9C%A0%EC%9D%BC%ED%95%9C%20%ED%9A%8C%EB%B3%B5%EB%B0%A9%EB%B2%95%28%EB%AA%B0%EC%9E%85%20%ED%99%A9%EB%86%8D%EB%AC%B8%20%EA%B5%90%EC%88%98%29%20-%20YouTube/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4846,6 +4881,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/%EB%A9%94%EB%AA%A8%EC%95%B1%20%2B%20%EC%A3%BC%EA%B8%B0%EC%A0%81%EC%9C%BC%EB%A1%9C%20%ED%9A%8C%EA%B3%A0%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8F%84%EB%A1%9D%20%EC%95%8C%EB%A6%BC/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/%EB%A9%94%EC%9D%BC%EC%84%9C%EB%B2%84/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -4877,6 +4917,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%EB%AC%B4%EB%A3%8C%20%EB%8F%84%EB%A9%94%EC%9D%B8%20%EB%84%A4%EC%9E%84%EC%84%9C%EB%B2%84%20DNS/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%EB%AC%B4%EC%A0%9C%ED%95%9C%EC%9C%BC%EB%A1%9C%20%EB%8C%80%ED%99%94%20%EB%82%98%EB%88%8C%20%EC%88%98%20%EC%97%86%EB%8A%94%2C%20%EC%A0%9C%ED%95%9C%EB%90%9C%20%EC%8B%9C%EA%B0%84%20%EC%95%88%EC%97%90%20%ED%95%9C%20%EA%B0%80%EC%A7%80%20%EC%A3%BC%EC%A0%9C%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A7%80%EC%8B%9D%EC%9D%84%20%EA%B3%B5%EC%9C%A0%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%ED%94%8C%EB%9E%AB%ED%8F%BC/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -5061,6 +5106,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/%EC%93%B0%EB%9D%BC%EB%A6%B0%20%EC%84%B1%EC%9E%A5%ED%86%B5%EC%9D%B4%20%EC%95%88%EC%8B%9D%EC%B2%98%EB%9F%BC%20%EB%8A%90%EA%BB%B4%EC%A7%88%EB%95%8C%2C%20%EC%9E%98%EC%9E%90%20%ED%91%BC%ED%91%BC/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/%EC%95%84%EB%A7%88%EB%9D%BC/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -5226,6 +5276,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/%EC%A0%95%EC%8B%A0%EC%A0%81%20%EB%B0%B0%ED%84%B0%EB%A6%AC%20%EB%B6%80%EC%A1%B1%2020231029/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/%EC%A0%9C%ED%85%94%EC%B9%B4%EC%8A%A4%ED%85%90/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -5296,6 +5351,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/%EC%A7%80%EC%9A%B8%20%EC%88%98%20%EC%97%86%EB%8A%94%2C%20%EB%8B%A4%EB%A7%8C%20%EA%B7%B8%20%EC%9C%84%EC%97%90%20%EC%88%98%EC%A0%95%EB%90%9C%20%EA%B8%80%EB%A7%8C%20%EB%93%B1%EB%A1%9D%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EC%99%84%EC%A0%84%ED%88%AC%EB%AA%85%ED%95%9C%20SNS/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/%EC%B0%B8%EC%A1%B0%EC%99%80%20%EC%97%AD%EC%B0%B8%EC%A1%B0/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -5357,6 +5417,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%ED%81%AC%EB%9E%98%ED%94%84%ED%86%A4%20%EC%B1%84%EC%9A%A9%EC%84%A4%EB%AA%85%ED%9A%8C%20%7Bswjungle%7D/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%94%BC%ED%95%9C%20%EB%B2%A0%EC%9D%B4%EC%BB%A8%20%EA%B5%BD%EA%B8%B0%20%EC%B9%98%ED%8A%B8%ED%82%A4%7BYT%7D/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -6172,6 +6237,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2023-11-12/</loc>
+         <lastmod>2023-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2023-11-13/</loc>
          <lastmod>2023-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
