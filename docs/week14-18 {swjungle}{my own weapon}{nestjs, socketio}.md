@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-15T21:00:41
+updated: 2023-12-17T21:12:15
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -26,6 +26,7 @@ ___
 	- [[socket.io]] 게임방 구상 + 해당 프레임워크 찍먹 
 	- `socket.emit` ↔️ `socket.on`
 	- `io.emit`과 `socket.broadcast.emit`과의 차이
+
 - [[2023-11-16 {swjungle}{recre}]]
 
 - [[2023-11-16 socket.io {튜토리얼} {room} {cluster}]]
