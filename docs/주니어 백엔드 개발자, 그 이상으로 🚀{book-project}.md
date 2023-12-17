@@ -3,7 +3,7 @@ description:
 aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-07-28T10:49:58
+updated: 2023-12-17T21:40:10
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
@@ -61,7 +61,7 @@ ___
 - [[20230620 book-project]]
 - [[20230621 book-project]]
 - [x] [[20230622 book-project ]]
-	- [x] [PR #55와 #54 충돌지점 토론하기](https://github.com/ESTsoft-Book-Project/bookstore/pull/55)
+	- [x] [PR \#55와 #54 충돌지점 토론하기](https://github.com/ESTsoft-Book-Project/bookstore/pull/55)
 	- [x] oauth
 	- [x] 카카오페이
 	- [x] [[inventory modeling {book-project}{재고, 장바구니, 구매링크}|장바구니]]

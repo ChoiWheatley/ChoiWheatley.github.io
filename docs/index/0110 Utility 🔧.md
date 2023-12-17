@@ -3,7 +3,7 @@ description: 매일매일 나의 삶을 부트스트랩 할 수 있는 도구들
 aliases: 유틸리티 아카이브 archive hack
 tags: utility
 created: 2023-03-15T14:30:15
-updated: 2023-11-20T19:30:54
+updated: 2023-12-17T21:37:45
 title: 0110 Utility 🔧
 ---
 
@@ -29,6 +29,8 @@ title: 0110 Utility 🔧
 - 협업도구
 	- [[slido, live polls, quizzes, qna session]]
 - [[is my port open? 포트 열려있는지 확인해주는 사이트]]
+- [[마음에 드는 firefox userchrome.css]]
+- [[Altdrag alternative window manager for mac]]
 
 ## dev utils (mostly linux)
 

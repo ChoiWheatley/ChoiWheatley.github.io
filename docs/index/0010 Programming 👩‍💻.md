@@ -12,14 +12,14 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-11-18T23:00:34
+updated: 2023-12-17T22:04:36
 ---
 
 parent link: [[docs/index/index|index]]
 
 ---
 
-# 하위 인덱스
+## 하위 인덱스
 
 - [[0011 Algorithms ♾️]]
 - [[0012 Career 💼]]
@@ -45,7 +45,7 @@ parent link: [[docs/index/index|index]]
 
 ---
 
-# 개발자 커뮤니티
+## 개발자 커뮤니티
 
 - [[OKKY 개발자 커뮤니티]]
 - [careerly](https://careerly.co.kr/home)
@@ -53,14 +53,14 @@ parent link: [[docs/index/index|index]]
 
 ___
 
-# 학습 플랫폼
+## 학습 플랫폼
 
 - <http://www.kocw.net/home/index.do>
 - <https://www.kmooc.kr/coursera>
 - [[개발자가 꼭 알아야할 GitHub 리포지토리 모음]]
 ---
 
-# 교재
+## 교재
 
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
@@ -70,13 +70,13 @@ ___
 
 ___
 
-# Utilities
+## Utilities
 
 [[0110 Utility 🔧]]
 
 ---
 
-# Questions
+## Questions
 
 - 구현 중에 갑자기 다른 코드로 갈아엎고 싶다는 충동이 든다. 어떻게 해야할까?
 - [[업무로직을 프론트에서 짜야합니까, 백엔드에서 짜야합니까]]
@@ -84,7 +84,7 @@ ___
 
 ___
 
-# Scrapped [[0080 Scraps 📚]]
+## Scrapped [[0080 Scraps 📚]]
 
 - [[Persistent Data Structures - Hans Enlin]]
 - [[LRU]]
@@ -111,8 +111,15 @@ ___
 - [[command line cursor moving shortcuts]]
 - [[A Philosopy of Software Design - John Ousterhout - Talks at Google]]
 
-# Glosarry
+## Glosarry
 
 - [[Palindrome]]
 - [[SLO, SLI, SLA란]]
 - [[Observability]]
+
+## 생각
+
+- [[당장 돌아가는 코드를 만드는 것이 첫번째라면, 내가 선택한 것들에 대한 정리 및 회고가 두번째다. 문서화가 중요하단 뜻임.]]
+- 사람이 언제 가장 절실해지는 줄 알아? 마감이 임박했을 때, 보다못해 내가 발 벗고 나서야 할 때, 일이 잘 풀릴때!
+- 기능과 할 일, 버그와 리팩토링을 머리에 다 넣으려고 하지 말자. 여기는 씽크빅이 아니라 씽크스몰을 해야 복잡도를 견딜 수 있게된다.
+- 
