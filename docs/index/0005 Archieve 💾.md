@@ -9,7 +9,7 @@ aliases:
  - 구글킵
  - google_keep
 tags: index
-updated: 2023-12-17T22:20:41
+updated: 2023-12-17T22:28:56
 ---
 parent link: [[docs/index/index]]
 
