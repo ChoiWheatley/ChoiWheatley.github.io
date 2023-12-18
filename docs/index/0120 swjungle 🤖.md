@@ -27,6 +27,7 @@ updated: 2023-11-29T08:30:29
 	- [[week12 {swjungle}{ALGORITHMS}]]
 	- [[week13 {swjugle}{team creation} {expressjs}]]
 	- [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
+	- [[week19 {swjungle} {into the unknown}]]
 - [[0015 OS {ssu2021-2nd} 💻]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[Linux IPC Programming {inflearn archive}]]

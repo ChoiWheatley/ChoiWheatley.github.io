@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-12-17T21:24:48
+updated: 2023-12-18T19:08:56
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -51,16 +51,16 @@ ___
 - 프로젝트 경험
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
 
+## 공통적인 인터뷰 질문 추려내기
+
+> Notion에서 마이그레이션한 인터뷰 질문들
+
+- [[본인을 가장 잘 나타낼 수 있는 자기소개를 해 주십시오 {career}]]
+
 ## 진로 관련
 
 [[채움 HRD 📈]] 로 이동하세요  
 [[2023-05-14 정민영 교수님의 진로상담]]
-
-## 취업설명회
-
-- swjungle
-	- [[컬리 협력사 Q&A {swjungle}]]
-	- [[크래프톤 채용설명회 {swjungle}]]
 
 ## Ended
 
