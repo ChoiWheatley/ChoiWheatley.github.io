@@ -4,7 +4,7 @@ tags:
 description:
 title: week19 {swjungle} {into the unknown}
 created: 2023-12-18T18:31:28
-updated: 2023-12-19T13:55:54
+updated: 2023-12-19T14:50:22
 ---
 - [[0120 swjungle 🤖]]
 - [[0012 Career 💼]]
@@ -51,7 +51,6 @@ updated: 2023-12-19T13:55:54
 - 언제까지 남아있을 수 있는가?
 	- 1월 7일까지이지만, 최대한 빨리 나가라. 본가에서의 나의 루틴을 빨리 찾아라. 아침에 문제 풀고, 점심에 지원하고 저녁에 온라인으로 만나서 프로젝트 진행하고 이런 루틴을 가지는 것이 더 중요.
 	- 지금과 같은 텐션이 유지가 안된다.
-- 
 
 ## 자기소개
 
@@ -77,6 +76,9 @@ SQLite In Memory DB를 사용하여 게임의 상태를 관리하자 Map으로 �
 
 > 자기소개는 나라는 존재를 소개하는 자리이고 나의 강점, 약점, 가치 등을 어필하는 자리이다. 마치 기업이나 상품을 소개하듯이 내가 어떤 일을 잘 하고 어떤 솔루션을 제공할 수 있는지 설득하는 곳이라는 측면에서 다시 작성해보자.
 
+- [블로그 링크](https://choiwheatley.github.io)
+- [깃허브 계정 링크](https://github.com/ChoiWheatley)
+
 ### VISION
 
 - **WHY**: 저는 추상적인 아이디어를 현실로 끌어내리는 힘을 가지고 있습니다.
@@ -87,9 +89,6 @@ SQLite In Memory DB를 사용하여 게임의 상태를 관리하자 Map으로 �
 
 얻어갈 수 있는 것에 대한 욕구가 크기 때문에 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다.
 
-- [블로그 링크](https://choiwheatley.github.io)
-- [깃허브 계정 링크](https://github.com/ChoiWheatley)
-
 ### VALUE
 
 - **신뢰자산**을 높게 가져가는 것. 아무것도 하지 않으면 숨겨진다는 것을 알기에, 가능한 모든 것들을 공유하고자 합니다.
@@ -99,13 +98,13 @@ SQLite In Memory DB를 사용하여 게임의 상태를 관리하자 Map으로 �
 ### STACK
 
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]] 2023-11-02 ~ 2023-12-16 기간동안 진행한 나만의 무기 만들기 프로젝트에서 활용한 기술들
-	- [[0018.1 Nest.js 🪺|NestJS]]: 백엔드 웹 어플리케이션 서버 프레임워크 (NodeJS) 
+	- [[0018.1 Nest.js 🪺|NestJS]]: 백엔드 웹 어플리케이션 서버 프레임워크. 호스트 유저 관리와 게임 로직을 위해 사용됐습니다. (NodeJS) 
 		- <iframe src="https://nestjs.com/logo-small.ede75a6b.svg" allow="fullscreen" allowfullscreen="" style="height: 100px; width: 100px; aspect-ratio: 1 / 1;"></iframe>
 	- [[socket.io]]: NestJS와 함께 실시간 통신을 구현하여 게임을 만드는 데 사용된 Web Socket 기반 라이브러리 
-		- ![img|100]() 
 		- <iframe src="https://socket.io/images/logo.svg" allow="fullscreen" allowfullscreen="" style="height: 100px; width: 100px; aspect-ratio: 1 / 1;"></iframe>
 	- [[typeorm]]: NestJS와 함께 호스트 유저 정보를 postgresql에 관리하고 실시간 게임 상태를 sqlite IMDB에서 관리하기 위해 사용한 라이브러리
 		- <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">
-- [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project🚀]]  2023-06-20 ~ 2023-07-01 기간동안 진행한 책 집필 프로젝트에서 학습한 기술들
+- [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project🚀]]  2023-06-20 ~ 2023-07-01 기간동안 진행한 책 집필 프로젝트에서 학습한 기술
 	- [[0014.1 Django 🎈]]: 백엔드 웹 어플리케이션 서버 프레임워크 (Python)
 		- <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">
+	- [[Securities about {https} and {jwt {cookie}, {session}}]]: JWT와 사용자 인증 / 인가, OAUTH2
