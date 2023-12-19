@@ -23,6 +23,7 @@ title: 0018 Javascript ☕️
 
 - [[JS instance method]]
 - [[JS {basic} {types} {for in, for of} {spread} {destructuring}]]
+- [[비동기, Promise, async, await {JS}]]
 
 ## 개꿀팁
 
