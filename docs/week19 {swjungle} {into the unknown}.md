@@ -4,7 +4,7 @@ tags:
 description:
 title: week19 {swjungle} {into the unknown}
 created: 2023-12-18T18:31:28
-updated: 2023-12-19T15:36:17
+updated: 2023-12-19T16:53:53
 ---
 - [[0120 swjungle 🤖]]
 - [[0012 Career 💼]]
@@ -64,3 +64,4 @@ updated: 2023-12-19T15:36:17
 
 ## 이력서
 
+[[최승현_Backend_Web_Developer_이력서]]
