@@ -4,11 +4,14 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-17T22:09:00
+updated: 2023-12-19T13:13:00
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
 - [Team-def/recre-backend](https://github.com/Team-def/recre-backend) 프로젝트 리포지토리
+- 기간
+	- 2023-11-02
+	- 2023-12-16
 ___
 
 ## README

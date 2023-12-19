@@ -3,14 +3,14 @@ description:
 aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-12-17T21:40:10
+updated: 2023-12-19T13:31:22
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
 # INDEX
 
 - [[0014.1 Django 🎈]]
-- [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
+- [리디북스 링크](https://ridibooks.com/books/2773000077?_rdt_sid=category_free_books&_rdt_idx=81&_rdt_arg=2200)
 - [집필 초안 {google docs}](https://docs.google.com/document/d/1woWwBsRwAkYulZEkLztsihBLTT2GrWwnGys6xhKUbd0/edit?usp=sharing)
 - [공동집필 참고사항 - {Notion}](https://paullabworkspace.notion.site/db94b3465c1b414fac6bc4866231e042)
 	- [ISBN 번호 및 바코드 & 배포 진행과정 확인 {Notion}](https://paullabworkspace.notion.site/ISBN-7a83a7ea19f04f41941020f2fcf00c80)
