@@ -4,7 +4,7 @@ tags:
 description:
 title: week19 {swjungle} {into the unknown}
 created: 2023-12-18T18:31:28
-updated: 2023-12-19T14:50:22
+updated: 2023-12-19T15:36:17
 ---
 - [[0120 swjungle 🤖]]
 - [[0012 Career 💼]]
@@ -56,59 +56,11 @@ updated: 2023-12-19T14:50:22
 
 > 대화형식으로 끊임없이 나에게 질문을 던지면서 그에 대한 답변으로 작성해 나가보자. GPT의 도움을 받아보자.
 
-> [!question] 본인을 가장 잘 나타낼 수 있는 자기소개를 해주세요
-
-안녕하세요, 코드 자체가 문서의 역할을 할 수 있도록 의도를 담아내는데에 관심이 많은 프로그래머 최승현이라고 합니다. 얻어갈 수 있는 것에 대한 욕구가 크기 때문에 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다. ^p7ellu
-
-> [!question] 어떤 프로젝트 경험을 가지고 계신가요?
-
-NestJS와 Socket.io를 활용하여 온 오프라인 레크리에이션 진행을 도와주는 서비스인 RecRe를 만들었습니다. 호스트가 게임을 만들면 플레이어들은 스크린에 올라온 QR코드를 통해 웹브라우저에서 게임을 진행하는 아주 간단한 플로우를 가져 진입장벽을 낮췄습니다. 또한 레크리에이션의 특성인 활동적이고 들뜬 분위기를 조성하기 위해 자이로스코프 센서를 활용한 무궁화꽃이 피었습니다 게임이라던가, 호스트가 그린 그림을 다같이 맞추는 게임을 제작했습니다.
-
-> [!question] 최근에 진행한 프로젝트 중에서 특히 자랑하고 싶은 부분이 있나요?
-
-다수의 플레이어들이 동시에 하나의 세션에서 게임을 즐기기 위해 In Memory Database를 사용한 점을 꼽고 싶습니다. 게임을 진행시키기 위해 필요한 데이터로 Host, Game, Player가 있습니다. 처음엔 socket.io 소켓 객체와 더불어 모든 데이터를 Map 타입으로 정의하였고, 그림 맞추기 게임을 해당 규격에 맞추어 구현하였습니다. 이 방식으로 게임을 구현하니 에러가 정말 많았는데, 호스트 없는 게임, 게임 없는 플레이어와 같이 데이터 무결성 관리가 되지 않았기 때문입니다. 따라서 관계형 데이터베이스 사용이 필요해졌고, 영속성이 필요없었기 때문에 In Memory DB를 지원하는 SQLite를 도입했습니다. 호스트를 지우면 연관된 테이블의 데이터도 연쇄적으로 지우는 CASCADE 기능 덕분에 버그 발생 가능성을 줄였고, 코드 길이도 감소했습니다.
-
-> [!question] 본인이 개발한 어떤 기능이나 시스템에서 발생한 문제를 해결한 경험이 있나요? 어떻게 해결했나요?
-
-SQLite In Memory DB를 사용하여 게임의 상태를 관리하자 Map으로 관리할때는 없었던 문제가 생기기 시작했습니다. 바로 비동기 문제였습니다. 동시다발적으로 들어오는 웹 소켓 이벤트의 일부를 처리하지 못해 게임이 종료되지 못하는 버그가 있었는데, async-lock을 활용하여 이벤트 핸들러를 임계영역으로 만들어 요청들을 순차적으로 처리하도록 강제했습니다.
-
 ## 자기소개 (RE)
 
 > 자기소개는 나라는 존재를 소개하는 자리이고 나의 강점, 약점, 가치 등을 어필하는 자리이다. 마치 기업이나 상품을 소개하듯이 내가 어떤 일을 잘 하고 어떤 솔루션을 제공할 수 있는지 설득하는 곳이라는 측면에서 다시 작성해보자.
 
-- [블로그 링크](https://choiwheatley.github.io)
-- [깃허브 계정 링크](https://github.com/ChoiWheatley)
+[[최승현을 소개합니다]]
 
-### VISION
+## 이력서
 
-- **WHY**: 저는 추상적인 아이디어를 현실로 끌어내리는 힘을 가지고 있습니다.
-- **HOW**: 기술의 수직적인 레이어를 이해하고 그 아래 숨겨진 복잡성을 분석하는데 익숙합니다.
-- **WHAT**: 제가 이해한 지식을 팀원들과 공유하고 끊임없는 정반합을 통해 함께 성장하고자 합니다.
-
-### STRENGTH
-
-얻어갈 수 있는 것에 대한 욕구가 크기 때문에 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다.
-
-### VALUE
-
-- **신뢰자산**을 높게 가져가는 것. 아무것도 하지 않으면 숨겨진다는 것을 알기에, 가능한 모든 것들을 공유하고자 합니다.
-- 코드에는 **의도**가 담길것. 하나의 Pull Request에는 하나의 의도만이 담기게 브랜치를 나누는 습관을 가지고 있습니다.
-- **Show me the code**: 말로 떠드는 것 보다 동작하는 코드로 설득하는 것이 훨씬 효과적이라는 것을 알고 있습니다.
-
-### STACK
-
-- [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]] 2023-11-02 ~ 2023-12-16 기간동안 진행한 나만의 무기 만들기 프로젝트에서 활용한 기술들
-	- [[0018.1 Nest.js 🪺|NestJS]]: 백엔드 웹 어플리케이션 서버 프레임워크. 호스트 유저 관리와 게임 로직을 위해 사용됐습니다. (NodeJS) 
-		- <iframe src="https://nestjs.com/logo-small.ede75a6b.svg" allow="fullscreen" allowfullscreen="" style="height: 100px; width: 100px; aspect-ratio: 1 / 1;"></iframe>
-	- [[socket.io]]: NestJS와 함께 실시간 통신을 구현하여 게임을 만드는 데 사용된 Web Socket 기반 라이브러리 
-		- <iframe src="https://socket.io/images/logo.svg" allow="fullscreen" allowfullscreen="" style="height: 100px; width: 100px; aspect-ratio: 1 / 1;"></iframe>
-	- [[typeorm]]: NestJS와 함께 호스트 유저 정보를 postgresql에 관리하고 실시간 게임 상태를 sqlite IMDB에서 관리하기 위해 사용한 라이브러리
-		- <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">
-- [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project🚀]]  2023-06-20 ~ 2023-07-01 기간동안 진행한 책 집필 프로젝트에서 학습한 기술
-	- [[0014.1 Django 🎈]]: 백엔드 웹 어플리케이션 서버 프레임워크 (Python)
-		- <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">
-	- [[Securities about {https} and {jwt {cookie}, {session}}]]: JWT와 사용자 인증 / 인가, OAUTH2
-
-## Self-Introduction Excalidraw
-
-[[self-introduction.excalidraw]]
