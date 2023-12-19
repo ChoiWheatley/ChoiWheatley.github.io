@@ -108,3 +108,7 @@ SQLite In Memory DB를 사용하여 게임의 상태를 관리하자 Map으로 �
 	- [[0014.1 Django 🎈]]: 백엔드 웹 어플리케이션 서버 프레임워크 (Python)
 		- <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">
 	- [[Securities about {https} and {jwt {cookie}, {session}}]]: JWT와 사용자 인증 / 인가, OAUTH2
+
+## Self-Introduction Excalidraw
+
+[[self-introduction.excalidraw]]
