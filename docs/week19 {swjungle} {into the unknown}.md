@@ -4,7 +4,7 @@ tags:
 description:
 title: week19 {swjungle} {into the unknown}
 created: 2023-12-18T18:31:28
-updated: 2023-12-19T13:42:32
+updated: 2023-12-19T13:55:54
 ---
 - [[0120 swjungle 🤖]]
 - [[0012 Career 💼]]
@@ -14,8 +14,6 @@ updated: 2023-12-19T13:42:32
 본 문서는 이력서, 자기소개서, 1분 자기소개영상을 제작하기에 앞서 일단 한 번 쏟아내보는 공간으로 사용될 예정입니다.
 
 ## 2023-12-19T10:00:00 이범규 대표님의 커리어 세션
-
-가나다라마바사 아자차카파타하 갸냐댜랴먀뱌샤 야쟈챠캬퍄탸햐 거너더러머버서 어저처커퍼터허 겨녀뎌려며벼셔 여져쳐켜펴텨혀 chltmdgus chltmdgus chltmdgus chltmdgus chltmdgus chltmdgus 
 
 **막간공지**
 
@@ -101,12 +99,13 @@ SQLite In Memory DB를 사용하여 게임의 상태를 관리하자 Map으로 �
 ### STACK
 
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]] 2023-11-02 ~ 2023-12-16 기간동안 진행한 나만의 무기 만들기 프로젝트에서 활용한 기술들
-	- ![nestjsimg|100](https://nestjs.com/logo-small.ede75a6b.svg) 
-		- [[0018.1 Nest.js 🪺|NestJS]]: 백엔드 웹 어플리케이션 서버 프레임워크 (NodeJS) 
-	- ![img|100](https://socket.io/images/logo.svg) 
-		- [[socket.io]]: NestJS와 함께 실시간 통신을 구현하여 게임을 만드는 데 사용된 Web Socket 기반 라이브러리 
-	- ![img|200](https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png) 
-		- [[typeorm]]: NestJS와 함께 호스트 유저 정보를 postgresql에 관리하고 실시간 게임 상태를 sqlite IMDB에서 관리하기 위해 사용한 라이브러리
+	- [[0018.1 Nest.js 🪺|NestJS]]: 백엔드 웹 어플리케이션 서버 프레임워크 (NodeJS) 
+		- <iframe src="https://nestjs.com/logo-small.ede75a6b.svg" allow="fullscreen" allowfullscreen="" style="height: 100px; width: 100px; aspect-ratio: 1 / 1;"></iframe>
+	- [[socket.io]]: NestJS와 함께 실시간 통신을 구현하여 게임을 만드는 데 사용된 Web Socket 기반 라이브러리 
+		- ![img|100]() 
+		- <iframe src="https://socket.io/images/logo.svg" allow="fullscreen" allowfullscreen="" style="height: 100px; width: 100px; aspect-ratio: 1 / 1;"></iframe>
+	- [[typeorm]]: NestJS와 함께 호스트 유저 정보를 postgresql에 관리하고 실시간 게임 상태를 sqlite IMDB에서 관리하기 위해 사용한 라이브러리
+		- <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">
 - [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}|book-project🚀]]  2023-06-20 ~ 2023-07-01 기간동안 진행한 책 집필 프로젝트에서 학습한 기술들
-	- ![img|200](https://static.djangoproject.com/img/logos/django-logo-positive.png) 
-		- [[0014.1 Django 🎈]]: 백엔드 웹 어플리케이션 서버 프레임워크 (Python)
+	- [[0014.1 Django 🎈]]: 백엔드 웹 어플리케이션 서버 프레임워크 (Python)
+		- <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">
