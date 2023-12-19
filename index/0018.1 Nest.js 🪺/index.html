@@ -45821,7 +45821,7 @@
 <li><strong><a href="https://docs.nestjs.com/controllers#request-payloads">Request Payloads</a></strong><ul>
 <li>DTO, Data Transfer Object라고 불리우는, 네트워크 전송을 위해 존재하는 객체타입은 클래스로 정의가 되어있다고. DTO 클래스 멤버들은 직렬화 가능한 타입만 들어올 수 있나?</li>
 <li><a href="../../express.js/">express.js</a>에서 POST요청에 대한 요청의 body를 뜯어 원하는 키값들을 직접 획득했다면, Nest.js는 DTO 객체를 인자로 받아와 곧바로 사용할 수 있다.</li>
-<li>`@Post() create(@Body() createCatDto: CreateCatDto) {...}</li>
+<li><code>@Post() create(@Body() createCatDto: CreateCatDto) {...}</code></li>
 </ul>
 </li>
 <li>app.module.ts 파일에 내가 정의한 컨트롤러들을 <code>@Module()</code> 데코레이터 안에 넣을 수 있다.</li>
