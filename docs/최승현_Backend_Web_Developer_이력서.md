@@ -4,7 +4,7 @@ tags:
 description:
 title: 최승현_Backend_Web_Developer_이력서
 created: 2023-12-19T16:43:54
-updated: 2023-12-19T21:07:48
+updated: 2023-12-19T21:33:47
 ---
 
 # 최승현 | 협력과 상호 성장에 관심이 많은 프로그래머
@@ -53,9 +53,9 @@ updated: 2023-12-19T21:07:48
 - TL;DR
 	- 주니어 백엔드 개발자를 위한 기초 지식을 제공해주는 책을 집필. 온라인 서점 서비스인 allbooks를 구현하며 얻은 경험을 바탕으로 작성.
 - Links
-	- 리디북스: <https://ridibooks.com/books/2773000077?_rdt_sid=myridi_recents&_rdt_idx=0>
-	- 노션 본문: <https://estsoft-junior-backend.notion.site/f898e86a1c274a83a36ff2655d1a71e0?pvs=4>
-	- 깃허브 리포지토리: <https://github.com/ESTsoft-Book-Project/bookstore>
+	- [리디북스](https://ridibooks.com/books/2773000077?_rdt_sid=myridi_recents&_rdt_idx=0)
+	- [노션 본문](https://estsoft-junior-backend.notion.site/f898e86a1c274a83a36ff2655d1a71e0?pvs=4)
+	- [깃허브 리포지토리](https://github.com/ESTsoft-Book-Project/bookstore)
 - 집필기간
 	- 2023-05-20
 	- 2023-07-22
