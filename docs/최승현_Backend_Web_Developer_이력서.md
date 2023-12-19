@@ -23,3 +23,11 @@ updated: 2023-12-19T16:51409:21
 
 ## Experiences
 
+### RecRe
+
+- TL;DR
+	- 별도의 지식이나 화려한 언변 없이도 쉽게 레크리에이션을 진행할 수 있도록 도와주는 서비스. 
+- repository
+	- https://github.com/Team-def/recre-backend
+	- https://github.com/Team-def/recre-frontend
+- 
