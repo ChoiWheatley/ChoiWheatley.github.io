@@ -8,7 +8,7 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-12-19T11:44:02
+updated: 2023-12-19T16:28:27
 ---
 
 # Introduction
@@ -23,6 +23,7 @@ I'm native Korean, but I can understand English at reading, listening.
 
 - chltmdgus604@gmail.com
 - chltmdgus604@naver.com
+- +821087524037
 
 ### Featured Posts
 
@@ -31,6 +32,7 @@ I'm native Korean, but I can understand English at reading, listening.
 - [[Daily Notes|Daily Notes]] is for scribbing daily thoughts and plans, music recommendations, etc.
 - [[0070 Obsidian 💎|obsidian]] meta ideas improving my blog experience
 - [[0120 swjungle 🤖]] is currently working on studying CS knowledge with [[pintos3 {pdf} {pintos}|PintOS]] and algorithms and web projects. (2023-08-07 ~ 2023-12-20)
+- [[최승현을 소개합니다]] is my self-introduction document
 
 ## External Links
 
