@@ -8,10 +8,12 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-12-19T16:28:27
+updated: 2023-12-19T21:09:32
 ---
 
 # Introduction
+
+![[내얼굴-cropped.jpg|200]]
 
 Hi, my name is Choi Wheatley(최승현). I'm a junior backend developer looking for better understanding of programming paradigms, computer knowledgements, agile cultures.
 

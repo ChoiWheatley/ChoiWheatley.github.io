@@ -4,8 +4,10 @@ tags:
 description:
 title: 최승현_Backend_Web_Developer_이력서
 created: 2023-12-19T16:43:54
-updated: 2023-12-19T19:17:30
+updated: 2023-12-19T21:07:48
 ---
+
+# 최승현 | 협력과 상호 성장에 관심이 많은 프로그래머
 
 ## Information
 
@@ -41,4 +43,42 @@ updated: 2023-12-19T19:17:30
 - 맡은 역할
 	- Leader: git / github 커밋 및 PR 컨벤션을 엄격하게 정의하여 이슈 단위별 코드 기여 + 문서화 하도록 독려
 	- Backend: Web Socket 지연시간 측정 및 플레이어 탈락여부 로직 작성, 게임룸 상태에 따른 이벤트 허용/차단 로직 작성
-- 
+- 성과
+	- 팀원 간 중복구현 횟수 0건
+	- 무궁화 꽃이 피었습니다 게임 공정성 향상
+	- 게임 플레이 도중 발생하는 네트워크 불안정에 강인한 게임 상태 관리
+
+### 주니어 백엔드 개발자, 그 이상으로
+
+- TL;DR
+	- 주니어 백엔드 개발자를 위한 기초 지식을 제공해주는 책을 집필. 온라인 서점 서비스인 allbooks를 구현하며 얻은 경험을 바탕으로 작성.
+- Links
+	- 리디북스: <https://ridibooks.com/books/2773000077?_rdt_sid=myridi_recents&_rdt_idx=0>
+	- 노션 본문: <https://estsoft-junior-backend.notion.site/f898e86a1c274a83a36ff2655d1a71e0?pvs=4>
+	- 깃허브 리포지토리: <https://github.com/ESTsoft-Book-Project/bookstore>
+- 집필기간
+	- 2023-05-20
+	- 2023-07-22
+- 사용한 기술
+	- Django
+	- Django Rest Framework
+	- Amazon S3 Bucket
+	- Nginx
+	- Ajax
+- 맡은 역할
+	- 8장 "데이터 모델링": 부족했던 데이터 모델링과 관련한 지식을 학습하며 집필 
+	- 11장 "에러처리": allbooks 구현하며 만난 다양한 에러를 지나치지 않고 트래킹 하여 각각의 단원으로 정리
+
+## Skills
+
+| 기술      | 아이콘                                                                                                  | 사용 언어            |
+| --------- | ------------------------------------------------------------------------------------------------------- | -------------------- |
+| NestJS    | <img src="https://nestjs.com/logo-small.ede75a6b.svg" style="height: 100px; width: 100px;">             | ![[js.png\|100]]     |
+| socket.io | <img src="https://socket.io/images/logo.svg" style="height: 100px; width: 100px;">                      | ![[js.png\|100]]     |
+| TypeORM   | <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;"> | ![[js.png\|100]]     |
+| Django    | <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">   | ![[python.png\|100]] |
+| DRF       | <img src="https://www.django-rest-framework.org/img/logo.png" style="height:100px">                     |  ![[python.png\|100]]                    |
+
+## Education
+
+숭실대학교 소프트웨어학부 (2016-03-01 ~ 2023-08-18)
