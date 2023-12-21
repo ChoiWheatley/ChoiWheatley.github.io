@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-12-18T22:12:19
+updated: 2023-12-21T15:52:48
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -59,6 +59,7 @@ ___
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6>
 - 프로젝트 경험
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
+- [[최승현을 소개합니다]]
 
 ## 진로 관련
 
