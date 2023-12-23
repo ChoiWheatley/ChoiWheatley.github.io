@@ -37,6 +37,8 @@ title: 0014 Python 🐍
 		- [[os module (미완성)]]
 		- [[dataclasses python module]]
 		- [[collections.defaultdict   인덱스 조회 실패 시 디폴트 객체 생성]] 
+		- [[collections.Counter, most_common 아이템 개수 계산 {python}]]
+		- [[collections.OrderedDict 순서를 보장하는 딕셔너리 {python}]]
 		- [[priority queue - python]]
 		- [[dataclasses - python -- custom comparator]]
 		- [[getattr, setattr {python}]]
