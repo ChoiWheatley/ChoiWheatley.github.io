@@ -34,6 +34,7 @@ title: 0018 Javascript ☕️
 - [[FileReader {js}]]
 - [[clear cache in javascript]]
 - [[map an array of objects to a dictionary {js}]]
+- [[How to load .env file from nodejs]]
 
 ## Libraries / Frameworks / Packages
 
