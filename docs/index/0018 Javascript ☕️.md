@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-22T21:37:49
-updated: 2023-11-03T21:26:07
+updated: 2023-12-23T21:46:21
 title: 0018 Javascript ☕️
 ---
 
@@ -41,6 +41,7 @@ title: 0018 Javascript ☕️
 - [[sequelize, a MySQL ORM for javascript]]
 - [[typeorm]]
 - [[nodemon, auto reload nodejs server {npm}]]
+- [[0018.1 Nest.js 🪺]]
 
 ## 이호준 강사님의 한마디 (ormi)
 
