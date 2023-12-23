@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-11-01T14:17:37
+updated: 2023-12-23T14:35:24
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
