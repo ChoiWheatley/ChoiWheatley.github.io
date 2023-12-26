@@ -4,7 +4,7 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-08-18T15:09:30
+updated: 2023-12-26T17:44:33
 ---
 
 # lower/upper bound 그리고 parametric search까지
@@ -70,7 +70,7 @@ def first_true(begin, end, pred):
 	l = begin
 	r = end
 	while l != r :
-		m = l + (r - l) / 2 # overflow 방지
+		m = l + (r - l) // 2 # overflow 방지
 		if pred(m):
 			r = m 
 		else:
