@@ -23,7 +23,7 @@ updated: 2023-11-02T20:45:04
 	- 한국을 넘어선 성공을 고민하는 넓은 시야 + 유저에게 최적의 경험을 고민할 수 있어야 하고 + 끊임없이 변화하고 배우는 것을 미덕으로 여기고 + 건설적인 피드백을 감정적으로 받아들이지 않고 + 한 말은 끝까지 책임지는 높은 신뢰를 줄 수 있는 사람
 - 크래프톤 정글
 	- 크래프톤 정글 게임랩도 있다
-- Mission & Vision ([[How great leadrs inspire action, Simon Sinek 사이먼 사이넥의 "우리는 왜 일하는가" {Mission, Vision, Goal} {What, How, Why}]] 참고)
+- Mission & Vision ([[How great leadrs inspire action, Simon Sinek 우리는 왜 일하는가 {Mission, Vision, Goal} {What, How, Why}]] 참고)
 	- Why: 게임이 가장 강력한 미디어가 될 것임을 믿는다.
 	- How: 독창성, 도전정신과 기술로
 	- What: 창작을 확장하고 재창조? 엔터테인의 순간을 연결?

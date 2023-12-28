@@ -5,7 +5,7 @@ tags:
 description: 
 title: 'How great leadrs inspire action, Simon Sinek 사이먼 사이넥의 "우리는 왜 일하는가" {Mission, Vision, Goal} {What, How, Why}'
 created: 2023-11-01T20:16:56
-updated: 2023-11-2301T200:574:48
+updated: 2023-121-8233015T39200:574:48
 ---
 - [[20230508 estsoft - 김충환 회고강사특강 - 애자일 회고 - 매슬로우의 욕구계층 - 만다라트 과제있음#사이먼 사이넥의 "우리는 왜 일하는가" {Mission, Vision, Goal} {What, How, Why}]]
 ---
