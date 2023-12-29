@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T09:33:14
-updated: 2023-07-15T21:30:22
+updated: 2023-08-13T23:01:18
 title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion sort -- merge sort -- quick sort
 ---
 
@@ -20,12 +20,12 @@ title: 20230518 estsoft - python - tree -- LIS -- selection sort -- insertion so
 
 ![[Pasted image 20230518131309.png|400]]
 
-제네릭 코드를 짜기 위해서 [typing.TypeVar](https://docs.python.org/3/library/typing.html#typing.TypeVar)를 찾아볼 필요가 있다. [[typing.TypeVar (python)]]
+제네릭 코드를 짜기 위해서 [typing.TypeVar](https://docs.python.org/3/library/typing.html#typing.TypeVar)를 찾아볼 필요가 있다. [[generic using typing.TypeVar (python)]]
 
 # LIS (Longest Increasing Subsequence)
 
-[[LIS 가장 긴 증가하는 부분수열 d61b26f5619a4ea1b0412155535ec812]]  
-https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.  
+[[LIS 가장 긴 증가하는 부분수열]]  
+<https://choiwheatley.notion.site/LIS-d61b26f5619a4ea1b0412155535ec812> 에 정리해두긴 했으나 수정할 사안이 존재하여 다시 불러왔다.  
 ^4ygbua
 
 # Sort
@@ -59,7 +59,7 @@ print(선택정렬(주어진리스트))
 
 ## insertion sort
 
-도서관에서 책을 정렬할 때 사용하는 기법. 두서 없이 흩뿌려진 책들로부터 정렬된 결과물을 만들어 나가는데, 중요한 점은 **이분탐색**을 이용하여 빠르게 삽입할 위치를 찾아 나선다는 것이다. 파이썬에서의 이분탐색은 [[bisect_left (python)]]을 사용하면 된다.
+도서관에서 책을 정렬할 때 사용하는 기법. 두서 없이 흩뿌려진 책들로부터 정렬된 결과물을 만들어 나가는데, 중요한 점은 **이분탐색**을 이용하여 빠르게 삽입할 위치를 찾아 나선다는 것이다. 파이썬에서의 이분탐색은 [[lower bound with bisect_left (python)]]을 사용하면 된다.
 
 ```python
 from bisect import bisect_left
@@ -123,7 +123,11 @@ assert sorted(ls) == merge_sort_recur(ls)
 
 ```
 
++2023-08-13T19:47:44 추가 병합하는 과정을 빠르게 하고 싶다면 [`heapq.merge()`](https://docs.python.org/3/library/heapq.html#heapq.merge) 를 사용할 수 있다. `left`, `right` 모두 정렬이 되어있다는 보장이 있으므로, 두 힙을 병합하는 것으로 목표를 달성할 수 있다.
+
 ## quick sort
+
+[[퀵정렬 {quick sort}|Quick Sort]]
 
 괜히 겁 먹을 거 없다. 아무 원소나 하나 집어서 (처음이던, 마지막이던, 랜덤이던) 먼저 정복하고(피벗을 중심으로 정렬 상관없이 좌, 우 배치) 나중에 분할(재귀호출)하면 그것이 끝이다. 리스트 끼리 덧셈을 지원하기 때문에 `left + [pivot] + right` 하면 되어서 손도 깔끔하다.  
 ![[84c12ea600ff72a816c6672bcbd5e82d.png|100]]

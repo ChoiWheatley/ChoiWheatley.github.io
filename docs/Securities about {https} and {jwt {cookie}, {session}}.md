@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-06-24T08:33:57
-updated: 2023-07-15T21:33:03
+updated: 2023-11-07T06:17:44
 title: Securities about {https} and {jwt {cookie}, {session}}
 ---
 
@@ -17,8 +17,8 @@ wireshark, nmap과 같은 소프트웨어를 사용하면 패킷을 통해 헤�
 
 ## JSON Web Token
 
-- https://en.wikipedia.org/wiki/JSON_Web_Token
-- https://jwt.io/introduction
+- <https://en.wikipedia.org/wiki/JSON_Web_Token>
+- <https://jwt.io/introduction>
 
 JWT는 인증/인가(authentication/authorization)의 여러 방법 중 하나입니다. 대표적인 인증 방법으로는 쿠키(세션), 토큰, Third-party(OAuth, API-token), SAML, OpenID 등이  있습니다. JWT는 이 중에서 토큰 기반 기법을 사용합니다.
 
@@ -64,7 +64,23 @@ token = base64UrlEncode(header) + '.' +
 ---
 이 아래는 집필 프로젝트 외적으로 다루는 공간임
 - [얄코 HTTPS와 대칭키, 비대칭키](https://youtu.be/H6lpFRpyl14)
-- [얄코 JWT](https://youtu.be/1QiOXWEbqYQ
+- [얄코 JWT](https://youtu.be/1QiOXWEbqYQ)
 - [포프TV JWT](https://youtu.be/MUUqogMpGiA)
 - [코딩애플 JWT 대충 쓰면 코딩인생 끝남](https://youtu.be/XXseiON9CV0)
 - [medium.com](https://medium.com/@vivekmadurai/different-ways-to-authenticate-a-web-application-e8f3875c254a)
+
+## access token & refresh token
+
+**2-2-1. 액세스 토큰 Access Token**
+
+액세스 토큰은 클라이언트에게 권한이 위임됐다는 것을 나타내기 위해 인가 서버가 클라이언트에게 발급합니다. OAuth에서는 토큰의 포맷이나 내용을 따로 정의하지 않습니다. 그래서 형식이 명확하지 않기때문에 클라이언트는 토큰을 분석할 필요가 없습니다.
+
+인가 서버는 토큰을 만들어 발급하고 리소스 서버는 이 토큰을 검증하여 보호된 리소스에 접근을 허용하기 때문에 토큰을 이해하고 어떤 내용을 의미하는지 알 수 있습니다. 이러한 방식을 채택함으로써 클라이언트는 좀 더 단순해지고 서버 측은 토큰을 배포하는 방법에 있어 엄청난 유연성을 얻을 수 있게됩니다.
+
+**2-2-2. 리프레시 토큰 Refresh Token**
+
+사용자가 토큰을 폐기 하거나, 토큰이 만료되거나, 다른 이유로 토큰이 유효하지 않게 될 수 있습니다. 그렇게 되면 리소스 서버에 요청을 했을 때 에러를 반환하게 됩니다. 그 때 리프레시 토큰을 사용하여 인가 서버로부터 새로운 액세스 토큰을 발급 받을 수 있습니다.
+
+OAuth 1.0에서는 리프레시 토큰이 존재하지 않았기 때문에 액세스 토큰이 유효하지 않게 된 경우 리소스 소유자에게 의지할 수밖에 없었습니다. 그런 상황을 피하기 위해 OAuth 1.0에서 선택한 방법은 토큰이 폐기될 때까지 영원히 사용하는 것이었습니다. 이것은 토큰을 탈취한 공격자 역시 해당 토큰을 영원히 사용할 수 있다는 의미이기도 합니다.
+
+이러한 취약점을 보완하기 위해 OAuth 2.0에서는 토큰의 유효 기간이 자동으로 설정되도록 했습니다. 또한 토큰의 유출을 개별적으로 제한하기 위해서 리프레시 토큰은 리소스 서버에 전달되지 않고 오로지 새로운 액세스 토큰을 요청하는 용도로만 사용됩니다.

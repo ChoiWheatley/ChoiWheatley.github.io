@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-01T23:40:57
-updated: 2023-07-15T21:30:21
+updated: 2023-11-17T00:29:22
 title: aws s3 static files in django
 ---
 - [testdriven.io {tutorial}](https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/)
@@ -28,7 +28,7 @@ title: aws s3 static files in django
 	- ACL (Access Control List) 소유권 활성화 (안해도 돼)
  
 
-# 장고 프로젝트로 돌아와서...
+## 장고 프로젝트로 돌아와서...
 
 - 의존성 설치하고 settings.py 수정하고, core/env.py 설정하고 
 - settings.py 전역상수 설정 (book-project는 별도의 파일을 빼냈지만 근본은 동일.)
@@ -64,9 +64,5 @@ class StaticFileStorage(S3StaticStorage):
     location = "static"
 ```
 
-{% raw %}
-
 - 장고 템플릿 js 파일 로케이션을 `{% static 'js/____.js' %}` 식으로 변경 
 - 그리고 `STATIC_URL` 자리에 우리 S3 객체들이 담긴 URL을 넣어주었더니 js파일을 `127.0.0.1`이 아니라 `https://allbooks-choi-2.s3.amazonaws.com/static/js/getCookie.js` 이런 식으로 위치를 제대로 찾아가는 모습을 볼 수 있다.
-
-{% endraw %}

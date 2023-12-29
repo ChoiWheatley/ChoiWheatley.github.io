@@ -8,7 +8,7 @@ title: FileReader {js}
 ---
 - [mdn](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 - [bookstore에서 사진파일을 다루는 코드](https://github.com/ESTsoft-Book-Project/bookstore/blob/25379d55f885264568e12dd9d196658858a4fd86/templates/create_product.html)
-- [[Javascript]]
+- [[0018 Javascript ☕️]]
 - 사진파일도 읽을 수 있다. 아래의 스니펫은 이미지 데이터를 가져오는 부분이다.
 
 ```js

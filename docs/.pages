@@ -1,3 +1,4 @@
 nav:
-  - "🔗": "0000 Index 🔗"
+  - index
   - Daily Notes
+  - ... | *.md

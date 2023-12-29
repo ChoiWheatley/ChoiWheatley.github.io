@@ -12,9 +12,15 @@ tags:
   - todo
 date created: Thursday, February 16th 2023, 7:19:11 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:04
+updated: 2023-08-28T17:45:00
 ---
-parent link: [[0011 Algorithms ♾️]]
+parent link: [[0011 Algorithms ♾️]]  
+
+해시 테이블을 사용해야 하는 이유  
+![Hash Table은 프로그래머의 기본기 {YT}](https://youtu.be/S7vni1hdsZE?feature=shared)
+
+해시 알고리즘을 만드는 방법  
+![the PERFECT hash table](https://youtu.be/DMQ_HcNSOAI?feature=shared)
 
 ---
 
@@ -65,12 +71,12 @@ unsigned long djbc2(unsigned char * str) {
 
 # 참고
 
-https://woo-dev.tistory.com/106
+<https://woo-dev.tistory.com/106>
 
 # 연습문제
 
 - [[문자열 교집합]]
 - [[단어가 등장하는 횟수]]
-- [[은기의 아주 큰 그림]]
+- [[은기의 아주 큰 그림 {라빈카프} {Rabin Karp}]]
 - [[메일서버]]
 - [[문자열 암호화]]

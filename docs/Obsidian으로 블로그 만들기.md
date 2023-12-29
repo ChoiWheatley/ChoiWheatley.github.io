@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-24T09:26:36
-updated: 2023-08-02T23:25:29
+updated: 2023-08-21T15:14:18
 title: Obsidian으로 블로그 만들기
 ---
 - ["Obsidian+Github Pages" for digital gardeners? {forum}](https://forum.obsidian.md/t/obsidian-github-pages-for-digital-gardeners/2622)
@@ -33,6 +33,9 @@ ___
 - 마크다운 기반 위키생성 프로그램
 - [Obsidian webpage export](https://github.com/KosmosisDire/obsidian-webpage-export)
 	- 얘도 그래프 뷰, 데이터뷰, `!` 미리보기 등을 지원하는 프로젝트이다. mkdocs와 호환은 안될듯.
+- [gatsbyjs](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-1/)
+	- 마크다운 변환 + 별도의 클라우드 마련 및 배포 자동화 사전제공
+	- [gatsby-remark-obsidian](https://www.gatsbyjs.com/plugins/gatsby-remark-obsidian/) 플러그인으로 옵시디언 레퍼런스 형식을 지원하기는 하나 옵시디언의 플러그인 형식은 지원 안한다.
 
 # Jekyll Integration
 
@@ -60,3 +63,7 @@ ___
 허허.. 내가 mkdocs로 뺑이치고 있었는데 그냥 플러그인 자체로 퍼블리싱을 지원하는 녀석이 있었넹... 😅
 
 graph view, back link, search with Ctrl+K, nav bar 등등... 있을 건 다 있다...!
+
+## Google 검색창 노출시키기
+
+[[github blog 검색창 노출시키기]]

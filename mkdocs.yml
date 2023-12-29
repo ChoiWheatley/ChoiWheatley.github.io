@@ -14,6 +14,7 @@ theme:
     - navigation.expand
     - navigation.tabs
     - navigation.top
+    - navigation.prune
 
 # Extensions
 markdown_extensions:
@@ -59,3 +60,12 @@ plugins:
   - exclude:
       glob:
         - "**/*.excalidraw.md"
+
+# for Katex support. See https://squidfunk.github.io/mkdocs-material/reference/math/
+extra_javascript:
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css

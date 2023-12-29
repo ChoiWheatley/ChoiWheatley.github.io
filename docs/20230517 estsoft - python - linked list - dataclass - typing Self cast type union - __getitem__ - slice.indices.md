@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-17T13:05:40
-updated: 2023-07-15T21:30:22
+updated: 2023-08-11T20:50:50
 title: 20230517 estsoft - python - linked list - dataclass - typing Self cast type union - __getitem__ - slice.indices
 ---
 - [[self reference a class with typing.Self (python)]]
@@ -26,8 +26,9 @@ title: 20230517 estsoft - python - linked list - dataclass - typing Self cast ty
 # Today's advanced 문제
 
 - advanced 문제 : linked list 추가 기능 구현
-- https://school.programmers.co.kr/learn/courses/30/lessons/120906
-- https://school.programmers.co.kr/learn/courses/30/lessons/120844
-- https://school.programmers.co.kr/learn/courses/30/lessons/120585
-- https://school.programmers.co.kr/learn/courses/30/lessons/120864
-- [x] https://school.programmers.co.kr/learn/courses/30/lessons/120956
+- <https://school.programmers.co.kr/learn/courses/30/lessons/120906>
+- <https://school.programmers.co.kr/learn/courses/30/lessons/120844>
+- <https://school.programmers.co.kr/learn/courses/30/lessons/120585>
+- <https://school.programmers.co.kr/learn/courses/30/lessons/120864>
+- [x] <https://school.programmers.co.kr/learn/courses/30/lessons/120956>
+

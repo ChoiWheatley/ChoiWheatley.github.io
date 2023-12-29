@@ -1,7 +1,7 @@
 ---
-description:
+description: 
 aliases: 
-tags: 지원완료
+tags: []
 created: 2023-04-03T15:04:54
 updated: 2023-07-15T21:33:04
 title: JABDA 디챔스 개발자 역량검사
