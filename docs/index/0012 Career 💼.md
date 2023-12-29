@@ -60,7 +60,7 @@ ___
 - 프로젝트 경험
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
 - [[최승현을 소개합니다]]
-- [[신입 개발자 전공 지식 & 기술 면접 백과사전]]
+- [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH}]]
 
 ## 진로 관련
 

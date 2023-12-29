@@ -105,7 +105,7 @@ ___
 - [[주니어 개발자를 위한 엄청 쉬운 TCPIP 4계층 이야기]]
 - [[주니어가 일잘러 소리 듣는법]]
 - [[abstract data type과 interface, class와의 차이]]
-- [[신입 개발자 전공 지식 & 기술 면접 백과사전]]
+- [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH}]]
 - [[T2 보안칩이 내장된 맥북에 리눅스 설치하기]]
 - [[Sentinel Node]]
 - [[command line cursor moving shortcuts]]
