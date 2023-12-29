@@ -80,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -17693,12 +17698,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../%EC%8B%A0%EC%9E%85%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EC%A0%84%EA%B3%B5%20%EC%A7%80%EC%8B%9D%20%26%20%EA%B8%B0%EC%88%A0%20%EB%A9%B4%EC%A0%91%20%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84%20%7BGH%7D/" class="md-tabs__link">
+      <a href="../%EC%8B%A0%EC%9E%85%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EC%A0%84%EA%B3%B5%20%EC%A7%80%EC%8B%9D%20%26%20%EA%B8%B0%EC%88%A0%20%EB%A9%B4%EC%A0%91%20%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84%20%7BGH-cloned%7D/" class="md-tabs__link">
         
   
     
   
-  신입 개발자 전공 지식 & 기술 면접 백과사전
+  신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}
 
       </a>
     </li>
@@ -32551,6 +32556,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    collections.Counter, most_common 아이템 개수 계산 {python}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -32560,6 +32576,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      예제 문제
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -43632,11 +43674,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../%EC%8B%A0%EC%9E%85%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EC%A0%84%EA%B3%B5%20%EC%A7%80%EC%8B%9D%20%26%20%EA%B8%B0%EC%88%A0%20%EB%A9%B4%EC%A0%91%20%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84%20%7BGH%7D/" class="md-nav__link">
+      <a href="../%EC%8B%A0%EC%9E%85%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EC%A0%84%EA%B3%B5%20%EC%A7%80%EC%8B%9D%20%26%20%EA%B8%B0%EC%88%A0%20%EB%A9%B4%EC%A0%91%20%EB%B0%B1%EA%B3%BC%EC%82%AC%EC%A0%84%20%7BGH-cloned%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    신입 개발자 전공 지식 & 기술 면접 백과사전
+    신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}
   </span>
   
 
@@ -45803,6 +45845,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      예제 문제
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -45831,6 +45890,22 @@
 <p>아래의 <code>most_common</code> 메서드는 인자로 들어온 개수만큼 카운트가 높은 놈들을 리턴한다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">b</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1"># [(5, 3), (6, 2)]</span>
+</code></pre></div>
+<h2 id="_1">예제 문제<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><a href="https://leetcode.com/problems/most-common-word/">https://leetcode.com/problems/most-common-word/</a></p>
+<p>banned에 들어있지 않은 단어 중 가장 많이 카운트된 단어를 고르는 문제. 필터링 후 카운트 하는 방법을 사용하면 된다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution4</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    banned가 list였기 때문에 필터링에서 오랜 시간이 걸렸던 것이다. 따라서 이를 set으로 바꿔줬더니 90ms -&gt; 38ms로 바뀌었다.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">mostCommonWord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paragraph</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">banned</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">banned_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">banned</span><span class="p">)</span>
+        <span class="n">normalized</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot; &quot;</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">paragraph</span><span class="p">)</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">normalized</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span> <span class="ow">and</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">banned_set</span><span class="p">,</span> <span class="n">words</span><span class="p">)</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 
 
