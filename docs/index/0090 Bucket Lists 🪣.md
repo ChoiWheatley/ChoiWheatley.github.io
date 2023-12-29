@@ -9,7 +9,7 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-10809-297T21:926:14
+updated: 2023-12-29T16:05:25
 ---
 parent link: 
 - [[docs/index/index|index]]
@@ -45,6 +45,8 @@ parent link:
 	- [[Xmonad, window tiling manager written in {haskell}]]
 	- [[url shortner with easy-to-memorize]]
 	- [[JSON, XML, YAML, TOML converter]]
+	- [[메모앱 + 주기적으로 회고할 수 있도록 알림]]
+	- [[지울 수 없는, 다만 그 위에 수정된 글만 등록할 수 있는 완전투명한 SNS]]
 
 - Food
 	- [[순두부김말이]]
@@ -56,6 +58,7 @@ parent link:
 	- [[돼지고기카레 전기밥솥 취사 2번이면 끝 {YT}]]
 	- [[홈메이드 치킨 4KG 치킨 튀기기 {YT}]]
 	- [[드립 커피 레시피]]
+	- [[크리스피한 베이컨 굽기 치트키{YT}]]
 
 - Activities
 	- [[안양천 - 한강 따라 걷기코스]]
@@ -77,7 +80,13 @@ parent link:
 	- [[원격접속을 위한 공유기 세팅을 위한 공유기 구매욕구]]
 - 음악
 	- [[do-re-mi-fa-so-la-ti-do VS Done(Let's Get it)]]  
-On Progress
+	
+- 연출
+	- [[Focus, A Guided Meditaion {Unofficial Visualizer}]]
+	
+
+## On Progress
+
 ---
 
 - [[0014.1 Django 🎈]]

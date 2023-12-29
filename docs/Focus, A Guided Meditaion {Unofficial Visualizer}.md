@@ -4,9 +4,9 @@ tags:
   - 연출아이디어
   - Idea
 description: 
-title: Focus, A Guided Meditaion Unofficial Visualizer 계획
+title: Focus, A Guided Meditaion {Unofficial Visualizer}
 created: 2023-12-17T21:44:45
-updated: 2023-12-17T21:47:30
+updated: 2023-12-29T16:02:44
 ---
 - [https://youtu.be/40rF3Yyd6jk?feature=shared](https://youtu.be/40rF3Yyd6jk?feature=shared)  
 - [[0090 Bucket Lists 🪣|bucketlist]]
