@@ -4,7 +4,7 @@ tags:
 description:
 title: collections.Counter, most_common 아이템 개수 계산 {python}
 created: 2023-12-23T14:27:41
-updated: 2023-12-23T14:29:47
+updated: 2023-12-29T22:38:18
 ---
 - [[0014 Python 🐍]]
 ___
@@ -24,3 +24,9 @@ b
 b.most_common(2)
 # [(5, 3), (6, 2)]
 ```
+
+## 예제 문제
+
+<https://leetcode.com/problems/most-common-word/>
+
+banned에 들어있지 않은 단어 중 가장 많이 카운트된 단어를 고르는 문제. 필터링 후 카운트 하는 방법을 사용하면 된다.
