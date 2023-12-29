@@ -62,6 +62,7 @@ ___
 - [[최승현을 소개합니다]]
 - [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
 	- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
+- [[채널톡 면접 기출 {confidential}]]
 
 ## 진로 관련
 
