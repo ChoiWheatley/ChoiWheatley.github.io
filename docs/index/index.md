@@ -17,7 +17,6 @@ parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
-
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
 - [[0011 Algorithms ♾️]]
@@ -37,6 +36,7 @@ parent link: [[docs/index]]
 - [[0070 Obsidian 💎]]
 - [[0080 Scraps 📚]]
 - [[0090 Bucket Lists 🪣]]
+- [[0091 먹을거, Food 😋]]
 - [[0100 English 👻]]
 - [[0110 Utility 🔧]]
 - [[0120 swjungle 🤖]]
