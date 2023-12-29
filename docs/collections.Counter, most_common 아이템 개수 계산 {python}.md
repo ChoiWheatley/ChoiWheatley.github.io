@@ -4,7 +4,7 @@ tags:
 description:
 title: collections.Counter, most_common 아이템 개수 계산 {python}
 created: 2023-12-23T14:27:41
-updated: 2023-12-29T22:38:18
+updated: 2023-12-29T22:45:21
 ---
 - [[0014 Python 🐍]]
 ___
@@ -30,3 +30,18 @@ b.most_common(2)
 <https://leetcode.com/problems/most-common-word/>
 
 banned에 들어있지 않은 단어 중 가장 많이 카운트된 단어를 고르는 문제. 필터링 후 카운트 하는 방법을 사용하면 된다.
+
+```python
+class Solution4:
+    """
+    banned가 list였기 때문에 필터링에서 오랜 시간이 걸렸던 것이다. 따라서 이를 set으로 바꿔줬더니 90ms -> 38ms로 바뀌었다.
+    """
+
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        banned_set = set(banned)
+        normalized = "".join(c.lower() if c.isalnum() else " " for c in paragraph)
+        words = normalized.split()
+        filtered = filter(lambda w: w and w not in banned_set, words)
+        counter = Counter(filtered)
+        return counter.most_common()[0][0]
+```
