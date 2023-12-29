@@ -9,7 +9,7 @@ aliases:
  - 버킷리스트
 tags:
   -  index bucketlist  
-updated: 2023-12-29T16:03:43
+updated: 2023-12-29T16:05:25
 ---
 parent link: 
 - [[docs/index/index|index]]
@@ -46,6 +46,7 @@ parent link:
 	- [[url shortner with easy-to-memorize]]
 	- [[JSON, XML, YAML, TOML converter]]
 	- [[메모앱 + 주기적으로 회고할 수 있도록 알림]]
+	- [[지울 수 없는, 다만 그 위에 수정된 글만 등록할 수 있는 완전투명한 SNS]]
 
 - Food
 	- [[순두부김말이]]

@@ -30,7 +30,6 @@ ___
 # 따끈따끈한 녀석
 
 - 2023-12-17 아카이브
-	- [[Focus, A Guided Meditaion {Unofficial Visualizer}]]
 	- [[win32yank.exe 가 nvim 복사속도가 느려지게 만드는 원인]]
 	- [[지울 수 없는, 다만 그 위에 수정된 글만 등록할 수 있는 완전투명한 SNS]]
 	- [[쓰라린 성장통이 안식처럼 느껴질때, 잘자 푼푼]]
