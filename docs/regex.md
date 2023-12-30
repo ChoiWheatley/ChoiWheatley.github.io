@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-15T14:07:54
-updated: 2023-07-15T21:33:03
+updated: 2023-12-29T22:15:32
 title: regex
 ---
 - [실습 링크](https://regexr.com/5nvc2)
@@ -20,7 +20,7 @@ title: regex
 - `.` 
 	- all occurences
 - Character Classes
-	- `\w` : 단어
+	- `\w` : 단어 문자. 구두점 같은 특수문자는 포함하지 않음. 응용하면 `[^\w]`는 문자가 아닌 모든 문자를 얻을 수 있게 된다.
 		- ![[Pasted image 20230515150429.png]]
 	- `\w{5}` : 5개의 글자와 공백 하나
 	- `\W` 단어가 아님(?) ==> 알파벳 & `_`
