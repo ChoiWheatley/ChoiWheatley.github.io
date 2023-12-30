@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-12-30T14:51:44
+updated: 2023-12-30T15:19:08
 ---
 parent link: [[docs/index/index]] [[0010 Programming 👩‍💻]] 
 
@@ -49,6 +49,7 @@ ___
 	- [ChoiSeungHyeon](https://github.com/OrmiCodeRanger/ChoiSeunghyeon) | Python 문제풀이 오르미 코드레인저 
 	- [choi-workspace](https://github.com/ChoiWheatley/choi-workspace) | C++ 문제풀이 (파일구조가 조금 개판이긴 함)
 	- [AlgorithmCheatSheet](https://github.com/OrmiCodeRanger/AlgorithmCheatSheet) | 오르미 코드레인저 팀원들이 사용하는 파이썬 기반 알고리즘 치트시트
+	- [Algorithm-Study](https://github.com/ChoiWheatley/Algorithm-Study) | Python 문제풀이 | swjungle 수료 후
 - swjungle
 	- [[week 01~03 {swjungle} {ALGORITHMS}]]
 	- [[week12 {swjungle}{ALGORITHMS}]]
@@ -62,7 +63,6 @@ ___
 - [[kmp|kmp]]
 - [[tree 기초|tree]]
 - [[next_permutation 구현|next permutation 구현]]
-- [[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
 - [[LIS 가장 긴 증가하는 부분수열|LIS]]
 - [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
 - [[종만북 카라츠바 알고리즘 정답편 + 포스팅ᄋ 5bb97600d3b94c38b1050e1cb4ee3c4e|카라츠바 알고리즘 정답편]]
@@ -70,6 +70,7 @@ ___
 - [[Hash]] 
 - [[divide and conquer]]
 - [[이분탐색]]
+	- [[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
 - [[트라이]]
 - [[단절점]]
 - [[two pointer]]

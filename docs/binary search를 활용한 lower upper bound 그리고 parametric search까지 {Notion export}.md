@@ -4,8 +4,11 @@ tags: algo/binarysearch
 description:
 title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
 created: 2023-08-12T04:47:40
-updated: 2023-12-26T17:44:33
+updated: 2023-12-30T15:15:39
 ---
+
+- [[0011 Algorithms ♾️|algorithms]]
+- [[이분탐색]]
 
 # lower/upper bound 그리고 parametric search까지
 
