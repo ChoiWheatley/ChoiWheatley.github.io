@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-11-03T16:44:47
+updated: 2023-12-30T14:51:44
 ---
 parent link: [[docs/index/index]] [[0010 Programming 👩‍💻]] 
 
@@ -44,6 +44,7 @@ ___
 	- [알고스팟](https://algospot.com)
 	- [SWEA](https://swexpertacademy.com/main/main.do)
 	- [leet code](https://leetcode.com)
+		- [LeetCode 75](https://leetcode.com/studyplan/leetcode-75) - 기초 문제집
 - github
 	- [ChoiSeungHyeon](https://github.com/OrmiCodeRanger/ChoiSeunghyeon) | Python 문제풀이 오르미 코드레인저 
 	- [choi-workspace](https://github.com/ChoiWheatley/choi-workspace) | C++ 문제풀이 (파일구조가 조금 개판이긴 함)
@@ -55,6 +56,7 @@ ___
 
 - [[Heap]]
 - [[graph 기초|graph]]
+	- [[BFS]]
 - [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
 - [[kmp|kmp]]
