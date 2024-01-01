@@ -37,6 +37,7 @@ parent link: [[docs/index/index|index]]
 	- [[알잘딱 GitHub 핵심개념]]
 	- [[git selectively merge or pick changes from another branch]]
 	- [[ssh-keygen for github]]
+	- [[git rebase]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
 - wsl
 	- [[ssh into WSL2 & vs-code]]
