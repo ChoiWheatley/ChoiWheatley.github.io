@@ -10092,6 +10092,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23235,6 +23252,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34883,6 +34921,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46192,7 +46250,7 @@
     “Obtains a single free page and returns its kernel virtual address”에서 “kernel virtual address”를 설명하려면 우선 pintos에서 virtual memory를 설명해야 합니다. 그림에 보이듯이 virtual memory에서 <strong>KERN_BASE</strong> (PHYS_BASE라고 보이는데 이것은 구버전 pintos 기준입니다) <strong>위의 영역은 커널만 접근할 수 있는 virtual address</strong>이며, 이 부분의 매핑은 <code>(virtual address) - KERN_BASE = (physical address)</code><strong>라는 매우 단순한 1:1 매핑</strong>이 되어 있습니다. 그러므로 palloc.c에 적혀 있는 설명에서 returns its kernel virtual address 라는 말은, physical address에서 KERN_BASE 만큼 더한 값을 리턴한다는 뜻이고, 그러므로 page in/out이 필요한 virtual page를 할당하는 것이 아니라 바로 접근이 가능한 <strong>physical page를 할당해준다고</strong> 생각하시면 됩니다.  </p>
 </li>
 </ul>
-<p><a class="glightbox" href="../assets/pintos-phy-mem-1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="pintos-phy-mem-1.png" src="../assets/pintos-phy-mem-1.png" /></a></p>
+<p><a class="glightbox" href="../assets/pintos-phy-mem-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="pintos-phy-mem-1.png" src="../assets/pintos-phy-mem-1.png" /></a></p>
 
 
 

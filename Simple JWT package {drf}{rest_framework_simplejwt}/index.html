@@ -10099,6 +10099,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23240,6 +23257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34898,6 +34936,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46244,10 +46302,10 @@
 <h1 id="postman">postman에서 확인<a class="headerlink" href="#postman" title="Permanent link">#</a></h1>
 <p><a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#usage">usage{doc}</a>  </p>
 <p>회원 이메일과 비밀번호를 가지고 JWT를 인코딩한 결과이다. </p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230802142521.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142521.png" src="../assets/Pasted%20image%2020230802142521.png" /></a>  </p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802142521.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142521.png" src="../assets/Pasted%20image%2020230802142521.png" /></a>  </p>
 <p>장고 인증서버에게 유저 아이디와 비밀번호를 사용하여 access token, refresh token 모두를 받아냈다. 이제 이것으로 장고 리소스 서버에게 인가를 요구할 수 있다.</p>
 <p>access token을 가지고 <a href="https://jwt.io">https://jwt.io</a> 에 들어가 바로 디버깅을 실시해보자.  </p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230802142807.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142807.png" src="../assets/Pasted%20image%2020230802142807.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802142807.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802142807.png" src="../assets/Pasted%20image%2020230802142807.png" /></a></p>
 <p>access token을 사용하여 특정한 view에 접근하는 방식에 대한 스니펫이다.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer {{access-token}}&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -46273,7 +46331,7 @@
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </code></pre></div>
 <p>이유는 아직 잘 모르겠는데, <code>authentication_classes</code>가 있으니까 자격증명이 실패했다. 따라서 <code>permission_classes</code>만 있으면 될 것 같다.</p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230802164348.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802164348.png" src="../assets/Pasted%20image%2020230802164348.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802164348.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802164348.png" src="../assets/Pasted%20image%2020230802164348.png" /></a></p>
 <p>expired 상태의 토큰을 access 했을 때 돌아온 응답: <code>401-unauthorized</code></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="err">    </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="err"> </span><span class="s2">&quot;이 토큰은 모든 타입의 토큰에 대해 유효하지 않습니다&quot;</span><span class="p">,</span>
@@ -46290,7 +46348,7 @@
 <p>401이 왔을때 자동으로 토큰을 refresh 하도록 만들어 주어야 한다.</p>
 <h3 id="refresh">refresh<a class="headerlink" href="#refresh" title="Permanent link">#</a></h3>
 <p>만약 세팅에서 <code>ROTATE_REFRESH_TOKENS</code>를 켜두면 refresh 마다 access, refresh 토큰이 모두 재발급 된다.</p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230802155350.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802155350.png" src="../assets/Pasted%20image%2020230802155350.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230802155350.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230802155350.png" src="../assets/Pasted%20image%2020230802155350.png" /></a></p>
 <h1 id="_1">아니, 디코딩은 어떻게 하냐?<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <p>다 방법이 있지. <a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/rest_framework_simplejwt.html#rest_framework_simplejwt.authentication.JWTAuthentication.authenticate">다음 문서</a>를 읽어봐라. <a href="https://stackoverflow.com/a/68342977/21369350">스택오버플로</a>도 읽어봐라. </p>
 <p>이제 <code>ExampleView</code>가 요청을 디코딩하여 각각 <code>user</code>, <code>token</code>으로 분해하는 코드를 보자.</p>
@@ -46361,7 +46419,7 @@
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">member_ser</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span>
 </code></pre></div>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230804004734.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230804004734.png" src="../assets/Pasted%20image%2020230804004734.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230804004734.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230804004734.png" src="../assets/Pasted%20image%2020230804004734.png" /></a></p>
 
 
 

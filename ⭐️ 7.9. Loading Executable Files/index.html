@@ -10097,6 +10097,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23240,6 +23257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34888,6 +34926,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46247,7 +46305,7 @@
 <li>code 세그먼트는 <code>0x40_00_00</code>에서 출발한다. 그 아래엔 data 세그먼트가 있고. heap 세그먼트는 데이터 세그먼트의 끝자락에 붙어있으며(어차피 증가감소하지 않을 거니까) <code>malloc</code>에 의해 늘어났다 줄어들었다 할 것임. 스택 세그먼트는 유저가 접근할 수 있는 데이터 영역의 마지막 주소인 <code>1 &lt;&lt; 48 - 1</code>부터 시작하며 아래로 내려간다. 스택 위에는 커널코드로 예약되어 있다.</li>
 <li>모든 세그먼트는 완벽히 붙어있는 건 아님. 다만 align 되어있을 뿐.</li>
 <li>[ ] 링커의 [[Address Space Layout Randomization]] 때문에 디버깅이 힘들어질 것이라는 말을 들었다. 보안 관련한 사항인걸로 아는데, 좀 더 자세히 알아보자.</li>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230908145952.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230908145952.png" src="../assets/Pasted%20image%2020230908145952.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230908145952.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230908145952.png" src="../assets/Pasted%20image%2020230908145952.png" /></a></li>
 <li>로더는 메모리 영역의 <code>.data</code>, <code>.text</code> 세그먼트에 각각을 복붙한다. 로더는 프로그램의 entry point로 점프하고, 모든 C 프로그램은 <code>_start</code>함수의 주소값을 가지고 있다. 저 함수는 시스템 이진 목적파일 <code>crt1.o</code> 안에 정의되어 있다. <code>_start</code> 함수는 <code>__libc_start_main</code>이라는 함수를 호출하는데, 그 안에서 프로세스의 환경을 설정한 뒤에 비로소 유저가 정의한 <code>main</code> 함수를 호출한다.</li>
 </ul>
 

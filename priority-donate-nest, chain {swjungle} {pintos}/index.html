@@ -10097,6 +10097,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23240,6 +23257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34888,6 +34926,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46244,7 +46302,7 @@
 <h2 id="donate-nest-donate-chain">donate-nest / donate-chain<a class="headerlink" href="#donate-nest-donate-chain" title="Permanent link">#</a></h2>
 <p>priority-donate-chain 예제를 기준으로 설명합니다. 지면이 부족하므로 <code>NESTING_DEPTH == 3</code>으로 놓고 진행합니다.</p>
 <p><a href="assets/priority-donate-chain.excalidraw.md">priority-donate-chain.excalidraw</a><br />
-<a class="glightbox" href="../assets/Pasted%20image%2020230929220928.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230929220928.png" src="../assets/Pasted%20image%2020230929220928.png" /></a></p>
+<a class="glightbox" href="../assets/Pasted%20image%2020230929220928.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230929220928.png" src="../assets/Pasted%20image%2020230929220928.png" /></a></p>
 <p><code>main</code> 스레드는 0번 lock을 소유합니다. 이를 'h' 달린 화살표료 표기합니다. T1 스레드는 1번 lock을 소유하고 0번 lock을 기다립니다. 이를 w 달린 화살표로 표기합니다. 다시 main에 의해 T2가 실행됩니다. T2 스레드는 2번 lock을 소유하고 1번 lock을 기다립니다. T3 스레드는 3번 lock을 소유하고 2번 lock을 기다립니다. </p>
 <p><code>lock_acquire</code>에서 lock 획득에 실패할 경우, lock holder에게 자신의 priority를 기부할지 안할지를 결정합니다. lock 하나 당 하나의 waiter만이 lock holder에게 우선순위를 기부할 수 있습니다. 따라서 이미 같은 lock에 대하여 기부자가 있는 경우 이를 대체할 지 여부도 결정하여야 합니다.</p>
 <p>예제에서 모든 자식 스레드를 만든 경우, 위의 도식과 같은 모양이 됩니다. 청록색 곡선은 스레드에 걸려있는 donation list의 원소를 나타냅니다. 예를 들어 T2 스레드의 donation list는 T3입니다. 따라서 <code>get_priority(T2)</code>의 결과는 <code>max(T2.donation_list) = T2.original_priority = 9</code>가 됩니다.</p>

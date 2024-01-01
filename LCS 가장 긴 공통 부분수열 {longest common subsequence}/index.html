@@ -10099,6 +10099,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23240,6 +23257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34898,6 +34936,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46282,7 +46340,7 @@ $$</p>
 <p>X = ACAYKP<br />
 Y = CAPCAK<br />
 라고 할 때, 상향식 방식으로 DP 배열을 만들고자 하는 경우 다음과 같이 그릴 수 있다.<br />
-<a class="glightbox" href="../assets/IMG_2714.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="IMG_2714.jpg" src="../assets/IMG_2714.jpg" /></a></p>
+<a class="glightbox" href="../assets/IMG_2714.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IMG_2714.jpg" src="../assets/IMG_2714.jpg" /></a></p>
 <h2 id="lcs_1">LCS 수열 자체도 찾고싶다면?<a class="headerlink" href="#lcs_1" title="Permanent link">#</a></h2>
 <p>우리가 사용한 dp와 동일한 크기의 이차원 배열 <code>dp_b</code>를 만들어 그 안에 방향정보를 넣어주면 된다. 예를 들어 두 접두어가 같은 문자로 끝나는 경우에는 대각선으로 이동하기 때문에 <code>Dir.SE</code>를, 두 접두어가 다르게 끝날 경우엔 더 긴 쪽으로 가는 것이 유리하므로 각각 <code>Dir.E</code> 또는 <code>Dir.S</code>라는 반복자를 넣어 관리했다.</p>
 <p>그 결과로, <code>len(X)-1, len(Y)-1</code> 위치에서부터 반복자를 거꾸로 트레이싱 하면서 두 접두어가 일치하는 경우에만 결과값에 추가해주면 뒤집어진 LCS 수열을 찾을 수 있게 된다. 다음은 <a href="https://boj.kr/9252">9252 LCS 2 {boj}</a> 문제를 풀었을 때의 소스코드이다.</p>

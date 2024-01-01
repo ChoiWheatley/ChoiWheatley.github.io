@@ -10099,6 +10099,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23240,6 +23257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34951,6 +34989,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46278,7 +46336,7 @@
 </ul>
 <hr />
 <h2 id="provide-abstraction-to-use-hardware">Provide ABSTRACTION to use hardware<a class="headerlink" href="#provide-abstraction-to-use-hardware" title="Permanent link">#</a></h2>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230925204947.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925204947.png" src="../assets/Pasted%20image%2020230925204947.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230925204947.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925204947.png" src="../assets/Pasted%20image%2020230925204947.png" /></a></p>
 <ul>
 <li>
 <p><a href="https://www.man7.org/linux/man-pages/man2/gettimeofday.2.html"><code>gettimeofday</code></a> epoch부터 지금까지 소요된 시간을 리턴한다.<br />
@@ -46319,11 +46377,11 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 </ul>
 </li>
 <li>File System overview<ul>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230925224614.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925224614.png" src="../assets/Pasted%20image%2020230925224614.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230925224614.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925224614.png" src="../assets/Pasted%20image%2020230925224614.png" /></a></li>
 <li>Why VFS is required? &gt;&gt; 세상은 넓고 스토리지 디바이스를 만드는 회사는 많고 호환되지 않는 소프트웨어들이 넘쳐 흐르기 때문. 그래서 일반적으로 사용될 프로토콜이 필요해졌다. 레이어를 수직적으로 배치한 덕분에 하드웨어 벤더 명세에 독립적으로 파일을 읽고 쓸 수 있게 되었다.</li>
 <li>What is buffer cache? And why does it required? &gt;&gt; 오잉? <a href="https://en.wikipedia.org/wiki/Direct_memory_access">DMA</a>와는 다른건가</li>
 <li>Problems of using buffer cache<ul>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230925225850.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925225850.png" src="../assets/Pasted%20image%2020230925225850.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230925225850.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925225850.png" src="../assets/Pasted%20image%2020230925225850.png" /></a></li>
 <li>Which data is up-to-date? &gt;&gt; 타이밍에 따라 다르지 않나? 버퍼 기준 읽고 쓸 때의 타이밍을 보면...<ul>
 <li>read before: storage device</li>
 <li>read after: Buffer</li>
@@ -46355,11 +46413,11 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 <li>두 가지 작업으로 분리가 될 줄은 몰랐는데... 각각 Segmentation 과정과 Paging 과정으로 나뉜다.</li>
 <li>[?] CSAPP 책에서 다룬 가상메모리는 segmentation 과정이 없다. CPU가 처음부터 가상 메모리를 요청해 오는게 아니었다는 건가?</li>
 <li>Segment Descriptor (x86)<ul>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230926010140.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230926010140.png" src="../assets/Pasted%20image%2020230926010140.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230926010140.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230926010140.png" src="../assets/Pasted%20image%2020230926010140.png" /></a></li>
 </ul>
 </li>
 <li>Page table entry<ul>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230926010437.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230926010437.png" src="../assets/Pasted%20image%2020230926010437.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230926010437.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230926010437.png" src="../assets/Pasted%20image%2020230926010437.png" /></a></li>
 </ul>
 </li>
 </ul>
@@ -46428,7 +46486,7 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 <li>
 <p>paging</p>
 <ul>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230926020453.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230926020453.png" src="../assets/Pasted%20image%2020230926020453.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230926020453.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230926020453.png" src="../assets/Pasted%20image%2020230926020453.png" /></a></li>
 <li>page replacement algorithm!</li>
 <li></li>
 </ul>

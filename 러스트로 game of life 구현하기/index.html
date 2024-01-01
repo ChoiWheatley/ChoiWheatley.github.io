@@ -10097,6 +10097,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23240,6 +23257,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34888,6 +34926,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46214,7 +46272,7 @@
 <span class="nx">wasm</span><span class="p">.</span><span class="nx">greet</span><span class="p">();</span>
 </code></pre></div>
 <p><code>npm install</code>, <code>npm run start</code> 명령으로 간단하게 웹을 띄울 수 있다.</p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230316230116.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230316230116.png" src="../assets/Pasted%20image%2020230316230116.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230316230116.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230316230116.png" src="../assets/Pasted%20image%2020230316230116.png" /></a></p>
 <h1 id="interfacing-rust-and-js">Interfacing Rust and JS<a class="headerlink" href="#interfacing-rust-and-js" title="Permanent link">#</a></h1>
 <p>WA는 단지 선형 메모리 공간을 JS에게 제공할 뿐이다. WA는 반대로 JS가 점유하는 힙 영역의 공간을 참조할 수 없다. 상당히 제약적인 것이다! JS는 오직 WA의 배열버퍼(<code>u8</code>, <code>i32</code>, <code>f64</code>, 등)만 가지고 WA의 메모리 공간을 참조할 수 있다. WA 함수는 오직 스칼라 값들만 리턴할 수 있다. WA는 JS의 전역 객체를 참조할 수 있다고 한다. <a href="../js-sys%20crate/">js-sys crate</a>를 이용하면 된다고..</p>
 <p><code>wasm_bindgen</code> 특성은 복합 구조체를 두 경계 간에 넘나들게 만들어주는 공통적인 이해관계를 제공해 준다. Rust 구조체를 Boxing 하고, 그 포인터를 JS 클래스에 래핑하여 유용하게 만들어주기도 하고 JS 객체의 테이블 인덱스로 만들어주기도 한다. </p>
@@ -46227,7 +46285,7 @@
 </ol>
 <h1 id="game-of-life">Game of life를 구현하기 위한 인터페이스<a class="headerlink" href="#game-of-life" title="Permanent link">#</a></h1>
 <p>2D Universe는 일차원 배열로 길게 만들 수 있다. 다음과 같이. </p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230323184722.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230323184722.png" src="../assets/Pasted%20image%2020230323184722.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230323184722.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230323184722.png" src="../assets/Pasted%20image%2020230323184722.png" /></a></p>
 <p>처음 방식은 <code>std::fmt::Display for Universe</code> 를 구현함으로써 단순 텍스트로 변환된 결과를 리턴해 볼 것이다.</p>
 
 

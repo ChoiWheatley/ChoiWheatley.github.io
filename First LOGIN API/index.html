@@ -10094,6 +10094,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23235,6 +23252,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34891,6 +34929,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46192,9 +46250,9 @@
 </li>
 <li>이제 <code>quick_dev.rs</code> 파일로 가서 우리가 싸지른 코드가 얼마나 잘 동작하는지 확인해야한다. login api는 <code>POST</code>로 구현했기 때문에 <code>httpc_test</code> 크레이트의 <code>do_post</code> 함수를 사용했다. <ul>
 <li>아래는 성공적으로 로그인이 되었을 때의 모습이다.</li>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230420232311.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230420232311.png" src="../assets/Pasted%20image%2020230420232311.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230420232311.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230420232311.png" src="../assets/Pasted%20image%2020230420232311.png" /></a></li>
 <li>아래는 일부로 틀린 비밀번호를 입력했을 때 나온 모습이다. 우리가 만든 커스텀 에러타입 구현시 작성해놓은 <code>axum::http::StatusCode::INTERNAL_SERVER_ERROR</code>의 에러넘버가 500이라는 것을 알 수 있었고, <code>Response Body</code> 자리에 튜플의 두번째 자리에 적은 문자열이 고대로 들어가 있는 것을 확인할 수 있었다.</li>
-<li><a class="glightbox" href="../assets/Pasted%20image%2020230420232853.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230420232853.png" src="../assets/Pasted%20image%2020230420232853.png" /></a></li>
+<li><a class="glightbox" href="../assets/Pasted%20image%2020230420232853.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230420232853.png" src="../assets/Pasted%20image%2020230420232853.png" /></a></li>
 </ul>
 </li>
 <li><a href="https://youtu.be/XZtlD_m59sM?t=1247">middleware??</a>이게뭐냐? <code>routes_all</code>에다가  <code>middleware::map_response</code> 를 했더니 레이어를 하나 더 추가해버렸넹?? 그래서 내가 라우팅하는 모든 Response들을 전부 커스텀 response mapper에 통과시켜버린 뒤에야 작업을 수행하게 만들어줬다. 신기허네...</li>

@@ -10092,6 +10092,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../git%20rebase/" class="md-tabs__link">
+        
+  
+    
+  
+  git rebase
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-tabs__link">
         
   
@@ -23235,6 +23252,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -34883,6 +34921,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../git%20rebase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    git rebase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../git%20selectively%20merge%20or%20pick%20changes%20from%20another%20branch/" class="md-nav__link">
         
   
@@ -46184,7 +46242,7 @@
 </ul>
 <hr />
 <p>모니터는 다양한 조건을 감지하는 스레드를 위해서 사용할 수 있다. condition variable과 lock을 함께 쓴다. 모니터에 접근하기 위해서 lock이 사용되고, 한 번에 하나의 스레드만 모니터에 들어갈 수 있다. 모니터 안에서 데이터베이스 트랜잭션 커밋이라던가 유저 입력, 타이머 같은 어떤 조건이 만족될 때까지 condition variable이 제공하는 waiters 컨테이너에 들어가 대기상태가 된다.</p>
-<p><a class="glightbox" href="../assets/Pasted%20image%2020230925194140.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925194140.png" src="../assets/Pasted%20image%2020230925194140.png" /></a></p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020230925194140.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230925194140.png" src="../assets/Pasted%20image%2020230925194140.png" /></a></p>
 <p>대표적인 모니터 활용방법으로는 Producer &amp; Consumer 패턴이 있다. <a href="https://casys-kaist.github.io/pintos-kaist/appendix/synchronization.html#monitor-example">pintos-kaist</a>에 좋은 예제가 있으니 확인바란다.</p>
 <p>간략하게 정리하자면 읽기만 하는 스레드, 쓰기만 하는 스레드 각각 모니터에 들어가 주어진 조건이 만족할 때에만 본연의 작업을 수행한다. 예를 들어 Producer는 <code>put</code> 함수를 사용해 상호배제적으로 모니터에 들어간 뒤 문자를 넣을 수 있는 조건을 가진 <code>not_full</code> condition variable 컨테이너에 들어가 대기한다. 반대편(Consumer)에서 문자를 읽은 뒤 시그널을 보내면 대기명단 중 첫번째 스레드가 깨어나 조건이 일치하는 경우 버퍼에 문자를 넣는다. Producer가 모니터를 나가기 전에, 적어도 하나의 문자가 추가됐으므로 Consumer들에게 이를 알리기 위해 <code>not_empty</code> condition variable에 시그널을 보낸다. </p>
 
