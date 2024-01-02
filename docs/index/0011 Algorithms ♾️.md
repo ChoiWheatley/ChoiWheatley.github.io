@@ -61,6 +61,7 @@ ___
 - String
 	- [[kmp|kmp]]
 	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
+	- 
 - DP
 	- [[LIS 가장 긴 증가하는 부분수열|LIS]]
 	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
@@ -90,3 +91,4 @@ ___
 - [[Z {1074} {boj} {재귀}]]
 - [[N-Queen {boj}]]
 - [[한수 {boj}{1065}]]
+- [[leet 5 longest-palindrome-substring {string} {two_pointers}]]
