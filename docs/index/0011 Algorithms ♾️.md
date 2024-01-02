@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-12-30T15:19:08
+updated: 2024-01-02T17:31:24
 ---
 parent link: [[docs/index/index]] [[0010 Programming 👩‍💻]] 
 
@@ -58,13 +58,16 @@ ___
 - [[Heap]]
 - [[graph 기초|graph]]
 	- [[BFS]]
+- String
+	- [[kmp|kmp]]
+	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
+- DP
+	- [[LIS 가장 긴 증가하는 부분수열|LIS]]
+	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
 - [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
-- [[kmp|kmp]]
 - [[tree 기초|tree]]
 - [[next_permutation 구현|next permutation 구현]]
-- [[LIS 가장 긴 증가하는 부분수열|LIS]]
-- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
 - [[종만북 카라츠바 알고리즘 정답편 + 포스팅ᄋ 5bb97600d3b94c38b1050e1cb4ee3c4e|카라츠바 알고리즘 정답편]]
 - [[Segment Tree]]
 - [[Hash]] 
