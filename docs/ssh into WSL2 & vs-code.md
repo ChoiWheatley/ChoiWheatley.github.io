@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2024-01-03T21:00:44
+updated: 2024-01-03T21:06:08
 ---
 [[0010 Programming 👩‍💻|programming]]
 
@@ -33,7 +33,7 @@ Set-Service -Name sshd -StartupType 'Automatic'
 <https://www.lainyzine.com/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/>
 
 ```
-New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "$env:ProgramFiles\Powershell\7" -PropertyType String -Force
 ```
 
 ## WSL로 자동입장이 되게 만들어보자
