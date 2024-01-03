@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2024-01-03T21:17:09
+updated: 2024-01-03T21:37:49
 ---
 [[0010 Programming 👩‍💻|programming]]
 
@@ -14,7 +14,8 @@ updated: 2024-01-03T21:17:09
 
 몇 가지 방법이 있다. 하나는 Windows 자체의 sshd 서비스를 사용하는 방법과 WSL 내부의 sshd 데몬으로 터널링 하는 방법이있다.
 
-[VSCode: how to ssh remote connect to remote WSL2](https://stackoverflow.com/questions/63563693/vscode-how-to-ssh-remote-connect-to-remote-wsl2)
+- [VSCode: how to ssh remote connect to remote WSL2](https://stackoverflow.com/questions/63563693/vscode-how-to-ssh-remote-connect-to-remote-wsl2)
+- [openssh key-based authentication (ms doc)](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
 ## Windows 자체의 sshd를 사용해보자
 
