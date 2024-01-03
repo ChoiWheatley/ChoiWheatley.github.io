@@ -4,7 +4,7 @@ tags:
 description:
 title: ssh into WSL2 & vs-code
 created: 2023-08-19T10:06:20
-updated: 2024-01-03T21:06:08
+updated: 2024-01-03T21:17:09
 ---
 [[0010 Programming 👩‍💻|programming]]
 
@@ -31,6 +31,8 @@ Set-Service -Name sshd -StartupType 'Automatic'
 ## 기본 셸을 파워쉘로 변경
 
 <https://www.lainyzine.com/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/>
+
+아래는 powershell 7 기준 명령어인데, 다른 버전을 사용하고 싶다면 [다음 MS 문서](https://learn.microsoft.com/ko-kr/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.4#separate-installation-path-and-executable-name) 를 확인해서 DefaultShell -Value 값을 수정하세요
 
 ```
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "$env:ProgramFiles\Powershell\7" -PropertyType String -Force
