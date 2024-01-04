@@ -78,6 +78,10 @@ ___
 [[채움 HRD 📈]] 로 이동하세요  
 [[2023-05-14 정민영 교수님의 진로상담]]
 
+## 지원완료
+
+
+
 ## Ended
 
 -  ~~[펄 어비스 테크 인턴십](https://www.pearlabyss.com/ko-KR/Company/Careers/detail?_jobOpeningNo=309)~~
