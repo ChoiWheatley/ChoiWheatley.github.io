@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-04T21:03:59
+updated: 2024-01-04T21:52:32
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -55,6 +55,11 @@ ___
 	- 발급번호 020196-0411009001
 	- 성적 765
 
+## 포트폴리오, 자기소개서, 이력서 등
+
+- [[최승현을 소개합니다]]
+- [[Portfolio-최승현]]
+
 ## 공통적인 인터뷰 질문 추려내기
 
 > Notion에서 마이그레이션한 인터뷰 질문들
@@ -64,7 +69,6 @@ ___
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6>
 - 프로젝트 경험
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
-- [[최승현을 소개합니다]]
 - [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
 	- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 - [[채널톡 면접 기출 {confidential}]]
