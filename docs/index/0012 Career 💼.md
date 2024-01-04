@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-04T22:20:06
+updated: 2024-01-04T23:46:33
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -60,7 +60,7 @@ ___
 - [[최승현을 소개합니다]]
 - [[Portfolio-최승현]]
 
-## 공통적인 인터뷰 질문 추려내기
+## 인터뷰 질문 추려내기
 
 > Notion에서 마이그레이션한 인터뷰 질문들
 
@@ -71,7 +71,12 @@ ___
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
 - [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
 	- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
-- [[채널톡 면접 기출 {confidential}]]
+- swjungle 관련
+	- [[week 04 {swjungle} {Red Black Tree}]]
+	- [[week 05 {swjungle} {malloc-lab}]]
+	- [[week06 {swjungle}{proxy-lab}]]
+	- [[week07-10 {swjungle} {pintos}]]
+	- [[채널톡 면접 기출 {confidential}]]
 
 ## 진로 관련
 
