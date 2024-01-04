@@ -4,7 +4,7 @@ tags:
 description:
 title: week 04 {swjungle} {Red Black Tree}
 created: 2023-08-31T13:54:10
-updated: 2023-09-06T13:21:12
+updated: 2024-01-05T00:25:01
 ---
 
 ## INDEX
@@ -13,7 +13,7 @@ updated: 2023-09-06T13:21:12
 - [4주차 swjungle 안내 페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W04-rbtree.html)
 - [rbtree-lab {GH}](https://github.com/SWJungle/rbtree-lab)
 - [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
-- [missing semester-kr](https://missing-semester-kr.github.io/) | CS 학기에서 가르쳐주지 않지만 거의 필수적으로 알아야 하는 주제들에 대한 내용을 다루고 있음.
+- [[missing-semester 여러분의 CS 교육에서 누락된 학기]] | CS 학기에서 가르쳐주지 않지만 거의 필수적으로 알아야 하는 주제들에 대한 내용을 다루고 있음.
 - [[이진검색트리 red black tree]] | 구현 인터페이스 확인바람.
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 

@@ -4,10 +4,10 @@ tags:
 description:
 title: 0120 swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2023-12-19T14:02:03
+updated: 2024-01-05T00:11:48
 ---
 
-# INDEX
+## INDEX
 
 - links
 	- [swjungle 7기를 위한 웹사이트](https://jungle7-7610626261f4.herokuapp.com/)
@@ -33,15 +33,13 @@ updated: 2023-12-19T14:02:03
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[Linux IPC Programming {inflearn archive}]]
 
-# QUESTIONS and TEATIMES
+## QUESTIONS and TEATIMES
 
 ### DUMP
 
 - 질문의 퀄리티를 높힌 뒤에 질문을 하려다보니 질문 자체를 자주 못하게 되고 놓치게 되는 일이 발생한다. 일단 무턱대로 질문하는 것이 좋을까?
 
 ### [[week 03 teatime questions {swjungle}{coding test trend}]]
-
-![[week 03 teatime questions {swjungle}{coding test trend}#^tc6q8p]]
 
 → 아............................. 목표는 현실적으로, 계획은 여유롭게.
 
