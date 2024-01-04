@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-04T21:52:32
+updated: 2024-01-04T22:20:06
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -80,7 +80,7 @@ ___
 
 ## 지원완료
 
-
+- 2024-01-04  [엔셀(주)-IT사업부 SW개발자](http://joburl.kr/bJw5r)
 
 ## Ended
 
