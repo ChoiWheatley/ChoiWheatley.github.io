@@ -8244,6 +8244,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../clock-tui%2C%20tclock%20%7Brust%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  clock-tui, tclock {rust}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../closures%2C%20factory%20functions%20%28python%29/" class="md-tabs__link">
         
   
@@ -32780,6 +32797,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../clock-tui%2C%20tclock%20%7Brust%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    clock-tui, tclock {rust}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../closures%2C%20factory%20functions%20%28python%29/" class="md-nav__link">
         
   
@@ -46534,7 +46571,10 @@
 <h2 id="ssh-into-wsl2-vs-code">ssh into WSL2 &amp; vs-code<a class="headerlink" href="#ssh-into-wsl2-vs-code" title="Permanent link">#</a></h2>
 <p>생성일: 2022년 3월 2일 오후 11:30</p>
 <p>몇 가지 방법이 있다. 하나는 Windows 자체의 sshd 서비스를 사용하는 방법과 WSL 내부의 sshd 데몬으로 터널링 하는 방법이있다.</p>
-<p><a href="https://stackoverflow.com/questions/63563693/vscode-how-to-ssh-remote-connect-to-remote-wsl2">VSCode: how to ssh remote connect to remote WSL2</a></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/63563693/vscode-how-to-ssh-remote-connect-to-remote-wsl2">VSCode: how to ssh remote connect to remote WSL2</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement">openssh key-based authentication (ms doc)</a></li>
+</ul>
 <h2 id="windows-sshd">Windows 자체의 sshd를 사용해보자<a class="headerlink" href="#windows-sshd" title="Permanent link">#</a></h2>
 <p>PC-A에서 PC-B의 윈도우로 ssh를 할 수 있는 명령어는 다음과 같다</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Powershell as Administrator</span>
@@ -46544,7 +46584,8 @@
 <p>이제 외부에서 해당 윈도우(PC-B)로 ssh를 연결해 들어가면 파워쉘 프롬프트를 만날 수 있다.</p>
 <h2 id="_1">기본 셸을 파워쉘로 변경<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><a href="https://www.lainyzine.com/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/">https://www.lainyzine.com/ko/article/how-to-run-openssh-server-and-connect-with-ssh-on-windows-10/</a></p>
-<div class="highlight"><pre><span></span><code>New-ItemProperty -Path &quot;HKLM:\SOFTWARE\OpenSSH&quot; -Name DefaultShell -Value &quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -PropertyType String -Force
+<p>아래는 powershell 7 기준 명령어인데, 다른 버전을 사용하고 싶다면 <a href="https://learn.microsoft.com/ko-kr/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.4#separate-installation-path-and-executable-name">다음 MS 문서</a> 를 확인해서 DefaultShell -Value 값을 수정하세요</p>
+<div class="highlight"><pre><span></span><code>New-ItemProperty -Path &quot;HKLM:\SOFTWARE\OpenSSH&quot; -Name DefaultShell -Value &quot;$env:ProgramFiles\Powershell\7&quot; -PropertyType String -Force
 </code></pre></div>
 <h2 id="wsl">WSL로 자동입장이 되게 만들어보자<a class="headerlink" href="#wsl" title="Permanent link">#</a></h2>
 <p>아래 커맨드는 ssh 입장시 사용할 기본셸을 설정할 수 있다. bash.exe 파일로 설정해 놓았고, 이는 윈도우가 암시적으로 wsl을 호출하기 때문에 ssh를 통해 WSL 배시 셸로 들어가게 된다.</p>
