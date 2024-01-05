@@ -17645,6 +17645,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%EC%84%B1%EC%9D%B8%EC%95%A0%EC%B0%A9%EC%9C%A0%ED%98%95%20%EC%A7%88%EB%AC%B8%EC%A7%80%20%28ECR%29/" class="md-tabs__link">
+        
+  
+    
+  
+  성인애착유형 질문지 (ECR)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%EC%86%8C%20%EB%96%A1%EC%8B%AC%20%EC%88%98%EB%B9%84%EB%93%9C/" class="md-tabs__link">
         
   
@@ -23347,6 +23364,27 @@
   
   <span class="md-ellipsis">
     2024-01-01
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-05
   </span>
   
 
@@ -43891,6 +43929,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../%EC%84%B1%EC%9D%B8%EC%95%A0%EC%B0%A9%EC%9C%A0%ED%98%95%20%EC%A7%88%EB%AC%B8%EC%A7%80%20%28ECR%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    성인애착유형 질문지 (ECR)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EC%86%8C%20%EB%96%A1%EC%8B%AC%20%EC%88%98%EB%B9%84%EB%93%9C/" class="md-nav__link">
         
   
@@ -44802,9 +44860,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#height-2-lgn1" class="md-nav__link">
+  <a href="#height-lgn1-2-lgn1" class="md-nav__link">
     <span class="md-ellipsis">
-      height는  $2 \lg{(n+1)}$ 만큼을 넘을 수 없다.
+      height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.
     </span>
   </a>
   
@@ -46583,9 +46641,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#height-2-lgn1" class="md-nav__link">
+  <a href="#height-lgn1-2-lgn1" class="md-nav__link">
     <span class="md-ellipsis">
-      height는  $2 \lg{(n+1)}$ 만큼을 넘을 수 없다.
+      height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.
     </span>
   </a>
   
@@ -46747,12 +46805,12 @@
 <li><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC">이진 탐색 트리 - 위키백과, 우리 모두의 백과사전</a></li>
 <li><a href="https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC">레드-블랙 트리 - 위키백과, 우리 모두의 백과사전</a></li>
 </ul>
-<h2 id="height-2-lgn1">height는  $2 \lg{(n+1)}$ 만큼을 넘을 수 없다.<a class="headerlink" href="#height-2-lgn1" title="Permanent link">#</a></h2>
+<h2 id="height-lgn1-2-lgn1">height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.<a class="headerlink" href="#height-lgn1-2-lgn1" title="Permanent link">#</a></h2>
 <p><strong>증명</strong></p>
 <ol>
-<li>이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. </li>
-<li>RBTree에서의 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$, 최대 $2r$개의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.</li>
-<li>1과 2로 인해 $2^{r} - 1 \le n$ 을 만족한다. 따라서 $r \le \lg{(n + 1)}$을 만족하며, 양변에 2를 곱하면 $2r \le 2\lg{(n + 1)}$ 이므로 $h \le 2\lg{(n + 1)}$가 된다.</li>
+<li>이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. 따라서 $\lg{(n+1)}\le h$가 성립한다.</li>
+<li>leaf 노드까지 만나는 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$(모든 경로가 black), 최대 $2r$개(모든 경로가 black-red 반복)의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.</li>
+<li>r과 n의 관계는 포화이진트리의 모든 노드가 Black인 경우 최대이므로 $2^{r} - 1 \le n$ 을 만족한다. 따라서 $r \le \lg{(n + 1)}$을 만족하며, 양변에 2를 곱하면 $2r \le 2\lg{(n + 1)}$ 이므로 $h \le 2\lg{(n + 1)}$가 된다.</li>
 </ol>
 <p>RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 수행하는 동안 최대 $O(2\lg{(n+1)})$이 필요하며, 따라서 RBTree 삽입,삭제 알고리즘의 시간복잡도는 $O(\log{n})$이 된다.</p>
 <h2 id="keywords">KEYWORDS<a class="headerlink" href="#keywords" title="Permanent link">#</a></h2>
@@ -46794,7 +46852,7 @@
 </li>
 </ul>
 </li>
-<li>[?] questions<ul>
+<li>[x] questions<ul>
 <li>duplicates를 처리하기 위해선 <code>node_t</code>에 <code>count</code>라는 속성을 추가해야 한다. 하지만 현재 프로젝트의 제약사항으로 "rbtree.c"만 수정해야 하는데, 정말로 <code>node_t</code>를 수정하지 않고 중복 원소를 처리하라는 것인가?</li>
 <li>(답변) 네, 가능합니다.  정렬된 list를 <code>[1,1, 2, 2, 2, 3]</code>과 같이 구현할 수도 있고 <code>{1: 2개, 2: 3개, 3: 1개}</code> 로 구현할 수도 있습니다만, 앞의 방식으로 구현하라는 이야기입니다.</li>
 </ul>
@@ -46825,6 +46883,7 @@
 </code></pre></div>
 <ul>
 <li><code>tree_to_array(tree, arr_out, n)</code>를 DFS 순회 코드의 callback함수를 사용하여 만들어 보려고 했으나 대차게 실패했다. 일단 C 자체에서 람다함수나 중첩 함수 선언같은걸 지원하지 않는데다, Callable 타입 객체를 만드는 것도 다른 언어에서는 어떻게 했는지 모르겠지만 C에서는 전역변수에 접근하는 것 말고는 다른 함수의 지역변수에 접근하는 것은 불가능해보였다.</li>
+<li>2024-01-05 그거 PintOS 코드에서 영감을 얻은 <code>void * aux</code>  인자를 사용하여 스코프 내의 변수를 <em>캡처</em>하는 것이 가능할 것이다.</li>
 </ul>
 <h2 id="helper-functions">Helper Functions<a class="headerlink" href="#helper-functions" title="Permanent link">#</a></h2>
 <ul>
@@ -46905,12 +46964,12 @@
 </li>
 <li>LRb<ul>
 <li>before: <a class="glightbox" href="../assets/Pasted%20image%2020230904142000.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230904142000.png" src="../assets/Pasted%20image%2020230904142000.png" /></a></li>
-<li>after: <a class="glightbox" href="../assets/Pasted%20image%2020230904142657.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230904142657.png" src="../assets/Pasted%20image%2020230904142657.png" /></a></li>
+<li>after: <a class="glightbox" href="../assets/Drawing%202023-09-04%2013.55.19.excalidraw.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Drawing 2023-09-04 13.55.19.excalidraw.png" src="../assets/Drawing%202023-09-04%2013.55.19.excalidraw.png" /></a></li>
 </ul>
 </li>
 <li>RLb<ul>
 <li>before: <a class="glightbox" href="../assets/Pasted%20image%2020230904142022.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230904142022.png" src="../assets/Pasted%20image%2020230904142022.png" /></a></li>
-<li>after: <a class="glightbox" href="../assets/Pasted%20image%2020230904142638.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230904142638.png" src="../assets/Pasted%20image%2020230904142638.png" /></a></li>
+<li>after: <a class="glightbox" href="../assets/Pasted%20image%2020230904142638.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20230904142638.png" src="../assets/Pasted%20image%2020230904142638.png" /></a> </li>
 </ul>
 </li>
 <li>RRb<ul>
