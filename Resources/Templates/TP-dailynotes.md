@@ -52,6 +52,7 @@ tags:
 ```dataview
 LIST
 FROM #scrap
+SORT file.mtime desc
 ```
 
 ## Notes modified today (dataview)
@@ -59,5 +60,5 @@ FROM #scrap
 ```dataview
 List FROM "" 
 WHERE striptime(date(file.frontmatter.updated)) = date("<%today%>") 
-SORT file.mtime asc
+SORT file.mtime desc
 ```
