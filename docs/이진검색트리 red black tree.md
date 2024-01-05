@@ -15,7 +15,7 @@ tags:
   - algo/tree
   - algo/graph
   - algo/datastructure
-updated: 2024-01-05T21:58:07
+updated: 2024-01-05T22:40:43
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -45,7 +45,7 @@ updated: 2024-01-05T21:58:07
 **증명**
 
 1. 이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. 
-2. RBTree에서의 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$, 최대 $2r$개의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.
+2. RBTree에서의 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$(모든 경로가 black), 최대 $2r$개(모든 경로가 black-red 반복)의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.
 3. 1과 2로 인해 $2^{r} - 1 \le n$ 을 만족한다. 따라서 $r \le \lg{(n + 1)}$을 만족하며, 양변에 2를 곱하면 $2r \le 2\lg{(n + 1)}$ 이므로 $h \le 2\lg{(n + 1)}$가 된다.
 
 RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 수행하는 동안 최대 $O(2\lg{(n+1)})$이 필요하며, 따라서 RBTree 삽입,삭제 알고리즘의 시간복잡도는 $O(\log{n})$이 된다.
@@ -163,10 +163,10 @@ RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 �
 		- after: ![[Pasted image 20230904142330.png]]
 	- LRb
 		- before: ![[Pasted image 20230904142000.png]]
-		- after: ![[Pasted image 20230904142657.png]]
+		- after: ![[Drawing 2023-09-04 13.55.19.excalidraw.png]]
 	- RLb
 		- before: ![[Pasted image 20230904142022.png]]
-		- after: ![[Pasted image 20230904142638.png]]
+		- after: ![[Pasted image 20230904142638.png]] 
 	- RRb
 		- before: ![[Pasted image 20230904142056.png]]
 		- after: ![[Pasted image 20230904142310.png]]
