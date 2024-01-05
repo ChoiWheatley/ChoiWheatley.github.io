@@ -4,7 +4,7 @@ tags:
 description:
 title: 0120 swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2024-01-05T00:11:48
+updated: 2024-01-05T20:48:49
 ---
 
 ## INDEX
@@ -15,6 +15,7 @@ updated: 2024-01-05T00:11:48
 	- [[week 00 {swjungle}]]
 	- [[week 01~03 {swjungle} {ALGORITHMS}]]
 	- [[week 04 {swjungle} {Red Black Tree}]]
+		- [[이진검색트리 red black tree]]
 	- [[week 05 {swjungle} {malloc-lab}]]
 		- [[⭐️ 9.9. Dynamic Memory Allocation]]
 		- [[malloclab]]
