@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-05T00:02:53
+updated: 2024-01-05T23:40:49
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -71,10 +71,12 @@ ___
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
 - [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
 	- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
-- [[0120 swjungle 🤖]] 관련
-	- [[week 04 {swjungle} {Red Black Tree}]]
-		- [[2의 보수법]]에 대해서 설명해보세요
-		- 
+- [[week 04 {swjungle} {Red Black Tree}]]
+	- [[이진검색트리 red black tree]]
+	- [[2의 보수법]]에 대해서 설명해보세요
+		- rbtree에서 트리의 최대 깊이 height를 도출해보세요
+		- left rotate, right rotate를 수행하는 간단한 수도코드를 작성해보세요
+	- 
 	- [[week 05 {swjungle} {malloc-lab}]]
 	- [[week06 {swjungle}{proxy-lab}]]
 	- [[week07-10 {swjungle} {pintos}]]
