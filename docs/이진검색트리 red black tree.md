@@ -15,7 +15,7 @@ tags:
   - algo/tree
   - algo/graph
   - algo/datastructure
-updated: 2024-01-05T21:42:38
+updated: 2024-01-05T21:58:07
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -106,6 +106,7 @@ ADT RBTree:
 ```
 
 - `tree_to_array(tree, arr_out, n)`를 DFS 순회 코드의 callback함수를 사용하여 만들어 보려고 했으나 대차게 실패했다. 일단 C 자체에서 람다함수나 중첩 함수 선언같은걸 지원하지 않는데다, Callable 타입 객체를 만드는 것도 다른 언어에서는 어떻게 했는지 모르겠지만 C에서는 전역변수에 접근하는 것 말고는 다른 함수의 지역변수에 접근하는 것은 불가능해보였다.
+- 2024-01-05 그거 PintOS 코드에서 영감을 얻은 `void * aux`  인자를 사용하여 스코프 내의 변수를 *캡처*하는 것이 가능할 것이다.
 
 ## Helper Functions
 
