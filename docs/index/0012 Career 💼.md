@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-06T00:00:10
+updated: 2024-01-06T00:07:18
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -62,15 +62,18 @@ ___
 
 ## 인터뷰 질문 추려내기
 
-> Notion에서 마이그레이션한 인터뷰 질문들
+### 참고 사이트들
+
+- [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
+- [JaeYeopHan/Interview_Question_for_Beginner {GH}](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
+
+### Notion에서 마이그레이션한 인터뷰 질문들
 
 - [[본인을 가장 잘 나타낼 수 있는 자기소개를 해 주십시오 {career}]]
 - IT 활용능력
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#97fc8e4aeab54e1aa2fcdf82a5ebf6c6>
 - 프로젝트 경험
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
-- [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
-	- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 
 ### 기술 면접 질문 추려내기
 
@@ -84,6 +87,7 @@ ___
 - [[week07-10 {swjungle} {pintos}]]
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
+- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 
 ### 기타
 
