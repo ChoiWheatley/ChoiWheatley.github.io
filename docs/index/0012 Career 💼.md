@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-06T00:12:22
+updated: 2024-01-06T20:56:32
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -87,6 +87,7 @@ ___
 - [[week06 {swjungle}{proxy-lab}]]
 	- [[프록시 서버가 작동하는 일련의 과정을 설명해주세요]]
 - [[week07-10 {swjungle} {pintos}]]
+	- 
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
