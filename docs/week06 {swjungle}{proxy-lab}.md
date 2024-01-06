@@ -4,15 +4,16 @@ tags:
 description:
 title: week06 {swjungle}{proxy-lab}
 created: 2023-09-14T13:34:26
-updated: 2023-09-17T22:48:13
+updated: 2024-01-06T20:39:18
 ---
 - [[0120 swjungle 🤖]]
+- [[proxylab]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[10. System-Level IO {CSAPP}]]
 - [[11. Network Programming {CSAPP}]]
 - [[Socket Programming C API]]
 - [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
-- [10]
+- [ChoiWheatley/swjungle-week06-proxy-lab](https://github.com/ChoiWheatley/swjungle-week06-proxy-lab)
 ___
 
 ## README
@@ -78,8 +79,6 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 - 프록시 랩 발제
 
 ### 2023-09-18 월
-
-
 
 ### 2023-09-19 화
 

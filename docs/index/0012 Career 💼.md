@@ -84,8 +84,8 @@ ___
 	- 센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요.
 - [[week 05 {swjungle} {malloc-lab}]]
 	- [[내부 파편화와 외부 파편화의 차이점에 대해서 설명해주세요]]
-	- Memory Utility
 - [[week06 {swjungle}{proxy-lab}]]
+	- [[프록시 서버가 작동하는 일련의 과정을 설명해주세요]]
 - [[week07-10 {swjungle} {pintos}]]
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
