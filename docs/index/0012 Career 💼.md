@@ -83,6 +83,7 @@ ___
 	- 원소를 삽입하는 과정을 간략하게 설명해보세요
 	- 센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요.
 - [[week 05 {swjungle} {malloc-lab}]]
+	- [[내부 파편화와 외부 파편화의 차이점에 대해서 설명해주세요]]
 - [[week06 {swjungle}{proxy-lab}]]
 - [[week07-10 {swjungle} {pintos}]]
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
