@@ -59,6 +59,7 @@ ___
 - <http://www.kocw.net/home/index.do>
 - <https://www.kmooc.kr/coursera>
 - [[개발자가 꼭 알아야할 GitHub 리포지토리 모음]]
+- [[missing-semester 여러분의 CS 교육에서 누락된 학기]]
 ---
 
 ## 교재

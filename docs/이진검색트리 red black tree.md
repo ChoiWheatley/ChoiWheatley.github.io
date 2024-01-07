@@ -15,7 +15,7 @@ tags:
   - algo/tree
   - algo/graph
   - algo/datastructure
-updated: 2023-09-07T21:16:07
+updated: 2024-01-05T23:37:40
 ---
 - parent link: 
 	- [[0011 Algorithms ♾️]] 
@@ -40,13 +40,13 @@ updated: 2023-09-07T21:16:07
 - [이진 탐색 트리 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC)
 - [레드-블랙 트리 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC)
 
-## height는  $2 \lg{(n+1)}$ 만큼을 넘을 수 없다.
+## height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.
 
 **증명**
 
-1. 이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. 
-2. RBTree에서의 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$, 최대 $2r$개의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.
-3. 1과 2로 인해 $2^{r} - 1 \le n$ 을 만족한다. 따라서 $r \le \lg{(n + 1)}$을 만족하며, 양변에 2를 곱하면 $2r \le 2\lg{(n + 1)}$ 이므로 $h \le 2\lg{(n + 1)}$가 된다.
+1. 이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. 따라서 $\lg{(n+1)}\le h$가 성립한다.
+2. leaf 노드까지 만나는 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$(모든 경로가 black), 최대 $2r$개(모든 경로가 black-red 반복)의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.
+3. r과 n의 관계는 포화이진트리의 모든 노드가 Black인 경우 최대이므로 $2^{r} - 1 \le n$ 을 만족한다. 따라서 $r \le \lg{(n + 1)}$을 만족하며, 양변에 2를 곱하면 $2r \le 2\lg{(n + 1)}$ 이므로 $h \le 2\lg{(n + 1)}$가 된다.
 
 RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 수행하는 동안 최대 $O(2\lg{(n+1)})$이 필요하며, 따라서 RBTree 삽입,삭제 알고리즘의 시간복잡도는 $O(\log{n})$이 된다.
 
@@ -75,7 +75,7 @@ RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 �
 			- case2) w is black, w's both children are black
 			- case3) w is black, w's left child is red, right child is black
 			- case 4) w is black, w's right child is red
-- [?] questions
+- [x] questions
 	- duplicates를 처리하기 위해선 `node_t`에 `count`라는 속성을 추가해야 한다. 하지만 현재 프로젝트의 제약사항으로 "rbtree.c"만 수정해야 하는데, 정말로 `node_t`를 수정하지 않고 중복 원소를 처리하라는 것인가?
 	- (답변) 네, 가능합니다.  정렬된 list를 `[1,1, 2, 2, 2, 3]`과 같이 구현할 수도 있고 `{1: 2개, 2: 3개, 3: 1개}` 로 구현할 수도 있습니다만, 앞의 방식으로 구현하라는 이야기입니다.
 
@@ -106,6 +106,7 @@ ADT RBTree:
 ```
 
 - `tree_to_array(tree, arr_out, n)`를 DFS 순회 코드의 callback함수를 사용하여 만들어 보려고 했으나 대차게 실패했다. 일단 C 자체에서 람다함수나 중첩 함수 선언같은걸 지원하지 않는데다, Callable 타입 객체를 만드는 것도 다른 언어에서는 어떻게 했는지 모르겠지만 C에서는 전역변수에 접근하는 것 말고는 다른 함수의 지역변수에 접근하는 것은 불가능해보였다.
+- 2024-01-05 그거 PintOS 코드에서 영감을 얻은 `void * aux`  인자를 사용하여 스코프 내의 변수를 *캡처*하는 것이 가능할 것이다.
 
 ## Helper Functions
 
@@ -162,10 +163,10 @@ RBTree 제약조건을 어겼을 때 fixup을 해주어야 한다. 총 8가지 �
 		- after: ![[Pasted image 20230904142330.png]]
 	- LRb
 		- before: ![[Pasted image 20230904142000.png]]
-		- after: ![[Pasted image 20230904142657.png]]
+		- after: ![[Drawing 2023-09-04 13.55.19.excalidraw.png]]
 	- RLb
 		- before: ![[Pasted image 20230904142022.png]]
-		- after: ![[Pasted image 20230904142638.png]]
+		- after: ![[Pasted image 20230904142638.png]] 
 	- RRb
 		- before: ![[Pasted image 20230904142056.png]]
 		- after: ![[Pasted image 20230904142310.png]]

@@ -2,11 +2,15 @@
 aliases: 
 tags: 
 description: threads
-title: week07-109 {swjungle} {pintos}
+title: week07-10 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
-updated: 2023-10-28T17522T204:59:40
+updated: 2024-01-05T00:09:09
 ---
 - [[0120 swjungle 🤖]]
+- weekly
+	- [[week07 - Threads {pintos} {swjungle}]]
+	- [[week08 - User Program {pintos} {swjungle}]]
+	- [[week09 - Virtual Memory {pintos} {swjungle}]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
 	- [[3. Machine Level Representation of Programs {CSAPP}]]
 		- [[Hardware Knowledges for PintOS {swjungle}]]
@@ -37,6 +41,17 @@ ___
 - [Pintos_1.pdf](https://drive.google.com/file/d/1rr1VobnaR8QiWq3TVImvzzHWWdB5d4B5/view)
 - [01_os_review.pdf](https://drive.google.com/file/d/1v7ZT0uCqnSFQQY3jQsnXnCh9WHPpgQxZ/view)
 - [CS 6200: Introduction to Operating Systems Course Videos (Georgia Tech College of Computing)](https://omscs.gatech.edu/cs-6200-introduction-operating-systems-course-videos)
+
+## READ
+
+- 병철 추천 - [https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html](https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html)
+- x86-64 isa - 한 번 훑어봄. 가상메모리와 pml4 포스팅도 확인바람. [https://it-eldorado.tistory.com/35](https://it-eldorado.tistory.com/35)  
+- [eldorado.tistory.com - 가상 메모리](https://it-eldorado.tistory.com/52)
+- 지난기수 질문답변 - load segment 위주로 읽기만 함 [https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions3.html](https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions3.html)  
+- pintos3.pdf - 한 번 훑어봄 [https://drive.google.com/file/d/1k9uFXn-JzkAymGWq0ZU5PxTTxQoB_AHH/view?usp=sharing](https://drive.google.com/file/d/1k9uFXn-JzkAymGWq0ZU5PxTTxQoB_AHH/view?usp=sharing&authuser=0)  
+- virtual memory - 한 번 읽어봤지만 정리가 안된듯 - [https://casys-kaist.github.io/pintos-kaist/project3/vm_management.html](https://casys-kaist.github.io/pintos-kaist/project3/vm_management.html)  
+- anonymous page - 안 읽고 코드 돌진한 최후 [https://casys-kaist.github.io/pintos-kaist/project3/anon.html](https://casys-kaist.github.io/pintos-kaist/project3/anon.html)  
+- stack growth - 아무것도 안 보고 여기까지 하느라 고생 좀 많았다 [https://casys-kaist.github.io/pintos-kaist/project3/stack_growth.html](https://casys-kaist.github.io/pintos-kaist/project3/stack_growth.html)
 
 ## [[week07 - Threads {pintos} {swjungle}]]
 
@@ -94,14 +109,3 @@ ___
 - 2023-10-13에는 lazy load 세그먼트, 페이지 처리 및 가상 주소, 물리 주소, 사용자 풀, 커널 풀에 대한 내용이 있습니다.
 - 2023-10-14에는 PintOS 프로젝트에 대한 PDF 자료와 가상 메모리 및 페이지 구조를 탐색하는 블로그 게시물에 대한 정보가 있습니다.
 - 2023-10-15에는 PintOS의 lazy load 세그먼트와 스택 성장에 관한 브리핑이 포함되어 있습니다. [[2023-10-15 pintos briefing {lazy_load_segment} {stack growth} {swjungle}]]
-
-### READ
-
-- 병철 추천 - [https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html](https://blog.xenoscr.net/2021/09/06/Exploring-Virtual-Memory-and-Page-Structures.html)
-- x86-64 isa - 한 번 훑어봄. 가상메모리와 pml4 포스팅도 확인바람. [https://it-eldorado.tistory.com/35](https://it-eldorado.tistory.com/35)  
-- [eldorado.tistory.com - 가상 메모리](https://it-eldorado.tistory.com/52)
-- 지난기수 질문답변 - load segment 위주로 읽기만 함 [https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions3.html](https://jungle7-7610626261f4.herokuapp.com/pages/pintos-questions3.html)  
-- pintos3.pdf - 한 번 훑어봄 [https://drive.google.com/file/d/1k9uFXn-JzkAymGWq0ZU5PxTTxQoB_AHH/view?usp=sharing](https://drive.google.com/file/d/1k9uFXn-JzkAymGWq0ZU5PxTTxQoB_AHH/view?usp=sharing&authuser=0)  
-- virtual memory - 한 번 읽어봤지만 정리가 안된듯 - [https://casys-kaist.github.io/pintos-kaist/project3/vm_management.html](https://casys-kaist.github.io/pintos-kaist/project3/vm_management.html)  
-- anonymous page - 안 읽고 코드 돌진한 최후 [https://casys-kaist.github.io/pintos-kaist/project3/anon.html](https://casys-kaist.github.io/pintos-kaist/project3/anon.html)  
-- stack growth - 아무것도 안 보고 여기까지 하느라 고생 좀 많았다 [https://casys-kaist.github.io/pintos-kaist/project3/stack_growth.html](https://casys-kaist.github.io/pintos-kaist/project3/stack_growth.html)

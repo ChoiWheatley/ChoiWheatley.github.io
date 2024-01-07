@@ -4,9 +4,10 @@ tags:
 description:
 title: proxylab
 created: 2023-09-17T21:54:51
-updated: 2023-09-20T21:47:09
+updated: 2024-01-06T20:42:49
 ---
 - [[week06 {swjungle}{proxy-lab}]]
+- <https://github.com/ChoiWheatley/swjungle-week06-proxy-lab>
 - [proxylab.pdf](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
 - [Tutorial from GFG](https://www.geeksforgeeks.org/creating-a-proxy-webserver-in-python-set-1/)
 - [python-proxy-server {GH}](https://github.com/anapeksha/python-proxy-server/blob/main/src/server.py)
@@ -81,6 +82,8 @@ Sequential(40), Concurrency(15), Cache(15)를 채점한다. 만점은 70점이�
 ![[Pasted image 20230919194918.png]]
 
 ### parse uri
+
+<https://github.com/ChoiWheatley/swjungle-week06-proxy-lab/pull/2>
 
 클라이언트로부터 수신된 HTTP 요청의 첫번째 줄은 언제나 메서드, URI, 버전이 명시되어 있다.
 

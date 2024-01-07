@@ -13,13 +13,13 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:30:21
+updated: 2024-01-03T18:06:27
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
 ---
 
-# Scrapped
+## Scrapped
 
 - [[lambda는 기본적으로 생성자가 지워져있다.]]
 - [[lambda함수가 일반 함수보다 느리다]]
@@ -46,7 +46,11 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 
 ---
 
-# 질문
+## Data Structures with Standard Template Library
+
+- [[unordered_map {{cpp}}]]
+
+## 질문
 
 - C++ 에서 소리소문없이 생성하는 생성자들 (복사 생성자, move 생성자)과 각 생성자에 대응하는 operator=() 연산자 오버로딩을 꼭 해야하는 걸까?
 - 모든 포인터를 shared_ptr로 만들면 될까요? 아니면, 해당 포인터의 owner만 shared 또는 unique로 만들고 그 외엔 raw pointer를 쓰는 게 좋을까요?
