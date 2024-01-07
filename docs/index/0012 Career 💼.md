@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-06T20:56:32
+updated: 2024-01-07T16:51:36
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -82,20 +82,41 @@ ___
 	- left rotate, right rotate를 수행하는 간단한 수도코드를 작성해보세요
 	- 원소를 삽입하는 과정을 간략하게 설명해보세요
 	- 센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요.
+		- 사용하지 않으면 단말노드를 NULL로 표시. NULL 체크를 매번 해줘야 함. 단말에 이르렀다는 것을 확인하기 위해 센티널 노드를 사용함.
 - [[week 05 {swjungle} {malloc-lab}]]
-	- [[내부 파편화와 외부 파편화의 차이점에 대해서 설명해주세요]]
+	- [[내부 단편화와 외부 단편화의 차이점에 대해서 설명해주세요]]
+	- 암시적 리스트와 명시적 리스트에 관해 설명해주세요
 - [[week06 {swjungle}{proxy-lab}]]
 	- [[프록시 서버가 작동하는 일련의 과정을 설명해주세요]]
+	- 리버스 프록시 서버와의 차이점
 - [[week07-10 {swjungle} {pintos}]]
 	- 
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 - [[LRU]] 알고리즘에 대하여 설명해주세요.
+	- pintos 프로젝트에서 페이지 스왑 아웃 정책으로 무엇을 사용하였는지?
+- 
 
 ### 기타
 
 - [[채널톡 면접 기출 {confidential}]]
+- [ ] 보이저엑스 채용사이트에 적혀있는 예상질문 확인바람 | <https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089>
+- 2024-01-07 면접스터디
+	- lock과 semaphore와의 차이점
+	- 우선순위 기부가 무엇인지
+	- MVC 모델, MVVM 모델의 차이점
+	- syscall이 무엇인지
+	- busy waiting 방식
+	- UTF-8이 무엇인가요
+	- JS async 인풋, 아웃풋에 관하여
+		- input: resolve, reject
+		- output: Promise
+	- JS가 싱글 스레드로 작동. 싱글스레드로도 작동함에도 병렬적으로 작동할 수 있는데, 어떻게 이것을 작동하게 만들 수 있었는가?
+- 괜찮은 기법들
+	- 힌트를 조금만 주실 수 없을까요?
+	- 잠깐 생각해보겠다는 멘트
+	- 모르겠다면 모르겠다고 인정하기
 
 ## 진로 관련
 
