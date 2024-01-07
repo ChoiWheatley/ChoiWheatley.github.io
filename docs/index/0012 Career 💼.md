@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-07T16:51:36
+updated: 2024-01-07T17:09:23
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -81,6 +81,7 @@ ___
 	- rbtree에서 트리의 최소/최대 깊이 height를 도출해보세요
 	- left rotate, right rotate를 수행하는 간단한 수도코드를 작성해보세요
 	- 원소를 삽입하는 과정을 간략하게 설명해보세요
+	- 원소를 삭제하는 과정을 설명해보세요
 	- 센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요.
 		- 사용하지 않으면 단말노드를 NULL로 표시. NULL 체크를 매번 해줘야 함. 단말에 이르렀다는 것을 확인하기 위해 센티널 노드를 사용함.
 - [[week 05 {swjungle} {malloc-lab}]]
@@ -90,6 +91,13 @@ ___
 	- [[프록시 서버가 작동하는 일련의 과정을 설명해주세요]]
 	- 리버스 프록시 서버와의 차이점
 - [[week07-10 {swjungle} {pintos}]]
+	- context switching 방법, 나온 이유
+		- 반응성을 높히기 위해서 나옴. 빨리 끝날 수 있는 작업이 뒤늦게 실행되면 반응성이 낮아보임
+	- advanced scheduler 중 multi level feedback queue, 
+	- page fault에 대해서
+		- mmu가 발생시키는 예외.
+	- 가상 메모리에서 메모리 매핑방법, 시간복잡도
+		- pml4: 4단계의 페이지를 연결시켜주는 방식. 가상 주소가 생성되면 물리주소를 찾아갈때 각각의 페이지별로 512개의 엔트리가 있고, 몇 번째 엔트리를 찾아가야 다음 페이지가 나타나고. 오프셋들이 적혀있기 때문에 페이지 테이블에 적혀있는 엔트리 + 12비트의 오프셋을 사용하여 물리주소를 연결.
 	- 
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
@@ -103,6 +111,7 @@ ___
 - [[채널톡 면접 기출 {confidential}]]
 - [ ] 보이저엑스 채용사이트에 적혀있는 예상질문 확인바람 | <https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089>
 - 2024-01-07 면접스터디
+- 
 	- lock과 semaphore와의 차이점
 	- 우선순위 기부가 무엇인지
 	- MVC 모델, MVVM 모델의 차이점
@@ -113,6 +122,9 @@ ___
 		- input: resolve, reject
 		- output: Promise
 	- JS가 싱글 스레드로 작동. 싱글스레드로도 작동함에도 병렬적으로 작동할 수 있는데, 어떻게 이것을 작동하게 만들 수 있었는가?
+	- HTTP/2를 설명해주세요
+		- HTTP/1.1의 경우, 동시작업의 순서가 고정돼있다 -> 반응성이 낮다.
+		- 동시에 여러 작업이 들어왔을때 병렬적으로 처리가 될 수 있다.
 - 괜찮은 기법들
 	- 힌트를 조금만 주실 수 없을까요?
 	- 잠깐 생각해보겠다는 멘트
