@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-07T20:04:25
+updated: 2024-01-07T22:59:31
 ---
 
 ___
@@ -58,14 +58,18 @@ ___
 - [[Heap]]
 - [[graph 기초|graph]]
 	- [[BFS]]
+	- [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
 - String
 	- [[kmp|kmp]]
 	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
-	- 
+	- [[트라이]]
 - DP
 	- [[LIS 가장 긴 증가하는 부분수열|LIS]]
 	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
-- [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
+- sort
+	- [[merge sort]]
+	- [[퀵정렬 {quick sort}|Quick Sort]]
+	- [[도수정렬 (Counting Sort) {rust} {python}]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
 - [[tree 기초|tree]]
 - [[next_permutation 구현|next permutation 구현]]
@@ -75,11 +79,8 @@ ___
 - [[divide and conquer]]
 - [[이분탐색]]
 	- [[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
-- [[트라이]]
 - [[단절점]]
 - [[two pointer]]
-- [[퀵정렬 {quick sort}|Quick Sort]]
-- [[도수정렬 (Counting Sort) {rust} {python}]]
 
 ---
 
