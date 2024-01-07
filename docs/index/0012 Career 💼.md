@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-07T17:09:23
+updated: 2024-01-07T18:21:59
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -111,7 +111,6 @@ ___
 - [[채널톡 면접 기출 {confidential}]]
 - [ ] 보이저엑스 채용사이트에 적혀있는 예상질문 확인바람 | <https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089>
 - 2024-01-07 면접스터디
-- 
 	- lock과 semaphore와의 차이점
 	- 우선순위 기부가 무엇인지
 	- MVC 모델, MVVM 모델의 차이점
