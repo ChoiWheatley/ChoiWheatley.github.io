@@ -108,7 +108,7 @@ ___
 
 ### 기타
 
-- [[채널톡 면접 기출 {confidential}]]
+- [[채널톡 면접 기출]]
 - [ ] 보이저엑스 채용사이트에 적혀있는 예상질문 확인바람 | <https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089>
 - 2024-01-07 면접스터디
 	- lock과 semaphore와의 차이점
