@@ -80,11 +80,10 @@ ___
 
 - [[week 04 {swjungle} {Red Black Tree}]] | [[이진검색트리 red black tree]] | [RBTree Interview Questions and Answers](https://climbtheladder.com/red-black-tree-interview-questions/)
 	- rbtree에서 트리의 최소/최대 깊이 height를 도출해보세요 [[이진검색트리 red black tree#height는 $ lg{(n+1)}$ 보다 크거나 같고 $2 lg{(n+1)}$ 보다 작거나 같다.|red black tree]]
-	- [[left rotate, right rotate를 수행하는 간단한 수도코드를 작성해보세요 {red black tree}]]
+	- [[left rotate를 수행하는 간단한 수도코드를 작성해보세요 {red black tree}]]
 	- 원소를 삽입하는 과정을 간략하게 설명해보세요
 	- 원소를 삭제하는 과정을 설명해보세요
-	- 센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요.
-		- 사용하지 않으면 단말노드를 NULL로 표시. NULL 체크를 매번 해줘야 함. 단말에 이르렀다는 것을 확인하기 위해 센티널 노드를 사용함.
+	- [[센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요. {red black tree}]]
 - [[week 05 {swjungle} {malloc-lab}]]
 	- [[내부 단편화와 외부 단편화의 차이점에 대해서 설명해주세요]]
 	- 암시적 리스트와 명시적 리스트에 관해 설명해주세요
