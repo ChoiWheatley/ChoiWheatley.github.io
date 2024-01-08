@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-08T17:40:42
+updated: 2024-01-08T21:00:08
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -90,10 +90,10 @@ ___
 	- [[메모리를 할당하는데 왜 블럭단위로 할당하는지 설명해 보시오 {malloc-lab}]]
 - [[week06 {swjungle}{proxy-lab}]]
 	- [[프록시 서버가 작동하는 일련의 과정을 설명해주세요]]
-	- [[프록시와 리버스 프록시 서버와의 차이점]]
+	- [[프록시서버와 리버스 프록시 서버와의 차이점]]
 - [[week07-10 {swjungle} {pintos}]]
-	- context switching 방법, 나온 이유
-		- 반응성을 높히기 위해서 나옴. 빨리 끝날 수 있는 작업이 뒤늦게 실행되면 반응성이 낮아보임
+	- [[busy waiting 방식이 무엇인가요]]
+	- [[context switching 방법, 나온 이유]]
 	- advanced scheduler 중 multi level feedback queue, 
 	- page fault에 대해서
 		- mmu가 발생시키는 예외.
@@ -119,7 +119,6 @@ ___
 	- 우선순위 기부가 무엇인지
 	- MVC 모델, MVVM 모델의 차이점
 	- syscall이 무엇인지
-	- busy waiting 방식
 	- UTF-8이 무엇인가요
 	- JS async 인풋, 아웃풋에 관하여
 		- input: resolve, reject
