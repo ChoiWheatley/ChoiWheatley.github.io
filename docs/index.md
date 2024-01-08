@@ -8,7 +8,7 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2024-01-08T18:36:52
+updated: 2024-01-08T18:37:35
 ---
 
 # Introduction
@@ -51,7 +51,7 @@ I'm native Korean, but I can understand English at reading, listening.
 | DRF       | <img src="https://www.django-rest-framework.org/img/logo.png" style="height:100px">                               | ![[python.png\|100]]                                                                                       |
 | OpenGL    | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Opengl-logo.svg/320px-Opengl-logo.svg.png" style="height:100px;">                                                                                              | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
 | Qt        | <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Qt_logo_neon_2022.svg" style="height:100px">        | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
-| SceneKit  | <img src="https://developer.apple.com/assets/elements/icons/scenekit/scenekit-128x128.png" style="height:100px;"> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/191px-Swift_logo.svg.png" style="height:100px;">                                                                                                           |
+| SceneKit  | <img src="https://developer.apple.com/assets/elements/icons/scenekit/scenekit-128x128.png" style="height:100px;"> | <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Swift_logo.svg" style="height:100px;">                                                                                                           |
 
 ## External Links
 
