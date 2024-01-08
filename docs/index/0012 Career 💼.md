@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-07T18:21:59
+updated: 2024-01-08T15:15:50
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -24,7 +24,7 @@ ___
 
 ## 정신무장
 
-- <https://www.youtube.com/watch?v=2ESQqZ_Ec6k&ab_channel=%EC%BD%94%EB%94%A9%EB%A3%A8%ED%8C%A1CodingLupine>
+- <<https://www.youtube.com/watch?v=2ESQqZ_Ec6k&ab_channel>=%EC%BD%94%EB%94%A9%EB%A3%A8%ED%8C%A1CodingLupine>
 	- 가고싶은 회사의 채용공고 중 '우대사항'을 유심히 읽어봐라. 거기에 있는 기술스택들을 활용하여 내 프로젝트를 개선시켜보고 그 과정과 구체적인 변화를 스토리텔링할 것
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]] 나만의 무기 만들기 프로젝트를 진행하며 게시판 기능을 구현해보지 못한채로 바로 토이 프로젝트를 구현하게 되었다. 그런데 거의 대부분의 업계에서 기본적으로 게시판 기능만큼은 만들어봤을 거라고 기대하기 때문에 나만무 외적으로도 [[0018.1 Nest.js 🪺|NestJS]]를 활용해 게시판을 만들어볼 줄은 알아야 한다고 생각한다. 거기에 더해 User Roles와 복잡한 데이터베이스 (댓글과 추천기능 등)까지 수월하게 만들 줄은 알아야 할 것이다.  [[2023-11-12]]
 - [면접관이 알려주는 포트폴리오 작성 팁 {YT}](https://www.youtube.com/watch?v=FGe5QhrbhKc)
@@ -78,8 +78,8 @@ ___
 ### 기술 면접 질문 추려내기
 
 - [[week 04 {swjungle} {Red Black Tree}]] | [[이진검색트리 red black tree]] | [RBTree Interview Questions and Answers](https://climbtheladder.com/red-black-tree-interview-questions/)
-	- rbtree에서 트리의 최소/최대 깊이 height를 도출해보세요
-	- left rotate, right rotate를 수행하는 간단한 수도코드를 작성해보세요
+	- rbtree에서 트리의 최소/최대 깊이 height를 도출해보세요 [[이진검색트리 red black tree#height는 $ lg{(n+1)}$ 보다 크거나 같고 $2 lg{(n+1)}$ 보다 작거나 같다.|red black tree]]
+	- [[left rotate, right rotate를 수행하는 간단한 수도코드를 작성해보세요 {red black tree}]]
 	- 원소를 삽입하는 과정을 간략하게 설명해보세요
 	- 원소를 삭제하는 과정을 설명해보세요
 	- 센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요.
@@ -98,7 +98,10 @@ ___
 		- mmu가 발생시키는 예외.
 	- 가상 메모리에서 메모리 매핑방법, 시간복잡도
 		- pml4: 4단계의 페이지를 연결시켜주는 방식. 가상 주소가 생성되면 물리주소를 찾아갈때 각각의 페이지별로 512개의 엔트리가 있고, 몇 번째 엔트리를 찾아가야 다음 페이지가 나타나고. 오프셋들이 적혀있기 때문에 페이지 테이블에 적혀있는 엔트리 + 12비트의 오프셋을 사용하여 물리주소를 연결.
-	- 
+	- 인터럽트는 하드웨어적으로 발생하나요, 소프트웨어적으로 발생하나요?
+	- 프로세스와 스레드의 차이에 대해서 설명해 주세요
+		- 멀티 프로세스와 멀티 스레드와의 차이점에 대해서 설명해 주세요
+		- 선점형 스케쥴링과 비선점형 스케쥴링의 차이점에 대해서 설명해주세요
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]

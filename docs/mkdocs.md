@@ -11,10 +11,10 @@ updated: 2023-09-16T22:05:30
 
 - [mkdocs material](https://github.com/squidfunk/mkdocs-material) 테마
 - [mkdocs/catalog](https://github.com/mkdocs/catalog) mkdocs 플러그인, 테마 모음집
-  - [roamlinks plugin](https://github.com/Jackiexiao/mkdocs-roamlinks-plugin) 는 wikidocs 문법을 지원하고 헤딩도 지원한다. 심지어 이미지 크기조절도 가능.
+- [roamlinks plugin](https://github.com/Jackiexiao/mkdocs-roamlinks-plugin) 는 wikidocs 문법을 지원하고 헤딩도 지원한다. 심지어 이미지 크기조절도 가능.
 - [backlinks](https://pypi.org/project/mkdocs-backlinks/) 역시, 백링크도 지원하는구만
 - [dev.to](https://dev.to/ar2pi/publish-your-markdown-docs-on-github-pages-6pe) 친절한 튜토리얼, `mkdocs`, `mkdocs gh-deploy` 명령도 알려준다.
-  - GitHub Page를 위한 리포 안에 실제 문서들이 들어있는 서브모듈을 담아놨다.
+- GitHub Page를 위한 리포 안에 실제 문서들이 들어있는 서브모듈을 담아놨다.
 - [[obsidian-support {supports excalidraw, wikilinks}]]
 - [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin#combine-custom-navigation--file-structure) 을 사용하면 `nav`를 서브폴더에 있는 내용을 자동으로 추가할 수 있다.
 - [mkdocs-backlinks](https://pypi.org/project/mkdocs-backlinks/) | 백링크를 지원하는 mkdocs라고? 신의 한수구만. 다만 Jinja 템플릿을 사용해야 한다는 조건이 붙는다.
