@@ -4,7 +4,7 @@ tags:
 description:
 title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
-updated: 2023-09-14T19:59:26
+updated: 2024-01-08T17:39:21
 ---
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
@@ -37,8 +37,10 @@ updated: 2023-09-14T19:59:26
 	        - 19장: malloc-basic
 	            - GNU malloc API와 다양한 구현 방식 설명
 	            - implicit list 방식의 malloc 구현에 관한 자세한 설명
+		            - [[암시적 리스트와 명시적 리스트에 관해 설명해주세요 {{malloc-lab}}]]
 	        - 20장: malloc-advanced
 	            - explicit & seg list방식의 malloc 구현, garbage collection 개념에 대한 설명
+		            - [[암시적 리스트와 명시적 리스트에 관해 설명해주세요 {{malloc-lab}}]]
 	            - well-known memory bug에 관한 설명
 	            - 44p : gdb, valgrind등의 memory bug를 잡기위한 접근 방식 설명 포함
 	    - malloc lab 수행에 도움을 줄 수 있는 내용을 담은 section들
@@ -149,7 +151,4 @@ char *s = (char *)malloc(strlen(msg) + 2);
 
 ### extra A.
 
-> 메모리를 할당하는데 왜 블럭단위로 할당하는지 설명해 보시오.
-
-- 임의 크기로 할당하다보면 외부 단편화가 많이 발생한다. 블록 단위로 하면 외부 단편화를 줄일 수 있다. 
-- 모든 primitive 자료형을 담을 수 있는 최소한의 크기를 블럭으로 지정해 놓음으로써 일관성있게 메모리를 사용할 수 있게 하기 위해서.
+[[메모리를 할당하는데 왜 블럭단위로 할당하는지 설명해 보시오 {malloc-lab}]]

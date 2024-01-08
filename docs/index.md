@@ -8,7 +8,7 @@ categories: [readme]
 tags: [" readme ", " index ", readme, index]
 date created: Friday, February 10th 2023, 11:14:45 am
 date modified: Monday, February 27th 2023, 6:19:34 pm
-updated: 2023-12-19T21:41:02
+updated: 2024-01-08T18:36:52
 ---
 
 # Introduction
@@ -44,14 +44,14 @@ I'm native Korean, but I can understand English at reading, listening.
 
 | Tech      | Icon                                                                                                              | Programming Language                                                                                       |
 | --------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| NestJS    | <img src="https://nestjs.com/logo-small.ede75a6b.svg" style="height: 100px; width: 100px;">                       | ![[js.png\|100]]                                                                                           |
-| socket.io | <img src="https://socket.io/images/logo.svg" style="height: 100px; width: 100px;">                                | ![[js.png\|100]]                                                                                           |
-| TypeORM   | <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">           | ![[js.png\|100]]                                                                                           |
+| NestJS    | <img src="https://nestjs.com/logo-small.ede75a6b.svg" style="height: 100px; width: 100px;">                       | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" style="height:100px;">                                                                                           |
+| socket.io | <img src="https://socket.io/images/logo.svg" style="height: 100px; width: 100px;">                                | <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png" style="height:100px;">                                                                                           |
+| TypeORM   | <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">           | <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png" style="height:100px;">                                                                                           |
 | Django    | <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">             | ![[python.png\|100]]                                                                                       |
 | DRF       | <img src="https://www.django-rest-framework.org/img/logo.png" style="height:100px">                               | ![[python.png\|100]]                                                                                       |
-| OpenGL    | ![[opengl.png\|100]]                                                                                              | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
+| OpenGL    | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Opengl-logo.svg/320px-Opengl-logo.svg.png" style="height:100px;">                                                                                              | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
 | Qt        | <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Qt_logo_neon_2022.svg" style="height:100px">        | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
-| SceneKit  | <img src="https://developer.apple.com/assets/elements/icons/scenekit/scenekit-128x128.png" style="height:100px;"> | ![[swift.png\|100]]                                                                                                           |
+| SceneKit  | <img src="https://developer.apple.com/assets/elements/icons/scenekit/scenekit-128x128.png" style="height:100px;"> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/191px-Swift_logo.svg.png" style="height:100px;">                                                                                                           |
 
 ## External Links
 

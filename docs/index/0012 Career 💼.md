@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-08T15:52:26
+updated: 2024-01-08T17:40:42
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -86,7 +86,8 @@ ___
 	- [[센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요. {red black tree}]]
 - [[week 05 {swjungle} {malloc-lab}]]
 	- [[내부 단편화와 외부 단편화의 차이점에 대해서 설명해주세요]]
-	- 암시적 리스트와 명시적 리스트에 관해 설명해주세요
+	- [[암시적 리스트와 명시적 리스트에 관해 설명해주세요 {{malloc-lab}}]]
+	- [[메모리를 할당하는데 왜 블럭단위로 할당하는지 설명해 보시오 {malloc-lab}]]
 - [[week06 {swjungle}{proxy-lab}]]
 	- [[프록시 서버가 작동하는 일련의 과정을 설명해주세요]]
 	- 리버스 프록시 서버와의 차이점
