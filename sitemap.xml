@@ -2316,6 +2316,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/busy%20waiting%20%EB%B0%A9%EC%8B%9D%EC%9D%B4%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94/</loc>
+         <lastmod>2024-01-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/c%2B%2B%20-%20Understanding%20how%20Lambda%20closure%20type%20has%20deleted%20default%20constructor%20-%20Stack%20Overflow/</loc>
          <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
@@ -2437,6 +2442,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/const%20member%20makes%20class%20default%20ctor%20deleted/</loc>
+         <lastmod>2024-01-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/context%20switching%20%EB%B0%A9%EB%B2%95%2C%20%EB%82%98%EC%98%A8%20%EC%9D%B4%EC%9C%A0/</loc>
          <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -5706,7 +5716,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%99%80%20%EB%A6%AC%EB%B2%84%EC%8A%A4%20%ED%94%84%EB%A1%9D%EC%8B%9C%20%EC%84%9C%EB%B2%84%EC%99%80%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/</loc>
+         <loc>https://choiwheatley.github.io/%ED%94%84%EB%A1%9D%EC%8B%9C%EC%84%9C%EB%B2%84%EC%99%80%20%EB%A6%AC%EB%B2%84%EC%8A%A4%20%ED%94%84%EB%A1%9D%EC%8B%9C%20%EC%84%9C%EB%B2%84%EC%99%80%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/</loc>
          <lastmod>2024-01-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
