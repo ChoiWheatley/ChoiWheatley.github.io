@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-08T21:00:08
+updated: 2024-01-09T01:23:00
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -93,8 +93,11 @@ ___
 	- [[프록시서버와 리버스 프록시 서버와의 차이점]]
 - [[week07-10 {swjungle} {pintos}]]
 	- [[busy waiting 방식이 무엇인가요]]
-	- [[context switching 방법, 나온 이유]]
-	- advanced scheduler 중 multi level feedback queue, 
+	- [[context switching 방법, 나온 이유, 스케줄링 알고리즘, 선점형과 비선점형 스케줄링]]
+	- [[lock과 semaphore와의 차이점]]
+	- [[condition variable이란 {feat.monitor}]]
+	- [[우선순위 기부가 무엇인지]]
+	- [[multi level feedback queue가 무엇인가요]]
 	- page fault에 대해서
 		- mmu가 발생시키는 예외.
 	- 가상 메모리에서 메모리 매핑방법, 시간복잡도
@@ -102,7 +105,6 @@ ___
 	- 인터럽트는 하드웨어적으로 발생하나요, 소프트웨어적으로 발생하나요?
 	- 프로세스와 스레드의 차이에 대해서 설명해 주세요
 		- 멀티 프로세스와 멀티 스레드와의 차이점에 대해서 설명해 주세요
-		- 선점형 스케쥴링과 비선점형 스케쥴링의 차이점에 대해서 설명해주세요
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
@@ -115,8 +117,6 @@ ___
 - [[채널톡 면접 기출]]
 - [ ] 보이저엑스 채용사이트에 적혀있는 예상질문 확인바람 | <https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089>
 - 2024-01-07 면접스터디
-	- lock과 semaphore와의 차이점
-	- 우선순위 기부가 무엇인지
 	- MVC 모델, MVVM 모델의 차이점
 	- syscall이 무엇인지
 	- UTF-8이 무엇인가요
