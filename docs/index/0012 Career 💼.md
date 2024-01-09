@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-09T12:23:08
+updated: 2024-01-09T12:27:41
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -116,7 +116,6 @@ ___
 ### 기타
 
 - [[채널톡 면접 기출]]
-- [ ] 보이저엑스 채용사이트에 적혀있는 예상질문 확인바람 | <https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089>
 - 2024-01-07 면접스터디
 	- MVC 모델, MVVM 모델의 차이점
 	- syscall이 무엇인지
@@ -128,6 +127,8 @@ ___
 	- HTTP/2를 설명해주세요
 		- HTTP/1.1의 경우, 동시작업의 순서가 고정돼있다 -> 반응성이 낮다.
 		- 동시에 여러 작업이 들어왔을때 병렬적으로 처리가 될 수 있다.
+- Base64 인코딩이란? 
+	- 64개의 아스키 문자를 사용하여 이진데이터를 표기하는 방법을 의미합니다. 64 = 2^6 이므로 한 글자당 
 - 괜찮은 기법들
 	- 힌트를 조금만 주실 수 없을까요?
 	- 잠깐 생각해보겠다는 멘트
