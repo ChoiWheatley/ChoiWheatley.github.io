@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47244,7 +47242,7 @@
 <li>
 <p>Hash Collision: 해시충돌이라고, 서로다른 두개 이상의 키가 하나의 해시값을 얻게 발생하는 문제를 의미한다. 이를 해결하기 위해 Chaining 기법, Open Address Hash 기법을 사용한다.</p>
 <ul>
-<li>Chaining 기법: 링크드 리스트로 충돌된 데이터들을 일렬로 나열한다. 만약 해시함수의 성능이 정말 더럽다면 최악 $O(N)$ 번 탐색해야 할 수도 있다.</li>
+<li>Chaining 기법: 링크드 리스트로 충돌된 데이터들을 일렬로 나열한다. 만약 해시함수의 성능이 정말 더럽다면 최악 <span class="arithmatex">\(O(N)\)</span> 번 탐색해야 할 수도 있다.</li>
 <li>Open Address Hash 기법: 해시 충돌 발생시 next n-th 버킷에 담거나 충돌이 일어난 번호에 제곱을 하거나 여분의 해시함수를 더 적용할수도 있다.</li>
 </ul>
 </li>
@@ -47349,11 +47347,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47293,26 +47291,26 @@
 <p>PLM4 stands for Page Map Level 4, which is a paging structure used in long mode (64-bit) by x86-64 processors¹. It is the highest level of the four-level page table system, and it contains 512 entries that point to the Page-Directory Pointer Tables (PDPTs)².</p>
 <p>The size of a page depends on the processor mode, the extensions used, and the virtual address bits supported by the processor². In long mode, the page size can be 4 KiB, 2 MiB, or 1 GiB². The space that PLM4 can cover depends on the page size and the number of entries used.</p>
 <p>The formula for calculating the space covered by PLM4 is:</p>
-<p>$$
+<div class="arithmatex">\[
 \text{Space} = \text{Page Size} \times \text{Number of PDPTs} \times 512 \times 512
-$$</p>
+\]</div>
 <p>where:</p>
 <ul>
 <li>Page Size is either 4 KiB, 2 MiB, or 1 GiB</li>
 <li>Number of PDPTs is the number of entries in PLM4 that are used (from 1 to 512)</li>
 </ul>
 <p>For example, if we use 4 KiB pages and all 512 entries in PLM4, then the space covered by PLM4 is:</p>
-<p>$$
+<div class="arithmatex">\[
 \text{Space} = 4 \text{ KiB} \times 512 \times 512 \times 512 = 1 \text{ TiB}
-$$</p>
+\]</div>
 <p>If we use 2 MiB pages and only one entry in PLM4, then the space covered by PLM4 is:</p>
-<p>$$
+<div class="arithmatex">\[
 \text{Space} = 2 \text{ MiB} \times 1 \times 512 \times 512 = 512 \text{ GiB}
-$$</p>
+\]</div>
 <p>If we use 1 GiB pages and only one entry in PLM4, then the space covered by PLM4 is:</p>
-<p>$$
+<div class="arithmatex">\[
 \text{Space} = 1 \text{ GiB} \times 1 \times 512 \times 512 = 256 \text{ TiB}
-$$</p>
+\]</div>
 <p>I hope this helps you understand how much space PLM4 can cover. 😊</p>
 <p>¹: <a href="^3^">kernel - Paging in x86-64 architecture - Stack Overflow</a><br />
 ²: <a href="^2^">Page Tables - OSDev Wiki</a></p>
@@ -47381,11 +47379,11 @@ $$</p>
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

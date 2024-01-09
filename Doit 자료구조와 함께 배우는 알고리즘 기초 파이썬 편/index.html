@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47472,11 +47470,11 @@
 </li>
 </ul>
 <p>for문 끝나자마자 else가 나타나는 것은 처음 봤다. <a href="https://stackoverflow.com/questions/9979970/why-does-python-use-else-after-for-and-while-loops">Why does python use 'else' after for and while loops</a></p>
-<p>어쨌든 소수를 찾을때엔 <code>primes</code>의 모든 원소를 찾아야 하니 $\Pi(N)$정도의 시간이 걸린다. <a href="https://en.wikipedia.org/wiki/Prime-counting_function">Prime Counting Function 참고{wiki}</a> 조금만 더 최적화를 한다면 굳이 <code>primes</code>의 모든 원소를 찾을 필요는 없고, 제곱근 정도의 시간만 소요되게 만들 수 있겠다. 그리고 <code>MAX</code>까지 달려갈 때 모든 짝수를 제외할 수 있으므로.... 전체적으로 보았을 때 대충..</p>
-<p>$$
+<p>어쨌든 소수를 찾을때엔 <code>primes</code>의 모든 원소를 찾아야 하니 <span class="arithmatex">\(\Pi(N)\)</span>정도의 시간이 걸린다. <a href="https://en.wikipedia.org/wiki/Prime-counting_function">Prime Counting Function 참고{wiki}</a> 조금만 더 최적화를 한다면 굳이 <code>primes</code>의 모든 원소를 찾을 필요는 없고, 제곱근 정도의 시간만 소요되게 만들 수 있겠다. 그리고 <code>MAX</code>까지 달려갈 때 모든 짝수를 제외할 수 있으므로.... 전체적으로 보았을 때 대충..</p>
+<div class="arithmatex">\[
 O(\frac{\Pi(\sqrt{N})}{2} \cdot \frac{N}{2})=O(N\Pi(\sqrt{N}))
-$$</p>
-<p>이...렇......게? 되려나? $\Pi$가 대충 로그정도의 속도를 가지고 있다고 하니까 조금만 더 멍청하게 생각한다면 $O(N \log{\sqrt{N}})$ 정도.....?? 그냥 에라토스테네스의 체를 사용해서 메모리는 많이 먹어도 $O(N)$에 끝내는 방법이 더 현명해 보이기도 하지만 일단 머리속에 입력은 해두자.</p>
+\]</div>
+<p>이...렇......게? 되려나? <span class="arithmatex">\(\Pi\)</span>가 대충 로그정도의 속도를 가지고 있다고 하니까 조금만 더 멍청하게 생각한다면 <span class="arithmatex">\(O(N \log{\sqrt{N}})\)</span> 정도.....?? 그냥 에라토스테네스의 체를 사용해서 메모리는 많이 먹어도 <span class="arithmatex">\(O(N)\)</span>에 끝내는 방법이 더 현명해 보이기도 하지만 일단 머리속에 입력은 해두자.</p>
 <h2 id="chapter03">Chapter03 검색 알고리즘 :: 이진검색 / 이분검색<a class="headerlink" href="#chapter03" title="Permanent link">#</a></h2>
 <ul>
 <li>이진검색 <mark>p.120</mark> 예상시간 30min</li>
@@ -47567,7 +47565,7 @@ from typing import MutableSequence</p>
         k = last
 ```</p>
 <ul>
-<li>칵테일 셰이커 정렬이라고, 거의 완료된 정렬 <code>[9, 1, 2, 3, 4, 5]</code>에 대하여 위의 코드는 사실 $N^2$의 시간복잡도를 보인다. 왜냐면 점프할 인덱스가 항상 한 칸씩만 당겨오기 때문이다. 그래서 한 번은 우에서 좌로 훑고, 다른 한 번은 좌에서 우로 훑어 해당 현상을 없앤다.</li>
+<li>칵테일 셰이커 정렬이라고, 거의 완료된 정렬 <code>[9, 1, 2, 3, 4, 5]</code>에 대하여 위의 코드는 사실 <span class="arithmatex">\(N^2\)</span>의 시간복잡도를 보인다. 왜냐면 점프할 인덱스가 항상 한 칸씩만 당겨오기 때문이다. 그래서 한 번은 우에서 좌로 훑고, 다른 한 번은 좌에서 우로 훑어 해당 현상을 없앤다.</li>
 <li><strong>단순 선택 정렬 <mark>p.237</mark></strong></li>
 <li>순회를 하면서 매번 가장 작은 원소를 <code>[0]</code>번째 원소와 스왑. 덕분에 unstable하다.</li>
 <li><strong>단순 삽입 정렬 <mark>p.240</mark></strong></li>
@@ -47591,7 +47589,7 @@ from typing import MutableSequence</p>
 <p><strong>이진 삽입 정렬 <mark>p.244</mark></strong></p>
 <ul>
 <li>단순 삽입 정렬 알고리즘은 정렬되지 않은 구역을 순회하며 책을 꽂듯이 삽입했다면, 이진 삽입 정렬은 정렬된 구역을 이진탐색하여 그 사이를 비집고 밀어넣는다.</li>
-<li>하지만 <a href="https://docs.python.org/3/library/bisect.html#bisect.insort">bisect.insort</a> 문서에 조언에 따르면, 검색에 아무리 $O(\log {N})$  시간이 걸렸더래도 삽입하는 데에 $O(N)$의 시간이 소요되기 때문에 주의하라고 한다.</li>
+<li>하지만 <a href="https://docs.python.org/3/library/bisect.html#bisect.insort">bisect.insort</a> 문서에 조언에 따르면, 검색에 아무리 <span class="arithmatex">\(O(\log {N})\)</span>  시간이 걸렸더래도 삽입하는 데에 <span class="arithmatex">\(O(N)\)</span>의 시간이 소요되기 때문에 주의하라고 한다.</li>
 </ul>
 </li>
 <li><strong>셸 정렬 <mark>p.247</mark></strong><ul>
@@ -47685,11 +47683,11 @@ from typing import MutableSequence</p>
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

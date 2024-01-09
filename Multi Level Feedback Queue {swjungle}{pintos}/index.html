@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47531,13 +47529,13 @@
 <p>EWMA는 데이터 포인트를 가중치로 곱한 다음 이를 지수적으로 평활화하여 평균을 계산합니다. 가장 최근 데이터 포인트에는 더 높은 가중치가 부여되고, 시간이 지남에 따라 가중치는 지수적으로 감소합니다. 이를 통해 EWMA는 시계열 데이터의 빠른 변화를 민감하게 반영하면서도 잡음과 불안정성을 줄이는 데 도움이 됩니다.</p>
 <p>EWMA를 사용하는 주요 이유 중 하나는 이동 평균을 계산할 때 지연(lag)을 최소화하기 위해서입니다. 일반적인 이동 평균 방법은 데이터의 일부를 버려야 하며, 이로 인해 지연이 발생할 수 있습니다. 그러나 EWMA는 모든 데이터 포인트를 사용하므로 지연이 줄어듭니다.</p>
 <p>EWMA의 수식은 다음과 같습니다:</p>
-<p>$$ EMA_t = \alpha \cdot x_t + (1 - \alpha) \cdot EMA_{t-1} $$</p>
+<div class="arithmatex">\[ EMA_t = \alpha \cdot x_t + (1 - \alpha) \cdot EMA_{t-1} \]</div>
 <p>여기서,</p>
 <ul>
-<li>( EMA_t )는 현재 시간 ( t )에서의 지수 가중 이동 평균 값입니다.</li>
-<li>( x_t )는 현재 시간 ( t )의 데이터 포인트입니다.</li>
-<li>( EMA_{t-1} )은 이전 시간 ( t-1 )에서의 지수 가중 이동 평균 값입니다.</li>
-<li>( \alpha )는 평활화 상수(0과 1 사이의 값)로, 높은 값일수록 최신 데이터에 높은 가중치를 부여합니다.</li>
+<li><span class="arithmatex">\( EMA_t \)</span>는 현재 시간 <span class="arithmatex">\( t \)</span>에서의 지수 가중 이동 평균 값입니다.</li>
+<li><span class="arithmatex">\( x_t \)</span>는 현재 시간 <span class="arithmatex">\( t \)</span>의 데이터 포인트입니다.</li>
+<li><span class="arithmatex">\( EMA_{t-1} \)</span>은 이전 시간 <span class="arithmatex">\( t-1 \)</span>에서의 지수 가중 이동 평균 값입니다.</li>
+<li><span class="arithmatex">\( \alpha \)</span>는 평활화 상수(0과 1 사이의 값)로, 높은 값일수록 최신 데이터에 높은 가중치를 부여합니다.</li>
 </ul>
 <p>이러한 방식으로 EWMA는 최근 데이터에 민감하게 반응하면서도 지연을 최소화하여 시계열 데이터의 추세를 추정하는 데 유용합니다. 예를 들어, 주식 시장에서 주가 데이터를 분석하거나 수요 예측 모델을 개발할 때 EWMA는 많이 사용되는 기법 중 하나입니다.</p>
 <h3 id="calculating-load_avg">Calculating <code>load_avg</code><a class="headerlink" href="#calculating-load_avg" title="Permanent link">#</a></h3>
@@ -47648,11 +47646,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47225,13 +47223,13 @@
 
 <p>parent link: <a href="../Segment%20Tree/">Segment Tree</a></p>
 <hr />
-<p>길이가 n인 수열 $a_0, a_1, \cdots, a_{n-1}$ $(0 ≤ a_i ≤ 10^9)$ 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라</p>
-<p>-  <code>0 i x</code>    :    ai 를 x로 바꾼다. ($0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9$)</p>
-<p>-  <code>1 l r</code>    :    $\max(a_l, a_{l+1}, \cdots , a_{r-1}) - \min(a_l, a_{l+1}, \cdots , a_{r-1})$를 출력한다. (0 ≤ l &lt; r ≤ n)<br />
+<p>길이가 n인 수열 <span class="arithmatex">\(a_0, a_1, \cdots, a_{n-1}\)</span> <span class="arithmatex">\((0 ≤ a_i ≤ 10^9)\)</span> 에서 아래 두 가지 쿼리를 처리하는 프로그램을 작성하라</p>
+<p>-  <code>0 i x</code>    :    ai 를 x로 바꾼다. (<span class="arithmatex">\(0 ≤ i ≤ n - 1, 0 ≤ x ≤ 10^9\)</span>)</p>
+<p>-  <code>1 l r</code>    :    <span class="arithmatex">\(\max(a_l, a_{l+1}, \cdots , a_{r-1}) - \min(a_l, a_{l+1}, \cdots , a_{r-1})\)</span>를 출력한다. (0 ≤ l &lt; r ≤ n)<br />
 </p>
 <p><strong>[입력]</strong><br />
 첫 번째 줄에 테스트 케이스의 수 T 가 주어진다.</p>
-<p>각 테스트 케이스의 첫 번째 줄에는 배열의 길이 n(1 ≤ n ≤ $10^5$)과 쿼리의 개수 q(1 ≤ q ≤ $10^5$)가 주어진다.<br />
+<p>각 테스트 케이스의 첫 번째 줄에는 배열의 길이 n(1 ≤ n ≤ <span class="arithmatex">\(10^5\)</span>)과 쿼리의 개수 q(1 ≤ q ≤ <span class="arithmatex">\(10^5\)</span>)가 주어진다.<br />
 두 번째 줄에는 배열 a가 주어진다.<br />
 세 번째 줄부터 q개 줄에 걸쳐 쿼리가 주어진다.<br />
 </p>
@@ -47317,11 +47315,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

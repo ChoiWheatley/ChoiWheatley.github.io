@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47255,7 +47253,7 @@
                     <span class="n">memo_prev</span> <span class="o">=</span> <span class="n">memo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
                     <span class="k">break</span>
 </code></pre></div>
-<p>결과 = s1의 길이를 N, s2의 길이를 M이라고 했을 때 무려 $O(N^2M)$의 숫자가 나와버렸다. 두 문자열의 최대 길이는 1000이므로 1000^3 = 1’000’000’000이니 1초안에 못푼다. 따라서 다른 방법을 구해야 한다.</p>
+<p>결과 = s1의 길이를 N, s2의 길이를 M이라고 했을 때 무려 <span class="arithmatex">\(O(N^2M)\)</span>의 숫자가 나와버렸다. 두 문자열의 최대 길이는 1000이므로 1000^3 = 1’000’000’000이니 1초안에 못푼다. 따라서 다른 방법을 구해야 한다.</p>
 <h1 id="_2">접두어를 부분문제로 두고 푸는 위키의 설명<a class="headerlink" href="#_2" title="Permanent link">#</a></h1>
 <ul>
 <li>LCS(X,Y) = X와 Y의 LCS</li>
@@ -47265,17 +47263,17 @@
 <li>yi = Y의 i번째 문자</li>
 </ul>
 <p>가장 작은 접두어는 당연히 빈 수열일테니, i = 0 or j = 0일때다. 따라서</p>
-<p>$$
-\text{LCS}(X_0,Y_i)<em i_le="i\le" size_X_="size(X)">{i\le size(Y)}=~~\ \text{LCS}(X_i,Y_0)</em>
-$$</p>
+<div class="arithmatex">\[
+\text{LCS}(X_0,Y_i)_{i\le size(Y)}=~~\\ \text{LCS}(X_i,Y_0)_{i\le size(X)}
+\]</div>
 <p>부분문제 : </p>
 <ol>
 <li>
 <p>두 수열 Xn과 Ym이 같은 원소로 끝나는 경우</p>
 <p>마지막 원소 xn과 ym을 제거할 수 있다. 그리고 두 짧아진 문자열 Xn-1, Ym-1에 대한 LCS를 찾고 삭제한 원소를 뒤에 붙여주면 된다.</p>
-<p>$$
+<div class="arithmatex">\[
 \text{LCS}(X_n, Y_m) = \text{LCS}(X_{n-1},Y_{m-1}),x_n
-$$</p>
+\]</div>
 </li>
 <li>
 <p>두 수열 Xn과 Ym이 같은 원소로 끝나지 않는 경우 다음과 같은 경우 중 하나에 해당하게 될 것이다.</p>
@@ -47283,17 +47281,17 @@ $$</p>
 <li>LCS(Xn, Ym)이 xn으로 끝나는 경우</li>
 <li>LCS(Xn, Ym)이 xn으로 끝나지 않는 경우</li>
 </ol>
-<p>a의 사례는 xn을 지워버리면 전체 LCS에 손실이 발생할 테지만 ym을 지운다고 손실이 일어나지 않는다. 따라서 $\text{LCS}(X_n, Y_{m-1})$</p>
-<p>b의 사례는 반대로 xn을 지운다고 손실이 일어나지 않는다. 따라서$\text{LCS}(X_{n-1}, Y_{m})$두</p>
+<p>a의 사례는 xn을 지워버리면 전체 LCS에 손실이 발생할 테지만 ym을 지운다고 손실이 일어나지 않는다. 따라서 <span class="arithmatex">\(\text{LCS}(X_n, Y_{m-1})\)</span></p>
+<p>b의 사례는 반대로 xn을 지운다고 손실이 일어나지 않는다. 따라서<span class="arithmatex">\(\text{LCS}(X_{n-1}, Y_{m})\)</span>두</p>
 <p>2번 사례는 a와 b 경우밖에 존재하지 않기 때문에 둘 중에 더 긴 녀석을 선택하기만 하면 된다. 따라서</p>
 </li>
 </ol>
-<p>$$
+<div class="arithmatex">\[
 \text{LCS}(X_n, Y_{m})= \begin{cases}
-    \text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m})) <sub>\text{if}</sub>x_n \ne y_m  \
-    \text{LCS}(X_{n-1}, Y_{m-1})+x_n <sub>\text{if}</sub>x_n = y_n
+    \text{longest}(\text{LCS}(X_n, Y_{m-1}),~~\text{LCS}(X_{n-1}, Y_{m})) ~\text{if}~x_n \ne y_m  \\
+    \text{LCS}(X_{n-1}, Y_{m-1})+x_n ~\text{if}~x_n = y_n
 \end{cases} 
-$$</p>
+\]</div>
 <h3 id="recurrence-relation">Recurrence Relation<a class="headerlink" href="#recurrence-relation" title="Permanent link">#</a></h3>
 <p>재귀적 관계로 나타낸 수도코드는 다음과 같다.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">LCS</span><span class="p">(</span><span class="n">X</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -47458,11 +47456,11 @@ Y = CAPCAK<br />
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

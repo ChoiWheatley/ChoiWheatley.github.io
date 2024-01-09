@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47320,11 +47318,11 @@
 <li><code>H(W) -&gt; key</code>  은기가 꿈에서 본 그림 W를 일차원으로 세운 다음 해싱한 값을 key에 넣는다.</li>
 <li><code>H(S[i:i+h-1][j:j+w-1]) == key</code> 선생님의 그림의 어떤 i,j에 대하여 해싱한 값이 key와 같다면 count를 하나 늘린다. 이때 h는 W의 세로 길이, w는 W의 가로 길이이다.</li>
 </ol>
-<p>위의 방식은 느렸다. i,j값에 따른 비교를 총 $N^2$ 번 하게 되는데, 해시함수 안에서 길이 <code>h*w</code> 짜리 문자열을 비교하고 앉아있으니 $N^3$ 시간복잡도를 가지게 된다. N,M,H,W 모두 최대 2000이므로 2000^3은 확실히 오래 걸린다. </p>
-<p>해시를 DP처럼 풀 수는 없을까 고민하던 찰나 발견한 알고리즘이 바로 Rabin Karp 알고리즘이다. 이 알고리즘은 아래와 같은 해시함수를 사용한다. 이때 $b$는 임의의 소수로, 2 또는 31과 같은 수를 사용한다. 이 해시함수는 문자열을 부분문자열로 나누어도 $O(1)$ 시간에 그 해시값을 알아낼 수 있다는 엄청난 장점이 있다.</p>
-<p>$$
-H(W)=c_0b<sup>0+c_1b</sup>1+ \cdots +c_{m-1}b^{m-1}
-$$</p>
+<p>위의 방식은 느렸다. i,j값에 따른 비교를 총 <span class="arithmatex">\(N^2\)</span> 번 하게 되는데, 해시함수 안에서 길이 <code>h*w</code> 짜리 문자열을 비교하고 앉아있으니 <span class="arithmatex">\(N^3\)</span> 시간복잡도를 가지게 된다. N,M,H,W 모두 최대 2000이므로 2000^3은 확실히 오래 걸린다. </p>
+<p>해시를 DP처럼 풀 수는 없을까 고민하던 찰나 발견한 알고리즘이 바로 Rabin Karp 알고리즘이다. 이 알고리즘은 아래와 같은 해시함수를 사용한다. 이때 <span class="arithmatex">\(b\)</span>는 임의의 소수로, 2 또는 31과 같은 수를 사용한다. 이 해시함수는 문자열을 부분문자열로 나누어도 <span class="arithmatex">\(O(1)\)</span> 시간에 그 해시값을 알아낼 수 있다는 엄청난 장점이 있다.</p>
+<div class="arithmatex">\[
+H(W)=c_0b^0+c_1b^1+ \cdots +c_{m-1}b^{m-1}
+\]</div>
 <p>표1은 H(W)의 항들을 인덱스별로 나누어 적은 표이다. </p>
 <table>
 <thead>
@@ -47338,11 +47336,11 @@ $$</p>
 </thead>
 <tbody>
 <tr>
-<td>$c_0b^0$</td>
-<td>$c_1b^1$</td>
-<td>$c_2b_2$</td>
-<td>$c_3b^3$</td>
-<td>$c_4b^4$</td>
+<td><span class="arithmatex">\(c_0b^0\)</span></td>
+<td><span class="arithmatex">\(c_1b^1\)</span></td>
+<td><span class="arithmatex">\(c_2b_2\)</span></td>
+<td><span class="arithmatex">\(c_3b^3\)</span></td>
+<td><span class="arithmatex">\(c_4b^4\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -47355,8 +47353,8 @@ H(W)[1:3] =&amp; ~ c_1b<sup>0+c_2b</sup>1+c_3b^2 \
 H(W)[i:l] =&amp; ~ c_ib^0 + c_{i+1}b^1 +\cdots + c_lb^{l - i}</p>
 <p>\end{flalign*}
 $$</p>
-<p>b의 승수에 주의하자. W의 부분 문자열도 따로 떼어놓고 보면 하나의 문자열이기 때문에 그것에 대한 해시는 반드시 $b^0$부터 시작하기 마련이다. </p>
-<p>위의 표1에서 누적합을 구해 $\text{SUM}$ 이라는 변수에 저장했다고 치자, 그렇다면 SUM과 H(W)와의 관계는 어떻게 될까?</p>
+<p>b의 승수에 주의하자. W의 부분 문자열도 따로 떼어놓고 보면 하나의 문자열이기 때문에 그것에 대한 해시는 반드시 <span class="arithmatex">\(b^0\)</span>부터 시작하기 마련이다. </p>
+<p>위의 표1에서 누적합을 구해 <span class="arithmatex">\(\text{SUM}\)</span> 이라는 변수에 저장했다고 치자, 그렇다면 SUM과 H(W)와의 관계는 어떻게 될까?</p>
 <p>$$
 \begin{flalign}</p>
 <p>\text{SUM}[2] =&amp; ~ c_0b<sup>0+c_1b</sup>1+c_2b^2 = H(W)[0:2] \ 
@@ -47394,48 +47392,48 @@ $$</p>
 <table>
 <thead>
 <tr>
-<th>$c_0b^0$</th>
-<th>$c_1b^1$</th>
-<th>$c_2b^2$</th>
-<th>$\cdots$</th>
+<th><span class="arithmatex">\(c_0b^0\)</span></th>
+<th><span class="arithmatex">\(c_1b^1\)</span></th>
+<th><span class="arithmatex">\(c_2b^2\)</span></th>
+<th><span class="arithmatex">\(\cdots\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>$c_mb^m$</td>
-<td>$c_{m+1}b^{m+1}$</td>
-<td>$c_{m+2}b^{m+2}$</td>
-<td>$\cdots$</td>
+<td><span class="arithmatex">\(c_mb^m\)</span></td>
+<td><span class="arithmatex">\(c_{m+1}b^{m+1}\)</span></td>
+<td><span class="arithmatex">\(c_{m+2}b^{m+2}\)</span></td>
+<td><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 <tr>
-<td>$c_{2m}b^{2m}$</td>
-<td>$c_{2m+1}b^{2m+1}$</td>
-<td>$c_{2m+2}b^{2m+2}$</td>
-<td>$\cdots$</td>
+<td><span class="arithmatex">\(c_{2m}b^{2m}\)</span></td>
+<td><span class="arithmatex">\(c_{2m+1}b^{2m+1}\)</span></td>
+<td><span class="arithmatex">\(c_{2m+2}b^{2m+2}\)</span></td>
+<td><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 <tr>
-<td>$\cdots$</td>
-<td>$\cdots$</td>
-<td>$\cdots$</td>
-<td>$\cdots$</td>
+<td><span class="arithmatex">\(\cdots\)</span></td>
+<td><span class="arithmatex">\(\cdots\)</span></td>
+<td><span class="arithmatex">\(\cdots\)</span></td>
+<td><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>$$
+<div class="arithmatex">\[
 \text{SUM}(from: [1,1], ~~to:[2,2])= c_{m+1}b^{m+1}   + c_{m+2}b^{m+2} + c_{2m+1}b^{2m+1} + c_{2m+2}b^{2m+2}
-$$</p>
-<p>일 것이다. 하지만 실제로 문자열 $W={c_{m+1},c_{m+2}, c_{2m+1}, c_{2m+2}}$ 에 대한 해시값은 </p>
-<p>$$
-\begin{align<em>}
-\text{REAL}=c_{m+1}b<sup>0+c_{m+2}b</sup>1 + \ 
-c_{2m+1}b<sup m_1="m+1">m+c_{2m+2}b</sup>
-\end{align</em>}
-$$</p>
+\]</div>
+<p>일 것이다. 하지만 실제로 문자열 <span class="arithmatex">\(W=\{c_{m+1},c_{m+2}, c_{2m+1}, c_{2m+2}\}\)</span> 에 대한 해시값은 </p>
+<div class="arithmatex">\[
+\begin{align*}
+\text{REAL}=c_{m+1}b^0+c_{m+2}b^1 + \\ 
+c_{2m+1}b^m+c_{2m+2}b^{m+1}
+\end{align*}
+\]</div>
 <p>이다. 일차원때와 마찬가지로 (0,0)부터 보는 것으로 가정해야 하기 때문이다. 그러면 실제값 REAL과 SUM 간에 어떤 관계가 있을까? </p>
 <p><a class="glightbox" href="../assets/software%20-%200%201.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="software - 0 1.jpg" src="../assets/software%20-%200%201.jpg" /></a></p>
-<p>$$
+<div class="arithmatex">\[
 \text{H}(W[i:i+n-1][j:j+m-1]) \times b^{im+j} = \text{SUM}(from:[i,j], to:[i+n-1][j+m-1])
-$$</p>
+\]</div>
 
 
 
@@ -47496,11 +47494,11 @@ $$</p>
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

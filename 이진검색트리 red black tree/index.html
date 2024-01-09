@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -45547,7 +45545,7 @@
         <li class="md-nav__item">
   <a href="#height-lgn1-2-lgn1" class="md-nav__link">
     <span class="md-ellipsis">
-      height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.
+      height는 \(\lg{(n+1)}\) 보다 크거나 같고  \(2 \lg{(n+1)}\) 보다 작거나 같다.
     </span>
   </a>
   
@@ -47388,7 +47386,7 @@
         <li class="md-nav__item">
   <a href="#height-lgn1-2-lgn1" class="md-nav__link">
     <span class="md-ellipsis">
-      height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.
+      height는 \(\lg{(n+1)}\) 보다 크거나 같고  \(2 \lg{(n+1)}\) 보다 작거나 같다.
     </span>
   </a>
   
@@ -47550,14 +47548,14 @@
 <li><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84_%ED%83%90%EC%83%89_%ED%8A%B8%EB%A6%AC">이진 탐색 트리 - 위키백과, 우리 모두의 백과사전</a></li>
 <li><a href="https://ko.wikipedia.org/wiki/%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99_%ED%8A%B8%EB%A6%AC">레드-블랙 트리 - 위키백과, 우리 모두의 백과사전</a></li>
 </ul>
-<h2 id="height-lgn1-2-lgn1">height는 $\lg{(n+1)}$ 보다 크거나 같고  $2 \lg{(n+1)}$ 보다 작거나 같다.<a class="headerlink" href="#height-lgn1-2-lgn1" title="Permanent link">#</a></h2>
+<h2 id="height-lgn1-2-lgn1">height는 <span class="arithmatex">\(\lg{(n+1)}\)</span> 보다 크거나 같고  <span class="arithmatex">\(2 \lg{(n+1)}\)</span> 보다 작거나 같다.<a class="headerlink" href="#height-lgn1-2-lgn1" title="Permanent link">#</a></h2>
 <p><strong>증명</strong></p>
 <ol>
-<li>이진트리에서 전체 노드의 개수를 $n$ 이라고 하고 트리의 높이를 $h$ 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 $n \le 2^h - 1$ 이다. 따라서 $\lg{(n+1)}\le h$가 성립한다.</li>
-<li>leaf 노드까지 만나는 black 노드의 개수를 $r$이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 $r$(모든 경로가 black), 최대 $2r$개(모든 경로가 black-red 반복)의 노드를 거치게 되므로 $r \le h \le 2r$이 성립한다.</li>
-<li>r과 n의 관계는 포화이진트리의 모든 노드가 Black인 경우 최대이므로 $2^{r} - 1 \le n$ 을 만족한다. 따라서 $r \le \lg{(n + 1)}$을 만족하며, 양변에 2를 곱하면 $2r \le 2\lg{(n + 1)}$ 이므로 $h \le 2\lg{(n + 1)}$가 된다.</li>
+<li>이진트리에서 전체 노드의 개수를 <span class="arithmatex">\(n\)</span> 이라고 하고 트리의 높이를 <span class="arithmatex">\(h\)</span> 라고 하자. 포화이진트리일 경우 h에 대한 n이 최대일 때이므로 <span class="arithmatex">\(n \le 2^h - 1\)</span> 이다. 따라서 <span class="arithmatex">\(\lg{(n+1)}\le h\)</span>가 성립한다.</li>
+<li>leaf 노드까지 만나는 black 노드의 개수를 <span class="arithmatex">\(r\)</span>이라고 하자. RBTree의 제약조건 때문에 하나의 red 노드의 뒤에는 black 노드가 오게 된다. 그러므로 루트에서 외부노드로의 경로는 최소 <span class="arithmatex">\(r\)</span>(모든 경로가 black), 최대 <span class="arithmatex">\(2r\)</span>개(모든 경로가 black-red 반복)의 노드를 거치게 되므로 <span class="arithmatex">\(r \le h \le 2r\)</span>이 성립한다.</li>
+<li>r과 n의 관계는 포화이진트리의 모든 노드가 Black인 경우 최대이므로 <span class="arithmatex">\(2^{r} - 1 \le n\)</span> 을 만족한다. 따라서 <span class="arithmatex">\(r \le \lg{(n + 1)}\)</span>을 만족하며, 양변에 2를 곱하면 <span class="arithmatex">\(2r \le 2\lg{(n + 1)}\)</span> 이므로 <span class="arithmatex">\(h \le 2\lg{(n + 1)}\)</span>가 된다.</li>
 </ol>
-<p>RBTree의 최대 높이는 $2 \lg{(n+ 1)}$이므로 $O(h)$ 탐색시간 안에 수행하는 동안 최대 $O(2\lg{(n+1)})$이 필요하며, 따라서 RBTree 삽입,삭제 알고리즘의 시간복잡도는 $O(\log{n})$이 된다.</p>
+<p>RBTree의 최대 높이는 <span class="arithmatex">\(2 \lg{(n+ 1)}\)</span>이므로 <span class="arithmatex">\(O(h)\)</span> 탐색시간 안에 수행하는 동안 최대 <span class="arithmatex">\(O(2\lg{(n+1)})\)</span>이 필요하며, 따라서 RBTree 삽입,삭제 알고리즘의 시간복잡도는 <span class="arithmatex">\(O(\log{n})\)</span>이 된다.</p>
 <h2 id="keywords">KEYWORDS<a class="headerlink" href="#keywords" title="Permanent link">#</a></h2>
 <ul>
 <li>keywords<ul>
@@ -47816,11 +47814,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

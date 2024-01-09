@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47271,9 +47269,9 @@
 </code></pre></div>
 <h1 id="lca-lowest-common-ancestor">LCA - Lowest Common Ancestor<a class="headerlink" href="#lca-lowest-common-ancestor" title="Permanent link">#</a></h1>
 <p><a href="https://www.youtube.com/watch?v=dOAxrhAUIhA">https://www.youtube.com/watch?v=dOAxrhAUIhA</a></p>
-<p>LCA 알고리즘에도 여러 종류가 있지만 저 유튜브 영상을 참고하여 Binary Lifting과 파라메트릭 서치를 활용하여 $O(\sqrt{N})$ 시간과 $O(N\sqrt{N})$ 공간을 사용한 알고리즘을 하나 알게 되었다.</p>
+<p>LCA 알고리즘에도 여러 종류가 있지만 저 유튜브 영상을 참고하여 Binary Lifting과 파라메트릭 서치를 활용하여 <span class="arithmatex">\(O(\sqrt{N})\)</span> 시간과 <span class="arithmatex">\(O(N\sqrt{N})\)</span> 공간을 사용한 알고리즘을 하나 알게 되었다.</p>
 <h2 id="binary-lifting">Binary Lifting<a class="headerlink" href="#binary-lifting" title="Permanent link">#</a></h2>
-<p>빠르게 k-th ancestor를 찾기 위해 우리는 모든 노드에 대한 조상 리스트를 저장하는 방법을 고안할 수 있다. 이러면 k-th ancestor를 찾는데 단 O(1)의 시간복잡도면 가능하다. 하지만 공간낭비가 심하다. 모든 정점들에 대하여 만들어야 하기 때문에 O($N^2$) 공간복잡도가 필요하다. 이는 좋지 못한 현상이다. 따라서 아주 신박하게 k-th 가 아니라 $2^k$-th ancester만을 저장하는 방법을 고안했다.</p>
+<p>빠르게 k-th ancestor를 찾기 위해 우리는 모든 노드에 대한 조상 리스트를 저장하는 방법을 고안할 수 있다. 이러면 k-th ancestor를 찾는데 단 O(1)의 시간복잡도면 가능하다. 하지만 공간낭비가 심하다. 모든 정점들에 대하여 만들어야 하기 때문에 O(<span class="arithmatex">\(N^2\)</span>) 공간복잡도가 필요하다. 이는 좋지 못한 현상이다. 따라서 아주 신박하게 k-th 가 아니라 <span class="arithmatex">\(2^k\)</span>-th ancester만을 저장하는 방법을 고안했다.</p>
 <p>아래의 코드는 up 배열을 만들기 위한 전처리 작업을 표현했다.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">up</span><span class="p">[</span><span class="n">N</span><span class="p">][</span><span class="n">LOG</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">// up[v][j] = 2^j-th ancestor of v</span>
 
@@ -47379,11 +47377,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

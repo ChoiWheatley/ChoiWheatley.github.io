@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47226,7 +47224,7 @@
 <p><a href="https://blog.hubspot.com/website/uri-vs-url">uri vs url</a>
 - URI, Uniform Resource Identifier
 - URL, Uniform Resource Locator</p>
-<p>한 마디로 정리하자면, URI $\supset$ URL이고 URI에 프로토콜 (http 또는 ftp, etc)과 도메인/서브도메인(hubspot, naver, etc.) 붙으면 URL이 된다.</p>
+<p>한 마디로 정리하자면, URI <span class="arithmatex">\(\supset\)</span> URL이고 URI에 프로토콜 (http 또는 ftp, etc)과 도메인/서브도메인(hubspot, naver, etc.) 붙으면 URL이 된다.</p>
 <p>URI의 뜻을 직역하면 "통합 자원 식별자"인데, 우리는 이 식별자에 지목할 것이다. 식별자란 무엇인가? 비슷하게 생겨먹은 수많은 자원 중에서 내가 원하는 것을 정확히 지칭할 수 있는 고유값을 의미한다. 예를 들면 주민번호가 될 것이고, 시리얼 넘버가 될 것이다. URI는 다음 요소를 가지고 있다.</p>
 <p><a href="https://datatracker.ietf.org/doc/html/rfc3986#section-3">syntax components</a>
 1. Scheme: 모든 URI의 시작을 알리는 요소. 
@@ -47293,11 +47291,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

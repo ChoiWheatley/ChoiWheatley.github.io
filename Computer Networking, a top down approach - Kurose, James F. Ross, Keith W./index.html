@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47411,7 +47409,7 @@
 <p>TCP의 신뢰성과는 다른게, 링크 레이어에서는 전기신호 자체의 노이즈를 극복하는 데에 초점을 맞춘다. 트레일러에 오류검출을 위한 비트를 추가하여 이전 링크에서 보낸 신호가 올바른지 판단한다.</p>
 <p>MAC(Media Address Control) 주소를 활용하여 링크 간 네트워크 인터페이스들을 식별한다. MAC 주소의 앞쪽 6개의 16진수는 vendor를, 뒤쪽 6개의 16진수는 식별자를 의미한다. </p>
 <blockquote>
-<p>[!question]- 그러면 한 회사당 $16^6=16777216$ 밖에 사용하지 못하는 거 아니냐?<br />
+<p>[!question]- 그러면 한 회사당 <span class="arithmatex">\(16^6=16777216\)</span> 밖에 사용하지 못하는 거 아니냐?<br />
  애플같이 억단위의 전자기기를 만들어 파는 회사는 벤더를 여러개 갖추는 경우가 있지 않을까?</p>
 </blockquote>
 <ul>
@@ -47498,11 +47496,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

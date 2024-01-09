@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -36787,7 +36785,7 @@
         <li class="md-nav__item">
   <a href="#on2" class="md-nav__link">
     <span class="md-ellipsis">
-      $O(N^2)$ 짜리 코드
+      \(O(N^2)\) 짜리 코드
     </span>
   </a>
   
@@ -36796,7 +36794,7 @@
         <li class="md-nav__item">
   <a href="#on3" class="md-nav__link">
     <span class="md-ellipsis">
-      $O(N^3)$짜리 코드
+      \(O(N^3)\)짜리 코드
     </span>
   </a>
   
@@ -47286,7 +47284,7 @@
         <li class="md-nav__item">
   <a href="#on2" class="md-nav__link">
     <span class="md-ellipsis">
-      $O(N^2)$ 짜리 코드
+      \(O(N^2)\) 짜리 코드
     </span>
   </a>
   
@@ -47295,7 +47293,7 @@
         <li class="md-nav__item">
   <a href="#on3" class="md-nav__link">
     <span class="md-ellipsis">
-      $O(N^3)$짜리 코드
+      \(O(N^3)\)짜리 코드
     </span>
   </a>
   
@@ -47324,10 +47322,10 @@
 </ul>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h2>
 <ul>
-<li>길이 2, 3짜리 윈도우를 슬라이딩 하며 매 위치마다 투 포인터를 좌우로 확장하는 식으로 팰린드롬을 검사하면 된다. =&gt; 이렇게 했을때의 시간복잡도는 $O(N^2)$</li>
-<li>길이 length짜리 윈도우를 슬라이딩 하면서 투 포인터를 가운대로 수축하는 형태로 팰린드롬을 검사하는 나의 방식은 시간복잡도가 $O(N^3)$가 나온다.</li>
+<li>길이 2, 3짜리 윈도우를 슬라이딩 하며 매 위치마다 투 포인터를 좌우로 확장하는 식으로 팰린드롬을 검사하면 된다. =&gt; 이렇게 했을때의 시간복잡도는 <span class="arithmatex">\(O(N^2)\)</span></li>
+<li>길이 length짜리 윈도우를 슬라이딩 하면서 투 포인터를 가운대로 수축하는 형태로 팰린드롬을 검사하는 나의 방식은 시간복잡도가 <span class="arithmatex">\(O(N^3)\)</span>가 나온다.</li>
 </ul>
-<h2 id="on2">$O(N^2)$ 짜리 코드<a class="headerlink" href="#on2" title="Permanent link">#</a></h2>
+<h2 id="on2"><span class="arithmatex">\(O(N^2)\)</span> 짜리 코드<a class="headerlink" href="#on2" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution2</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -47355,7 +47353,7 @@
 
         <span class="k">return</span> <span class="n">result</span>
 </code></pre></div>
-<h2 id="on3">$O(N^3)$짜리 코드<a class="headerlink" href="#on3" title="Permanent link">#</a></h2>
+<h2 id="on3"><span class="arithmatex">\(O(N^3)\)</span>짜리 코드<a class="headerlink" href="#on3" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Solution1_1</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">longestPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -47454,11 +47452,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

@@ -49,8 +49,6 @@
       
     
     
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -47436,7 +47434,7 @@
         - you can follow default style defined by browser with keyword <code>initial</code></p>
 <ul>
 <li>[?] <code>background</code>와 <code>background-color</code>의 차이가 무엇인가요?<ul>
-<li><code>background</code> $\supset$ <code>background-color</code> </li>
+<li><code>background</code> <span class="arithmatex">\(\supset\)</span> <code>background-color</code> </li>
 <li>그래서 background만 설정하면 내가 따로 뭘 적지 않아도 추가적인 스타일이 로드된다.  </li>
 <li>![[Pasted image 20230427111746.png]] </li>
 </ul>
@@ -47498,10 +47496,10 @@
 <ul>
 <li>can be overrided =&gt; later overwrite prior one</li>
 <li>can be selected by most specific selector<ul>
-<li><code>*</code> $\lt$ </li>
-<li>type, pseudo element selector $\lt$ </li>
-<li><code>.</code> , <code>[]</code>, pseudo class selector $\lt$ </li>
-<li><code>#</code> $\lt$</li>
+<li><code>*</code> <span class="arithmatex">\(\lt\)</span> </li>
+<li>type, pseudo element selector <span class="arithmatex">\(\lt\)</span> </li>
+<li><code>.</code> , <code>[]</code>, pseudo class selector <span class="arithmatex">\(\lt\)</span> </li>
+<li><code>#</code> <span class="arithmatex">\(\lt\)</span></li>
 <li>inline style</li>
 </ul>
 </li>
@@ -47627,11 +47625,11 @@
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
