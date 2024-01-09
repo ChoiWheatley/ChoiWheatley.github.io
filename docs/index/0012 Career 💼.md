@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-09T16:16:44
+updated: 2024-01-09T23:04:59
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -48,8 +48,8 @@ ___
 - 숭실대학교
 	- 성적: 3.33 / 4.5
 	- 이수학점: 134
-	- 입학: 2016-03
-	- 졸업: 2023-08
+	- 입학: 2016-03-01
+	- 졸업: 2023-08-18
 - TOEIC
 	- 취득일 2023-06-11
 	- 발급번호 020196-0411009001
