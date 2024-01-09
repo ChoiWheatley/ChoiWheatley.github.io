@@ -38,6 +38,10 @@ markdown_extensions:
   # footnotes
   - footnotes
 
+  # mathjax https://squidfunk.github.io/mkdocs-material/reference/math/#mathjax
+  - pymdownx.arithmatex:
+      generic: true
+
   # mermaid
   - pymdownx.superfences:
       custom_fences:
@@ -63,9 +67,11 @@ plugins:
 
 # for Katex support. See https://squidfunk.github.io/mkdocs-material/reference/math/
 extra_javascript:
-  - javascripts/katex.js 
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-
-extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  # - javascripts/katex.js
+  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+# extra_css:
+#   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
