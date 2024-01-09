@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-09T12:27:41
+updated: 2024-01-09T12:35:32
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -106,6 +106,7 @@ ___
 	- 인터럽트는 하드웨어적으로 발생하나요, 소프트웨어적으로 발생하나요?
 	- 프로세스와 스레드의 차이에 대해서 설명해 주세요
 		- 멀티 프로세스와 멀티 스레드와의 차이점에 대해서 설명해 주세요
+	- [[system call에 대하여 설명해주세요]]
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 - [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
@@ -128,7 +129,7 @@ ___
 		- HTTP/1.1의 경우, 동시작업의 순서가 고정돼있다 -> 반응성이 낮다.
 		- 동시에 여러 작업이 들어왔을때 병렬적으로 처리가 될 수 있다.
 - Base64 인코딩이란? 
-	- 64개의 아스키 문자를 사용하여 이진데이터를 표기하는 방법을 의미합니다. 64 = 2^6 이므로 한 글자당 
+	- 64개의 아스키 문자를 사용하여 이진데이터를 표기하는 방법을 의미합니다. 64 = 2^6 이므로 한 글자당 6비트가 필요
 - 괜찮은 기법들
 	- 힌트를 조금만 주실 수 없을까요?
 	- 잠깐 생각해보겠다는 멘트
