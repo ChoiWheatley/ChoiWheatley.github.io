@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-09T23:04:59
+updated: 2024-01-10T02:07:14
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -79,7 +79,7 @@ ___
 
 ### 기술 면접 질문 추려내기
 
-- [[week 04 {swjungle} {Red Black Tree}]] | [[이진검색트리 red black tree]] | [RBTree Interview Questions and Answers](https://climbtheladder.com/red-black-tree-interview-questions/)
+- [[week 04 {swjungle} {Red Black Tree}]] | [[이진검색트리 red black tree]] | [climbtheladder.com/RBTree Interview Questions and Answers](https://climbtheladder.com/red-black-tree-interview-questions/)
 	- rbtree에서 트리의 최소/최대 깊이 height를 도출해보세요 [[이진검색트리 red black tree#height는 $ lg{(n+1)}$ 보다 크거나 같고 $2 lg{(n+1)}$ 보다 작거나 같다.|red black tree]]
 	- [[left rotate를 수행하는 간단한 수도코드를 작성해보세요 {red black tree}]]
 	- 원소를 삽입하는 과정을 간략하게 설명해보세요
@@ -134,6 +134,11 @@ ___
 	- 힌트를 조금만 주실 수 없을까요?
 	- 잠깐 생각해보겠다는 멘트
 	- 모르겠다면 모르겠다고 인정하기
+- [[array와 list의 차이점을 설명해주세요]]
+
+### 면접 후기
+
+- [[2024-01-09 보이저엑스 실무면접 후기]]
 
 ## 진로 관련
 
