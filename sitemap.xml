@@ -3616,6 +3616,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/page%20fault%EA%B0%80%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%20%EC%83%81%ED%99%A9%EC%9D%B4%20%EC%96%B8%EC%A0%9C%EA%B0%80%20%EC%9E%88%EB%82%98%EC%9A%94%2C%20%EA%B0%80%EC%83%81%EC%A3%BC%EC%86%8C%EC%99%80%20%EB%AC%BC%EB%A6%AC%EC%A3%BC%EC%86%8C%EC%9D%98%20%EA%B4%80%EA%B3%84/</loc>
+         <lastmod>2024-01-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/page-merge-par%20debugging%20%7Bpintos%7D%7Bswjungle%7D/</loc>
          <lastmod>2024-01-09</lastmod>
          <changefreq>daily</changefreq>
@@ -4222,6 +4227,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/synchronization%20%7Bpintos%7D%20%7Bsemaphore%7D%20%7Block%7D%20%7Bmonitor%7D/</loc>
+         <lastmod>2024-01-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/system%20call%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC%20%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</loc>
          <lastmod>2024-01-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
