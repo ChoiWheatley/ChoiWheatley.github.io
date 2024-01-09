@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-09T01:23:00
+updated: 2024-01-09T12:23:08
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -67,6 +67,7 @@ ___
 - [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
 - [JaeYeopHan/Interview_Question_for_Beginner {GH}](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
 - [현직 개발자가 정리해주는 프론트엔드 신입 기술 면접 문제 은행 20선](https://zero-base.co.kr/event/media_insight_contents_FE_frontend_tech_Interview) JS 특징들 위주의 질문
+- [보이저엑스 개발자 채용사이트](https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089)에서 기술질문 예제를 확인할 수 있음.
 
 ### Notion에서 마이그레이션한 인터뷰 질문들
 
