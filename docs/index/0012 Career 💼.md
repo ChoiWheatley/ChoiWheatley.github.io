@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-09T16:15:49
+updated: 2024-01-09T16:16:44
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -107,6 +107,7 @@ ___
 - [[week14-18 {swjungle}{my own weapon}{nestjs, socketio}]]
 	- socket.io 동작 플로우
 	- Web Socket이 동작하는 원리
+	- in memory database를 채택한 이유와 어떻게 구현했는지 | [[imdb with NestJS]]
 - [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 - [[LRU]] 알고리즘에 대하여 설명해주세요.
