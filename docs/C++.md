@@ -55,7 +55,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 
 ## Algorithm 개꿀팁
 
-- [[fast input output {C++}]]
+- [[fast io with sync_with_stdio false {C++}]]
 
 ## Data Structures with Standard Template Library
 

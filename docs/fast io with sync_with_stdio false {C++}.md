@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: fast input output {C++}
+title: fast io with sync_with_stdio false {C++}
 created: 2024-01-10T21:34:49
-updated: 2024-01-10T21:35:05
+updated: 2024-01-10T21:35:45
 ---
 - [[C++]]  
 [글 읽기 - 추가 설명 및 다른 언어 빠른 입출력 방법](https://www.acmicpc.net/board/view/22716)
