@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-10T23:32:17
+updated: 2024-01-11T00:01:13
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -58,6 +58,7 @@ ___
 ## 포트폴리오, 자기소개서, 이력서 등
 
 - [[최승현을 소개합니다]]
+- [[최승현_Backend_Web_Developer_이력서]]
 - [[Portfolio-최승현]]
 
 ## 인터뷰 질문 추려내기
@@ -77,13 +78,13 @@ ___
 - 프로젝트 경험
 	- <https://www.notion.so/choiwheatley/Interview-Portfolio-Recruit-7549345524334ba2b2addeee2358a3c3?pvs=4#53140bac1473407e95355ecdfa2b6576>
 
-### 기술 면접 질문 추려내기
+### SWJungle 관련 면접질문
 
 - [[week 04 {swjungle} {Red Black Tree}]] | [[이진검색트리 red black tree]] | [climbtheladder.com/RBTree Interview Questions and Answers](https://climbtheladder.com/red-black-tree-interview-questions/)
 	- rbtree에서 트리의 최소/최대 깊이 height를 도출해보세요 [[이진검색트리 red black tree#height는 $ lg{(n+1)}$ 보다 크거나 같고 $2 lg{(n+1)}$ 보다 작거나 같다.|red black tree]]
 	- [[left rotate를 수행하는 간단한 수도코드를 작성해보세요 {red black tree}]]
-	- [[원소를 삽입하는 과정을 간략하게 설명해보세요]]
-	- [[원소를 삭제하는 과정을 설명해보세요]]
+	- [[원소를 삽입하는 과정을 간략하게 설명해보세요 {red black tree}]]
+	- [[원소를 삭제하는 과정을 설명해보세요 {red black tree}]]
 	- [[센티널 노드를 사용하는 것과 사용하지 않는 것의 차이를 설명해주세요. {red black tree}]]
 - [[week 05 {swjungle} {malloc-lab}]]
 	- [[내부 단편화와 외부 단편화의 차이점에 대해서 설명해주세요]]
@@ -108,12 +109,32 @@ ___
 	- socket.io 동작 플로우
 	- Web Socket이 동작하는 원리
 	- in memory database를 채택한 이유와 어떻게 구현했는지 | [[imdb with NestJS]]
-- [[2의 보수법]]에 대해서 설명해보세요
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 - [[LRU]] 알고리즘에 대하여 설명해주세요.
 	- pintos 프로젝트에서 페이지 스왑 아웃 정책으로 무엇을 사용하였는지?
-- [[dns 서버에 대해서 설명해보세요]]
 - [[typescript 언어에 대해서 설명해주세요]]
+
+### 네트워크 관련 면접질문
+
+- [[dns 서버에 대해서 설명해보세요]]
+
+### CS 관련 면접질문
+
+- [[floating point 부동소수점에 대해서 설명해주세요]]
+- [[2의 보수법]]에 대해서 설명해보세요
+
+### 자료구조 관련 면접질문
+
+- [[괄호 자동완성 기능은 어떤 자료구조를 사용할까요]]
+
+### 객체지향 관련 면접질문
+
+- [[array와 list의 차이점을 설명해주세요 자바의관점으로]]
+
+### C++ 관련 면접질문
+
+- [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
+- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}]]
 
 ### 기타
 
@@ -135,14 +156,6 @@ ___
 	- 힌트를 조금만 주실 수 없을까요?
 	- 잠깐 생각해보겠다는 멘트
 	- 모르겠다면 모르겠다고 인정하기
-- [[array와 list의 차이점을 설명해주세요 자바의관점으로]]
-- [[floating point 부동소수점에 대해서 설명해주세요]]
-- [[괄호 자동완성 기능은 어떤 자료구조를 사용할까요]]
-
-### C++ 관련 면접질문
-
-- [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
-- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}]]
 
 ### 면접 후기
 
