@@ -12,7 +12,7 @@ parent:
  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-07T22:59:31
+updated: 2024-01-11T00:40:52
 ---
 
 ___
@@ -55,10 +55,12 @@ ___
 	- [[week12 {swjungle}{ALGORITHMS}]]
 ---
 
-- [[Heap]]
 - [[graph 기초|graph]]
+	- [[Heap]]
 	- [[BFS]]
 	- [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
+	- [[tree 기초|tree]]
+	- [[Segment Tree]]
 - String
 	- [[kmp|kmp]]
 	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
@@ -71,10 +73,8 @@ ___
 	- [[퀵정렬 {quick sort}|Quick Sort]]
 	- [[도수정렬 (Counting Sort) {rust} {python}]]
 - [[TSP - 외판원 순회 291cd070bc53494495b4456819043fa0|TSP]]
-- [[tree 기초|tree]]
 - [[next_permutation 구현|next permutation 구현]]
 - [[종만북 카라츠바 알고리즘 정답편 + 포스팅ᄋ 5bb97600d3b94c38b1050e1cb4ee3c4e|카라츠바 알고리즘 정답편]]
-- [[Segment Tree]]
 - [[Hash]] 
 - [[divide and conquer]]
 - [[이분탐색]]
