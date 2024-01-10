@@ -2821,12 +2821,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/fast%20input%20output%20%7BC%2B%2B%7D/</loc>
+         <loc>https://choiwheatley.github.io/fast%20io%20in%20python/</loc>
          <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/fast%20io%20in%20python/</loc>
+         <loc>https://choiwheatley.github.io/fast%20io%20with%20sync_with_stdio%20false%20%7BC%2B%2B%7D/</loc>
          <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -5247,6 +5247,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/%EC%86%8C%20%EB%96%A1%EC%8B%AC%20%EC%88%98%EB%B9%84%EB%93%9C/</loc>
+         <lastmod>2024-01-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/%EC%86%8C%EA%B4%84%ED%98%B8%20%EC%B4%88%EA%B8%B0%ED%99%94%EC%99%80%20%EC%A4%91%EA%B4%84%ED%98%B8%20%EC%B4%88%EA%B8%B0%ED%99%94%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94%20%7BC%2B%2B%7D/</loc>
          <lastmod>2024-01-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
