@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-10T21:27:18
+updated: 2024-01-10T21:35:12
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -52,6 +52,10 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 
 ---
+
+## Algorithm 개꿀팁
+
+- [[fast input output {C++}]]
 
 ## Data Structures with Standard Template Library
 
