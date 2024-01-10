@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-10T21:28:08
+updated: 2024-01-10T22:55:00
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -141,7 +141,8 @@ ___
 
 ### C++ 관련 면접질문
 
-[[최근 겪은 C++ 인터뷰 경험 - OKKY]]
+- [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
+- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}]]
 
 ### 면접 후기
 
