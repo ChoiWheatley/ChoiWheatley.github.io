@@ -5,7 +5,7 @@ tags:
 description: 
 title: 최근 겪은 C++ 인터뷰 경험 - OKKY
 created: 2024-01-10T15:25:22
-updated: 2024-01-10T16:44:04
+updated: 2024-01-10T17:07:31
 ---
 - <https://okky.kr/articles/1482509>
 - [[C++]]
@@ -34,6 +34,14 @@ ___
 
 **1\. 프로그램을 실행했을 때 사용되는 메모리 영역을 몇 가지로 구분하면?**
 
+- text
+- code
+- data
+	- ro-data
+- heap
+- stack
+- kernel
+
 저는 당시에는 "Code" 영역을 몰라서 3가지만 말했었는데, 그렇게 어려운 내용도 아니지만 그렇다고 중요도가 아주 떨어지는 질문도 아니었던 것 같네요.
 
 **2\. Move semantics 관련해서 이런 코드들을 실행했을 때 copy는 몇 번 발생하고 move는 몇 번 발생하는가?**
@@ -55,6 +63,7 @@ ___
 **5\. 이러이러한 상황을 구현하기 효과적인 자료구조는 C++ standard library에서 어떤 것들이 있는가?**
 
 - <https://en.cppreference.com/w/cpp/memory#Smart_pointers>
+- <https://en.wikipedia.org/wiki/Smart_pointer>
 
 다른 언어가 어떤 지는 잘 모르겠는데, C++는 언어 스펙뿐만 아니라 라이브러리 스펙에 관련해서도 알아야 하는 것들이 많습니다. 스마트 포인터라던가, 기본적인 컨테이너 자료구조라던가, meta-programming 라이브러리라던가, 정말 산더미처럼 쌓여 있죠. 모든 걸 다 알 필요는 없지만 자주 등장하는 일부 컨셉 정도는 알아둬야 한다고 생각합니다.
 
@@ -66,12 +75,16 @@ ___
 
 **7\. new, delete 등으로 동적으로 메모리를 할당할 때 실제 OS에서 어떤 작업이 일어나는가?**
 
-- allocator function `new`를 알아야 하나? <https://en.wikipedia.org/wiki/Allocator_(C%2B%2B)> 
+- allocator function `new`를 알아야 하나? [wiki/Allocator](https://en.wikipedia.org/wiki/Allocator_(C%2B%2B)) 
 	- general purpose allocator가 존재하나, 몇몇 제약조건을 지킨다는 전제 하에 메모리 풀이나 가비지 콜렉션을 지원하는 커스텀 할당자를 만들어 등록할 수 있다.
+- C malloc과 C++ new 정도는 구분할 줄 알아야 좋을 것 같다. malloc을 기준으로 본다면 두 가지 중에 하나다. brk 아래 공간에 할당할 수 있다면 필요한 개수만큼의 블럭을 할당상태로 만들고 그 첫 주소를 리턴한다. 아니라면 `sbrk` 시스템 콜을 호출해 힙 영역 자체의 크기를 늘린 뒤에 할당해준다. [[malloclab]]
 
 이거는 제가 나름대로 답을 제시했는데 인터뷰어가 제가 말한 답이 약간 애매한 정답이라고 하시더군요. OS, compiler 내부 구현에 따라 그런 식으로 구현하는 게 가능은 하지만 항상 그런 건 아니라고.. C++ 인터뷰가 타 언어들 인터뷰랑 확연히 대비되는 부분이 이런 것 같습니다. 프론트 개발자들은 이런 지식이 필요하긴 하겠지만 그것보다 TS 등과 연계된 React, Angular 같은 써드 파티 라이브러리나 브라우저 동작 원리에서 등장하는 컨셉 같은 것들이 더 중요한 경우가 많은 것 같은데, C++ 관련 인터뷰에서는 상당히 로우레벨 시스템적인 질문들이 많이 동반하는 것 같습니다.
 
 **8\. 본인이 써본 버젼보다 더 높은 C++ 버젼에서 upcoming하는 기능이나 standard 라이브러리 등을 아는 게 있다면 써보시오.**
+
+- [[Constraints and concepts {C++20}]]
+- [[deducing this {C++23}]]
 
 저는 20의 concept, 23의 deducing this를 말했습니다. 아무래도 23은 아직 production-ready는 아니라서 20쪽 질문이 더 많이 나왔던 것 같아요. (다행히도 저도 막 제대로 아는 편은 아니었어서 다행이었던..) concept 얘기하니까 concept의 기능을 concept 등장 이전의 방식으로 구현할 수 있는 방법은 무엇인지, 그거 관련해서 연쇄적으로 나온 질문도 나왔고 그 과정에서 SFINAE 같은 컨셉도 좀 설명했던 것 같고요. 이거 말고도 std::range라던가 thread/async 같은 concurrency 토픽들도 얘기해봄직 하겠죠?
 
