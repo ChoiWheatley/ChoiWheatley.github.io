@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-10T15:25:39
+updated: 2024-01-10T21:27:18
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -44,6 +44,11 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[vector나 array는 인접 메모리 공간에 상주하고 있는 변수가 없으면 out of bound error를 일으키지 않는다]]
 - [[vector의 back 이나 end는 비어있을 때 undefined behavior를 발생시킨다]]
 - [[static_cast {c++}]]
+
+### 최근 겪은 C++ 인터뷰 경험 - OKKY
+
+양질의 C++ 인터뷰 문제가 많아 별도의 헤더로 뺐습니다.
+
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 
 ---

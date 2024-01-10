@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-10T11:38:21
+updated: 2024-01-10T21:28:08
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -138,6 +138,10 @@ ___
 - [[array와 list의 차이점을 설명해주세요 자바의관점으로]]
 - [[floating point 부동소수점에 대해서 설명해주세요]]
 - [[괄호 자동완성 기능은 어떤 자료구조를 사용할까요]]
+
+### C++ 관련 면접질문
+
+[[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 
 ### 면접 후기
 

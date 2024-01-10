@@ -5,7 +5,7 @@ tags:
 description: 
 title: 최근 겪은 C++ 인터뷰 경험 - OKKY
 created: 2024-01-10T15:25:22
-updated: 2024-01-10T17:07:31
+updated: 2024-01-10T21:25:46
 ---
 - <https://okky.kr/articles/1482509>
 - [[C++]]
