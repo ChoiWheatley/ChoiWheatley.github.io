@@ -5,7 +5,7 @@ tags:
 description: 
 title: 최근 겪은 C++ 인터뷰 경험 - OKKY
 created: 2024-01-10T15:25:22
-updated: 2024-01-10T15:27:01
+updated: 2024-01-10T15:42:35
 ---
 - <https://okky.kr/articles/1482509>
 - [[C++]]
@@ -45,6 +45,10 @@ ___
 저는 gcc나 msvc 같은 메이저 컴파일러가 정확하게 virtual semantic을 구현한 방식을 말하지는 못했습니다. 실제로 인터뷰어도 거기까지 기대한 건 아닌 것 같고요. 대신에 알고리즘적인 맥락에서 이러이러하게 구현했을 것 같다고 했고 인터뷰어도 어느 정도 동의하시고 거기서 연쇄 질문을 이어나가셨습니다. 그리고 이러한 구현 방식에서 비롯되는 performance overhead 등도 말하고, 또 그런 주제들에서 연쇄적인 티키타카들도 길게 했던 것 같아요. 그거 말고도 "= 0;" syntax 같은 것도 좀 얘기했고요.
 
 **4\. 본인이 면접을 보기 전까지 진행했던 C++ 관련 개발에서 썼던 modern 기능을 몇 가지 꼽아보자면?**
+
+- [template specialization](https://en.cppreference.com/w/cpp/language/template_specialization)
+- [inline specifier](https://en.cppreference.com/w/cpp/language/inline)
+	- [translation unit](https://en.wikipedia.org/wiki/Translation_unit_(programming))
 
 저는 여기서 inline variable이랑 template partial specialization을 언급했는데, 막상 inline variable을 언급하고 나니 그게 제대로 동작하는 원리를 잘 몰라서 그 부분은 마이너스였던 것 같고, specialization 관련해서는 이것저것 아는대로 많이 설명했던 것 같아요. 그거 말하니까 "more specialized" semantic이라던가, initialization이 실제로 일어나는 원리 등에 대해서도 연쇄적으로 계속 얘기했던 것 같네요.
 
