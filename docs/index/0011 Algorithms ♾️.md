@@ -61,6 +61,7 @@ ___
 	- [[Lowest Common Ancester, LCA|LCA]]
 	- [[tree 기초|tree]]
 	- [[Segment Tree]]
+		- [[펜윅 트리(바이너리 인덱스 트리) Fenwick Tree]]
 - String
 	- [[kmp|kmp]]
 	- [[LCS 가장 긴 공통 부분수열 {longest common subsequence}|LCS]]
