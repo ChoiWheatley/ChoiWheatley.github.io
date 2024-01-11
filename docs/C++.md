@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-10T21:35:12
+updated: 2024-01-11T15:34:55
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -45,11 +45,13 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[vector의 back 이나 end는 비어있을 때 undefined behavior를 발생시킨다]]
 - [[static_cast {c++}]]
 
-### 최근 겪은 C++ 인터뷰 경험 - OKKY
+## Interview 준비
 
 양질의 C++ 인터뷰 문제가 많아 별도의 헤더로 뺐습니다.
 
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
+- [pocu.academy C++ 언매니지드 프로그래밍](https://pocu.academy/ko/Courses/COMP3200) 커리큘럼이 좋아서 가져옴
+- [modoocode.com 씹어먹는 C++](https://modoocode.com/category/C++) 기초부터 심화, 최신기술까지
 
 ---
 
