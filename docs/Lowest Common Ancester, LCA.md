@@ -5,7 +5,7 @@ tags:
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:30
-updated: 2024-01-11T18:28:53
+updated: 2024-01-12T00:17:52
 title: Lowest Common Ancester, LCA
 ---
 
@@ -105,11 +105,11 @@ int get_lca(int a, int b) {
 		swap(a, b);
 	}
 	while (depth[a] > depth[b]) {
-		a = up[a][0];
+		a = parent[a];
 	}
 	while (a != b) {
-		a = up[a][0];
-		b = up[b][0];
+		a = parent[a];
+		b = parent[b];
 	}
 	return a;
 }
@@ -121,7 +121,7 @@ int get_lca(int a, int b) {
 
 [Parametric Search](Parametric%20Search%204978cada815542e49055c20f261bd257.md) 
 
-a, b의 depth를 맞춰주기 위해 k 변수를 활용하는데, k가 굳이 2의 제곱수가 아니어도 된다는 것을 이용한 영리한 예이다. 예를 들어 거리가 12라면, 단지 12 = 4 + 8 이므로 j = 2, j = 3일때에만 움직이면 된다.
+a, b의 depth를 맞춰주기 위해 k 변수를 활용하는데, k가 굳이 2의 제곱수가 아니어도 된다는 것을 이용한 영리한 예이다. 예를 들어 거리가 12(0b1100)라면, 단지 12 = 4 + 8 이므로 j = 2, j = 3일때에만 움직이면 된다.
 
 코드에서 알 수 있는 건, lca 이후의 조상들은 굳이 가지 않는다는 것이다. 따라서 lca 직전 노드까지 이동하는 것을 목표로 삼을 수 있다. j가 하나씩 줄어드는거랑 lca 직전노드랑 무슨 상관이지 싶을 수 있는데, 직접 그림을 그려보면 공통조상이 아닐때에만 성큼성큼 이동하다보면 결국 lca 직전에 도달함을 알 수 있다.
 
@@ -151,3 +151,10 @@ int lca(a, b) {
 ```
 
 ![[lca.png]]
+
+## 관련 문제
+
+- https://boj.kr/11437 LCA 그대로 구현하면 되는 문제
+	- [소스코드](https://github.com/ChoiWheatley/cpp-algorithms/blob/ac96f8f10b4cc7a64da124e6e260d0a153eeadab/bak/problem/11437/main.cc)
+- https://boj.kr/11438 LCA2: Binary Lifting 없이는 못 푸는 문제
+	- [소스코드](https://github.com/ChoiWheatley/cpp-algorithms/blob/ee3a2317aad31bc43d6cdb2bf79d0c7ba67780d2/bak/problem/11438/main.cc)
