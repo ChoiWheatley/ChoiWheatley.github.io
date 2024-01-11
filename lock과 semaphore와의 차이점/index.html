@@ -47845,6 +47845,14 @@
 <h2 id="_1">대답<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>semaphore는 critical section에 접근하는 스레드의 순서를 보장하기 위해 만들어졌고, lock은 binary semaphore를 지칭합니다.</p>
 <p>semaphore는 임의의 음이 아닌 정수로 초기화 가능합니다. 이 값이 0이 되기 전까지 스레드들은 세마포어의 값을 낮추면서 (Test 또는 P 라고 불림) 임계영역을 접근할 수 있습니다. 세마포어 값이 음수가 되면 그때부터 값을 낮추려는 스레드들이 waiters 리스트에 들어가 block 상태가 됩니다. 임계영역을 빠져나오는 스레드는 세마포어의 값을 올리는데 (Increment, V라고 불림) 이때 waiters에 스레드가 존재할 경우 unblock 시킨 뒤에 해당 스레드를 실행시킴으로써 로직이 흘러가게 됩니다.</p>
+<blockquote>
+<p>semaphore의 속성과 동작</p>
+</blockquote>
+<ul>
+<li>접근 가능한 프로세스의 수</li>
+<li>waiters 대기</li>
+<li>sema up &amp; sema down</li>
+</ul>
 <h2 id="source-code">source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/ChoiWheatley/swjungle-week07-09/blob/f0ec01dc014fa1ba04b2a5011a6618cd47a83ed9/threads/synch.c#L61">sema_down</a>, <a href="https://github.com/ChoiWheatley/swjungle-week07-09/blob/f0ec01dc014fa1ba04b2a5011a6618cd47a83ed9/threads/synch.c#L106">sema_up</a></p>
 
