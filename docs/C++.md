@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-11T17:07:26
+updated: 2024-01-11T17:53:03
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -67,8 +67,6 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [tv.popekim.com C++](https://tv.popekim.com/Search?q=c%2B%2B) 김포프 C++ 관련 비디오 모음집
 - [modoocode.com 씹어먹는 C++](https://modoocode.com/category/C++) 기초부터 심화, 최신기술까지
 
----
-
 ## Algorithm 개꿀팁
 
 - [[fast io with sync_with_stdio false {C++}]]
@@ -76,6 +74,10 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 ## Data Structures with Standard Template Library
 
 - [[unordered_map {{cpp}}]]
+
+## 도서
+
+- [Effective Modern C++ 1st Edition](https://www.amazon.com/Effective-Modern-Specific-Ways-Improve-ebook/dp/B00PGCMGDQ?ref_=ast_author_dp&dib=eyJ2IjoiMSJ9.8wycxcWW2JL3mHaDyQLpK0AZJghgeJpe2KVMEsoCPd2LeRj5C2tlwIlfs3uHvqzV-xNEqJUsrudr9KTaUSo3iknni1d5bw2ztr45CEpKg5uS7q9Tg8-N3eFdmAuw_5lMbKo4DwwbzVBXOQpJYrwYroTA25OzL3nfUni1bUUvp1edJjmIBuBzORaZSVOeSPFu.vjrNBOFb5M2QTljaRVksy5GumuXnvSoRwOpaot_0A6A&dib_tag=AUTHOR)
 
 ## 질문
 
