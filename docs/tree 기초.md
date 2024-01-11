@@ -5,7 +5,7 @@ tags:
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:26
-updated: 2024-01-11T11:13:59
+updated: 2024-01-11T11:39:31
 title: tree 기초
 ---
 
@@ -51,6 +51,8 @@ title: tree 기초
 - 중위순회를 하게 되면 우리가 익히 알고 있는 중위 표기법이 탄생 `a/b*c*d+e`
 - 후위순회를 하면 후위 표기법 `ab/c*d*e+`
 - 전위순회를 하면 함수처럼 사용하는 전위 표기법 `+**/abcde`
+
+> 연산자 우선순위는?
 
 # Binary Search Tree
 
