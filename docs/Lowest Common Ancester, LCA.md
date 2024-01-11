@@ -5,7 +5,7 @@ tags:
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:30
-updated: 2024-01-11T17:57:42
+updated: 2024-01-11T18:28:53
 title: Lowest Common Ancester, LCA
 ---
 
@@ -45,18 +45,22 @@ LCA 몰랐을 때 O(N)으로 푼 나의 코드. `ancester()` 는 노드의 부�
 ```cpp
 inline auto nearest_common_ancester(node_t const *n1, node_t const *n2)
     -> node_t const & {
-  auto ancester1 = ancester(*n1);
-  auto ancester2 = ancester(*n2);
-  auto const size1 = ancester1.size();
-  auto const size2 = ancester2.size();
+  vector<node_t *> ancester1 = ancester(*n1);
+  vector<node_t *> ancester2 = ancester(*n2);
+
+  const auto size1 = ancester1.size();
+  const auto size2 = ancester2.size();
   auto len = std::min(size1, size2);
-  auto ret = ancester1[size1 - 1];
+
+  node_t *ret = ancester1[size1 - 1];
+
   for (size_t i = 1; i <= len; ++i) {
     if (ancester1[size1 - i]->id != ancester2[size2 - i]->id) {
       return *ancester1[size1 - (i - 1)];
     }
     ret = ancester1[size1 - i];
   }
+
   return *ret;
 }
 ```
@@ -89,9 +93,29 @@ void init() {
 		}
   }
 }
-  
-
 ```
+
+### LCA-brute force
+
+위의 영상에서는 일단 한 칸씩 올라가는 코드를 먼저 작성했다. A, B 중 A가 더 낮은 depth를 가지고 있다고 했을 때 B의 depth와 동일할때까지 parent를 타고 올라온다. 그리고 A == B일때까지 서로 한 칸씩 올라가고 A를 리턴해버리면 된다.  
+
+```cpp
+int get_lca(int a, int b) {
+	if (depth[a] < depth[b]) {
+		swap(a, b);
+	}
+	while (depth[a] > depth[b]) {
+		a = up[a][0];
+	}
+	while (a != b) {
+		a = up[a][0];
+		b = up[b][0];
+	}
+	return a;
+}
+```
+
+### LCA -with-binary-lifting
 
 이제 진짜 lowest common ancestor를 찾아보자. 여기에서 기존처럼 하나씩 올라가면 의미가 없다. 따라서 파라메트릭 서치를 통해 한 번에 성큼성큼 lca와의 거리를 좁혀보자. 
 
