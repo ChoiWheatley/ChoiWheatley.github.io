@@ -48087,18 +48087,22 @@
 <p>9의 조상은 {0, 1}, 10의 조상은 {0, 2, 8} 이다. 따라서 앞에서부터 따라 읽어가다 마지막으로 조상이 일치하는 케이스만 리턴하면 된다.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">nearest_common_ancester</span><span class="p">(</span><span class="n">node_t</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">node_t</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">n2</span><span class="p">)</span>
 <span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">node_t</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">ancester1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester</span><span class="p">(</span><span class="o">*</span><span class="n">n1</span><span class="p">);</span>
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">ancester2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester</span><span class="p">(</span><span class="o">*</span><span class="n">n2</span><span class="p">);</span>
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">size1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">size2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester2</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">node_t</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">ancester1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester</span><span class="p">(</span><span class="o">*</span><span class="n">n1</span><span class="p">);</span>
+<span class="w">  </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">node_t</span><span class="w"> </span><span class="o">*&gt;</span><span class="w"> </span><span class="n">ancester2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester</span><span class="p">(</span><span class="o">*</span><span class="n">n2</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">size1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">size2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester2</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
 <span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">size1</span><span class="p">,</span><span class="w"> </span><span class="n">size2</span><span class="p">);</span>
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester1</span><span class="p">[</span><span class="n">size1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+
+<span class="w">  </span><span class="n">node_t</span><span class="w"> </span><span class="o">*</span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester1</span><span class="p">[</span><span class="n">size1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+
 <span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">len</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ancester1</span><span class="p">[</span><span class="n">size1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">id</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ancester2</span><span class="p">[</span><span class="n">size2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">ancester1</span><span class="p">[</span><span class="n">size1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)];</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ancester1</span><span class="p">[</span><span class="n">size1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="p">];</span>
 <span class="w">  </span><span class="p">}</span>
+
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">ret</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -48124,9 +48128,26 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<h3 id="lca-brute-force">LCA-brute force<a class="headerlink" href="#lca-brute-force" title="Permanent link">#</a></h3>
+<p>위의 영상에서는 일단 한 칸씩 올라가는 코드를 먼저 작성했다. A, B 중 A가 더 낮은 depth를 가지고 있다고 했을 때 B의 depth와 동일할때까지 parent를 타고 올라온다. 그리고 A == B일때까지 서로 한 칸씩 올라가고 A를 리턴해버리면 된다.  </p>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">get_lca</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">depth</span><span class="p">[</span><span class="n">b</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">depth</span><span class="p">[</span><span class="n">b</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">[</span><span class="n">a</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">[</span><span class="n">a</span><span class="p">];</span>
+<span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="lca-with-binary-lifting">LCA -with-binary-lifting<a class="headerlink" href="#lca-with-binary-lifting" title="Permanent link">#</a></h3>
 <p>이제 진짜 lowest common ancestor를 찾아보자. 여기에서 기존처럼 하나씩 올라가면 의미가 없다. 따라서 파라메트릭 서치를 통해 한 번에 성큼성큼 lca와의 거리를 좁혀보자. </p>
 <p><a href="../Parametric%20Search%204978cada815542e49055c20f261bd257/">Parametric Search</a> </p>
-<p>a, b의 depth를 맞춰주기 위해 k 변수를 활용하는데, k가 굳이 2의 제곱수가 아니어도 된다는 것을 이용한 영리한 예이다. 예를 들어 거리가 12라면, 단지 12 = 4 + 8 이므로 j = 2, j = 3일때에만 움직이면 된다.</p>
+<p>a, b의 depth를 맞춰주기 위해 k 변수를 활용하는데, k가 굳이 2의 제곱수가 아니어도 된다는 것을 이용한 영리한 예이다. 예를 들어 거리가 12(0b1100)라면, 단지 12 = 4 + 8 이므로 j = 2, j = 3일때에만 움직이면 된다.</p>
 <p>코드에서 알 수 있는 건, lca 이후의 조상들은 굳이 가지 않는다는 것이다. 따라서 lca 직전 노드까지 이동하는 것을 목표로 삼을 수 있다. j가 하나씩 줄어드는거랑 lca 직전노드랑 무슨 상관이지 싶을 수 있는데, 직접 그림을 그려보면 공통조상이 아닐때에만 성큼성큼 이동하다보면 결국 lca 직전에 도달함을 알 수 있다.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">lca</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">depth</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">depth</span><span class="p">[</span><span class="n">b</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
@@ -48152,6 +48173,17 @@
 <span class="p">}</span>
 </code></pre></div>
 <p><a class="glightbox" href="../assets/lca.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="lca.png" src="../assets/lca.png" /></a></p>
+<h2 id="_2">관련 문제<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<ul>
+<li>https://boj.kr/11437 LCA 그대로 구현하면 되는 문제<ul>
+<li><a href="https://github.com/ChoiWheatley/cpp-algorithms/blob/ac96f8f10b4cc7a64da124e6e260d0a153eeadab/bak/problem/11437/main.cc">소스코드</a></li>
+</ul>
+</li>
+<li>https://boj.kr/11438 LCA2: Binary Lifting 없이는 못 푸는 문제<ul>
+<li><a href="https://github.com/ChoiWheatley/cpp-algorithms/blob/ee3a2317aad31bc43d6cdb2bf79d0c7ba67780d2/bak/problem/11438/main.cc">소스코드</a></li>
+</ul>
+</li>
+</ul>
 
 
 
