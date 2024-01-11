@@ -51,6 +51,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 - [pocu.academy C++ 언매니지드 프로그래밍](https://pocu.academy/ko/Courses/COMP3200) 커리큘럼이 좋아서 가져옴
+- [tv.popekim.com C++](https://tv.popekim.com/Search?q=c%2B%2B) 김포프 C++ 관련 비디오 모음집
 - [modoocode.com 씹어먹는 C++](https://modoocode.com/category/C++) 기초부터 심화, 최신기술까지
 
 ---
