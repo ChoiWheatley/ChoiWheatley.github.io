@@ -58,7 +58,7 @@ ___
 - [[graph 기초|graph]]
 	- [[Heap]]
 	- [[BFS]]
-	- [[Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8|LCA]]
+	- [[Lowest Common Ancester, LCA|LCA]]
 	- [[tree 기초|tree]]
 	- [[Segment Tree]]
 - String

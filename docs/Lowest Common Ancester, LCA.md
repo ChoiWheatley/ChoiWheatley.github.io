@@ -5,8 +5,8 @@ tags:
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:30
-updated: 2023-07-15T21:33:05
-title: Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8
+updated: 2024-01-11T17:57:42
+title: Lowest Common Ancester, LCA
 ---
 
 # Lowest Common Ancester
@@ -126,4 +126,4 @@ int lca(a, b) {
 }
 ```
 
-![스크린샷 2023-02-03 22.41.32.png](Lowest%20Common%20Ancester%201e6d1876eadc416f91722dbae03b4ed8/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-02-03_22.41.32.png)
+![[lca.png]]
