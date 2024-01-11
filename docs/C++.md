@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-11T15:34:55
+updated: 2024-01-11T17:07:26
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -29,7 +29,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[Functional programming -- expression templates, builds structures representing a computation at compile time]]
 - [[람다 캡처 자리에 아예 새 변수를 정의하는 방법]]
 - [[optional safe unwrapping]]
-- [[owner가 아니라면 raw pointer를 참조해도 괜찮다]]
+- [[owner가 아니라면 raw pointer를 참조해도 괜찮다 - when to use smart pointers]]
 - [[pointer ownership in c++]]
 - [[Exception Safe Code, Part I - Jon Kalb]]
 - [[Value Categories in C++17 - lvalue, rvalue, prvalue]]
@@ -44,6 +44,19 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[vector나 array는 인접 메모리 공간에 상주하고 있는 변수가 없으면 out of bound error를 일으키지 않는다]]
 - [[vector의 back 이나 end는 비어있을 때 undefined behavior를 발생시킨다]]
 - [[static_cast {c++}]]
+- [[Constraints and concepts {C++20}]]
+- [[map insert, set insert 잘못 쓰면 인생 망함]]
+- [[random {C++}]]
+
+## 개꿀팁 (스크랩 완료)
+
+- [[natvis를 활용해 못생긴 vscode 디버거 예쁘고 똑똑하게 탈바꿈하기]]
+
+## C++ 종특 (스크랩 완료)
+
+- [[C++ remainder operation is NOT modulo]]
+- [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
+- [[stream, iterator, functional programming {C++}]]
 
 ## Interview 준비
 

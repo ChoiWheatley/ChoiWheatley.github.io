@@ -8,7 +8,7 @@ updated: 2024-01-10T17:12:37
 ---
 - [[C++]]
 - [cppreference.com/constraints](https://en.cppreference.com/w/cpp/language/constraints)
-- 
+- [[C++20] Concepts](https://kukuta.tistory.com/252)
 ---
 
 ## GPT answer
