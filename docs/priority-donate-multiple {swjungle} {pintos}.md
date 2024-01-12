@@ -4,10 +4,14 @@ tags:
 description:
 title: priority-donate-multiple {swjungle} {pintos}
 created: 2023-09-29T22:08:20
-updated: 2023-10-02T20:52:30
+updated: 2024-01-09T01:27:30
 ---
 - [[week07-10 {swjungle} {pintos}]]
 ___
+
+## TL;DR
+
+priority inversion 현상을 막기 위해 도입한 방법
 
 ## diagram
 

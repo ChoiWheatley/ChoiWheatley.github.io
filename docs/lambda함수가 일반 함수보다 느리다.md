@@ -1,7 +1,7 @@
 ---
-description:
+description: 
 aliases: 
-tags: programming/c++ 
+tags: []
 created: 2023-03-02T22:31:15
 updated: 2023-07-15T21:33:04
 title: lambda함수가 일반 함수보다 느리다

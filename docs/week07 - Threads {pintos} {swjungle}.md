@@ -4,12 +4,13 @@ tags:
 description:
 title: week07 - Threads {pintos} {swjungle}
 created: 2023-10-15T04:42:29
-updated: 2023-10-15T04:47:15
+updated: 2024-01-08T20:43:08
 ---
 
 
 **INDEX**
 
+- <https://casys-kaist.github.io/pintos-kaist/project1/introduction.html>
 - [Pintos Project1-1 Thread by Yujip Won {YT}](https://github.com/ChoiWheatley/swjungle-week07-09/blob/master/doc/Project1%20Threads.md)
 - `pintos -- -q`: 실행 할 거 다 하면 자동으로 종료 (Ctrl+C 한다고 안꺼짐)
 

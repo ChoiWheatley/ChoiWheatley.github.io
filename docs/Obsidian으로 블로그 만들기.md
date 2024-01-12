@@ -3,9 +3,20 @@ description:
 aliases: 
 tags: 
 created: 2023-05-24T09:26:36
-updated: 2023-08-21T15:14:18
+updated: 2024-01-08T15:18:23
 title: Obsidian으로 블로그 만들기
 ---
+- [[0070 Obsidian 💎|obsidian]]
+---
+
+## Concepts
+
+- 깃허브 마크다운 포맷 + double-bracket 레퍼런스 지원
+- dataview 쿼리 결과를 링크로 변환
+- back-link & outgoing-link 결과를 볼 수 있게
+
+## Search
+
 - ["Obsidian+Github Pages" for digital gardeners? {forum}](https://forum.obsidian.md/t/obsidian-github-pages-for-digital-gardeners/2622)
   - `[[`, `]]` 포맷은 media wiki라고 한다. 일반 `a` 태그와는 조금 다르기 때문에 일반 리포지토리 안에 마크다운 파일에서는 동작하지 않는대. 하지만 GitHub wiki를 사용하면 Media wiki가 동작한다고 한다. 따라서 옵션이 두 가지가 있다.
   - 모든 옵시디언 링크를 media wiki에서 마크업 `a` 태크로 만들 것

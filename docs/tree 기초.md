@@ -5,23 +5,37 @@ tags:
 date created: Monday, February 13th 2023, 6:16:26 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:26
-updated: 2023-08-20T22:02:50
+updated: 2024-01-11T11:39:31
 title: tree 기초
 ---
 
-# tree 기초
+## tree 기초
 
 상태: 정리완료  
 태그: tree
 
 - Full Binary Tree - 포화 이진 트리
     - 모든 레벨에 노드가 포화상태로 차 있는 이진트리
+    - leaf 노드를 제외한 모든 노드의 차수가 2개로 이루어져 있는 경우를 의미
 - Complete Binary Tree - 완전 이진 트리
     - 높이가 h이고 노드 수가 n일 때  $h + 1 \le n \lt 2^{h+1}-1$를 만족한다. 포화 이진트리의 노드를 좌에서 우로, 위에서 아래로 번호를 붙였을 때 가장 마지막 레벨에 있는 노드만 생략이 가능하다.
 - Skewed Binary Tree - 편향 이진 트리
     - 왼쪽, 오른쪽 skewed binary tree가 있다. 한쪽 방향의 자식 노드만을 갖는다.
 
-# 트리의 순회
+## 이진트리의 구현방법
+
+- `left_child`, `right_child`, (`parent`) 레퍼런스를 사용한 클래스
+- 배열
+	- 인덱스가 0부터 시작하는 경우
+		- 부모의 인덱스 :  `(i-1) >> 1`
+		- 왼쪽 자식의 인덱스 : `i << 1 | 1`
+		- 오른쪽 자식의 인덱스 : `i << 1 + 2`  
+	- 1부터 시작하는 경우
+		- 부모의 인덱스 : `i >> 1`
+		- 왼쪽 자식의 인덱스 : `i << 1`
+		- 오른쪽 자식의 인덱스 : `i << 1 | 1`
+
+## 트리의 순회
 
 - 전위 순회
     - VLR : 자손보다 루트를 먼저 방문
@@ -30,13 +44,15 @@ title: tree 기초
 - 후위 순회
     - LRV : 루트보다 자손을 먼저 방문
 
-# Expression Tree
+## Expression Tree
 
 수식을 표현하는 데 사용되는 트리
 
 - 중위순회를 하게 되면 우리가 익히 알고 있는 중위 표기법이 탄생 `a/b*c*d+e`
 - 후위순회를 하면 후위 표기법 `ab/c*d*e+`
 - 전위순회를 하면 함수처럼 사용하는 전위 표기법 `+**/abcde`
+
+> 연산자 우선순위는?
 
 # Binary Search Tree
 

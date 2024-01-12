@@ -5,8 +5,8 @@ tags:
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:30
-updated: 2023-07-15T21:33:05
-title: Lowest Common Ancester 1e6d1876eadc416f91722dbae03b4ed8
+updated: 2024-01-12T00:18:14
+title: Lowest Common Ancester, LCA
 ---
 
 # Lowest Common Ancester
@@ -45,18 +45,22 @@ LCA 몰랐을 때 O(N)으로 푼 나의 코드. `ancester()` 는 노드의 부�
 ```cpp
 inline auto nearest_common_ancester(node_t const *n1, node_t const *n2)
     -> node_t const & {
-  auto ancester1 = ancester(*n1);
-  auto ancester2 = ancester(*n2);
-  auto const size1 = ancester1.size();
-  auto const size2 = ancester2.size();
+  vector<node_t *> ancester1 = ancester(*n1);
+  vector<node_t *> ancester2 = ancester(*n2);
+
+  const auto size1 = ancester1.size();
+  const auto size2 = ancester2.size();
   auto len = std::min(size1, size2);
-  auto ret = ancester1[size1 - 1];
+
+  node_t *ret = ancester1[size1 - 1];
+
   for (size_t i = 1; i <= len; ++i) {
     if (ancester1[size1 - i]->id != ancester2[size2 - i]->id) {
       return *ancester1[size1 - (i - 1)];
     }
     ret = ancester1[size1 - i];
   }
+
   return *ret;
 }
 ```
@@ -89,15 +93,35 @@ void init() {
 		}
   }
 }
-  
-
 ```
+
+### LCA-brute force
+
+위의 영상에서는 일단 한 칸씩 올라가는 코드를 먼저 작성했다. A, B 중 A가 더 낮은 depth를 가지고 있다고 했을 때 B의 depth와 동일할때까지 parent를 타고 올라온다. 그리고 A == B일때까지 서로 한 칸씩 올라가고 A를 리턴해버리면 된다.  
+
+```cpp
+int get_lca(int a, int b) {
+	if (depth[a] < depth[b]) {
+		swap(a, b);
+	}
+	while (depth[a] > depth[b]) {
+		a = parent[a];
+	}
+	while (a != b) {
+		a = parent[a];
+		b = parent[b];
+	}
+	return a;
+}
+```
+
+### LCA -with-binary-lifting
 
 이제 진짜 lowest common ancestor를 찾아보자. 여기에서 기존처럼 하나씩 올라가면 의미가 없다. 따라서 파라메트릭 서치를 통해 한 번에 성큼성큼 lca와의 거리를 좁혀보자. 
 
 [Parametric Search](Parametric%20Search%204978cada815542e49055c20f261bd257.md) 
 
-a, b의 depth를 맞춰주기 위해 k 변수를 활용하는데, k가 굳이 2의 제곱수가 아니어도 된다는 것을 이용한 영리한 예이다. 예를 들어 거리가 12라면, 단지 12 = 4 + 8 이므로 j = 2, j = 3일때에만 움직이면 된다.
+a, b의 depth를 맞춰주기 위해 k 변수를 활용하는데, k가 굳이 2의 제곱수가 아니어도 된다는 것을 이용한 영리한 예이다. 예를 들어 거리가 12(0b1100)라면, 단지 12 = 4 + 8 이므로 j = 2, j = 3일때에만 움직이면 된다.
 
 코드에서 알 수 있는 건, lca 이후의 조상들은 굳이 가지 않는다는 것이다. 따라서 lca 직전 노드까지 이동하는 것을 목표로 삼을 수 있다. j가 하나씩 줄어드는거랑 lca 직전노드랑 무슨 상관이지 싶을 수 있는데, 직접 그림을 그려보면 공통조상이 아닐때에만 성큼성큼 이동하다보면 결국 lca 직전에 도달함을 알 수 있다.
 
@@ -126,4 +150,11 @@ int lca(a, b) {
 }
 ```
 
-![스크린샷 2023-02-03 22.41.32.png](Lowest%20Common%20Ancester%201e6d1876eadc416f91722dbae03b4ed8/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-02-03_22.41.32.png)
+![[lca.png]]
+
+## 관련 문제
+
+- <https://boj.kr/11437> LCA 그대로 구현하면 되는 문제
+	- [소스코드](https://github.com/ChoiWheatley/cpp-algorithms/blob/ac96f8f10b4cc7a64da124e6e260d0a153eeadab/bak/problem/11437/main.cc)
+- <https://boj.kr/11438> LCA2: Binary Lifting 없이는 못 푸는 문제
+	- [소스코드](https://github.com/ChoiWheatley/cpp-algorithms/blob/ee3a2317aad31bc43d6cdb2bf79d0c7ba67780d2/bak/problem/11438/main.cc)
