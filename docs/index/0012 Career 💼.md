@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-12T13:11:20
+updated: 2024-01-12T16:29:10
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -130,6 +130,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[malloc과 같은 동적할당을 할 때 OS에서 일어나는 일에 대해서 설명해주세요]]
 - [[LRU]] 알고리즘에 대하여 설명해주세요.
 - [[암달의 법칙에 대하여 설명해주세요]]
+- [[레지스터란 무엇이고 왜 필요한가요]]
 
 ### 자료구조 관련 면접질문
 
