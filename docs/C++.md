@@ -19,6 +19,10 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 
 ---
 
+## C++ 기초
+
+- [[string {C++}]]
+
 ## Scrapped
 
 - [[lambda는 기본적으로 생성자가 지워져있다.]]
