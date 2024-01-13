@@ -4,7 +4,7 @@ tags:
 description:
 title: string {C++}
 created: 2024-01-13T12:26:28
-updated: 2024-01-13T18:03:33
+updated: 2024-01-13T18:09:33
 ---
 - [[C++]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
@@ -48,3 +48,7 @@ int main(void) {
 }
 )";
 ```
+
+## Encoding
+
+- <https://modoocode.com/292#page-heading-6>
