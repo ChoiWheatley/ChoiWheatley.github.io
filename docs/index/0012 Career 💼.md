@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-11T16:54:30
+updated: 2024-01-12T13:11:20
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -19,11 +19,20 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 ## 관심있는 기업
 
 - [넷텐션](https://www.proudnet.com/) C++ 게임서버 프레임워크인 프라우드넷을 만든 회사 
+- \[채용공고] 2024년 1월 캐논코리아 신입사원 채용 인턴전형(채용연계형) <https://inthiswork.com/archives/91608>
+- \[채용공고] 클래스팅 · 백엔드 개발자 (Backend) <https://inthiswork.com/archives/92014>
+- \[채용공고] 클래스101 · Frontend Developer (주니어경력) <https://inthiswork.com/archives/91347>
+- \[쿠키런: 오븐브레이크] 서버 소프트웨어 엔지니어 (신입) <https://careers.devsisters.com/position/detail/?jobPosition=242>
+- \[이스트게임즈] - 1분기 웹 개발자 채용 (신입/경력) <https://inthiswork.com/archives/91152>
+- \[네이버랩스] FE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91392> 
+- \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
+- \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
 
 ## 지원완료
 
-- 2024-01-04  [엔셀(주)-IT사업부 SW개발자](http://joburl.kr/bJw5r)
+- 2024-01-04 지원한  [엔셀(주)-IT사업부 SW개발자](http://joburl.kr/bJw5r)
 - [\[Project inZOI Unit\] Jr. Client Programmer (신입 / 경력무관)](https://boards.greenhouse.io/krafton/jobs/7078974002?t=f7e1ac3e2us)
+- [[보이저엑스 정글전형 (6개월인턴)]]
 
 ## 정신무장
 

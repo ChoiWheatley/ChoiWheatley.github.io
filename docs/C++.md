@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-13T19:07:02
+updated: 2024-01-13T19:55:22
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -61,15 +61,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[C++ remainder operation is NOT modulo]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
 - [[stream, iterator, functional programming {C++}]]
-
-## Interview 준비
-
-양질의 C++ 인터뷰 문제가 많아 별도의 헤더로 뺐습니다.
-
-- [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
-- [pocu.academy C++ 언매니지드 프로그래밍](https://pocu.academy/ko/Courses/COMP3200) 커리큘럼이 좋아서 가져옴
-- [tv.popekim.com C++](https://tv.popekim.com/Search?q=c%2B%2B) 김포프 C++ 관련 비디오 모음집
-- [modoocode.com 씹어먹는 C++](https://modoocode.com/category/C++) 기초부터 심화, 최신기술까지
+- [[references in {C++}]]
 
 ## Algorithm 개꿀팁
 
