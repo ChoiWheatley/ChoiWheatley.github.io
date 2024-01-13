@@ -4,7 +4,7 @@ tags:
 description:
 title: string {C++}
 created: 2024-01-13T12:26:28
-updated: 2024-01-13T18:26:22
+updated: 2024-01-13T19:07:22
 ---
 - [[C++]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
@@ -52,9 +52,10 @@ int main(void) {
 ## Encoding
 
 - <https://modoocode.com/292#page-heading-6>
+- <https://github.com/nemtrif/utfcpp>
 
 > UTF-8, UTF-16, UTF-32의 차이점이 뭔가요?
 
 UTF-8은 유니코드 문자열을 최소 1바이트, 최대 4바이트로 표현하는 방식을 의미하고 UTF-16은 2 또는 4바이트로 표현하는 방식을 의미하며, UTF-32는 모든 유니코드를 4바이트로 표현하는 방식을 뜻합니다. 웹에서는 효율적으로 문자열을 취급하기 위해 UTF-8을 사용합니다.
 
-한 글자 한 글자의 바이트수가 다르기 때문에 단순 인덱싱으로는 원하는 글자가 나오지 않습니다. `std::string`에서 제공하는 size와 `operator []`의 경우 
+한 글자 한 글자의 바이트수가 다르기 때문에 단순 인덱싱으로는 원하는 글자가 나오지 않습니다. 따라서 

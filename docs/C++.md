@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-13T18:20:30
+updated: 2024-01-13T19:07:02
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -78,6 +78,10 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 ## Data Structures with Standard Template Library
 
 - [[unordered_map {{cpp}}]]
+
+## Externel libraries
+
+- <https://github.com/nemtrif/utfcpp> : utf-8을 손쉽게
 
 ## 도서
 
