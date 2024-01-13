@@ -4,7 +4,7 @@ tags:
 description:
 title: string_view {C++17}
 created: 2024-01-13T12:54:26
-updated: 2024-01-14T00:56:48
+updated: 2024-01-14T00:57:57
 ---
 - [[string {C++}]]
 - <https://modoocode.com/292#page-heading-9>
@@ -26,7 +26,9 @@ void func(std::string_view str) {
 
 ## 사용예시
 
-<https://leetcode.com/problems/longest-palindromic-substring> 문제 풀이 소스. 파이썬이 개쩌는 언어라는 것을 다시 한 번 깨닫게 만들어주는 문제
+<https://leetcode.com/problems/longest-palindromic-substring> 문제 풀이 소스. 파이썬이 개쩌는 언어라는 것을 다시 한 번 깨닫게 만들어주는 문제.
+
+파이썬의 `s[a:b]` 문법은 C++에서 `string_view{s}.substr(a, b - a + 1)`이다.
 
 ```cpp
 #include <string>
