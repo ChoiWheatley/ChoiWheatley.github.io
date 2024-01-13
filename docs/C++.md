@@ -52,6 +52,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[Constraints and concepts {C++20}]]
 - [[map insert, set insert 잘못 쓰면 인생 망함]]
 - [[random {C++}]]
+- [[inline {C++}]]
 
 ## 개꿀팁 (스크랩 완료)
 
