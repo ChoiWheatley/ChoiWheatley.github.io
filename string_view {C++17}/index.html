@@ -48420,14 +48420,19 @@
 <hr />
 <p><code>const string &amp;</code> 인자에 스트링 리터럴(<code>const char *</code>)을 넣으면 string타입 객체를 암묵적으로 생성하기 때문에 비효율적이다. 따라서 <code>string_view</code> 타입이 나왔다.</p>
 <p><code>string_view</code>는 문자열의 시작주소와 그 길이만을 저장하고 있기 때문에 string 인자에 비해 효율적이다. 또한 <code>substr</code> 연산도 또 다른 view를 리턴하기 때문에 문자열을 수정할 일이 없다면 이것을 쓰는 것이 좋다.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * python-style string slicing</span>
+<span class="cm"> * str[start:end]</span>
+<span class="cm"> */</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="nf">slice</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string_view</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">end</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="string_view-string">string_view는 string이 언제 소멸될지 알 수 없어 위험하다<a class="headerlink" href="#string_view-string" title="Permanent link">#</a></h2>
 <p><a href="https://stackoverflow.com/questions/46032307/how-to-efficiently-get-a-string-view-for-a-substring-of-stdstring">https://stackoverflow.com/questions/46032307/how-to-efficiently-get-a-string-view-for-a-substring-of-stdstring</a> 에서 string_view가 UB를 낳는 시한폭탄이라는 평가가 있다.</p>
 <h2 id="_1">사용예시<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><a href="https://leetcode.com/problems/longest-palindromic-substring">https://leetcode.com/problems/longest-palindromic-substring</a> 문제 풀이 소스. 파이썬이 개쩌는 언어라는 것을 다시 한 번 깨닫게 만들어주는 문제</p>
+<p><a href="https://leetcode.com/problems/longest-palindromic-substring">https://leetcode.com/problems/longest-palindromic-substring</a> 문제 풀이 소스. 파이썬이 개쩌는 언어라는 것을 다시 한 번 깨닫게 만들어주는 문제.</p>
+<p>파이썬의 <code>s[a:b]</code> 문법은 C++에서 <code>string_view{s}.substr(a, b - a + 1)</code>이다.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
@@ -48447,7 +48452,7 @@
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">string_view</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">        </span><span class="n">string_view</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;operator=&#39; assgin 연산자도 가능!</span>
 <span class="w">        </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ret</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
 <span class="w">        </span><span class="c1">// 짝수 길이</span>
