@@ -4,7 +4,7 @@ tags:
 description:
 title: string {C++}
 created: 2024-01-13T12:26:28
-updated: 2024-01-13T19:07:22
+updated: 2024-01-13T19:32:07
 ---
 - [[C++]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
@@ -12,7 +12,7 @@ updated: 2024-01-13T19:07:22
 - [std\:\:basic_string](https://en.cppreference.com/w/cpp/string/basic_string) 문자열을 저장하고 수정하는 기능을 정의해놓은 템플릿 클래스 
 - [std\:\:char_traits](https://en.cppreference.com/w/cpp/string/char_traits) 문자(열) 연산들에 대한 기본적인 기능을 정의해놓은 템플릿 클래스. 
 	- 대소비교, 할당/이동/복사 연산자, find, 변환 등을 정의한다.
-- [[string_view {C++}]]
+- [[string_view {C++17}]]
 - 
 
 ## std::string 과 std:;basic_string과의 차이점을 설명해주세요
@@ -58,4 +58,8 @@ int main(void) {
 
 UTF-8은 유니코드 문자열을 최소 1바이트, 최대 4바이트로 표현하는 방식을 의미하고 UTF-16은 2 또는 4바이트로 표현하는 방식을 의미하며, UTF-32는 모든 유니코드를 4바이트로 표현하는 방식을 뜻합니다. 웹에서는 효율적으로 문자열을 취급하기 위해 UTF-8을 사용합니다.
 
-한 글자 한 글자의 바이트수가 다르기 때문에 단순 인덱싱으로는 원하는 글자가 나오지 않습니다. 따라서 
+한 글자 한 글자의 바이트수가 다르기 때문에 단순 인덱싱으로는 원하는 글자가 나오지 않습니다. 따라서 UTF-16 또는 32 문자열을 사용하거나 유니코드 규칙에 따라 비트마스크를 사용하여 글자의 바이트 수를 직접 파악하는 방법이 있습니다.
+
+## string_view (C++17~)
+
+- [[string_view {C++17}]]
