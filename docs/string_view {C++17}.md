@@ -4,7 +4,7 @@ tags:
 description:
 title: string_view {C++17}
 created: 2024-01-13T12:54:26
-updated: 2024-01-13T19:40:44
+updated: 2024-01-14T00:14:27
 ---
 - [[string {C++}]]
 - <https://modoocode.com/292#page-heading-9>
@@ -19,3 +19,5 @@ void func(std::string_view str) {
 	
 }
 ```
+
+<https://stackoverflow.com/questions/46032307/how-to-efficiently-get-a-string-view-for-a-substring-of-stdstring> 에서 string_view가 UB를 낳는 시한폭탄이라는 평가가 있다.
