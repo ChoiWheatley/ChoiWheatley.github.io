@@ -4,7 +4,7 @@ tags:
 description:
 title: string_view {C++17}
 created: 2024-01-13T12:54:26
-updated: 2024-01-14T00:14:27
+updated: 2024-01-14T00:56:48
 ---
 - [[string {C++}]]
 - <https://modoocode.com/292#page-heading-9>
@@ -20,4 +20,56 @@ void func(std::string_view str) {
 }
 ```
 
+## string_view는 string이 언제 소멸될지 알 수 없어 위험하다
+
 <https://stackoverflow.com/questions/46032307/how-to-efficiently-get-a-string-view-for-a-substring-of-stdstring> 에서 string_view가 UB를 낳는 시한폭탄이라는 평가가 있다.
+
+## 사용예시
+
+<https://leetcode.com/problems/longest-palindromic-substring> 문제 풀이 소스. 파이썬이 개쩌는 언어라는 것을 다시 한 번 깨닫게 만들어주는 문제
+
+```cpp
+#include <string>
+#include <cassert>
+class Solution {
+    using sv = string_view;
+    sv expand(sv s, int left, int right) {
+        while (left >= 0 && right < s.size() && s[left] == s[right]) {
+            left--;
+            right++;
+        }
+        left++;
+        right--;
+        return s.substr(left, right - left + 1);
+    }
+
+public:
+    string longestPalindrome(string s) {
+        if (s.size() == 1) {
+            return s;
+        }
+        string_view ret = s;
+        ret = ret.substr(0, 1);
+
+        // 짝수 길이
+
+        for (int i = 0; i < s.size() - 1; ++i) {
+            auto palindrome = expand(s, i, i + 1);
+            if (palindrome.size() > ret.size()) {
+                ret = palindrome;
+            }
+        }
+
+        // 홀수 길이
+
+        for (int i = 0; i < s.size() - 2; ++i) {
+            auto palindrome = expand(s, i, i + 2);
+            if (palindrome.size() > ret.size()) {
+                ret = palindrome;
+            }
+        }
+
+        return string{ret};
+    }
+};
+```
