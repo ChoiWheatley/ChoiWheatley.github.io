@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -12249,6 +12254,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../nodejs%EC%9D%98%20event%20loop%EC%97%90%20%EB%8C%80%ED%95%B4%EC%84%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94/" class="md-tabs__link">
+        
+  
+    
+  
+  Nodejs의 event loop에 대해서 설명해 주세요
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../nodemon%2C%20auto%20reload%20nodejs%20server%20%7Bnpm%7D/" class="md-tabs__link">
         
   
@@ -24295,6 +24317,27 @@
   
   <span class="md-ellipsis">
     2024-01-12
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-14
   </span>
   
 
@@ -38499,6 +38542,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodejs%EC%9D%98%20event%20loop%EC%97%90%20%EB%8C%80%ED%95%B4%EC%84%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nodejs의 event loop에 대해서 설명해 주세요
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodemon%2C%20auto%20reload%20nodejs%20server%20%7Bnpm%7D/" class="md-nav__link">
         
   
@@ -46706,6 +46769,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    자바스크립트 이벤트 루프 구조 및 동작원리에 대해서 설명해 주세요
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -46715,6 +46789,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      콜백큐는 선점형인가요, 비선점형인가요?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -48358,6 +48458,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      콜백큐는 선점형인가요, 비선점형인가요?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -48377,6 +48494,10 @@
 <li><a href="../index/0012%20Career%20%F0%9F%92%BC/">0012 Career 💼</a></li>
 <li><a href="https://inpa.tistory.com/entry/🔄-자바스크립트-이벤트-루프-구조-동작-원리#">https://inpa.tistory.com/entry/🔄-자바스크립트-이벤트-루프-구조-동작-원리#</a></li>
 </ul>
+<hr />
+<p>자바스크립트가 싱글스레드로 이루어져 있지만 Web API의 다양한 서비스를 동기/비동기적으로 처리하기 위해 이벤트 루프라는 작업 관리자를 사용합니다. 이벤트 루프에는 콜백큐라는 자료구조가 핵심인데요, 네트워크, 사용자 입력과 같은 요청을 별도의 스레드에게 넘긴 뒤 작업이 완료되면 콜백함수 형태로 등록한 함수들이 콜백큐에 들어가 대기하게 됩니다.</p>
+<h2 id="_1">콜백큐는 선점형인가요, 비선점형인가요?<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>콜백큐는 여러개의 큐로 이루어져 있는 비선점형 방식을 채택했습니다. 큐들 간에는 우선순위가 존재하고, 먼저 틱 계산과 같은 높은 우선순위의 큐를 소진시킨 뒤에 일반 큐를 처리합니다. </p>
 
 
 

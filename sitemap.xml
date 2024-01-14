@@ -3541,6 +3541,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/nodejs%EC%9D%98%20event%20loop%EC%97%90%20%EB%8C%80%ED%95%B4%EC%84%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94/</loc>
+         <lastmod>2024-01-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/nodemon%2C%20auto%20reload%20nodejs%20server%20%7Bnpm%7D/</loc>
          <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
@@ -6722,6 +6727,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2024-01-12/</loc>
+         <lastmod>2024-01-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2024-01-14/</loc>
          <lastmod>2024-01-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
