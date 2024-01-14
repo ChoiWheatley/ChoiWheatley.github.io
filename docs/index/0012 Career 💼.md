@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-12T16:29:10
+updated: 2024-01-14T10:55:49
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -27,12 +27,23 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - \[네이버랩스] FE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91392> 
 - \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
 - \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
+- 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
 
 ## 지원완료
 
 - 2024-01-04 지원한  [엔셀(주)-IT사업부 SW개발자](http://joburl.kr/bJw5r)
 - [\[Project inZOI Unit\] Jr. Client Programmer (신입 / 경력무관)](https://boards.greenhouse.io/krafton/jobs/7078974002?t=f7e1ac3e2us)
 - [[보이저엑스 정글전형 (6개월인턴)]]
+
+### 지원한 회사 현황
+
+- 정글 협력사:
+	- 팀 코퍼레이션: 불합격
+	 - 니어스랩: 불합격
+	 - 보이저엑스: 1차 면접 통과, 2차면접 남음
+	 - 크래프톤: 직무 테스트 통과, 직무면접, 최종면접 남음
+ - 기타
+	 - 엔셀(주): 지원완. 코딩테스트, 발표 및 면접 남음
 
 ## 정신무장
 
@@ -212,3 +223,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[신도리코 채용연계형 인턴 및 경력직 모집_전산개발 부문]]
 - [[카카오 클라우드 스쿨 3기]]
 - [[SSAFY 10기]]
+- 정글 협력사:
+	- 팀 코퍼레이션: 불합격
+	 - 니어스랩: 불합격
