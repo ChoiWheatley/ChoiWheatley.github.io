@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-13T19:55:22
+updated: 2024-01-14T17:17:28
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
@@ -49,7 +49,8 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[map insert, set insert 잘못 쓰면 인생 망함]]
 - [[random {C++}]]
 - [[inline {C++}]]
-- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}]]
+- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
+- [[explicit constructor {C++}]]
 
 ## C++ 기초
 
