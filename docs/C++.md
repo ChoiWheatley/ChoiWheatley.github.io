@@ -13,21 +13,15 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-12T13:20:30
+updated: 2024-01-13T19:55:22
 ---
 parent link: [[0010 Programming 👩‍💻|programming]]
 
 ---
 
-## Interview 준비
+## C++ 기초
 
-양질의 C++ 인터뷰 문제가 많아 별도의 헤더로 뺐습니다.
-
-- [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
-- [pocu.academy C++ 언매니지드 프로그래밍](https://pocu.academy/ko/Courses/COMP3200) 커리큘럼이 좋아서 가져옴
-- [포프TV C++](https://www.youtube.com/playlist?list=PLW_uvsSPlijtSmrhajc3Y02G86lOieQOb) 김포프 C++ 관련 비디오 모음집
-- [tv.popekim.com](https://tv.popekim.com/Search?q=c%2B%2B) 김포프 검색엔진(...) C++ 결과
-- [modoocode.com 씹어먹는 C++](https://modoocode.com/category/C++) 기초부터 심화, 최신기술까지
+- [[string {C++}]]
 
 ## Scrapped
 
@@ -53,10 +47,12 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[extern 키워드 + 컴파일 인자로 여러개의 cpp 파일을 동일한 스코프에  때려넣자]]
 - [[vector나 array는 인접 메모리 공간에 상주하고 있는 변수가 없으면 out of bound error를 일으키지 않는다]]
 - [[vector의 back 이나 end는 비어있을 때 undefined behavior를 발생시킨다]]
-- [[static_cast {c++}]]
+- [[type casting {C++}]]
+	- [[static_cast {c++}]]
 - [[Constraints and concepts {C++20}]]
 - [[map insert, set insert 잘못 쓰면 인생 망함]]
 - [[random {C++}]]
+- [[inline {C++}]]
 
 ## 개꿀팁 (스크랩 완료)
 
@@ -77,6 +73,10 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 
 - [[unordered_map {{cpp}}]]
 
+## Externel libraries
+
+- <https://github.com/nemtrif/utfcpp> : utf-8을 손쉽게
+
 ## 도서
 
 - [Effective Modern C++ 1st Edition](https://www.amazon.com/Effective-Modern-Specific-Ways-Improve-ebook/dp/B00PGCMGDQ?ref_=ast_author_dp&dib=eyJ2IjoiMSJ9.8wycxcWW2JL3mHaDyQLpK0AZJghgeJpe2KVMEsoCPd2LeRj5C2tlwIlfs3uHvqzV-xNEqJUsrudr9KTaUSo3iknni1d5bw2ztr45CEpKg5uS7q9Tg8-N3eFdmAuw_5lMbKo4DwwbzVBXOQpJYrwYroTA25OzL3nfUni1bUUvp1edJjmIBuBzORaZSVOeSPFu.vjrNBOFb5M2QTljaRVksy5GumuXnvSoRwOpaot_0A6A&dib_tag=AUTHOR)
@@ -88,3 +88,4 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - 개수도 추상화 할 수 있나?  `array<T, 3>` 보단 `vector<T>`가 훨씬 추상적이므로 추상 인터페이스를 만들 때 굳이 array로 만들 필요는 없을까?
 - const는 값에 사용하는 게 좋을까요, 포인터에 사용하는 게 좋을까요? 링크드 리스트에서 N번째 원소의 값을 바꾸고자 할 때원소를 새 값으로 덮어쓰는 것이 좋을까요, N번째 컨테이너를 RAII 원칙에 따라 새로 생성하고 앞, 뒤를 서로 연결하는 것이 좋을까요?
 - [[push_back과 emplace_back의 차이점은 무엇인가요 {c++}]]
+- `Base obj = Derive();` 이 문장은 유효한가요?
