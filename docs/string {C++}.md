@@ -4,7 +4,7 @@ tags:
 description:
 title: string {C++}
 created: 2024-01-13T12:26:28
-updated: 2024-01-14T16:40:33
+updated: 2024-01-14T20:11:58
 ---
 - [[C++]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
@@ -59,6 +59,21 @@ int main(void) {
 UTF-8은 유니코드 문자열을 최소 1바이트, 최대 4바이트로 표현하는 방식을 의미하고 UTF-16은 2 또는 4바이트로 표현하는 방식을 의미하며, UTF-32는 모든 유니코드를 4바이트로 표현하는 방식을 뜻합니다. 웹에서는 효율적으로 문자열을 취급하기 위해 UTF-8을 사용합니다.
 
 한 글자 한 글자의 바이트수가 다르기 때문에 단순 인덱싱으로는 원하는 글자가 나오지 않습니다. 따라서 UTF-16 또는 32 문자열을 사용하거나 유니코드 규칙에 따라 비트마스크를 사용하여 글자의 바이트 수를 직접 파악하는 방법이 있습니다.
+
+**2024-01-14 추가**
+
+- [포프TV / UTF8로 쳐바르자](https://youtu.be/qouu3gMJFJY?si=rYjnM4jbuK3sZ_UV)
+
+UTF8 -> 16 또는 32로 변환해서 편하게 인덱싱 & 사이즈 측정하면 좋지 않을까 생각했으나, 생각해보니 그럼 메모리 공간을 두배 + a 사용하게 되는 것이다. 그래서 포프 아조씨는 자기만의 string 라이브러리를 만들어놓고 유니코드로 작업이 필요할때마다 해당 라이브러리를 불러다 쓴다고 했다.
+
+- [Stack Overflow / utf8 문자열의 `length` 구하기](https://stackoverflow.com/questions/4063146/getting-the-actual-length-of-a-utf-8-encoded-stdstring) => count all first-bytes the onew that don't match 10xxxxxx.
+
+```cpp
+int len = 0;
+while (*s) {
+	len += (*s++ & 0b11000000) != 0b10000000;
+}
+```
 
 ## string_view (C++17~)
 
