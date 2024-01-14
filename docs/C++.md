@@ -13,10 +13,13 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-14T17:17:28
+updated: 2024-01-14T18:120498:55
 ---
-parent link: [[0010 Programming 👩‍💻|programming]]
-
+- parent link: [[0010 Programming 👩‍💻|programming]]
+- [최근 겪은 C++ 인터뷰 경험 - OKKY](https://okky.kr/articles/1482509) C++ 실무자들에게 자주 묻는 면접질문 모음집
+- [pocu.academy C++ 언매니지드 프로그래밍](https://pocu.academy/ko/Courses/COMP3200) 커리큘럼이 좋아서 가져옴
+- [modoocode.com 씹어먹는 C++](https://modoocode.com/category/C++) 기초부터 심화, 최신기술까지
+- [포프TV C++ 관련 비디오 모음집](https://www.youtube.com/playlist?list=PLW_uvsSPlijtSmrhajc3Y02G86lOieQOb)
 ---
 
 ## Scrapped
@@ -49,7 +52,6 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[map insert, set insert 잘못 쓰면 인생 망함]]
 - [[random {C++}]]
 - [[inline {C++}]]
-- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
 - [[explicit constructor {C++}]]
 
 ## C++ 기초
@@ -66,6 +68,7 @@ parent link: [[0010 Programming 👩‍💻|programming]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
 - [[stream, iterator, functional programming {C++}]]
 - [[references in {C++}]]
+- [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
 
 ## Algorithm 개꿀팁
 
