@@ -4,7 +4,7 @@ tags:
 description:
 title: string {C++}
 created: 2024-01-13T12:26:28
-updated: 2024-01-13T19:32:07
+updated: 2024-01-14T16:40:33
 ---
 - [[C++]]
 - [[커스텀 타입을 string으로 변환하는 방법 {C++}]]
@@ -19,7 +19,7 @@ updated: 2024-01-13T19:32:07
 
 `std::string`은 `std::basic_string<char>`입니다. 그러니까, char 타입으로 특수화된 객체인거죠.
 
-> basic_string과 char_traits의 차이점을 설명해주세요
+## basic_string과 char_traits의 차이점을 설명해주세요
 
 - <https://modoocode.com/292#page-heading-0>
 - <https://en.cppreference.com/w/cpp/string/basic_string>
