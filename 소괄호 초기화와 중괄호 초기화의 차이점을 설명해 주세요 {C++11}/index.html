@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/%EC%86%8C%EA%B4%84%ED%98%B8%20%EC%B4%88%EA%B8%B0%ED%99%94%EC%99%80%20%EC%A4%91%EA%B4%84%ED%98%B8%20%EC%B4%88%EA%B8%B0%ED%99%94%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94%20%7BC%2B%2B%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/%EC%86%8C%EA%B4%84%ED%98%B8%20%EC%B4%88%EA%B8%B0%ED%99%94%EC%99%80%20%EC%A4%91%EA%B4%84%ED%98%B8%20%EC%B4%88%EA%B8%B0%ED%99%94%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94%20%7BC%2B%2B11%7D/">
       
       
         <link rel="prev" href="../%EC%86%8C%20%EB%96%A1%EC%8B%AC%20%EC%88%98%EB%B9%84%EB%93%9C/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++} - Choi Wheatley's Second Brain</title>
+        <title>소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#stdinitializer_list" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}
+              소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}
             
           </span>
         </div>
@@ -18325,7 +18330,7 @@
   
     
   
-  소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}
+  소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}
 
       </a>
     </li>
@@ -45684,15 +45689,61 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}
+    소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stdinitializer_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::initializer_list와 혼동이 올 수 있는데 어떤 차이가 있나요?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      초기화의 종류
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -48416,6 +48467,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stdinitializer_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::initializer_list와 혼동이 올 수 있는데 어떤 차이가 있나요?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      초기화의 종류
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -48429,12 +48506,33 @@
                   
 
 
-  <h1>소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++}</h1>
+  <h1>소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}</h1>
 
 <ul>
 <li><a href="../index/0012%20Career%20%F0%9F%92%BC/">0012 Career 💼</a></li>
 <li><a href="https://en.cppreference.com/w/cpp/language/list_initialization">cppreference.com / list_initialization</a></li>
-<li></li>
+<li><a href="https://modoocode.com/286">modoocode.com / C++ 유니폼 초기화 (Uniform Initialization)</a></li>
+<li><a href="https://mariusbancila.ro/blog/2017/04/13/cpp17-new-rules-for-auto-deduction-from-braced-init-list/">mariusbancila.ro / C++17 New Rules For auto Deduction From braced-init-list</a></li>
+</ul>
+<hr />
+<p>소괄호 초기화는 C++11에 도입된 초기화 방법입니다. 암시적인 형변환을 막고 기존의 함수의 정의처럼 보이는 초기화 문제를 해결했습니다. </p>
+<h2 id="stdinitializer_list">std::initializer_list와 혼동이 올 수 있는데 어떤 차이가 있나요?<a class="headerlink" href="#stdinitializer_list" title="Permanent link">#</a></h2>
+<p>C 배열을 초기화할 때 사용하는 문법 그대로 컨테이너들을 간단하게 초기화할 수 있습니다. 하지만 uniform initialization과 모양이 흡사하기 때문에 컨테이너 타입 객체를 초기화할때 주의해야 합니다.</p>
+<p>벡터 생성자의 첫번째 인자로 <code>size_type count</code>가 있는데, 소괄호 생성자를 사용하면 count 개수만큼의 공간을 할당받아놓고, 중괄호 생성자를 사용하면 원소 하나짜리 벡터가 만들어지게 됩니다. 왜냐면 원소 한개짜리 initializer_list라고 생각하기 때문입니다. C++은 중괄호 연산자에 대하여 initializer_list를 받는 생성자가 최우선으로 고려된다고 합니다.</p>
+<h2 id="_1">초기화의 종류<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>출처 : <a href="https://mariusbancila.ro/blog/2017/04/13/cpp17-new-rules-for-auto-deduction-from-braced-init-list/">mariusbancila.ro / C++17 New Rules For auto Deduction From braced-init-list</a></p>
+</li>
+<li>
+<p><a href="http://en.cppreference.com/w/cpp/language/default_initialization">default initialization</a>: std::string s;</p>
+</li>
+<li><a href="http://en.cppreference.com/w/cpp/language/value_initialization">value initialization</a>: std::string s{};</li>
+<li><a href="http://en.cppreference.com/w/cpp/language/direct_initialization">direct initialization</a>: std::string s("demo");</li>
+<li><a href="http://en.cppreference.com/w/cpp/language/copy_initialization">copy initialization</a>: std::string s = "demo";</li>
+<li><a href="http://en.cppreference.com/w/cpp/language/list_initialization">list initialization</a>: std::string s{'d', 'e', 'm', 'o'};</li>
+<li><a href="http://en.cppreference.com/w/cpp/language/aggregate_initialization">aggregate initialization</a>: char s[5] = {'d', 'e', 'm', 'o'};</li>
+<li><a href="http://en.cppreference.com/w/cpp/language/reference_initialization">reference initialization</a>: char&amp; c = s[0];</li>
 </ul>
 
 
