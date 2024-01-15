@@ -60,7 +60,7 @@ updated: 2024-01-15T12:43:14
 - [[auto keyword {C++}]]
 - [[inline {C++}]]
 - [[nullptr VS NULL {C++}]]
-- [[fixed width integer types {C++}]]
+- [[fixed width integer types {C++11}]]
 
 ## 개꿀팁 (스크랩 완료)
 
