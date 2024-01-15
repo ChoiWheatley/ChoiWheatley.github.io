@@ -1961,6 +1961,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/UTF8%EC%9D%B4%20%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80%20%EC%84%A4%EB%AA%85%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94.%20UTF8%20%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%98%20%EA%B8%B8%EC%9D%B4%EB%A5%BC%20%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%EA%B3%BC%20n%EB%B2%88%EC%A7%B8%20%EB%AC%B8%EC%9E%90%EB%A5%BC%20%EA%B0%80%EC%A0%B8%EC%98%A4%EB%8A%94%20%EB%B0%A9%EB%B2%95%EC%97%90%20%EB%8C%80%ED%95%B4%EC%84%9C%EB%8F%84%20%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Understanding%20Rust%20futures%20by%20going%20way%20too%20deep/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
@@ -2581,7 +2586,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/deleted%20function%20%7BC%2B%2B%7D/</loc>
+         <loc>https://choiwheatley.github.io/deleted%20function%20%7BC%2B%2B%7D%20TODO/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2872,6 +2877,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/five%20terrible%20horseman%20of%20making%20unsafe%20Rust%20collections/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/fixed%20width%20integer%20types%20%7BC%2B%2B11%7D/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -6792,6 +6802,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2024-01-14/</loc>
+         <lastmod>2024-01-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2024-01-15/</loc>
          <lastmod>2024-01-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
