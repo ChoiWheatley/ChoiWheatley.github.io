@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-14T20:22:48
+updated: 2024-01-15T20:30:31
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -89,6 +89,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [JaeYeopHan/Interview_Question_for_Beginner {GH}](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
 - [현직 개발자가 정리해주는 프론트엔드 신입 기술 면접 문제 은행 20선](https://zero-base.co.kr/event/media_insight_contents_FE_frontend_tech_Interview) JS 특징들 위주의 질문
 - [보이저엑스 개발자 채용사이트](https://v6xcareer.notion.site/2f61a1b40c81495eaf564cde9efc6089)에서 기술질문 예제를 확인할 수 있음.
+- [게임 프로그래머 인성질문 모음집](https://youtu.be/ue3CQIfBjts?feature=shared)
 
 ### Notion에서 마이그레이션한 인터뷰 질문들
 
@@ -180,7 +181,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - 2024-01-07 면접스터디
 	- MVC 모델, MVVM 모델의 차이점
 	- syscall이 무엇인지
-	- UTF-8이 무엇인가요
 	- JS async 인풋, 아웃풋에 관하여
 		- input: resolve, reject
 		- output: Promise
@@ -197,6 +197,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 - [[typescript 언어에 대해서 설명해주세요]]
 - [[마크다운이란 무엇이고, 왜 써야 할까요, 한계가 무엇인가요]]
+- [[UTF8이 무엇인지 설명해 주세요. UTF8 문자열의 길이를 측정하는 방법과 n번째 문자를 가져오는 방법에 대해서도 설명해주세요]]
 
 ### 면접 후기
 

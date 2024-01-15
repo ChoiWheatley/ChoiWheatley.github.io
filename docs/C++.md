@@ -52,7 +52,7 @@ updated: 2024-01-15T12:43:14
 - [[map insert, set insert 잘못 쓰면 인생 망함]]
 - [[random {C++}]]
 - [[explicit constructor {C++}]]
-- [[deleted function {C++}]]
+- [[deleted function {C++} TODO]]
 
 ## C++ 기초
 
@@ -60,6 +60,7 @@ updated: 2024-01-15T12:43:14
 - [[auto keyword {C++}]]
 - [[inline {C++}]]
 - [[nullptr VS NULL {C++}]]
+- [[fixed width integer types {C++}]]
 
 ## 개꿀팁 (스크랩 완료)
 

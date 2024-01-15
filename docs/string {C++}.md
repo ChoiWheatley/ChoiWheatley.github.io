@@ -66,7 +66,7 @@ UTF-8은 유니코드 문자열을 최소 1바이트, 최대 4바이트로 표�
 
 UTF8 -> 16 또는 32로 변환해서 편하게 인덱싱 & 사이즈 측정하면 좋지 않을까 생각했으나, 생각해보니 그럼 메모리 공간을 두배 + a 사용하게 되는 것이다. 그래서 포프 아조씨는 자기만의 string 라이브러리를 만들어놓고 유니코드로 작업이 필요할때마다 해당 라이브러리를 불러다 쓴다고 했다.
 
-- [Stack Overflow / utf8 문자열의 `length` 구하기](https://stackoverflow.com/questions/4063146/getting-the-actual-length-of-a-utf-8-encoded-stdstring) => count all first-bytes the onew that don't match 10xxxxxx.
+- [Stack Overflow / utf8 문자열의 `length` 구하기](https://stackoverflow.com/questions/4063146/getting-the-actual-length-of-a-utf-8-encoded-stdstring) => count all first-bytes the one that don't match 10xxxxxx.
 
 ```cpp
 int len = 0;

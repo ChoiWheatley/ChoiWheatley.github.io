@@ -4,7 +4,7 @@ tags:
 description:
 title: auto keyword {C++}
 created: 2024-01-14T20:13:56
-updated: 2024-01-15T12:01:28
+updated: 2024-01-15T20:35:56
 ---
 - [[C++]]
 - [포프TV / 내가 쓰는 C++11: auto](https://youtu.be/GmyXz-HQY-U)
@@ -48,3 +48,26 @@ const auto & f() { return x; } // return type is const int &
 ```
 
 ## Initializer_list와 auto
+
+- [modoocode.com](https://modoocode.com/286#page-heading-3)
+
+C++17 이전
+
+```cpp
+auto a = {1};     // std::initializer_list<int>
+auto b{1};        // std::initializer_list<int>
+auto c = {1, 2};  // std::initializer_list<int>
+auto d{1, 2};     // std::initializer_list<int>
+```
+
+C++ 17 부터 아래와 같이 두 가지 형태로 구분해서 `auto` 타입이 추론됩니다.
+
+- `auto x = {arg1, arg2...}` 형태의 경우 `arg1`, `arg2` ... 들이 모두 같은 타입이라면 `x` 는 `std::initializer_list<T>` 로 추론됩니다.
+- `auto x {arg1, arg2, ...}` 형태의 경우 만일 인자가 단 1 개라면 인자의 타입으로 추론되고, 여러 개일 경우 오류를 발생시킵니다.
+
+```cpp
+auto a = {1};     // 첫 번째 형태이므로 std::initializer_list<int>
+auto b{1};        // 두 번째 형태 이므로 그냥 int
+auto c = {1, 2};  // 첫 번째 형태이므로 std::initializer_list<int>
+auto d{1, 2};  // 두 번째 형태 인데 인자가 2 개 이상이므로 컴파일 오류
+```
