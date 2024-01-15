@@ -51,13 +51,14 @@ updated: 2024-01-14T18:120498:55
 - [[Constraints and concepts {C++20}]]
 - [[map insert, set insert 잘못 쓰면 인생 망함]]
 - [[random {C++}]]
-- [[inline {C++}]]
 - [[explicit constructor {C++}]]
+- [[deleted function {C++}]]
 
 ## C++ 기초
 
 - [[string {C++}]]
 - [[auto keyword {C++}]]
+- [[inline {C++}]]
 
 ## 개꿀팁 (스크랩 완료)
 

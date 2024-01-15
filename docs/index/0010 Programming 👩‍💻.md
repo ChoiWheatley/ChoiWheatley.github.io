@@ -82,6 +82,7 @@ ___
 
 - 구현 중에 갑자기 다른 코드로 갈아엎고 싶다는 충동이 든다. 어떻게 해야할까?
 - [[업무로직을 프론트에서 짜야합니까, 백엔드에서 짜야합니까]]
+- [[Difference between generics and polymorphism]]
 
 
 ___
