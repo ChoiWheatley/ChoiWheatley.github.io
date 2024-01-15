@@ -4,7 +4,7 @@ tags:
 description:
 title: auto keyword {C++}
 created: 2024-01-14T20:13:56
-updated: 2024-01-14T21:42:50
+updated: 2024-01-15T12:01:28
 ---
 - [[C++]]
 - [포프TV / 내가 쓰는 C++11: auto](https://youtu.be/GmyXz-HQY-U)
@@ -46,3 +46,5 @@ int x = 1;
 auto f() { return x; } // return type is int
 const auto & f() { return x; } // return type is const int &
 ```
+
+## Initializer_list와 auto
