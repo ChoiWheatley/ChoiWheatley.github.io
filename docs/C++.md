@@ -55,7 +55,7 @@ updated: 2024-01-16T19:30:23
 - [[deleted function {C++} TODO]]
 - [[ranged for loop {C++11}]]
 - [[lambda expression {C++} TODO]]
-- [[namespaces {{C++} TODO]]
+- [[namespaces {C++} TODO]]
 
 ## C++ 기초
 
