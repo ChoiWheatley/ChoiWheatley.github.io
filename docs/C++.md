@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-15T12:43:14
+updated: 2024-01-16T19:30:23
 ---
 - parent link: [[0010 Programming 👩‍💻|programming]]
 - [최근 겪은 C++ 인터뷰 경험 - OKKY](https://okky.kr/articles/1482509) C++ 실무자들에게 자주 묻는 면접질문 모음집
@@ -53,6 +53,9 @@ updated: 2024-01-15T12:43:14
 - [[random {C++}]]
 - [[explicit constructor {C++}]]
 - [[deleted function {C++} TODO]]
+- [[ranged for loop {C++11}]]
+- [[lambda expression {C++} TODO]]
+- [[namespaces {{C++} TODO]]
 
 ## C++ 기초
 
