@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-16T16:38:42
+updated: 2024-01-16T19:24:23
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -32,7 +32,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 ## 지원완료
 
-- 2024-01-04 지원한  [엔셀(주)-IT사업부 SW개발자](http://joburl.kr/bJw5r)
 - [\[Project inZOI Unit\] Jr. Client Programmer (신입 / 경력무관)](https://boards.greenhouse.io/krafton/jobs/7078974002?t=f7e1ac3e2us)
 - [[보이저엑스 정글전형 (6개월인턴)]]
 
@@ -238,3 +237,4 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - 정글 협력사:
 	- 팀 코퍼레이션: 불합격
 	 - 니어스랩: 불합격
+- 2024-01-04 지원한  [엔셀(주)-IT사업부 SW개발자](http://joburl.kr/bJw5r) JAVA 코딩테스트 안봄
