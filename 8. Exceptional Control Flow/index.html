@@ -24668,6 +24668,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-17/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 01 17
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Daily%20Notes/Daily%20Notes/" class="md-nav__link">
         
   
@@ -49184,7 +49205,10 @@
 </li>
 <li>trap에 의해 syscall이 호출될 수도 있지만 interrupt에 의해서도 context switch될 수도 있다. <ul>
 <li><em>trap</em>: 커널에게 <code>read</code> 요청을 보내면 디스크가 완료 시그널을 보낼때까지 현 프로세스를 sleep시키고 context switch</li>
-<li><em>interrupt</em>: IO device(timer, disk controller)가 보내는 신호에 따라 context switch</li>
+<li><em>interrupt</em>: IO device(timer, disk controller)가 보내는 신호에 따라 context switch<ul>
+<li>시스템 콜은 내부 인터럽트, 소프트웨어 인터럽트에 해당.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
