@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-17T11:31:40
+updated: 2024-01-17T12:41:29
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -156,6 +156,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 ### C++ 관련 면접질문
 
+- [[C++]]
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 - [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
 - [[Ninja, Make, GCC의 관계를 설명해주세요]]
