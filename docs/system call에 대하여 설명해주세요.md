@@ -23,3 +23,4 @@ fork 할때 부모의 레지스터를 복제하는 과정에서 유저랜드가 
 - cs:app에서 Exceptional Control Flow 파트
     - trap, interrupt
 - 프로세서의 Ring에 따른 명령어 권한
+- 
