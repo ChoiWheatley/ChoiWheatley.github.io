@@ -4,7 +4,7 @@ tags:
 description:
 title: 2023-10-10 권영진 교수님 OS 강의 (2차) {swjungle}
 created: 2023-10-10T10:30:01
-updated: 2023-10-10T12:48:00
+updated: 2024-01-17T11:29:45
 ---
 level of indirection에 대해서 배웠다! addr translation mech가 대표적임. 여러 translation mech가 존재하는데 fixed partition, segmentation, 등등 여러 구현방법은 3-easy-pieces 안에 들어있다. 
 

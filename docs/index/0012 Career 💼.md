@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-16T19:24:23
+updated: 2024-01-17T11:31:40
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -143,6 +143,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[LRU]] 알고리즘에 대하여 설명해주세요.
 - [[암달의 법칙에 대하여 설명해주세요]]
 - [[레지스터란 무엇이고 왜 필요한가요]]
+- [[프로세스 간 통신을 어떻게 하나요]]
 
 ### 자료구조 관련 면접질문
 
