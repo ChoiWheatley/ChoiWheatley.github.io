@@ -4,7 +4,7 @@ tags:
 description:
 title: namespaces {C++} TODO
 created: 2024-01-16T22:29:02
-updated: 2024-01-18T18:09:58
+updated: 2024-01-18T18:59:41
 ---
  - [[C++]]
  - [cppreference.com / namespace](https://en.cppreference.com/w/cpp/language/namespace)
@@ -64,3 +64,67 @@ int main() {
 - `MyLibrary::Version1_0::newFunction()`은 버전 1.0에서 추가된 함수로, `inline namespace`를 통해 주 버전과 호환성을 유지합니다.
 
 이러한 구조를 사용하면 새로운 기능을 추가하거나 변경할 때, 코드에서 기존 버전과의 호환성을 유지하면서도 새로운 버전을 도입할 수 있습니다. 예를 들어, 새로운 버전이 출시되면 사용자는 필요한 경우 해당 버전의 함수를 사용하거나, `inline namespace`를 통해 주 버전과의 호환성을 유지하면서 새로운 함수를 사용할 수 있습니다.
+
+```cpp
+namespace Lib {
+inline namespace Lib_1 {
+void new_function() { std::cout << "I'm new function from Lib::Lib_1\n"; }
+} // namespace Lib_1
+void old_function() { std::cout << "I'm old function from Lib\n"; }
+} // namespace Lib
+
+int main(int argc, char const *argv[]) {
+
+	Lib::old_function();
+    Lib::new_function(); // 사용가능! 자동으로 Lib_1가 포함된다.
+
+    using namespace Lib; // using으로 네임스페이스 이름 생략
+    old_function();
+    new_function(); // 사용가능! 자동으로 Lib_1가 포함된다.
+    return 0;
+}
+```
+
+## Unnamed namespace
+
+`unnamed namespace`는 현재 파일이나 컴파일 단위에서만 유효한 익명의 네임스페이스입니다. 이를 사용하는 것에는 몇 가지 쓸모가 있습니다:
+
+1. **정적 범위 (Static Scope):** `unnamed namespace`에 속한 식별자들은 현재 파일이나 컴파일 단위에서만 유효합니다. 따라서 해당 식별자들은 파일 범위에서만 사용 가능하며, 다른 파일에서는 접근할 수 없습니다. 이를 통해 다른 파일과의 식별자 충돌을 방지할 수 있습니다.
+
+    ```cpp
+    // 파일1.cpp
+    namespace {
+        int internalVariable = 42;
+    }
+
+    // 파일2.cpp
+    // 다른 파일에서 internalVariable에 접근 불가
+    ```
+
+2. **의미적인 캡슐화 (Semantic Encapsulation):** `unnamed namespace`를 사용하면 해당 네임스페이스에 속한 식별자들을 구현 세부사항으로 간주할 수 있습니다. 이는 외부에서는 사용하지 말아야 할 내부적인 세부사항을 의미적으로 캡슐화할 수 있는 장점을 제공합니다.
+
+    ```cpp
+    // 파일1.cpp
+    namespace {
+        void internalFunction() {
+            // 내부적인 작업 수행
+        }
+    }
+
+    // 파일2.cpp
+    // internalFunction()을 직접 호출할 수 없음
+    ```
+
+3. **컴파일 단위의 정보 은닉 (Compilation Unit Level Information Hiding):** `unnamed namespace`는 컴파일 단위에서만 유효하므로, 해당 단위의 정보를 다른 컴파일 단위로부터 은닉할 수 있습니다.
+
+    ```cpp
+    // 파일1.cpp
+    namespace {
+        int internalVariable = 42;
+    }
+
+    // 파일2.cpp
+    // 파일1.cpp의 internalVariable에 직접 접근 불가
+    ```
+
+이러한 특성들을 통해 `unnamed namespace`는 코드의 모듈화와 은닉성을 증가시키며, 전역 네임스페이스를 오염시키지 않고도 파일 간의 식별자 충돌을 방지할 수 있습니다.
