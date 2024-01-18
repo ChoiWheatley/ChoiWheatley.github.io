@@ -4,7 +4,7 @@ tags:
 description:
 title: lambda expression {C++} TODO
 created: 2024-01-17T12:45:40
-updated: 2024-01-17T13:06:58
+updated: 2024-01-18722T19306:06:58
 ---
 - [[C++]]
 - [cppreference.com / lambda](https://en.cppreference.com/w/cpp/language/lambda)

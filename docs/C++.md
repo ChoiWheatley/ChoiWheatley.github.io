@@ -13,7 +13,7 @@ aliases:
 tags: [" programming ", programming]
 date created: Friday, February 10th 2023, 4:34:48 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-16T19:30:23
+updated: 2024-01-18T22:17:11
 ---
 - parent link: [[0010 Programming 👩‍💻|programming]]
 - [최근 겪은 C++ 인터뷰 경험 - OKKY](https://okky.kr/articles/1482509) C++ 실무자들에게 자주 묻는 면접질문 모음집
@@ -36,7 +36,6 @@ updated: 2024-01-16T19:30:23
 - [[pointer ownership in c++]]
 - [[Exception Safe Code, Part I - Jon Kalb]]
 - [[Value Categories in C++17 - lvalue, rvalue, prvalue]]
-- [[enum을 예외로 던지지 말라]]
 - [[template 키워드를 선언만 하면 안 되는 이유 C++]]
 - [[Google Test]]
 - [[CMake]]
@@ -53,9 +52,7 @@ updated: 2024-01-16T19:30:23
 - [[random {C++}]]
 - [[explicit constructor {C++}]]
 - [[deleted function {C++} TODO]]
-- [[ranged for loop + custom iterator and container {C++11}]]
-- [[lambda expression {C++} TODO]]
-- [[namespaces {C++} TODO]]
+- [[enum을 예외로 던지지 말라]]
 
 ## C++ 기초
 
@@ -64,6 +61,9 @@ updated: 2024-01-16T19:30:23
 - [[inline {C++}]]
 - [[nullptr VS NULL {C++}]]
 - [[fixed width integer types {C++11}]]
+- [[enum and enum class {C++}]]
+	- [[scope of enum in C vs C++]]
+	- [[using enum {C++20}]]
 
 ## 개꿀팁 (스크랩 완료)
 
@@ -76,6 +76,9 @@ updated: 2024-01-16T19:30:23
 - [[stream, iterator, functional programming {C++}]]
 - [[references in {C++}]]
 - [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
+- [[ranged for loop + custom iterator and container {C++11}]]
+- [[lambda expression {C++}]]
+- [[namespaces {C++}]]
 
 ## Algorithm 개꿀팁
 
