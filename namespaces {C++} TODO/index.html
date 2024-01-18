@@ -38853,6 +38853,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unnamed-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unnamed namespace
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49183,6 +49192,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unnamed-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unnamed namespace
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49258,6 +49276,64 @@
 <li><code>MyLibrary::Version1_0::newFunction()</code>은 버전 1.0에서 추가된 함수로, <code>inline namespace</code>를 통해 주 버전과 호환성을 유지합니다.</li>
 </ul>
 <p>이러한 구조를 사용하면 새로운 기능을 추가하거나 변경할 때, 코드에서 기존 버전과의 호환성을 유지하면서도 새로운 버전을 도입할 수 있습니다. 예를 들어, 새로운 버전이 출시되면 사용자는 필요한 경우 해당 버전의 함수를 사용하거나, <code>inline namespace</code>를 통해 주 버전과의 호환성을 유지하면서 새로운 함수를 사용할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Lib</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">inline</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Lib_1</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">new_function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;I&#39;m new function from Lib::Lib_1</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace Lib_1</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">old_function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;I&#39;m old function from Lib</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="c1">// namespace Lib</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">Lib</span><span class="o">::</span><span class="n">old_function</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Lib</span><span class="o">::</span><span class="n">new_function</span><span class="p">();</span><span class="w"> </span><span class="c1">// 사용가능! 자동으로 Lib_1가 포함된다.</span>
+
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Lib</span><span class="p">;</span><span class="w"> </span><span class="c1">// using으로 네임스페이스 이름 생략</span>
+<span class="w">    </span><span class="n">old_function</span><span class="p">();</span>
+<span class="w">    </span><span class="n">new_function</span><span class="p">();</span><span class="w"> </span><span class="c1">// 사용가능! 자동으로 Lib_1가 포함된다.</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="unnamed-namespace">Unnamed namespace<a class="headerlink" href="#unnamed-namespace" title="Permanent link">#</a></h2>
+<p><code>unnamed namespace</code>는 현재 파일이나 컴파일 단위에서만 유효한 익명의 네임스페이스입니다. 이를 사용하는 것에는 몇 가지 쓸모가 있습니다:</p>
+<ol>
+<li>
+<p><strong>정적 범위 (Static Scope):</strong> <code>unnamed namespace</code>에 속한 식별자들은 현재 파일이나 컴파일 단위에서만 유효합니다. 따라서 해당 식별자들은 파일 범위에서만 사용 가능하며, 다른 파일에서는 접근할 수 없습니다. 이를 통해 다른 파일과의 식별자 충돌을 방지할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 파일1.cpp</span>
+<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">internalVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 파일2.cpp</span>
+<span class="c1">// 다른 파일에서 internalVariable에 접근 불가</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>의미적인 캡슐화 (Semantic Encapsulation):</strong> <code>unnamed namespace</code>를 사용하면 해당 네임스페이스에 속한 식별자들을 구현 세부사항으로 간주할 수 있습니다. 이는 외부에서는 사용하지 말아야 할 내부적인 세부사항을 의미적으로 캡슐화할 수 있는 장점을 제공합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 파일1.cpp</span>
+<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">internalFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 내부적인 작업 수행</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 파일2.cpp</span>
+<span class="c1">// internalFunction()을 직접 호출할 수 없음</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>컴파일 단위의 정보 은닉 (Compilation Unit Level Information Hiding):</strong> <code>unnamed namespace</code>는 컴파일 단위에서만 유효하므로, 해당 단위의 정보를 다른 컴파일 단위로부터 은닉할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 파일1.cpp</span>
+<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">internalVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 파일2.cpp</span>
+<span class="c1">// 파일1.cpp의 internalVariable에 직접 접근 불가</span>
+</code></pre></div>
+</li>
+</ol>
+<p>이러한 특성들을 통해 <code>unnamed namespace</code>는 코드의 모듈화와 은닉성을 증가시키며, 전역 네임스페이스를 오염시키지 않고도 파일 간의 식별자 충돌을 방지할 수 있습니다.</p>
 
 
 
