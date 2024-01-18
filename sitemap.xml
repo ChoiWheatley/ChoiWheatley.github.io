@@ -2806,6 +2806,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/enum%20and%20enum%20class%20%7BC%2B%2B%7D/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/enumerate%20and%20zip/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
@@ -3286,7 +3291,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/lambda%20expression%20%7BC%2B%2B%7D%20TODO/</loc>
+         <loc>https://choiwheatley.github.io/lambda%20expression%20%7BC%2B%2B%7D/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3536,7 +3541,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/namespaces%20%7BC%2B%2B%7D%20TODO/</loc>
+         <loc>https://choiwheatley.github.io/namespaces%20%7BC%2B%2B%7D/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4141,6 +4146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/scope%20of%20enum%20in%20C%20vs%20C%2B%2B/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/select_related%2C%20prefetch_related%20%7Bdjango%20query%7D/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
@@ -4607,6 +4617,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/url%20shortner%20with%20easy-to-memorize/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/using%20enum%20%7BC%2B%2B20%7D/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
