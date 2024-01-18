@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/TLB%20Hit%EC%9D%98%20%EA%B3%BC%EC%A0%95%EC%9D%84%20%EC%88%9C%EC%B0%A8%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%20%2B%20TLB%20Miss/">
+        <link rel="canonical" href="https://choiwheatley.github.io/TLB%20Hit%2C%20Miss%EC%9D%98%20%EA%B3%BC%EC%A0%95%EC%9D%84%20%EC%88%9C%EC%B0%A8%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/">
       
       
         <link rel="prev" href="../T2%20%EB%B3%B4%EC%95%88%EC%B9%A9%EC%9D%B4%20%EB%82%B4%EC%9E%A5%EB%90%9C%20%EB%A7%A5%EB%B6%81%EC%97%90%20%EB%A6%AC%EB%88%85%EC%8A%A4%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>TLB Hit의 과정을 순차적으로 설명해주세요 + TLB Miss - Choi Wheatley's Second Brain</title>
+        <title>TLB Hit, Miss의 과정을 순차적으로 설명해주세요 - Choi Wheatley's Second Brain</title>
       
     
     
@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#-96-address-translation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -108,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TLB Hit의 과정을 순차적으로 설명해주세요 + TLB Miss
+              TLB Hit, Miss의 과정을 순차적으로 설명해주세요
             
           </span>
         </div>
@@ -6714,7 +6719,7 @@
   
     
   
-  TLB Hit의 과정을 순차적으로 설명해주세요 + TLB Miss
+  TLB Hit, Miss의 과정을 순차적으로 설명해주세요
 
       </a>
     </li>
@@ -32427,15 +32432,70 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TLB Hit, Miss의 과정을 순차적으로 설명해주세요
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    TLB Hit의 과정을 순차적으로 설명해주세요 + TLB Miss
+    TLB Hit, Miss의 과정을 순차적으로 설명해주세요
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-96-address-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      - 9.6. Address Translation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tlb-hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB Hit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tlb-miss" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB Miss
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -49219,6 +49279,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-96-address-translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      - 9.6. Address Translation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tlb-hit" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB Hit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tlb-miss" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB Miss
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -49232,11 +49327,13 @@
                   
 
 
-  <h1>TLB Hit의 과정을 순차적으로 설명해주세요 + TLB Miss</h1>
+  <h1>TLB Hit, Miss의 과정을 순차적으로 설명해주세요</h1>
 
-<ul>
-<li><a href="../9.6.%20Address%20Translation/">9.6. Address Translation</a> </li>
-</ul>
+<h2 id="-96-address-translation">- <a href="../9.6.%20Address%20Translation/">9.6. Address Translation</a><a class="headerlink" href="#-96-address-translation" title="Permanent link">#</a></h2>
+<h2 id="tlb-hit">TLB Hit<a class="headerlink" href="#tlb-hit" title="Permanent link">#</a></h2>
+<p>CPU가 가상주소에 해당하는 값을 읽어오라는 명령을 MMU에게 합니다. MMU는 제일먼저 가상주소 뒤의 비트들을 통해 TLB 인덱스와 태그를 알아낸 뒤에 해당 위치에 Validation bit가 켜져있는지 확인합니다. 켜져있는 경우 거기에 적혀있는 물리페이지 번호를 통해 캐시메모리, 물리메모리에 들어있는 값을 확인합니다.</p>
+<h2 id="tlb-miss">TLB Miss<a class="headerlink" href="#tlb-miss" title="Permanent link">#</a></h2>
+<p>TLB 인덱스와 태그에 해당하는 validation bit가 꺼져있는 경우입니다. MMU는 TLB Miss에 대응하는 하드웨어 인터럽트를 발생시키고, 인터럽트 핸들러는 페이지 테이블을 참조해 PTE에 적혀있는 물리주소를 가져오고, 이것으로 캐시메모리, 물리메모리에 들어있는 값을 확인합니다.</p>
 
 
 
