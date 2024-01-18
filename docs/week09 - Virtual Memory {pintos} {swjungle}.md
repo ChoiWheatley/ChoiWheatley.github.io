@@ -15,7 +15,7 @@ updated: 2023-10-20T14:53:26
 	- [Introduction](https://casys-kaist.github.io/pintos-kaist/project3/introduction.html)
 	- [FAQ](https://casys-kaist.github.io/pintos-kaist/project3/FAQ.html)
 	- [한글번역 {Notion}](https://www.notion.so/PROJECT-3-VIRTUAL-MEMORY-d16fc8d04f4d4829b7e25691a235901c)
-- CSAPP: [[9. Virtual Memory]]
+- CSAPP: [[9. Virtual Memory {CSAPP}]]
 - Yujip Won slides
 	- [[2022_Pintos_Part3_VirtualMemory_01_DemandPaging 1.pdf]]
 	- [[2022_Pintos_Part3_VirtualMemory_02_Swapping_etc.pdf]]

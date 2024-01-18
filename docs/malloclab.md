@@ -9,7 +9,7 @@ updated: 2023-09-13T20:58:06
 - [[week 05 {swjungle} {malloc-lab}]]
 - [카네기 멜론 대학의 malloc-lab 과제 {PDF}](http://csapp.cs.cmu.edu/3e/malloclab.pdf)
 - [ChoiWheatley/swjungle-week05-malloc-lab {GH}](https://github.com/ChoiWheatley/swjungle-week05-malloc-lab)
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]] / [[9. Virtual Memory]] / [[⭐️ 9.9. Dynamic Memory Allocation]] 실습을 기반으로 한 과제.
+- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]] / [[9. Virtual Memory {CSAPP}]] / [[⭐️ 9.9. Dynamic Memory Allocation]] 실습을 기반으로 한 과제.
 ___
 
 ## README

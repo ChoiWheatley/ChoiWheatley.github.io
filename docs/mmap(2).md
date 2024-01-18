@@ -8,7 +8,7 @@ updated: 2023-09-18T21:27:11
 ---
 - <https://www.man7.org/linux/man-pages/man2/mmap.2.html>
 - <https://en.wikipedia.org/wiki/Mmap>
-- [[9. Virtual Memory]]
+- [[9. Virtual Memory {CSAPP}]]
 
 ```c
 #include <sys/mman.h>

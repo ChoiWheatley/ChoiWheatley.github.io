@@ -20,7 +20,7 @@ updated: 2024-01-08T17:39:21
 		- [[8. Exceptional Control Flow]]
 			- [[⭐️ 8.1 Exceptions]]
 			- [[⭐️ 8.5. Signals]]
-		- [[9. Virtual Memory]]
+		- [[9. Virtual Memory {CSAPP}]]
 			- [[⭐️ 9.9. Dynamic Memory Allocation]]
 			- [[⭐️ 9.11. Common Memory-Related Bugs in C Programs]]
 	- WEEK05 읽어두면 좋을 챕터들 

@@ -16,7 +16,7 @@ updated: 2023-10909-16T02:021:59:17
 - [[3. Machine Level Representation of Programs {CSAPP}]]
 - [[7. Linking {CSAPP}]]
 - [[8. Exceptional Control Flow]]
-- [[9. Virtual Memory]]
+- [[9. Virtual Memory {CSAPP}]]
 - [[10. System-Level IO {CSAPP}]]
 - [[11. Network Programming {CSAPP}]]
 - [[12. Concurrent Programming {csapp}]]

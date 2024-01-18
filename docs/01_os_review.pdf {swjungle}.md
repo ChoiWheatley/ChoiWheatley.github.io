@@ -22,7 +22,7 @@ mmap을 엄청나게 큰 공간을 할당하고 memset한 시간을 출력. 똑�
 	- 그다지 중요해 보이지 않는 것들을 감추어 단순하게 만드는 것
 	- cpu, memory, storage는 각각 추상화 되어 virtualized cpu, virtual memroy, file이 되었다. 
 - cpu 추상화
-- 메모리 추상화 [[9. Virtual Memory]]  
+- 메모리 추상화 [[9. Virtual Memory {CSAPP}]]  
 	- 페이지를 기준으로 가상 주소 공간과 물리 공간을 매핑  
 	- MMU의 도움 덕분!  
 	- Where is the page tables stored?  >> cpu 내의 캐시메모리  
