@@ -38844,6 +38844,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inline-namespace-gpt-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      inline namespace GPT answer
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49165,6 +49174,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inline-namespace-gpt-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      inline namespace GPT answer
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49205,6 +49223,41 @@
 </ul>
 </li>
 </ul>
+<h2 id="inline-namespace-gpt-answer">inline namespace GPT answer<a class="headerlink" href="#inline-namespace-gpt-answer" title="Permanent link">#</a></h2>
+<p><code>inline namespace</code>는 C++11에서 도입된 기능으로, 라이브러리의 버전 관리나 업그레이드 시 유용하게 사용됩니다. <code>inline namespace</code>를 사용하면 라이브러리의 버전을 간편하게 관리하고 호환성을 유지할 수 있습니다. 아래는 간단한 코드 스니펫과 함께 <code>inline namespace</code>에 대한 설명입니다.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="c1">// 주 버전</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">MyLibrary</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">commonFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Common Function in Main Version</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// 인라인 네임스페이스, 버전 1.0</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Version1_0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">newFunction</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;New Function in Version 1.0</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 주 버전의 함수 호출</span>
+<span class="w">    </span><span class="n">MyLibrary</span><span class="o">::</span><span class="n">commonFunction</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// 버전 1.0의 함수 호출</span>
+<span class="w">    </span><span class="n">MyLibrary</span><span class="o">::</span><span class="n">Version1_0</span><span class="o">::</span><span class="n">newFunction</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>이 코드에서:</p>
+<ul>
+<li><code>MyLibrary::commonFunction()</code>은 라이브러리의 주 버전에 속한 함수입니다.</li>
+<li><code>inline namespace Version1_0</code>은 라이브러리의 버전 1.0에 해당하는 인라인 네임스페이스입니다.</li>
+<li><code>MyLibrary::Version1_0::newFunction()</code>은 버전 1.0에서 추가된 함수로, <code>inline namespace</code>를 통해 주 버전과 호환성을 유지합니다.</li>
+</ul>
+<p>이러한 구조를 사용하면 새로운 기능을 추가하거나 변경할 때, 코드에서 기존 버전과의 호환성을 유지하면서도 새로운 버전을 도입할 수 있습니다. 예를 들어, 새로운 버전이 출시되면 사용자는 필요한 경우 해당 버전의 함수를 사용하거나, <code>inline namespace</code>를 통해 주 버전과의 호환성을 유지하면서 새로운 함수를 사용할 수 있습니다.</p>
 
 
 
