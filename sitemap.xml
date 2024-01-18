@@ -801,12 +801,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/9.%20Virtual%20Memory/</loc>
+         <loc>https://choiwheatley.github.io/9.%20Virtual%20Memory%20%7BCSAPP%7D/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://choiwheatley.github.io/9.3.%20VM%20as%20a%20Tool%20for%20Caching/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/9.6.%20Address%20Translation/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1027,6 +1032,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Customizing%20authentication%20in%20%7Bdjango%7D%20%7BAbstractUser%2C%20AbstractBaseUser%7D/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/C%EC%96%B8%EC%96%B4%EC%97%90%EC%84%9C%20%EB%B0%9C%EC%83%9D%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EA%B4%80%EB%A0%A8%20%EB%AC%B8%EC%A0%9C%EC%97%90%20%EB%8C%80%ED%95%B4%20%EC%95%84%EB%8A%94%EB%8C%80%EB%A1%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1897,6 +1907,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/T2%20%EB%B3%B4%EC%95%88%EC%B9%A9%EC%9D%B4%20%EB%82%B4%EC%9E%A5%EB%90%9C%20%EB%A7%A5%EB%B6%81%EC%97%90%20%EB%A6%AC%EB%88%85%EC%8A%A4%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</loc>
+         <lastmod>2024-01-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/TLB%20Hit%EC%9D%98%20%EA%B3%BC%EC%A0%95%EC%9D%84%20%EC%88%9C%EC%B0%A8%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%84%A4%EB%AA%85%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94%20%2B%20TLB%20Miss/</loc>
          <lastmod>2024-01-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
