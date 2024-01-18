@@ -53,7 +53,7 @@ updated: 2024-01-16T19:30:23
 - [[random {C++}]]
 - [[explicit constructor {C++}]]
 - [[deleted function {C++} TODO]]
-- [[ranged for loop {C++11}]]
+- [[ranged for loop + custom iterator and container {C++11}]]
 - [[lambda expression {C++} TODO]]
 - [[namespaces {C++} TODO]]
 
