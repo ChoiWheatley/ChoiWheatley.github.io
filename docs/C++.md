@@ -53,7 +53,7 @@ updated: 2024-01-18T22:17:11
 - [[explicit constructor {C++}]]
 - [[deleted function {C++} TODO]]
 - [[enum을 예외로 던지지 말라]]
-- [[move semantics {C++}]]
+- [[move semantics and forward reference {C++}]]
 
 ## C++ 기초
 

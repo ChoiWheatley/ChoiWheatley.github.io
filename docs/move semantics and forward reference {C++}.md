@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: move semantics {C++}
+title: move semantics and forward reference {C++}
 created: 2024-01-19T12:10:27
-updated: 2024-01-19T16:39:25
+updated: 2024-01-19T17:04:13
 ---
 - [[C++]]
 - [youtube.com / cppcon / back to basics: Move Semantics (part 1 of 2)](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
@@ -97,4 +97,42 @@ move와는 직결되지 않지만 메모리 누수 버그를 없애기 위해 �
 
 ## Forwarding References 혹은 Uniform Reference
 
+- reference collapsing
+- perfect forwarding
+- forwarding references (or uniform reference)
+- perils of forwarding references
+- pitfalls of r-value references
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pIzaZbKUw2s?si=a161snR9cxnVCgp-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+```cpp
+template<typename T>
+void foo(T &&) {
+	puts("foo(T&&)");
+}
+
+int main() {
+	Widget w{};
+	foo(w); // prints foo(T&&)
+}
+```
+
+위의 코드가 정상동작하는 이유는 type deduction에 의해 T가 `Widget&`로 치환됐기 때문이고, 아래 reference collapsing에 의해 `void foo(Widget& &&)`는 `void foo(Widget&)`가 됐기 때문에 정상작동 하는 것이다.
+
+![[reference-collapsing.png]]
+
+forward reference는 l-value, r-value 모두를 받는다. 따라서 Uniform Reference라고도 부른다.
+
+### std::forward의 작동방식과 std::move의 차이점 분석
+
+![[perfect-forwarding.png]]
+
+std::forward는 reference collapsing을 기반으로 작동한다. lvalue ⟶ lvalue reference를 반환하고, rvalue ⟶ rvalue reference를 반환한다. 
+
+이를 가능하게 하기 위해 forwarding reference를 사용하며, move는 이를 사용하지 않는다.
+
+위의 영상은 forward를 사용하는 표준 함수인 `make_unique`의 구현부를 가져왔으며, args가 어떤 종류의 value이던 간에 다 받아 refernece로 전달한다.
+
+> rvalue reference와 모양이 흡사한데, 차이점이 무엇인가요?
+
+rvalue reference는 말 그대로 rvalue reference만 받는 인자를 의미하지만, forwarding reference는 lvalue, rvalue 모두 받는다는 차이가 있습니다.
