@@ -39073,6 +39073,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#forwarding-references-uniform-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forwarding References 혹은 Uniform Reference
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49527,6 +49536,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#forwarding-references-uniform-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forwarding References 혹은 Uniform Reference
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49546,8 +49564,9 @@
 
 <ul>
 <li><a href="../C%2B%2B/">C++</a></li>
+<li><a href="https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk">youtube.com / cppcon / back to basics: Move Semantics (part 1 of 2)</a></li>
 <li>
-<p><a href="https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk">youtube.com / cppcon / back to basics: Move Semantics</a></p>
+<p><a href="https://youtu.be/pIzaZbKUw2s">youtube.com / cppcon / back to basics: Move Semantics (part 2 of 2)</a></p>
 <p>이 영상은 C++의 Move Semantics에 관한 내용이다. Klaus Igelberger는 Move Semantics의 기본 개념, 구현 방법, 그리고 최적화를 소개한다. 이 영상은 Move Constructor와 Move Assignment Operator에 대한 구현 방법을 자세히 설명하고, 오용하지 않고 적절하게 활용하는 지침을 제공한다. 전반적으로 이 영상은 C++ 개발자에게 Move Semantics가 어떻게 동작하는지 이해하고 최적화에 활용할 수 있는 지를 잘 알려준다. </p>
 <p><a href="https://lilys.ai/digest/174041?sId=St0MNEU5b0o&amp;source=video&amp;result=summaryNote&amp;isBlogRequested=false&amp;s=1">https://lilys.ai/digest/174041?sId=St0MNEU5b0o&amp;source=video&amp;result=summaryNote&amp;isBlogRequested=false&amp;s=1</a></p>
 </li>
@@ -49555,7 +49574,7 @@
 <hr />
 <h2 id="stdmove">std::move<a class="headerlink" href="#stdmove" title="Permanent link">#</a></h2>
 <p>static_cast이다, 즉, 런타임에 무조건적으로 l -&gt; r value로 캐스팅한다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="o">&amp;&amp;&gt;&gt;</span><span class="p">(</span><span class="n">l_value</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;&amp;&gt;</span><span class="p">(</span><span class="n">l_value</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="non-default-move-ctor-move-assignment">non-default move ctor &amp; move assignment<a class="headerlink" href="#non-default-move-ctor-move-assignment" title="Permanent link">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/St0MNEU5b0o?si=K3u2VcuRHOWNVQAH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -49614,6 +49633,8 @@
 <li>Transfer the content of <code>w</code> into <code>this</code></li>
 <li>Leave <code>w</code> in a valid but undefined state</li>
 </ol>
+<h2 id="forwarding-references-uniform-reference">Forwarding References 혹은 Uniform Reference<a class="headerlink" href="#forwarding-references-uniform-reference" title="Permanent link">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pIzaZbKUw2s?si=a161snR9cxnVCgp-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
