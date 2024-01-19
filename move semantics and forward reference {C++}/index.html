@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/move%20semantics%20%7BC%2B%2B%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/move%20semantics%20and%20forward%20reference%20%7BC%2B%2B%7D/">
       
       
         <link rel="prev" href="../mosey/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>move semantics {C++} - Choi Wheatley's Second Brain</title>
+        <title>move semantics and forward reference {C++} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              move semantics {C++}
+              move semantics and forward reference {C++}
             
           </span>
         </div>
@@ -12227,7 +12227,7 @@
   
     
   
-  move semantics {C++}
+  move semantics and forward reference {C++}
 
       </a>
     </li>
@@ -39001,7 +39001,7 @@
           
   
   <span class="md-ellipsis">
-    move semantics {C++}
+    move semantics and forward reference {C++}
   </span>
   
 
@@ -39012,7 +39012,7 @@
         
   
   <span class="md-ellipsis">
-    move semantics {C++}
+    move semantics and forward reference {C++}
   </span>
   
 
@@ -39079,6 +39079,21 @@
       Forwarding References 혹은 Uniform Reference
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Forwarding References 혹은 Uniform Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stdforward-stdmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::forward의 작동방식과 std::move의 차이점 분석
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -49543,6 +49558,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Forwarding References 혹은 Uniform Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stdforward-stdmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::forward의 작동방식과 std::move의 차이점 분석
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -49560,7 +49590,7 @@
                   
 
 
-  <h1>move semantics {C++}</h1>
+  <h1>move semantics and forward reference {C++}</h1>
 
 <ul>
 <li><a href="../C%2B%2B/">C++</a></li>
@@ -49634,7 +49664,37 @@
 <li>Leave <code>w</code> in a valid but undefined state</li>
 </ol>
 <h2 id="forwarding-references-uniform-reference">Forwarding References 혹은 Uniform Reference<a class="headerlink" href="#forwarding-references-uniform-reference" title="Permanent link">#</a></h2>
+<ul>
+<li>reference collapsing</li>
+<li>perfect forwarding</li>
+<li>forwarding references (or uniform reference)</li>
+<li>perils of forwarding references</li>
+<li>pitfalls of r-value references</li>
+</ul>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pIzaZbKUw2s?si=a161snR9cxnVCgp-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;foo(T&amp;&amp;)&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Widget</span><span class="w"> </span><span class="n">w</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">w</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints foo(T&amp;&amp;)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>위의 코드가 정상동작하는 이유는 type deduction에 의해 T가 <code>Widget&amp;</code>로 치환됐기 때문이고, 아래 reference collapsing에 의해 <code>void foo(Widget&amp; &amp;&amp;)</code>는 <code>void foo(Widget&amp;)</code>가 됐기 때문에 정상작동 하는 것이다.</p>
+<p><a class="glightbox" href="../assets/reference-collapsing.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="reference-collapsing.png" src="../assets/reference-collapsing.png" /></a></p>
+<p>forward reference는 l-value, r-value 모두를 받는다. 따라서 Uniform Reference라고도 부른다.</p>
+<h3 id="stdforward-stdmove">std::forward의 작동방식과 std::move의 차이점 분석<a class="headerlink" href="#stdforward-stdmove" title="Permanent link">#</a></h3>
+<p><a class="glightbox" href="../assets/perfect-forwarding.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="perfect-forwarding.png" src="../assets/perfect-forwarding.png" /></a></p>
+<p>std::forward는 reference collapsing을 기반으로 작동한다. lvalue ⟶ lvalue reference를 반환하고, rvalue ⟶ rvalue reference를 반환한다. </p>
+<p>이를 가능하게 하기 위해 forwarding reference를 사용하며, move는 이를 사용하지 않는다.</p>
+<p>위의 영상은 forward를 사용하는 표준 함수인 <code>make_unique</code>의 구현부를 가져왔으며, args가 어떤 종류의 value이던 간에 다 받아 refernece로 전달한다.</p>
+<blockquote>
+<p>rvalue reference와 모양이 흡사한데, 차이점이 무엇인가요?</p>
+</blockquote>
+<p>rvalue reference는 말 그대로 rvalue reference만 받는 인자를 의미하지만, forwarding reference는 lvalue, rvalue 모두 받는다는 차이가 있습니다.</p>
 
 
 
