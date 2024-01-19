@@ -49550,6 +49550,7 @@
 </ul>
 <hr />
 <h2 id="stdmove">std::move<a class="headerlink" href="#stdmove" title="Permanent link">#</a></h2>
+<p>static_cast이다, 즉, 런타임에 무조건적으로 l -&gt; r value로 캐스팅한다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="o">&amp;&amp;&gt;&gt;</span><span class="p">(</span><span class="n">l_value</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="non-default-move-ctor-move-assignment">non-default move ctor &amp; move assignment<a class="headerlink" href="#non-default-move-ctor-move-assignment" title="Permanent link">#</a></h2>
