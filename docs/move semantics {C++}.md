@@ -4,10 +4,11 @@ tags:
 description:
 title: move semantics {C++}
 created: 2024-01-19T12:10:27
-updated: 2024-01-19T14:17:28
+updated: 2024-01-19T16:39:25
 ---
 - [[C++]]
-- [youtube.com / cppcon / back to basics: Move Semantics](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
+- [youtube.com / cppcon / back to basics: Move Semantics (part 1 of 2)](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
+- [youtube.com / cppcon / back to basics: Move Semantics (part 2 of 2)](https://youtu.be/pIzaZbKUw2s)
 
 	이 영상은 C++의 Move Semantics에 관한 내용이다. Klaus Igelberger는 Move Semantics의 기본 개념, 구현 방법, 그리고 최적화를 소개한다. 이 영상은 Move Constructor와 Move Assignment Operator에 대한 구현 방법을 자세히 설명하고, 오용하지 않고 적절하게 활용하는 지침을 제공한다. 전반적으로 이 영상은 C++ 개발자에게 Move Semantics가 어떻게 동작하는지 이해하고 최적화에 활용할 수 있는 지를 잘 알려준다. 
 	
@@ -20,7 +21,7 @@ updated: 2024-01-19T14:17:28
 static_cast이다, 즉, 런타임에 무조건적으로 l -> r value로 캐스팅한다.
 
 ```cpp
-std::static_cast<std::remove_reference<T &&>>(l_value);
+std::static_cast<std::remove_reference<T>&&>(l_value);
 ```
 
 ## non-default move ctor & move assignment
@@ -93,3 +94,7 @@ move와는 직결되지 않지만 메모리 누수 버그를 없애기 위해 �
 1. Clean up all visible resources
 2. Transfer the content of `w` into `this`
 3. Leave `w` in a valid but undefined state
+
+## Forwarding References 혹은 Uniform Reference
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/pIzaZbKUw2s?si=a161snR9cxnVCgp-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
