@@ -4,7 +4,7 @@ tags:
 description:
 title: move semantics and forward reference {C++}
 created: 2024-01-19T12:10:27
-updated: 2024-01-19T17:33:49
+updated: 2024-01-19T20:40:30
 ---
 - [[C++]]
 - [youtube.com / cppcon / back to basics: Move Semantics (part 1 of 2)](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
@@ -159,11 +159,15 @@ class A {
 public:
 	template <typename T>
 	A( T&& t )
-		: b_(std::move(t))
+		: b_(move(t))
 	{}
 private:
 	B b_;
 };
+```
+
+```cpp
+A(int{1});
 ```
 
 A: forwarding reference에 의해 t는 lvalue-ref가 될 수도 있고, rvalue-ref가 될 수도 있다. 문제는 rvalue-ref일때인데, `move`는 인자로 lvalue를 받기 때문에 rvalue를 넣으면 터진다.

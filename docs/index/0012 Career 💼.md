@@ -28,7 +28,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
 - \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
 - 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
-- 네이버랩스 백엔드 엔지니어 (인턴십) [링크](https://www.jobkorea.co.kr/Recruit/GI_Read/43752284?rPageCode=SL&logpath=21) ~ 2024-01-20 **얼마 안 남음! 코테라도 보라**
+-  [[네이버랩스 백엔드 엔지니어 (인턴십)]] [링크](https://www.jobkorea.co.kr/Recruit/GI_Read/43752284?rPageCode=SL&logpath=21) ~ 2024-01-20 **얼마 안 남음! 코테라도 보라**
 
 ## 지원완료
 
