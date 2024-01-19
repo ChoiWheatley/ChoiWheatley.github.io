@@ -4,13 +4,15 @@ tags:
 description:
 title: move semantics {C++}
 created: 2024-01-19T12:10:27
-updated: 2024-01-19T12:59:10
+updated: 2024-01-19T13:09:50
 ---
 - [[C++]]
 - [youtube.com / cppcon / back to basics: Move Semantics](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
 ---
 
 ## std::move
+
+static_cast이다, 즉, 런타임에 무조건적으로 l -> r value로 캐스팅한다.
 
 ```cpp
 std::static_cast<std::remove_reference<T &&>>(l_value);
