@@ -39092,8 +39092,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#forwarding-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      forwarding reference 사용시 주의사항
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-semantics-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move Semantics Pitfalls
+    </span>
+  </a>
   
 </li>
       
@@ -49570,8 +49588,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#forwarding-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      forwarding reference 사용시 주의사항
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#move-semantics-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move Semantics Pitfalls
+    </span>
+  </a>
   
 </li>
       
@@ -49695,6 +49731,95 @@
 <p>rvalue reference와 모양이 흡사한데, 차이점이 무엇인가요?</p>
 </blockquote>
 <p>rvalue reference는 말 그대로 rvalue reference만 받는 인자를 의미하지만, forwarding reference는 lvalue, rvalue 모두 받는다는 차이가 있습니다.</p>
+<h3 id="forwarding-reference">forwarding reference 사용시 주의사항<a class="headerlink" href="#forwarding-reference" title="Permanent link">#</a></h3>
+<p>정확한 타입을 지정하지 않으면 죄다 그 forwarding ref 함수로 빨려들어갈 수 있다. 예를 들어 </p>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Person</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Person</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w"> </span><span class="c1">// (2)</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>가 있을때, <code>Person("Bjarne")</code>는 2번이 호출된다. 왜냐면 문자열 리터럴은 <code>const char *</code>이거든. <code>string name = "Herb"; Person(name)</code> 또한 2번이 호출된다. 왜냐면 <code>name</code>은 <code>string</code>이지, <code>const string</code>이 아니기 때문이다. </p>
+<h2 id="move-semantics-pitfalls">Move Semantics Pitfalls<a class="headerlink" href="#move-semantics-pitfalls" title="Permanent link">#</a></h2>
+<blockquote>
+<p>Q. 아래의 코드에 있는 문제를 식별하라.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">b_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b_</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>A: forwarding reference에 의해 t는 lvalue-ref가 될 수도 있고, rvalue-ref가 될 수도 있다. 문제는 rvalue-ref일때인데, <code>move</code>는 인자로 lvalue를 받기 때문에 rvalue를 넣으면 터진다.</p>
+<p>따라서, <code>std::move</code>를 <code>std::forward&lt;T&gt;</code>로 바꿔줘야한다.</p>
+<blockquote>
+<p>Q. 아래의 코드에 있는 문제를 식별하라.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">b_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b_</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>템플릿 인스턴싱 이후에 A 생성자는 forwarding reference가 아닌, rvalue-reference를 인자로 받는다.</p>
+<p>따라서, <code>std::forward</code>를 <code>std::move</code>로 바꿔줘야 한다.</p>
+<blockquote>
+<p>Q. 아래의 코드에 있는 문제를 식별하라.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">b_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">c_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b_</span><span class="p">;</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="n">c_</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>forward는 일종의 move연산이기 때문에 double move 문제가 발생한다. 따라서 첫번째 forward를 복사연산으로 바꾸던가 해야한다.</p>
+<blockquote>
+<p>Q. 아래의 코드에 있는 문제를 식별하라.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="w"> </span><span class="n">T1</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t2</span><span class="w"> </span><span class="p">)</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">b_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="n">c_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="n">b_</span><span class="p">;</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="n">c_</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>🆗 개별적인 타입에 대한 forwarding reference를 진행하고 있기 때문에 문제없다.</p>
+<blockquote>
+<p>Q. 아래의 코드에 있는 문제를 식별하라.</p>
+</blockquote>
+<p><a href="https://en.cppreference.com/w/cpp/language/if#Constexpr_if">cppreference.com / Constexpr_if</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="k">constexpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_integral_v</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Deal with integral type</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Deal with non-integral type</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>forwarding reference는 결국 어느걸 집어넣어도 레퍼런스가 튀어나온다는 것을 알고있다. 그런데 <code>is_integral&lt;int&amp;&gt;</code>은 false이기에, if constexpr 가 성공할 수가 없다. 따라서 레퍼런스를 벗겨주어야 한다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">NoRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="k">constexpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_integral_v</span><span class="o">&lt;</span><span class="n">NoRef</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{...}</span>
+</code></pre></div>
 
 
 
