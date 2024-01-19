@@ -4,7 +4,7 @@ tags:
 description:
 title: move semantics and forward reference {C++}
 created: 2024-01-19T12:10:27
-updated: 2024-01-19T17:04:13
+updated: 2024-01-19T17:33:49
 ---
 - [[C++]]
 - [youtube.com / cppcon / back to basics: Move Semantics (part 1 of 2)](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
@@ -136,3 +136,113 @@ std::forward는 reference collapsing을 기반으로 작동한다. lvalue ⟶ lv
 > rvalue reference와 모양이 흡사한데, 차이점이 무엇인가요?
 
 rvalue reference는 말 그대로 rvalue reference만 받는 인자를 의미하지만, forwarding reference는 lvalue, rvalue 모두 받는다는 차이가 있습니다.
+
+### forwarding reference 사용시 주의사항
+
+정확한 타입을 지정하지 않으면 죄다 그 forwarding ref 함수로 빨려들어갈 수 있다. 예를 들어 
+
+```cpp
+struct Person {
+	Person(const string& name); // (1)
+	template <typename T> Person(T && name); // (2)
+};
+```
+
+가 있을때, `Person("Bjarne")`는 2번이 호출된다. 왜냐면 문자열 리터럴은 `const char *`이거든. `string name = "Herb"; Person(name)` 또한 2번이 호출된다. 왜냐면 `name`은 `string`이지, `const string`이 아니기 때문이다. 
+
+## Move Semantics Pitfalls
+
+> Q. 아래의 코드에 있는 문제를 식별하라.
+
+```cpp
+class A {
+public:
+	template <typename T>
+	A( T&& t )
+		: b_(std::move(t))
+	{}
+private:
+	B b_;
+};
+```
+
+A: forwarding reference에 의해 t는 lvalue-ref가 될 수도 있고, rvalue-ref가 될 수도 있다. 문제는 rvalue-ref일때인데, `move`는 인자로 lvalue를 받기 때문에 rvalue를 넣으면 터진다.
+
+따라서, `std::move`를 `std::forward<T>`로 바꿔줘야한다.
+
+> Q. 아래의 코드에 있는 문제를 식별하라.
+
+```cpp
+template <typename T>
+class A {
+public:
+	A( T&& t )
+		: b_(std::forward<T>(t))
+	{}
+private:
+	B b_;
+};
+```
+
+템플릿 인스턴싱 이후에 A 생성자는 forwarding reference가 아닌, rvalue-reference를 인자로 받는다.
+
+따라서, `std::forward`를 `std::move`로 바꿔줘야 한다.
+
+> Q. 아래의 코드에 있는 문제를 식별하라.
+
+```cpp
+class A {
+public:
+	template <typename T>
+	A( T&& t )
+		: b_(std::forward<T>(t))
+		, c_(std::forward<T>(t))
+	{}
+private:
+	B b_;
+	C c_
+};
+```
+
+forward는 일종의 move연산이기 때문에 double move 문제가 발생한다. 따라서 첫번째 forward를 복사연산으로 바꾸던가 해야한다.
+
+> Q. 아래의 코드에 있는 문제를 식별하라.
+
+```cpp
+class A {
+public:
+	template <typename T1, typename T2>
+	A( T1&& t1, T2&& t2 )
+		: b_(std::forward<T1>(t1))
+		, c_(std::forward<T2>(t2))
+	{}
+private:
+	B b_;
+	C c_
+};
+```
+
+🆗 개별적인 타입에 대한 forwarding reference를 진행하고 있기 때문에 문제없다.
+
+> Q. 아래의 코드에 있는 문제를 식별하라.
+
+[cppreference.com / Constexpr_if](https://en.cppreference.com/w/cpp/language/if#Constexpr_if)
+
+```cpp
+template<typename T>
+void foo(T&&)
+{
+	if constexpr(std::is_integral_v<T>) {
+		// Deal with integral type
+	} else {
+		// Deal with non-integral type
+	}
+}
+```
+
+forwarding reference는 결국 어느걸 집어넣어도 레퍼런스가 튀어나온다는 것을 알고있다. 그런데 `is_integral<int&>`은 false이기에, if constexpr 가 성공할 수가 없다. 따라서 레퍼런스를 벗겨주어야 한다.
+
+```cpp
+using NoRef = std::remove_reference<T>;
+if constexpr(std::is_integral_v<NoRef>) {...} else {...}
+```
