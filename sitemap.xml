@@ -3056,6 +3056,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/glibc%20Malloc%20Internals/</loc>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/glibc%20not%20found%20%EB%AC%B8%EC%A0%9C%20%EC%A7%81%EC%A0%91%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
@@ -6031,6 +6036,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/%ED%8F%AC%ED%8A%B8%EC%9B%90%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4/</loc>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/%ED%8F%BC%EB%A9%9C%20%ED%8C%8C%ED%8B%B0/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
@@ -6887,6 +6897,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Daily%20Notes/2024-01-17/</loc>
+         <lastmod>2024-01-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Daily%20Notes/2024-01-20/</loc>
          <lastmod>2024-01-20</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -10605,6 +10605,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../glibc%20Malloc%20Internals/" class="md-tabs__link">
+        
+  
+    
+  
+  glibc Malloc Internals
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../glibc%20not%20found%20%EB%AC%B8%EC%A0%9C%20%EC%A7%81%EC%A0%91%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" class="md-tabs__link">
         
   
@@ -20722,6 +20739,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%ED%8F%AC%ED%8A%B8%EC%9B%90%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4/" class="md-tabs__link">
+        
+  
+    
+  
+  포트원 백엔드 엔지니어
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%ED%8F%BC%EB%A9%9C%20%ED%8C%8C%ED%8B%B0/" class="md-tabs__link">
         
   
@@ -24876,7 +24910,28 @@
         
   
   <span class="md-ellipsis">
-    2024 01 17
+    2024-01-17
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Daily%20Notes/2024-01-20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024-01-20
   </span>
   
 
@@ -37141,6 +37196,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../glibc%20Malloc%20Internals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    glibc Malloc Internals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../glibc%20not%20found%20%EB%AC%B8%EC%A0%9C%20%EC%A7%81%EC%A0%91%20%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0/" class="md-nav__link">
         
   
@@ -49161,6 +49236,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../%ED%8F%AC%ED%8A%B8%EC%9B%90%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    포트원 백엔드 엔지니어
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%ED%8F%BC%EB%A9%9C%20%ED%8C%8C%ED%8B%B0/" class="md-nav__link">
         
   
@@ -49745,13 +49840,22 @@
 <li>
 <p><a href="https://youtu.be/pIzaZbKUw2s">youtube.com / cppcon / back to basics: Move Semantics (part 2 of 2)</a></p>
 <p>이 영상은 C++의 Move Semantics에 관한 내용이다. Klaus Igelberger는 Move Semantics의 기본 개념, 구현 방법, 그리고 최적화를 소개한다. 이 영상은 Move Constructor와 Move Assignment Operator에 대한 구현 방법을 자세히 설명하고, 오용하지 않고 적절하게 활용하는 지침을 제공한다. 전반적으로 이 영상은 C++ 개발자에게 Move Semantics가 어떻게 동작하는지 이해하고 최적화에 활용할 수 있는 지를 잘 알려준다. </p>
-<p><a href="https://lilys.ai/digest/174041?sId=St0MNEU5b0o&amp;source=video&amp;result=summaryNote&amp;isBlogRequested=false&amp;s=1">https://lilys.ai/digest/174041?sId=St0MNEU5b0o&amp;source=video&amp;result=summaryNote&amp;isBlogRequested=false&amp;s=1</a></p>
+<p><a href="https://lilys.ai/digest/174041?sId=St0MNEU5b0o&amp;source=video&amp;result=summaryNote&amp;isBlogRequested=false&amp;s=1">https://lilys.ai/digest/174041?sId=St0MNEU5b0o&amp;source=video&amp;result=summaryNote&amp;isBlogRequested=false&amp;s=1</a>
+- <a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2027.html#Move_Semantics">A Brief Introduction to Rvalue References</a> 읽어볼 것. 특히 Perfect Forwarding 파트</p>
 </li>
 </ul>
 <hr />
 <h2 id="stdmove">std::move<a class="headerlink" href="#stdmove" title="Permanent link">#</a></h2>
 <p>static_cast이다, 즉, 런타임에 무조건적으로 l -&gt; r value로 캐스팅한다.</p>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;&amp;&gt;</span><span class="p">(</span><span class="n">l_value</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">typename</span><span class="w"> </span><span class="nc">remove_reference</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="o">&amp;&amp;</span>
+<span class="n">move</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>또는</p>
+<div class="highlight"><pre><span></span><code><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="n">MyType</span><span class="o">&gt;&amp;&amp;&gt;</span><span class="p">(</span><span class="n">myValue</span><span class="p">);</span>
 </code></pre></div>
 <h2 id="non-default-move-ctor-move-assignment">non-default move ctor &amp; move assignment<a class="headerlink" href="#non-default-move-ctor-move-assignment" title="Permanent link">#</a></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/St0MNEU5b0o?si=K3u2VcuRHOWNVQAH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
