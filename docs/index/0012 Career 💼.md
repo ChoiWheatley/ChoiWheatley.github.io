@@ -30,6 +30,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
 -  [[(주)마티니 아이오 Growth Engineer]] [링크](https://aimed.career.greetinghr.com/o/74265)
 	- [[Growth Hacking, CRM, Performance Marketing이란]]
+- [[포트원 백엔드 엔지니어]]
 
 ## 지원완료
 

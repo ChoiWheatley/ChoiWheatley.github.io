@@ -4,7 +4,7 @@ tags:
 description:
 title: move semantics and forward reference {C++}
 created: 2024-01-19T12:10:27
-updated: 2024-01-19T20:40:30
+updated: 2024-01-20T18:51:51
 ---
 - [[C++]]
 - [youtube.com / cppcon / back to basics: Move Semantics (part 1 of 2)](https://youtu.be/St0MNEU5b0o?si=W_Te-EuhdfXlyQNk)
@@ -13,6 +13,7 @@ updated: 2024-01-19T20:40:30
 	이 영상은 C++의 Move Semantics에 관한 내용이다. Klaus Igelberger는 Move Semantics의 기본 개념, 구현 방법, 그리고 최적화를 소개한다. 이 영상은 Move Constructor와 Move Assignment Operator에 대한 구현 방법을 자세히 설명하고, 오용하지 않고 적절하게 활용하는 지침을 제공한다. 전반적으로 이 영상은 C++ 개발자에게 Move Semantics가 어떻게 동작하는지 이해하고 최적화에 활용할 수 있는 지를 잘 알려준다. 
 	
 	<https://lilys.ai/digest/174041?sId=St0MNEU5b0o&source=video&result=summaryNote&isBlogRequested=false&s=1>
+- [A Brief Introduction to Rvalue References](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2027.html#Move_Semantics) 읽어볼 것. 특히 Perfect Forwarding 파트
 
 ---
 
@@ -21,7 +22,18 @@ updated: 2024-01-19T20:40:30
 static_cast이다, 즉, 런타임에 무조건적으로 l -> r value로 캐스팅한다.
 
 ```cpp
-std::static_cast<std::remove_reference<T>&&>(l_value);
+template <class T>
+typename remove_reference<T>::type&&
+move(T&& a)
+{
+    return a;
+}
+```
+
+또는
+
+```cpp
+static_cast<remove_reference<MyType>&&>(myValue);
 ```
 
 ## non-default move ctor & move assignment
