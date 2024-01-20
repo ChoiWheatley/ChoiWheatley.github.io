@@ -4,7 +4,7 @@ tags:
 description:
 title: 최승현_Backend_Web_Developer_이력서
 created: 2023-12-19T16:43:54
-updated: 2024-01-12T17:23:35
+updated: 2024-01-20T18:00:39
 ---
 
 # 최승현 | 협력과 상호 성장에 관심이 많은 프로그래머
@@ -21,7 +21,7 @@ updated: 2024-01-12T17:23:35
 
 ## Who Am I?
 
-코드 자체가 문서의 역할을 할 수 있도록 의도를 담아내는데에 관심이 많은 프로그래머 최승현이라고 합니다. 얻어갈 수 있는 것에 대한 욕구가 크기 때문에 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다.
+코드 자체가 문서의 역할을 할 수 있도록 의도를 담아내는데에 관심이 많은 프로그래머 최승현이라고 합니다. 얻어갈 수 있는 것에 대한 욕구가 크기 때문에 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다.  
 
 ## Experiences
 
@@ -32,7 +32,7 @@ updated: 2024-01-12T17:23:35
 - Links
 	- <https://github.com/Team-def/recre-backend>
 	- <https://github.com/Team-def/recre-frontend>
-	- <https://youtu.be/rO-1yWgtRfg?feature=shared>
+	- <a href="https://youtu.be/rO-1yWgtRfg?feature=shared">recre 최종발표 링크</a>
 - 프로젝트 진행기간
 	- 2023-11-09
 	- 2023-12-16
@@ -48,6 +48,7 @@ updated: 2024-01-12T17:23:35
 	- 팀원 간 중복구현 횟수 0건
 	- 딜레이 계산으로 무궁화 꽃이 피었습니다 게임 공정성 향상
 	- 플레이 도중 발생하는 네트워크 불안정에 강인한 게임 상태 관리
+	
 
 ### 주니어 백엔드 개발자, 그 이상으로
 
@@ -70,6 +71,8 @@ updated: 2024-01-12T17:23:35
 	- 8장 "데이터 모델링": 데이터 모델링과 관련한 지식을 학습하며 집필 
 	- 11장 "에러처리": allbooks 구현하며 만난 다양한 에러를 지나치지 않고 트래킹 하여 각각의 단원으로 정리
 
+<br>
+
 ## Skills
 
 | Tech      | Icon                                                                                                              | Programming Language                                                                                       |
@@ -79,9 +82,9 @@ updated: 2024-01-12T17:23:35
 | TypeORM   | <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">           | <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png" style="height:100px;">                                                                                           |
 | Django    | <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">             | <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" style="height:100px;">                                                                                       |
 | DRF       | <img src="https://www.django-rest-framework.org/img/logo.png" style="height:100px">                               | <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" style="height:100px;">                                                                                       |
-| OpenGL    | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Opengl-logo.svg/320px-Opengl-logo.svg.png" style="height:100px;">                                                                                              | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
-| Qt        | <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Qt_logo_neon_2022.svg" style="height:100px">        | <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" style="height:100px;"> |
 | SceneKit  | <img src="https://developer.apple.com/assets/elements/icons/scenekit/scenekit-128x128.png" style="height:100px;"> | <img src="https://www.kindpng.com/picc/m/17-179376_swift-programming-language-logo-hd-png-download.png" alt="Swift Programming Language Logo, HD Png Download@kindpng.com" style="height:100px;">                                                                                                           |
+
+<br>
 
 ## Education
 
