@@ -53,6 +53,7 @@ updated: 2024-01-20T18:47:27
 - [[explicit constructor {C++}]]
 - [[deleted function {C++} TODO]]
 - [[enum을 예외로 던지지 말라]]
+- [[thread, mutex, unique_lock, lock_guard {C++}]]
 
 ## C++ 기초
 
