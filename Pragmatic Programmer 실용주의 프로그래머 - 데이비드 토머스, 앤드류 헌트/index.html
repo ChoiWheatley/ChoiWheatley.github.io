@@ -49802,6 +49802,10 @@
 <hr />
 <h2 id="6">6장. 동시성<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
 <p>마침 C++에서 threading을 공부하고 있어 도움이 되는 챕터가 되리라 생각한다. 시간적 결합 (<strong>temporal coupling</strong>)을 깨뜨리고 액티비티 다이어그램을 그려보며 시간적 결합도가 낮은 작업들을 동시에 처리하고자 한다. 데이터경쟁 (<strong>race</strong>) 상황이 발생하는 케이스가 주어지고, 이것을 해결하기 위해 여러 <strong>동기화 메커니즘</strong>을 소개한다. 다음으로 <strong>액터</strong>라는 스레드보다 경량화된 개별적이고 지역적인 상태를 갖는 실행흐름을 알아보고 실제 NodeJS 코드의 예시를 통해 동기화 메커니즘 없이도 가능한 동시성 프로그래밍을 구현한다. 마지막으로 <strong>칠판</strong> 모델은 객체 저장소와 브로커를 합한 시스템으로, 결합을 줄일 수 있다고 한다.</p>
+<p><a href="https://www.redhat.com/ko/topics/integration/what-is-apache-kafka">Kafka</a>란, 링크드인에서 하루 조 단위 메시지를 처리하기 위해 메시지 생성, 구독, 저장, 게시를 유용하게 관리해주는 서비스를 확장하여 오픈소스 데이터 스트리밍 솔루션이 되었다. 마이크로 서비스 아키텍처에서 카프카를 사용하면 비동기적으로 메시지를 보내기만 할 뿐만 아니라 더 많은 일을 할 수 있다. 데이터 저장은 물론이고, 팀 자산으로 공유까지도 가능하다는 얘기는 다소 뜬 구름 잡는 이야기 같기는 하지만 수많은 액터, 프로세스, 스레드가 맞물려 있는 상황에서 동시성을 확보하면서 자원을 공유하기 위해 아래의 격언과도 같이 견고한 채널을 구현한 한 예시가 아닐까 싶다.</p>
+<blockquote>
+<p>Don't communicate by sharing memory; share memory by communicating</p>
+</blockquote>
 
 
 
