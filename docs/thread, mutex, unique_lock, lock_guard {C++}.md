@@ -4,7 +4,7 @@ tags: []
 description: 
 title: thread, mutex, unique_lock, lock_guard {C++}
 created: 2024-01-21T16:23:49
-updated: 2024-01-22T17:47:28
+updated: 2024-01-22T18:34:22
 ---
 - [[C++]]
 - [[12. Concurrent Programming {csapp}]]
@@ -32,3 +32,18 @@ c++11 이전까지는 플랫폼 종속적인 라이브러리 함수 (ex. pthread
 atomic 타입은 해당 연산에 한하여 원자적인 연산을 수행할 수 있게 해준다. 첫 번째로 컴파일러가 해당 타입에 대한 연산을 강제로 재작성하지 못하게 만들었다. 또한 메모리 배리어를 사용, 다른 스레드가 원자적인 연산을 넘어선 수행을 하지 못하게 만든다.
 
 물리적인 데이터 경쟁으로 인한 UB는 막을 수 있지만, 그렇다고 논리적인 순서를 정의할 수는 없다.
+
+## mutex, lock_guard, unique_lock, scoped_lock, condition_variable
+
+- `std::mutex`
+	- `lock()`
+	- `unlock()`
+- `std::lock_guard<>`: 스코프 안에서만 쓸 수 있는 lock. move, copy 불가능
+- `std::unique_lock<>`: move가 가능한 lock.
+- `std::scoped_lock<>` (C++17~): 여러개의 mutex를 한 번에 가질 수 있어 데드락 예방에 좋음.
+- `std::condition_variable` [[condition variable이란 {feat.monitor}]]에서 더 자세한 설명을 참조하세요
+	- `notify_one()`
+	- `notify_all()`
+	- `wait(lock, pred?)`
+	- `wait_for(lock, duration, pred?)`
+	- `wait_until(lock, time_point, pred?)`
