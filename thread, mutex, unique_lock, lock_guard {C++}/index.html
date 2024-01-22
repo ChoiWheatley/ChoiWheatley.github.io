@@ -43049,6 +43049,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mutex-lock_guard-unique_lock-scoped_lock-condition_variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      mutex, lock_guard, unique_lock, scoped_lock, condition_variable
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49888,6 +49897,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mutex-lock_guard-unique_lock-scoped_lock-condition_variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      mutex, lock_guard, unique_lock, scoped_lock, condition_variable
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49928,6 +49946,25 @@
 </ul>
 <p>atomic 타입은 해당 연산에 한하여 원자적인 연산을 수행할 수 있게 해준다. 첫 번째로 컴파일러가 해당 타입에 대한 연산을 강제로 재작성하지 못하게 만들었다. 또한 메모리 배리어를 사용, 다른 스레드가 원자적인 연산을 넘어선 수행을 하지 못하게 만든다.</p>
 <p>물리적인 데이터 경쟁으로 인한 UB는 막을 수 있지만, 그렇다고 논리적인 순서를 정의할 수는 없다.</p>
+<h2 id="mutex-lock_guard-unique_lock-scoped_lock-condition_variable">mutex, lock_guard, unique_lock, scoped_lock, condition_variable<a class="headerlink" href="#mutex-lock_guard-unique_lock-scoped_lock-condition_variable" title="Permanent link">#</a></h2>
+<ul>
+<li><code>std::mutex</code><ul>
+<li><code>lock()</code></li>
+<li><code>unlock()</code></li>
+</ul>
+</li>
+<li><code>std::lock_guard&lt;&gt;</code>: 스코프 안에서만 쓸 수 있는 lock. move, copy 불가능</li>
+<li><code>std::unique_lock&lt;&gt;</code>: move가 가능한 lock.</li>
+<li><code>std::scoped_lock&lt;&gt;</code> (C++17~): 여러개의 mutex를 한 번에 가질 수 있어 데드락 예방에 좋음.</li>
+<li><code>std::condition_variable</code> <a href="../condition%20variable%EC%9D%B4%EB%9E%80%20%7Bfeat.monitor%7D/">condition variable이란 {feat.monitor}</a>에서 더 자세한 설명을 참조하세요<ul>
+<li><code>notify_one()</code></li>
+<li><code>notify_all()</code></li>
+<li><code>wait(lock, pred?)</code></li>
+<li><code>wait_for(lock, duration, pred?)</code></li>
+<li><code>wait_until(lock, time_point, pred?)</code></li>
+</ul>
+</li>
+</ul>
 
 
 
