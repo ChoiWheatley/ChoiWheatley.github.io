@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-05T14:07:38
-updated: 2024-01-22T14:42:19
+updated: 2024-01-22T14:51:00
 title: URI vs URL
 ---
 
@@ -47,7 +47,7 @@ ___
 
 ### **URI / URL / URN 정의**
 
-#### **URI (**Uniform Resource Identifier)****
+#### **URI (Uniform Resource Identifier)****
 
 -   통합 자원 식별자(Uniform Resource Identifier)는 인터넷에 있는 자원을 어디에 있는지 **자원 자체를 식별하는 방법**이다.
     -   Uniform : 리소스를 식별하는 통일된 방식
@@ -57,7 +57,7 @@ ___
 -   URI의 존재는 인터넷에서 요구되는 기본조건으로서 인터넷 프로토콜에 항상 붙어 다닌다.
 -   URI의 하위개념으로 URL, URN 이 있다
 
-#### **URL (**Uniform Resource Locator**)**
+#### **URL (Uniform Resource Locator)**
 
 -   파일식별자(Uniform Resource Locator)는 네트워크 상에서 **자원이 어디 있는지 위치**를 알려주기 위한 규약이다.
 -   즉, 컴퓨터 네트워크와 검색 메커니즘에서의 위치를 지정하는, 웹 리소스에 대한 참조이다.
@@ -68,7 +68,7 @@ ___
 > 
 > URL 구성 이해하기 프로토콜 : https 호스트명 : <www.google.com> 포트번호 : 443 패스 : /search 쿼리 파라미터 : q=hello&hl=ko scheme 주로 프로토콜(어떤 방식으로 자원에 접근할 것인가 하는 약속 규칙) 사용 예
 
-#### **URN (**Uniform Resource Name**)**
+#### **URN (Uniform Resource Name)**
 
 -   통합 자원 이름(Uniform Resource Name)은 urn:scheme 을 사용하는 URI를 위한 역사적인 이름이다.
 -   URL이 리소스가 있는 위치를 지정한다면, URN은 리소스에 이름을 부여하는 것이다.
@@ -81,7 +81,7 @@ ___
 
 위에서 URI / URL / URN 의 정의에 대해 알아보았지만, 아직도 모호하다.
 
-인터넷 상의 자원의 위치(URL)와 자원의 식별자(URI)는 언뜻 보면 같은 것을 의미하는 듯 하다. 하지만 '자원의 위치'라는 것은 결국은 '하나의 파일 위치'를 나타내는 것임을 명심하자.
+인터넷 상의 자원의 위치(URL)와 자원의 식별자(URI)는 언뜻 보면 같은 것을 의미하는 듯 하다. 하지만 '자원의 위치'라는 것은 결국은 '하나의 **파일 위치**'를 나타내는 것임을 명심하자.
 
 예를들어 다음과 같은 홈페이지 링크가 있다고 하자.
 
