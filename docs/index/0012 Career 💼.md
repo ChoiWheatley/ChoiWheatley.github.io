@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-17T12:41:29
+updated: 2024-01-20T18:18:04
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -28,12 +28,16 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
 - \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
 - 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
-- 네이버랩스 백엔드 엔지니어 (인턴십) [링크](https://www.jobkorea.co.kr/Recruit/GI_Read/43752284?rPageCode=SL&logpath=21) ~ 2024-01-20 **얼마 안 남음! 코테라도 보라**
+-  [[(주)마티니 아이오 Growth Engineer]] [링크](https://aimed.career.greetinghr.com/o/74265)
+	- [[Growth Hacking, CRM, Performance Marketing이란]]
+- [[포트원 백엔드 엔지니어]]
 
 ## 지원완료
 
 - [\[Project inZOI Unit\] Jr. Client Programmer (신입 / 경력무관)](https://boards.greenhouse.io/krafton/jobs/7078974002?t=f7e1ac3e2us)
 - [[보이저엑스 정글전형 (6개월인턴)]]
+-  [[네이버랩스 백엔드 엔지니어 (인턴십)]] 
+- 
 
 ### 지원한 회사 현황
 
@@ -147,6 +151,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[C언어에서 발생할 수 있는 메모리 관련 문제에 대해 아는대로 설명해주세요]]
 - [[TLB Hit, Miss의 과정을 순차적으로 설명해주세요]]
 - [[exception의 종류와 차이점을 알려주세요]]
+- [[병렬성과 동시성의 차이점을 알려주세요]]
 
 ### 자료구조 관련 면접질문
 
