@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-22T14:22:33
+updated: 2024-01-22T14:31:17
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -140,6 +140,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 ### 네트워크 관련 면접질문
 
 - [[dns 서버에 대해서 설명해보세요]]
+- [[URI vs URL]]
 
 ### CS 관련 면접질문
 
@@ -193,11 +194,12 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[채널톡 면접 기출]]
 - 2024-01-07 면접스터디
 	- MVC 모델, MVVM 모델의 차이점
-	- syscall이 무엇인지
+	- [[system call에 대하여 설명해주세요]]
 	- JS async 인풋, 아웃풋에 관하여
 		- input: resolve, reject
 		- output: Promise
-	- [[자바스크립트 이벤트 루프 구조 및 동작원리에 대해서 설명해 주세요]]JS가 싱글 스레드로 작동. 싱글스레드로도 작동함에도 병렬적으로 작동할 수 있는데, 어떻게 이것을 작동하게 만들 수 있었는가?
+	- [[자바스크립트 이벤트 루프 구조 및 동작원리에 대해서 설명해 주세요]]
+		- JS가 싱글 스레드로 작동. 싱글스레드로도 작동함에도 병렬적으로 작동할 수 있는데, 어떻게 이것을 작동하게 만들 수 있었는가?
 	- HTTP/2를 설명해주세요
 		- HTTP/1.1의 경우, 동시작업의 순서가 고정돼있다 -> 반응성이 낮다.
 		- 동시에 여러 작업이 들어왔을때 병렬적으로 처리가 될 수 있다.
