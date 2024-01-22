@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-20T18:18:04
+updated: 2024-01-22T10:05:10
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -31,6 +31,8 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 -  [[(주)마티니 아이오 Growth Engineer]] [링크](https://aimed.career.greetinghr.com/o/74265)
 	- [[Growth Hacking, CRM, Performance Marketing이란]]
 - [[포트원 백엔드 엔지니어]]
+- <https://swmaestro.org/>
+- 
 
 ## 지원완료
 
