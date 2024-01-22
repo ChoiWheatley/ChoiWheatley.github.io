@@ -4,7 +4,7 @@ tags:
 description:
 title: system call에 대하여 설명해주세요
 created: 2024-01-09T12:40:49
-updated: 2024-01-17T11:30:02
+updated: 2024-01-22T09:33:24
 ---
 - [[0012 Career 💼]]
 ---
@@ -21,7 +21,7 @@ fork 할때 부모의 레지스터를 복제하는 과정에서 유저랜드가 
 ## 2024-01-17 추가 topics
 
 - cs:app에서 Exceptional Control Flow 파트
-    - (fault, trap, abort), interrupt 간의 차이
+    - (fault, trap, abort), interrupt 간의 차이 [[exception의 종류와 차이점을 알려주세요]]
 - 프로세서의 Protection Ring에 따른 명령어 권한
 	- [[2023-10-10 권영진 교수님 OS 강의 (2차) {swjungle}]]
 
