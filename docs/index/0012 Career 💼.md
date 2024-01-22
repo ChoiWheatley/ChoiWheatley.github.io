@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-22T10:05:10
+updated: 2024-01-22T14:22:33
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -32,13 +32,13 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 	- [[Growth Hacking, CRM, Performance Marketing이란]]
 - [[포트원 백엔드 엔지니어]]
 - <https://swmaestro.org/>
-- 
+- \[채용공고] 2024년 1분기 현대오토에버 신입사원 채용 [링크](https://recruit.hyundai-autoever.com/?page=156184575&id=455136&list=270136750&scroll=580) ~ **2024-01-29T13:00:00 까지이므로 빠르게 지원할 것!**
 
 ## 지원완료
 
 - [\[Project inZOI Unit\] Jr. Client Programmer (신입 / 경력무관)](https://boards.greenhouse.io/krafton/jobs/7078974002?t=f7e1ac3e2us)
 - [[보이저엑스 정글전형 (6개월인턴)]]
--  [[네이버랩스 백엔드 엔지니어 (인턴십)]] 
+- [[네이버랩스 백엔드 엔지니어 (인턴십)]] 
 - 
 
 ### 지원한 회사 현황
