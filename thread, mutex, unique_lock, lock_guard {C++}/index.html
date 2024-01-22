@@ -43058,6 +43058,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2222-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      22:22 공유자원에 대한 모든 접근은 lock이 선행돼야 한다.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2427-unlock-return-throw" class="md-nav__link">
+    <span class="md-ellipsis">
+      24:27 unlock 하기 전에 return 혹은 throw 문제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3203-condition-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      32:03 Condition Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3710-mutex-condvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      37:10 mutex + condvar는 언제 쓰나요
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49906,6 +49942,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2222-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      22:22 공유자원에 대한 모든 접근은 lock이 선행돼야 한다.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2427-unlock-return-throw" class="md-nav__link">
+    <span class="md-ellipsis">
+      24:27 unlock 하기 전에 return 혹은 throw 문제
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3203-condition-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      32:03 Condition Variable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3710-mutex-condvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      37:10 mutex + condvar는 언제 쓰나요
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49959,12 +50031,51 @@
 <li><code>std::condition_variable</code> <a href="../condition%20variable%EC%9D%B4%EB%9E%80%20%7Bfeat.monitor%7D/">condition variable이란 {feat.monitor}</a>에서 더 자세한 설명을 참조하세요<ul>
 <li><code>notify_one()</code></li>
 <li><code>notify_all()</code></li>
-<li><code>wait(lock, pred?)</code></li>
+<li><code>wait(lock, pred?)</code> pred는 until조건임(...)</li>
 <li><code>wait_for(lock, duration, pred?)</code></li>
 <li><code>wait_until(lock, time_point, pred?)</code></li>
 </ul>
 </li>
 </ul>
+<h2 id="2222-lock">22:22 공유자원에 대한 모든 접근은 lock이 선행돼야 한다.<a class="headerlink" href="#2222-lock" title="Permanent link">#</a></h2>
+<p>"난 단지 읽기만 할건데요?"와 같은 안일한 생각에 mutex.lock을 안했다면 바로 Undefined Behavior이다. 유일한 예외는 constructor 또는 destructor일때만. 이 두 케이스는 오직 하나의 스레드만이 생성 또는 삭제중이어야 한다는 기본 조건이 들어있기 때문이다.</p>
+<h2 id="2427-unlock-return-throw">24:27 unlock 하기 전에 return 혹은 throw 문제<a class="headerlink" href="#2427-unlock-return-throw" title="Permanent link">#</a></h2>
+<p>[[RAII]] 원칙을 사용하는 lock_guard를 사용하면 해당 스코프를 어떤 식으로든 벗어나게 될때 lock이 풀립니다. <a href="../%EB%B3%91%EB%A0%AC%EC%84%B1%EA%B3%BC%20%EB%8F%99%EC%8B%9C%EC%84%B1%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%84%20%EC%95%8C%EB%A0%A4%EC%A3%BC%EC%84%B8%EC%9A%94/#데드락deadlock에-대해-설명해주세요">데드락에 대해 설명해주세요.</a></p>
+<h2 id="3203-condition-variable">32:03 Condition Variable<a class="headerlink" href="#3203-condition-variable" title="Permanent link">#</a></h2>
+<p><a href="../condition%20variable%EC%9D%B4%EB%9E%80%20%7Bfeat.monitor%7D/">condition variable이란 {feat.monitor}</a></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">TokenPool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Token</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tokens_</span><span class="p">;</span>
+<span class="w">    </span><span class="n">mutex</span><span class="w"> </span><span class="n">mtx_</span><span class="p">;</span>
+<span class="w">    </span><span class="n">condition_variable</span><span class="w"> </span><span class="n">cv_</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @brief 생산자</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">returnToken</span><span class="p">(</span><span class="n">Token</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">unique_lock</span><span class="w"> </span><span class="n">lk</span><span class="p">{</span><span class="n">mtx_</span><span class="p">};</span>
+<span class="w">        </span><span class="n">tokens_</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="w">        </span><span class="n">lk</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span><span class="w"> </span><span class="c1">// 명시적 unlock (optional)</span>
+<span class="w">        </span><span class="n">cv_</span><span class="p">.</span><span class="n">notify_one</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/**</span>
+<span class="cm">     * @brief 소비자</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">Token</span><span class="w"> </span><span class="nf">getToken</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">unique_lock</span><span class="w"> </span><span class="n">lk</span><span class="p">{</span><span class="n">mtx_</span><span class="p">};</span>
+<span class="w">        </span><span class="n">cv_</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lk</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](){</span><span class="k">return</span><span class="w"> </span><span class="o">!</span><span class="n">tokens_</span><span class="p">.</span><span class="n">empty</span><span class="p">();})</span><span class="w"> </span><span class="c1">// until not empty</span>
+<span class="w">        </span><span class="n">Token</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">move</span><span class="p">(</span><span class="n">tokens_</span><span class="p">.</span><span class="n">back</span><span class="p">());</span>
+<span class="w">        </span><span class="n">tokens_</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="3710-mutex-condvar">37:10 mutex + condvar는 언제 쓰나요<a class="headerlink" href="#3710-mutex-condvar" title="Permanent link">#</a></h2>
+<p>consumer - producer 관계에서 씁니다. consumer는 버퍼가 원소를 가지고 있을때까지 기다리고, producer는 버퍼가 full이 아닐때까지 기다립니다.</p>
+<p>만약 오직 한 번만 맺는 관계일 경우, <strong>promise</strong>와 <strong>future</strong>를 쓰세요.</p>
+<blockquote>
+<p>such as Token Pool, Task Queue, Go-style channel</p>
+</blockquote>
 
 
 
