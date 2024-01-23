@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-22T14:55:12
+updated: 2024-01-23T21:16:16
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -85,6 +85,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 - [[최승현을 소개합니다]]
 - [[최승현_Backend_Web_Developer_이력서]]
+	- [출력용 이력서 {Google Docs}](https://docs.google.com/document/d/1zLOzmalTjBZG1vsSd4GD0WMnJ0k1_j9sPd2ScDacvcw/edit?usp=sharing)
 - [[Portfolio-최승현]]
 
 ## 인터뷰 질문 추려내기
