@@ -4,7 +4,7 @@ tags:
 description:
 title: 최승현_Backend_Web_Developer_이력서
 created: 2023-12-19T16:43:54
-updated: 2024-01-20T18:00:39
+updated: 2024-01-23T18:06:50
 ---
 
 # 최승현 | 협력과 상호 성장에 관심이 많은 프로그래머
@@ -19,16 +19,16 @@ updated: 2024-01-20T18:00:39
 - Github: <https://github.com/ChoiWheatley>
 - Blog: <https://choiwheatley.github.io>
 
-## Who Am I?
+## Introduction
 
-코드 자체가 문서의 역할을 할 수 있도록 의도를 담아내는데에 관심이 많은 프로그래머 최승현이라고 합니다. 얻어갈 수 있는 것에 대한 욕구가 크기 때문에 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다.  
+코드 자체가 문서의 역할을 할 수 있도록 의도를 담아내는데에 관심이 많은 프로그래머 최승현입니다. 각종 생산성 도구를 끊임없이 발굴하는 습관을 지니고 있습니다. 지식관리툴인 옵시디언과 구글킵을 활용하여 스크랩, 아카이빙, 연관 지식과의 연결, 블로그 포스팅으로 이어지는 파이프라인을 가지고 있습니다.  
 
 ## Experiences
 
 ### RecRe
 
-- TL;DR
-	- 별도의 지식이나 화려한 언변 없이도 쉽게 레크리에이션을 진행할 수 있도록 도와주는 서비스. 
+- Description
+	- 별도의 지식이나 화려한 언변 없이도 쉽게 레크리에이션을 진행할 수 있도록 도와주는 서비스입니다. 최대 100명의 관중들과 온/오프라인에서 웹 브라우저만으로 함께 게임을 즐길 수 있습니다. 현재 그림 맞추기 게임과 무궁화 꽃이 피었습니다 게임이 정식으로 출시되었습니다. 레크리에이션을 기획하고 계시다면 <https://treepark.shop> 에서 바로 플레이 가능합니다.
 - Links
 	- <https://github.com/Team-def/recre-backend>
 	- <https://github.com/Team-def/recre-frontend>
@@ -42,20 +42,20 @@ updated: 2024-01-20T18:00:39
 	- PostgreSQL
 	- SQLite (In Memory)
 - 맡은 역할
-	- Leader: git / github 커밋 및 PR 컨벤션을 엄격하게 정의하여 이슈 단위별 코드 기여 + 문서화 하도록 독려
-	- Backend: Web Socket 지연시간 측정 및 플레이어 탈락여부 로직 작성, 게임룸 상태에 따른 이벤트 허용/차단 로직 작성
+	- Leader: git / github 커밋 및 PR 컨벤션을 엄격하게 정의하여 이슈 단위별 코드 기여 + 문서화 하도록 독려했습니다.
+	- Backend: Web Socket 지연시간을 측정했으며 플레이어 탈락여부 로직을 작성했습니다. 게임룸 상태에 따른 이벤트 허용/차단 로직을 작성했습니다.
 - 성과
-	- 팀원 간 중복구현 횟수 0건
-	- 딜레이 계산으로 무궁화 꽃이 피었습니다 게임 공정성 향상
-	- 플레이 도중 발생하는 네트워크 불안정에 강인한 게임 상태 관리
+	- 팀원 간 중복구현 횟수 0건으로 인력낭비를 줄였습니다.
+	- Socket.IO 상에서 유저와 서버간의 지연시간을 계산하여 무궁화 꽃이 피었습니다 게임의 공정성을 향상시켰습니다.
+	- 불안정한 네트워크 상태에서도 지속적으로 연결을 보장하도록 만들었습니다. 
 	
 
 ### 주니어 백엔드 개발자, 그 이상으로
 
-- TL;DR
+- Description
 	- 주니어 백엔드 개발자를 위한 기초 지식을 제공해주는 책을 집필. 온라인 서점 서비스인 allbooks를 구현하며 얻은 경험을 바탕으로 작성.
 - Links
-	- [리디북스](https://ridibooks.com/books/2773000077?_rdt_sid=myridi_recents&_rdt_idx=0)
+	- [리디북스](https://ridibooks.com/books/2773000077)
 	- [노션 본문](https://estsoft-junior-backend.notion.site/f898e86a1c274a83a36ff2655d1a71e0?pvs=4)
 	- [깃허브 리포지토리](https://github.com/ESTsoft-Book-Project/bookstore)
 - 집필기간
