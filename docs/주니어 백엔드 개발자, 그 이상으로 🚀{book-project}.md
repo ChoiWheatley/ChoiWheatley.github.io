@@ -3,7 +3,7 @@ description:
 aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2023-12-19T13:31:22
+updated: 2024-01-23T20:26:57
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
@@ -19,6 +19,9 @@ ___
 - [[book-project {LEGACIES}]]  
 - [파이썬을 활용한 RESTful API 개발 기본 {NOTION} (deprecated)](https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4 "https://www.notion.so/paullabworkspace/RESTful-API-c78ae20e2dbc4565b7f5db531870f255?pvs=4")
 ___
+- [ESTsoft-Book-Project / bookstore {GH}](https://github.com/ESTsoft-Book-Project/bookstore) 본 레포
+- [pok125 / book-project {GH}](https://github.com/pok125/ESTsoft-Book-Project) - README PR별로 제대로 정리가 되어있는 포크 레포
+---
 
 # README
 

@@ -4,7 +4,7 @@ tags:
 description:
 title: 최승현_Backend_Web_Developer_이력서
 created: 2023-12-19T16:43:54
-updated: 2024-01-23T18:06:50
+updated: 2024-01-23T20:41:30
 ---
 
 # 최승현 | 협력과 상호 성장에 관심이 많은 프로그래머
@@ -25,7 +25,7 @@ updated: 2024-01-23T18:06:50
 
 ## Experiences
 
-### RecRe
+### RecRe 레크리에이션 웹 서비스
 
 - Description
 	- 별도의 지식이나 화려한 언변 없이도 쉽게 레크리에이션을 진행할 수 있도록 도와주는 서비스입니다. 최대 100명의 관중들과 온/오프라인에서 웹 브라우저만으로 함께 게임을 즐길 수 있습니다. 현재 그림 맞추기 게임과 무궁화 꽃이 피었습니다 게임이 정식으로 출시되었습니다. 레크리에이션을 기획하고 계시다면 <https://treepark.shop> 에서 바로 플레이 가능합니다.
@@ -42,20 +42,27 @@ updated: 2024-01-23T18:06:50
 	- PostgreSQL
 	- SQLite (In Memory)
 - 맡은 역할
-	- Leader: git / github 커밋 및 PR 컨벤션을 엄격하게 정의하여 이슈 단위별 코드 기여 + 문서화 하도록 독려했습니다.
-	- Backend: Web Socket 지연시간을 측정했으며 플레이어 탈락여부 로직을 작성했습니다. 게임룸 상태에 따른 이벤트 허용/차단 로직을 작성했습니다.
+	- **Leader**: git / github 커밋 및 PR 컨벤션을 엄격하게 정의하여 이슈 단위별 코드 기여 + 문서화 하도록 독려했습니다.
+	- **Backend**: Web Socket 지연시간을 측정했으며 플레이어 탈락여부 로직을 작성했습니다. 게임룸 상태에 따른 이벤트 허용/차단 로직을 작성했습니다.
 - 성과
 	- 팀원 간 중복구현 횟수 0건으로 인력낭비를 줄였습니다.
 	- Socket.IO 상에서 유저와 서버간의 지연시간을 계산하여 무궁화 꽃이 피었습니다 게임의 공정성을 향상시켰습니다.
 	- 불안정한 네트워크 상태에서도 지속적으로 연결을 보장하도록 만들었습니다. 
 	
 
-### 주니어 백엔드 개발자, 그 이상으로
+### allbooks 웹 서점 서비스 + 실제 도서 출간
 
 - Description
-	- 주니어 백엔드 개발자를 위한 기초 지식을 제공해주는 책을 집필. 온라인 서점 서비스인 allbooks를 구현하며 얻은 경험을 바탕으로 작성.
+	- 온라인 서점 서비스인 allbooks를 구현하며 얻은 경험을 바탕으로 주니어 백엔드 개발자를 위한 기초 지식을 제공해주는 책을 출간했습니다.
+- 전체 기능
+	- 유저 회원가입, 로그인, 프로필 수정, 회원 탈퇴 기능
+	- OAuth를 활용한 구글, 네이버, 카카오 회원가입 및 로그인 (배포 후 구글 로그인은 https 도입 후 이용 가능합니다)
+	- 상품 추가, 수정, 삭제 및 댓글 기능
+	- 장바구니 기능
+	- Stripe, 카카오페이를 활용한 결제 및 결제 취소
+	- 결제에 따른 재고 수량 변경
 - Links
-	- [리디북스](https://ridibooks.com/books/2773000077)
+	- [리디북스](https://ridibooks.com/books/2773000077) - "주니어 백엔드 개발자, 그 이상으로" 출간
 	- [노션 본문](https://estsoft-junior-backend.notion.site/f898e86a1c274a83a36ff2655d1a71e0?pvs=4)
 	- [깃허브 리포지토리](https://github.com/ESTsoft-Book-Project/bookstore)
 - 집필기간
@@ -65,27 +72,16 @@ updated: 2024-01-23T18:06:50
 	- Django
 	- Django Rest Framework
 	- Amazon S3 Bucket
+	- PostgreSQL (Amazon RDS)
 	- Nginx
 	- Ajax
 - 맡은 역할
-	- 8장 "데이터 모델링": 데이터 모델링과 관련한 지식을 학습하며 집필 
-	- 11장 "에러처리": allbooks 구현하며 만난 다양한 에러를 지나치지 않고 트래킹 하여 각각의 단원으로 정리
-
-<br>
-
-## Skills
-
-| Tech      | Icon                                                                                                              | Programming Language                                                                                       |
-| --------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| NestJS    | <img src="https://nestjs.com/logo-small.ede75a6b.svg" style="height: 100px; width: 100px;">                       | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/240px-Typescript_logo_2020.svg.png" style="height:100px;">                                                                                           |
-| socket.io | <img src="https://socket.io/images/logo.svg" style="height: 100px; width: 100px;">                                | <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png" style="height:100px;">                                                                                           |
-| TypeORM   | <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" style="height: 100px;">           | <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png" style="height:100px;">                                                                                           |
-| Django    | <img src="https://static.djangoproject.com/img/logos/django-logo-positive.png" style="height:100px;">             | <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" style="height:100px;">                                                                                       |
-| DRF       | <img src="https://www.django-rest-framework.org/img/logo.png" style="height:100px">                               | <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png" style="height:100px;">                                                                                       |
-| SceneKit  | <img src="https://developer.apple.com/assets/elements/icons/scenekit/scenekit-128x128.png" style="height:100px;"> | <img src="https://www.kindpng.com/picc/m/17-179376_swift-programming-language-logo-hd-png-download.png" alt="Swift Programming Language Logo, HD Png Download@kindpng.com" style="height:100px;">                                                                                                           |
-
-<br>
+	- 유저, 장바구니, 주문, 재고 로직을 작성하고 Django ORM으로 PostgreSQL RDS에 데이터를 CRUD했습니다.
+	- 8장 "데이터 모델링": 데이터 모델링과 관련한 지식을 학습하며 집필했습니다.
+	- 11장 "에러처리": allbooks를 구현하며 만난 다양한 에러를 지나치지 않고 트래킹 하여 각각의 단원으로 정리했습니다.
 
 ## Education
 
-숭실대학교 소프트웨어학부 (2016-03-01 ~ 2023-08-18)
+- 숭실대학교 소프트웨어학부 (2016-03-01 ~ 2023-08-18)
+- 이스트소프트 백엔드 부트캠프 오르미 1기 (2023-04-24 ~ 2023-09-05)
+- SW사관학교 정글 7기 (KAIST) (2023-08-06 ~ 2023-12-26)
