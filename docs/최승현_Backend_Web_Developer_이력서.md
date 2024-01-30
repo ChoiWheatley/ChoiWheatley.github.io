@@ -4,8 +4,12 @@ tags:
 description:
 title: 최승현_Backend_Web_Developer_이력서
 created: 2023-12-19T16:43:54
-updated: 2024-01-23T20:41:30
+updated: 2024-01-30T21:33:02
 ---
+
+## README
+
+최신버전은 [구글독스](https://docs.google.com/document/d/1zLOzmalTjBZG1vsSd4GD0WMnJ0k1_j9sPd2ScDacvcw/edit?usp=sharing)로 이동했습니다.
 
 # 최승현 | 협력과 상호 성장에 관심이 많은 프로그래머
 
