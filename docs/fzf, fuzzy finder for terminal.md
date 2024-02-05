@@ -4,7 +4,7 @@ tags:
 description:
 title: fzf, fuzzy finder for terminal
 created: 2023-09-07T20:54:43
-updated: 2024-02-05T23:04:37
+updated: 2024-02-05T23:04:55
 ---
 <https://github.com/junegunn/fzf>  
 
