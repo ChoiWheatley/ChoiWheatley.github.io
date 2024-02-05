@@ -4,7 +4,7 @@ tags:
 description:
 title: remote desktop
 created: 2024-02-05T16:03:50
-updated: 2024-02-05T23:58:05
+updated: 2024-02-06T01:22:58
 ---
 
 ## xrdp
@@ -24,7 +24,7 @@ updated: 2024-02-05T23:58:05
 	After=display-manager.service
 	
 	[Service]
-	ExecStart=/usr/bin/x11vnc -ncache 10 -xkb -noxrecord -noxfixes -noxdamage -display :0 -rfbauth /etc/x11vnc.pass -usepw
+	ExecStart=/usr/bin/x11vnc -ncache 10 -xkb -noxrecord -noxfixes -noxdamage -display :0 -auth guess -rfbauth /etc/x11vnc.pass -usepw
 	ExecStop=/usr/bin/killall x11vnc
 	Restart=on-failure
 	RestartSec=2
@@ -32,3 +32,11 @@ updated: 2024-02-05T23:58:05
 	[Install]
 	WantedBy=multi-user.target
 	```
+
+4. 아래 명령어를 통하여 데몬을 등록한다.
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start x11vnc
+sudo systemctl enable x11vnc
+```
