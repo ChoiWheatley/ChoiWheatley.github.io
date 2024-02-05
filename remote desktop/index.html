@@ -50214,9 +50214,18 @@
 
 <h2 id="xrdp">xrdp<a class="headerlink" href="#xrdp" title="Permanent link">#</a></h2>
 <h2 id="x11vnc">x11vnc<a class="headerlink" href="#x11vnc" title="Permanent link">#</a></h2>
-<p><a href="https://github.com/LibVNC/x11vnc">https://github.com/LibVNC/x11vnc</a></p>
-<ol>
-<li><code>sudo apt install x11vnc</code> 로 설치를 한다.</li>
+<ul>
+<li>
+<p>참고</p>
+<ul>
+<li><a href="https://github.com/LibVNC/x11vnc">https://github.com/LibVNC/x11vnc</a></li>
+<li><a href="https://alida.tistory.com/3">https://alida.tistory.com/3</a></li>
+<li><a href="https://m.blog.naver.com/chunsan89/221465317759">x11에 관한 블로그</a></li>
+</ul>
+</li>
+<li>
+<p><code>sudo apt install x11vnc</code> 로 설치를 한다.</p>
+</li>
 <li><code>sudo x11vnc -storepasswd</code> 명령어를 사용, 비밀번호를 설정한다.</li>
 <li>
 <p><code>/etc/systemd/system/x11vnc.service</code> 파일을 생성하여 다음과 같은 내용을 작성한다.</p>
@@ -50226,7 +50235,7 @@ Requires=display-manager.service
 After=display-manager.service
 
 [Service]
-ExecStart=/usr/bin/x11vnc -ncache 10 -xkb -noxrecord -noxfixes -noxdamage -display :0 -rfbauth /etc/x11vnc.pass -usepw
+ExecStart=/usr/bin/x11vnc -ncache 10 -xkb -noxrecord -noxfixes -noxdamage -display :0 -auth guess -rfbauth /etc/x11vnc.pass -usepw
 ExecStop=/usr/bin/killall x11vnc
 Restart=on-failure
 RestartSec=2
@@ -50235,7 +50244,14 @@ RestartSec=2
 WantedBy=multi-user.target
 </code></pre></div>
 </li>
-</ol>
+<li>
+<p>아래 명령어를 통하여 데몬을 등록한다.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload
+sudo systemctl start x11vnc
+sudo systemctl enable x11vnc
+</code></pre></div>
 
 
 
