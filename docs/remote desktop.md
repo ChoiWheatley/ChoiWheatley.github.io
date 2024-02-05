@@ -4,14 +4,17 @@ tags:
 description:
 title: remote desktop
 created: 2024-02-05T16:03:50
-updated: 2024-02-06T01:22:58
+updated: 2024-02-06T01:42:33
 ---
 
 ## xrdp
 
 ## x11vnc
 
-<https://github.com/LibVNC/x11vnc>
+- 참고
+	- <https://github.com/LibVNC/x11vnc>
+	- <https://alida.tistory.com/3>
+	- [x11에 관한 블로그](https://m.blog.naver.com/chunsan89/221465317759)
 
 1. `sudo apt install x11vnc` 로 설치를 한다.
 2. `sudo x11vnc -storepasswd` 명령어를 사용, 비밀번호를 설정한다.
