@@ -50215,6 +50215,27 @@
 <h2 id="xrdp">xrdp<a class="headerlink" href="#xrdp" title="Permanent link">#</a></h2>
 <h2 id="x11vnc">x11vnc<a class="headerlink" href="#x11vnc" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/LibVNC/x11vnc">https://github.com/LibVNC/x11vnc</a></p>
+<ol>
+<li><code>sudo apt install x11vnc</code> 로 설치를 한다.</li>
+<li><code>sudo x11vnc -storepasswd</code> 명령어를 사용, 비밀번호를 설정한다.</li>
+<li>
+<p><code>/etc/systemd/system/x11vnc.service</code> 파일을 생성하여 다음과 같은 내용을 작성한다.</p>
+<div class="highlight"><pre><span></span><code>[Unit]
+Description=&quot;x11vnc&quot;
+Requires=display-manager.service
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/x11vnc -ncache 10 -xkb -noxrecord -noxfixes -noxdamage -display :0 -rfbauth /etc/x11vnc.pass -usepw
+ExecStop=/usr/bin/killall x11vnc
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div>
+</li>
+</ol>
 
 
 
