@@ -4,7 +4,7 @@ tags:
 description:
 title: fzf, fuzzy finder for terminal
 created: 2023-09-07T20:54:43
-updated: 2023-09-07T20:59:59
+updated: 2024-02-05T23:04:37
 ---
 <https://github.com/junegunn/fzf>  
 
@@ -15,3 +15,23 @@ updated: 2023-09-07T20:59:59
 ```shell
 find | fzf
 ```
+
+## install with homebrew
+
+```sh
+brew install fzf
+
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+```
+
+## install from git
+
+```sh
+git clone --depth 1 [https://github.com/junegunn/fzf.git](https://github.com/junegunn/fzf.git) ~/.fzf
+~/.fzf/install
+```
+
+## ctrl + r 명령어 조합으로 이전 명령어 검색
+
+![[Pasted image 20240205230452.png]]
