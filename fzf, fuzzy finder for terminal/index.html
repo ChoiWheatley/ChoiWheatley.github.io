@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#install-with-homebrew" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -37188,6 +37193,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    fzf, fuzzy finder for terminal
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -37197,6 +37213,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      install with homebrew
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-from-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      install from git
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctrl-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctrl + r 명령어 조합으로 이전 명령어 검색
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -50120,6 +50180,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-with-homebrew" class="md-nav__link">
+    <span class="md-ellipsis">
+      install with homebrew
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-from-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      install from git
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctrl-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctrl + r 명령어 조합으로 이전 명령어 검색
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -50140,6 +50235,18 @@
 <p>가장 많이 쓰게 될 건 역시 파일 검색일 것이다. 대표적인 명령어를 소개하자면,</p>
 <div class="highlight"><pre><span></span><code>find<span class="w"> </span><span class="p">|</span><span class="w"> </span>fzf
 </code></pre></div>
+<h2 id="install-with-homebrew">install with homebrew<a class="headerlink" href="#install-with-homebrew" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>fzf
+
+<span class="c1"># To install useful key bindings and fuzzy completion:</span>
+<span class="k">$(</span>brew<span class="w"> </span>--prefix<span class="k">)</span>/opt/fzf/install
+</code></pre></div>
+<h2 id="install-from-git">install from git<a class="headerlink" href="#install-from-git" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">[</span>https://github.com/junegunn/fzf.git<span class="o">](</span>https://github.com/junegunn/fzf.git<span class="o">)</span><span class="w"> </span>~/.fzf
+~/.fzf/install
+</code></pre></div>
+<h2 id="ctrl-r">ctrl + r 명령어 조합으로 이전 명령어 검색<a class="headerlink" href="#ctrl-r" title="Permanent link">#</a></h2>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240205230452.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240205230452.png" src="../assets/Pasted%20image%2020240205230452.png" /></a></p>
 
 
 
