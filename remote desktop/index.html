@@ -41843,6 +41843,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="x11vnc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      TroubleShooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -50193,6 +50208,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="x11vnc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      TroubleShooting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -50252,6 +50282,13 @@ WantedBy=multi-user.target
 sudo systemctl start x11vnc
 sudo systemctl enable x11vnc
 </code></pre></div>
+<p>exited with 1 문제가 발생한다면, 위의 <code>ExecStart</code> 구문을 직접 실행시켜보고 문제를 확인해봐야 한다. 나의 문제는 <strong>Can't open display :0</strong>였다. 이 문제를 해결하기 위해선 <a href="https://superuser.com/questions/647464/how-to-get-the-display-number-i-was-assigned-by-x">다음 superuser.com</a>의 대화에서 볼 수 있듯이 <code>who</code> 명령어를 사용하여 이 유저에게 할당된 디스플레이 번호를 체크하면 되는 문제이다. </p>
+<div class="highlight"><pre><span></span><code> 02:00:27 up 12 min,  1 user,  load average: 0.13, 0.13, 0.09
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+choiwhea :1       :1               01:47   ?xdm?   1:33   0.00s /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gno
+</code></pre></div>
+<h3 id="troubleshooting">TroubleShooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h3>
+<p><code>-auth guess: failed for display=':0'</code></p>
 
 
 
