@@ -9,7 +9,7 @@ aliases:
 tags: [" algo/kmp algo/string ", algo/kmp, algo/string]
 date created: Monday, February 13th 2023, 6:16:30 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-27T13:28:01
+updated: 2024-02-07T20:56:48
 ---
 parent link: [[0011 Algorithms ♾️|algorithms]]
 
@@ -26,7 +26,7 @@ parent link: [[0011 Algorithms ♾️|algorithms]]
 
 - 문자열 매칭은 찾기를 수행하려는 텍스트 (T)와 찾으려는 문자열인 패턴 (P)가 존재, N = T.length, M = P.length라고 하자.
 - O(NM)을 O(N + M)으로 만들어주는 알고리즘이 바로 KMP 알고리즘이다.
-- P를 T에 하나씩 갖다 대면서 찾기를 수행할 때, 비록 T의 [i, i + m)번째 문자들과 P의 [0, m)번째 문자들은 일치하지만 m+1 번째 문자가 일치하지 않았더라도 KMP는 P를 다시 0번째로 되돌아가지 않게 만들어준다. 바로 지금까지 일치했던 문자들을 활용해서 말이다.
+- P를 T에 하나씩 갖다 대면서 찾기를 수행할 때, 비록 T의 \[i, i + m)번째 문자들과 P의 \[0, m)번째 문자들은 일치하지만 m+1 번째 문자가 일치하지 않았더라도 KMP는 P를 다시 0번째로 되돌아가지 않게 만들어준다. 바로 지금까지 일치했던 문자들을 활용해서 말이다.
 - P의 접두어와 m까지의 접미어가 서로 일치하면 T를 읽을 때 일치했던 문자들을 다시 볼 필요가 없다.
 
 # 예시 (백준 1786번)
@@ -265,3 +265,4 @@ ___
 - [11585번: 속타는 저녁 메뉴](https://www.acmicpc.net/problem/11585)
 - [1893번: 시저 암호](https://www.acmicpc.net/problem/1893)
 - [7575번: 바이러스](https://www.acmicpc.net/problem/7575)
+- [boj-1701: Cubeditor](https://boj.kr/1701)
