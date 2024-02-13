@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-22T21:37:49
-updated: 2023-12-23T21:46:21
+updated: 2024-02-13T19:01:02
 title: 0018 Javascript ☕️
 ---
 
@@ -13,6 +13,8 @@ title: 0018 Javascript ☕️
 - [JS 수업교안 {Notion}](https://www.notion.so/JS-22-6-8723b46e0cde4d90b020b689e5cb9f0a)
 - [알잘딱 JS 핵심개념 {Notion}](https://morning-heart-e2a.notion.site/JavaScript-f037c206e538471f9a9f1915b2139a60)
 - [JS Deep Dive {GH 제주코딩베이스}](https://github.com/weniv/BackendOrmi/blob/main/JavaScript/%EB%B3%B5%EC%8A%B5.md)
+- [자바스크립트 기초 강좌 : 100분 완성 (Youtube 코딩앙마)](https://youtu.be/KF6t61yuPCY?feature=shared)
+- [자바스크립트 중급 강좌 : 140분 완성 (Youtube 코딩앙마)](https://youtu.be/4_WLS9Lj6n4?feature=shared)
 
 ## 참고하면 좋은 사이트
 
