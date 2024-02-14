@@ -10,19 +10,23 @@ aliases:
 tags: [" index obsidian ", index, obsidian]
 date created: Friday, February 10th 2023, 6:11:21 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-10-04T15:07:05
+updated: 2024-02-14T18:25:46
 ---
 parent link: [[docs/index/index|index]]
 
 ---
 
-# 유용한 정보 모음
+## 옵시디언 리뷰
+
+[[옵시디언 1년 사용자의 리뷰]]
+
+## 유용한 정보 모음
 
 - [[두 번째 뇌 만들기]]
 - [[obsidian으로 프리젠테이션 하기 - no boilerplate]]
 - [[latex]]
 
-# 플러그인
+## 플러그인
 
 - [[dataview]]
 - [[MarkDownload - Markdown Web Clipper - Share & showcase - Obsidian Forum|마크다운 웹 클리퍼 - 웹 브라우저 플러그인]]
@@ -35,24 +39,24 @@ parent link: [[docs/index/index|index]]
 - [[quick switcher obsidian plugin]]
 - [[templater obsidian plugin, 맛탱이가 간 기본 템플릿 생성기 대체제]]
 
-# 옵시디언 튜토리얼
+## 옵시디언 튜토리얼
 
 - [[A Guide On Links vs. Tags In Obsidian - Knowledge management - Obsidian Forum|링크 vs 태그]]
 - [[Use Obsidian Like a Pro]]
 - [[Quick Tip Footnotes in Obsidian - Obsidian Rocks]]
 - [[Obsidian Basic Formatting Syntax]]
 
-# 커뮤니티
+## 커뮤니티
 
 - [[Has anyone created a bookmarking system in obsidian   ObsidianMD|북마크 관리자로써의 옵시디언]]
 - [[tab reuse on link opening, tab management {Obsidian}]]
 - [config 싱크 기능의 부재](https://forum.obsidian.md/t/copy-settings-from-existing-vault-option/11082)
   - 세팅 싱크를 그냥 `.obsidian` 폴더로 하라는데? [link](https://forum.obsidian.md/t/copy-current-vault-settings-to-new-one/36134/2)
 
-# obsidian으로 블로그 만들기
+## obsidian으로 블로그 만들기
 
 [[Obsidian으로 블로그 만들기]]
 
-## 해볼것
+### 해볼것
 
 - [ ] `- [ ]`, `- [?]`으로 시작하는 라인 쿼리하는 dataview
