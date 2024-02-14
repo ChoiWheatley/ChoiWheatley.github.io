@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-24T09:26:36
-updated: 2024-01-08T15:18:23
+updated: 2024-021-4T208T7:4915:18:23
 title: Obsidian으로 블로그 만들기
 ---
 - [[0070 Obsidian 💎|obsidian]]
