@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-22T21:37:49
-updated: 2024-02-13T19:01:02
+updated: 2024-02-15T08:55:55
 title: 0018 Javascript ☕️
 ---
 
@@ -26,6 +26,67 @@ title: 0018 Javascript ☕️
 - [[JS instance method]]
 - [[JS {basic} {types} {for in, for of} {spread} {destructuring}]]
 - [[비동기, Promise, async, await {JS}]]
+- hoisting과 temporal dead zone
+- constructor function
+- 계산된 프로퍼티
+
+```js
+const user = {
+	[expression] : value
+}
+// same as
+user[expression] = value
+```
+
+- Object Methods
+	- `Object.assign(init, target)`: init 객체에 target 객체를 덮어씌운 새 객체를 리턴
+		- `const user2 = user` 이런 식으로 쓰면 안된다. 같은 주소값을 가리키기 때문.
+	- `Object.keys(obj)`: 키값만 배열로 반환
+	- `Object.values(obj)`: 밸류값들만 배열로 반환
+	- `Object.entries(obj)`: 키, 밸류를 가진 이차원 배열을 반환
+	- `Object.fromEntries(arr)`: 키, 밸류를 가진 이차원 배열로부터 객체 생성
+
+- Symbol 자료형
+
+JS는 남이 만들어놓은 객체의 프로퍼티를 자유롭게 추가 및 삭제할 수 있다. 그런데 원작자가 의도하지 않은 프로퍼티, 특히나 중복된 이름의 프로퍼티를 추가하려고 한다면 어떻게 될까?
+
+```js
+const user = {
+	name: "hello",
+	age: 28,
+};
+
+// 1000 LOC
+user.getName = function() {
+	return this.name;
+};
+
+for (key in user) {
+	console.log(key); // name, age, function가 출력됨.
+}
+```
+
+따라서, 임의 프로퍼티를 안전하게 추가하려면 고유한, 나만이 접근할 수 있는 Key 값으로 새 프로퍼티를 만드는 것이 정신건강에 이로울 것이다. 이를 위해서 만든 개념이 Symbol 자료형이다.
+
+```js
+const user = {
+	name: "hello",
+	age: 28,
+};
+
+// 1000 LOC
+
+const getName = Symbol("get name");
+user[getName] = function() {
+	return this.name;
+};
+
+for (key in user) {
+	console.log(key); // name, age 까지만 출력됨. getName은 심볼이라서 가려짐
+}
+
+user[getName](); // "hello"
+```
 
 ## 개꿀팁
 
