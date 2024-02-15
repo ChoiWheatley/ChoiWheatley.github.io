@@ -47134,7 +47134,68 @@
 <li><a href="../../JS%20instance%20method/">JS instance method</a></li>
 <li><a href="../../JS%20%7Bbasic%7D%20%7Btypes%7D%20%7Bfor%20in%2C%20for%20of%7D%20%7Bspread%7D%20%7Bdestructuring%7D/">JS {basic} {types} {for in, for of} {spread} {destructuring}</a></li>
 <li><a href="../../%EB%B9%84%EB%8F%99%EA%B8%B0%2C%20Promise%2C%20async%2C%20await%20%7BJS%7D/">비동기, Promise, async, await {JS}</a></li>
+<li>hoisting과 temporal dead zone</li>
+<li>constructor function</li>
+<li>계산된 프로퍼티</li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">expression</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">value</span>
+<span class="p">}</span>
+<span class="c1">// same as</span>
+<span class="nx">user</span><span class="p">[</span><span class="nx">expression</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Object Methods</p>
+<ul>
+<li><code>Object.assign(init, target)</code>: init 객체에 target 객체를 덮어씌운 새 객체를 리턴<ul>
+<li><code>const user2 = user</code> 이런 식으로 쓰면 안된다. 같은 주소값을 가리키기 때문.</li>
+</ul>
+</li>
+<li><code>Object.keys(obj)</code>: 키값만 배열로 반환</li>
+<li><code>Object.values(obj)</code>: 밸류값들만 배열로 반환</li>
+<li><code>Object.entries(obj)</code>: 키, 밸류를 가진 이차원 배열을 반환</li>
+<li><code>Object.fromEntries(arr)</code>: 키, 밸류를 가진 이차원 배열로부터 객체 생성</li>
+</ul>
+</li>
+<li>
+<p>Symbol 자료형</p>
+</li>
+</ul>
+<p>JS는 남이 만들어놓은 객체의 프로퍼티를 자유롭게 추가 및 삭제할 수 있다. 그런데 원작자가 의도하지 않은 프로퍼티, 특히나 중복된 이름의 프로퍼티를 추가하려고 한다면 어떻게 될까?</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// 1000 LOC</span>
+<span class="nx">user</span><span class="p">.</span><span class="nx">getName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w"> </span><span class="c1">// name, age, function가 출력됨.</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>따라서, 임의 프로퍼티를 안전하게 추가하려면 고유한, 나만이 접근할 수 있는 Key 값으로 새 프로퍼티를 만드는 것이 정신건강에 이로울 것이다. 이를 위해서 만든 개념이 Symbol 자료형이다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// 1000 LOC</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">getName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">(</span><span class="s2">&quot;get name&quot;</span><span class="p">);</span>
+<span class="nx">user</span><span class="p">[</span><span class="nx">getName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span><span class="w"> </span><span class="c1">// name, age 까지만 출력됨. getName은 심볼이라서 가려짐</span>
+<span class="p">}</span>
+
+<span class="nx">user</span><span class="p">[</span><span class="nx">getName</span><span class="p">]();</span><span class="w"> </span><span class="c1">// &quot;hello&quot;</span>
+</code></pre></div>
 <h2 id="_4">개꿀팁<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../../JS%20string%20formatting%20with%20positional%20placeholders%20---%20use%20backticks/">JS string formatting with positional placeholders --- use backticks</a></li>
