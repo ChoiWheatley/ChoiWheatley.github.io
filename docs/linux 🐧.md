@@ -8,3 +8,4 @@ updated: 2024-02-04T16:17:41
 ---
 - [[Keyboard hooking]]
 - [[remote desktop]]
+- [[wine setting]]
