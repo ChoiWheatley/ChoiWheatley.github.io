@@ -4,7 +4,7 @@ tags:
 description:
 title: wine setting
 created: 2024-02-15T18:28:56
-updated: 2024-02-15T20:06:25
+updated: 2024-02-15T23:07:16
 ---
 - [[linux 🐧]]
 ---
