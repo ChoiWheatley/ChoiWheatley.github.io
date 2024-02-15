@@ -4,7 +4,7 @@ tags:
 description:
 title: wine setting
 created: 2024-02-15T18:28:56
-updated: 2024-02-15T19:30:12
+updated: 2024-02-15T20:06:25
 ---
 - [[linux 🐧]]
 ---
@@ -20,3 +20,15 @@ updated: 2024-02-15T19:30:12
 ![[Pasted image 20240215192929.png]]
 
 해도해도 안되길래 모든 밸류들을 NanumGothic으로 바꿔봐도 시스템 글꼴이 네모네모 현상이 발생하는 것은 막을 수 없었다고 한다.
+
+![[Pasted image 20240215193456.png]]
+
+## Bottles의 존재를 발견
+
+<https://namu.wiki/w/%EC%99%80%EC%9D%B8(%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)>
+
+[Bottles로 카카오톡 설치하기 + Runner + cjk-fonts의존성 포함](https://zuni.kim/posts/linux-install-kakaotalk/)
+
+1. Flatpak을 사용하여 bottles를 설치하고, 상단바 삼선버튼을 눌러 Preferences > Runners > Caffe 최신 버전을 설치해준다.
+2. 새 bottle을 생성한다. options 아래에 있는 Dependencies 버튼을 누른 뒤 cjkfonts를 찾아 설치해주면 한글이 잘 표시된다.
+3. 그대로 다운받은 카카오톡 설치 exe파일을 Run Executable을 통해 실행시켜주자.
