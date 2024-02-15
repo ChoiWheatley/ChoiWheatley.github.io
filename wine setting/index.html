@@ -46550,7 +46550,10 @@
 <ul>
 <li><a href="https://forcecore.tistory.com/1320">https://forcecore.tistory.com/1320</a></li>
 </ul>
-<p><code>wine regedit</code> 으로 터미널에 쳐서 레지스트리 편집기를 연다. MS Shell Dlg를 수정하면 되는 건가?</p>
+<p><code>.bashrc</code> 혹은 <code>.zshrc</code> 파일에 적어놓았던 환경변수 <code>LANG="ko_KR.utf8"</code>에 오타를 낸 것이 첫 번째 문제의 원인이었다.</p>
+<p><code>wine regedit</code> 으로 터미널에 쳐서 레지스트리 편집기를 연다. MS Shell Dlg를 수정하면 되는 건가? <code>/home/choiwheatley/.wine/drive_c/windows/Fonts</code> 위치에 NanumGothic을 집어넣고 혹시 몰라 Arial, Courier New, Times New Roman 과 같은 폰트들 또한 같이 넣어주었다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240215192929.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240215192929.png" src="../assets/Pasted%20image%2020240215192929.png" /></a></p>
+<p>해도해도 안되길래 모든 밸류들을 NanumGothic으로 바꿔봐도 시스템 글꼴이 네모네모 현상이 발생하는 것은 막을 수 없었다고 한다.</p>
 
 
 
