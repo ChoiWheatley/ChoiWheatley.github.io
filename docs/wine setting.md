@@ -32,3 +32,4 @@ updated: 2024-02-15T23:07:16
 1. Flatpak을 사용하여 bottles를 설치하고, 상단바 삼선버튼을 눌러 Preferences > Runners > Caffe 최신 버전을 설치해준다.
 2. 새 bottle을 생성한다. options 아래에 있는 Dependencies 버튼을 누른 뒤 cjkfonts를 찾아 설치해주면 한글이 잘 표시된다.
 3. 그대로 다운받은 카카오톡 설치 exe파일을 Run Executable을 통해 실행시켜주자.
+
