@@ -46741,6 +46741,47 @@
 <ul>
 <li><a href="https://developers.kakaopay.com/docs/payment/online/single-payment">카카오페이 / 온라인 결제 / 단건 결제</a></li>
 </ul>
+<p>request:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;cid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TC0ONETIME&quot;</span><span class="p">,</span>
+<span class="nt">&quot;partner_order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;partner_order_id&quot;</span><span class="p">,</span>
+<span class="nt">&quot;partner_user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;partner_user_id&quot;</span><span class="p">,</span>
+<span class="nt">&quot;item_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;itemName&quot;</span><span class="p">,</span>
+<span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<span class="nt">&quot;total_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="nt">&quot;tax_free_amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<span class="nt">&quot;approval_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{APPROVAL_URL}}&quot;</span><span class="p">,</span>
+<span class="nt">&quot;cancel_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{CANCEL_URL}}&quot;</span><span class="p">,</span>
+<span class="nt">&quot;fail_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{FAIL_URL}}&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>response:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+
+<span class="nt">&quot;tid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;T5df1cc6196d5d20e31e&quot;</span><span class="p">,</span>
+
+<span class="nt">&quot;tms_result&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+
+<span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-02-28T20:45:10&quot;</span><span class="p">,</span>
+
+<span class="nt">&quot;next_redirect_pc_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://online-pay.kakao.com/mockup/v1/12618e7f0f21086a0173f2c2d68032deb64f7cfd7103f86aa476531c1344d562/info&quot;</span><span class="p">,</span>
+
+<span class="nt">&quot;next_redirect_mobile_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://online-pay.kakao.com/mockup/v1/12618e7f0f21086a0173f2c2d68032deb64f7cfd7103f86aa476531c1344d562/mInfo&quot;</span><span class="p">,</span>
+
+<span class="nt">&quot;next_redirect_app_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://online-pay.kakao.com/mockup/v1/12618e7f0f21086a0173f2c2d68032deb64f7cfd7103f86aa476531c1344d562/aInfo&quot;</span><span class="p">,</span>
+
+<span class="nt">&quot;android_app_scheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kakaotalk://kakaopay/pg?url=https://online-pay.kakao.com/pay/mockup/12618e7f0f21086a0173f2c2d68032deb64f7cfd7103f86aa476531c1344d562&quot;</span><span class="p">,</span>
+
+<span class="nt">&quot;ios_app_scheme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kakaotalk://kakaopay/pg?url=https://online-pay.kakao.com/pay/mockup/12618e7f0f21086a0173f2c2d68032deb64f7cfd7103f86aa476531c1344d562&quot;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>postman screenshot</p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-02-28%20%EC%98%A4%ED%9B%84%209.16.17.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2024-02-28 오후 9.16.17.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-02-28%20%EC%98%A4%ED%9B%84%209.16.17.png" /></a></p>
+<p><code>next_redirect_pc_url</code> 로 들어가서 QR을 찍었을때 카카오톡으로 전환됐을 경우 스크린샷:</p>
+<p><a class="glightbox" href="../assets/IMG_3514.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IMG_3514.png" src="../assets/IMG_3514.png" width="300" /></a></p>
+<p>결제가 완료된 후 등록한 리다이렉트 url로 이동한 스크린샷:</p>
+<p><a class="glightbox" href="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-02-28%20%EC%98%A4%ED%9B%84%209.26.37.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="스크린샷 2024-02-28 오후 9.26.37.png" src="../assets/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-02-28%20%EC%98%A4%ED%9B%84%209.26.37.png" /></a></p>
 
 
 
