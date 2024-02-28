@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-02-12T18:06:10
+updated: 2024-02-28T16:42:55
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -33,6 +33,10 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[포트원 백엔드 엔지니어]]
 - <https://swmaestro.org/>
 - \[채용공고] 2024년 1분기 현대오토에버 신입사원 채용 [링크](https://recruit.hyundai-autoever.com/?page=156184575&id=455136&list=270136750&scroll=580) ~ **2024-01-29T13:00:00 까지이므로 빠르게 지원할 것!**
+
+## 관심있는 부트캠프
+
+- [프로카데미](https://www.procademy.co.kr) 게임서버 개발자 양성과정
 
 ## 지원완료
 
