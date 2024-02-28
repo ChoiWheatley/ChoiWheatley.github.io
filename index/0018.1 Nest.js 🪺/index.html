@@ -21994,17 +21994,26 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-jest" class="md-nav__link">
+    <span class="md-ellipsis">
+      [TODO] JEST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-decorators" class="md-nav__link">
     <span class="md-ellipsis">
       Custom decorators
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -47492,17 +47501,26 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo-jest" class="md-nav__link">
+    <span class="md-ellipsis">
+      [TODO] JEST
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-decorators" class="md-nav__link">
     <span class="md-ellipsis">
       Custom decorators
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -47888,7 +47906,27 @@
 </ul>
 </li>
 </ul>
-<h3 id="custom-decorators">Custom decorators<a class="headerlink" href="#custom-decorators" title="Permanent link">#</a></h3>
+<h2 id="todo-jest">[TODO] JEST<a class="headerlink" href="#todo-jest" title="Permanent link">#</a></h2>
+<p>nest 프로젝트를 만들고 나서 딱 기본 템플릿인 상태에서 jest를 돌려보자. 바로 실패한다. <code>getHello</code> 서비스 메서드가 없다고 나오는데, 별도로 인젝션을 해야하는 것으로 보인다.</p>
+<div class="highlight"><pre><span></span><code>TestRun &quot;all-gifts:watch-tests-0:process-start:0 (0)&quot; started
+
+&gt; all-gifts@0.0.1 test
+&gt; jest --testLocationInResults --json --useStderr --outputFile /tmp/jest_runner_all_gifts_1000.json --watch --no-coverage --reporters default --reporters /home/choiwheatley/.vscode-server/extensions/orta.vscode-jest-6.2.2/out/reporter.js --colors
+
+ FAIL  src/app.controller.spec.ts
+  ● Test suite failed to run
+
+    src/app.controller.spec.ts:19:28 - error TS2339: Property &#39;getHello&#39; does not exist on type &#39;AppController&#39;.
+
+    19       expect(appController.getHello()).toBe(&#39;Hello World!&#39;);
+                                  ~~~~~~~~
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        0.91 s
+</code></pre></div>
+<h2 id="custom-decorators">Custom decorators<a class="headerlink" href="#custom-decorators" title="Permanent link">#</a></h2>
 <p><a href="../../Decorator%20-%20%7Bnestjs%7D/">Decorator - {nestjs}</a></p>
 <h2 id="js-async-await-promise">JS async, await, promise<a class="headerlink" href="#js-async-await-promise" title="Permanent link">#</a></h2>
 <p><a href="https://springfall.cc/article/2022-11/easy-promise-async-await">https://springfall.cc/article/2022-11/easy-promise-async-await</a></p>
