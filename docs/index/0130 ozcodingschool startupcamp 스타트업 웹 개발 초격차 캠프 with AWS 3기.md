@@ -4,7 +4,7 @@ tags:
 description:
 title: 0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기
 created: 2024-03-03T21:00:13
-updated: 2024-03-03T22:49:37
+updated: 2024-03-03T23:46:42
 ---
 - [초격차 캠프 with AWS 3기](https://ozcodingschool.com/ozcoding/startupcamp)
 
