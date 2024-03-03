@@ -41,5 +41,6 @@ parent link: [[docs/index]]
 - [[0110 Utility 🔧]]
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]]
 
 %% End Waypoint %%

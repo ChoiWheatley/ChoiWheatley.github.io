@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-03-03T20:47:36
+updated: 2024-03-03T22:11:32
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -22,12 +22,11 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
 - [[포트원 백엔드 엔지니어]]
 - <https://swmaestro.org/>
-- [[ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프]]
 
 ## 관심있는 부트캠프
 
 - [프로카데미](https://www.procademy.co.kr) 게임서버 개발자 양성과정
-- [[]]
+- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]]
 
 ## 지원완료
 
@@ -201,6 +200,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[typescript 언어에 대해서 설명해주세요]]
 - [[마크다운이란 무엇이고, 왜 써야 할까요, 한계가 무엇인가요]]
 - [[UTF8이 무엇인지 설명해 주세요. UTF8 문자열의 길이를 측정하는 방법과 n번째 문자를 가져오는 방법에 대해서도 설명해주세요]]
+- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] IT실습코치 포지션 면접질문
 
 ### 면접 후기
 
