@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-02-28T16:42:55
+updated: 2024-03-03T20:47:36
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -19,28 +19,19 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 ## 관심있는 기업
 
 - [넷텐션](https://www.proudnet.com/) C++ 게임서버 프레임워크인 프라우드넷을 만든 회사 
-- \[채용공고] 2024년 1월 캐논코리아 신입사원 채용 인턴전형(채용연계형) <https://inthiswork.com/archives/91608>
-- \[채용공고] 클래스팅 · 백엔드 개발자 (Backend) <https://inthiswork.com/archives/92014>
-- \[채용공고] 클래스101 · Frontend Developer (주니어경력) <https://inthiswork.com/archives/91347>
-- \[쿠키런: 오븐브레이크] 서버 소프트웨어 엔지니어 (신입) <https://careers.devsisters.com/position/detail/?jobPosition=242>
-- \[이스트게임즈] - 1분기 웹 개발자 채용 (신입/경력) <https://inthiswork.com/archives/91152>
-- \[네이버랩스] FE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91392> 
-- \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
-- \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
 - 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
--  [[(주)마티니 아이오 Growth Engineer]] [링크](https://aimed.career.greetinghr.com/o/74265)
-	- [[Growth Hacking, CRM, Performance Marketing이란]]
 - [[포트원 백엔드 엔지니어]]
 - <https://swmaestro.org/>
-- \[채용공고] 2024년 1분기 현대오토에버 신입사원 채용 [링크](https://recruit.hyundai-autoever.com/?page=156184575&id=455136&list=270136750&scroll=580) ~ **2024-01-29T13:00:00 까지이므로 빠르게 지원할 것!**
+- [[ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프]]
 
 ## 관심있는 부트캠프
 
 - [프로카데미](https://www.procademy.co.kr) 게임서버 개발자 양성과정
+- [[]]
 
 ## 지원완료
 
-- [[네오플 공개채용 2023]]
+- [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??
 
 ## 정신무장
 
@@ -253,3 +244,14 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [\[Project inZOI Unit\] Jr. Client Programmer (신입 / 경력무관)](https://boards.greenhouse.io/krafton/jobs/7078974002?t=f7e1ac3e2us)
 - [[보이저엑스 정글전형 (6개월인턴)]]
 - [[네이버랩스 백엔드 엔지니어 (인턴십)]] 
+- \[채용공고] 2024년 1분기 현대오토에버 신입사원 채용 [링크](https://recruit.hyundai-autoever.com/?page=156184575&id=455136&list=270136750&scroll=580) ~ **2024-01-29T13:00:00 까지이므로 빠르게 지원할 것!**
+-  [[(주)마티니 아이오 Growth Engineer]] [링크](https://aimed.career.greetinghr.com/o/74265)
+	- [[Growth Hacking, CRM, Performance Marketing이란]]
+- \[채용공고] 2024년 1월 캐논코리아 신입사원 채용 인턴전형(채용연계형) <https://inthiswork.com/archives/91608>
+- \[채용공고] 클래스팅 · 백엔드 개발자 (Backend) <https://inthiswork.com/archives/92014>
+- \[채용공고] 클래스101 · Frontend Developer (주니어경력) <https://inthiswork.com/archives/91347>
+- \[쿠키런: 오븐브레이크] 서버 소프트웨어 엔지니어 (신입) <https://careers.devsisters.com/position/detail/?jobPosition=242>
+- \[이스트게임즈] - 1분기 웹 개발자 채용 (신입/경력) <https://inthiswork.com/archives/91152>
+- \[네이버랩스] FE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91392> 
+- \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
+- \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
