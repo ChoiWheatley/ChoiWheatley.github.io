@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-03-03T22:11:32
+updated: 2024-03-04T18:54:26
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -22,6 +22,11 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - 2024년 현대위아 ICT 대졸 신입채용 [링크](https://hyundai-wia.recruiter.co.kr/career/jobs/10703)
 - [[포트원 백엔드 엔지니어]]
 - <https://swmaestro.org/>
+- [[LG CNS 2024 Global 채용연계형 인턴십]]
+- [[현대자동차 신입 수시 채용]]
+- [[에이비엘 생명보험 채용]]
+- [[2024 네이버 신입 공채]]
+- [[2024 상반기 비티에스테크놀로지스 신입 경력 채용]]
 
 ## 관심있는 부트캠프
 
@@ -31,6 +36,9 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 ## 지원완료
 
 - [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??
+- [[2024 와이파트너즈 신입 경력 공채]]
+- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] 
+	- 2024-03-04 면접완료
 
 ## 정신무장
 
