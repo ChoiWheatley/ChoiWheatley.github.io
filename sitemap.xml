@@ -1396,6 +1396,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Infinite%20Scrolling%20Pagination%20with%20JavaScript%20and%20a%20REST%20API/</loc>
+         <lastmod>2024-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Interacting%20with%20databases%20in%20Rust%20using%20Diesel%20vs%20SQLx%20--%20LogRocket/</loc>
          <lastmod>2024-03-05</lastmod>
          <changefreq>daily</changefreq>
@@ -1717,6 +1722,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/PUT%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EB%B6%80%EB%B6%84%20book-project%20%7Brefactoring%7D/</loc>
+         <lastmod>2024-03-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Pagination%20in%20%7BNest.js%7D/</loc>
          <lastmod>2024-03-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
