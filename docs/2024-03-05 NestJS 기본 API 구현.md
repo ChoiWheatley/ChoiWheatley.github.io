@@ -41,3 +41,6 @@ src
 - [ ] DB Glossary 내가 굿노트에 정리해 놓았던 거 추가하기
 
 `/api` 엔드포인트를 NestJS에 일일이 추가할 필요는 없을 것 같다. LoadBalancer가 알아서 처리하도록 만드는 것이 좋지 않을까?
+
+- [[Pagination in {Nest.js}]]
+- [[Infinite Scrolling Pagination with JavaScript and a REST API]]
