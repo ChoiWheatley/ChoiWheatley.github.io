@@ -4,7 +4,7 @@ tags:
 description:
 title: 0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기
 created: 2024-03-03T21:00:13
-updated: 2024-03-03T23:46:42
+updated: 2024-03-06T15:30:53
 ---
 - [초격차 캠프 with AWS 3기](https://ozcodingschool.com/ozcoding/startupcamp)
 
@@ -45,7 +45,7 @@ updated: 2024-03-03T23:46:42
 
 ## IT 실습 코치
 
-- [Notion / (모집중) 오즈코딩스쿨 IT 실습코치 (백엔드)](https://legend-palm-1f1.notion.site/IT-1dabafa389d64db681ec2537ad8a49ef) 2024-03-03 기준
+- [Notion / (모집중) 오즈코딩스쿨 IT 실습코치 (백엔드)](https://legend-palm-1f1.notion.site/IT-1dabafa389d64db681ec2537ad8a49ef) 2024-03-03 기준 **합격** 💫
 
 ### 무엇을 하나요
 
@@ -75,3 +75,5 @@ updated: 2024-03-03T23:46:42
 - AWS 클라우드 특강, AWS 코리아 사옥투어, 조교도 같이 가나요?
 - 밀머스에서 부여해주는 과제를 가지고 합동 프로젝트를 하는 것으로 알고 있습니다. 밀머스 수강생들이 대부분 창업자인 걸 생각해보면 창업 아이템을 직접 구현해보는 식으로 프로젝트가 진행되는 건가요?
 - 
+
+## 

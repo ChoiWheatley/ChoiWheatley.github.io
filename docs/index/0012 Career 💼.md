@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-03-04T18:54:26
+updated: 2024-03-06T15:31:17
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -37,8 +37,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 - [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??
 - [[2024 와이파트너즈 신입 경력 공채]]
-- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] 
-	- 2024-03-04 면접완료
 
 ## 정신무장
 
@@ -263,3 +261,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - \[네이버랩스] FE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91392> 
 - \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
 - \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
+- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] 
+	- 2024-03-04 면접완료
+	- 2024-03-06 합격 💫
