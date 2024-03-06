@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 생일선물 펀딩 프로젝트
+title: 0140 wishlist funding project 생일선물 펀딩 프로젝트
 created: 2024-02-19T04:05:56
-updated: 2024-02-27T19:09:51
+updated: 2024-03-06T17:11:33
 ---
 
 - [[2024-02-19 티끌모아펀딩 회의록]]
@@ -13,3 +13,4 @@ updated: 2024-02-27T19:09:51
 - [[2024-02-23 티끌모아펀딩 결제모듈 실험]]
 
 - [[2024-03-05 NestJS 기본 API 구현]]
+- [[2024-03-06 API 설계]]
