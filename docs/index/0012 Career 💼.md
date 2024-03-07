@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-03-06T15:31:17
+updated: 2024-03-07T16:56:58
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -31,7 +31,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 ## 관심있는 부트캠프
 
 - [프로카데미](https://www.procademy.co.kr) 게임서버 개발자 양성과정
-- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]]
 
 ## 지원완료
 
@@ -61,6 +60,8 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - 숭실대학교
 	- 성적: 3.33 / 4.5
 	- 이수학점: 134
+	- 전공이수학점: 72
+	- 전공평점: 3.59
 	- 입학: 2016-03-01
 	- 졸업: 2023-08-18
 - TOEIC
