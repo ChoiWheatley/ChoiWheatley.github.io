@@ -4,7 +4,7 @@ tags:
 description: My Competency, Why LG CNS (지원 동기와 꿈), 학습사항 (전공과목으로 습득한 역량, 성취도)
 title: LG CNS 2024 Global 채용연계형 인턴십
 created: 2024-03-04T18:27:03
-updated: 2024-03-07T18:36:46
+updated: 2024-03-07T18:38:04
 ---
 - <https://careers.lg.com/app/job/RetrieveJobNoticesDetail.rpi?jobNoticeId=401324>
 
