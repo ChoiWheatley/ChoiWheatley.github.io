@@ -17,6 +17,7 @@ parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
+- [[🎁 0140 wishlist funding project 생일선물 펀딩 프로젝트]]
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
 - [[0011 Algorithms ♾️]]
@@ -42,6 +43,5 @@ parent link: [[docs/index]]
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]]
-- [[0140 wishlist funding project 생일선물 펀딩 프로젝트]]
 
 %% End Waypoint %%
