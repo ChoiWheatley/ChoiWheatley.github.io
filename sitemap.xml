@@ -1121,6 +1121,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/DTO%20Validation%20using%20class-validator%20%7BNestJS%7D/</loc>
+         <lastmod>2024-03-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Data%20Modeling%20%7Bbook-project%7D/</loc>
          <lastmod>2024-03-10</lastmod>
          <changefreq>daily</changefreq>

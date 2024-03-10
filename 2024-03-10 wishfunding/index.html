@@ -4026,6 +4026,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../DTO%20Validation%20using%20class-validator%20%7BNestJS%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  DTO Validation using class-validator {NestJS}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Data%20Modeling%20%7Bbook-project%7D/" class="md-tabs__link">
         
   
@@ -25026,6 +25043,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uuid가 필요한 테이블
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dto-typeorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTO와 Typeorm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      회의 안건..
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -26506,6 +26550,26 @@
   
   <span class="md-ellipsis">
     DRF에서 인증기능 만들기 {drf}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DTO%20Validation%20using%20class-validator%20%7BNestJS%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DTO Validation using class-validator {NestJS}
   </span>
   
 
@@ -47545,6 +47609,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uuid가 필요한 테이블
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dto-typeorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      DTO와 Typeorm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      회의 안건..
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -47589,6 +47680,46 @@
 <p><a href="../Validation%20%7Btypeorm%7D/">Validation {typeorm}</a></p>
 <h2 id="_1">칼럼 이름을 내가 직접 정의할 수는 없을까?<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><code>OneToMany</code>, <code>ManyToOne</code>으로 프로퍼티들을 만들다보면 ER 다이어그램을 작성하며 열심히 정의했던 FK들이랑 이름이 달라지는 경우가 발생하게 되었다. 그래서 ORM이 자동으로 FK를 만들어 줄 때 그 이름을 내가 먹일 수는 없는걸까?</p>
+<h2 id="uuid">Uuid가 필요한 테이블<a class="headerlink" href="#uuid" title="Permanent link">#</a></h2>
+<ul>
+<li><code>Funding</code></li>
+</ul>
+<p>혹시 더 있나? <code>Funding</code> 테이블에 <code>fundUuid</code> 프로퍼티 추가해야함.</p>
+<h2 id="dto-typeorm">DTO와 Typeorm<a class="headerlink" href="#dto-typeorm" title="Permanent link">#</a></h2>
+<p>Data Transfer Object로, 데이터를 전달하기 위해 있는 객체임. DTO 객체의 클래스를 정의하면 컨트롤러에서 타입을 자동으로 DTO로 변환해서 받아볼 수 있다. recre-backend에서의 예시를 다시 복습해보자:</p>
+<ul>
+<li><code>user.controller.ts</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">UserController</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="kd">@Post</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">create</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span><span class="w"> </span><span class="nx">createUserDto</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateUserDto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">userService</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="nx">createUserDto</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>user.service.ts</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">UserService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="nx">createUser</span><span class="p">(</span><span class="nx">createUserDto</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateUserDto</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="kt">User</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">User</span><span class="p">();</span>
+<span class="w">        </span><span class="nx">user</span><span class="p">.</span><span class="nx">nickname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createUserDto</span><span class="p">.</span><span class="nx">nickname</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">user</span><span class="p">.</span><span class="nx">profileImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createUserDto</span><span class="p">.</span><span class="nx">profileImage</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">user</span><span class="p">.</span><span class="nx">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createUserDto</span><span class="p">.</span><span class="nx">provider</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createUserDto</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">user</span><span class="p">.</span><span class="nx">createdDt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">userRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>DTO에 요청시 프로퍼티들의 타입에 제한을 걸 수 있고, -1원과 같이 말이 안되는 경우도 <a href="../Validation%20%7Btypeorm%7D/">Validation {typeorm}</a>을 통해 걸러낼 수 있다고 한다.</p>
+<p><a href="../DTO%20Validation%20using%20class-validator%20%7BNestJS%7D/">DTO Validation using class-validator {NestJS}</a></p>
+<h2 id="_2">회의 안건..<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<ul>
+<li>[ ] 현진이 github 계정 ChoiWheatley / wishlist_funding_dbdiagram 리포지토리에 collaborator 권한 부여</li>
+</ul>
 
 
 
