@@ -229,3 +229,4 @@ export class Photo {
 ## 더 알아보기
 
 - [Migrations](https://docs.nestjs.com/techniques/database#multiple-databases)
+- [[DateColumn Decorators {typeorm}]]

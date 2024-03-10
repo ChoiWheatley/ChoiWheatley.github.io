@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 2024-02-23 티끌모아펀딩 유스케이스 시나리오
+title: 2024-02-23 wishfunding티끌모아펀딩 유스케이스 시나리오
 created: 2024-02-27T19:05:57
-updated: 2024-02-27T19:06:02
+updated: 2024-03210-2T:21378T3:5619:06:02
 ---
 
 ### before meeting

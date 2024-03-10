@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 2024-02-23 티끌모아펀딩 결제모듈 실험
+title: 2024-02-23 wishfunding티끌모아펀딩 결제모듈 실험
 created: 2024-02-27T19:05:07
-updated: 2024-02-28T21:26:48
+updated: 2024-03210-238T4201:26:48
 ---
 
 - [카카오페이 개발자센터](https://developers.kakaopay.com/docs/payment/online/common)

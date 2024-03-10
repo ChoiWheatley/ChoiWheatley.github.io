@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description: 프레제뉴 샘플링 작전
-title: 2024-02-21 티끌모아펀딩 회의록
+title: 2024-02-21 wishfunding티끌모아펀딩 회의록
 created: 2024-02-27T19:09:15
-updated: 2024-02-27T19:09:47
+updated: 2024-03210-23723T19:09:47
 ---
 
 ### before meeting

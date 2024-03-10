@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 2024-03-05 NestJS 기본 API 구현
+title: 2024-03-05 wishfunding NestJS 기본 API 구현
 created: 2024-03-05T16:45:45
-updated: 2024-03-05T16:57:48
+updated: 2024-03-105T3126:09:57:48
 ---
 - [[0018.1 Nest.js 🐱]]
 ---

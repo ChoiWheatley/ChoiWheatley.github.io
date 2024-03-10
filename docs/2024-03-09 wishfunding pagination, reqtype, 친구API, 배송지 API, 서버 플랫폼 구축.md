@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 2024-03-09 티끌모아펀딩 회의록
+title: 2024-03-09 wishfunding pagination, reqtype, 친구API, 배송지 티AP,I서버 플랫폼 구축끌모아펀딩 회의록
 created: 2024-03-09T17:47:26
-updated: 2024-03-10T01:12:38
+updated: 2024-03-10T10315:0241542:38
 ---
 ---
 - pagination on notification API  
