@@ -14532,6 +14532,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../rds%20postgresql%20ssl%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20%EB%B0%9C%EA%B8%89%ED%95%98%EC%97%AC%20%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0/" class="md-tabs__link">
+        
+  
+    
+  
+  rds postgresql ssl 인증서 발급하여 접속하기
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../re%20-%20regex%20python%20package/" class="md-tabs__link">
         
   
@@ -38949,6 +38966,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../rds%20postgresql%20ssl%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20%EB%B0%9C%EA%B8%89%ED%95%98%EC%97%AC%20%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    rds postgresql ssl 인증서 발급하여 접속하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../re%20-%20regex%20python%20package/" class="md-nav__link">
         
   
@@ -47767,68 +47804,11 @@
 <h2 id="_2">회의 안건..<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <ul>
 <li>[x] 현진이 github 계정 ChoiWheatley / wishlist_funding_dbdiagram 리포지토리에 collaborator 권한 부여</li>
-<li>[ ] uuid 필요한 테이블 식별</li>
+<li>[ ] uuid 필요한 테이블 식별 -&gt; 일단은 Funding만 해당된다. 아직 추가하지는 않음. <a href="https://wishfund.atlassian.net/browse/WISH-29">https://wishfund.atlassian.net/browse/WISH-29</a></li>
 </ul>
 <h2 id="_3">회의 진행중<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <h3 id="no-pg_hbaconf-entry">no pg_hba.conf entry 에러<a class="headerlink" href="#no-pg_hbaconf-entry" title="Permanent link">#</a></h3>
-<p><a href="https://velog.io/@bshunter/AWS-ec2-rds-no-pghba.conf-entry-%EC%97%90%EB%9F%AC">https://velog.io/@bshunter/AWS-ec2-rds-no-pghba.conf-entry-%EC%97%90%EB%9F%AC</a></p>
-<div class="highlight"><pre><span></span><code> no pg_hba.conf entry for host &quot;***.***.***.***&quot;, user &quot;postgres&quot;, database &quot;postgres&quot;, no encryption
-</code></pre></div>
-<p>먼저 해결 방법은 다음과 같습니다.</p>
-<ol>
-<li>
-<p>다음 링크를 사용하여 모든 AWS 리전에 대한 인증서 번들을 다운로드하세요: <a href="https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem">https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem</a></p>
-</li>
-<li>
-<p>DB연결 시 해당 인증서를 함께 전송하세요</p>
-</li>
-</ol>
-<p>다음은 typeOrm을 이용한 예시 코드입니다.</p>
-<p>해당 코드를 추가해 주면 해결됩니다.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// 다운로드한 인증서 파일 경로 추가</span>
-<span class="w">    </span><span class="nx">ca</span><span class="o">:</span><span class="w"> </span><span class="kt">fs.readFileSync</span><span class="p">(</span><span class="s1">&#39;your-path-to/global-bundle.pem&#39;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">extra</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// SSL 연결을 강제 설정</span>
-<span class="w">    </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rejectUnauthorized</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="p">},</span>
-</code></pre></div>
-<p>전체 코드 예시</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TypeOrmModuleOptions</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@nestjs/typeorm&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;config&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;fs&#39;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">dbconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">config</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">);</span>
-<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;dotenv&#39;</span><span class="p">).</span><span class="nx">config</span><span class="p">();</span>
-
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">typeORMConfig</span><span class="o">:</span><span class="w"> </span><span class="kt">TypeOrmModuleOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">dbconfig</span><span class="p">.</span><span class="kr">type</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.RDS_HOSTNAME</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dbconfig</span><span class="p">.</span><span class="nx">host</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">port</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.RDS_PORT</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dbconfig</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.RDS_USERNAME</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dbconfig</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.RDS_PASSWORD</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dbconfig</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.RDS_DB_NAME</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dbconfig</span><span class="p">.</span><span class="nx">database</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">entities</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">__dirname</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/../**/*.entity.{js,ts}&#39;</span><span class="p">],</span>
-<span class="w">  </span><span class="nx">synchronize</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">logging</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// 다운로드한 인증서 파일 경로 추가</span>
-<span class="w">    </span><span class="nx">ca</span><span class="o">:</span><span class="w"> </span><span class="kt">fs.readFileSync</span><span class="p">(</span><span class="s1">&#39;your-path-to/global-bundle.pem&#39;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">extra</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// SSL 연결을 강제 설정</span>
-<span class="w">    </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rejectUnauthorized</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">autoLoadEntities</span><span class="o">:</span><span class="w"> </span><span class="kt">dbconfig.synchronize</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></div>
-<p>해당 오류가 나는 이유는 Amazon RDS PostgreSQL 인스턴스는 기본적으로 SSL/TLS를 사용하여 클라이언트와 연결하도록 설정되어 있기 때문입니다.</p>
-<p>공식 문서에 따르면,<br />
-"사용자는 SSL 연결에 인증서를 사용하고, "sslmode=verify-ca" 또는 "sslmode=verify-full"로 설정하여 클라이언트가 인증서 체인을 확인하도록 해야 합니다. "<br />
-라고 나와있습니다.</p>
-<p>에러 해결에 도움이 되었길 바랍니다.</p>
-<p>공식문서:<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html</a></p>
+<p><a href="../rds%20postgresql%20ssl%20%EC%9D%B8%EC%A6%9D%EC%84%9C%20%EB%B0%9C%EA%B8%89%ED%95%98%EC%97%AC%20%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0/">rds postgresql ssl 인증서 발급하여 접속하기</a></p>
 
 
 
