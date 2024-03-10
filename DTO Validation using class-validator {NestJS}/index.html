@@ -47505,17 +47505,21 @@
   <h1>DTO Validation using class-validator {NestJS}</h1>
 
 <ul>
-<li><a href="https://docs.nestjs.com/techniques/validation#auto-validation">https://docs.nestjs.com/techniques/validation#auto-validation</a></li>
+<li><a href="https://docs.nestjs.com/techniques/validation">https://docs.nestjs.com/techniques/validation</a></li>
 <li><a href="../Validation%20%7Btypeorm%7D/">Validation {typeorm}</a></li>
+<li><a href="https://velog.io/@dinb1242/DTO-%EB%A5%BC-Entity-%EB%A1%9C-%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0-DTO-to-Entity-feat.-class-validator">DTO를 Entity로 변환하기 # JSON 역직렬화하기</a> 이 블로그는 더 나아가 DTO ⟶ Entity 변환하는 방법에까지 설명하고 있다.</li>
 </ul>
 <hr />
-<p><code>ValidationPipe</code> 객체를 <code>app</code> 의 global pipe로 추가하게 된다면, 컨트롤러가 인자에 들어온 DTO 타입을 해석하고 유효성 검사 및 자동 DTO 인스턴스 생성까지 해준다.</p>
+<p><code>ValidationPipe</code> 객체를 <code>app</code> 의 global pipe로 추가하게 된다면, 컨트롤러가 인자에 들어온 DTO 타입을 해석하고 유효성 검사 및 자동 DTO 인스턴스 생성까지 해준다. </p>
+<p>단지 컨트롤러 인자에 작성하는 Dto는 단순히 JS Plain Object의 형태로 들어온다. 따라서 <code>ValidationPipe</code>를 사용하여 페이로드를 자동으로 해당 타입에 맞는 DTO 인스턴스로 변환하는 과정이 필요하다. </p>
 <ul>
 <li><code>app.main.ts</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">bootstrap</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
-<span class="w">    </span><span class="nx">app</span><span class="p">.</span><span class="nx">useGlobalPipes</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">ValidationPipe</span><span class="p">());</span>
+<span class="w">    </span><span class="nx">app</span><span class="p">.</span><span class="nx">useGlobalPipes</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">ValidationPipe</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w">  </span><span class="c1">// 자동으로 JS Object를 DTO로 변환 (Globally)</span>
+<span class="w">    </span><span class="p">}));</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -47523,6 +47527,7 @@
 <li><code>user.controller.ts</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">@Post</span><span class="p">()</span>
+<span class="kd">@UsePipes</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">ValidationPipe</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">))</span><span class="w"> </span><span class="c1">// 자동으로 JS Object를 DTO로 변환 (method-level)</span>
 <span class="nx">create</span><span class="p">(</span><span class="kd">@Body</span><span class="p">()</span><span class="w"> </span><span class="nx">createUserDto</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateUserDto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;This action adds a new user&#39;</span><span class="p">;</span>
 <span class="p">}</span>
