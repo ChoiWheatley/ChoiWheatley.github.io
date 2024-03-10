@@ -6,7 +6,7 @@ title: oauth2 {nest.js} {passport}
 created: 2023-11-13T20:38:32
 updated: 2023-11-14T15:15:25
 ---
-- [[0018.1 Nest.js 🪺]]
+- [[0018.1 Nest.js 🐱]]
 - [dev.to 블로그글](https://dev.to/tugascript/nestjs-authentication-with-oauth20-configuration-and-operations-41k)
 - [[oauth {django}]]
 - [google oauth 문서](https://developers.google.com/identity/protocols/oauth2/web-server?hl=ko)

@@ -105,7 +105,7 @@ user[getName](); // "hello"
 - [[sequelize, a MySQL ORM for javascript]]
 - [[typeorm]]
 - [[nodemon, auto reload nodejs server {npm}]]
-- [[0018.1 Nest.js 🪺]]
+- [[0018.1 Nest.js 🐱]]
 
 ## 이호준 강사님의 한마디 (ormi)
 

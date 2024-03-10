@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2023-11-27T21:46:37
+updated: 2024-03-10T01:27:14
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -225,3 +225,7 @@ export class Photo {
 	metadata: PhotoMetadata;
 }
 ```
+
+## 더 알아보기
+
+- [Migrations](https://docs.nestjs.com/techniques/database#multiple-databases)

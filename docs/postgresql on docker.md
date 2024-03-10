@@ -7,7 +7,7 @@ created: 2023-11-13T16:11:15
 updated: 2023-11-13T16:13:10
 ---
 - <https://hub.docker.com/_/postgres>
-- [[0018.1 Nest.js 🪺]]
+- [[0018.1 Nest.js 🐱]]
 ---
 
 ## simple commands

@@ -17,7 +17,6 @@ parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
-- [[🎁 0140 wishlist funding project 생일선물 펀딩 프로젝트]]
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
 - [[0011 Algorithms ♾️]]
@@ -30,7 +29,8 @@ parent link: [[docs/index]]
 - [[0016 Systems Programming {ssu2021-1st} 🐼]]
 - [[0017 C 🍎]]
 - [[0018 Javascript ☕️]]
-- [[0018.1 Nest.js 🪺]]
+- [[0018.1 Nest.js 🐱]]
+- [[0018.2 Node.js]]
 - [[0020 Games 🎮]]
 - [[0030 Health 💪]]
 - [[0031 Emotions 🤔]]
@@ -43,5 +43,6 @@ parent link: [[docs/index]]
 - [[0120 swjungle 🤖]]
 - [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
 - [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]]
+- [[0140 wishlist funding project 생일선물 펀딩 프로젝트 🎁]]
 
 %% End Waypoint %%

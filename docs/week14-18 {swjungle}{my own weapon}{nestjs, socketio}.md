@@ -20,7 +20,7 @@ ___
 
 ## Nest.js
 
-[[0018.1 Nest.js 🪺]]
+[[0018.1 Nest.js 🐱]]
 
 ## Daily Notes
 

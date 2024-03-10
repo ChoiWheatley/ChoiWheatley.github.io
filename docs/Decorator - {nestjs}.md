@@ -6,7 +6,7 @@ title: Decorator - {nestjs}
 created: 2023-12-01T02:17:57
 updated: 2023-12-01T12:52:28
 ---
-- [[0018.1 Nest.js 🪺]]
+- [[0018.1 Nest.js 🐱]]
 - [공식문서 링크](https://docs.nestjs.com/custom-decorators)
 ___
 
