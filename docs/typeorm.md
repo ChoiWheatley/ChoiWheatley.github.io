@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2024-03-10T13:41:14
+updated: 2024-03-10T14:04:56
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -231,3 +231,4 @@ export class Photo {
 - [Migrations](https://docs.nestjs.com/techniques/database#multiple-databases)
 - [[DateColumn Decorators {typeorm}]]
 - [[enum column type {typeorm}]]
+- [[Validation {typeorm}]]
