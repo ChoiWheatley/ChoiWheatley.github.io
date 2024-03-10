@@ -4,7 +4,7 @@ tags:
 description:
 title: 2024-03-10 wishfunding
 created: 2024-03-10T13:34:36
-updated: 2024-03-10T15:50:08
+updated: 2024-03-10T19:12:22
 ---
 
 ## timestamp 칼럼을 어떻게 표현하더라?
@@ -86,4 +86,7 @@ DTO에 요청시 프로퍼티들의 타입에 제한을 걸 수 있고, -1원과
 
 ## 회의 안건..
 
-- [ ] 현진이 github 계정 ChoiWheatley / wishlist_funding_dbdiagram 리포지토리에 collaborator 권한 부여
+- [x] 현진이 github 계정 ChoiWheatley / wishlist_funding_dbdiagram 리포지토리에 collaborator 권한 부여
+- [ ] uuid 필요한 테이블 식별
+
+## 회의 진행중
