@@ -7766,6 +7766,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Validation%20%7Btypeorm%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  Validation {typeorm}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Value%20Categories%20in%20C%2B%2B17%20-%20lvalue%2C%20rvalue%2C%20prvalue/" class="md-tabs__link">
         
   
@@ -24991,6 +25008,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typeorm-column-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✌️ Typeorm Column Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      칼럼 이름을 내가 직접 정의할 수는 없을까?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -30871,6 +30906,26 @@
   
   <span class="md-ellipsis">
     VPC (Virtual Private Cloud)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Validation%20%7Btypeorm%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Validation {typeorm}
   </span>
   
 
@@ -47472,6 +47527,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typeorm-column-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✌️ Typeorm Column Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      칼럼 이름을 내가 직접 정의할 수는 없을까?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -47511,6 +47584,11 @@
 <span class="w">    </span><span class="c1">// @Column(&quot;timestamptz&quot;)</span>
 <span class="w">    </span><span class="nx">endAt</span><span class="o">:</span><span class="w"> </span><span class="kt">Date</span><span class="p">;</span>
 </code></pre></div>
+<h2 id="typeorm-column-validation">✌️ Typeorm Column Validation<a class="headerlink" href="#typeorm-column-validation" title="Permanent link">#</a></h2>
+<p>save를 할 때 금액칸에 음수가 들어갈 경우 Typeorm에서 잘못된 값이 들어갔는지 여부를 판단하여 에러를 발생하게 만들어 줄 수 있다면 좋을 것 같다.</p>
+<p><a href="../Validation%20%7Btypeorm%7D/">Validation {typeorm}</a></p>
+<h2 id="_1">칼럼 이름을 내가 직접 정의할 수는 없을까?<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><code>OneToMany</code>, <code>ManyToOne</code>으로 프로퍼티들을 만들다보면 ER 다이어그램을 작성하며 열심히 정의했던 FK들이랑 이름이 달라지는 경우가 발생하게 되었다. 그래서 ORM이 자동으로 FK를 만들어 줄 때 그 이름을 내가 먹일 수는 없는걸까?</p>
 
 
 
