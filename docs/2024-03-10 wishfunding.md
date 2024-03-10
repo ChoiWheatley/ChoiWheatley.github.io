@@ -4,7 +4,7 @@ tags:
 description:
 title: 2024-03-10 wishfunding
 created: 2024-03-10T13:34:36
-updated: 2024-03-10T19:12:22
+updated: 2024-03-10T21:52:58
 ---
 
 ## timestamp 칼럼을 어떻게 표현하더라?
@@ -90,3 +90,11 @@ DTO에 요청시 프로퍼티들의 타입에 제한을 걸 수 있고, -1원과
 - [ ] uuid 필요한 테이블 식별
 
 ## 회의 진행중
+
+### no pg_hba.conf entry 에러
+
+<https://velog.io/@bshunter/AWS-ec2-rds-no-pghba.conf-entry-%EC%97%90%EB%9F%AC>
+
+```
+ no pg_hba.conf entry for host "***.***.***.***", user "postgres", database "postgres", no encryption
+```
