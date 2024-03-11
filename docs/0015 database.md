@@ -2,10 +2,11 @@
 aliases: 
 tags: 
 description:
-title: database
+title: 0015 database
 created: 2024-03-11T16:41:30
-updated: 2024-03-11T17:31:03
+updated: 2024-03-11T18:04:02
 ---
+- [[0010 Programming 👩‍💻]]
 
 ## README
 
@@ -20,4 +21,5 @@ updated: 2024-03-11T17:31:03
 
 ## Memo
 
-[[여러가지 DBMS들]]
+- [[여러가지 DBMS들]]
+- 

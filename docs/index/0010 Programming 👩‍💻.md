@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-12-17T22:04:36
+updated: 2024-03-11T18:03:41
 ---
 
 parent link: [[docs/index/index|index]]
@@ -26,6 +26,7 @@ parent link: [[docs/index/index|index]]
 - [[0013 Rust 🦀]]
 - [[C++]]
 - [[0014 Python 🐍]]
+- [[0015 database]]
 - [[glossary]]
 - [[vim 관련 꿀팁]]
 - [[neovim]]

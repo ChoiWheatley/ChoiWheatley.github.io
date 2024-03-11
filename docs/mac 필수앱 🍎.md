@@ -20,3 +20,4 @@ title: mac 필수앱 🍎
 - [[karabiner-elements]]
 - [[noclamshell, 맥북 뚜껑을 닫으면 무조건 sleep모드로]]
 - [[Altdrag alternative window manager for mac]]
+- [[homebrew]]
