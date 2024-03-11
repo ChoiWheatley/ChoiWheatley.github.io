@@ -4,7 +4,7 @@ tags:
 description:
 title: 0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기
 created: 2024-03-03T21:00:13
-updated: 2024-03-11T15:32:46
+updated: 2024-03-11T16:41:00
 ---
 - [초격차 캠프 with AWS 3기](https://ozcodingschool.com/ozcoding/startupcamp)
 
@@ -52,3 +52,11 @@ updated: 2024-03-11T15:32:46
 ## 본 페이지 앞으로의 용도
 
 [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]] 마냥 공부와 관련한 것들, 특강내용 정리를 여기에 적자. 프라이빗 볼트는 일적인 내용만 작성하는 걸로.
+
+## LMS / DB
+
+- [[database]]
+- [[Data Modeling {book-project}]]
+- [[DB 랑 백엔드가 어떻게 상호작용하는지 느낌 이해하기 -- data modeling]]
+- [[sequelize, a MySQL ORM for javascript]]
+- [[typeorm]]
