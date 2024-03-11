@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/0015%20database/</loc>
+         <lastmod>2024-03-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/01_os_review.pdf%20%7Bswjungle%7D/</loc>
          <lastmod>2024-03-11</lastmod>
          <changefreq>daily</changefreq>
@@ -2721,11 +2726,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/database/</loc>
-         <lastmod>2024-03-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/dataclass%20ValueError%20mutable%20default%20class%20list%20is%20not%20allowed%2C%20use%20default_factory%20%7Bpython%7D/</loc>
          <lastmod>2024-03-11</lastmod>
          <changefreq>daily</changefreq>
@@ -3272,6 +3272,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/gunicorn/</loc>
+         <lastmod>2024-03-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/homebrew/</loc>
          <lastmod>2024-03-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
