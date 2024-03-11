@@ -4,7 +4,7 @@ tags:
 description:
 title: database
 created: 2024-03-11T16:41:30
-updated: 2024-03-11T16:41:49
+updated: 2024-03-11T17:31:03
 ---
 
 ## README
@@ -17,4 +17,7 @@ updated: 2024-03-11T16:41:49
 - [[DB 랑 백엔드가 어떻게 상호작용하는지 느낌 이해하기 -- data modeling]]
 - [[sequelize, a MySQL ORM for javascript]]
 - [[typeorm]]
-- 
+
+## Memo
+
+[[여러가지 DBMS들]]
