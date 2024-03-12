@@ -47845,6 +47845,20 @@
 </code></pre></div>
 </li>
 <li>
+<p><code>ALTER</code></p>
+<ul>
+<li>MSSQL, MySQL끼리 문법이 서로 다르다는 사실 인지할 것</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">-- MySQL</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span>
+<span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span>
+
+<span class="c1">-- MSSQL</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span>
+</code></pre></div>
+</li>
+<li>
 <p><code>PRIMARY KEY</code></p>
 </li>
 <li><code>AUTO_INCREMENT</code></li>
@@ -47853,7 +47867,12 @@
 <li><code>DEFAULT &lt;value&gt;</code></li>
 <li><code>CHECK(&lt;condition&gt;)</code></li>
 <li>DML</li>
-<li><code>SELECT</code></li>
+<li><code>SELECT</code><ul>
+<li><code>SELECT * FROM tablename</code></li>
+<li><code>SELECT columns, ... FROM tablename</code></li>
+<li><code>SELECT DISTINCT exclude_column FROM tablename</code></li>
+</ul>
+</li>
 <li><code>INSERT</code></li>
 <li><code>UPDATE</code></li>
 <li><code>DELETE</code></li>
