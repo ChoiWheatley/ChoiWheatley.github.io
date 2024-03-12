@@ -3324,6 +3324,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../ALTER%20TABLE%20%ED%96%88%EB%8A%94%EB%8D%B0%20unique%20%EC%86%8D%EC%84%B1%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%80%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%BD%EC%9A%B0/" class="md-tabs__link">
+        
+  
+    
+  
+  ALTER TABLE 했는데 unique 속성이 사라지지 않는 경우
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../APIView%20%7Bdrf%7D/" class="md-tabs__link">
         
   
@@ -25794,6 +25811,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../ALTER%20TABLE%20%ED%96%88%EB%8A%94%EB%8D%B0%20unique%20%EC%86%8D%EC%84%B1%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%80%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ALTER TABLE 했는데 unique 속성이 사라지지 않는 경우
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../APIView%20%7Bdrf%7D/" class="md-nav__link">
         
   
@@ -47820,70 +47857,67 @@
 <li>권한 확인 <code>SHOW GRANTS;</code>, <code>SHOW GRANTS FOR 'username'@'localhost';</code></li>
 </ul>
 </li>
-<li>
-<p>DDL</p>
-<ul>
-<li>
-<p><code>CREATE TABLE</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span><span class="p">(</span>
-<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="p">);</span>
-</code></pre></div>
-</li>
-<li>
-<p><code>UPDATE</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="k">user</span>
-<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">comumn1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span>
-<span class="w">        </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="p">...</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="k">search</span><span class="o">-</span><span class="n">condition</span>
-</code></pre></div>
-</li>
-<li>
-<p><code>DROP</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span><span class="p">;</span>
-</code></pre></div>
-</li>
-<li>
-<p><code>ALTER</code></p>
-<ul>
-<li>MSSQL, MySQL끼리 문법이 서로 다르다는 사실 인지할 것</li>
+<li>DDL<ul>
+<li><code>CREATE TABLE</code></li>
+<li><code>UPDATE</code></li>
+<li><code>DROP</code></li>
+<li><code>ALTER</code><ul>
+<li>MSSQL(<code>ALTER</code>), MySQL(<code>MODIFY</code>)끼리 문법이 서로 다르다는 사실 인지할 것</li>
+<li><a href="../ALTER%20TABLE%20%ED%96%88%EB%8A%94%EB%8D%B0%20unique%20%EC%86%8D%EC%84%B1%EC%9D%B4%20%EC%82%AC%EB%9D%BC%EC%A7%80%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%BD%EC%9A%B0/">ALTER TABLE 했는데 unique 속성이 사라지지 않는 경우</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">-- MySQL</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span>
-<span class="k">MODIFY</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span>
-
-<span class="c1">-- MSSQL</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span>
-<span class="k">ALTER</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="kt">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span>
-</code></pre></div>
 </li>
-<li>
-<p><code>PRIMARY KEY</code></p>
-</li>
+<li><code>PRIMARY KEY</code></li>
 <li><code>AUTO_INCREMENT</code></li>
 <li><code>NOT NULL</code></li>
 <li><code>UNIQUE</code></li>
 <li><code>DEFAULT &lt;value&gt;</code></li>
 <li><code>CHECK(&lt;condition&gt;)</code></li>
-<li>DML</li>
+</ul>
+</li>
+<li>DML<ul>
 <li><code>SELECT</code><ul>
 <li><code>SELECT * FROM tablename</code></li>
 <li><code>SELECT columns, ... FROM tablename</code></li>
 <li><code>SELECT DISTINCT exclude_column FROM tablename</code></li>
+<li><code>AS</code></li>
+<li><code>ORDER BY</code></li>
+<li><code>WHERE</code><ul>
+<li><code>AND</code></li>
+<li><code>OR</code></li>
+<li><code>NOT</code></li>
+<li><code>BETWEEN _ AND _</code></li>
+<li><code>LIMIT 1</code></li>
+<li><code>LIMIT 10, 5</code>: pagination</li>
 </ul>
 </li>
-<li><code>INSERT</code></li>
-<li><code>UPDATE</code></li>
+<li><code>COUNT</code> &amp; <code>GROUP BY</code></li>
+<li><code>CASE WHEN</code></li>
+<li><code>ROW_COUNT()</code></li>
+</ul>
+</li>
+<li><code>JOIN</code></li>
+<li><code>ROW_NUMBER()</code></li>
+<li><code>INSERT</code><ul>
+<li><code>INTO table_name</code></li>
+<li><code>VALUES</code></li>
+</ul>
+</li>
+<li><code>UPDATE</code><ul>
+<li><code>SET SQL_SAFE_UPDATES = 0</code></li>
+<li><code>SET</code></li>
+<li><code>WHERE</code></li>
+<li><code>CASE WHEN THEN ELSE END</code></li>
+<li>Subquery</li>
+<li><code>REGEXP</code></li>
+</ul>
+</li>
 <li><code>DELETE</code></li>
-<li>Types  <ul>
-<li><code>DATETIME</code>  </li>
-<li><code>TIMESTAMP</code>  </li>
-<li><a href="../0015.1.1%20DATETIME%EA%B3%BC%20TIMESTAMP%EC%9D%98%20%EC%B0%A8%EC%9D%B4/">0015.1.1 DATETIME과 TIMESTAMP의 차이</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li>Types<br />
+        - <code>DATETIME</code><br />
+        - <code>TIMESTAMP</code><br />
+        - <a href="../0015.1.1%20DATETIME%EA%B3%BC%20TIMESTAMP%EC%9D%98%20%EC%B0%A8%EC%9D%B4/">0015.1.1 DATETIME과 TIMESTAMP의 차이</a></li>
 </ul>
 
 
