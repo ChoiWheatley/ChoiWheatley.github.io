@@ -51,6 +51,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/0014.2%20pytube%20%EC%82%AC%EC%9A%A9%ED%95%9C%20%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4%20%EC%9C%A0%ED%8A%9C%EB%B8%8C%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%8D%94/</loc>
+         <lastmod>2024-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/0014.3%20xlsxwriter%20-%20python%20package/</loc>
+         <lastmod>2024-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/0014.4%20markdown%20-%20python%20package/</loc>
+         <lastmod>2024-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/0014.5%20Web%20Crawling%20with%20Beautiful%20Soup%20%26%20requests/</loc>
+         <lastmod>2024-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/0015%20database/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
@@ -2281,11 +2301,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/Web%20Crawling%20with%20Beautiful%20Soup%20%26%20requests/</loc>
-         <lastmod>2024-03-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/What%20Are%20Sessions%20How%20Do%20They%20Work/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
@@ -3661,11 +3676,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/markdown%20-%20python%20package/</loc>
-         <lastmod>2024-03-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/match%20case%20in%20python/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
@@ -4192,11 +4202,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/python%EC%9D%80%20%EB%B6%84%EA%B8%B0%EC%98%88%EC%B8%A1%EC%9D%84%20%ED%95%98%EB%8A%94%EA%B0%80%20%7Bsof%7D/</loc>
-         <lastmod>2024-03-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/pytube%20%EC%82%AC%EC%9A%A9%ED%95%9C%20%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4%20%EC%9C%A0%ED%8A%9C%EB%B8%8C%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%8D%94/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -5067,11 +5072,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/writing%20a%20manager%20for%20a%20custom%20user%20model%20%7Bdjangodoc%7D/</loc>
-         <lastmod>2024-03-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/xlsxwriter%20-%20python%20package/</loc>
          <lastmod>2024-03-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
