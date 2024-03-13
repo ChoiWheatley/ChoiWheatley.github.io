@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-12-23T14:35:24
+updated: 2024-03-13T15:11:51
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -29,6 +29,8 @@ title: 0014 Python 🐍
 	- [[Web Crawling with Beautiful Soup & requests]]
 	- [[markdown - python package]]
 	- [[xlsxwriter - python package]]
+	- [[pytube 사용한 오픈소스 유튜브 다운로더]]
+	- [[0014.1 faker로 더미 데이터 만들기 🐍]]
 - useful
 	- standard lib
 		- [[itertools module]]
