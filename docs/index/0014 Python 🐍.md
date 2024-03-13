@@ -26,10 +26,10 @@ title: 0014 Python 🐍
 	- [최승현의 노트북](https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing) => [깃허브](https://github.com/ChoiWheatley/ormi-master)로 이전함. 
 - [[python cheatsheet and snippets]]
 - external packages
-	- [[Web Crawling with Beautiful Soup & requests]]
-	- [[markdown - python package]]
-	- [[xlsxwriter - python package]]
-	- [[pytube 사용한 오픈소스 유튜브 다운로더]]
+	- [[0014.5 Web Crawling with Beautiful Soup & requests]]
+	- [[0014.4 markdown - python package]]
+	- [[0014.3 xlsxwriter - python package]]
+	- [[0014.2 pytube 사용한 오픈소스 유튜브 다운로더]]
 	- [[0014.1 faker로 더미 데이터 만들기 🐍]]
 - useful
 	- standard lib
