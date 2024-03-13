@@ -1,3 +1,4 @@
+입
 ---
 description:
 aliases: 
