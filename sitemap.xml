@@ -1386,6 +1386,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/HAVING/</loc>
+         <lastmod>2024-03-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/HTTP%20header%20CORS%20policy%20-%20%27Access-Control-Allow-Origin%27/</loc>
          <lastmod>2024-03-14</lastmod>
          <changefreq>daily</changefreq>
