@@ -48078,7 +48078,7 @@
 <li>bit.ly와 같이 자주 접근하지만 쓸데없이 긴 URL을 짧게 만든 뒤에 사용자들이 간편하게 링크를 들고다닐 수 있게</li>
 <li>객체를 수정하거나 제거, 생성하는 등의 부가효과(side effects)를 일으키는 작업을 수행한 뒤에 리디렉션을 통해 사용자가 실수로 같은 작업을 두 번 일으키지 못하게 막을 수도 있다.</li>
 </ul>
-<h1 301="301" Moved="Moved" Permanently="Permanently" id="under-the-hood-of-redirection-302-found">Under the hood of redirection { 302 Found }<a class="headerlink" href="#under-the-hood-of-redirection-302-found" title="Permanent link">#</a></h1>
+<h1 id="under-the-hood-of-redirection-302-found-301-moved-permanently">Under the hood of redirection { 302 Found } { 301 Moved Permanently }<a class="headerlink" href="#under-the-hood-of-redirection-302-found-301-moved-permanently" title="Permanent link">#</a></h1>
 <p>일반적인 GET 요청으로 리디렉션 URL을 요청한다면 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302">302 FOUND</a> 응답을 돌려받게 된다. 302는 애초에 redirection을 위한 상태코드이다. 헤더에 <code>Location</code>이 반드시 포함돼있고, 상대 URL을 따라 리디렉션을 수행할지말지를 클라이언트 단에서 결정할 수 있다.</p>
 <blockquote>
 <p>[!note] Redirection은 의무가 아니다</p>
