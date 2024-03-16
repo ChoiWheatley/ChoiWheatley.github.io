@@ -48162,26 +48162,18 @@
 <hr />
 <h2 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">#</a></h2>
 <ol>
+<li>다음 파일을 연다: <code>/usr/share/X11/xkb/symbols/capslock</code></li>
 <li>
-<p>다음 파일을 연다: <code>/usr/share/X11/xkb/symbols/capslock</code></p>
-<div class="highlight"><pre><span></span><code>default  hidden partial modifier_keys
-xkb_symbols &quot;capslock&quot; {
-    replace key &lt;CAPS&gt; { [ Caps_Lock ] };
-    modifier_map Lock { Caps_Lock };
+<p>아래에 아래와 같은 설정을 추가한다:</p>
+<div class="highlight"><pre><span></span><code>hidden partial modifier_keys
+xkb_symbols &quot;Capslock To Hangul&quot; {
+    key &lt;CAPS&gt; { [ Hangul ] };
 };
-
-...
 </code></pre></div>
 </li>
 <li>
-<p><code>"capslock"</code> 이라고 되어있는 부분의 <code>replace key &lt;CAPS&gt; { [] };</code> 에서의 대괄호 부분을 <code>[Hangul]</code>로 바꿔준다.</p>
-<div class="highlight"><pre><span></span><code>default  hidden partial modifier_keys
-xkb_symbols &quot;capslock&quot; {
-    replace key &lt;CAPS&gt; { [ Hangul ] };
-    modifier_map Lock { Caps_Lock };
-};
-
-...
+<p>다음 명령어를 터미널에서 입력하여 수정된 사항을 로드한다:</p>
+<div class="highlight"><pre><span></span><code>sudo dpkg-reconfigure xkb-data
 </code></pre></div>
 </li>
 </ol>
