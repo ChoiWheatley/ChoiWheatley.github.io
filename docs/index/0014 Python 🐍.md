@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2023-12-23T14:35:24
+updated: 2024-03-14T10:16:10
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -26,9 +26,12 @@ title: 0014 Python 🐍
 	- [최승현의 노트북](https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing) => [깃허브](https://github.com/ChoiWheatley/ormi-master)로 이전함. 
 - [[python cheatsheet and snippets]]
 - external packages
-	- [[Web Crawling with Beautiful Soup & requests]]
-	- [[markdown - python package]]
-	- [[xlsxwriter - python package]]
+	- [[0014.5 Web Crawling with Beautiful Soup & requests]]
+	- [[0014.4 markdown - python package]]
+	- [[0014.3 xlsxwriter - python package]]
+	- [[0014.2 pytube 사용한 오픈소스 유튜브 다운로더]]
+	- [[0014.1 faker로 더미 데이터 만들기 🐍]]
+	- [[0014.6 pymysql, mysql python wrapper]]
 - useful
 	- standard lib
 		- [[itertools module]]

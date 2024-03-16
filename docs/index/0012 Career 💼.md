@@ -148,6 +148,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[TLB Hit, Miss의 과정을 순차적으로 설명해주세요]]
 - [[exception의 종류와 차이점을 알려주세요]]
 - [[병렬성과 동시성의 차이점을 알려주세요]]
+- [[타입(data type)이란 무엇인가요]]
 
 ### 자료구조 관련 면접질문
 

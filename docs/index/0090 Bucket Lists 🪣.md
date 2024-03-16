@@ -35,7 +35,7 @@ parent link:
 	- [[Obsidian으로 블로그 만들기]]
 - [[Clone Coding -- Unsplash Wallpaper]]
 - [[rustube 유튜브 다운로더]]의 Clone Coding
-	- [[pytube 사용한 오픈소스 유튜브 다운로더]]
+	- [[0014.2 pytube 사용한 오픈소스 유튜브 다운로더]]
 - [[drag and count number of characters]]
 - [[esc를 눌러 영문자판으로 전환하기]]
 - [[Youtube Script Search Engine]]

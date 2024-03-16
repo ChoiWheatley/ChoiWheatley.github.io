@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-12T13:12:18
-updated: 2023-09-16T22:02:57
+updated: 2024-03-11T14:01:43
 title: mac 필수앱 🍎
 ---
 - 키보드 입맛대로 [karabiner-elements](https://karabiner-elements.pqrs.org/)
@@ -19,3 +19,5 @@ title: mac 필수앱 🍎
 - [[yabai, tiling window manager for macOS]]
 - [[karabiner-elements]]
 - [[noclamshell, 맥북 뚜껑을 닫으면 무조건 sleep모드로]]
+- [[Altdrag alternative window manager for mac]]
+- [[homebrew]]
