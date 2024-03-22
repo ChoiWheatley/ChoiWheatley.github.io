@@ -30,6 +30,7 @@ parent link: [[docs/index/index|index]]
 - [[glossary]]
 - [[vim 관련 꿀팁]]
 - [[neovim]]
+- [[ffmpeg]]
 - git 관련
 	- [[get fetch --prune]]
 	- [[git submodule 개념 잡기]]
