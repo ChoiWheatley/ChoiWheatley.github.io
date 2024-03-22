@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: git rebase
+title: git rebase --interactive
 created: 2024-01-01T16:13:26
-updated: 2024-01-01T16:22:20
+updated: 2024-03-22T09:10:47
 ---
 - [[0010 Programming 👩‍💻]]
 ___

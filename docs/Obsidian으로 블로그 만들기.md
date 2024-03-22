@@ -77,4 +77,4 @@ graph view, back link, search with Ctrl+K, nav bar 등등... 있을 건 다 있�
 
 ## Google 검색창 노출시키기
 
-[[github blog 검색창 노출시키기]]
+[[github blog 검색창 노출시키기 (TODO)]]
