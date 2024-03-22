@@ -91,11 +91,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/0019%20GitHub/</loc>
-         <lastmod>2024-03-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/01_os_review.pdf%20%7Bswjungle%7D/</loc>
          <lastmod>2024-03-22</lastmod>
          <changefreq>daily</changefreq>
@@ -797,6 +792,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/2024-03-10%20wishfunding/</loc>
+         <lastmod>2024-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/2024-03-22%20Git%2C%20Github%20%EA%B7%B9%EC%B4%88%EB%B0%98%20%EC%84%B8%ED%8C%85%20%ED%8A%B9%EA%B0%95/</loc>
          <lastmod>2024-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -7427,6 +7427,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/index/0018.2%20Node.js/</loc>
+         <lastmod>2024-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/index/0019%20GitHub/</loc>
          <lastmod>2024-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
