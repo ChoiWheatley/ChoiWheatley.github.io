@@ -16,6 +16,7 @@ title: 0019 GitHub
 - [[git rebase --interactive]]
 - [[git commit message 규칙]]
 - [[github blog 검색창 노출시키기 (TODO)]]
+- [[2024-03-22 Git, Github 극초반 세팅 특강]]
 
 ## RESOURCES
 
