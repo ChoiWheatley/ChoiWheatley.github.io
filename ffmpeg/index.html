@@ -34931,6 +34931,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      resolution을 변경하려면?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48341,6 +48350,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      resolution을 변경하려면?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48360,11 +48378,19 @@
 
 <h2 id="_1">가장 좋은 코덱은?<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><a href="https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg">stackexchange / how-can-i-reduce-a-videos-size-with-ffmpeg</a></p>
+<ol>
+<li>코덱을 좋은 걸로 바꾼다. H.265</li>
+<li><code>-crf</code> 값을 <strong>높혀</strong> 비트레이트를 <strong>낮춘다</strong> <del>이렇게 비직관적일 수가</del></li>
+</ol>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
 </code></pre></div>
 <h2 id="frame-rate">frame rate를 수정하려면?<a class="headerlink" href="#frame-rate" title="Permanent link">#</a></h2>
 <p><a href="https://trac.ffmpeg.org/wiki/ChangingFrameRate">https://trac.ffmpeg.org/wiki/ChangingFrameRate</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i &lt;input&gt; -filter:v fps=30 &lt;output&gt;
+</code></pre></div>
+<h2 id="resolution">resolution을 변경하려면?<a class="headerlink" href="#resolution" title="Permanent link">#</a></h2>
+<p><a href="https://ottverse.com/change-resolution-resize-scale-video-using-ffmpeg/">https://ottverse.com/change-resolution-resize-scale-video-using-ffmpeg/</a></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vf scale=$w:$h &lt;encoding-parameters&gt; output.mp4
 </code></pre></div>
 
 
