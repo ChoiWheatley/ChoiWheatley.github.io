@@ -84,6 +84,7 @@ title: 0014 Python 🐍
 - [[decorator - python]]
 - [[module and package (python)]]
 - [[file-io (python)]]
+- [[str (python)]]
 
 ---
 
