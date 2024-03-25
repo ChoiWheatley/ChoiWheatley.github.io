@@ -34922,6 +34922,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#frame-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      frame rate를 수정하려면?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48323,6 +48332,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#frame-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      frame rate를 수정하려면?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48343,6 +48361,10 @@
 <h2 id="_1">가장 좋은 코덱은?<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><a href="https://unix.stackexchange.com/questions/28803/how-can-i-reduce-a-videos-size-with-ffmpeg">stackexchange / how-can-i-reduce-a-videos-size-with-ffmpeg</a></p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
+</code></pre></div>
+<h2 id="frame-rate">frame rate를 수정하려면?<a class="headerlink" href="#frame-rate" title="Permanent link">#</a></h2>
+<p><a href="https://trac.ffmpeg.org/wiki/ChangingFrameRate">https://trac.ffmpeg.org/wiki/ChangingFrameRate</a></p>
+<div class="highlight"><pre><span></span><code>ffmpeg -i &lt;input&gt; -filter:v fps=30 &lt;output&gt;
 </code></pre></div>
 
 
