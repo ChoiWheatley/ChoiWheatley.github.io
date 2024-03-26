@@ -5503,6 +5503,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../JoinColumn%20options/" class="md-tabs__link">
+        
+  
+    
+  
+  JoinColumn options
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../KB%EB%9D%BC%EC%9D%B4%ED%94%84%EC%83%9D%EB%AA%85%202023%20%EC%B1%84%EC%9A%A9%EC%97%B0%EA%B3%84%ED%98%95%20%EC%9D%B8%ED%84%B4%EC%8B%AD%20%EC%84%A0%EB%B0%9C/" class="md-tabs__link">
         
   
@@ -28589,6 +28606,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../JoinColumn%20options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JoinColumn options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../KB%EB%9D%BC%EC%9D%B4%ED%94%84%EC%83%9D%EB%AA%85%202023%20%EC%B1%84%EC%9A%A9%EC%97%B0%EA%B3%84%ED%98%95%20%EC%9D%B8%ED%84%B4%EC%8B%AD%20%EC%84%A0%EB%B0%9C/" class="md-nav__link">
         
   
@@ -48545,18 +48582,7 @@
 <p>Let's create a one-to-one relationship with another class. </p>
 </blockquote>
 <p><code>type =&gt; Photo</code> 노테이션은 우리가 연관관계를 맺고 싶은 대상 클래스의 이름을 적는 것으로, <code>() =&gt; Photo</code> 이렇게 적을 수도 있다.</p>
-<p><code>JoinColumn</code> 데코레이터는 두 테이블의 관계를 <strong>소유</strong>하고 있음을 나타낸다. 관계는 단방향일수도 있고 양방향일 수도 있으나, 소유는 반드시 하나의 테이블만이 가지게 된다. 아래의 예제에서 <code>PhotoMetadata</code> 모델은 <code>Photo</code>와의 관계를 소유한다. 즉, <code>PhotoMetadata</code> 모델이 <code>Photo</code> id를 FK로 가지게 된다는 것을 의미한다.</p>
-<blockquote>
-<p>Relations can be unidirectional or bidirectional. Only one side of relational can be owning. Using <code>@JoinColumn</code> decorator is required on the owner side of the relationship.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">@Entity</span><span class="p">()</span>
-<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">...</span>
-<span class="w">    </span><span class="kd">@OneToOne</span><span class="p">(</span><span class="kr">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Photo</span><span class="p">)</span>
-<span class="w">    </span><span class="kd">@JoinColumn</span><span class="p">()</span>
-<span class="w">    </span><span class="nx">photo</span><span class="o">:</span><span class="w"> </span><span class="kt">Photo</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<p><strong><a href="../JoinColumn%20options/">JoinColumn options</a></strong></p>
 <blockquote>
 <p>Let's save a photo, and its metadata and attach them to each other.</p>
 </blockquote>
