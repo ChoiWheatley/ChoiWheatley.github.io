@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2024-03-26T22:42:20
+updated: 2024-03-27T00:04:03
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -139,19 +139,11 @@ await AppDataSource.manager.save(photo);
 
 [[Repository {typeorm} {todo}]]
 
-모든 엔티티는 해당 테이블에 접근하고 수정할 권한을 가지고 있는 리포지토리 객체에 책임을 전가한다.
-
-```ts
-const photoRepository = AppDataSource.getRepository(Photo);
-await photoRepository.save(photo);
-const savedPhotos = await photoRepository.find()
-```
-
 > Let's create a one-to-one relationship with another class. 
 
 `type => Photo` 노테이션은 우리가 연관관계를 맺고 싶은 대상 클래스의 이름을 적는 것으로, `() => Photo` 이렇게 적을 수도 있다.
 
-**[[JoinColumn options]]**
+[[JoinColumn options]]
 
 > Let's save a photo, and its metadata and attach them to each other.
 
@@ -213,6 +205,8 @@ export class Photo {
 	metadata: PhotoMetadata;
 }
 ```
+
+- [[find options]]
 
 ## 더 알아보기
 
