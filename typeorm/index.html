@@ -10909,6 +10909,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../find%20options/" class="md-tabs__link">
+        
+  
+    
+  
+  find options
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../firefox%20css%20uwp%20style/" class="md-tabs__link">
         
   
@@ -34966,6 +34983,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../find%20options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    find options
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../firefox%20css%20uwp%20style/" class="md-nav__link">
         
   
@@ -48573,16 +48610,11 @@
 <p><code>Repository</code>를 사용하면 <code>EntityManager</code>를 사용하지 않고 같은 짓을 할 수 있음.</p>
 </blockquote>
 <p><a href="../Repository%20%7Btypeorm%7D%20%7Btodo%7D/">Repository {typeorm} {todo}</a></p>
-<p>모든 엔티티는 해당 테이블에 접근하고 수정할 권한을 가지고 있는 리포지토리 객체에 책임을 전가한다.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">photoRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Photo</span><span class="p">);</span>
-<span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photo</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">savedPhotos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-</code></pre></div>
 <blockquote>
 <p>Let's create a one-to-one relationship with another class. </p>
 </blockquote>
 <p><code>type =&gt; Photo</code> 노테이션은 우리가 연관관계를 맺고 싶은 대상 클래스의 이름을 적는 것으로, <code>() =&gt; Photo</code> 이렇게 적을 수도 있다.</p>
-<p><strong><a href="../JoinColumn%20options/">JoinColumn options</a></strong></p>
+<p><a href="../JoinColumn%20options/">JoinColumn options</a></p>
 <blockquote>
 <p>Let's save a photo, and its metadata and attach them to each other.</p>
 </blockquote>
@@ -48641,6 +48673,9 @@
 <span class="w">    </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="kt">PhotoMetadata</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<ul>
+<li><a href="../find%20options/">find options</a></li>
+</ul>
 <h2 id="_2">더 알아보기<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://docs.nestjs.com/techniques/database#multiple-databases">Migrations</a></li>

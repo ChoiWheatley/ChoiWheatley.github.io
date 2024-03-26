@@ -76,11 +76,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#readme" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -10900,6 +10895,23 @@
     
   
   file-io (python)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../find%20options/" class="md-tabs__link">
+        
+  
+    
+  
+  find options
 
       </a>
     </li>
@@ -30133,17 +30145,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Repository {typeorm} {todo}
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -30153,32 +30154,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#readme" class="md-nav__link">
-    <span class="md-ellipsis">
-      README
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -34996,6 +34971,26 @@
   
   <span class="md-ellipsis">
     file-io (python)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../find%20options/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    find options
   </span>
   
 
@@ -48382,23 +48377,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#readme" class="md-nav__link">
-    <span class="md-ellipsis">
-      README
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -48419,7 +48397,11 @@
 <li><a href="https://typeorm.io/working-with-repository#">공식문서</a></li>
 </ul>
 <hr />
-<h2 id="readme">README<a class="headerlink" href="#readme" title="Permanent link">#</a></h2>
+<p>모든 엔티티는 해당 테이블에 접근하고 수정할 권한을 가지고 있는 리포지토리 객체에 책임을 전가한다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">photoRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Photo</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photo</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">savedPhotos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
+</code></pre></div>
 
 
 
