@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: Repository {typeorm} {todo}
+title: Repository {typeorm}
 created: 2023-11-27T17:14:01
-updated: 2024-03-27T00:03:52
+updated: 2024-03-28T21:42:00
 ---
 - [[typeorm]]
 - [공식문서](https://typeorm.io/working-with-repository#)

@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2024-03-27T00:04:03
+updated: 2024-03-28T21:50:39
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -137,7 +137,7 @@ await AppDataSource.manager.save(photo);
 
 > `Repository`를 사용하면 `EntityManager`를 사용하지 않고 같은 짓을 할 수 있음.
 
-[[Repository {typeorm} {todo}]]
+[[Repository {typeorm}]]
 
 > Let's create a one-to-one relationship with another class. 
 
@@ -214,3 +214,4 @@ export class Photo {
 - [[DateColumn Decorators {typeorm}]]
 - [[enum column type {typeorm}]]
 - [[Validation {typeorm}]]
+- [[typeorm 연관 컬럼을 객체가 아니라 id number로 불러오기]]
