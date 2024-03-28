@@ -1936,7 +1936,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/Repository%20%7Btypeorm%7D%20%7Btodo%7D/</loc>
+         <loc>https://choiwheatley.github.io/Repository%20%7Btypeorm%7D/</loc>
          <lastmod>2024-03-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4837,6 +4837,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/typeid/</loc>
+         <lastmod>2024-03-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/typeorm%20%EC%97%B0%EA%B4%80%20%EC%BB%AC%EB%9F%BC%EC%9D%84%20%EA%B0%9D%EC%B2%B4%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20id%20number%EB%A1%9C%20%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/</loc>
          <lastmod>2024-03-28</lastmod>
          <changefreq>daily</changefreq>
     </url>

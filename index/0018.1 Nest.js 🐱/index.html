@@ -6797,12 +6797,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../Repository%20%7Btypeorm%7D%20%7Btodo%7D/" class="md-tabs__link">
+      <a href="../../Repository%20%7Btypeorm%7D/" class="md-tabs__link">
         
   
     
   
-  Repository {typeorm} {todo}
+  Repository {typeorm}
 
       </a>
     </li>
@@ -16674,6 +16674,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../typeorm%20%EC%97%B0%EA%B4%80%20%EC%BB%AC%EB%9F%BC%EC%9D%84%20%EA%B0%9D%EC%B2%B4%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20id%20number%EB%A1%9C%20%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/" class="md-tabs__link">
+        
+  
+    
+  
+  typeorm 연관 컬럼을 객체가 아니라 id number로 불러오기
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../typeorm/" class="md-tabs__link">
         
   
@@ -22727,6 +22744,30 @@
       Controllers
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Controllers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#param" class="md-nav__link">
+    <span class="md-ellipsis">
+      @Param
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      @Query
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -30996,11 +31037,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Repository%20%7Btypeorm%7D%20%7Btodo%7D/" class="md-nav__link">
+      <a href="../../Repository%20%7Btypeorm%7D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Repository {typeorm} {todo}
+    Repository {typeorm}
   </span>
   
 
@@ -42616,6 +42657,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../typeorm%20%EC%97%B0%EA%B4%80%20%EC%BB%AC%EB%9F%BC%EC%9D%84%20%EA%B0%9D%EC%B2%B4%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20id%20number%EB%A1%9C%20%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    typeorm 연관 컬럼을 객체가 아니라 id number로 불러오기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../typeorm/" class="md-nav__link">
         
   
@@ -49283,6 +49344,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Controllers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#param" class="md-nav__link">
+    <span class="md-ellipsis">
+      @Param
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      @Query
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -49528,14 +49613,14 @@
 </li>
 <li>
 <p>이렇게 메서드 파라메터로 넣을 수 있는 데코레이터들로는 <code>@Res</code>, <code>@Next</code>, <code>@Session</code>, <code>@Param</code>, <code>@Body</code>, <code>@Query</code>, <code>@Headers</code> 등이 있고 <a href="https://docs.nestjs.com/controllers#request-object">다음 링크</a>를 참고하시오.</p>
+</li>
+</ul>
+<h4 id="param"><code>@Param</code><a class="headerlink" href="#param" title="Permanent link">#</a></h4>
+<p>동적으로 처리할 수 있는 Path인자. <code>/cat/1</code>에서의 <code>1</code>과 같은 요청을 처리하는데 사용할 수 있다. 매개 변수가 있는 경로는 정적 경로 뒤에 선언되어야 합니다. 이것은 매개 변수화된 경로가 정적 경로로 향하는 트래픽을 가로채는 것을 방지합니다.</p>
+<h4 id="query"><code>@Query</code><a class="headerlink" href="#query" title="Permanent link">#</a></h4>
+<p><code>?</code> 이후에 나오고 <code>&amp;</code>로 분리된 인자들을 의미. <code>key=value</code> 쌍으로 이루어져 있다.</p>
 <ul>
-<li><code>@Param</code> : 동적으로 처리할 수 있는 Path인자. <code>/cat/1</code>에서의 <code>1</code>과 같은 요청을 처리하는데 사용할 수 있다. 매개 변수가 있는 경로는 정적 경로 뒤에 선언되어야 합니다. 이것은 매개 변수화된 경로가 정적 경로로 향하는 트래픽을 가로채는 것을 방지합니다.</li>
-<li><code>@Query</code>: <code>?</code> 이후에 나오고 <code>&amp;</code>로 분리된 인자들을 의미. <code>key=value</code> 쌍으로 이루어져 있다.<ul>
 <li>예시: <code>/cat?key1=value1&amp;key2=value2</code></li>
-</ul>
-</li>
-</ul>
-</li>
 <li>deferred response를 리턴해도 된다고. Promise 타입 객체를 리턴하게 되면 <a href="#rxjs">#RxJS</a>의 observable stream으로 리턴이 되고, 스트림이 끝날경우 해당 소스에 알림이 간다고는 하는데 뭔 소린지 잘 모르겠음.</li>
 </ul>
 <hr />
