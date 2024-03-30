@@ -4,7 +4,7 @@ tags:
 description:
 title: 0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기
 created: 2024-03-03T21:00:13
-updated: 2024-03-12T10:59:20
+updated: 2024-03-22T19:57:08
 ---
 - [초격차 캠프 with AWS 3기](https://ozcodingschool.com/ozcoding/startupcamp)
 
@@ -30,6 +30,8 @@ updated: 2024-03-12T10:59:20
 - Courses
 	- 프론트엔드 코스
 	- 백엔드 코스
+
+![[임금계산.png]]
 
 	> 아, 그러면 직무 합동 프로젝트는 프론트 코스, 백엔드 코스, 사업자 코스 이렇게 세개가 모여서 하는건가보다
 

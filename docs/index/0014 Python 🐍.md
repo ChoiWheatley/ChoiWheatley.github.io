@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2024-03-14T10:16:10
+updated: 2024-03-22T20:31:49
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -23,7 +23,7 @@ title: 0014 Python 🐍
 	- [Python 얕은물 - NOTION](https://shallowpython.notion.site/shallowpython/6e5d012e159d4e3fa3fe6ca8566d9e22?v=b73c91efc98c46e49158156a5927a4fd)
 	- [멘토님의 python_deep_dive.ipynb 노트북](https://colab.research.google.com/drive/1IRa8nYwM2HtkzlNJGBlavWK96kffytm_?usp=sharing#scrollTo=E1nDm4EOyOxg)
 	- [멘토님의 알고리즘특강 실시간 노트북](https://colab.research.google.com/drive/18ezSWxVCOIRw-AB84gVsap-Zi22oQpkR?usp=sharing)
-	- [최승현의 노트북](https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing) => [깃허브](https://github.com/ChoiWheatley/ormi-master)로 이전함. 
+	- [최승현의 노트북](https://colab.research.google.com/drive/1gxoD01mjta80MkTOlrei1BHSUI0_k9-R?usp=sharing) 
 - [[python cheatsheet and snippets]]
 - external packages
 	- [[0014.5 Web Crawling with Beautiful Soup & requests]]
@@ -84,6 +84,7 @@ title: 0014 Python 🐍
 - [[decorator - python]]
 - [[module and package (python)]]
 - [[file-io (python)]]
+- [[str (python)]]
 
 ---
 

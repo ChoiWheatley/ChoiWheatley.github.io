@@ -53,7 +53,7 @@ https://docs.emmet.io/cheat-sheet/
 
 # Github
 
-[[알잘딱 GitHub 핵심개념]]
+[[0019 GitHub]]
 
 # 제안
 

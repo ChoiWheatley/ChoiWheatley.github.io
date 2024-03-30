@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2024-03-10T14:04:56
+updated: 2024-03-28T21:50:39
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -137,33 +137,13 @@ await AppDataSource.manager.save(photo);
 
 > `Repository`를 사용하면 `EntityManager`를 사용하지 않고 같은 짓을 할 수 있음.
 
-[[Repository {typeorm} {todo}]]
-
-모든 엔티티는 해당 테이블에 접근하고 수정할 권한을 가지고 있는 리포지토리 객체에 책임을 전가한다.
-
-```ts
-const photoRepository = AppDataSource.getRepository(Photo);
-await photoRepository.save(photo);
-const savedPhotos = await photoRepository.find()
-```
+[[Repository {typeorm}]]
 
 > Let's create a one-to-one relationship with another class. 
 
 `type => Photo` 노테이션은 우리가 연관관계를 맺고 싶은 대상 클래스의 이름을 적는 것으로, `() => Photo` 이렇게 적을 수도 있다.
 
-`JoinColumn` 데코레이터는 두 테이블의 관계를 **소유**하고 있음을 나타낸다. 관계는 단방향일수도 있고 양방향일 수도 있으나, 소유는 반드시 하나의 테이블만이 가지게 된다. 아래의 예제에서 `PhotoMetadata` 모델은 `Photo`와의 관계를 소유한다. 즉, `PhotoMetadata` 모델이 `Photo` id를 FK로 가지게 된다는 것을 의미한다.
-
-> Relations can be unidirectional or bidirectional. Only one side of relational can be owning. Using `@JoinColumn` decorator is required on the owner side of the relationship.
-
-```ts
-@Entity()
-export class PhotoMetadata {
-	...
-	@OneToOne(type => Photo)
-	@JoinColumn()
-	photo: Photo;
-}
-```
+[[JoinColumn options]]
 
 > Let's save a photo, and its metadata and attach them to each other.
 
@@ -226,9 +206,12 @@ export class Photo {
 }
 ```
 
+- [[find options]]
+
 ## 더 알아보기
 
 - [Migrations](https://docs.nestjs.com/techniques/database#multiple-databases)
 - [[DateColumn Decorators {typeorm}]]
 - [[enum column type {typeorm}]]
 - [[Validation {typeorm}]]
+- [[typeorm 연관 컬럼을 객체가 아니라 id number로 불러오기]]
