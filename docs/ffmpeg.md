@@ -4,7 +4,7 @@ tags:
 description:
 title: ffmpeg
 created: 2024-03-22T21:58:34
-updated: 2024-03-25T21:33:09
+updated: 2024-04-02T18:12:27
 ---
 
 ## 가장 좋은 코덱은?
@@ -33,3 +33,8 @@ ffmpeg -i <input> -filter:v fps=30 <output>
 ```
 ffmpeg -i input.mp4 -vf scale=$w:$h <encoding-parameters> output.mp4
 ```
+
+## 두 영상을 합치려면?
+
+[[ffmpeg concat two videos]]
+
