@@ -35054,6 +35054,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#for-mp4-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      FOR MP4 FILES
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48562,6 +48571,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#for-mp4-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      FOR MP4 FILES
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48617,6 +48635,30 @@ ffmpeg<span class="w"> </span>-safe<span class="w"> </span><span class="m">0</sp
 <li><a href="https://ffmpeg.org/faq.html#How-can-I-join-video-files_003f">FFmpeg FAQ: How can I join video files?</a></li>
 <li><a href="https://trac.ffmpeg.org/wiki/Concatenate">FFmpeg Wiki: How to concatenate (join, merge) media files</a></li>
 </ul>
+<hr />
+<h2 id="for-mp4-files">FOR MP4 FILES<a class="headerlink" href="#for-mp4-files" title="Permanent link">#</a></h2>
+<p>For <strong>.mp4</strong> files (which I obtained from DailyMotion.com: a 50 minute tv episode, downloadable only in three parts, as three .mp4 video files) the following was an effective solution for <strong>Windows 7</strong>, and does <strong>NOT</strong> involve re-encoding the files.</p>
+<p>I renamed the files (as <em>file1.mp4</em>, <em>file2.mp4</em>, <em>file3.mp4</em>) such that the parts were in the correct order for viewing the complete tv episode.</p>
+<p>Then I created a simple <strong>batch file</strong> (concat.bat), with the following contents:</p>
+<div class="highlight"><pre><span></span><code>:: Create File List
+echo file file1.mp4 &gt;  mylist.txt 
+echo file file2.mp4 &gt;&gt; mylist.txt
+echo file file3.mp4 &gt;&gt; mylist.txt
+
+:: Concatenate Files
+ffmpeg -f concat -i mylist.txt -c copy output.mp4
+</code></pre></div>
+<p>The <strong>batch file</strong>, and <strong>ffmpeg.exe</strong>, must both be put in the same folder as the <strong>.mp4 files</strong> to be joined. Then run the batch file. It will typically take less than ten seconds to run.<br />
+. </p>
+<p><strong>Addendum</strong> (2018/10/21) -</p>
+<p>If what you were looking for is a method for specifying all the mp4 files in the current folder without a lot of retyping, try this in your Windows <strong>batch file</strong>instead (<strong>MUST</strong> include the option <strong>-safe 0</strong>):</p>
+<div class="highlight"><pre><span></span><code>:: Create File List
+for %%i in (*.mp4) do echo file &#39;%%i&#39;&gt;&gt; mylist.txt
+
+:: Concatenate Files
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
+</code></pre></div>
+<p>This works on Windows 7, in a batch file. <strong>Don't</strong> try using it on the command line, because it only works in a batch file!</p>
 
 
 
