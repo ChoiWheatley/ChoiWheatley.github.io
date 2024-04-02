@@ -4,7 +4,7 @@ tags:
 description:
 title: ffmpeg concat two videos
 created: 2024-04-02T18:12:46
-updated: 2024-04-02T18:12:56
+updated: 2024-04-02T18:28:40
 ---
 
 <https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg>
@@ -68,3 +68,40 @@ If in doubt about which method to use, try the concat demuxer.
 
 - [FFmpeg FAQ: How can I join video files?](https://ffmpeg.org/faq.html#How-can-I-join-video-files_003f)
 - [FFmpeg Wiki: How to concatenate (join, merge) media files](https://trac.ffmpeg.org/wiki/Concatenate)
+
+---
+
+## FOR MP4 FILES
+
+For **.mp4** files (which I obtained from DailyMotion.com: a 50 minute tv episode, downloadable only in three parts, as three .mp4 video files) the following was an effective solution for **Windows 7**, and does **NOT** involve re-encoding the files.
+
+I renamed the files (as *file1.mp4*, *file2.mp4*, *file3.mp4*) such that the parts were in the correct order for viewing the complete tv episode.
+
+Then I created a simple **batch file** (concat.bat), with the following contents:
+
+```
+:: Create File List
+echo file file1.mp4 >  mylist.txt 
+echo file file2.mp4 >> mylist.txt
+echo file file3.mp4 >> mylist.txt
+
+:: Concatenate Files
+ffmpeg -f concat -i mylist.txt -c copy output.mp4
+```
+
+The **batch file**, and **ffmpeg.exe**, must both be put in the same folder as the **.mp4 files** to be joined. Then run the batch file. It will typically take less than ten seconds to run.  
+. 
+
+**Addendum** (2018/10/21) -
+
+If what you were looking for is a method for specifying all the mp4 files in the current folder without a lot of retyping, try this in your Windows **batch file**instead (**MUST** include the option **-safe 0**):
+
+```
+:: Create File List
+for %%i in (*.mp4) do echo file '%%i'>> mylist.txt
+
+:: Concatenate Files
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
+```
+
+This works on Windows 7, in a batch file. **Don't** try using it on the command line, because it only works in a batch file!
