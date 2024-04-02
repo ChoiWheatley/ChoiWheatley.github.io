@@ -4,7 +4,7 @@ tags:
 description:
 title: JoinColumn options
 created: 2024-03-26T22:43:11
-updated: 2024-03-26T22:48:39
+updated: 2024-04-02T21:08:40
 ---
 - [typeorm.io / JoinColumn Options](https://typeorm.io/relations#joincolumn-options)
 
@@ -29,3 +29,8 @@ export class PhotoMetadata {
 @JoinColumn({ name: "cat_id" })
 category: Category;
 ```
+
+## referencedColumnName과 name의 차이
+
+- **name**: 내 entity 컬럼이름
+- **referencedColumnName**: 연관 entity 컬럼이름

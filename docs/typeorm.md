@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2024-03-28T21:50:39
+updated: 2024-04-02T21:10:56
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -215,3 +215,4 @@ export class Photo {
 - [[enum column type {typeorm}]]
 - [[Validation {typeorm}]]
 - [[typeorm 연관 컬럼을 객체가 아니라 id number로 불러오기]]
+- indexing
