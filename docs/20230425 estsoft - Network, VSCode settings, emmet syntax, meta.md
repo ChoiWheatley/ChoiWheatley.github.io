@@ -53,7 +53,7 @@ https://docs.emmet.io/cheat-sheet/
 
 # Github
 
-[[0019 GitHub]]
+[[0019 Git ᛘ]]
 
 # 제안
 

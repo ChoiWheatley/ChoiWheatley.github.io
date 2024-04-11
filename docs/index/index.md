@@ -17,7 +17,6 @@ parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
-
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
 - [[0011 Algorithms ♾️]]
@@ -32,7 +31,7 @@ parent link: [[docs/index]]
 - [[0018 Javascript ☕️]]
 - [[0018.1 Nest.js 🐱]]
 - [[0018.2 Node.js]]
-- [[0019 GitHub]]
+- [[0019 Git ᛘ]]
 - [[0020 Games 🎮]]
 - [[0030 Health 💪]]
 - [[0031 Emotions 🤔]]
