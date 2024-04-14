@@ -35192,6 +35192,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#combining-advanced-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining Advanced Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combining Advanced Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    <span class="md-ellipsis">
+      OR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and" class="md-nav__link">
+    <span class="md-ellipsis">
+      AND
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48727,6 +48769,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#combining-advanced-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combining Advanced Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combining Advanced Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Not
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    <span class="md-ellipsis">
+      OR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and" class="md-nav__link">
+    <span class="md-ellipsis">
+      AND
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -48823,6 +48907,24 @@
 <div class="highlight"><pre><span></span><code><span class="nx">commentRepository</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">take</span><span class="o">:</span><span class="w"> </span><span class="kt">10</span><span class="p">,</span>
 <span class="p">});</span>
+</code></pre></div>
+<h2 id="combining-advanced-options">Combining Advanced Options<a class="headerlink" href="#combining-advanced-options" title="Permanent link">#</a></h2>
+<p><a href="https://typeorm.io/find-options#combining-advanced-options">https://typeorm.io/find-options#combining-advanced-options</a></p>
+<h3 id="not">Not<a class="headerlink" href="#not" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">loadedPosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Post</span><span class="p">).</span><span class="nx">findBy</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">likes</span><span class="o">:</span><span class="w"> </span><span class="kt">Not</span><span class="p">(</span><span class="nx">MoreThan</span><span class="p">(</span><span class="mf">10</span><span class="p">)),</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">Not</span><span class="p">(</span><span class="nx">Equal</span><span class="p">(</span><span class="s2">&quot;About #2&quot;</span><span class="p">)),</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="or">OR<a class="headerlink" href="#or" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">loadedPosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Post</span><span class="p">).</span><span class="nx">findBy</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">Or</span><span class="p">(</span><span class="nx">Equal</span><span class="p">(</span><span class="s2">&quot;About #2&quot;</span><span class="p">),</span><span class="w"> </span><span class="nx">ILike</span><span class="p">(</span><span class="s2">&quot;About%&quot;</span><span class="p">)),</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="and">AND<a class="headerlink" href="#and" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">loadedPosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">dataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Post</span><span class="p">).</span><span class="nx">findBy</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="kt">And</span><span class="p">(</span><span class="nx">Not</span><span class="p">(</span><span class="nx">Equal</span><span class="p">(</span><span class="s2">&quot;About #2&quot;</span><span class="p">)),</span><span class="w"> </span><span class="nx">ILike</span><span class="p">(</span><span class="s2">&quot;%About%&quot;</span><span class="p">)),</span>
+<span class="p">})</span>
 </code></pre></div>
 
 
