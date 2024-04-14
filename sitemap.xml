@@ -1001,6 +1001,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Bidirectional%20relationships%20using%20inverse%20relation%20%7Btypeorm%7D/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/BinaryHeap/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
@@ -1116,7 +1121,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/Column%20Types%20%7Btypeorm%7D%7Btodo%7D/</loc>
+         <loc>https://choiwheatley.github.io/Column%20Types%20%7Btypeorm%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1187,6 +1192,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Data%20Structure%20in%20C/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/DataSource%20%7Btypeorm%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1267,6 +1277,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Easymotion%20Vim%20cheatsheat/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/EntityManager%20%7Btypeorm%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1556,7 +1571,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/JoinColumn%20options/</loc>
+         <loc>https://choiwheatley.github.io/JoinColumn%20options%20%7Btypeorm%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2611,6 +2626,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/cascade%20option%20%7Btypeorm%7D/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/catch%20multiple%20exceptions%20in%20%7Bpython%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
@@ -3151,7 +3171,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/find%20options/</loc>
+         <loc>https://choiwheatley.github.io/find%20options%20%7Btypeorm%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -4457,6 +4477,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/rust%EC%97%90%EC%84%9C%20c%2B%2B%EC%99%80%20%EA%B0%99%EC%9D%80%20custom%20comparator%EB%A5%BC%20%EC%A0%95%EC%9D%98%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/</loc>
+         <lastmod>2024-04-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/save%20both%20relations%20%7Btypeorm%7D/</loc>
          <lastmod>2024-04-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
