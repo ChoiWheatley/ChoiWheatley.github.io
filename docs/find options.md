@@ -4,7 +4,7 @@ tags:
 description:
 title: find options
 created: 2024-03-27T00:05:21
-updated: 2024-04-14T22:51:24
+updated: 2024-04-14T22:54:46
 ---
 - <https://typeorm.io/find-options>
 ---
@@ -104,4 +104,33 @@ SELECT 에서의 LIMIT와 동일합니다. Pagination을 수행할 때 사용합
 commentRepository.find({
 	take: 10,
 });
+```
+
+## Combining Advanced Options
+
+<https://typeorm.io/find-options#combining-advanced-options>
+
+### Not
+
+```ts
+const loadedPosts = await dataSource.getRepository(Post).findBy({
+    likes: Not(MoreThan(10)),
+    title: Not(Equal("About #2")),
+})
+```
+
+### OR
+
+```ts
+const loadedPosts = await dataSource.getRepository(Post).findBy({
+    title: Or(Equal("About #2"), ILike("About%")),
+})
+```
+
+### AND
+
+```ts
+const loadedPosts = await dataSource.getRepository(Post).findBy({
+    title: And(Not(Equal("About #2")), ILike("%About%")),
+})
 ```
