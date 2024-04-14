@@ -4,7 +4,7 @@ tags:
 description:
 title: typeorm
 created: 2023-11-27T16:17:25
-updated: 2024-04-02T21:10:56
+updated: 2024-04-14T23:03:06
 ---
 - [[0018 Javascript ☕️]]
 - [공식문서](https://typeorm.io/)
@@ -25,29 +25,6 @@ sequalize와의 차이점 위주로 CRUD, 엔티티, repository, relation 위주
 - cascades
 
 ## 톺아보기...
-
-> With TypeORM your models look like this:
-
-[[Column Types {typeorm}{todo}]]
-
-```ts
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
-
-@Entity()
-export class User {
-	@PrimaryGeneratedColumn()
-	id: number
-
-	@Column()
-	firstName: string
-
-	@Column()
-	lastName: string
-
-	@Column()
-	age: number
-}
-```
 
 > And your domain logic looks like this:
 
@@ -74,142 +51,18 @@ const [users, userCount] = await userRepository.findAndCount();
 await userRepository.remove(timber);
 ```
 
-> If you prefer to use the `ActiveRecord` implementation, you can use it as well:
-
-엔티티는 `BaseEntity` 상속만 하면 된다.
-
-```ts
-@Entity
-export class User extends BaseEntity {...}
-```
-
-> And your domain logic will look this way:
-
-```ts
-const user = new User();
-user.firstName = "Timber";
-user.lastName = "Saw";
-user.age = 25;
-await user.save();
-
-const allUsers = await User.find();
-const firstUser = await User.findOneBy({ id: i });
-await firstUser.remove();
-```
-
-> Let's create our `DataSource`
-
-```ts
-import 'reflect-metadata';
-import {DataSource} from 'typeorm';
-import {Photo} from './entity/Photo';
-
-const AppDataSource = new DataSource({
-	type: 'postgres',
-	host: 'localhost',
-	port: 5432,
-	username: 'root',
-	password: 'admin',
-	database: 'test',
-	entities: [Photo],
-	synchronize: true,
-	logging: false,
-});
-
-// call `initialize` method of a newly created database
-// ONCE in your application bootstrap
-AppDataSource.initialize()
-	.then(() => {
-		// here you can start to work with your database
-	})
-	.catch((error) => console.log(error));
-```
-
-> Save data with `EntityManager`
-
-```ts
-import {Photo} from './entity/Photo';
-import {AppDataSource} from './index';
-
-const photo = new Photo();
-await AppDataSource.manager.save(photo);
-```
-
-> `Repository`를 사용하면 `EntityManager`를 사용하지 않고 같은 짓을 할 수 있음.
-
-[[Repository {typeorm}]]
-
-> Let's create a one-to-one relationship with another class. 
-
-`type => Photo` 노테이션은 우리가 연관관계를 맺고 싶은 대상 클래스의 이름을 적는 것으로, `() => Photo` 이렇게 적을 수도 있다.
-
-[[JoinColumn options]]
-
-> Let's save a photo, and its metadata and attach them to each other.
-
-```ts
-const photo = new Photo();
-const metadata = new PhotoMetadata();
-...
-// get entity relationships
-const photoRepository = AppDataSource.getRepository(Photo);
-const metadataRepository = AppDataSource.getRepository(PhotoMetadata);
-
-// first we should save a photo
-await photoRepository.save(photo);
-
-// photo is saved. Now we need to save a photo metadata
-await metadataRepository.save(metadata);
-```
-
-> `cascade` 옵션을 주어 부모 테이블에 일어난 변화를 자식 테이블도 같이 수정되도록 만들 수 있다.
-
-```ts
-export class Photo {
-	...
-	@OneToOne(type => PhotoMetadata, (metadata) => metadata.photo, {
-		cascade: true,
-	})
-	metadata: PhotoMetadata;
-}
-
-///
-
-const photo = new Photo();
-const metadata = new PhotoMetadata();
-...
-photo.metadata = metadata; // this way we CONNECT them
-
-await photoRepository.save(photo);
-```
-
-> Bidirectional relationships using *inverse relation*
-
-```ts
-// entity/PhotoMetadata.ts
-
-@Entity()
-export class PhotoMetadata {
-	...
-	@OneToOne(type => Photo, (photo) => photo.metadata)
-	@JoinColumn()
-	photo: Photo;
-}
-
-// entity/Photo.ts
-
-@Entity()
-export class Photo {
-	...
-	@OneToOne(type => PhotoMetadata, (photoMetadata) => photoMetadata.photo)
-	metadata: PhotoMetadata;
-}
-```
-
-- [[find options]]
+- [[Column Types {typeorm}]]
+- [[DataSource {typeorm}]]
+- [[EntityManager {typeorm}]]
+- [[Repository {typeorm}]]
+- [[JoinColumn options {typeorm}]]
+- [[save both relations {typeorm}]]
+- [[cascade option {typeorm}]]
+- [[Bidirectional relationships using inverse relation {typeorm}]]
 
 ## 더 알아보기
 
+- [[find options {typeorm}]]
 - [Migrations](https://docs.nestjs.com/techniques/database#multiple-databases)
 - [[DateColumn Decorators {typeorm}]]
 - [[enum column type {typeorm}]]

@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: find options
+title: find options {typeorm}
 created: 2024-03-27T00:05:21
-updated: 2024-04-14T22:54:46
+updated: 2024-04-14T23:02:49
 ---
 - <https://typeorm.io/find-options>
 ---

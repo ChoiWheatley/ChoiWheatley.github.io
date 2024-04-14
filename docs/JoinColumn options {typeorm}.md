@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: JoinColumn options
+title: JoinColumn options {typeorm}
 created: 2024-03-26T22:43:11
-updated: 2024-04-02T21:08:40
+updated: 2024-04-14T23:02:39
 ---
 - [typeorm.io / JoinColumn Options](https://typeorm.io/relations#joincolumn-options)
 
