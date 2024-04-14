@@ -4,10 +4,25 @@ tags:
 description:
 title: find options
 created: 2024-03-27T00:05:21
-updated: 2024-03-27T00:13:02
+updated: 2024-04-14T22:51:24
 ---
 - <https://typeorm.io/find-options>
 ---
+
+## select
+
+> indicates which properties of the main object must be selected
+
+내가 원하는 컬럼만 선택하여 가져올 수 있습니다. 하기 코드는 SQL 문으로 보자면 `SELECT "firstName", "lastName" FROM "user";`와 같습니다.
+
+```typescript
+userRepository.find({
+    select: {
+        firstName: true,
+        lastName: true,
+    },
+})
+```
 
 ## relations
 
