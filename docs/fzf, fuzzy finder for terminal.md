@@ -4,7 +4,7 @@ tags:
 description:
 title: fzf, fuzzy finder for terminal
 created: 2023-09-07T20:54:43
-updated: 2024-02-05T23:04:55
+updated: 2024-04-25T11:24:14
 ---
 <https://github.com/junegunn/fzf>  
 
@@ -32,6 +32,8 @@ git clone --depth 1 [https://github.com/junegunn/fzf.git](https://github.com/jun
 ~/.fzf/install
 ```
 
-## ctrl + r 명령어 조합으로 이전 명령어 검색
+## Useful Key bindings
+
+### ctrl + r 명령어 조합으로 이전 명령어 검색
 
 ![[Pasted image 20240205230452.png]]
