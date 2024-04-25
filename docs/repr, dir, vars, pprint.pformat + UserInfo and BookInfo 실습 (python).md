@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-05-18T00:09:15
-updated: 2023-07-15T21:33:03
+updated: 2024-04-25T14:40:18
 title: repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)
 ---
 
@@ -11,7 +11,8 @@ title: repr, dir, vars, pprint.pformat + UserInfo and BookInfo 실습 (python)
 - `__repr__`로 str을 리턴할 때 [iterate over object attributes in python](https://stackoverflow.com/questions/11637293/iterate-over-object-attributes-in-python) ^1eq9ew
 	- 나의 모든 attr를 내보내고 싶을 땐 ====> `dir` 내장함수를 사용
 	- `object`를 제외한 attr를 내보내고 싶을 땐 ====> `set(dir(self)) - set(dir(object))` 하면 된다.
-	- 나는 메서드 포함하고 싶지 않아 ====> `vars(self)`
+	- 나는 메서드 포함하고 싶지 않아 ====> `vars(self)` 
+		- [[vars 사용하여 파이썬 객체를 dict로 쉽게 변환해보자]]
 	- 나는 이거 좀 더 이쁘게 출력하고 싶은걸 ====> `pprint.pformat(vars(self))` [pprint doc](https://docs.python.org/3/library/pprint.html#pprint.pformat)
 	- 
 

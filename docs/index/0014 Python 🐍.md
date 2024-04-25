@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2024-03-22T20:31:49
+updated: 2024-04-25T14:40:30
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -45,6 +45,7 @@ title: 0014 Python 🐍
 		- [[priority queue - python]]
 		- [[dataclasses - python -- custom comparator]]
 		- [[getattr, setattr {python}]]
+		- [[vars 사용하여 파이썬 객체를 dict로 쉽게 변환해보자]]
 - test
 	- [[unittest module - python]]
 	- [[unit tests in python + vscode debugging]]
