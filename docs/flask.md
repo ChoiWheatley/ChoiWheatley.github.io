@@ -1,1 +1,0 @@
-[[application factory {flask}]]
