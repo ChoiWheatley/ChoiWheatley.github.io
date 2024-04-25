@@ -12,7 +12,7 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/flask/">
+        <link rel="canonical" href="https://choiwheatley.github.io/flask%20smorest/">
       
       
         <link rel="prev" href="../fixed%20width%20integer%20types%20%7BC%2B%2B11%7D/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Flask - Choi Wheatley's Second Brain</title>
+        <title>flask smorest - Choi Wheatley's Second Brain</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#04-flask-smorest-rest-api" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Flask
+              flask smorest
             
           </span>
         </div>
@@ -11064,7 +11069,7 @@
   
     
   
-  Flask
+  flask smorest
 
       </a>
     </li>
@@ -35368,16 +35373,84 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    flask smorest
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Flask
+    flask smorest
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Example (공식문서)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodview" class="md-nav__link">
+    <span class="md-ellipsis">
+      MethodView 더 보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abort" class="md-nav__link">
+    <span class="md-ellipsis">
+      abort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -48820,6 +48893,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Example (공식문서)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodview" class="md-nav__link">
+    <span class="md-ellipsis">
+      MethodView 더 보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abort" class="md-nav__link">
+    <span class="md-ellipsis">
+      abort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenAPI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -48834,15 +48953,88 @@
                   
 
 
-  <h1>Flask</h1>
+<h1 id="04-flask-smorest-rest-api">04. flask-smorest 활용하여 REST API 생성<a class="headerlink" href="#04-flask-smorest-rest-api" title="Permanent link">#</a></h1>
+<p>공식문서: <a href="https://flask-smorest.readthedocs.io/en/latest/index.html">https://flask-smorest.readthedocs.io/en/latest/index.html</a></p>
+<p>OpenAPI 명세를 자동으로 만들어주는 고마운 라이브러리. 키워드: <strong>Bluprint</strong>, <strong>MethodView</strong>, <strong>Schema</strong></p>
+<h2 id="simple-example">Simple Example (공식문서)<a class="headerlink" href="#simple-example" title="Permanent link">#</a></h2>
+<ol>
+<li>
+<p>instantiate an Api with Flask application</p>
+<div class="highlight"><pre><span></span><code><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;API_TITLE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;MY API&quot;</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;API_VERSION&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;v1&quot;</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;OPENAPI_VERSION&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;3.0.2&quot;</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>marshmallow <strong>Schema</strong>를 정의하면 리소스의 모델을 정의할 수 있다. 아예 <code>ma.fields.&lt;type&gt;</code> 이렇게 스키마의 타입까지 쓰고있네!</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PetSchema</span><span class="p">(</span><span class="n">ma</span><span class="o">.</span><span class="n">Schema</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="n">dump_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>masrhmallow <strong>Schema</strong>를 정의하면 HTTP 쿼리 인자들을 정의할 수 있다. 이건 확실히 DTO 같네.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PetQueryArgsSchema</span><span class="p">(</span><span class="n">ma</span><span class="o">.</span><span class="n">Schema</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Blueprint</strong>를 생성하자.</p>
+<div class="highlight"><pre><span></span><code><span class="n">blp</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s2">&quot;pets&quot;</span><span class="p">,</span> <span class="s2">&quot;pets&quot;</span><span class="p">,</span> <span class="n">url_prefix</span><span class="o">=</span><span class="s2">&quot;/pets&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Operations on pets&quot;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>MethodView</strong> 클래스를 상속하여 리소스(path)를 정의하자. 그리고 각각의 메서드에 <code>blp</code> 데코레이터를 추가하여 어떤 파라메터 (쿼리, 바디)인지 명시할 수 있다(<code>Blueprint.arguments</code>). 그리고 HTTP 응답의 형식을 정의할 수 있다(<code>Blueprint.response</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@blp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="c1"># path</span>
+<span class="k">class</span> <span class="nc">Pets</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>
+    <span class="nd">@blp</span><span class="o">.</span><span class="n">arguments</span><span class="p">(</span><span class="n">PetQueryArgsSchema</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">)</span> <span class="c1"># query param으로 요청을 받겠다.</span>
+    <span class="nd">@blp</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">PetSchema</span><span class="p">(</span><span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="c1"># 응답으로 PetSchema 타입을 주겠다. 그런데 리스트로 주겠다.</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span> <span class="c1"># HTTP METHOD</span>
+        <span class="k">return</span> <span class="n">Pet</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> <span class="c1"># Service (세부 로직)</span>
 
-<p><a href="../application%20factory%20%7Bflask%7D/">application factory {flask}</a></p>
+    <span class="nd">@blp</span><span class="o">.</span><span class="n">arguments</span><span class="p">(</span><span class="n">PetSchema</span><span class="p">)</span>
+    <span class="nd">@blp</span><span class="o">.</span><span class="n">response</span><span class="p">(</span><span class="mi">201</span><span class="p">,</span> <span class="n">PetSchema</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_data</span><span class="p">):</span> <span class="c1"># new_data는 body에 담겨오겠지?</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">Pet</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="n">new_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">item</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="methodview">MethodView 더 보기<a class="headerlink" href="#methodview" title="Permanent link">#</a></h2>
+<p><code>Blueprint.arguments</code>는 역직렬화를 수행하는 데코레이터이다. 요청 결과를 view function에 주입하여 인자로 담아준다고 한다. <a href="https://flask-smorest.readthedocs.io/en/latest/index.html">flask-smorest / Arguments</a></p>
+<ul>
+<li>arguments location</li>
+<li>"json"</li>
+<li>"query"</li>
+<li>"path"</li>
+<li>"form"</li>
+<li>"headers"</li>
+<li>"cookies"</li>
+<li>"files"</li>
+<li>"json_or_form"</li>
+</ul>
+<p><code>Blueprint.arguments</code>는 하나의 메서드에 여러번 호출될 수 있다. 그래서 query 파라메터와 body 둘 다 필요한 경우, 아래와 같이 쓸 수 있다:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@blp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Pets</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>
+    <span class="nd">@blp</span><span class="o">.</span><span class="n">arguments</span><span class="p">(</span><span class="n">PetSchema</span><span class="p">)</span>
+    <span class="nd">@blp</span><span class="o">.</span><span class="n">arguments</span><span class="p">(</span><span class="n">QueryArgsSchema</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="n">pet_data</span><span class="p">,</span> <span class="n">query_args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Pet</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">pet_data</span><span class="p">,</span> <span class="o">**</span><span class="n">query_args</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="abort">abort<a class="headerlink" href="#abort" title="Permanent link">#</a></h2>
+<h2 id="openapi">OpenAPI<a class="headerlink" href="#openapi" title="Permanent link">#</a></h2>
+<p><a href="https://flask-smorest.readthedocs.io/en/latest/openapi.html">https://flask-smorest.readthedocs.io/en/latest/openapi.html</a></p>
 
 
 
 
 
 
+
+  
+  
 
 
 

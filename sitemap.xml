@@ -3191,7 +3191,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/flask/</loc>
+         <loc>https://choiwheatley.github.io/flask%20smorest/</loc>
          <lastmod>2024-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -7527,6 +7527,11 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/index/0019%20Git%20%E1%9B%98/</loc>
+         <lastmod>2024-04-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/index/001A%20flask/</loc>
          <lastmod>2024-04-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
