@@ -4,7 +4,7 @@ tags:
 description:
 title: flask smorest
 created: 2024-04-25T23:24:03
-updated: 2024-04-25T23:24:04
+updated: 2024-04-26T15:33:27
 ---
 
 # 04. flask-smorest 활용하여 REST API 생성
