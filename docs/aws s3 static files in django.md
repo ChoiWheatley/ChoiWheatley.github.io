@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-01T23:40:57
-updated: 2023-11-17T00:29:22
+updated: 2024-04-30T09:10:28
 title: aws s3 static files in django
 ---
 - [testdriven.io {tutorial}](https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/)
@@ -18,7 +18,7 @@ title: aws s3 static files in django
 - [How to get Django to make some files public and media files private on AWS S3 (no 403 errors)?](https://stackoverflow.com/questions/67650507/how-to-get-django-to-make-some-files-public-and-media-files-private-on-aws-s3-n)
 - [botocore.exceptions.ClientError: HeadObject operation: Not Found](https://stackoverflow.com/questions/44895334/botocore-exceptions-clienterror-an-error-occurred-404-when-calling-the-headob)
 ---
-- 루트 사용자 말고 IAM 사용자를 하나 만들어서 루트에 연결해야함. 
+- 루트 사용자 말고 IAM 사용자를 하나 만들어서 루트에 연결해야함.
 - 루트계정에 MFA 인증을 추가한다.
 - IAM 계정으로 로그인 후 인증키를 발급받는다. WHY? 보안 자격증명을 만들어주기 위해
 - 버킷
