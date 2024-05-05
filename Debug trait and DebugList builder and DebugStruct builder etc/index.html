@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
@@ -4758,6 +4758,23 @@
     
   
   First LOGIN API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-tabs__link">
+        
+  
+    
+  
+  Flask를 이용한 심리테스트 제작
 
       </a>
     </li>
@@ -14601,6 +14618,23 @@
     
   
   proxylab
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-tabs__link">
+        
+  
+    
+  
+  psychological_test_completion 분석.flask
 
       </a>
     </li>
@@ -27987,6 +28021,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask를 이용한 심리테스트 제작
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Fluent%20Python%20Clear%2C%20Concise%20and%20Effective%20Programming%2C%202nd%20Edition/" class="md-nav__link">
         
   
@@ -39567,6 +39621,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    psychological_test_completion 분석.flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purchase%20history/" class="md-nav__link">
         
   
@@ -48877,8 +48951,8 @@
 <li><a href="https://rust-unofficial.github.io/too-many-lists/sixth-random-bits.html">TMLL</a> 막바지에 들어가면서 얻어갈 것이 많아 기쁘다.</li>
 <li><code>Debug</code> 트레잇을 구현하는 코드가 다음과 같았다.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span>: <span class="nc">Debug</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Debug</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">fmt</span>::<span class="n">Formatter</span><span class="o">&lt;&#39;</span><span class="nb">_</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">fmt</span>::<span class="nb">Result</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="nc">Debug</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Debug</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">fmt</span><span class="p">::</span><span class="n">Formatter</span><span class="o">&lt;&#39;</span><span class="nb">_</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">fmt</span><span class="p">::</span><span class="nb">Result</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="n">debug_list</span><span class="p">().</span><span class="n">entries</span><span class="p">(</span><span class="bp">self</span><span class="p">).</span><span class="n">finish</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -48891,13 +48965,13 @@
 </li>
 <li>아래는 <code>debug_struct</code> 메서드에 대한 스니펫이다. 엄청 신기한데</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span>
-<span class="w">    </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="k">impl</span><span class="w"> </span><span class="n">fmt</span>::<span class="n">Debug</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">fmt</span>::<span class="n">Formatter</span><span class="o">&lt;&#39;</span><span class="nb">_</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">fmt</span>::<span class="nb">Result</span><span class="w"> </span><span class="p">{</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">fmt</span><span class="p">::</span><span class="n">Debug</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">fmt</span><span class="p">::</span><span class="n">Formatter</span><span class="o">&lt;&#39;</span><span class="nb">_</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">fmt</span><span class="p">::</span><span class="nb">Result</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">f</span><span class="p">.</span><span class="n">debug_struct</span><span class="p">(</span><span class="s">&quot;Point&quot;</span><span class="p">)</span>
 <span class="w">         </span><span class="p">.</span><span class="n">field</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="p">)</span>
 <span class="w">         </span><span class="p">.</span><span class="n">field</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
@@ -48912,15 +48986,15 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="p">(</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">);</span>
 
-<span class="k">impl</span><span class="w"> </span><span class="n">fmt</span>::<span class="n">Debug</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">fmt</span>::<span class="n">Formatter</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">fmt</span>::<span class="nb">Result</span><span class="w"> </span><span class="p">{</span>
+<span class="k">impl</span><span class="w"> </span><span class="n">fmt</span><span class="p">::</span><span class="n">Debug</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">fmt</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">fmt</span><span class="p">::</span><span class="n">Formatter</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">fmt</span><span class="p">::</span><span class="nb">Result</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">fmt</span><span class="p">.</span><span class="n">debug_list</span><span class="p">().</span><span class="n">entries</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="mf">0.</span><span class="n">iter</span><span class="p">()).</span><span class="n">finish</span><span class="p">()</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 <span class="sd">/// function signature of `entry`</span>
-<span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">entry</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">entry</span>: <span class="kp">&amp;</span><span class="nc">dyn</span><span class="w"> </span><span class="n">Debug</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">DebugList</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">b</span><span class="o">&gt;</span>
+<span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">entry</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">entry</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">dyn</span><span class="w"> </span><span class="n">Debug</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">DebugList</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="o">&#39;</span><span class="na">b</span><span class="o">&gt;</span>
 </code></pre></div>
 <ul>
 <li>[?] 왜 모든 헬퍼함수들에는 <code>&amp;dyn Debug</code>가 붙었을까? dynamic dispatch를 해야만 하는 이유가 있을 것 같지 않은데...</li>
@@ -48983,7 +49057,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top", "navigation.prune"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

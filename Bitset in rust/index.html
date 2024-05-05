@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
@@ -4758,6 +4758,23 @@
     
   
   First LOGIN API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-tabs__link">
+        
+  
+    
+  
+  Flask를 이용한 심리테스트 제작
 
       </a>
     </li>
@@ -14601,6 +14618,23 @@
     
   
   proxylab
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-tabs__link">
+        
+  
+    
+  
+  psychological_test_completion 분석.flask
 
       </a>
     </li>
@@ -27987,6 +28021,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask를 이용한 심리테스트 제작
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Fluent%20Python%20Clear%2C%20Concise%20and%20Effective%20Programming%2C%202nd%20Edition/" class="md-nav__link">
         
   
@@ -39567,6 +39621,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    psychological_test_completion 분석.flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purchase%20history/" class="md-nav__link">
         
   
@@ -48883,57 +48957,57 @@
 - <code>bin_number = index / (size_of(element_type) * 8)</code> 
 - <code>bit_number = index % (size_of(element_type) * 8)</code> </p>
 <p>두 파라메터를 구하는 함수 <code>bin_no</code> 와 <code>inner_idx</code> 를 작성하였다. 이거 근데 <a href="../%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%20%EC%9D%B8%EB%9D%BC%EC%9D%B8%20%EC%A0%95%EC%9D%98/">러스트에서 인라인 정의</a> 못하나? =&gt; 간접적으로 외부에서 호출되지 않는 private 함수에 대해선 굳이 인라인 할 필요 없다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">mem</span>::<span class="n">size_of</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">mem</span><span class="p">::</span><span class="n">size_of</span><span class="p">;</span>
 
-<span class="k">fn</span> <span class="nf">bin_no</span><span class="p">(</span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span>
-<span class="w">    </span><span class="n">idx</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">size_of</span>::<span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">usize</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">idx</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">size_of</span><span class="p">::</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="k">fn</span> <span class="nf">inner_idx</span><span class="p">(</span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span>
-<span class="w">    </span><span class="n">idx</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">size_of</span>::<span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">usize</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">idx</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">size_of</span><span class="p">::</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><code>Bitset</code> 타입과 생성자를 정의해보자. 우리가 만들 비트셋은 초기 크기가 고정되어있다. 아직은 배열 크기를 제네릭하게 만드는 방법을 모르니 벡터를 쓰자. <a href="../generic%20array%20in%20rust/">generic array in rust</a></p>
-<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Bitset</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">bits</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">pub</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bitset</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">bits</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="k">impl</span><span class="w"> </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="sd">/// creates [false; size] like bitset</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">with_size</span><span class="p">(</span><span class="n">size</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">with_size</span><span class="p">(</span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bin_no</span><span class="p">(</span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 혹시 모르니 여유롭게</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"> </span><span class="c1">// size 아닙니다, capacity 입니다.</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span><span class="p">::</span><span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span><span class="w"> </span><span class="c1">// size 아닙니다, capacity 입니다.</span>
 <span class="w">        </span><span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span><span class="n">bits</span>: <span class="nc">v</span><span class="p">}</span>
+<span class="w">        </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span><span class="n">bits</span><span class="p">:</span><span class="w"> </span><span class="nc">v</span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="sd">/// indices의 각 원소들의 인덱스가 true인 새 Bitset를 반환한다.</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">from_indices</span><span class="p">(</span><span class="n">indices</span>: <span class="kp">&amp;</span><span class="p">[</span><span class="kt">usize</span><span class="p">])</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">from_indices</span><span class="p">(</span><span class="n">indices</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="p">[</span><span class="kt">usize</span><span class="p">])</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">Self</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bin_no</span><span class="p">(</span><span class="n">indices</span><span class="p">.</span><span class="n">len</span><span class="p">())</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span>::<span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Vec</span><span class="p">::</span><span class="n">with_capacity</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
 <span class="w">        </span><span class="n">v</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">  </span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">indices</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">cloned</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="o">*</span><span class="n">v</span><span class="p">.</span><span class="n">get_mut</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">i</span><span class="p">)).</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index out of bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">bits</span>: <span class="nc">v</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">bits</span><span class="p">:</span><span class="w"> </span><span class="nc">v</span><span class="w"> </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>다음은 인덱싱을 활용하여 get, set을 하는 메서드를 정의해보자</p>
 <div class="highlight"><pre><span></span><code><span class="k">impl</span><span class="w"> </span><span class="n">Bitset</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
 <span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index Out of Bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mb">0b01</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">set</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">get_mut</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
 <span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index Out of Bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">reset</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">get_mut</span><span class="p">(</span><span class="n">bin_no</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
 <span class="w">            </span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&quot;Index Out of Bounds&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">inner_idx</span><span class="p">(</span><span class="n">idx</span><span class="p">));</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">set_to</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span>: <span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">to</span>: <span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">set_to</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">:</span><span class="w"> </span><span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
@@ -48945,24 +49019,24 @@
 1. 유닛 테스트는 테스트 하려는 모듈과 같은 파일 안에서 수행한다.
 2. 테스트 모듈파일 안에 <code>#[cfg(test)] mod tests{}</code> 블럭 안에서 테스트 코드를 작성하면 된다. -- <a href="../%EC%9E%90%EC%8B%9D%20%EB%AA%A8%EB%93%88%EC%9D%80%20%EB%B6%80%EB%AA%A8%20%EB%AA%A8%EB%93%88%EC%9D%98%20private%20%EC%9A%94%EC%86%8C%EB%93%A4%EC%9D%84%20%EC%9E%90%EC%9C%A0%EB%A1%AD%EA%B2%8C%20%EC%A0%91%EA%B7%BC%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4/">자식 모듈은 부모 모듈의 private 요소들을 자유롭게 접근할 수 있다</a>는 점 기억하고.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#[cfg(test)]</span>
-<span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span>
+<span class="k">mod</span><span class="w"> </span><span class="nn">tests</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
 
 <span class="w">    </span><span class="cp">#[test]</span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">test_bin_no</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">test_bin_no</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..=</span><span class="mi">128</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="n">bin_no</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;i : {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cp">#[test]</span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span>::<span class="n">with_size</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">test_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span><span class="p">::</span><span class="n">with_size</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="mi">32</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;in index {i}&quot;</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span>::<span class="n">with_size</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span><span class="p">::</span><span class="n">with_size</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span>
 <span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">bits</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="mi">128</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;in index {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
@@ -48970,9 +49044,9 @@
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cp">#[test]</span>
-<span class="w">    </span><span class="k">fn</span> <span class="nf">test_set_get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">test_set_get</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span>::<span class="n">with_size</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">bs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Bitset</span><span class="p">::</span><span class="n">with_size</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">size</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">bs</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="w">            </span><span class="fm">assert!</span><span class="p">(</span><span class="n">bs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
@@ -49044,7 +49118,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top", "navigation.prune"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

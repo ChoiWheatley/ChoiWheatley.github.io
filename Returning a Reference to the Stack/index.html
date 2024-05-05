@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
@@ -4756,6 +4756,23 @@
     
   
   First LOGIN API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-tabs__link">
+        
+  
+    
+  
+  Flask를 이용한 심리테스트 제작
 
       </a>
     </li>
@@ -14601,6 +14618,23 @@
     
   
   proxylab
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-tabs__link">
+        
+  
+    
+  
+  psychological_test_completion 분석.flask
 
       </a>
     </li>
@@ -27979,6 +28013,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask를 이용한 심리테스트 제작
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Fluent%20Python%20Clear%2C%20Concise%20and%20Effective%20Programming%2C%202nd%20Edition/" class="md-nav__link">
         
   
@@ -39567,6 +39621,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    psychological_test_completion 분석.flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purchase%20history/" class="md-nav__link">
         
   
@@ -48875,8 +48949,8 @@
 
 <p><a href="https://rust-book.cs.brown.edu/ch04-03-fixing-ownership-errors.html">Fixing Ownership Errors</a></p>
 <p>아래의 코드는 컴파일 에러를 일으킨다. s는 해당 함수가 리턴할때 끝나는 아주 짧은 라이프타임을 가지고 있지만, 리턴타입은 s의 레퍼런스를 계속 가리키고 있기 때문이다. 따라서 borrow checker에 의해 컴파일 단계에서 에러를 일으키게 된다.</p>
-<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="nb">String</span> <span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kp">&amp;</span><span class="nb">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="o">&amp;</span><span class="n">s</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -48884,27 +48958,27 @@
 <ol>
 <li>Ownership 자체를 리턴하는 방법: 가장 단순한 해결책이지만 스코프 안에서 메모리 할당이 일어난다.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="n">s</span>
 <span class="p">}</span>
 </code></pre></div>
 <ol>
 <li>소스코드에 문자열 리터럴을 박아넣기: 수정이 필요없는 경우에 한에서 아주 유용하다. 마치 cpp의 <code>constexpr</code> 키워드를 보는 것 같군</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="o">&#39;</span><span class="nb">static</span> <span class="kt">str</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kp">&amp;</span><span class="o">&#39;</span><span class="nb">static</span><span class="w"> </span><span class="kt">str</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="s">&quot;Hello, World!&quot;</span>
 <span class="p">}</span>
 <span class="c1">// OR</span>
-<span class="k">static</span><span class="w"> </span><span class="n">STRING</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="k">static</span><span class="w"> </span><span class="n">STRING</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
 </code></pre></div>
 <ol>
 <li><a href="https://doc.rust-lang.org/std/rc/index.html">Reference-counted pointer</a> 를 적극적으로 활용하기: 마치 cpp의 <code>shared_pointer</code> 처럼 동작하는 것 같은데, 레퍼런스 카운트가 0가 되는 순간 메모리가 해제된다. </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span>
-<span class="k">fn</span> <span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Rc</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">));</span>
-<span class="w">    </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">rc</span><span class="p">::</span><span class="n">Rc</span><span class="p">;</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">return_a_string</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">Rc</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="n">Rc</span><span class="p">::</span><span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <ol>
@@ -48913,7 +48987,7 @@
 <blockquote>
 <p>Have the caller provide a "slot" to put the string using the mutable reference</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">return_a_string</span><span class="p">(</span><span class="n">output</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">return_a_string</span><span class="p">(</span><span class="n">output</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">output</span><span class="p">.</span><span class="n">replace_range</span><span class="p">(</span><span class="o">..</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello, World&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -48975,7 +49049,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top", "navigation.prune"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

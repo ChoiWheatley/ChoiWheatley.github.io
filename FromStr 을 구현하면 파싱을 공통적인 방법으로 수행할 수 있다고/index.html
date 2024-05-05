@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
@@ -4756,6 +4756,23 @@
     
   
   First LOGIN API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-tabs__link">
+        
+  
+    
+  
+  Flask를 이용한 심리테스트 제작
 
       </a>
     </li>
@@ -14601,6 +14618,23 @@
     
   
   proxylab
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-tabs__link">
+        
+  
+    
+  
+  psychological_test_completion 분석.flask
 
       </a>
     </li>
@@ -27979,6 +28013,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask를 이용한 심리테스트 제작
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Fluent%20Python%20Clear%2C%20Concise%20and%20Effective%20Programming%2C%202nd%20Edition/" class="md-nav__link">
         
   
@@ -39567,6 +39621,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    psychological_test_completion 분석.flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purchase%20history/" class="md-nav__link">
         
   
@@ -48877,45 +48951,45 @@
 <li>https://doc.rust-lang.org/std/str/trait.FromStr.html</li>
 </ul>
 <p>예를 들어 우리가 <code>"(1,2)"</code> 를 제공하면 <code>Point</code> 객체를 알아서 파싱해서 리턴해주는 함수를 만든다고 가정하자. </p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
-<span class="k">struct</span> <span class="nc">ParsePointError</span><span class="p">;</span>
-<span class="k">fn</span> <span class="nf">parse_to_point</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">ParsePointError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">ParsePointError</span><span class="p">;</span>
+<span class="k">fn</span><span class="w"> </span><span class="nf">parse_to_point</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span><span class="w"> </span><span class="n">ParsePointError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>뭐 이렇게 해도 세상이 멸망하는 정도는 아니지만 std 의 다양한 응용을 활용할 수 없다는 문제가 있다. 따라서 문자열로부터 객체를 파싱해야 할 일이 있을 땐 <code>FromStr</code> 트레이트를 구현하도록 하자.</p>
-<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="kt">str</span>::<span class="n">FromStr</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="kt">str</span><span class="p">::</span><span class="n">FromStr</span><span class="p">;</span>
 
 <span class="cp">#[derive(Debug, PartialEq)]</span>
-<span class="k">struct</span> <span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
 
 <span class="cp">#[derive(Debug, PartialEq, Eq)]</span>
-<span class="k">struct</span> <span class="nc">ParsePointError</span><span class="p">;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">ParsePointError</span><span class="p">;</span>
 
 <span class="k">impl</span><span class="w"> </span><span class="n">FromStr</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">type</span> <span class="nb">Err</span> <span class="o">=</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">;</span>
+<span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nb">Err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">fn</span> <span class="nf">from_str</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="bp">Self</span><span class="p">,</span><span class="w"> </span><span class="bp">Self</span>::<span class="nb">Err</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">from_str</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="bp">Self</span><span class="p">,</span><span class="w"> </span><span class="bp">Self</span><span class="p">::</span><span class="nb">Err</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span>
 <span class="w">            </span><span class="p">.</span><span class="n">strip_prefix</span><span class="p">(</span><span class="sc">&#39;(&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="p">.</span><span class="n">and_then</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">strip_suffix</span><span class="p">(</span><span class="sc">&#39;)&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="p">.</span><span class="n">and_then</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">split_once</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">))</span>
 <span class="w">            </span><span class="p">.</span><span class="n">ok_or</span><span class="p">(</span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">x_fromstr</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">y_fromstr</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="n">x</span>: <span class="nc">x_fromstr</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="nc">y_fromstr</span><span class="p">})</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">x_fromstr</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">y_fromstr</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="n">ParsePointError</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="nc">x_fromstr</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="nc">y_fromstr</span><span class="p">})</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>사용할 수 있는 편의 함수들이 이젠 널리고 널렸다. 다음 코드를 보자</p>
-<div class="highlight"><pre><span></span><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="n">x</span>: <span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mi">2</span><span class="p">});</span>
+<div class="highlight"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">Point</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">});</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">fromstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;(1,2)&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// Explicit call</span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">Point</span>::<span class="n">from_str</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fromstr</span><span class="p">),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">Point</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fromstr</span><span class="p">),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// Implicit calls</span>
 <span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">fromstr</span><span class="p">.</span><span class="n">parse</span><span class="p">(),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
-<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">fromstr</span><span class="p">.</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">(),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
+<span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">fromstr</span><span class="p">.</span><span class="n">parse</span><span class="p">::</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span><span class="p">(),</span><span class="w"> </span><span class="n">expected</span><span class="p">);</span>
 </code></pre></div>
 
 
@@ -48975,7 +49049,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top", "navigation.prune"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

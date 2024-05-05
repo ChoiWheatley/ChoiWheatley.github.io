@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.20">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
@@ -4761,6 +4761,23 @@
     
   
   First LOGIN API
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-tabs__link">
+        
+  
+    
+  
+  Flask를 이용한 심리테스트 제작
 
       </a>
     </li>
@@ -14606,6 +14623,23 @@
     
   
   proxylab
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-tabs__link">
+        
+  
+    
+  
+  psychological_test_completion 분석.flask
 
       </a>
     </li>
@@ -27984,6 +28018,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Flask%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EC%8B%AC%EB%A6%AC%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EC%A0%9C%EC%9E%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask를 이용한 심리테스트 제작
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Fluent%20Python%20Clear%2C%20Concise%20and%20Effective%20Programming%2C%202nd%20Edition/" class="md-nav__link">
         
   
@@ -39574,6 +39628,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../psychological_test_completion%20%EB%B6%84%EC%84%9D.flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    psychological_test_completion 분석.flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../purchase%20history/" class="md-nav__link">
         
   
@@ -48886,10 +48960,10 @@
 </ul>
 <h1 id="example">example<a class="headerlink" href="#example" title="Permanent link">#</a></h1>
 <p>Calculates the length of an <code>Option&lt;String&gt;</code> as an <code>Option&lt;usize&gt;</code> without moving the String. The map method takes the self argument by value, consuming the original, so this technique uses as_ref to first take an Option to a reference to the value inside the original.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">text</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="n">text</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span>
 <span class="c1">// First, cast `Option&lt;String&gt;` to `Option&lt;&amp;String&gt;` with `as_ref`,</span>
 <span class="c1">// then consume *that* with `map`, leaving `text` on the stack.</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">text_length</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">as_ref</span><span class="p">().</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">text_length</span><span class="p">:</span><span class="w"> </span><span class="nb">Option</span><span class="o">&lt;</span><span class="kt">usize</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">as_ref</span><span class="p">().</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">s</span><span class="o">|</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">());</span>
 <span class="fm">println!</span><span class="p">(</span><span class="s">&quot;still can print text: {text:?}&quot;</span><span class="p">);</span>
 </code></pre></div>
 <p><a href="../AsRef%20trait/">AsRef trait</a>도 있다!</p>
@@ -48951,7 +49025,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.tabs", "navigation.top", "navigation.prune"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
