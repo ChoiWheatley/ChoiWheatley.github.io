@@ -4,9 +4,20 @@ tags:
 description:
 title: 0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기
 created: 2024-03-03T21:00:13
-updated: 2024-04-22T13:28:58
+updated: 2024-05-05T19:36:47
 ---
 - [초격차 캠프 with AWS 3기](https://ozcodingschool.com/ozcoding/startupcamp)
+
+## 학습내용 정리
+
+DB, 특히 MySQL에 관련하여 강의 수강 + 검수 + 정리
+
+- [[0015 database]]
+- [[001A flask]]
+
+## 라이브 세션 모음집
+
+- [[2024-04-30 라이브 세션 정리]]
 
 ## Metadata
 
@@ -46,17 +57,3 @@ updated: 2024-04-22T13:28:58
 - [Notion / (모집중) 오즈코딩스쿨 IT 실습코치 (백엔드)](https://legend-palm-1f1.notion.site/IT-1dabafa389d64db681ec2537ad8a49ef) 2024-03-03 기준 **합격** 💫
 - [[before onboarding {ozcodingschool}]]
 - during onboarding {ozcodingschool} => confidential vault로 옮겼습니다.
-
-## 본 페이지 앞으로의 용도
-
-[[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]] 마냥 공부와 관련한 것들, 특강내용 정리를 여기에 적자. 프라이빗 볼트는 일적인 내용만 작성하는 걸로.
-
-## 스타트업 웹 개발 초격차캠프 백엔드 데이터베이스 (LMS)
-
-DB, 특히 MySQL에 관련하여 강의 수강 + 검수 + 정리
-
-- [[0015 database]]
-
-## 라이브 세션 모음집
-
-- [[2024-04-30 라이브 세션 정리]]
