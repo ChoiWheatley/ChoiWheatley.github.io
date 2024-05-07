@@ -49235,7 +49235,6 @@ erDiagram
     Participant ||--|{ Quiz : takes
     Question }o--|| Quiz : has</code></pre>
 <p><a href="../SQLAlchemy/">SQLAlchemy</a>를 제대로 공부하지 않아서 cardinality 관계가 추론이 잘 안된다. <code>SQLAlchemy.relationship()</code>은 무엇을 정의하는 걸까?</p>
-<p>한 명의 Participant는 여러개의 Quiz를 풀</p>
 
 
 
@@ -49303,5 +49302,7 @@ erDiagram
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
