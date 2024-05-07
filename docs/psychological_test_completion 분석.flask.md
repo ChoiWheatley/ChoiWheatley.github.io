@@ -4,7 +4,7 @@ tags:
 description:
 title: psychological_test_completion 분석.flask
 created: 2024-05-05T19:44:09
-updated: 2024-05-05T20:50:10
+updated: 2024-05-07T11:24:59
 ---
 [github.com / ChoiWheatley / psychological_test_completion](https://github.com/ChoiWheatley/psychological_test_completion)
 
@@ -77,5 +77,3 @@ erDiagram
 ```
 
 [[SQLAlchemy]]를 제대로 공부하지 않아서 cardinality 관계가 추론이 잘 안된다. `SQLAlchemy.relationship()`은 무엇을 정의하는 걸까?
-
-한 명의 Participant는 여러개의 Quiz를 풀

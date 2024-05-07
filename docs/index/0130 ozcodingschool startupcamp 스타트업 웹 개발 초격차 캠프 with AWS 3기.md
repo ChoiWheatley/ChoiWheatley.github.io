@@ -57,3 +57,4 @@ DB, 특히 MySQL에 관련하여 강의 수강 + 검수 + 정리
 - [Notion / (모집중) 오즈코딩스쿨 IT 실습코치 (백엔드)](https://legend-palm-1f1.notion.site/IT-1dabafa389d64db681ec2537ad8a49ef) 2024-03-03 기준 **합격** 💫
 - [[before onboarding {ozcodingschool}]]
 - during onboarding {ozcodingschool} => confidential vault로 옮겼습니다.
+- [[Flask를 이용한 심리테스트 제작]]
