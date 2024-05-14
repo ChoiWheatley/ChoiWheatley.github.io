@@ -4,7 +4,7 @@ tags:
 description:
 title: ffmpeg
 created: 2024-03-22T21:58:34
-updated: 2024-04-02T18:12:27
+updated: 2024-05-14T13:18:19
 ---
 
 ## 가장 좋은 코덱은?
@@ -38,3 +38,10 @@ ffmpeg -i input.mp4 -vf scale=$w:$h <encoding-parameters> output.mp4
 
 [[ffmpeg concat two videos]]
 
+## 영상 일부분을 잘라내려면?
+
+[stackoverflow / cutting multimedia files](https://stackoverflow.com/questions/18444194/cutting-multimedia-files-based-on-start-and-end-time-using-ffmpeg)
+
+```
+ffmpeg -ss 00:01:00 -to 00:02:00 -i input.mp4 -c copy output.mp4
+```
