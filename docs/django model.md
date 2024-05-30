@@ -16,6 +16,7 @@ title: django model
 		- [[django model.ForeignKey.on_delete]]
 	- [[CharField {django} {choices}]]
 - [[querying in {django query}|queries]]
+- [[django internal class Meta]]
 
 ## problem solving
 
