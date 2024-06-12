@@ -49,6 +49,10 @@ parent link:
 - QT로 만드는 메모앱 (C++)
 - [[linux 🐧]]
 
+## AI
+
+- [[yolo+opencv face blur]]
+
 ## [[0091 먹을거, Food 😋]]
 
 ## Activities
