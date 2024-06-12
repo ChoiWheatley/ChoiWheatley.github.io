@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-03-11T18:03:41
+updated: 2024-06-12T16:26:59
 ---
 
 parent link: [[docs/index/index|index]]
@@ -72,6 +72,8 @@ ___
 - [[Operating System Concepts - Silberschatz, 8th edition]]
 - [[How to Stop Sucking And Be Awesome Instead - 코딩 호러가 들려주는 진짜 소프트웨어 이야기]]
 - [[Pragmatic Programmer 실용주의 프로그래머 - 데이비드 토머스, 앤드류 헌트]]
+- [[함께 자라기, 애자일로 가는 길 - 김창준]]
+- [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
 
 ___
 
