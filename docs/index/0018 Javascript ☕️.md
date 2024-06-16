@@ -98,6 +98,7 @@ user[getName](); // "hello"
 - [[clear cache in javascript]]
 - [[map an array of objects to a dictionary {js}]]
 - [[How to load .env file from nodejs]]
+- [[object literal to class object using Object.assign {js}]]
 
 ## Libraries / Frameworks / Packages
 
