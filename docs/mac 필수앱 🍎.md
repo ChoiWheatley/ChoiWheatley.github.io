@@ -3,11 +3,11 @@ description:
 aliases: 
 tags: 
 created: 2023-06-12T13:12:18
-updated: 2024-03-11T14:01:43
+updated: 2024-06-17T15:13:27
 title: mac 필수앱 🍎
 ---
 - 키보드 입맛대로 [karabiner-elements](https://karabiner-elements.pqrs.org/)
-- 윈도우 크기조정 [spectacle](https://www.spectacleapp.com/)
+- 윈도우 크기조정 [rectangle mac](https://rectangleapp.com)
 - 클립보드 히스토리 [CopyClip](https://apps.apple.com/us/app/copyclip-clipboard-history/id595191960?mt=12)
 - 깃허브 잔디보기 [Jandi](https://apps.apple.com/ci/app/jandi-growth-your-code/id1551460285?l=en&mt=12)
 - 쿠키요청, 뉴스레터구독 모달창 안 띄우게 [Hush](https://oblador.github.io/hush/)
