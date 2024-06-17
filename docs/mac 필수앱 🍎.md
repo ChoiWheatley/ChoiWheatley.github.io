@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-06-12T13:12:18
-updated: 2024-06-17T15:13:27
+updated: 2024-06-17T22:43:51
 title: mac 필수앱 🍎
 ---
 - 키보드 입맛대로 [karabiner-elements](https://karabiner-elements.pqrs.org/)
@@ -15,6 +15,7 @@ title: mac 필수앱 🍎
 - 메뉴바 깔끔 [hidden bar](https://apps.apple.com/us/app/hidden-bar/id1452453066?mt=12)
 - 언스플래쉬 사진을 내 배경화면으로 [Unsplash Wallpapers](https://apps.apple.com/us/app/unsplash-wallpapers/id1284863847?mt=12)
 - 파일압축/압축해제 [keka](https://www.keka.io/en/)
+- [[espanso text converter]]
 - [[Witch, Alt tab for window switching {macos}]]
 - [[yabai, tiling window manager for macOS]]
 - [[karabiner-elements]]
