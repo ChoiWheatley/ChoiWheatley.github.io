@@ -3,8 +3,8 @@ description:
 aliases: 
 tags: 
 created: 2023-04-20T18:17:20
-updated: 2023-07-15T21:30:21
-title: Altdrag alternative window manager for mac
+updated: 2024-06-17T22:50:25
+title: Altdrag alternative window manager for mac {eash-move-resize}
 ---
 - [altdrag]()
 - [Rectangle](https://github.com/rxhanson/Rectangle) 
@@ -15,5 +15,4 @@ title: Altdrag alternative window manager for mac
 	- 하지만 Cmd를 두 번 눌러야 하고 모드 전환시 모든 창이 까맣게 변해 잦은 모드 전환시 눈이 개아프다는 단점이 존재.
 - 직접 만들어볼수도? 먼저 Penc 코드를 포크해서 코드를 읽어보자.
 - [easy-move-resize {SOF대화}](https://superuser.com/questions/53051/altclick-drag-window-resizing-on-a-mac-similar-to-x-windows)
-	- https://github.com/dmarcotte/easy-move-resize
-	- [[Apple에서 악성 소프트웨어가 있는지 확인할 수 없기 때문에 열 수 없습니다]]
+	- <https://github.com/dmarcotte/easy-move-resize>

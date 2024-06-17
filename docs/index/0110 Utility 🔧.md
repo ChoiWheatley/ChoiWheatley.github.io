@@ -30,7 +30,7 @@ title: 0110 Utility 🔧
 	- [[slido, live polls, quizzes, qna session]]
 - [[is my port open 포트 열려있는지 확인해주는 사이트]]
 - [[마음에 드는 firefox userchrome.css]]
-- [[Altdrag alternative window manager for mac]]
+- [[Altdrag alternative window manager for mac {eash-move-resize}]]
 
 ## dev utils (mostly linux)
 
