@@ -58,3 +58,4 @@ DB, 특히 MySQL에 관련하여 강의 수강 + 검수 + 정리
 - [[before onboarding {ozcodingschool}]]
 - during onboarding {ozcodingschool} => confidential vault로 옮겼습니다.
 - [[Flask를 이용한 심리테스트 제작]]
+- [[미니프로젝트 평가지 {기술면접 대용}]]
