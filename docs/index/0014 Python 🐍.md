@@ -32,6 +32,7 @@ title: 0014 Python 🐍
 	- [[0014.2 pytube 사용한 오픈소스 유튜브 다운로더]]
 	- [[0014.1 faker로 더미 데이터 만들기 🐍]]
 	- [[0014.6 pymysql, mysql python wrapper]]
+	- [[0014.7 loguru, python logging made stupidly simple]]
 - useful
 	- standard lib
 		- [[itertools module]]

@@ -61,3 +61,7 @@ title: 0110 Utility 🔧
 ## rust utils
 
 [[0013.2 Crates 🦀|rust crates]]로 가세요
+
+## AI Tools
+
+- [[요약 AI 툴 모음]]
