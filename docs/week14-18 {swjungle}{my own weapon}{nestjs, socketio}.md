@@ -4,7 +4,7 @@ tags:
 description:
 title: week14-18 {swjungle}{my own weapon}{nestjs, socketio}
 created: 2023-11-10T14:54:01
-updated: 2023-12-19T13:13:00
+updated: 2024-07-02T02:52:45
 ---
 - [[0120 swjungle 🤖]]
 - [swjungle-week14-nestjs](https://github.com/ChoiWheatley/swjungle-week14-nestjs) 공부하는 리포지토리
@@ -73,6 +73,7 @@ ___
 	- [의도치 않은 이벤트 막기](https://github.com/Team-def/recre-backend/issues/69)
 		- room 객체 쉽게 얻어오는 방법 알아내기
 		- 모든 이벤트에 대하여 상태 다이어그램을 기준으로 유효성 여부를 판단한다.
+		- [[game-state.excali]]
 	- [[room, player, host ER {swjungle} {my own weapon}]]
 	- [ ] 이모티콘 날리는 이벤트 in redgreen
 
