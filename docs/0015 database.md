@@ -21,3 +21,4 @@ updated: 2024-04-03T20:41:43
 - [[sequelize, a MySQL ORM for javascript]]
 - [[typeorm]]
 - [[여러가지 DBMS들]]
+- [[0015.2 SQLAlchemy Python ORM]]
