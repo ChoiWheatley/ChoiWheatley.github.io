@@ -45,6 +45,7 @@ parent link: [[docs/index/index|index]]
 	- [[ssh into WSL2 & vs-code]]
 	- [[port forwarding WSL2]]
 	- [[Use docker in WSL2 distro]]
+- [[JIRA]]
 
 ---
 
