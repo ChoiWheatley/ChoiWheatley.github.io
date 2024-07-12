@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-03-07T16:56:58
+updated: 2024-07-12T22:57:47
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -34,8 +34,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 ## 지원완료
 
-- [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??
-- [[2024 와이파트너즈 신입 경력 공채]]
+- [IGE Korea SULBING CALIFORNIA](https://www.worldjob.or.kr/advnc/wellView.do)
 
 ## 정신무장
 
@@ -266,3 +265,5 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] 
 	- 2024-03-04 면접완료
 	- 2024-03-06 합격 💫
+- [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??
+- [[2024 와이파트너즈 신입 경력 공채]]
