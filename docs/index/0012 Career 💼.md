@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-07-13T00:03:11
+updated: 2024-07-15T21:08:00
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -41,6 +41,8 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [Backend Developer - Aniai](https://careers.aniai.ai/job_posting/eO3gFSGT?lang=en)✅
 - [마스코리아 Python 시스템 개발자 신입 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44927505?Oem_Code=C1&sc=67)✅
 - [시큐리온 Back-end 개발자 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44979811?Oem_Code=C1&sc=67) ✅ Django!!
+- [Electronic Arts - Jnior Server Software Engineer - Javascript, Node.js](https://www.linkedin.com/jobs/view/3916800789) ✅
+- 
 
 ## 정신무장
 
