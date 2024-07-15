@@ -17,7 +17,7 @@ title: aws s3 static files in django
 - [Amazon S3 {django-storages}](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html?highlight=STATICFILES_STORAGE)
 - [How to get Django to make some files public and media files private on AWS S3 (no 403 errors)?](https://stackoverflow.com/questions/67650507/how-to-get-django-to-make-some-files-public-and-media-files-private-on-aws-s3-n)
 - [botocore.exceptions.ClientError: HeadObject operation: Not Found](https://stackoverflow.com/questions/44895334/botocore-exceptions-clienterror-an-error-occurred-404-when-calling-the-headob)
-- [[aws s3 버킷 생성 사용법.inpa.tistory]]
+- [[aws s3 버킷 사용법]]
 ---
 - 루트 사용자 말고 IAM 사용자를 하나 만들어서 루트에 연결해야함.
 - 루트계정에 MFA 인증을 추가한다.
