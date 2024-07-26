@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-07-18T21:08:40
+updated: 2024-07-26T18:07:56
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -34,14 +34,8 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 ## 지원완료
 
-- ~~[IGE Korea SULBING CALIFORNIA](https://www.worldjob.or.kr/advnc/wellView.do) 지원중. 필수 문서 작성 필요.~~
-- [토스증권 Node.js Developer](https://toss.im/career/job-detail?gh_jid=4452824003&gh_src=81fec0f23us) ✅
-- ~~[Qt Group 분당, Software Engineer](https://www.linkedin.com/jobs/view/3968868461) ✅~~
-- ~~[[쿠키런: 오븐브레이크] 서버 소프트웨어 엔지니어 (신입)](https://www.linkedin.com/jobs/view/3949885879) ✅~~
-- [Backend Developer - Aniai](https://careers.aniai.ai/job_posting/eO3gFSGT?lang=en)✅
 - [마스코리아 Python 시스템 개발자 신입 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44927505?Oem_Code=C1&sc=67)✅
 - [시큐리온 Back-end 개발자 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44979811?Oem_Code=C1&sc=67) ✅ Django!!
-- [Electronic Arts - Jnior Server Software Engineer - Javascript, Node.js](https://www.linkedin.com/jobs/view/3916800789) ✅
 - 
 
 ## 정신무장
@@ -275,3 +269,9 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 	- 2024-03-06 합격 💫
 - [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??
 - [[2024 와이파트너즈 신입 경력 공채]]
+- ~~[IGE Korea SULBING CALIFORNIA](https://www.worldjob.or.kr/advnc/wellView.do) 지원중. 필수 문서 작성 필요.~~
+- ~~[토스증권 Node.js Developer](https://toss.im/career/job-detail?gh_jid=4452824003&gh_src=81fec0f23us) ✅~~
+- ~~[Qt Group 분당, Software Engineer](https://www.linkedin.com/jobs/view/3968868461) ✅~~
+- ~~[[쿠키런: 오븐브레이크] 서버 소프트웨어 엔지니어 (신입)](https://www.linkedin.com/jobs/view/3949885879) ✅~~
+- ~~[Electronic Arts - Jnior Server Software Engineer - Javascript, Node.js](https://www.linkedin.com/jobs/view/3916800789) ✅~~
+- ~~[Backend Developer - Aniai](https://careers.aniai.ai/job_posting/eO3gFSGT?lang=en)~~✅~~
