@@ -1,10 +1,9 @@
-인
 ---
 description:
 aliases: book-project🚀, 주백개그이
 tags: 
 created: 2023-05-20T11:31:55
-updated: 2024-01-23T20:26:57
+updated: 2024-07-30T10:39:37
 title: 주니어 백엔드 개발자, 그 이상으로 🚀{book-project}
 ---
 
