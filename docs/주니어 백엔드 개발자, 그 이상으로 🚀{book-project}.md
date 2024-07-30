@@ -1,3 +1,4 @@
+인
 ---
 description:
 aliases: book-project🚀, 주백개그이
