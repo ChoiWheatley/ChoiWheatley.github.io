@@ -4,7 +4,7 @@ tags:
 description:
 title: 소셜 로그인을 redirect + Set-Cookie 없이 할 수 있는 방법
 created: 2024-07-31T21:47:51
-updated: 2024-07-31T21:48:45
+updated: 2024-07-31T21:50:43
 ---
 - 소셜 로그인을 redirect + Set-Cookie 없이 할 수 있게 하는 방법을 알아냄.
     - 인가코드 (또는 OAuth 액세스 토큰) 를 클라이언트가 받아서 백엔드 서버에 Authorization 헤더에 담아서 요청. (예시 엔드포인트 `/google/receiver`)
@@ -22,7 +22,7 @@ sequenceDiagram
     Client->>OAuth Server: Redirect to OAuth for authentication
     OAuth Server-->>Client: Return Authorization Code / OAuth Access Token
 
-    Client->>Backend: Send Authorization Code / Access Token (Endpoint: /google/receiver) (with Authorization Header)
+    Client->>Backend: Send Authorization Code / Access Token
     Backend->>OAuth Server: Validate Token and Request User Info
 
     OAuth Server-->>Backend: Return User Info
