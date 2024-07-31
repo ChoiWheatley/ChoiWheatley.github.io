@@ -49594,7 +49594,7 @@
     Client-&gt;&gt;OAuth Server: Redirect to OAuth for authentication
     OAuth Server--&gt;&gt;Client: Return Authorization Code / OAuth Access Token
 
-    Client-&gt;&gt;Backend: Send Authorization Code / Access Token (Endpoint: /google/receiver) (with Authorization Header)
+    Client-&gt;&gt;Backend: Send Authorization Code / Access Token
     Backend-&gt;&gt;OAuth Server: Validate Token and Request User Info
 
     OAuth Server--&gt;&gt;Backend: Return User Info
