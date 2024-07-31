@@ -17,7 +17,8 @@ title: oauth {django}
 	- <https://developers.naver.com/main/>
 	- <https://developers.kakao.com/console>
 
-[[소셜 로그인 마지막 단계에서의 리디렉션]]
+- [[소셜 로그인 마지막 단계에서의 리디렉션]]
+- [[소셜 로그인을 redirect + Set-Cookie 없이 할 수 있는 방법]]
 
 ## 9.2 **OAuth 2.0 기본 개념**
 
