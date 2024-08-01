@@ -47,6 +47,10 @@ parent link: [[docs/index/index|index]]
 	- [[Use docker in WSL2 distro]]
 - [[JIRA]]
 
+## Web
+
+[[프론트엔드, 백엔드 시퀀스 다이어그램]]
+
 ---
 
 ## 개발자 커뮤니티
