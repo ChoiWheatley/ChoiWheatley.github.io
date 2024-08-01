@@ -50,6 +50,7 @@ parent link: [[docs/index/index|index]]
 ## Web
 
 [[프론트엔드, 백엔드 시퀀스 다이어그램]]
+[[Cookie]]
 
 ---
 
