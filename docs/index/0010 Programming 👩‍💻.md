@@ -54,6 +54,7 @@ parent link: [[docs/index/index|index]]
 [[소셜 로그인을 redirect + Set-Cookie 없이 할 수 있는 방법]]  
 [[프론트엔드, 백엔드 시퀀스 다이어그램]]  
 [[Cookie]]
+[[rds postgresql ssl 인증서 발급하여 접속하기]]
 
 ---
 
