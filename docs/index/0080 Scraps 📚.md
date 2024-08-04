@@ -73,3 +73,4 @@ ___
 - [[40Hz Binaural Beats의 효과 - {앤드류 후버만}]]
 - [[The Shape of Infinity -- manifold garden]]
 - [[conda, pyenv, pipenv, venv와의 차이점]]
+- [[객체지향의 사실과 오해-역할,책임,협력 관점에서 본 객체지향]]
