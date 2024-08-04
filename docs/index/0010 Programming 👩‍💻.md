@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-06-12T16:26:59
+updated: 2024-08-04T14:26:59
 ---
 
 parent link: [[docs/index/index|index]]
@@ -49,7 +49,10 @@ parent link: [[docs/index/index|index]]
 
 ## Web
 
-[[프론트엔드, 백엔드 시퀀스 다이어그램]]
+[[oauth {django}]]  
+[[소셜 로그인 마지막 단계에서의 리디렉션]]  
+[[소셜 로그인을 redirect + Set-Cookie 없이 할 수 있는 방법]]  
+[[프론트엔드, 백엔드 시퀀스 다이어그램]]  
 [[Cookie]]
 
 ---
