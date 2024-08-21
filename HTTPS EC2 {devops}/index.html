@@ -28854,6 +28854,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#certbot-lets-encrypt-ssl-pem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certbot + Let's Encrypt를 사용하여 SSL PEM 키 발급받기
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49784,6 +49793,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#certbot-lets-encrypt-ssl-pem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certbot + Let's Encrypt를 사용하여 SSL PEM 키 발급받기
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -49816,6 +49834,7 @@
 <li>클라이언트는 해당 IP주소를 향해 요청을 보낸다. 사실 그 IP는 실제 서버의 주소가 아닌 로드 밸런서의 주소이다. 로드 밸런서는 정해진 규칙에 따라 listeners ⟶ target groups 으로 요청을 전가한다. 위의 예시에선 HTTPS와 HTTP 요청을 받아 HTTP 프로토콜의 3000번 포트로 바꿔 EC2 서버에게 요청을 전가한다.</li>
 <li>사실 2번과정의 HTTPS 요청에는 한 단계가 더 끼어있다. SSL 인증서를 발급받아야 통신이 가능하기 때문이다. 따라서 사전에 Amazon Certificate Manager로부터 발급받은 certificate를 HTTPS Listener에게 등록하는 것으로 목적을 달성할 수 있다.</li>
 </ol>
+<h2 id="certbot-lets-encrypt-ssl-pem">Certbot + Let's Encrypt를 사용하여 SSL PEM 키 발급받기<a class="headerlink" href="#certbot-lets-encrypt-ssl-pem" title="Permanent link">#</a></h2>
 
 
 
