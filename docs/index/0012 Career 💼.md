@@ -36,7 +36,8 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 - [마스코리아 Python 시스템 개발자 신입 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44927505?Oem_Code=C1&sc=67)✅
 - [시큐리온 Back-end 개발자 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44979811?Oem_Code=C1&sc=67) ✅ Django!!
-- 
+- [[AI 기반 Saas 솔루션 / 백엔드 (Python) 개발 직무 제스트]] 
+
 
 ## 정신무장
 
