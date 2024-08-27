@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-02T21:53:09
-updated: 2024-08-27T13:37:22
+updated: 2024-08-27T13:38:01
 title: "HTTP header CORS policy - 'Access-Control-Allow-Origin'"
 ---
 - [sof](https://stackoverflow.com/questions/28046422/django-cors-headers-not-work)
