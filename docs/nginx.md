@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-03T18:00:14
-updated: 2023-07-15T21:33:04
+updated: 2024-09-02T18:07:43
 title: nginx
 ---
 일단 nginx는 전형적인 웹 서버이다. 웹 서버는 정적 웹을 호스팅하는 서버로, URL 형식을 바꾸거나 내부적으로 리디렉션을 처리하거나 여러대의 서버를 매핑하는 등의 일을 수행한다.
@@ -18,7 +18,7 @@ title: nginx
 
 # Blocks
 
-https://docs.nginx.com/nginx/admin-guide/web-server/web-server/
+<https://docs.nginx.com/nginx/admin-guide/web-server/web-server/>
 
 - **`server`** | [docs](https://nginx.org/en/docs/http/ngx_http_core_module.html#server) | nginx 서버가 요청을 보낼 가상 서버를 정의한다. 동일 기계일 경우 포트번호를 다르게 할 수 있으며, 아예 외부 링크를 연결해 줄 수도 있다.
 	- **`listen`** 주어진 포트를 개방한다.
@@ -26,3 +26,7 @@ https://docs.nginx.com/nginx/admin-guide/web-server/web-server/
 - context: 
 - **`upstream`** | [docs](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#upstream) | 여러대의 `server`를 정의하는 묶음이다. 위에서부터 차례로 읽어가며 로드 밸런싱을 진행한다.
 - 
+
+## Troubleshooting
+
+[[Nginx가 multipart-form-data 요청을 제대로 전달하지 못하는 문제]]
