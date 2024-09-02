@@ -47,6 +47,7 @@ parent link: [[docs/index/index|index]]
 	- [[Use docker in WSL2 distro]]
 - [[JIRA]]
 - [[docker 🐳]]
+- [[Domain Name Server (DNS)]]
 
 ## Web
 
