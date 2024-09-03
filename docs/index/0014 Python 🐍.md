@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-12T22:03:42
-updated: 2024-04-25T14:40:30
+updated: 2024-09-03T11:08:42
 title: 0014 Python 🐍
 ---
 - [[venv activation and deactivation]]
@@ -33,6 +33,8 @@ title: 0014 Python 🐍
 	- [[0014.1 faker로 더미 데이터 만들기 🐍]]
 	- [[0014.6 pymysql, mysql python wrapper]]
 	- [[0014.7 loguru, python logging made stupidly simple]]
+- Package Managers
+	- [[Poetry]]
 - useful
 	- standard lib
 		- [[itertools module]]
