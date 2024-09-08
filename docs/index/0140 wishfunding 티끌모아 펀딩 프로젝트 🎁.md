@@ -1,7 +1,8 @@
 ---
 aliases: 
-tags: 
-description:
+tags:
+  - giftogether
+description: 
 title: 0140 wishlist fun티끌모아ding project 생일선물 펀딩 프로젝트 🎁
 created: 2024-02-19T04:05:56
 updated: 2024-03-10T13:02:393302:44:57
@@ -20,4 +21,4 @@ updated: 2024-03-10T13:02:393302:44:57
 
 - [[2024-03-09 wishfunding pagination, reqtype, 친구API, 배송지 API, 서버 플랫폼 구축]]
 - [[2024-03-10 wishfunding]]
-- 
+- [[2024-09-08 Image 관련 Usecase Diagram]]

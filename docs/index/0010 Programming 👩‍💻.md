@@ -130,6 +130,7 @@ ___
 - [[Sentinel Node]]
 - [[command line cursor moving shortcuts]]
 - [[A Philosopy of Software Design - John Ousterhout - Talks at Google]]
+- [[Usecase Diagram]]
 
 ## Glosarry
 
