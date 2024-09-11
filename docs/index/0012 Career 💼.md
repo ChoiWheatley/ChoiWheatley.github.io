@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-09-11T13:39:08
+updated: 2024-09-11T14:36:13
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -167,6 +167,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 - [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
 - [[Ninja, Make, GCC의 관계를 설명해주세요]]
+- [[resource aquisition is initialization {c++}]]
 
 ### Python 관련 면접질문
 
@@ -174,6 +175,14 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[Python의 Generation Garbage Collection]]
 - [[Python의 실행속도가 느린 이유와 이를 개선하기 위한 방법에 대해서 설명해주세요]]
 - [[Python에는 꼬리재귀가 존재한가요, 꼬리재귀가 무엇인가요]]
+
+### Database 관련 면접질문
+
+- [[데이터베이스의 격리수준에 대해서 설명해주세요]]
+- [[DB Replica, Primary/Secondary Database]]
+- [[Redis를 캐시서버로 사용하는 방법에 대해서 알려주세요]]
+- [[데이터베이스에서 요청 throughput을 향상시키기 위해서 사용할 수 있는 방법에 대해서 알려주세요]]
+- [[Redis에서 사용하는 Distributed Lock에 대해서 설명해주세요]]
 
 ### 인성면접 예상질문
 
@@ -194,6 +203,8 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 
 ### 기타
 
+- [[신입 개발자 전공 지식 & 기술 면접 백과사전 {GH-cloned}]]
+- [[자료구조, 자료형, 추상 자료형 (Data Structure, Data Type, Abstract Data Type)의 차이점에 대하여 설명해 보세요]]
 - [[채널톡 면접 기출]]
 - 2024-01-07 면접스터디
 	- MVC 모델, MVVM 모델의 차이점
