@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-07-31T21:47:19
+updated: 2024-09-11T13:39:08
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -37,7 +37,6 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [마스코리아 Python 시스템 개발자 신입 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44927505?Oem_Code=C1&sc=67)✅
 - [시큐리온 Back-end 개발자 채용](https://www.jobkorea.co.kr/Recruit/GI_Read/44979811?Oem_Code=C1&sc=67) ✅ Django!!
 - [[AI 기반 Saas 솔루션 - 백엔드 (Python) 개발 직무 제스트]] 
-
 
 ## 정신무장
 
@@ -168,6 +167,13 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[최근 겪은 C++ 인터뷰 경험 - OKKY]]
 - [[소괄호 초기화와 중괄호 초기화의 차이점을 설명해 주세요 {C++11}]]
 - [[Ninja, Make, GCC의 관계를 설명해주세요]]
+
+### Python 관련 면접질문
+
+- [[Python의 가비지 컬렉션은 어떤 방식으로 작동하나요]]
+- [[Python의 Generation Garbage Collection]]
+- [[Python의 실행속도가 느린 이유와 이를 개선하기 위한 방법에 대해서 설명해주세요]]
+- [[Python에는 꼬리재귀가 존재한가요, 꼬리재귀가 무엇인가요]]
 
 ### 인성면접 예상질문
 
