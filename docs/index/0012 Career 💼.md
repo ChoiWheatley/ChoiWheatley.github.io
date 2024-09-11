@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-09-11T14:36:13
+updated: 2024-09-11T14:45:40
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -179,10 +179,12 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 ### Database 관련 면접질문
 
 - [[데이터베이스의 격리수준에 대해서 설명해주세요]]
+- [[데이터베이스의 원자성 Atomicity에 대해서 설명해주세요]]
 - [[DB Replica, Primary/Secondary Database]]
 - [[Redis를 캐시서버로 사용하는 방법에 대해서 알려주세요]]
 - [[데이터베이스에서 요청 throughput을 향상시키기 위해서 사용할 수 있는 방법에 대해서 알려주세요]]
 - [[Redis에서 사용하는 Distributed Lock에 대해서 설명해주세요]]
+- [[BTree와 BPlusTree의 차이점에 대해서 설명해주세요]]
 
 ### 인성면접 예상질문
 
