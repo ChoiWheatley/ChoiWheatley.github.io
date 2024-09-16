@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-16T21:44:17
+updated: 2024-09-16T22:04:10
 ---
 
 ## README
@@ -17,7 +17,7 @@ updated: 2024-09-16T21:44:17
 
 ## Partitioning Disks
 
-`fdisk` 프롬프트 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션으로, 하나는 ????를 위한 파티션으로, 나머지는 일반 스토리지를 위해서 나눈다. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. 
+`fdisk` 프롬프트 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 `/dev/vda1`으로, 하나는 부팅을 위한 파티션 `/dev/vda2`으로, 나머지는 일반 스토리지를 위해서 나눈다 `/dev/vda3`. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. 
 
 [wiki / Logical Volume Manager](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux))
 
@@ -90,3 +90,27 @@ updated: 2024-09-16T21:44:17
 ![[Pasted image 20240916213914.png]]
 
 ### 파일 시스템을 마운트하기
+
+[[#Partitioning Disks]]에서 나눈 세개의 파티션을 기억하자. vda1은 루트, vda2는 부팅, vda3는 홈 디렉터리를 위한 공간이다. 우리가 만든 논리볼륨과 파티션을 파일 디렉터리에 마운트를 하여 실제로 사용가능한 상태로 만들자. 참고로 없는 디렉토리는 그냥 `mkdir`로 생성하면 그만이다.
+
+```
+mount /dev/volgroup0/lv_root /mnt
+mount /dev/vda2 /mnt/boot #mkdir 필요
+mount /dev/volgroup0/lv_home /mnt/home #mkdir 필요
+```
+
+> [!question] [[논리볼륨과 파티션의 차이점]]
+
+## Installing required packages
+
+`pacstrap -i /mnt base` 명령어를 사용하여 아치리눅스가 필요로 하는 필수 패키지를 설치하자. 이때 `-i` 옵션은 interactive의 약어이다. 두 번 물어본다. 레포지토리 코어 제공자를 선택하는것과 설치할 패키지에 대해서 세심하게 물어봐주는 것이다.
+
+![[Pasted image 20240916215850.png]]
+
+## Generating the fstab file
+
+파일 시스템 메타데이터를 fstab 파일에 저장하자. 아래 스크린샷은 생성된 `/mnt/etc/fstab` 파일을 볼 수 있다.
+
+![[Pasted image 20240916220239.png]]
+
+[[fstab 파일이 필요한 이유]]
