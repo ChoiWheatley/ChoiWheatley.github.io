@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-16T21:05:06
+updated: 2024-09-16T21:44:17
 ---
 
 ## README
@@ -41,17 +41,17 @@ updated: 2024-09-16T21:05:06
 
 [[LVM의 기본 구성 요소]]
 
-**physical volume 연동하기**
+### physical volume 연동하기
 
 `pvcreate`는 physical volume create의 약어이다.  `pvcreate /dev/mapper/${mapper-name}
 
 ![[Pasted image 20240916170234.png]]
 
-**volume group 등록하기**
+### volume group 등록하기
 
 `vgcreate` 는 volume group create의 약어이다. `vgcreate volgroup0 /dev/mapper${mapper-name}`
 
-**logical volume 등록하기**
+### logical volume 등록하기
 
 `lvcreate`는 logical volume create의 약어이다. 다음 두가지 명령이 필요하다:
 
@@ -66,6 +66,27 @@ updated: 2024-09-16T21:05:06
 
 ![[Pasted image 20240916210505.png]]
 
-**Load Device Mapper Module**
+### Load Device Mapper Module
 
 [[dm_mod, Device Mapper Module]]
+
+### Activate LVM Volume
+
+일련의 두 명령어를 통하여 볼륨그룹을 식별하고 활성화까지 한다.
+
+- `vgscan`
+- `vgchange -ay`
+
+[[lvm 설정하는데 vgscan과 vgchange가 필요한 이유]]
+
+### 논리볼륨에 파일 시스템 연결하기
+
+[[lvm과 ext의 차이점이 뭐야?]]에서 알 수 있듯이, LVM은 하드웨어 스토리지를 추상화하고 EXT는 파일 구조를 추상화한 개념이라고 볼 수 있다. 따라서 LVM이 하드웨어에 더 가깝다고 볼 수 있음. 여튼 지금까지 공들여 만든 두 논리볼륨 `lv_root`, `lv_home`을 파일시스템 로직과 결합할 차례이다. 아래 두 명령어를 실행시키면 된다:
+
+- `mkfs.ext4 /dev/volgroup0/lv_root`
+- `mkfs.ext4 /dev/volgroup0/lv_home`
+
+
+![[Pasted image 20240916213914.png]]
+
+### 파일 시스템을 마운트하기
