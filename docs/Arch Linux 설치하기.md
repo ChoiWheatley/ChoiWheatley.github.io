@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-16T22:04:10
+updated: 2024-09-16T22:49:53
 ---
 
 ## README
@@ -17,7 +17,7 @@ updated: 2024-09-16T22:04:10
 
 ## Partitioning Disks
 
-`fdisk` 프롬프트 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 `/dev/vda1`으로, 하나는 부팅을 위한 파티션 `/dev/vda2`으로, 나머지는 일반 스토리지를 위해서 나눈다 `/dev/vda3`. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. 
+`fdisk` 유틸리티 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 `/dev/vda1`으로, 하나는 부팅을 위한 파티션 `/dev/vda2`으로, 나머지는 일반 스토리지를 위해서 나눈다 `/dev/vda3`. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. 
 
 [wiki / Logical Volume Manager](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux))
 
@@ -113,4 +113,21 @@ mount /dev/volgroup0/lv_home /mnt/home #mkdir 필요
 
 ![[Pasted image 20240916220239.png]]
 
-[[fstab 파일이 필요한 이유]]
+> [!question] [[fstab 파일이 필요한 이유]]
+
+## Arch Install Shell에 진입하기
+
+`arch-chroot`를 사용하여 아치리눅스 설치 셸에 진입, 패키지 설정 및 유저 설정을 진행할 수 있다. 스크린샷에서 볼 수 있듯이, 프롬프트가 바뀐 것을 확인할 수 있다.
+
+![[Pasted image 20240916221724.png]]
+
+### 루트 유저와 일반 유저 세팅하기
+
+- `passwd` 아무 옵션 없으면 이 명령어는 루트 유저의 비밀번호를 세팅하게 된다.
+- `useradd -m -g users -G wheel choiwheatley` choiwheatley라는 일반 유저를 생성하고 sudo 명령어가 먹는 wheel group에 초대한다.
+
+[[useradd 사용방법]]
+
+- `passwd choiwheatley`명령어로 choiwheatley 유저에 대한 비밀번호를 설정한다.
+
+### pacman 
