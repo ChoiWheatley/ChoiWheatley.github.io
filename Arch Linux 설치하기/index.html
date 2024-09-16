@@ -11693,6 +11693,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../fstab%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/" class="md-tabs__link">
+        
+  
+    
+  
+  fstab 파일이 필요한 이유
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../function%EA%B3%BC%20method%20%EA%B0%84%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/" class="md-tabs__link">
         
   
@@ -19366,6 +19383,23 @@
     
   
   네트워크 불안정으로 재연결 로직 {swjungle}{socketio}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%EB%85%BC%EB%A6%AC%EB%B3%BC%EB%A5%A8%EA%B3%BC%20%ED%8C%8C%ED%8B%B0%EC%85%98%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/" class="md-tabs__link">
+        
+  
+    
+  
+  논리볼륨과 파티션의 차이점
 
       </a>
     </li>
@@ -27615,6 +27649,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing required packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-the-fstab-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating the fstab file
+    </span>
+  </a>
   
 </li>
       
@@ -37073,6 +37125,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../fstab%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    fstab 파일이 필요한 이유
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../function%EA%B3%BC%20method%20%EA%B0%84%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/" class="md-nav__link">
         
   
@@ -46113,6 +46185,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../%EB%85%BC%EB%A6%AC%EB%B3%BC%EB%A5%A8%EA%B3%BC%20%ED%8C%8C%ED%8B%B0%EC%85%98%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    논리볼륨과 파티션의 차이점
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%EB%87%8C%20%EA%B0%80%EC%86%8C%EC%84%B1/" class="md-nav__link">
         
   
@@ -50864,6 +50956,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installing-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing required packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-the-fstab-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating the fstab file
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -50886,7 +50996,7 @@
 <h2 id="_1">인터넷 설정<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><a href="https://wiki.archlinux.org/title/Network_configuration#Network_management">Network management</a> 섹션을 확인하여 현재 시스템에 ip 주소가 할당되었는지 확인하세요.</p>
 <h2 id="partitioning-disks">Partitioning Disks<a class="headerlink" href="#partitioning-disks" title="Permanent link">#</a></h2>
-<p><code>fdisk</code> 프롬프트 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션으로, 하나는 ????를 위한 파티션으로, 나머지는 일반 스토리지를 위해서 나눈다. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. </p>
+<p><code>fdisk</code> 프롬프트 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 <code>/dev/vda1</code>으로, 하나는 부팅을 위한 파티션 <code>/dev/vda2</code>으로, 나머지는 일반 스토리지를 위해서 나눈다 <code>/dev/vda3</code>. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. </p>
 <p><a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)">wiki / Logical Volume Manager</a></p>
 <blockquote>
 <p>[!question] <a href="./lvm과 ext의 차이점이 뭐야?.md">lvm과 ext의 차이점이 뭐야?</a></p>
@@ -50936,6 +51046,21 @@
 </ul>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916213914.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916213914.png" src="../assets/Pasted%20image%2020240916213914.png" /></a></p>
 <h3 id="_3">파일 시스템을 마운트하기<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<p><a href="#partitioning-disks">#Partitioning Disks</a>에서 나눈 세개의 파티션을 기억하자. vda1은 루트, vda2는 부팅, vda3는 홈 디렉터리를 위한 공간이다. 우리가 만든 논리볼륨과 파티션을 파일 디렉터리에 마운트를 하여 실제로 사용가능한 상태로 만들자. 참고로 없는 디렉토리는 그냥 <code>mkdir</code>로 생성하면 그만이다.</p>
+<div class="highlight"><pre><span></span><code>mount /dev/volgroup0/lv_root /mnt
+mount /dev/vda2 /mnt/boot #mkdir 필요
+mount /dev/volgroup0/lv_home /mnt/home #mkdir 필요
+</code></pre></div>
+<blockquote>
+<p>[!question] <a href="../%EB%85%BC%EB%A6%AC%EB%B3%BC%EB%A5%A8%EA%B3%BC%20%ED%8C%8C%ED%8B%B0%EC%85%98%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90/">논리볼륨과 파티션의 차이점</a></p>
+</blockquote>
+<h2 id="installing-required-packages">Installing required packages<a class="headerlink" href="#installing-required-packages" title="Permanent link">#</a></h2>
+<p><code>pacstrap -i /mnt base</code> 명령어를 사용하여 아치리눅스가 필요로 하는 필수 패키지를 설치하자. 이때 <code>-i</code> 옵션은 interactive의 약어이다. 두 번 물어본다. 레포지토리 코어 제공자를 선택하는것과 설치할 패키지에 대해서 세심하게 물어봐주는 것이다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240916215850.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916215850.png" src="../assets/Pasted%20image%2020240916215850.png" /></a></p>
+<h2 id="generating-the-fstab-file">Generating the fstab file<a class="headerlink" href="#generating-the-fstab-file" title="Permanent link">#</a></h2>
+<p>파일 시스템 메타데이터를 fstab 파일에 저장하자. 아래 스크린샷은 생성된 <code>/mnt/etc/fstab</code> 파일을 볼 수 있다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240916220239.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916220239.png" src="../assets/Pasted%20image%2020240916220239.png" /></a></p>
+<p><a href="../fstab%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/">fstab 파일이 필요한 이유</a></p>
 
 
 
