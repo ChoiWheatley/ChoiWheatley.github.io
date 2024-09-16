@@ -17,7 +17,6 @@ parent link: [[docs/index]]
 
 ---
 %% Begin Waypoint %%
-
 - [[001A flask]]
 - [[0005 Archieve 💾]]
 - [[0010 Programming 👩‍💻]]
