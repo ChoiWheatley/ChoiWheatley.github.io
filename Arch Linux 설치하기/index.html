@@ -13444,6 +13444,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../lvm%20%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94%EB%8D%B0%20vgscan%EA%B3%BC%20vgchange%EA%B0%80%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/" class="md-tabs__link">
+        
+  
+    
+  
+  lvm 설정하는데 vgscan과 vgchange가 필요한 이유
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../lvm%EA%B3%BC%20ext%EC%9D%98%20%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%9D%B4%20%EB%AD%90%EC%95%BC%3F/" class="md-tabs__link">
         
   
@@ -27530,6 +27547,75 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configuring LVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      physical volume 연동하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      volume group 등록하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      logical volume 등록하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-device-mapper-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Device Mapper Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-lvm-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activate LVM Volume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      논리볼륨에 파일 시스템 연결하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      파일 시스템을 마운트하기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -39032,6 +39118,26 @@
   
   <span class="md-ellipsis">
     lower bound with bisect_left (python)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lvm%20%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94%EB%8D%B0%20vgscan%EA%B3%BC%20vgchange%EA%B0%80%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lvm 설정하는데 vgscan과 vgchange가 필요한 이유
   </span>
   
 
@@ -50687,6 +50793,75 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configuring LVM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      physical volume 연동하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volume-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      volume group 등록하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logical-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      logical volume 등록하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-device-mapper-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load Device Mapper Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activate-lvm-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activate LVM Volume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      논리볼륨에 파일 시스템 연결하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      파일 시스템을 마운트하기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -50727,12 +50902,12 @@
 <p>파티션을 암호화하기 위하여 <code>cryptsetup luksFormat /dev/${volume-name}</code>을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 <code>cryptsetup open --type luks /dev${volume-name} ${mapper-name}</code>을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자. </p>
 <h2 id="configuring-lvm">Configuring LVM<a class="headerlink" href="#configuring-lvm" title="Permanent link">#</a></h2>
 <p><a href="../LVM%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%EA%B5%AC%EC%84%B1%20%EC%9A%94%EC%86%8C/">LVM의 기본 구성 요소</a></p>
-<p><strong>physical volume 연동하기</strong></p>
+<h3 id="physical-volume">physical volume 연동하기<a class="headerlink" href="#physical-volume" title="Permanent link">#</a></h3>
 <p><code>pvcreate</code>는 physical volume create의 약어이다.  `pvcreate /dev/mapper/${mapper-name}</p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916170234.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916170234.png" src="../assets/Pasted%20image%2020240916170234.png" /></a></p>
-<p><strong>volume group 등록하기</strong></p>
+<h3 id="volume-group">volume group 등록하기<a class="headerlink" href="#volume-group" title="Permanent link">#</a></h3>
 <p><code>vgcreate</code> 는 volume group create의 약어이다. <code>vgcreate volgroup0 /dev/mapper${mapper-name}</code></p>
-<p><strong>logical volume 등록하기</strong></p>
+<h3 id="logical-volume">logical volume 등록하기<a class="headerlink" href="#logical-volume" title="Permanent link">#</a></h3>
 <p><code>lvcreate</code>는 logical volume create의 약어이다. 다음 두가지 명령이 필요하다:</p>
 <ul>
 <li><code>lvcreate -L 4GB volgroup0 -n lv_root</code>: 루트디렉토리에 논리볼륨을 할당</li>
@@ -50744,8 +50919,23 @@
 <p>오? 그러면 볼륨그룹 보는 명령어는 <code>vgdisplay</code>이겠네?</p>
 </blockquote>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916210505.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916210505.png" src="../assets/Pasted%20image%2020240916210505.png" /></a></p>
-<p><strong>Load Device Mapper Module</strong></p>
+<h3 id="load-device-mapper-module">Load Device Mapper Module<a class="headerlink" href="#load-device-mapper-module" title="Permanent link">#</a></h3>
 <p><a href="../dm_mod%2C%20Device%20Mapper%20Module/">dm_mod, Device Mapper Module</a></p>
+<h3 id="activate-lvm-volume">Activate LVM Volume<a class="headerlink" href="#activate-lvm-volume" title="Permanent link">#</a></h3>
+<p>일련의 두 명령어를 통하여 볼륨그룹을 식별하고 활성화까지 한다.</p>
+<ul>
+<li><code>vgscan</code></li>
+<li><code>vgchange -ay</code></li>
+</ul>
+<p><a href="../lvm%20%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94%EB%8D%B0%20vgscan%EA%B3%BC%20vgchange%EA%B0%80%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/">lvm 설정하는데 vgscan과 vgchange가 필요한 이유</a></p>
+<h3 id="_2">논리볼륨에 파일 시스템 연결하기<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<p><a href="./lvm과 ext의 차이점이 뭐야?.md">lvm과 ext의 차이점이 뭐야?</a>에서 알 수 있듯이, LVM은 하드웨어 스토리지를 추상화하고 EXT는 파일 구조를 추상화한 개념이라고 볼 수 있다. 따라서 LVM이 하드웨어에 더 가깝다고 볼 수 있음. 여튼 지금까지 공들여 만든 두 논리볼륨 <code>lv_root</code>, <code>lv_home</code>을 파일시스템 로직과 결합할 차례이다. 아래 두 명령어를 실행시키면 된다:</p>
+<ul>
+<li><code>mkfs.ext4 /dev/volgroup0/lv_root</code></li>
+<li><code>mkfs.ext4 /dev/volgroup0/lv_home</code></li>
+</ul>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240916213914.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916213914.png" src="../assets/Pasted%20image%2020240916213914.png" /></a></p>
+<h3 id="_3">파일 시스템을 마운트하기<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 
 
 
