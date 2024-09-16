@@ -17796,6 +17796,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../useradd%20%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/" class="md-tabs__link">
+        
+  
+    
+  
+  useradd 사용방법
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../using%20enum%20%7BC%2B%2B20%7D/" class="md-tabs__link">
         
   
@@ -27667,6 +27684,39 @@
       Generating the fstab file
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arch-install-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arch Install Shell에 진입하기
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arch Install Shell에 진입하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      루트 유저와 일반 유저 세팅하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacman" class="md-nav__link">
+    <span class="md-ellipsis">
+      pacman
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -44305,6 +44355,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../useradd%20%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    useradd 사용방법
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../using%20enum%20%7BC%2B%2B20%7D/" class="md-nav__link">
         
   
@@ -50974,6 +51044,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#arch-install-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arch Install Shell에 진입하기
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arch Install Shell에 진입하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      루트 유저와 일반 유저 세팅하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pacman" class="md-nav__link">
+    <span class="md-ellipsis">
+      pacman
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -50996,7 +51099,7 @@
 <h2 id="_1">인터넷 설정<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><a href="https://wiki.archlinux.org/title/Network_configuration#Network_management">Network management</a> 섹션을 확인하여 현재 시스템에 ip 주소가 할당되었는지 확인하세요.</p>
 <h2 id="partitioning-disks">Partitioning Disks<a class="headerlink" href="#partitioning-disks" title="Permanent link">#</a></h2>
-<p><code>fdisk</code> 프롬프트 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 <code>/dev/vda1</code>으로, 하나는 부팅을 위한 파티션 <code>/dev/vda2</code>으로, 나머지는 일반 스토리지를 위해서 나눈다 <code>/dev/vda3</code>. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. </p>
+<p><code>fdisk</code> 유틸리티 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 <code>/dev/vda1</code>으로, 하나는 부팅을 위한 파티션 <code>/dev/vda2</code>으로, 나머지는 일반 스토리지를 위해서 나눈다 <code>/dev/vda3</code>. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. </p>
 <p><a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)">wiki / Logical Volume Manager</a></p>
 <blockquote>
 <p>[!question] <a href="./lvm과 ext의 차이점이 뭐야?.md">lvm과 ext의 차이점이 뭐야?</a></p>
@@ -51060,7 +51163,22 @@ mount /dev/volgroup0/lv_home /mnt/home #mkdir 필요
 <h2 id="generating-the-fstab-file">Generating the fstab file<a class="headerlink" href="#generating-the-fstab-file" title="Permanent link">#</a></h2>
 <p>파일 시스템 메타데이터를 fstab 파일에 저장하자. 아래 스크린샷은 생성된 <code>/mnt/etc/fstab</code> 파일을 볼 수 있다.</p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916220239.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916220239.png" src="../assets/Pasted%20image%2020240916220239.png" /></a></p>
-<p><a href="../fstab%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/">fstab 파일이 필요한 이유</a></p>
+<blockquote>
+<p>[!question] <a href="../fstab%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%20%EC%9D%B4%EC%9C%A0/">fstab 파일이 필요한 이유</a></p>
+</blockquote>
+<h2 id="arch-install-shell">Arch Install Shell에 진입하기<a class="headerlink" href="#arch-install-shell" title="Permanent link">#</a></h2>
+<p><code>arch-chroot</code>를 사용하여 아치리눅스 설치 셸에 진입, 패키지 설정 및 유저 설정을 진행할 수 있다. 스크린샷에서 볼 수 있듯이, 프롬프트가 바뀐 것을 확인할 수 있다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240916221724.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916221724.png" src="../assets/Pasted%20image%2020240916221724.png" /></a></p>
+<h3 id="_4">루트 유저와 일반 유저 세팅하기<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<ul>
+<li><code>passwd</code> 아무 옵션 없으면 이 명령어는 루트 유저의 비밀번호를 세팅하게 된다.</li>
+<li><code>useradd -m -g users -G wheel choiwheatley</code> choiwheatley라는 일반 유저를 생성하고 sudo 명령어가 먹는 wheel group에 초대한다.</li>
+</ul>
+<p><a href="../useradd%20%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95/">useradd 사용방법</a></p>
+<ul>
+<li><code>passwd choiwheatley</code>명령어로 choiwheatley 유저에 대한 비밀번호를 설정한다.</li>
+</ul>
+<h3 id="pacman">pacman<a class="headerlink" href="#pacman" title="Permanent link">#</a></h3>
 
 
 
