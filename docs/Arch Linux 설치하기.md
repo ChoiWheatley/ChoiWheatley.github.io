@@ -19,6 +19,8 @@ updated: 2024-09-16T22:49:53
 
 `fdisk` 유틸리티 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 `/dev/vda1`으로, 하나는 부팅을 위한 파티션 `/dev/vda2`으로, 나머지는 일반 스토리지를 위해서 나눈다 `/dev/vda3`. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. 
 
+[[fdisk 사용 방법]]
+
 [wiki / Logical Volume Manager](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux))
 
 > [!question] [[lvm과 ext의 차이점이 뭐야?]]
