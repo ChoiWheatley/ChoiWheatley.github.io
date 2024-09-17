@@ -7953,6 +7953,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../UEFI%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20BIOS%20%EC%8B%9C%EC%8A%A4%ED%85%9C/" class="md-tabs__link">
+        
+  
+    
+  
+  UEFI 시스템과 BIOS 시스템
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../URI%20vs%20URL/" class="md-tabs__link">
         
   
@@ -27597,6 +27614,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Partitioning Disks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-each-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format each partitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-and-format-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit and format disks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -32777,6 +32818,26 @@
   
   <span class="md-ellipsis">
     Too Many Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UEFI%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20BIOS%20%EC%8B%9C%EC%8A%A4%ED%85%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UEFI 시스템과 BIOS 시스템
   </span>
   
 
@@ -50974,6 +51035,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Partitioning Disks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-each-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format each partitions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit-and-format-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit and format disks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -51136,7 +51221,8 @@
 <h2 id="_1">인터넷 설정<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><a href="https://wiki.archlinux.org/title/Network_configuration#Network_management">Network management</a> 섹션을 확인하여 현재 시스템에 ip 주소가 할당되었는지 확인하세요.</p>
 <h2 id="partitioning-disks">Partitioning Disks<a class="headerlink" href="#partitioning-disks" title="Permanent link">#</a></h2>
-<p><code>fdisk</code> 유틸리티 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 <code>/dev/vda1</code>으로, 하나는 부팅을 위한 파티션 <code>/dev/vda2</code>으로, 나머지는 일반 스토리지를 위해서 나눈다 <code>/dev/vda3</code>. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. </p>
+<p><code>fdisk</code> 유틸리티 하에서 아치리눅스 디스크 파티션을 나눈다. 하나는 부팅을 위한 파티션 <code>/dev/vda1</code>으로, 하나는 EFI을 위한 파티션 <code>/dev/vda2</code>으로, 나머지는 일반 스토리지를 위해서 나눈다 <code>/dev/vda3</code>. 세번째 파티션의 타입을 44번, Linux LVM으로 설정해준다. </p>
+<p>세번째 파티션만 LVM으로 설정한 이유는, 이 파티션을 루트 볼륨과 홈 볼륨으로 논리적으로 나누어 사용할 예정이기 때문이다.</p>
 <p><a href="../fdisk%20%EC%82%AC%EC%9A%A9%20%EB%B0%A9%EB%B2%95/">fdisk 사용 방법</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)">wiki / Logical Volume Manager</a></p>
 <blockquote>
@@ -51144,13 +51230,34 @@
 <p>결과물</p>
 </blockquote>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916163134.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916163134.png" src="../assets/Pasted%20image%2020240916163134.png" /></a></p>
+<h3 id="format-each-partitions">Format each partitions<a class="headerlink" href="#format-each-partitions" title="Permanent link">#</a></h3>
+<p>각 파티션들의 포맷을 설정해줘야 한다. </p>
+<ul>
+<li><code>/dev/vda1</code>  ⇒ FAT32  포맷 ∵ EFI 시스템 파티션 (ESP) 에는 FAT32로 포맷하는 것이 적절하기 때문 <a href="../UEFI%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20BIOS%20%EC%8B%9C%EC%8A%A4%ED%85%9C/">UEFI 시스템과 BIOS 시스템</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code># mkfs.fat -F32 /dev/vda1
+</code></pre></div>
+<ul>
+<li><code>/dev/vda2</code> ⇒ EXT4 포맷 </li>
+</ul>
+<div class="highlight"><pre><span></span><code># mkfs.ext /dev/vda2
+</code></pre></div>
+<blockquote>
+<p>[!question] <code>/dev/vda3</code>는 왜 포맷 안해?</p>
+</blockquote>
+<h3 id="commit-and-format-disks">Commit and format disks<a class="headerlink" href="#commit-and-format-disks" title="Permanent link">#</a></h3>
+<p><code>w</code> 명령을 사용하면 지금까지 적용한 세팅이 커밋되어 디스크 공간을 실제로 비우고 포맷팅하게 된다.</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020240917194741.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240917194741.png" src="../assets/Pasted%20image%2020240917194741.png" /></a></p>
+<hr />
 <p>내 시스템에는 윈도우와 리눅스가 같이 설치되어있기 때문에 가상머신으로 했을때와는 다르게 볼륨리스트가 복잡하게 꼬여있을 것이다.</p>
 <blockquote>
-<p>[!question] 내 컴퓨터에 설치되어있는 SSD를 현재 파티션을 두개로 나누어 하나는 윈도우를, 하나는 리눅스 운영체제를 설치했어. 지금 리눅스 운영체제가 설치되어있는 파티션을 초기화하려고 하는데, 어떤 볼륨이 어떤 운영체제에 설치되어있는지 알 수 있는 방법 알려줘</p>
+<p>[!question] 내 컴퓨터에 설치되어있는 SSD를 현재 파티션을 두개로 나누어 하나는 윈도우를, 하나는 리눅스 운영체제를 설치했어. 
+지금 리눅스 운영체제가 설치되어있는 파티션을 초기화하려고 하는데, 어떤 볼륨이 어떤 운영체제에 설치되어있는지 알 수 있는 방법 알려줘</p>
 </blockquote>
 <p><a href="../fdisk%20%EC%9D%BD%EB%8A%94%20%EB%B0%A9%EB%B2%95/">fdisk 읽는 방법</a></p>
+<hr />
 <h2 id="setting-up-an-encrypted-partition">Setting up an encrypted partition<a class="headerlink" href="#setting-up-an-encrypted-partition" title="Permanent link">#</a></h2>
-<p>파티션을 암호화하기 위하여 <code>cryptsetup luksFormat /dev/${volume-name}</code>을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 <code>cryptsetup open --type luks /dev${volume-name} ${mapper-name}</code>을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자. </p>
+<p>파티션을 암호화하기 위하여 <code>cryptsetup luksFormat /dev/${partition-name}</code>을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 <code>cryptsetup open --type luks /dev${partition-name} ${mapper-name}</code>을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자. </p>
 <h2 id="configuring-lvm">Configuring LVM<a class="headerlink" href="#configuring-lvm" title="Permanent link">#</a></h2>
 <p><a href="../LVM%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%EA%B5%AC%EC%84%B1%20%EC%9A%94%EC%86%8C/">LVM의 기본 구성 요소</a></p>
 <h3 id="physical-volume">physical volume 연동하기<a class="headerlink" href="#physical-volume" title="Permanent link">#</a></h3>
