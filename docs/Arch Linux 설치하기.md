@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-17T21:19:00
+updated: 2024-09-18T00:06:47
 ---
 
 ## README
@@ -68,7 +68,7 @@ updated: 2024-09-17T21:19:00
 
 ## Setting up an encrypted partition
 
-파티션을 암호화하기 위하여 `cryptsetup luksFormat /dev/${partition-name}`을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 `cryptsetup open --type luks /dev${partition-name} ${mapper-name}`을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자. 
+파티션을 암호화하기 위하여 `cryptsetup luksFormat /dev/vda3`을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 `cryptsetup open --type luks /dev/vda3 ${mapper-name}`을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자.  유튜버 따라 mapper-name은 lvm으로 넣어놓았다.
 
 ## Configuring LVM
 
@@ -126,7 +126,7 @@ updated: 2024-09-17T21:19:00
 
 ### 파일 시스템을 마운트하기
 
-[[#Partitioning Disks]]에서 나눈 세개의 파티션을 기억하자. vda1은 루트, vda2는 부팅, vda3는 홈 디렉터리를 위한 공간이다. 우리가 만든 논리볼륨과 파티션을 파일 디렉터리에 마운트를 하여 실제로 사용가능한 상태로 만들자. 참고로 없는 디렉토리는 그냥 `mkdir`로 생성하면 그만이다.
+[[#Partitioning Disks]]에서 나눈 세개의 파티션을 기억하자. vda1은 부팅, vda2는 루트 디렉터리, vda3는 홈 디렉터리를 위한 공간이다. 우리가 만든 논리볼륨과 파티션을 파일 디렉터리에 마운트를 하여 실제로 사용가능한 상태로 만들자. 참고로 없는 디렉토리는 그냥 `mkdir`로 생성하면 그만이다.
 
 ```
 mount /dev/volgroup0/lv_root /mnt
@@ -169,8 +169,139 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 - `passwd choiwheatley`명령어로 choiwheatley 유저에 대한 비밀번호를 설정한다.
 
+### [[TROUBLESHOOTING  sudoers 파일 편집]]
+
 ## Installing additional packages
 
 아치리눅스는 `pacman` 명령어를 사용하여 패키지를 관리한다. 일단 저 유튜버가 추천하는 패키지를 먼저 설치해보자.
 
 [youtube / Linux Crash Course - The Pacman Command](https://www.youtube.com/watch?v=HD7jJEh4ZaM)
+
+```
+pacman -S base-devel dosfstools grub efibootmgr gnome gnome-tweaks lvm2 mtools nano networkmanager openssh os-prober sudo
+```
+
+### [[TROUBLESHOOTING 공간 부족]]
+
+이번에는 리눅스 커널을 설치한다. 리눅스 커널과 헤더, 그리고 혹여나 발생할 수 있는 리눅스 커널과 아치 사이에 충돌이 발생하여 부팅이 되지 않을 경우를 대비하여 리눅스 LTS도 함께 설치한다.
+
+```
+pacman -S linux linux-headers linux-lts linux-lts-headers
+```
+
+그리고 하드웨어 펌웨어도 같이 설치해준다
+
+```
+pacman -S linux-firmware
+```
+
+### [[GPU driver 설치]]
+
+## 램디스크 생성 및 설정
+
+`/etc/mkinitcpio.conf`파일을 열어 `HOOKS` 선언부의 `filesystems` 앞에 다음 두 패키지를 추가한다:
+
+- encrypt
+- lvm2
+
+```
+HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block encrypt lvm2 filesystems fsck)
+```
+
+[[램 디스크가 필요한 이유와 mkinitcpio.conf 와 HOOKS의 역할]]
+
+그리고 설치한 리눅스 커널과 램디스크를 맞추기 위해 램디스크를 재생성한다:
+
+```
+mkinitcpio -p linux
+mkinitcpio -p linux-lts
+```
+
+## 로캐일 설정
+
+`/etc/locale.gen` 파일을 열어 원하는 로캐일을 찾아 주석해제한다.
+
+![[Pasted image 20240917225259.png]]
+
+그리고 `locale-gen` 명령을 사용하여 로캐일을 적용한다.
+
+## GRUB
+
+`/etc/default/grub` 파일을 수정한다. 우리는 `/dev/vda3`을 암호화했기 때문에 grub에서 이를 처리할 `cryptdevice`를 정의해주어야 한다. `GRUB_CMDLINE_LINUX_DEFAULT` 라인을 수정하자:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptdevice=/dev/vda3:volgroup0 quiet"
+```
+
+### EFI 파티션 세팅
+
+`/dev/vda1`를 부팅용으로 남겨두었었다. 그래서 `/dev/vda1`에 `/boot/EFI` 디렉토리를 마운트시켜주어야 한다.
+
+```
+mkdir /boot/EFI
+mount /dev/vda1 /boot/EFI
+```
+
+### grub-install
+
+grub 부트로더를 본격적으로 설치하자.
+
+```
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
+```
+
+grub 부트로더 메시지 파일을 복사하여 grub이 영어메시지를 사용할 수 있도록 하자.
+
+```
+cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+```
+
+다음으로 grub 부트로더 설정파일을 생성한다. 참고로 grub-mkconfig 명령어는 `/etc/default/grup` 과 `/etc/grub.d/` 디렉토리의 스크립트를 기반으로 새로운 GRUB 설정 파일을 만든다.
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Display Manager 구축
+
+[archlinux.org / Display manager](https://wiki.archlinux.org/title/Display_manager)
+
+**Gnome 을 사용할 경우**
+
+GDM, AKA Gnome Display Manager
+
+```
+systemctl enable gdm
+```
+
+**xfce를 사용할 경우**
+
+x-window 시스템 중에서 하나 고르면 된다. 예시로 xorg-xdm을 선택해보자.
+
+```
+pacman -S xdm-archlinux
+
+systemctl enable xdm-archlinux.service
+```
+
+## NetworkManager 서비스 등록
+
+```
+systemctl enable NetworkManager
+```
+
+## REBOOT
+
+이제 arch install shell을 나가고 reboot하면 된다.
+
+![[Pasted image 20240917232550.png]]
+
+음... Display Manager 일 안하네?
+
+![[Pasted image 20240917232814.png]]
+
+[archlinux.org / Xorg](https://wiki.archlinux.org/title/Xorg) 에서 `xorg-server` 패키지를 설치했더니 문제 해결됨.
+
+![[Pasted image 20240917234120.png]]
+
+음... `choiwheatley`가 sudoer가 아니라네?
