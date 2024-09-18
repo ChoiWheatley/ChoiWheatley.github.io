@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-19T00:56:15
+updated: 2024-09-19T02:17:36
 ---
 
 ## README
@@ -206,7 +206,7 @@ pacman -S linux-firmware
 
 `/etc/mkinitcpio.conf`파일을 열어 `HOOKS` 선언부의 `filesystems` 앞에 다음 두 패키지를 추가한다:
 
-- encrypt
+- encrypt (optional [[#Setting up an encrypted partition (Optional)]] 참고)
 - lvm2
 
 ```
@@ -232,7 +232,7 @@ mkinitcpio -p linux-lts
 
 ## GRUB
 
-`/etc/default/grub` 파일을 수정한다. 우리는 `/dev/vda3`을 암호화했기 때문에 grub에서 이를 처리할 `cryptdevice`를 정의해주어야 한다. `GRUB_CMDLINE_LINUX_DEFAULT` 라인을 수정하자:
+`/etc/default/grub` 파일을 수정한다. 우리는 `/dev/vda3`을 암호화했기 때문에 grub에서 이를 처리할 `cryptdevice`를 정의해주어야 한다. (optional) `GRUB_CMDLINE_LINUX_DEFAULT` 라인을 수정하자:
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptdevice=/dev/vda3:volgroup0 quiet"
@@ -266,6 +266,8 @@ cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+### [[TROUBLESHOOTING Detecting Other Operating Systems]]
 
 ## Display Manager 구축
 
