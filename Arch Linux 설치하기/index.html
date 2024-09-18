@@ -51799,7 +51799,7 @@
 </ul>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916213914.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916213914.png" src="../assets/Pasted%20image%2020240916213914.png" /></a></p>
 <h3 id="_3">파일 시스템을 마운트하기<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
-<p><a href="#partitioning-disks">#Partitioning Disks</a>에서 나눈 세개의 파티션을 기억하자. vda1은 부팅, vda2는 루트 디렉터리, vda3는 홈 디렉터리를 위한 공간이다. 우리가 만든 논리볼륨과 파티션을 파일 디렉터리에 마운트를 하여 실제로 사용가능한 상태로 만들자. 참고로 없는 디렉토리는 그냥 <code>mkdir</code>로 생성하면 그만이다.</p>
+<p><a href="#partitioning-disks">#Partitioning Disks</a>에서 나눈 세개의 파티션을 기억하자. vda1은 EFI, vda2는 부팅, vda3는 홈 디렉터리를 위한 공간이다. 우리가 만든 논리볼륨과 파티션을 파일 디렉터리에 마운트를 하여 실제로 사용가능한 상태로 만들자. 참고로 없는 디렉토리는 그냥 <code>mkdir</code>로 생성하면 그만이다.</p>
 <div class="highlight"><pre><span></span><code>mount /dev/volgroup0/lv_root /mnt
 mount /dev/vda2 /mnt/boot #mkdir 필요
 mount /dev/volgroup0/lv_home /mnt/home #mkdir 필요
