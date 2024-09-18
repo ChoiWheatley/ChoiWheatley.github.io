@@ -27709,9 +27709,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-an-encrypted-partition" class="md-nav__link">
+  <a href="#setting-up-an-encrypted-partition-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting up an encrypted partition
+      Setting up an encrypted partition (Optional)
     </span>
   </a>
   
@@ -51321,9 +51321,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-an-encrypted-partition" class="md-nav__link">
+  <a href="#setting-up-an-encrypted-partition-optional" class="md-nav__link">
     <span class="md-ellipsis">
-      Setting up an encrypted partition
+      Setting up an encrypted partition (Optional)
     </span>
   </a>
   
@@ -51610,7 +51610,7 @@
 <ul>
 <li><code>/dev/vda2</code> ⇒ EXT4 포맷 </li>
 </ul>
-<div class="highlight"><pre><span></span><code># mkfs.ext /dev/vda2
+<div class="highlight"><pre><span></span><code># mkfs.ext4 /dev/vda2
 </code></pre></div>
 <blockquote>
 <p>[!question] <code>/dev/vda3</code>는 왜 포맷 안해?</p>
@@ -51626,8 +51626,12 @@
 </blockquote>
 <p><a href="../fdisk%20%EC%9D%BD%EB%8A%94%20%EB%B0%A9%EB%B2%95/">fdisk 읽는 방법</a></p>
 <hr />
-<h2 id="setting-up-an-encrypted-partition">Setting up an encrypted partition<a class="headerlink" href="#setting-up-an-encrypted-partition" title="Permanent link">#</a></h2>
-<p>파티션을 암호화하기 위하여 <code>cryptsetup luksFormat /dev/vda3</code>을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 <code>cryptsetup open --type luks /dev/vda3 ${mapper-name}</code>을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자.  유튜버 따라 mapper-name은 lvm으로 넣어놓았다.</p>
+<h2 id="setting-up-an-encrypted-partition-optional">Setting up an encrypted partition (Optional)<a class="headerlink" href="#setting-up-an-encrypted-partition-optional" title="Permanent link">#</a></h2>
+<p><a href="https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#Cryptsetup_usage">wiki.archlinux / Cryptsetup usage</a></p>
+<blockquote>
+<p>[!caution] 주의! 이 작업을 수행할 시 매 부팅마다 비밀번호를 입력해야 합니다.</p>
+</blockquote>
+<p>파티션을 암호화하기 위하여 cryptsetup luksFormat /dev/vda3을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 cryptsetup open --type luks /dev/vda3 ${mapper-name}을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자.  유튜버 따라 mapper-name은 lvm으로 넣어놓았다.</p>
 <h2 id="configuring-lvm">Configuring LVM<a class="headerlink" href="#configuring-lvm" title="Permanent link">#</a></h2>
 <p><a href="../LVM%EC%9D%98%20%EA%B8%B0%EB%B3%B8%20%EA%B5%AC%EC%84%B1%20%EC%9A%94%EC%86%8C/">LVM의 기본 구성 요소</a></p>
 <h3 id="physical-volume">physical volume 연동하기<a class="headerlink" href="#physical-volume" title="Permanent link">#</a></h3>
@@ -51638,8 +51642,9 @@
 <h3 id="logical-volume">logical volume 등록하기<a class="headerlink" href="#logical-volume" title="Permanent link">#</a></h3>
 <p><code>lvcreate</code>는 logical volume create의 약어이다. 다음 두가지 명령이 필요하다:</p>
 <ul>
-<li><code>lvcreate -L 4GB volgroup0 -n lv_root</code>: 루트디렉토리에 논리볼륨을 할당</li>
+<li><code>lvcreate -L 20GB volgroup0 -n lv_root</code>: 루트디렉토리에 논리볼륨을 할당</li>
 <li><code>lvcreate -L 128GB volgorup0 -n lv_home</code>: 홈 디렉토리에 논리볼륨을 할당</li>
+<li>(추가) <code>lvcreate -L 2GB volgroup0 -n lv_swap</code>: 스왑영역 할당</li>
 </ul>
 <p>논리볼륨 확인하려면 <code>lvdisplay</code> 명령어를 치면 된다.</p>
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240916210349.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240916210349.png" src="../assets/Pasted%20image%2020240916210349.png" /></a></p>
