@@ -7834,6 +7834,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../TROUBLESHOOTING%20Detecting%20Other%20Operating%20Systems/" class="md-tabs__link">
+        
+  
+    
+  
+  TROUBLESHOOTING Detecting Other Operating Systems
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../TROUBLESHOOTING%20%EA%B3%B5%EA%B0%84%20%EB%B6%80%EC%A1%B1/" class="md-tabs__link">
         
   
@@ -27959,6 +27976,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshooting-detecting-other-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      TROUBLESHOOTING Detecting Other Operating Systems
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -32891,6 +32917,26 @@
   
   <span class="md-ellipsis">
     TROUBLESHOOTING  sudoers 파일 편집
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TROUBLESHOOTING%20Detecting%20Other%20Operating%20Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TROUBLESHOOTING Detecting Other Operating Systems
   </span>
   
 
@@ -51611,6 +51657,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#troubleshooting-detecting-other-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      TROUBLESHOOTING Detecting Other Operating Systems
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -51792,7 +51847,7 @@ mount /dev/volgroup0/lv_home /mnt/home #mkdir 필요
 <h2 id="_5">램디스크 생성 및 설정<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <p><code>/etc/mkinitcpio.conf</code>파일을 열어 <code>HOOKS</code> 선언부의 <code>filesystems</code> 앞에 다음 두 패키지를 추가한다:</p>
 <ul>
-<li>encrypt</li>
+<li>encrypt (optional <a href="#setting-up-an-encrypted-partition-optional">#Setting up an encrypted partition (Optional)</a> 참고)</li>
 <li>lvm2</li>
 </ul>
 <div class="highlight"><pre><span></span><code>HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block encrypt lvm2 filesystems fsck)
@@ -51807,7 +51862,7 @@ mkinitcpio -p linux-lts
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240917225259.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240917225259.png" src="../assets/Pasted%20image%2020240917225259.png" /></a></p>
 <p>그리고 <code>locale-gen</code> 명령을 사용하여 로캐일을 적용한다.</p>
 <h2 id="grub">GRUB<a class="headerlink" href="#grub" title="Permanent link">#</a></h2>
-<p><code>/etc/default/grub</code> 파일을 수정한다. 우리는 <code>/dev/vda3</code>을 암호화했기 때문에 grub에서 이를 처리할 <code>cryptdevice</code>를 정의해주어야 한다. <code>GRUB_CMDLINE_LINUX_DEFAULT</code> 라인을 수정하자:</p>
+<p><code>/etc/default/grub</code> 파일을 수정한다. 우리는 <code>/dev/vda3</code>을 암호화했기 때문에 grub에서 이를 처리할 <code>cryptdevice</code>를 정의해주어야 한다. (optional) <code>GRUB_CMDLINE_LINUX_DEFAULT</code> 라인을 수정하자:</p>
 <div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 cryptdevice=/dev/vda3:volgroup0 quiet&quot;
 </code></pre></div>
 <h3 id="efi">EFI 파티션 세팅<a class="headerlink" href="#efi" title="Permanent link">#</a></h3>
@@ -51825,6 +51880,7 @@ mount /dev/vda1 /boot/EFI
 <p>다음으로 grub 부트로더 설정파일을 생성한다. 참고로 grub-mkconfig 명령어는 <code>/etc/default/grup</code> 과 <code>/etc/grub.d/</code> 디렉토리의 스크립트를 기반으로 새로운 GRUB 설정 파일을 만든다.</p>
 <div class="highlight"><pre><span></span><code>grub-mkconfig -o /boot/grub/grub.cfg
 </code></pre></div>
+<h3 id="troubleshooting-detecting-other-operating-systems"><a href="../TROUBLESHOOTING%20Detecting%20Other%20Operating%20Systems/">TROUBLESHOOTING Detecting Other Operating Systems</a><a class="headerlink" href="#troubleshooting-detecting-other-operating-systems" title="Permanent link">#</a></h3>
 <h2 id="display-manager">Display Manager 구축<a class="headerlink" href="#display-manager" title="Permanent link">#</a></h2>
 <p><a href="https://wiki.archlinux.org/title/Display_manager">archlinux.org / Display manager</a></p>
 <p><strong>Gnome 을 사용할 경우</strong></p>
