@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-18T00:06:47
+updated: 2024-09-19T00:48:49
 ---
 
 ## README
@@ -44,7 +44,7 @@ updated: 2024-09-18T00:06:47
 - `/dev/vda2` ⇒ EXT4 포맷 
 
 ```
-# mkfs.ext /dev/vda2
+# mkfs.ext4 /dev/vda2
 ```
 
 > [!question] `/dev/vda3`는 왜 포맷 안해?
@@ -66,9 +66,13 @@ updated: 2024-09-18T00:06:47
 
 ---
 
-## Setting up an encrypted partition
+## Setting up an encrypted partition (Optional)
 
-파티션을 암호화하기 위하여 `cryptsetup luksFormat /dev/vda3`을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 `cryptsetup open --type luks /dev/vda3 ${mapper-name}`을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자.  유튜버 따라 mapper-name은 lvm으로 넣어놓았다.
+[wiki.archlinux / Cryptsetup usage](https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#Cryptsetup_usage)
+
+> [!caution] 주의! 이 작업을 수행할 시 매 부팅마다 비밀번호를 입력해야 합니다.
+
+파티션을 암호화하기 위하여 cryptsetup luksFormat /dev/vda3을 입력한다. 비밀번호를 설정해야 한다. 그리고 암호화된 볼륨을 사용하기 위해선 cryptsetup open --type luks /dev/vda3 ${mapper-name}을 입력하여 복호화하면 된다.  mapper-name 을 추후에 사용하게 되니 기억하고 있자.  유튜버 따라 mapper-name은 lvm으로 넣어놓았다.
 
 ## Configuring LVM
 
@@ -88,8 +92,9 @@ updated: 2024-09-18T00:06:47
 
 `lvcreate`는 logical volume create의 약어이다. 다음 두가지 명령이 필요하다:
 
-- `lvcreate -L 4GB volgroup0 -n lv_root`: 루트디렉토리에 논리볼륨을 할당
+- `lvcreate -L 20GB volgroup0 -n lv_root`: 루트디렉토리에 논리볼륨을 할당
 - `lvcreate -L 128GB volgorup0 -n lv_home`: 홈 디렉토리에 논리볼륨을 할당
+- (추가) `lvcreate -L 2GB volgroup0 -n lv_swap`: 스왑영역 할당
 
 논리볼륨 확인하려면 `lvdisplay` 명령어를 치면 된다.
 
