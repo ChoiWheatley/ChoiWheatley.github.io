@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#lvm" class="md-skip">
           Skip to content
         </a>
       
@@ -30352,26 +30352,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#lvm" class="md-nav__link">
     <span class="md-ellipsis">
-      스왑 공간의 형식
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="스왑 공간의 형식">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      요약:
+      LVM을 사용한 스왑 공간 할당 방법
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      스왑 파일을 사용하는 대안 방법
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      결론:
+    </span>
+  </a>
   
 </li>
       
@@ -51077,26 +51080,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#lvm" class="md-nav__link">
     <span class="md-ellipsis">
-      스왑 공간의 형식
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="스왑 공간의 형식">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      요약:
+      LVM을 사용한 스왑 공간 할당 방법
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      스왑 파일을 사용하는 대안 방법
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      결론:
+    </span>
+  </a>
   
 </li>
       
@@ -51130,15 +51136,73 @@
 <blockquote>
 <p>[!question] arch linux를 설치하는데 생각해보니 생각해보니 스왑공간을 위한 파티션을 생성을 안했어! 파티션을 새로 만들어야 할까, 아니면 이미 존재하는 LVM의 일정 부분을 스왑영역으로 할당해주어야 할까?</p>
 </blockquote>
-<p>스왑 공간을 만들 때는 일반 파일 시스템 형식(예: EXT4, FAT32, NTFS 등)을 사용하지 않습니다. 스왑은 그 자체로 독립적인 공간이며, 스왑 영역에 파일 시스템을 생성하지 않습니다. 스왑 공간은 운영 체제가 메모리 관리에 사용하는 특별한 용도로만 사용됩니다.</p>
-<h3 id="_1">스왑 공간의 형식<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<p>Arch Linux에서 스왑 공간을 설정하는 방법은 여러 가지가 있습니다. 이미 LVM(Logical Volume Manager)을 사용 중이라면, 새로운 파티션을 생성하지 않고 기존 LVM 내에서 스왑 공간을 할당하는 것이 더 효율적일 수 있습니다. 이 방식은 디스크 파티셔닝을 다시 할 필요가 없기 때문에 간편하며, 기존 볼륨을 재구성하는 데 적합합니다. LVM 내에서 스왑을 설정하는 방법은 다음과 같습니다:</p>
+<h3 id="lvm">LVM을 사용한 스왑 공간 할당 방법<a class="headerlink" href="#lvm" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>스왑용 LVM 논리 볼륨 생성</strong><br />
+   먼저, LVM 내에서 스왑 공간을 위한 논리 볼륨을 생성합니다. 다음 명령을 사용하여 원하는 크기의 스왑 공간을 할당할 수 있습니다 (예: 2GB):</li>
+</ol>
+<div class="highlight"><pre><span></span><code>lvcreate<span class="w"> </span>-L<span class="w"> </span>2G<span class="w"> </span>-n<span class="w"> </span>swap<span class="w"> </span>&lt;볼륨그룹이름&gt;
+</code></pre></div>
+<ol>
+<li><strong>스왑 공간 형식화</strong><br />
+   생성된 논리 볼륨을 스왑 공간으로 포맷합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkswap<span class="w"> </span>/dev/&lt;볼륨그룹이름&gt;/swap
+</code></pre></div>
+<ol>
+<li><strong>스왑 활성화</strong><br />
+   스왑 공간을 활성화합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>swapon<span class="w"> </span>/dev/&lt;볼륨그룹이름&gt;/swap
+</code></pre></div>
+<ol>
+<li><strong><code>/etc/fstab</code>에 추가</strong><br />
+   스왑 공간이 부팅 시 자동으로 활성화되도록 <code>/etc/fstab</code> 파일에 아래 내용을 추가합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>/dev/&lt;볼륨그룹이름&gt;/swap<span class="w"> </span>none<span class="w"> </span>swap<span class="w"> </span>defaults<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<h3 id="_1">스왑 파일을 사용하는 대안 방법<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<p>만약 새로운 파티션을 만들거나 LVM을 건드리고 싶지 않다면, 스왑 파일을 만들어 사용할 수도 있습니다. 스왑 파일을 설정하는 과정은 다음과 같습니다:</p>
+<ol>
+<li><strong>스왑 파일 생성</strong><br />
+   예를 들어, 2GB 크기의 스왑 파일을 생성합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>fallocate<span class="w"> </span>-l<span class="w"> </span>2G<span class="w"> </span>/swapfile
+</code></pre></div>
+<p>또는 <code>fallocate</code> 명령을 지원하지 않는 시스템에서는 다음 명령을 사용할 수 있습니다:</p>
+<div class="highlight"><pre><span></span><code>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/swapfile<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">2048</span>
+</code></pre></div>
+<ol>
+<li><strong>파일 권한 설정</strong><br />
+   보안을 위해 스왑 파일의 권한을 제한합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/swapfile
+</code></pre></div>
+<ol>
+<li><strong>스왑 파일 형식화</strong><br />
+   스왑 파일을 스왑 영역으로 포맷합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mkswap<span class="w"> </span>/swapfile
+</code></pre></div>
+<ol>
+<li><strong>스왑 활성화</strong><br />
+   스왑 파일을 활성화합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>swapon<span class="w"> </span>/swapfile
+</code></pre></div>
+<ol>
+<li><strong><code>/etc/fstab</code>에 추가</strong><br />
+   스왑 파일이 부팅 시 자동으로 활성화되도록 <code>/etc/fstab</code> 파일에 아래 내용을 추가합니다:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>/swapfile<span class="w"> </span>none<span class="w"> </span>swap<span class="w"> </span>defaults<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<h3 id="_2">결론:<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
 <ul>
-<li>스왑 공간은 파일 시스템이 아닌 <strong>스왑 서브시스템</strong>에서 관리됩니다.</li>
-<li>스왑 공간을 생성할 때 <code>mkswap</code> 명령을 사용하여 해당 영역을 스왑 영역으로 포맷합니다. 이 명령은 스왑 영역에 맞는 특정 헤더를 추가하여 운영 체제가 스왑으로 인식할 수 있게 만듭니다.</li>
+<li>LVM을 이미 사용하고 있다면, 논리 볼륨을 활용하여 스왑 공간을 만드는 것이 더 효율적입니다.</li>
+<li>별도의 파티션을 만들 필요는 없으며, LVM 논리 볼륨 또는 스왑 파일을 사용하는 두 가지 방법 중 선택할 수 있습니다.</li>
 </ul>
-<p>따라서, 스왑 공간을 만들 때는 EXT4, FAT32와 같은 파일 시스템을 고려할 필요가 없으며, 스왑 용도로만 포맷하면 됩니다.</p>
-<h4 id="_2">요약:<a class="headerlink" href="#_2" title="Permanent link">#</a></h4>
-<p>스왑 공간에는 파일 시스템 형식이 필요하지 않으며, <strong><code>mkswap</code></strong> 명령을 사용하여 스왑 공간을 생성합니다.</p>
+<p>LVM을 사용한 방법이 성능 면에서 더 좋을 수 있지만, 스왑 파일을 사용하는 방법은 설정이 더 간단하고 유연합니다.</p>
 <blockquote>
 <p>[!question] 내가 genfstab 명령어를 사용하여 자동으로 fstab 파일을 만들었는데, 그 결과물이 아래와 같아. 옳게 된 건지 확인해줘:</p>
 </blockquote>
