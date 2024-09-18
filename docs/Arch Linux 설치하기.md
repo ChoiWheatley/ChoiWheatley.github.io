@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-19T02:17:36
+updated: 2024-09-19T02:19:40
 ---
 
 ## README
@@ -232,7 +232,9 @@ mkinitcpio -p linux-lts
 
 ## GRUB
 
-`/etc/default/grub` 파일을 수정한다. 우리는 `/dev/vda3`을 암호화했기 때문에 grub에서 이를 처리할 `cryptdevice`를 정의해주어야 한다. (optional) `GRUB_CMDLINE_LINUX_DEFAULT` 라인을 수정하자:
+`/etc/default/grub` 파일을 수정한다. 우리는 `/dev/vda3`을 암호화했기 때문에 grub에서 이를 처리할 `cryptdevice`를 정의해주어야 한다.  `GRUB_CMDLINE_LINUX_DEFAULT` 라인을 수정하자:
+
+(optional)  
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptdevice=/dev/vda3:volgroup0 quiet"
