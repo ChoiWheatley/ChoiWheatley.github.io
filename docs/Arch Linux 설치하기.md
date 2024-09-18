@@ -4,7 +4,7 @@ tags:
 description:
 title: Arch Linux 설치하기
 created: 2024-09-16T15:05:05
-updated: 2024-09-19T00:48:49
+updated: 2024-09-19T00:56:15
 ---
 
 ## README
@@ -94,7 +94,7 @@ updated: 2024-09-19T00:48:49
 
 - `lvcreate -L 20GB volgroup0 -n lv_root`: 루트디렉토리에 논리볼륨을 할당
 - `lvcreate -L 128GB volgorup0 -n lv_home`: 홈 디렉토리에 논리볼륨을 할당
-- (추가) `lvcreate -L 2GB volgroup0 -n lv_swap`: 스왑영역 할당
+- (추가) `lvcreate -L 2GB volgroup0 -n lv_swap`: 스왑영역 할당 [[LVM을 사용한 swap 공간 할당 방법]] 참조
 
 논리볼륨 확인하려면 `lvdisplay` 명령어를 치면 된다.
 
