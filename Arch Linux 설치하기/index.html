@@ -51862,7 +51862,8 @@ mkinitcpio -p linux-lts
 <p><a class="glightbox" href="../assets/Pasted%20image%2020240917225259.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20240917225259.png" src="../assets/Pasted%20image%2020240917225259.png" /></a></p>
 <p>그리고 <code>locale-gen</code> 명령을 사용하여 로캐일을 적용한다.</p>
 <h2 id="grub">GRUB<a class="headerlink" href="#grub" title="Permanent link">#</a></h2>
-<p><code>/etc/default/grub</code> 파일을 수정한다. 우리는 <code>/dev/vda3</code>을 암호화했기 때문에 grub에서 이를 처리할 <code>cryptdevice</code>를 정의해주어야 한다. (optional) <code>GRUB_CMDLINE_LINUX_DEFAULT</code> 라인을 수정하자:</p>
+<p><code>/etc/default/grub</code> 파일을 수정한다. 우리는 <code>/dev/vda3</code>을 암호화했기 때문에 grub에서 이를 처리할 <code>cryptdevice</code>를 정의해주어야 한다.  <code>GRUB_CMDLINE_LINUX_DEFAULT</code> 라인을 수정하자:</p>
+<p>(optional)  </p>
 <div class="highlight"><pre><span></span><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;loglevel=3 cryptdevice=/dev/vda3:volgroup0 quiet&quot;
 </code></pre></div>
 <h3 id="efi">EFI 파티션 세팅<a class="headerlink" href="#efi" title="Permanent link">#</a></h3>
