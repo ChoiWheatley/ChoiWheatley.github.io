@@ -11,7 +11,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:40 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-09-27T19:58:09
+updated: 2024-09-27T22:31:57
 ---
 
 parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]] 
@@ -70,6 +70,13 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 	- 취득일 2023-06-11
 	- 발급번호 020196-0411009001
 	- 성적 765
+- SQL 개발자
+	- 자격번호: SQLD-054001204
+	- 합격일자: 2024-09-20
+	- 유효기간: 2024-09-20 ~ 2026-09-20
+
+## 이력
+
 - 소프트웨어사관학교정글
 	- 입교일: 2023-08-06
 	- 수료일: 2023-12-26
