@@ -4670,6 +4670,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Docker%20API%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC%20%EB%8F%84%EC%BB%A4%20%EA%B4%80%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B5%AC%EC%B6%95/" class="md-tabs__link">
+        
+  
+    
+  
+  Docker API를 활용하여 도커 관리 시스템 구축
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Doit%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80%20%ED%95%A8%EA%BB%98%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%8E%B8/" class="md-tabs__link">
         
   
@@ -28884,6 +28901,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Docker%20API%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC%20%EB%8F%84%EC%BB%A4%20%EA%B4%80%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B5%AC%EC%B6%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker API를 활용하여 도커 관리 시스템 구축
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Doit%20%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80%20%ED%95%A8%EA%BB%98%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EA%B8%B0%EC%B4%88%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%8E%B8/" class="md-nav__link">
         
   
@@ -36471,8 +36508,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exec" class="md-nav__link">
+    <span class="md-ellipsis">
+      컨테이너 원격 명령 (exec)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker API
+    </span>
+  </a>
   
 </li>
       
@@ -51214,8 +51269,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exec" class="md-nav__link">
+    <span class="md-ellipsis">
+      컨테이너 원격 명령 (exec)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker API
+    </span>
+  </a>
   
 </li>
       
@@ -51272,6 +51345,31 @@
 <div class="highlight"><pre><span></span><code>docker container rmi $(docker images --quiet)
 </code></pre></div>
 <p>도커 컨테이너를 지웠다고 이미지가 같이 지워지는 것은 아니다. 실행중인 프로세스를 종료했다고 실행파일이 삭제되지 않듯이 컨테이너를 지운다고 이미지가 같이 지워지지 않는다.</p>
+<h3 id="exec">컨테이너 원격 명령 (exec)<a class="headerlink" href="#exec" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+
+Aliases:
+  docker container exec, docker exec
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --env-file list        Read in a file of environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: &quot;&lt;name|uid&gt;[:&lt;group|gid&gt;]&quot;)
+  -w, --workdir string       Working directory inside the container
+</code></pre></div>
+<p>아하, 이래서 도커 컨테이너에 셸로 들어가는 명령어는 <code>docker container exec -it CONTAINER sh</code> 이렇게 COMMAND 칸에 셸 프로그램의 이름을 적으면 되는 거였구나!!</p>
+<h2 id="docker-api">Docker API<a class="headerlink" href="#docker-api" title="Permanent link">#</a></h2>
+<p>docker 엔진을 사용하기 위해선 (상태를 보고 컨테이너를 생성하는 등의 모든 조작을 의미) 도커 API를 통해야 한다. HTTP REST API를 통하여 인터페이스가 열려있다고 보면 되고, 우리가 지금껏 사용했던 docker-cli는 도커 API의 클라이언트 중에 하나인 것이다. 따라서 원한다면 GUI 프로그램을 설치하여 도커의 상태를 확인할 수도 있을 뿐더러, 외부 환경이나 클라우드에서 돌고 있는 도커를 원격으로 작업할 수도 있다.</p>
+<blockquote>
+<p>[!warning] 그러면 내가 직접 도커 관리 시스템을 구축할 수도 있다는 소리네? <a href="../Docker%20API%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%98%EC%97%AC%20%EB%8F%84%EC%BB%A4%20%EA%B4%80%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EA%B5%AC%EC%B6%95/">Docker API를 활용하여 도커 관리 시스템 구축</a></p>
+</blockquote>
 
 
 
