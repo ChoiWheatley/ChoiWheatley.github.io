@@ -4,7 +4,7 @@ tags:
 description: 도커의 기본적인 사용법
 title: docker 교과서 Chapter 2
 created: 2024-08-31T21:57:36
-updated: 2024-08-31T22:35:17
+updated: 2024-10-07T15:18:06
 ---
 
 ## 요약
@@ -77,3 +77,33 @@ docker container rmi $(docker images --quiet)
 ```
 
 도커 컨테이너를 지웠다고 이미지가 같이 지워지는 것은 아니다. 실행중인 프로세스를 종료했다고 실행파일이 삭제되지 않듯이 컨테이너를 지운다고 이미지가 같이 지워지지 않는다.
+
+### 컨테이너 원격 명령 (exec)
+
+```
+Usage:  docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Execute a command in a running container
+
+Aliases:
+  docker container exec, docker exec
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --env-file list        Read in a file of environment variables
+  -i, --interactive          Keep STDIN open even if not attached
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY
+  -u, --user string          Username or UID (format: "<name|uid>[:<group|gid>]")
+  -w, --workdir string       Working directory inside the container
+```
+
+아하, 이래서 도커 컨테이너에 셸로 들어가는 명령어는 `docker container exec -it CONTAINER sh` 이렇게 COMMAND 칸에 셸 프로그램의 이름을 적으면 되는 거였구나!!
+
+## Docker API
+
+docker 엔진을 사용하기 위해선 (상태를 보고 컨테이너를 생성하는 등의 모든 조작을 의미) 도커 API를 통해야 한다. HTTP REST API를 통하여 인터페이스가 열려있다고 보면 되고, 우리가 지금껏 사용했던 docker-cli는 도커 API의 클라이언트 중에 하나인 것이다. 따라서 원한다면 GUI 프로그램을 설치하여 도커의 상태를 확인할 수도 있을 뿐더러, 외부 환경이나 클라우드에서 돌고 있는 도커를 원격으로 작업할 수도 있다.
+
+> [!warning] 그러면 내가 직접 도커 관리 시스템을 구축할 수도 있다는 소리네? [[Docker API를 활용하여 도커 관리 시스템 구축]]
