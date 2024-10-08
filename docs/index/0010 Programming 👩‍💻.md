@@ -131,6 +131,7 @@ ___
 - [[command line cursor moving shortcuts]]
 - [[A Philosopy of Software Design - John Ousterhout - Talks at Google]]
 - [[Usecase Diagram]]
+- [[리눅스에서 키보드 이벤트를 관찰하고 싶은 경우 - evtest]]
 
 ## Glosarry
 
