@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 4
 created: 2024-10-10T16:24:56
-updated: 2024-10-10T16:57:16
+updated: 2024-10-10T17:35:06
 ---
 
 ## 도커를 빌드 도구로 활용하기
@@ -38,3 +38,7 @@ flowchart TD
     C --> D
     F --> G
 ```
+
+- 빌드 서버는 소스코드와 도커파일을 가지고  `docker build`를 하여 아티팩트가 포함된 이미지를 생성한다.
+- 배포서버는 아티팩트가 포함된 이미지를 pull 받아 단순히 `doker run`을 한다.
+- 위 두 작업을 자동화 해주는 녀석이 CI (Continuous Integration) 인 것이다.
