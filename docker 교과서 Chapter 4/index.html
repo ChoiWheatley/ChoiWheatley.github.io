@@ -51298,6 +51298,11 @@
 
     C --&gt; D
     F --&gt; G</code></pre>
+<ul>
+<li>빌드 서버는 소스코드와 도커파일을 가지고  <code>docker build</code>를 하여 아티팩트가 포함된 이미지를 생성한다.</li>
+<li>배포서버는 아티팩트가 포함된 이미지를 pull 받아 단순히 <code>doker run</code>을 한다.</li>
+<li>위 두 작업을 자동화 해주는 녀석이 CI (Continuous Integration) 인 것이다.</li>
+</ul>
 
 
 
