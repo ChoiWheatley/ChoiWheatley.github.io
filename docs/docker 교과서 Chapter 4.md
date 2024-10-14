@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 4
 created: 2024-10-10T16:24:56
-updated: 2024-10-10T17:35:06
+updated: 2024-10-14T21:54:56
 ---
 
 ## 도커를 빌드 도구로 활용하기
@@ -42,3 +42,24 @@ flowchart TD
 - 빌드 서버는 소스코드와 도커파일을 가지고  `docker build`를 하여 아티팩트가 포함된 이미지를 생성한다.
 - 배포서버는 아티팩트가 포함된 이미지를 pull 받아 단순히 `doker run`을 한다.
 - 위 두 작업을 자동화 해주는 녀석이 CI (Continuous Integration) 인 것이다.
+
+## CMD와 ENTRYPOINT의 차이점이 뭔가요?
+
+### Key Differences:
+
+1. **Overriding**:
+    - `CMD` can be overridden by providing a command at the end of `docker run`.
+    - `ENTRYPOINT` cannot be overridden by `docker run` arguments (unless you explicitly use `--entrypoint`).
+2. **Intent**:
+    - Use `CMD` for default, flexible commands that can be overridden.
+    - Use `ENTRYPOINT` when you want a fixed command that will always run.
+
+In summary, `CMD` is better suited for default commands that can be changed, while `ENTRYPOINT` is used for mandatory commands that should always be executed when the container starts.
+
+## 도커 가상 네트워크
+
+도커 컨테이너끼리 통신을 주고받기 위해선 가상 네트워크 (로컬 네트워크)를 구축하고 그 안에 컨테이너들을 할당해주어야 한다. 그러면 그 안에서 가상 IP주소를 발급받게 되고 EXPOSE한 포트번호를 통하여 네트워크 통신을 하게 된다.
+
+```
+docker container network <docker-network-name>
+```
