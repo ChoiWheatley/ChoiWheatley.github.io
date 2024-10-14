@@ -36545,6 +36545,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cmd-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMD와 ENTRYPOINT의 차이점이 뭔가요?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMD와 ENTRYPOINT의 차이점이 뭔가요?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Differences:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      도커 가상 네트워크
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51246,6 +51279,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cmd-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMD와 ENTRYPOINT의 차이점이 뭔가요?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMD와 ENTRYPOINT의 차이점이 뭔가요?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Differences:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      도커 가상 네트워크
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51303,6 +51369,25 @@
 <li>배포서버는 아티팩트가 포함된 이미지를 pull 받아 단순히 <code>doker run</code>을 한다.</li>
 <li>위 두 작업을 자동화 해주는 녀석이 CI (Continuous Integration) 인 것이다.</li>
 </ul>
+<h2 id="cmd-entrypoint">CMD와 ENTRYPOINT의 차이점이 뭔가요?<a class="headerlink" href="#cmd-entrypoint" title="Permanent link">#</a></h2>
+<h3 id="key-differences">Key Differences:<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Overriding</strong>:<ul>
+<li><code>CMD</code> can be overridden by providing a command at the end of <code>docker run</code>.</li>
+<li><code>ENTRYPOINT</code> cannot be overridden by <code>docker run</code> arguments (unless you explicitly use <code>--entrypoint</code>).</li>
+</ul>
+</li>
+<li><strong>Intent</strong>:<ul>
+<li>Use <code>CMD</code> for default, flexible commands that can be overridden.</li>
+<li>Use <code>ENTRYPOINT</code> when you want a fixed command that will always run.</li>
+</ul>
+</li>
+</ol>
+<p>In summary, <code>CMD</code> is better suited for default commands that can be changed, while <code>ENTRYPOINT</code> is used for mandatory commands that should always be executed when the container starts.</p>
+<h2 id="_2">도커 가상 네트워크<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>도커 컨테이너끼리 통신을 주고받기 위해선 가상 네트워크 (로컬 네트워크)를 구축하고 그 안에 컨테이너들을 할당해주어야 한다. 그러면 그 안에서 가상 IP주소를 발급받게 되고 EXPOSE한 포트번호를 통하여 네트워크 통신을 하게 된다.</p>
+<div class="highlight"><pre><span></span><code>docker container network &lt;docker-network-name&gt;
+</code></pre></div>
 
 
 
