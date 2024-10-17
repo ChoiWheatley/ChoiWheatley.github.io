@@ -36587,6 +36587,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      연습문제
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51330,6 +51339,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      연습문제
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51437,6 +51455,83 @@ diamol/golang   latest    119cb20c3f56   4 years ago          803MB
 <li>go 바이너리 실행 ⇒ <code>FROM diamol/base</code> | SIZE 17.1MB</li>
 </ol>
 <p>이렇게 하면 이미지를 배포할때 굳이 필요없는 빌드도구를 포함하지 않고 가벼운 상태로 레지스트리에 올리고 실행할때에도 용량을 적게 먹을 것 같다.</p>
+<h2 id="_4">연습문제<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<blockquote>
+<p>[!note] 다음 도커파일을 빌드하면 이미지가 500MB가 된다.  도커파일을 수정하여 이미지 크기를 약 20MB 정도로 최적화하고 HTML 파일이 변경되어도 재수행하는 빌드 단계가 한단계가 되도록 하라.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">diamol/golang</span><span class="w"> </span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">web</span>
+<span class="k">COPY</span><span class="w"> </span>index.html<span class="w"> </span>.
+<span class="k">COPY</span><span class="w"> </span>main.go<span class="w"> </span>.
+
+<span class="k">RUN</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>/web/server
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/web/server
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/web/server&quot;</span><span class="p">]</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">USER</span><span class="o">=</span>sixeyed
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span>
+</code></pre></div>
+<p><strong>1. HTML 파일이 변경되어도 재수행하는 빌드 단계가 한 단계가 되도록 하는 방법은 <code>COPY index.html .</code> 명령을 맨 뒤로 옮기면 된다.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>FROM diamol/golang
+
+<span class="w"> </span>WORKDIR web  
+<span class="gd">-COPY index.html .  </span>
+<span class="w"> </span>COPY main.go .
+
+<span class="w"> </span>RUN go build -o /web/server
+
+<span class="w"> </span>CMD [&quot;/web/server&quot;]  
+<span class="w"> </span>ENV USER=sixeyed  
+<span class="gi">+COPY index.html .^M  </span>
+</code></pre></div>
+<p><strong>2. 이미지의 크기를 줄이기 위해서는 멀티 스테이지 빌드 전략을 취하면 된다.</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gd">-FROM diamol/golang</span>
+<span class="gi">+FROM diamol/golang AS builder</span>
+
+<span class="w"> </span>WORKDIR web
+<span class="w"> </span>COPY main.go .
+
+<span class="w"> </span>RUN go build -o /web/server
+<span class="w"> </span>RUN chmod +x /web/server
+
+<span class="gi">+FROM diamol/base</span>
+
+<span class="w"> </span>CMD [&quot;/web/server&quot;]
+<span class="w"> </span>ENV USER=sixeyed
+<span class="w"> </span>EXPOSE 80
+
+<span class="gi">+WORKDIR web</span>
+<span class="gi">+COPY --from=builder /web .</span>
+COPY index.html .
+</code></pre></div>
+<p>이제 이미지 빌드 결과가 다음과 같이 16.9MB가 되었다:</p>
+<div class="highlight"><pre><span></span><code>REPOSITORY   TAG            IMAGE ID       CREATED              SIZE
+ch04-lab     choiwheatley   33a8bc68d237   About a minute ago   16.9MB
+</code></pre></div>
+<p><strong>3. 마지막으로 빌드 레이어의 수를 줄여보자.</strong></p>
+<p>굳이 builder 스테이지에서 WORKDIR을 정의할 필요는 없다.</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>FROM diamol/golang AS builder
+
+<span class="gd">-WORKDIR web</span>
+<span class="w"> </span>COPY main.go .
+
+<span class="gd">-RUN go build -o /web/server</span>
+<span class="gd">-RUN chmod +x /web/server</span>
+<span class="gi">+RUN go build -o /server</span>
+<span class="gi">+RUN chmod +x /server</span>
+
+<span class="w"> </span>FROM diamol/base
+
+<span class="gu">@@ -13,5 +12,5 @@ ENV USER=sixeyed</span>
+<span class="w"> </span>EXPOSE 80
+
+<span class="w"> </span>WORKDIR web
+<span class="gd">-COPY --from=builder /web .</span>
+<span class="gi">+COPY --from=builder /server .</span>
+<span class="w"> </span>COPY index.html .
+</code></pre></div>
+<p>이렇게 하면 빌드 레이어가 12스텝에서 11스텝으로 줄었다.</p>
 
 
 
