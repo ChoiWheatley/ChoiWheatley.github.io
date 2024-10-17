@@ -36578,6 +36578,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      멀티스테이지빌드는 각각의 스테이지가 별도의 이미지로 분리된다고?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51312,6 +51321,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      멀티스테이지빌드는 각각의 스테이지가 별도의 이미지로 분리된다고?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51388,6 +51406,22 @@
 <p>도커 컨테이너끼리 통신을 주고받기 위해선 가상 네트워크 (로컬 네트워크)를 구축하고 그 안에 컨테이너들을 할당해주어야 한다. 그러면 그 안에서 가상 IP주소를 발급받게 되고 EXPOSE한 포트번호를 통하여 네트워크 통신을 하게 된다.</p>
 <div class="highlight"><pre><span></span><code>docker container network &lt;docker-network-name&gt;
 </code></pre></div>
+<h2 id="_3">멀티스테이지빌드는 각각의 스테이지가 별도의 이미지로 분리된다고?<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<blockquote>
+<p>p.99 최종 애플리케이션 이미지에 Go 빌드 도구가 포함이 되지 않아 750MB나 달하는 용량을 줄일 수 있는 것이다.</p>
+</blockquote>
+<p>그 증거로 다음 명령어를 통해서 이미지별 정보를 출력해보면...</p>
+<div class="highlight"><pre><span></span><code>$ docker image ls -f reference=diamol/golang -f reference=image-gallery
+REPOSITORY      TAG       IMAGE ID       CREATED              SIZE
+image-gallery   latest    12b68e489c57   About a minute ago   17.1MB
+diamol/golang   latest    119cb20c3f56   4 years ago          803MB
+</code></pre></div>
+<p>go 프로젝트 배포를 위한 Dockerfile은 두 가지 스테이지로 구분되어있다.</p>
+<ol>
+<li>golang 빌드 ⇒ <code>FROM diamol/golang</code> | SIZE 803MB</li>
+<li>go 바이너리 실행 ⇒ <code>FROM diamol/base</code> | SIZE 17.1MB</li>
+</ol>
+<p>이렇게 하면 이미지를 배포할때 굳이 필요없는 빌드도구를 포함하지 않고 가벼운 상태로 레지스트리에 올리고 실행할때에도 용량을 적게 먹을 것 같다.</p>
 
 
 
