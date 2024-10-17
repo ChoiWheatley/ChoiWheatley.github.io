@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 4
 created: 2024-10-10T16:24:56
-updated: 2024-10-17T16:39:46
+updated: 2024-10-17T17:49:32
 ---
 
 ## 도커를 빌드 도구로 활용하기
@@ -101,3 +101,96 @@ go 프로젝트 배포를 위한 Dockerfile은 두 가지 스테이지로 구분
 2. go 바이너리 실행 ⇒ `FROM diamol/base` | SIZE 17.1MB
 
 이렇게 하면 이미지를 배포할때 굳이 필요없는 빌드도구를 포함하지 않고 가벼운 상태로 레지스트리에 올리고 실행할때에도 용량을 적게 먹을 것 같다.
+
+## 연습문제
+
+> [!note] 다음 도커파일을 빌드하면 이미지가 500MB가 된다.  도커파일을 수정하여 이미지 크기를 약 20MB 정도로 최적화하고 HTML 파일이 변경되어도 재수행하는 빌드 단계가 한단계가 되도록 하라.
+
+```Dockerfile
+FROM diamol/golang 
+
+WORKDIR web
+COPY index.html .
+COPY main.go .
+
+RUN go build -o /web/server
+RUN chmod +x /web/server
+
+CMD ["/web/server"]
+ENV USER=sixeyed
+EXPOSE 80
+```
+
+**1. HTML 파일이 변경되어도 재수행하는 빌드 단계가 한 단계가 되도록 하는 방법은 `COPY index.html .` 명령을 맨 뒤로 옮기면 된다.**
+
+```diff
+ FROM diamol/golang
+
+ WORKDIR web  
+-COPY index.html .  
+ COPY main.go .
+
+ RUN go build -o /web/server
+
+ CMD ["/web/server"]  
+ ENV USER=sixeyed  
++COPY index.html .^M  
+```
+
+**2. 이미지의 크기를 줄이기 위해서는 멀티 스테이지 빌드 전략을 취하면 된다.**
+
+```diff
+-FROM diamol/golang
++FROM diamol/golang AS builder
+
+ WORKDIR web
+ COPY main.go .
+
+ RUN go build -o /web/server
+ RUN chmod +x /web/server
+
++FROM diamol/base
+
+ CMD ["/web/server"]
+ ENV USER=sixeyed
+ EXPOSE 80
+ 
++WORKDIR web
++COPY --from=builder /web .
+COPY index.html .
+```
+
+ 이제 이미지 빌드 결과가 다음과 같이 16.9MB가 되었다:
+
+```
+REPOSITORY   TAG            IMAGE ID       CREATED              SIZE
+ch04-lab     choiwheatley   33a8bc68d237   About a minute ago   16.9MB
+```
+
+**3. 마지막으로 빌드 레이어의 수를 줄여보자.**
+
+굳이 builder 스테이지에서 WORKDIR을 정의할 필요는 없다.
+
+```diff
+ FROM diamol/golang AS builder
+ 
+-WORKDIR web
+ COPY main.go .
+
+-RUN go build -o /web/server
+-RUN chmod +x /web/server
++RUN go build -o /server
++RUN chmod +x /server
+
+ FROM diamol/base
+
+@@ -13,5 +12,5 @@ ENV USER=sixeyed
+ EXPOSE 80
+
+ WORKDIR web
+-COPY --from=builder /web .
++COPY --from=builder /server .
+ COPY index.html .
+```
+
+이렇게 하면 빌드 레이어가 12스텝에서 11스텝으로 줄었다.
