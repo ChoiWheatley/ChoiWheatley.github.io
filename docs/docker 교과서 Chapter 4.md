@@ -1,7 +1,7 @@
 ---
 aliases: 
 tags: 
-description:
+description: 도커는 멀티스테이지 빌드와 네트워크 기능을 활용해 효율적인 빌드 환경과 경량화된 배포 이미지를 제공한다.
 title: docker 교과서 Chapter 4
 created: 2024-10-10T16:24:56
 updated: 2024-10-17T17:49:32
