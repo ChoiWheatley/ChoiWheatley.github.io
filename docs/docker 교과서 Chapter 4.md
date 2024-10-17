@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 4
 created: 2024-10-10T16:24:56
-updated: 2024-10-17T15:26:20
+updated: 2024-10-17T16:39:46
 ---
 
 ## 도커를 빌드 도구로 활용하기
@@ -58,11 +58,29 @@ In summary, `CMD` is better suited for default commands that can be changed, whi
 
 ## 도커 가상 네트워크
 
+<https://docs.docker.com/engine/network/>
+
 도커 컨테이너끼리 통신을 주고받기 위해선 가상 네트워크 (로컬 네트워크)를 구축하고 그 안에 컨테이너들을 할당해주어야 한다. 그러면 그 안에서 가상 IP주소를 발급받게 되고 EXPOSE한 포트번호를 통하여 네트워크 통신을 하게 된다.
 
 ```
 docker container network <docker-network-name>
 ```
+
+> [!question] docker network 안에 정의된 컨테이너끼리 요청을 주고받는 챕터 4.4가 이해가 안된다. image-gallery도 컨테이너 안에서 80번 포트를 listen하고 access-log도 컨테이너 안에서 80번 포트를 listen한다. 단지 EXPOSE하는 포트가 다를 뿐이다. 
+
+⇒ 같은 네트워크일뿐 같은 컨테이너가 아니기 때문에 가능한 일이다.
+
+> [!question] image-gallery 프로젝트의 `main.go` 파일을 보면 POST 요청을 보내는 대상이 `ACCESS_API_URL`이다. 값이 `http://accesslog/access-log`로 되어있다.  엉뚱한 곳으로 POST를 보내고 있는거 아닌가?
+
+⇒ access-log 프로젝트를 실행할때 옵션을 다시 살펴보자. 
+
+```
+docker container run --name accesslog -d -p 801:80 --network nat access-log
+```
+
+`http://accesslog`는 같은 네트워크 nat 안에 정의된 호스트를 제일 먼저 찾게된다. 그래서 컨테이너 이름으로 정의된 `accesslog`를 찾게되어 localhost로 변환해준 뒤에 801번 포트로 POST 요청을 보내게 된 것이다.
+
+> containers can communicate with each other using container IP addresses or container names. [docker#user-defined-networks](https://docs.docker.com/engine/network/#user-defined-networks)
 
 ## 멀티스테이지빌드는 각각의 스테이지가 별도의 이미지로 분리된다고?
 
