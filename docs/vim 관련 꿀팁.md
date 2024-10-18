@@ -30,6 +30,7 @@ title: vim 관련 꿀팁
 
 - [[vim indentwise, motions based on indent depts or levels in normal, visual, and operator-pending modes]]
 - [[Easymotion Vim cheatsheat]]
+- [[vim Increasing or decreasing numbers]]
 
 <iframe src="http://www.fprintf.net/vimCheatSheet.html" allow="fullscreen" allowfullscreen="" style="height:100%;width:100%; aspect-ratio: 16 / 9; "></iframe>
 
