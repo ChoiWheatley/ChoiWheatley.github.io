@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 5
 created: 2024-10-18T20:16:01
-updated: 2024-10-18T23:39:42
+updated: 2024-10-19T00:51:22
 ---
 
 ## 도커 이미지 명명법
@@ -65,5 +65,48 @@ Major.Minor.Patch
 `LABEL` 을 사용하여 골든 이미지의 메타데이터를 정의하고 설정을 정의하는 단순한 이미지를 만들고 이것을 추후 기반 이미지로 사용하면 될 뿐이다.
 
 ```dockerfile
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
 
+LABEL framework="dotnet"
+LABEL version="3.0"
+LABEL description=".NET Core 3.0 Runtime"
+LABEL owner="golden-images@sixeyed.com"
+
+EXPOSE 80
+```
+
+## 연습 문제
+
+로컬에 배포한 도커 레지스트리에 여러 태그가 달린 이미지를 업로드하고 모든 태그가 푸시되었는지 확인하고 이미지를 삭제하고 삭제가 완료되었는지까지 확인하라. <https://distribution.github.io/distribution/spec/api/> 를 참고하여 REST API를 통해서만 로컬 도커 레지스트리에 HTTP 요청을 보내라.
+
+연습문제를 해결하기 위해 필요한 API들:
+
+- `GET /v2/_catalog`
+	- Retrieve a sorted, json list of repositories available in the registry.
+- `GET /v2/<name>/tags/list`
+	- Fetch the tags under the repository identified by `name`.
+- `GET /v2/<name>/manifests/<reference>`
+	- Fetch the manifest identified by `name` and `reference` where `reference` can be a tag or digest. A `HEAD` request can also be issued to this endpoint to obtain resource information without receiving all data.
+
+**일단 레지스트리에 모든 태그를 푸시하자**
+
+```
+```
+
+**푸시된 이미지 확인**
+
+```
+$ http localhost:5000/v2/_catalog
+HTTP/1.1 200 OK
+Content-Length: 32
+Content-Type: application/json; charset=utf-8
+Date: Fri, 18 Oct 2024 15:43:15 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+
+{
+    "repositories": [
+        "gallery/ui"
+    ]
+}
 ```
