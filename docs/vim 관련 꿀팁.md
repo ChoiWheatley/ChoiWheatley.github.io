@@ -3,7 +3,7 @@ description:
 aliases: 
 tags: 
 created: 2023-04-27T18:04:38
-updated: 2024-01-30T20:15:45
+updated: 2024-10-18T20:08:15
 title: vim 관련 꿀팁
 ---
 
@@ -20,6 +20,7 @@ title: vim 관련 꿀팁
 	- `i` 대신에 `a`를 넣으면 괄호까지 삭제 범위가 넓어짐.
 - `echo %@` : 현재 작성중인 파일의 상대경로를 출력 [참고](https://vim.fandom.com/wiki/Get_the_name_of_the_current_file)
 - `J` 현재 줄의 endline 기호를 제거하여 다음줄과 이어붙이는데 사용
+- `gU`, `gu`: UPPERCASE, lowercase
 
 # plugins
 
