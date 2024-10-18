@@ -51242,8 +51242,48 @@
   <h1>docker 교과서</h1>
 
 <p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%202/">docker 교과서 Chapter 2</a></p>
+<ul>
+<li><strong>Docker Virtualization</strong>: Provides OS-level virtualization for running applications on a virtualized Linux kernel.</li>
+<li><strong>Docker Container</strong>: Isolates applications with minimal resources like filesystem, IP address, and hostname.</li>
+<li><strong>Docker Engine</strong>: Manages containers via Docker API, with external command access through REST API.</li>
+<li><strong>Docker CLI</strong>: A client that interacts with Docker Engine using Docker API.</li>
+<li><strong><code>docker container run</code></strong>: Runs a container from an image, downloads it if not found locally.</li>
+<li><strong><code>--interactive/--tty</code> (<code>-i/-t</code>)</strong>: Opens an interactive terminal session in the container.</li>
+<li><strong><code>--detach</code> (<code>-d</code>)</strong>: Runs the container in the background.</li>
+<li><strong><code>--publish</code></strong>: Maps host port to container port (e.g., <code>8080:80</code>).</li>
+<li><strong><code>docker container ls</code></strong>: Lists running containers; <code>-a</code> lists all, including stopped ones.</li>
+<li><strong><code>docker container top</code></strong>: Displays active processes in a container.</li>
+<li><strong><code>docker container logs</code></strong>: Shows container's output logs.</li>
+<li><strong><code>docker container rm</code></strong>: Removes containers; <code>-f</code> force-removes all.</li>
+<li><strong><code>docker container rmi</code></strong>: Deletes images, independent of container removal.</li>
+<li><strong><code>docker container exec</code></strong>: Executes commands in a running container, with options like <code>-it</code> for shell access.</li>
+<li><strong>Docker API</strong>: Interfaces with Docker Engine via REST API; CLI is one client, enabling remote management and integration with GUI tools.</li>
+</ul>
 <p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%203/">docker 교과서 Chapter 3</a></p>
+<ul>
+<li><strong>Docker Hub Images</strong>: Use pre-shared images from Docker Hub for easier setup.</li>
+<li><strong>Writing Dockerfile</strong>: Dockerfile scripts define instructions to build Docker images.</li>
+<li><strong>Building Container Images</strong>: Compile the image using Dockerfile commands.</li>
+<li><strong>Understanding Docker Image Layers</strong>: Each Dockerfile command creates a new image layer.</li>
+<li><strong>Optimizing Dockerfile with Image Layer Cache</strong>: Utilize cached layers to speed up builds by rearranging frequently changed layers last.</li>
+<li><strong>Docker Run <code>-e/--env</code> Flag</strong>: Inject environment variables at container startup.</li>
+<li><strong>Why Dockerfile?</strong>: Script to package applications into Docker images.</li>
+<li><strong>Docker Image History</strong>: Inspect image layers using <code>docker image history</code>.</li>
+<li><strong>Docker Image Layer Sharing</strong>: Reuse base layers across images to save space.</li>
+<li><strong>Docker Layer Caching</strong>: Optimize builds by placing static instructions early in Dockerfile and variable ones later.</li>
+<li><strong>Manual Container Creation</strong>: Use <code>docker container commit</code> to manually create images from container changes.</li>
+</ul>
 <p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%204/">docker 교과서 Chapter 4</a></p>
+<ul>
+<li><strong>Docker as Build Tool</strong>: Standardizes build environments by defining toolchains (e.g., compilers, linkers) in Dockerfiles.</li>
+<li><strong>Staging in Docker</strong>: Manages stages (build, test) with separate base images and uses <code>AS</code> keyword for stage aliasing.</li>
+<li><strong>RUN Instruction</strong>: Executes commands inside the container using shell scripts.</li>
+<li><strong>CMD vs ENTRYPOINT</strong>: CMD for overridable commands, ENTRYPOINT for fixed commands that always run.</li>
+<li><strong>Docker Virtual Network</strong>: Enables container communication via virtual networks using IPs or container names.</li>
+<li><strong>Multi-Stage Build</strong>: Reduces image size by separating build tools and runtime; excludes unnecessary tools in final image.</li>
+<li><strong>Optimized Dockerfile</strong>: Moves frequently changing files (e.g., <code>index.html</code>) to later stages and uses multi-stage builds to minimize image size.</li>
+<li><strong>CI Integration</strong>: Automates building and deploying Docker images with source code using CI pipelines.</li>
+</ul>
 
 
 
