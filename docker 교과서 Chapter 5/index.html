@@ -36689,6 +36689,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      연습 문제
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51466,6 +51475,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      연습 문제
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51514,7 +51532,49 @@
 <h2 id="_5">골든 이미지와 기반 이미지<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <p><strong>기반 이미지</strong>는 검증된 퍼블리셔 (마소, 구글 등)들이 만들어낸 SDK나 런타임 등을 의미한다. 많은 경우 이 기반 이미지로부터 빌드를 수행하거나 이미지를 실행시키는데 사용할 것이다. 그렇지만 얼마 지나지 않아 팀 자체에서 기반 이미지 자체를 관리하고 싶어지는 순간이 온다고 한다. 팀만의 특정한 규칙 (환경변수라던가 인증서 등등)을 기반 이미지에 추가하고 그것을 <strong>골든 이미지</strong>라고 부른다.</p>
 <p><code>LABEL</code> 을 사용하여 골든 이미지의 메타데이터를 정의하고 설정을 정의하는 단순한 이미지를 만들고 이것을 추후 기반 이미지로 사용하면 될 뿐이다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">mcr.microsoft.com/dotnet/core/aspnet:3.0</span>
+
+<span class="k">LABEL</span><span class="w"> </span><span class="nv">framework</span><span class="o">=</span><span class="s2">&quot;dotnet&quot;</span>
+<span class="k">LABEL</span><span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="s2">&quot;3.0&quot;</span>
+<span class="k">LABEL</span><span class="w"> </span><span class="nv">description</span><span class="o">=</span><span class="s2">&quot;.NET Core 3.0 Runtime&quot;</span>
+<span class="k">LABEL</span><span class="w"> </span><span class="nv">owner</span><span class="o">=</span><span class="s2">&quot;golden-images@sixeyed.com&quot;</span>
+
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">80</span>
+</code></pre></div>
+<h2 id="_6">연습 문제<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
+<p>로컬에 배포한 도커 레지스트리에 여러 태그가 달린 이미지를 업로드하고 모든 태그가 푸시되었는지 확인하고 이미지를 삭제하고 삭제가 완료되었는지까지 확인하라. <a href="https://distribution.github.io/distribution/spec/api/">https://distribution.github.io/distribution/spec/api/</a> 를 참고하여 REST API를 통해서만 로컬 도커 레지스트리에 HTTP 요청을 보내라.</p>
+<p>연습문제를 해결하기 위해 필요한 API들:</p>
+<ul>
+<li><code>GET /v2/_catalog</code><ul>
+<li>Retrieve a sorted, json list of repositories available in the registry.</li>
+</ul>
+</li>
+<li><code>GET /v2/&lt;name&gt;/tags/list</code><ul>
+<li>Fetch the tags under the repository identified by <code>name</code>.</li>
+</ul>
+</li>
+<li><code>GET /v2/&lt;name&gt;/manifests/&lt;reference&gt;</code><ul>
+<li>Fetch the manifest identified by <code>name</code> and <code>reference</code> where <code>reference</code> can be a tag or digest. A <code>HEAD</code> request can also be issued to this endpoint to obtain resource information without receiving all data.</li>
+</ul>
+</li>
+</ul>
+<p><strong>일단 레지스트리에 모든 태그를 푸시하자</strong></p>
 <div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>푸시된 이미지 확인</strong></p>
+<div class="highlight"><pre><span></span><code>$ http localhost:5000/v2/_catalog
+HTTP/1.1 200 OK
+Content-Length: 32
+Content-Type: application/json; charset=utf-8
+Date: Fri, 18 Oct 2024 15:43:15 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+
+{
+    &quot;repositories&quot;: [
+        &quot;gallery/ui&quot;
+    ]
+}
 </code></pre></div>
 
 
