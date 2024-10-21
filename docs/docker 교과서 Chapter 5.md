@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 5
 created: 2024-10-18T20:16:01
-updated: 2024-10-19T00:51:22
+updated: 2024-10-21T17:12:00
 ---
 
 ## 도커 이미지 명명법
@@ -91,12 +91,14 @@ EXPOSE 80
 **일단 레지스트리에 모든 태그를 푸시하자**
 
 ```
+docker image push registry.local:5000/gallery/ui
 ```
 
 **푸시된 이미지 확인**
 
 ```
 $ http localhost:5000/v2/_catalog
+
 HTTP/1.1 200 OK
 Content-Length: 32
 Content-Type: application/json; charset=utf-8
@@ -108,5 +110,75 @@ X-Content-Type-Options: nosniff
     "repositories": [
         "gallery/ui"
     ]
+}
+```
+
+**대상 리포지토리 (`gallery/ui`)의 태그 목록을 확인하자**
+
+```
+$ http GET localhost:5000/v2/gallery/ui/tags/list
+
+HTTP/1.1 200 OK
+Content-Length: 40
+Content-Type: application/json; charset=utf-8
+Date: Mon, 21 Oct 2024 08:07:09 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+
+{
+    "name": "gallery/ui",
+    "tags": [
+        "latest"
+    ]
+}
+
+
+```
+
+**latest 태그가 달린 이미지 매니페스트를 확인하자. HEAD 요청에서 꼭 필요한 요청 헤더가 있다!**
+
+[distribution.github.io#Pulling an Image Manifest](https://distribution.github.io/distribution/spec/api/#pulling-an-image-manifest)
+
+```
+$ http HEAD localhost:5000/v2/gallery/ui/manifests/latest \
+    Accept:'application/vnd.docker.distribution.manifest.v2+json'
+
+HTTP/1.1 200 OK
+Content-Length: 1362
+Content-Type: application/vnd.docker.distribution.manifest.v2+json
+Date: Mon, 21 Oct 2024 08:07:39 GMT
+Docker-Content-Digest: sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Docker-Distribution-Api-Version: registry/2.0
+Etag: "sha256:f7564894c82a04c8961245641e98a31f2990f2efc8e4b83f2a1b5a22d29007ec"
+X-Content-Type-Options: nosniff
+```
+
+**API를 통하여 이미지를 삭제하자. 이때 매니페스트 다이제스트를 활용할 것.**
+
+```
+$ http DELETE localhost:5000/v2/gallery/ui/manifests/sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                                    
+
+HTTP/1.1 202 Accepted
+Content-Length: 0
+Date: Mon, 21 Oct 2024 08:08:55 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+```
+
+**다시 태그 목록을 확인해보면...**
+
+```
+$ http GET localhost:5000/v2/gallery/ui/tags/list
+
+HTTP/1.1 200 OK
+Content-Length: 34
+Content-Type: application/json; charset=utf-8
+Date: Mon, 21 Oct 2024 08:11:49 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+
+{
+    "name": "gallery/ui",
+    "tags": null
 }
 ```
