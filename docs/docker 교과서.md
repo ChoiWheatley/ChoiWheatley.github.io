@@ -5,7 +5,7 @@ tags:
 description: 
 title: docker 교과서
 created: 2024-08-31T21:53:58
-updated: 2024-10-18T20:15:27
+updated: 2024-10-21T17:28:54
 ---
 
 ## 1부 도커 컨테이너와 이미지 이해하기
@@ -54,6 +54,15 @@ updated: 2024-10-18T20:15:27
 - **CI Integration**: Automates building and deploying Docker images with source code using CI pipelines.
 
 [[docker 교과서 Chapter 5]]  도커 허브 등 레지스트리에 이미지 공유하기  
+
+- **Docker Image Naming**: Docker images are identified as `registry/group/image:tag` (e.g., `docker.io/diamol/base:latest`).
+- **Docker Tag**: Use `docker tag` to assign names and tags to images, allowing multiple names for the same image ID.
+- **Docker Image Push**: Use `docker image push` to upload images to a registry (e.g., Docker Hub), with login via `docker login`.
+- **Docker Registry as Image**: A Docker registry can also be run as a container and used for local image storage and backups.
+- **Tag Naming Convention**: Follows semantic versioning (`Major.Minor.Patch`), where specific or broader tags can be used (e.g., `hello:1`, `hello:1.2`, `hello:latest`).
+- **Golden Image**: A customized base image with team-specific configurations, often created using `LABEL` for metadata.
+- **Docker API for Registry**: Manage and verify images using the Docker registry API with requests like `GET /v2/_catalog`, `GET /v2/<name>/tags/list`, and `DELETE /v2/<name>/manifests/<digest>`.
+
 [[docker 교과서 Chapter 6]]  도커 볼륨을 이용한 퍼시스턴트 스토리지
 
 ## 2부 컨테이너로 분산 애플리케이션 실행하기
