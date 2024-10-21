@@ -51509,8 +51509,17 @@
 <li><strong>Optimized Dockerfile</strong>: Moves frequently changing files (e.g., <code>index.html</code>) to later stages and uses multi-stage builds to minimize image size.</li>
 <li><strong>CI Integration</strong>: Automates building and deploying Docker images with source code using CI pipelines.</li>
 </ul>
-<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%205/">docker 교과서 Chapter 5</a>  도커 허브 등 레지스트리에 이미지 공유하기<br />
-[[docker 교과서 Chapter 6]]  도커 볼륨을 이용한 퍼시스턴트 스토리지</p>
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%205/">docker 교과서 Chapter 5</a>  도커 허브 등 레지스트리에 이미지 공유하기  </p>
+<ul>
+<li><strong>Docker Image Naming</strong>: Docker images are identified as <code>registry/group/image:tag</code> (e.g., <code>docker.io/diamol/base:latest</code>).</li>
+<li><strong>Docker Tag</strong>: Use <code>docker tag</code> to assign names and tags to images, allowing multiple names for the same image ID.</li>
+<li><strong>Docker Image Push</strong>: Use <code>docker image push</code> to upload images to a registry (e.g., Docker Hub), with login via <code>docker login</code>.</li>
+<li><strong>Docker Registry as Image</strong>: A Docker registry can also be run as a container and used for local image storage and backups.</li>
+<li><strong>Tag Naming Convention</strong>: Follows semantic versioning (<code>Major.Minor.Patch</code>), where specific or broader tags can be used (e.g., <code>hello:1</code>, <code>hello:1.2</code>, <code>hello:latest</code>).</li>
+<li><strong>Golden Image</strong>: A customized base image with team-specific configurations, often created using <code>LABEL</code> for metadata.</li>
+<li><strong>Docker API for Registry</strong>: Manage and verify images using the Docker registry API with requests like <code>GET /v2/_catalog</code>, <code>GET /v2/&lt;name&gt;/tags/list</code>, and <code>DELETE /v2/&lt;name&gt;/manifests/&lt;digest&gt;</code>.</li>
+</ul>
+<p>[[docker 교과서 Chapter 6]]  도커 볼륨을 이용한 퍼시스턴트 스토리지</p>
 <h2 id="2">2부 컨테이너로 분산 애플리케이션 실행하기<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <p>[[docker 교과서 Chapter 7]]  도커 컴포즈로 분산 애플리케이션 실행하기<br />
 [[docker 교과서 Chapter 8]]  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기<br />
