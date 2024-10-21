@@ -51559,10 +51559,11 @@
 </li>
 </ul>
 <p><strong>일단 레지스트리에 모든 태그를 푸시하자</strong></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code>docker image push registry.local:5000/gallery/ui
 </code></pre></div>
 <p><strong>푸시된 이미지 확인</strong></p>
 <div class="highlight"><pre><span></span><code>$ http localhost:5000/v2/_catalog
+
 HTTP/1.1 200 OK
 Content-Length: 32
 Content-Type: application/json; charset=utf-8
@@ -51574,6 +51575,61 @@ X-Content-Type-Options: nosniff
     &quot;repositories&quot;: [
         &quot;gallery/ui&quot;
     ]
+}
+</code></pre></div>
+<p><strong>대상 리포지토리 (<code>gallery/ui</code>)의 태그 목록을 확인하자</strong></p>
+<div class="highlight"><pre><span></span><code>$ http GET localhost:5000/v2/gallery/ui/tags/list
+
+HTTP/1.1 200 OK
+Content-Length: 40
+Content-Type: application/json; charset=utf-8
+Date: Mon, 21 Oct 2024 08:07:09 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+
+{
+    &quot;name&quot;: &quot;gallery/ui&quot;,
+    &quot;tags&quot;: [
+        &quot;latest&quot;
+    ]
+}
+</code></pre></div>
+<p><strong>latest 태그가 달린 이미지 매니페스트를 확인하자. HEAD 요청에서 꼭 필요한 요청 헤더가 있다!</strong></p>
+<p><a href="https://distribution.github.io/distribution/spec/api/#pulling-an-image-manifest">distribution.github.io#Pulling an Image Manifest</a></p>
+<div class="highlight"><pre><span></span><code>$ http HEAD localhost:5000/v2/gallery/ui/manifests/latest \
+    Accept:&#39;application/vnd.docker.distribution.manifest.v2+json&#39;
+
+HTTP/1.1 200 OK
+Content-Length: 1362
+Content-Type: application/vnd.docker.distribution.manifest.v2+json
+Date: Mon, 21 Oct 2024 08:07:39 GMT
+Docker-Content-Digest: sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Docker-Distribution-Api-Version: registry/2.0
+Etag: &quot;sha256:f7564894c82a04c8961245641e98a31f2990f2efc8e4b83f2a1b5a22d29007ec&quot;
+X-Content-Type-Options: nosniff
+</code></pre></div>
+<p><strong>API를 통하여 이미지를 삭제하자. 이때 매니페스트 다이제스트를 활용할 것.</strong></p>
+<div class="highlight"><pre><span></span><code>$ http DELETE localhost:5000/v2/gallery/ui/manifests/sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                                    
+
+HTTP/1.1 202 Accepted
+Content-Length: 0
+Date: Mon, 21 Oct 2024 08:08:55 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+</code></pre></div>
+<p><strong>다시 태그 목록을 확인해보면...</strong></p>
+<div class="highlight"><pre><span></span><code>$ http GET localhost:5000/v2/gallery/ui/tags/list
+
+HTTP/1.1 200 OK
+Content-Length: 34
+Content-Type: application/json; charset=utf-8
+Date: Mon, 21 Oct 2024 08:11:49 GMT
+Docker-Distribution-Api-Version: registry/2.0
+X-Content-Type-Options: nosniff
+
+{
+    &quot;name&quot;: &quot;gallery/ui&quot;,
+    &quot;tags&quot;: null
 }
 </code></pre></div>
 
