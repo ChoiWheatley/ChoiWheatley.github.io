@@ -5,7 +5,7 @@ tags:
 description: 
 title: docker 교과서
 created: 2024-08-31T21:53:58
-updated: 2024-10-22T18:00:24
+updated: 2024-10-23T00:57:00
 ---
 
 ## 1부 도커 컨테이너와 이미지 이해하기
@@ -87,6 +87,21 @@ updated: 2024-10-22T18:00:24
 ## 2부 컨테이너로 분산 애플리케이션 실행하기
 
 [[docker 교과서 Chapter 7]]  도커 컴포즈로 분산 애플리케이션 실행하기  
+
+- **Docker Compose**: A tool that simplifies managing multiple containers on a single host by defining services and networks in a declarative `docker-compose.yml` file.
+- **`version`**: Specifies the version of Docker Compose being used.
+- **`services`**: Defines containers (e.g., `accesslog`, `iotd`, `image-gallery`), each of which can have attributes like images, ports, networks, etc.
+- **`networks`**: Defines the network configuration for containers, with options like `external` to use an existing network instead of creating a new one.
+- **`depends_on`**: Specifies the order of container startup, ensuring dependencies start before the current service.
+- **`ports`**: Maps ports between the host and the container (e.g., `8010:80`).
+- **`volumes` vs `bind mount`**: `volumes` are Docker-managed storage, while `bind mount` links host filesystem directories directly to containers.
+- **`restart` Policy**: Ensures containers restart after failures or host reboots (e.g., `always`, `unless-stopped`).
+- **`scale`**: Scales out identical containers to distribute load, leveraging Docker's DNS to balance requests.
+- **Limitations**: Docker Compose is limited to single-host environments, and for distributed systems, tools like Docker Swarm or Kubernetes are required.
+- **Orchestration Alternatives**: Docker Swarm or Kubernetes are used when managing multiple hosts or a more complex service architecture.
+- **Secrets Management**: Store sensitive data like passwords or API keys using `secrets` in `docker-compose.yml`, linking them securely to services.
+- **Bind Mount vs Volume**: Bind mounts are useful for local development, while Docker volumes are preferred for production due to their independence from the host filesystem.
+
 [[docker 교과서 Chapter 8]]  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기  
 [[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기  
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성  
