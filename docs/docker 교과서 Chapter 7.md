@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 7
 created: 2024-10-22T18:09:01
-updated: 2024-10-22T19:39:38
+updated: 2024-10-22T23:01:32
 ---
 docker-compose는 여러 컨테이너를 하나의 호스트에서 관리할 수 있게 도와준다. docker-cli만 가지고선 이미지를 빌드하는 방법에 대한 별도의 문서를 마련해야 했지만, docker-compose가 선언형으로 컨테이너들을 실행하는데 필요한 단계와 속성을 정의하여 편해졌다.
 
@@ -47,6 +47,8 @@ networks:
 - `services`: container와 같은 개념. 위의 예제는 하나의 컨테이너만을 정의하는 예제이다.
 - `networks`: 도커 네트워크를 정의. `external`을 사용하면 자동생성을 방지한다.
 - `depends_on`: 컨테이너 실행 순서를 정의한다. 즉, 아래에 나열된 원소들이 먼저 실행이 된 다음에 자신의 서비스가 실행이 된다.
+
+더 많은 옵션을 원한다면 <https://docs.docker.com/reference/compose-file/services/> 에서 확인 가능하다.
 
 ## docker-compose CLI cheatsheet
 
