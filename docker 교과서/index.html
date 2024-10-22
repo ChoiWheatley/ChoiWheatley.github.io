@@ -51664,8 +51664,23 @@
 </li>
 </ul>
 <h2 id="2">2부 컨테이너로 분산 애플리케이션 실행하기<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%207/">docker 교과서 Chapter 7</a>  도커 컴포즈로 분산 애플리케이션 실행하기<br />
-[[docker 교과서 Chapter 8]]  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기<br />
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%207/">docker 교과서 Chapter 7</a>  도커 컴포즈로 분산 애플리케이션 실행하기  </p>
+<ul>
+<li><strong>Docker Compose</strong>: A tool that simplifies managing multiple containers on a single host by defining services and networks in a declarative <code>docker-compose.yml</code> file.</li>
+<li><strong><code>version</code></strong>: Specifies the version of Docker Compose being used.</li>
+<li><strong><code>services</code></strong>: Defines containers (e.g., <code>accesslog</code>, <code>iotd</code>, <code>image-gallery</code>), each of which can have attributes like images, ports, networks, etc.</li>
+<li><strong><code>networks</code></strong>: Defines the network configuration for containers, with options like <code>external</code> to use an existing network instead of creating a new one.</li>
+<li><strong><code>depends_on</code></strong>: Specifies the order of container startup, ensuring dependencies start before the current service.</li>
+<li><strong><code>ports</code></strong>: Maps ports between the host and the container (e.g., <code>8010:80</code>).</li>
+<li><strong><code>volumes</code> vs <code>bind mount</code></strong>: <code>volumes</code> are Docker-managed storage, while <code>bind mount</code> links host filesystem directories directly to containers.</li>
+<li><strong><code>restart</code> Policy</strong>: Ensures containers restart after failures or host reboots (e.g., <code>always</code>, <code>unless-stopped</code>).</li>
+<li><strong><code>scale</code></strong>: Scales out identical containers to distribute load, leveraging Docker's DNS to balance requests.</li>
+<li><strong>Limitations</strong>: Docker Compose is limited to single-host environments, and for distributed systems, tools like Docker Swarm or Kubernetes are required.</li>
+<li><strong>Orchestration Alternatives</strong>: Docker Swarm or Kubernetes are used when managing multiple hosts or a more complex service architecture.</li>
+<li><strong>Secrets Management</strong>: Store sensitive data like passwords or API keys using <code>secrets</code> in <code>docker-compose.yml</code>, linking them securely to services.</li>
+<li><strong>Bind Mount vs Volume</strong>: Bind mounts are useful for local development, while Docker volumes are preferred for production due to their independence from the host filesystem.</li>
+</ul>
+<p>[[docker 교과서 Chapter 8]]  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기<br />
 [[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기<br />
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성<br />
 [[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트</p>
