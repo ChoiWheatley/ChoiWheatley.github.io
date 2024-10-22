@@ -5,7 +5,7 @@ tags:
 description: 
 title: docker 교과서
 created: 2024-08-31T21:53:58
-updated: 2024-10-21T17:28:54
+updated: 2024-10-22T18:00:24
 ---
 
 ## 1부 도커 컨테이너와 이미지 이해하기
@@ -64,6 +64,25 @@ updated: 2024-10-21T17:28:54
 - **Docker API for Registry**: Manage and verify images using the Docker registry API with requests like `GET /v2/_catalog`, `GET /v2/<name>/tags/list`, and `DELETE /v2/<name>/manifests/<digest>`.
 
 [[docker 교과서 Chapter 6]]  도커 볼륨을 이용한 퍼시스턴트 스토리지
+
+- **COW Mechanism**: Containers share read-only image layers, and changes are written to a unique writable layer (not shared between containers).
+- **Data Persistence**: Container deletion removes the writable layer; Docker volumes or mounts provide persistent storage.
+
+- **Docker Volume**: A Docker-managed storage solution that allows containers to share data, independent of the host OS. Volumes are consistent across environments.
+    - **Creation**: Use `docker volume create` to create a volume, and `--volume` or `--mount` to attach it to a container.
+    - **VOLUME vs --volume**: Dockerfile `VOLUME` defines the container’s storage location; `--volume` specifies both the source and target, allowing for more control.
+
+- **Docker Bind Mount**: Allows direct mounting of host filesystem directories or files into a container without needing to create a Docker volume.
+    - **Usage**: Bind mount with `--volume` or `--mount` options. 
+    - **File Access**: Default permissions are read-only for security; modify with the `USER` command in Dockerfile to manage access.
+    - **Host Dependence**: Bind mounts rely on the host’s file system, unlike volumes, which Docker manages independently.
+    - **Overwriting Paths**: Mounting into an existing directory replaces the container's files at that path with the host's files.
+
+- **Volume vs Bind Mount**: 
+    - Volumes are managed by Docker and portable across environments.
+    - Bind mounts rely on host-specific directories, making them less portable but providing direct access to host files.
+
+- **Linux vs Windows**: Linux allows for mounting both directories and single files, while Windows does not support single-file bind mounts.
 
 ## 2부 컨테이너로 분산 애플리케이션 실행하기
 
