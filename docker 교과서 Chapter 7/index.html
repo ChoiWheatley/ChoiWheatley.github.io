@@ -36753,6 +36753,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      연습문제
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51523,6 +51532,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      연습문제
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -51594,6 +51612,65 @@ Address 3: 172.18.0.5 image-of-the-day-iotd-1.nat
 <h2 id="docker-compose">docker-compose의 한계<a class="headerlink" href="#docker-compose" title="Permanent link">#</a></h2>
 <p>단일 서버에서의 컨테이너들을 관리하기 때문에 분산 서비스 아키텍처를 계획중이라면 도커 스웜이나 쿠버네티스와 같은 플랫폼을 사용해야 한다. 하지만 배포환경이 그렇게 크지 않거나 CI, 테스팅을 위한 간소한 환경을 구축하고자 한다면 docker-compose는 좋은 선택이다.</p>
 <p><a href="../docker-compose%EC%9D%98%20%ED%95%9C%EA%B3%84%2C%20%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98%EC%9D%98%20%EB%93%B1%EC%9E%A5/">docker-compose의 한계, 오케스트레이션의 등장</a></p>
+<h2 id="_1">연습문제<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<blockquote>
+<p><code>diamol/ch06-todo-list</code>를 기반으로 하는 도커 컴포즈 스크립트를 작성하시오. 이때 아래의 조건을 포함해야 한다:</p>
+</blockquote>
+<ol>
+<li>호스트 컴퓨터가 재부팅 되거나 도커 엔진이 재시작되면 애플리케이션 컨테이너도 재시작 되어야 한다.</li>
+<li>데이터베이스 컨테이너는 바인드 마운트에 파일을 저장하여 영속성을 보장하라.</li>
+<li>테스트를 위해 웹 애플리케이션은 80번 포트를 주시하도록 하라.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>version: &quot;2.7&quot;
+
+services:
+
+  todo-db:
+    image: diamol/postgres:11.5
+    ports:
+      - &quot;5433:5432&quot;
+    networks:
+      - nat
+    environment:
+      - PGDATA=/var/lib/postgresql/data
+    # 바인드 마운트에 파일을 저장해 영속성 보장
+    volumes: 
+      - type: bind
+        # source와 target이랑 계속 혼동이 와...
+        source: /data/postgres # ⇒ 호스트 파일시스템
+        target: /var/lib/postgresql/data # ⇒ 컨테이너 경로, environment.PGDATA와 동일한 값을 가져야 함.
+        bind:
+          create_host_path: true # volumes.source 경로에 디렉터리가 없으면 자동으로 생성
+    restart: always # 또는 unless-stopped
+
+  todo-app:
+    image: diamol/ch06-todo-list
+    ports:
+      - &quot;80:80&quot;
+    environment:
+      - Database:Provider=Postgres
+    depends_on:
+      - todo-db
+    networks:
+      - nat
+    secrets:
+      - source: postgres-connection
+        target: /app/config/secrets.json
+    restart: always # 또는 unless-stopped
+
+
+networks:
+  nat:
+    driver: bridge
+    external: true
+
+secrets:
+  postgres-connection:
+    file: ./config/secrets.json
+</code></pre></div>
+<p><a href="https://github.com/xo/usql">usql</a>로 <code>postgres://postgres:postgres@localhost:5433/todo</code>에 접속한 뒤 테이블 SELECT를 했더니 데이터가 로컬 파일 시스템에 저장되는 것을 볼 수 있다!</p>
+<p><a class="glightbox" href="../assets/Pasted%20image%2020241023003452.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pasted image 20241023003452.png" src="../assets/Pasted%20image%2020241023003452.png" /></a></p>
+<p>2번 볼륨은 굳이 바인드 할 필요 없이 도커 볼륨을 써도 될 것 같은데</p>
 
 
 
