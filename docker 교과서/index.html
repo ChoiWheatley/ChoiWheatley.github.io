@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://choiwheatley.github.io/docker%20%EA%B5%90%EA%B3%BC%EC%84%9C/">
       
       
-        <link rel="prev" href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%206/">
+        <link rel="prev" href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%207/">
       
       
         <link rel="next" href="../docker%20%F0%9F%90%B3/">
@@ -11162,6 +11162,23 @@
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%207/" class="md-tabs__link">
+        
+  
+    
+  
+  docker 교과서 Chapter 7
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
     
   
   
@@ -11206,6 +11223,23 @@
     
   
   docker-compose 명령어 모음
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docker-compose%EC%9D%98%20%ED%95%9C%EA%B3%84%2C%20%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98%EC%9D%98%20%EB%93%B1%EC%9E%A5/" class="md-tabs__link">
+        
+  
+    
+  
+  docker-compose의 한계, 오케스트레이션의 등장
 
       </a>
     </li>
@@ -36657,6 +36691,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%207/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker 교과서 Chapter 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -36777,6 +36831,26 @@
   
   <span class="md-ellipsis">
     docker-compose 명령어 모음
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-compose%EC%9D%98%20%ED%95%9C%EA%B3%84%2C%20%EC%98%A4%EC%BC%80%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%85%98%EC%9D%98%20%EB%93%B1%EC%9E%A5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    docker-compose의 한계, 오케스트레이션의 등장
   </span>
   
 
@@ -51557,8 +51631,40 @@
 <li><strong>Docker API for Registry</strong>: Manage and verify images using the Docker registry API with requests like <code>GET /v2/_catalog</code>, <code>GET /v2/&lt;name&gt;/tags/list</code>, and <code>DELETE /v2/&lt;name&gt;/manifests/&lt;digest&gt;</code>.</li>
 </ul>
 <p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%206/">docker 교과서 Chapter 6</a>  도커 볼륨을 이용한 퍼시스턴트 스토리지</p>
+<ul>
+<li><strong>COW Mechanism</strong>: Containers share read-only image layers, and changes are written to a unique writable layer (not shared between containers).</li>
+<li>
+<p><strong>Data Persistence</strong>: Container deletion removes the writable layer; Docker volumes or mounts provide persistent storage.</p>
+</li>
+<li>
+<p><strong>Docker Volume</strong>: A Docker-managed storage solution that allows containers to share data, independent of the host OS. Volumes are consistent across environments.</p>
+<ul>
+<li><strong>Creation</strong>: Use <code>docker volume create</code> to create a volume, and <code>--volume</code> or <code>--mount</code> to attach it to a container.</li>
+<li><strong>VOLUME vs --volume</strong>: Dockerfile <code>VOLUME</code> defines the container’s storage location; <code>--volume</code> specifies both the source and target, allowing for more control.</li>
+</ul>
+</li>
+<li>
+<p><strong>Docker Bind Mount</strong>: Allows direct mounting of host filesystem directories or files into a container without needing to create a Docker volume.</p>
+<ul>
+<li><strong>Usage</strong>: Bind mount with <code>--volume</code> or <code>--mount</code> options. </li>
+<li><strong>File Access</strong>: Default permissions are read-only for security; modify with the <code>USER</code> command in Dockerfile to manage access.</li>
+<li><strong>Host Dependence</strong>: Bind mounts rely on the host’s file system, unlike volumes, which Docker manages independently.</li>
+<li><strong>Overwriting Paths</strong>: Mounting into an existing directory replaces the container's files at that path with the host's files.</li>
+</ul>
+</li>
+<li>
+<p><strong>Volume vs Bind Mount</strong>: </p>
+<ul>
+<li>Volumes are managed by Docker and portable across environments.</li>
+<li>Bind mounts rely on host-specific directories, making them less portable but providing direct access to host files.</li>
+</ul>
+</li>
+<li>
+<p><strong>Linux vs Windows</strong>: Linux allows for mounting both directories and single files, while Windows does not support single-file bind mounts.</p>
+</li>
+</ul>
 <h2 id="2">2부 컨테이너로 분산 애플리케이션 실행하기<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<p>[[docker 교과서 Chapter 7]]  도커 컴포즈로 분산 애플리케이션 실행하기<br />
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%207/">docker 교과서 Chapter 7</a>  도커 컴포즈로 분산 애플리케이션 실행하기<br />
 [[docker 교과서 Chapter 8]]  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기<br />
 [[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기<br />
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성<br />
