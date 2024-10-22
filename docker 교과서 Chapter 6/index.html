@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#docker-volume" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -36642,6 +36647,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    docker 교과서 Chapter 6
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -36651,6 +36667,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-bind-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker bind mount
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -51374,6 +51425,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-bind-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker bind mount
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -51389,7 +51466,65 @@
 
   <h1>docker 교과서 Chapter 6</h1>
 
+<p><strong>참고자료</strong>
+- <a href="https://docs.docker.com/engine/storage/">https://docs.docker.com/engine/storage/</a>
+- <a href="https://docs.docker.com/engine/storage/volumes/">https://docs.docker.com/engine/storage/volumes/</a>
+- <a href="https://docs.docker.com/engine/storage/bind-mounts/">https://docs.docker.com/engine/storage/bind-mounts/</a>  </p>
+<p>모든 컨테이너는 읽기 전용 이미지 레이어를 공유한다. 쓰기 행위가 컨테이너 안에서 일어나면 COW 메커니즘에 의해 기록 가능 레이어로 파일을 복사해 쓰기를 수행하며, 이는 같은 이미지의 다른 컨테이너와 공유되지 않는다.</p>
+<p>컨테이너가 삭제되면 컨테이너 내 쓰기 레이어는 소실된다❗️⇒ Docker Volume / Mount takes in</p>
+<h2 id="docker-volume">Docker volume<a class="headerlink" href="#docker-volume" title="Permanent link">#</a></h2>
+<p>도커 볼륨은 컨테이너가 스토리지를 공유할 수 있도록 만들어주는 장치이다. 후에 나올 바인드에 비해 운영체제와는 독립적으로 관리가 되어 모든 환경에서 똑같이 동작한다. 먼저 도커 볼륨을 생성한 뒤에 할당해주어야 사용가능하다.</p>
+<div class="highlight"><pre><span></span><code>$ docker volume create &lt;volume-name&gt;
+$ docker run --volumes-from &lt;volume-name&gt;
+</code></pre></div>
+<blockquote>
+<p>[!question] Dockerfile의 <code>VOLUME</code> 명령과 docker-cli의 <code>--volume</code> 명령의 차이점은 무엇인가요?</p>
+</blockquote>
+<p>문법에서 차이가 있다. <code>VOLUME &lt;target-directory&gt;</code> 로, 오직 볼륨을 등록할 컨테이너의 위치만 정의하는 반면에, <code>--volume &lt;[host-directory|docker-volume]&gt;:&lt;target-directory&gt;[:&lt;permission&gt;]</code> 처럼 구체적으로 설정할 수 있다.</p>
+<p>만약 VOLUME은 정의했는데 --volume을 정의하지 않았다면 도커는 자동으로 해시값으로 도커 볼륨을 하나 만들어준다. 그러니 웬만하면 이름을 지어서 컨테이너끼리 같은 VOLUME을 공유하도록 하는 것이 중요하다.</p>
+<p><strong>cli 상에서 volume 사용법</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># --volume</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>devtest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>myvol2:/app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nginx:latest
 
+<span class="c1"># --mount</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>devtest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mount<span class="w"> </span><span class="nv">source</span><span class="o">=</span>myvol2,target<span class="o">=</span>/app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nginx:latest
+</code></pre></div>
+<h2 id="docker-bind-mount">Docker bind mount<a class="headerlink" href="#docker-bind-mount" title="Permanent link">#</a></h2>
+<p><code>--volume</code>, <code>--mount</code> 옵션 둘 다 도커 볼륨을 사용할 수도 있고, 도커 마운트를 사용할 수 있다는 점을 미리 알아두고 가자. 참고: <a href="https://docs.docker.com/engine/storage/">https://docs.docker.com/engine/storage/</a></p>
+<p>도커 마운트는 호스트 파일 시스템을 컨테이너에 마운트 하는 기능이다. 이 기능을 사용하면 굳이 <code>docker volume create</code>를 할 필요 없이 컨테이너 내에서 호스트 파일 시스템에 접근할 수 있게 된다. 보안을 위해 기본적으로는 read only 권한만 존재하며, 이를 풀어주기 위해서는 Dockerfile에서 USER 명령을 사용해서 마운트 지점에서의 사용자 권한을 확보해야 한다.</p>
+<p>UNIX 시스템에서 네트워크나 호스트가 마운트한 장치들도 파일로써 간주되므로, 분산 스토리지를 여러 컨테이너가 연결하여 구축하는 것도 가능하다!</p>
+<p><strong>cli 상에서 bind mount 사용법</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># --volume</span>
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-it<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>devtest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>/target:/app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nginx:latest
+
+<span class="c1"># --mount</span>
+$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-it<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>devtest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mount<span class="w"> </span><span class="nv">type</span><span class="o">=</span>bind,source<span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>/target,target<span class="o">=</span>/app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nginx:latest
+</code></pre></div>
+<blockquote>
+<p>[!question] Dockerfile이나 일반 이미지가 이미 사용하고 있는 경로를 mount하게 되면 어떻게 되나요?</p>
+</blockquote>
+<ul>
+<li><em>case</em> Dockerfile에 정의된 이미지 레이어가 이미 해당 경로를 정의한 경우 ⇒ docker-cli 옵션이 경로를 덮어씌워버리게 됩니다.</li>
+<li><em>case</em> 컨테이너에 이미 존재하는 디렉터리로 마운트 하는 경우 ⇒ <ul>
+<li><em>case</em> Linux ⇒ 디렉터리의 파일이 합쳐져 두 파일이 동시에 나타나게 됩니다.</li>
+<li><em>case</em> Windows ⇒ </li>
+</ul>
+</li>
+</ul>
 
 
 
