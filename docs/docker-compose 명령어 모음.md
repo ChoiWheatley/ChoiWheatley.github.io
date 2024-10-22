@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-02T00:24:24
-updated: 2024-10-22T19:19:14
+updated: 2024-10-23T00:05:12
 title: docker-compose 명령어 모음
 ---
 - [sof](https://stackoverflow.com/questions/36884991/how-to-rebuild-docker-container-in-docker-compose-yml)
@@ -29,31 +29,32 @@ Options:
 
 ### Basic Commands
 
-| Command                                 | Description                                                                 |
-|-----------------------------------------|-----------------------------------------------------------------------------|
-| `docker-compose up`                     | Builds, (re)creates, starts, and attaches to containers.                    |
-| `docker-compose up -d`                  | Starts containers in the background (detached mode).                        |
-| `docker-compose down`                   | Stops and removes containers, networks, volumes, and images created by `up`.|
-| `docker-compose start`                  | Starts existing services (previously created containers).                   |
-| `docker-compose stop`                   | Stops running services but does not remove containers.                      |
-| `docker-compose restart`                | Restarts services.                                                          |
-| `docker-compose ps`                     | Lists containers for a project.                                             |
-| `docker-compose build`                  | Builds or rebuilds the services.                                            |
-| `docker-compose pull`                   | Pulls service images defined in the `docker-compose.yml` file.              |
-| `docker-compose exec <service> <cmd>`   | Runs a command inside a running service container. Example: `exec web bash`.|
-| `docker-compose logs`                   | Displays log output from containers.                                        |
-| `docker-compose logs -f`                | Follows log output.                                                        |
+| Command                               | Description                                                                                |
+| ------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `docker-compose up`                   | Builds, (re)creates, starts, and attaches to containers.                                   |
+| `docker-compose up -d`                | Starts containers in the background (detached mode).                                       |
+| `docker-compose down`                 | Stops and removes containers, networks, volumes, and images created by `up`.               |
+| `docker-compose start`                | Starts existing services (previously created containers).                                  |
+| `docker-compose stop`                 | Stops running services but does not remove containers.                                     |
+| `docker-compose restart`              | Restarts services.                                                                         |
+| `docker-compose ps`                   | Lists containers for a project.                                                            |
+| `docker-compose build`                | Builds or rebuilds the services.                                                           |
+| `docker-compose pull`                 | Pulls service images defined in the `docker-compose.yml` file.                             |
+| `docker-compose exec <service> <cmd>` | Runs a command inside a running service container. Example: `exec web bash`.               |
+| `docker-compose logs`                 | Displays log output from containers.                                                       |
+| `docker-compose logs -f`              | Follows log output.                                                                        |
+| `docker-compose -f <yml-file> <cmd>`  | Select specific docker-compose script file. ==⚠️ up 할때 -f를 썼다면 다른 모든 명령에도 -f 옵션을 붙여야 한다.== |
 
 ---
 
 ### Networking & Volumes
 
-| Command                                 | Description                                                                 |
-|-----------------------------------------|-----------------------------------------------------------------------------|
-| `docker-compose up --force-recreate`    | Forces recreation of containers even if there were no changes.              |
-| `docker-compose up --no-deps`           | Starts a service without starting its linked/dependent services.            |
-| `docker-compose down --volumes`         | Removes named volumes declared in `volumes` section of `docker-compose.yml`.|
-| `docker-compose down --remove-orphans`  | Removes containers for services not defined in the `docker-compose.yml` file.|
+| Command                                | Description                                                                   |
+| -------------------------------------- | ----------------------------------------------------------------------------- |
+| `docker-compose up --force-recreate`   | Forces recreation of containers even if there were no changes.                |
+| `docker-compose up --no-deps`          | Starts a service without starting its linked/dependent services.              |
+| `docker-compose down --volumes`        | Removes named volumes declared in `volumes` section of `docker-compose.yml`.  |
+| `docker-compose down --remove-orphans` | Removes containers for services not defined in the `docker-compose.yml` file. |
 
 ---
 
