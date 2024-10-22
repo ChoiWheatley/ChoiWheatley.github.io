@@ -51520,11 +51520,15 @@ $<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </spa
 <ul>
 <li><em>case</em> Dockerfile에 정의된 이미지 레이어가 이미 해당 경로를 정의한 경우 ⇒ docker-cli 옵션이 경로를 덮어씌워버리게 됩니다.</li>
 <li><em>case</em> 컨테이너에 이미 존재하는 디렉터리로 마운트 하는 경우 ⇒ <ul>
-<li><em>case</em> Linux ⇒ 디렉터리의 파일이 합쳐져 두 파일이 동시에 나타나게 됩니다.</li>
-<li><em>case</em> Windows ⇒ </li>
+<li><em>case</em> Linux ⇒ <del>디렉터리의 파일이 합쳐져 두 파일이 동시에 나타나게 됩니다.</del> 아니잖아 그냥 덮어씌워지잖아</li>
+<li><em>case</em> Windows ⇒ ⚠️ 확인필요</li>
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>bind는 호스트 파일시스템에 의존하고 volume은 도커가 관리합니다. <a href="https://docs.docker.com/engine/storage/bind-mounts/#mount-into-a-non-empty-directory-on-the-container">docs.docker.com#Mount into a non-empty directory on the container</a></p>
+<p>리눅스는 단일 파일 마운트가 가능하지만 윈도우는 ❌ 😓</p>
+</blockquote>
 
 
 
