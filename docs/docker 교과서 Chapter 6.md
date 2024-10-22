@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 6
 created: 2024-10-22T15:43:22
-updated: 2024-10-22T17:00:38
+updated: 2024-10-22T17:47:12
 ---
 **참고자료**
 - <https://docs.docker.com/engine/storage/>
@@ -76,5 +76,9 @@ $ docker run -d \
 
 - *case* Dockerfile에 정의된 이미지 레이어가 이미 해당 경로를 정의한 경우 ⇒ docker-cli 옵션이 경로를 덮어씌워버리게 됩니다.
 - *case* 컨테이너에 이미 존재하는 디렉터리로 마운트 하는 경우 ⇒ 
-	- *case* Linux ⇒ 디렉터리의 파일이 합쳐져 두 파일이 동시에 나타나게 됩니다.
-	- *case* Windows ⇒ 
+	- *case* Linux ⇒ ~~디렉터리의 파일이 합쳐져 두 파일이 동시에 나타나게 됩니다.~~ 아니잖아 그냥 덮어씌워지잖아
+	- *case* Windows ⇒ ⚠️ 확인필요
+
+> bind는 호스트 파일시스템에 의존하고 volume은 도커가 관리합니다. [docs.docker.com#Mount into a non-empty directory on the container](https://docs.docker.com/engine/storage/bind-mounts/#mount-into-a-non-empty-directory-on-the-container)
+
+> 리눅스는 단일 파일 마운트가 가능하지만 윈도우는 ❌ 😓
