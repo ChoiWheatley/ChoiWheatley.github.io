@@ -5,7 +5,7 @@ tags:
 description: 
 title: docker 교과서
 created: 2024-08-31T21:53:58
-updated: 2024-10-23T00:57:00
+updated: 2024-10-30T22:57:13
 ---
 
 ## 1부 도커 컨테이너와 이미지 이해하기
@@ -103,6 +103,19 @@ updated: 2024-10-23T00:57:00
 - **Bind Mount vs Volume**: Bind mounts are useful for local development, while Docker volumes are preferred for production due to their independence from the host filesystem.
 
 [[docker 교과서 Chapter 8]]  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기  
+
+- **HEALTHCHECK**: Docker instruction to monitor the internal health of a container by running custom commands at set intervals.
+- **Status Monitoring**: Checks for issues like HTTP 500 errors, where the process may be running, but the container is not functioning correctly.
+- **`curl --fail`**: A command that returns `0` if the endpoint is accessible and a non-zero exit code if there is an error, helping Docker set the health status to either `healthy` or `unhealthy`.
+- **Inspecting Health Logs**: Use `docker container inspect` to view detailed health logs, including `ExitCode` and `Output`, which record error codes and responses.
+- **Dependency Check**: Ensures that a service waits for its dependencies (e.g., databases or APIs) to be ready before starting.
+- **`depends_on` in Docker Compose**: Defines the startup order of services, though it does not guarantee a service's readiness; best for controlling order, not dependency checks.
+- **Direct Dependency Check in Dockerfile**: Uses `CMD` to execute a `curl` request to check if a dependent service is accessible, only starting the application if the dependency is met.
+- **Custom Utility for Dependency Check**: Instead of `curl`, custom-built utilities specific to the application are preferred for dependency checks, enhancing security and reducing unnecessary tools in the container.
+- **Docker Compose Healthcheck**: Defines healthchecks in `docker-compose.yml` using `interval`, `timeout`, and `retries` to repeatedly check a service’s health.
+- **Automatic Restart with `restart: on-failure`**: Configures Docker to restart a service if it fails, useful for dependency checks without `depends_on` by reattempting until dependencies are ready.
+- **Restart Limitations in Compose**: Docker Compose can restart containers based on health status but cannot replace an unhealthy container with a new one, unlike advanced orchestration systems.
+
 [[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기  
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성  
 [[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트
