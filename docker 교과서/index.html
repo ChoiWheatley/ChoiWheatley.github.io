@@ -51902,8 +51902,21 @@
 <li><strong>Secrets Management</strong>: Store sensitive data like passwords or API keys using <code>secrets</code> in <code>docker-compose.yml</code>, linking them securely to services.</li>
 <li><strong>Bind Mount vs Volume</strong>: Bind mounts are useful for local development, while Docker volumes are preferred for production due to their independence from the host filesystem.</li>
 </ul>
-<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%208/">docker 교과서 Chapter 8</a>  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기<br />
-[[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기<br />
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%208/">docker 교과서 Chapter 8</a>  헬스 체크와 디펜던시 체크로 애플리케이션 신뢰성 확보하기  </p>
+<ul>
+<li><strong>HEALTHCHECK</strong>: Docker instruction to monitor the internal health of a container by running custom commands at set intervals.</li>
+<li><strong>Status Monitoring</strong>: Checks for issues like HTTP 500 errors, where the process may be running, but the container is not functioning correctly.</li>
+<li><strong><code>curl --fail</code></strong>: A command that returns <code>0</code> if the endpoint is accessible and a non-zero exit code if there is an error, helping Docker set the health status to either <code>healthy</code> or <code>unhealthy</code>.</li>
+<li><strong>Inspecting Health Logs</strong>: Use <code>docker container inspect</code> to view detailed health logs, including <code>ExitCode</code> and <code>Output</code>, which record error codes and responses.</li>
+<li><strong>Dependency Check</strong>: Ensures that a service waits for its dependencies (e.g., databases or APIs) to be ready before starting.</li>
+<li><strong><code>depends_on</code> in Docker Compose</strong>: Defines the startup order of services, though it does not guarantee a service's readiness; best for controlling order, not dependency checks.</li>
+<li><strong>Direct Dependency Check in Dockerfile</strong>: Uses <code>CMD</code> to execute a <code>curl</code> request to check if a dependent service is accessible, only starting the application if the dependency is met.</li>
+<li><strong>Custom Utility for Dependency Check</strong>: Instead of <code>curl</code>, custom-built utilities specific to the application are preferred for dependency checks, enhancing security and reducing unnecessary tools in the container.</li>
+<li><strong>Docker Compose Healthcheck</strong>: Defines healthchecks in <code>docker-compose.yml</code> using <code>interval</code>, <code>timeout</code>, and <code>retries</code> to repeatedly check a service’s health.</li>
+<li><strong>Automatic Restart with <code>restart: on-failure</code></strong>: Configures Docker to restart a service if it fails, useful for dependency checks without <code>depends_on</code> by reattempting until dependencies are ready.</li>
+<li><strong>Restart Limitations in Compose</strong>: Docker Compose can restart containers based on health status but cannot replace an unhealthy container with a new one, unlike advanced orchestration systems.</li>
+</ul>
+<p>[[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기<br />
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성<br />
 [[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트</p>
 <h2 id="3">3부 컨테이너 오케스트레이션을 이용한 스케일링<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
