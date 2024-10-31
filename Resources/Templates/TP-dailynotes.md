@@ -39,6 +39,8 @@ tags:
 
 ##  🪂 PARA
 
+> [!note] [PARA Expert](https://chatgpt.com/g/g-46Xrh4MXk-para-expert) 에 위의 'Daily Briefing'을 복붙하면 자동으로 아래의 PARA 구조로 변환해줍니다
+
 ### [Projects]
 ### [Areas]
 ### [Resources]
