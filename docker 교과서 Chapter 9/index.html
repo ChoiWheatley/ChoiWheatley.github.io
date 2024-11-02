@@ -51801,7 +51801,26 @@
 
 <h2 id="what-is-prometheus">What is Prometheus?<a class="headerlink" href="#what-is-prometheus" title="Permanent link">#</a></h2>
 <p>프로메테우스는 도커 컨테이너의 투명성을 확보하기 위해 컨테이너의 상태를 수집 및 수치화 하여 공통 API를 통해 통신하도록 만들어진 모니터링 툴이다. 따라서 어느 컨테이너건 프로메테우스가 정의한 API 규칙만 준수하면 개별 컨테이너는 물론 분산환경에서의 상태 추적 및 관리가 용이해진다.</p>
-<p><a href="https://docs.docker.com/engine/daemon/prometheus/">docs.docker.com # Collect Docker metrics with Prometheus</a> 이 문서는 도커 컨테이너가 아닌, 도커 엔진 자체를 프로메테우스를 통하여 모니터링하는 방법에 대해 설명한다.</p>
+<p><a href="https://docs.docker.com/engine/daemon/prometheus/">docs.docker.com # Collect Docker metrics with Prometheus</a> 이 문서는 도커 컨테이너가 아닌, 도커 엔진 자체를 프로메테우스를 통하여 모니터링하는 방법에 대해 설명한다. 아래는 <code>127.0.0.1:9323/metrics</code>에 접속했을때 나타나는 프로메테우스 포맷 출력결과 일부를 복사한 것이다</p>
+<div class="highlight"><pre><span></span><code># HELP builder_builds_failed_total Number of failed image builds
+# TYPE builder_builds_failed_total counter
+builder_builds_failed_total{reason=&quot;build_canceled&quot;} 0
+builder_builds_failed_total{reason=&quot;build_target_not_reachable_error&quot;} 0
+builder_builds_failed_total{reason=&quot;command_not_supported_error&quot;} 0
+builder_builds_failed_total{reason=&quot;dockerfile_empty_error&quot;} 0
+builder_builds_failed_total{reason=&quot;dockerfile_syntax_error&quot;} 0
+builder_builds_failed_total{reason=&quot;error_processing_commands_error&quot;} 0
+builder_builds_failed_total{reason=&quot;missing_onbuild_arguments_error&quot;} 0
+builder_builds_failed_total{reason=&quot;unknown_instruction_error&quot;} 0
+...
+</code></pre></div>
+<p>개중엔 현재 컨테이너 정보들도 볼 수 있다:</p>
+<div class="highlight"><pre><span></span><code># HELP engine_daemon_container_states_containers The count of containers in various states
+# TYPE engine_daemon_container_states_containers gauge
+engine_daemon_container_states_containers{state=&quot;paused&quot;} 0
+engine_daemon_container_states_containers{state=&quot;running&quot;} 1
+engine_daemon_container_states_containers{state=&quot;stopped&quot;} 0
+</code></pre></div>
 <h2 id="what-is-grafana">What is Grafana?<a class="headerlink" href="#what-is-grafana" title="Permanent link">#</a></h2>
 
 
