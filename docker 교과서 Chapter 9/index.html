@@ -51859,6 +51859,14 @@ engine_daemon_container_states_containers{state=&quot;running&quot;} 1
 engine_daemon_container_states_containers{state=&quot;stopped&quot;} 0
 </code></pre></div>
 <h2 id="monitoring-docker-containers">Monitoring Docker Containers<a class="headerlink" href="#monitoring-docker-containers" title="Permanent link">#</a></h2>
+<p>도커 컨테이너를 모니터링하려면 애플리케이션에 프로메테우스 메트릭 API를 제공해야한다. 다행히도 다양한 언어별로 프로메테우스 라이브러리가 존재하며, 각 라이브러리별로 기본으로 제공해주는 메트릭이 존재할 뿐만 아니라 사용자가 원하는 수치를 다양한 타입 (게이지, 카운터 등)으로 추가하는것이 가능하다.</p>
+<blockquote>
+<p>[!question] 그렇다면 어떤 수치를 제공해주는 것이 좋을까?</p>
+</blockquote>
+<ul>
+<li>도메인에 따라 다르겠지만, 대체로 <strong>응답시간</strong>을 수치로 제공해주는 것이 좋다. 사용자와 애플리케이션 간의 응답시간도 좋고 다른 서비스와의 응답시간도 좋다. 이 측정값으로 애플리케이션과 커뮤니케이션 하는 액터들간의 상태나 속도 등을 파악할 수 있을 뿐더러, 이상징후를 빠르게 알아차릴 수 있다.</li>
+<li><strong>로깅</strong>도 훌륭한 방법이 될 수 있다. 복잡한 정보를 담아야 하는 로그는 데이터베이스에 저장해야겠지만, 500에러가 발생한 횟수같이 단순한 로그의 경우 CPU 타임이나 디스크 용량, 메모리를 확연히 아끼면서 원하는 정보는 시각화 할 수 있는 중요한 요소이다.</li>
+</ul>
 <h2 id="what-is-grafana">What is Grafana?<a class="headerlink" href="#what-is-grafana" title="Permanent link">#</a></h2>
 
 
