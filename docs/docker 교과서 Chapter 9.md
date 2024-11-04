@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 9
 created: 2024-11-02T16:54:14
-updated: 2024-11-04T23:25:14
+updated: 2024-11-05T00:06:58
 ---
 
 ## What is Prometheus?
@@ -147,6 +147,10 @@ scrape_configs:
 ```
 
 ## What is Grafana?
+
+그라파나는 애플리케이션 투명성을 보장하기 위한 대시보드 도구로, 프로메테우스에 promQL 요청을 보내 이를 시각화 할 수 있는 능력을 가지고 있다. 어떤 정보를 어떻게 표현해야할지에 대한 지혜가 필요하다면 구글의 [[Site Reliability Engineering]] 문서를 확인해보자. 
+
+>  **서비스 수준 지표(SLI)**: SLI는 서비스의 성능을 나타내는 지표로, 지연 시간, 가용성, 오류율과 같은 항목이 포함됩니다.
 
 **grafana dashboard**
 
