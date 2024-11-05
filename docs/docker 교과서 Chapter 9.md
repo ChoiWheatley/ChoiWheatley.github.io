@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 9
 created: 2024-11-02T16:54:14
-updated: 2024-11-05T00:06:58
+updated: 2024-11-05T22:02:31
 ---
 
 ## What is Prometheus?
@@ -131,19 +131,23 @@ server.get("/metrics", function(req, res, next) {
 
 ![[ksnip_20241104-230001.png]]
 
-이때 `prometheus.yml` 파일에서 `accesslog`를 스크래핑하는 세팅을 `dns_sd_configs`라고 주었기 때문에 하나의 도메인 네임으로 여러 IP주소를 얻어와 스크래핑 할 수 있었다.
+이때 `prometheus.yml` 파일에서 `accesslog`를 스크래핑하는 세팅을 `dns_sd_configs`라고 주었기 때문에 하나의 도메인 네임으로 여러 IP주소를 얻어와 스크래핑 할 수 있었다. 그렇지 않은 컨테이너는 정적으로 DNS 쿼리 해도 되기 때문에 `static_configs`를 사용했다.
 
 ```yml
 scrape_configs:
   - job_name: "access-log"
     metrics_path: /metrics
-    scrape_interval: 3s
+   scrape_interval: 3s
     dns_sd_configs:
       - names:
           - accesslog
         type: A
         port: 80
-  ...
+		
+  - job_name: "image-gallery"
+	metrics_path: /actuator/prometheus
+	static_configs:
+	  - targets: ["iotd"]
 ```
 
 ## What is Grafana?
