@@ -51890,7 +51890,7 @@ networks:
 <ul>
 <li><code>version</code>: docker-compose 자체의 버전을 명시한다.</li>
 <li><code>services</code>: container와 같은 개념. 위의 예제는 하나의 컨테이너만을 정의하는 예제이다.</li>
-<li><code>networks</code>: 도커 네트워크를 정의. <code>external</code>을 사용하면 자동생성을 방지한다.</li>
+<li><code>networks</code>: 도커 네트워크를 정의. <code>external</code>을 사용하면 자동생성을 방지한다. <a href="https://docs.docker.com/reference/compose-file/networks/#external">networks # external</a> 참조</li>
 <li><code>depends_on</code>: 컨테이너 실행 순서를 정의한다. 즉, 아래에 나열된 원소들이 먼저 실행이 된 다음에 자신의 서비스가 실행이 된다.</li>
 </ul>
 <p>더 많은 옵션을 원한다면 <a href="https://docs.docker.com/reference/compose-file/services/">https://docs.docker.com/reference/compose-file/services/</a> 에서 확인 가능하다.</p>
