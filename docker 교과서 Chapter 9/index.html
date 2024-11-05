@@ -52006,17 +52006,21 @@ engine_daemon_container_states_containers{state=&quot;stopped&quot;} 0
 <p><a class="glightbox" href="../assets/ksnip_20241104-225109.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ksnip_20241104-225109.png" src="../assets/ksnip_20241104-225109.png" /></a></p>
 <p><code>sum</code> 쿼리를 사용하고 <code>without</code>으로 원치 않는 속성을 배제할 수 있다. 아래는 <code>accesslog</code>의 모든 로그의 개수를 그래프로 그리도록 만들었다.</p>
 <p><a class="glightbox" href="../assets/ksnip_20241104-230001.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ksnip_20241104-230001.png" src="../assets/ksnip_20241104-230001.png" /></a></p>
-<p>이때 <code>prometheus.yml</code> 파일에서 <code>accesslog</code>를 스크래핑하는 세팅을 <code>dns_sd_configs</code>라고 주었기 때문에 하나의 도메인 네임으로 여러 IP주소를 얻어와 스크래핑 할 수 있었다.</p>
+<p>이때 <code>prometheus.yml</code> 파일에서 <code>accesslog</code>를 스크래핑하는 세팅을 <code>dns_sd_configs</code>라고 주었기 때문에 하나의 도메인 네임으로 여러 IP주소를 얻어와 스크래핑 할 수 있었다. 그렇지 않은 컨테이너는 정적으로 DNS 쿼리 해도 되기 때문에 <code>static_configs</code>를 사용했다.</p>
 <div class="highlight"><pre><span></span><code>scrape_configs:
   - job_name: &quot;access-log&quot;
     metrics_path: /metrics
-    scrape_interval: 3s
+   scrape_interval: 3s
     dns_sd_configs:
       - names:
           - accesslog
         type: A
         port: 80
-  ...
+
+  - job_name: &quot;image-gallery&quot;
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: [&quot;iotd&quot;]
 </code></pre></div>
 <h2 id="what-is-grafana">What is Grafana?<a class="headerlink" href="#what-is-grafana" title="Permanent link">#</a></h2>
 <p>그라파나는 애플리케이션 투명성을 보장하기 위한 대시보드 도구로, 프로메테우스에 promQL 요청을 보내 이를 시각화 할 수 있는 능력을 가지고 있다. 어떤 정보를 어떻게 표현해야할지에 대한 지혜가 필요하다면 구글의 <a href="../Site%20Reliability%20Engineering/">Site Reliability Engineering</a> 문서를 확인해보자. </p>
