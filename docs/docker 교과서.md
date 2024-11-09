@@ -5,7 +5,7 @@ tags:
 description: 
 title: docker 교과서
 created: 2024-08-31T21:53:58
-updated: 2024-10-30T22:57:13
+updated: 2024-11-09T17:30:34
 ---
 
 ## 1부 도커 컨테이너와 이미지 이해하기
@@ -117,6 +117,18 @@ updated: 2024-10-30T22:57:13
 - **Restart Limitations in Compose**: Docker Compose can restart containers based on health status but cannot replace an unhealthy container with a new one, unlike advanced orchestration systems.
 
 [[docker 교과서 Chapter 9]]  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기  
+
+- **Prometheus**: A monitoring tool for collecting, storing, and querying metrics, designed for tracking container health and performance across distributed environments through a standardized API.
+- **Monitoring Docker Engine**: Prometheus can monitor Docker Engine metrics directly, tracking data like container states and failed image builds through /metrics at 127.0.0.1:9323.
+- **Container-Specific Metrics**: Prometheus requires applications to expose their own metrics via Prometheus libraries, supporting custom metrics like response time, error rates, and specific logging events.
+- **Key Metrics**: Recommended metrics include **response time** (e.g., latency between services or user response times) and **simple log counts** (e.g., 500 errors), which provide valuable insights with minimal resource usage.
+- **Prometheus in Golang**: Example uses Prometheus Go client library to define Gauge and Counter metrics, exposing these via /metrics.
+- **Prometheus in NodeJS**: Uses prom-client to track metrics like total log requests and unique IP addresses, exposing the /metrics endpoint for scraping.
+- **Prometheus Graphs**: PromQL is used to query and visualize metric data over time. For example, sum functions aggregate data, and without excludes unwanted attributes.
+- **Dynamic Scraping**: Prometheus prometheus.yml configurations allow dynamic scraping of container metrics using dns_sd_configs (for services with multiple IPs) and static_configs (for fixed services).
+- **Grafana**: A dashboard tool that integrates with Prometheus to visualize metrics, enhancing application observability. It uses PromQL to pull and display Prometheus metrics in customized, interactive graphs.
+- **Service Level Indicators (SLIs)**: Key performance indicators such as latency, availability, and error rates, essential for monitoring application health. Resources like Google’s Site Reliability Engineering (SRE) guide provide guidance on SLIs.
+
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성  
 [[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트
 
