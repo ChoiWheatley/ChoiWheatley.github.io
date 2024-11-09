@@ -52027,8 +52027,20 @@
 <li><strong>Automatic Restart with <code>restart: on-failure</code></strong>: Configures Docker to restart a service if it fails, useful for dependency checks without <code>depends_on</code> by reattempting until dependencies are ready.</li>
 <li><strong>Restart Limitations in Compose</strong>: Docker Compose can restart containers based on health status but cannot replace an unhealthy container with a new one, unlike advanced orchestration systems.</li>
 </ul>
-<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%209/">docker 교과서 Chapter 9</a>  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기<br />
-<a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%2010/">docker 교과서 Chapter 10</a>  도커 컴포즈를 이용한 여러 환경 구성<br />
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%209/">docker 교과서 Chapter 9</a>  컨테이너 모니터링으로 투명성 있는 애플리케이션 만들기  </p>
+<ul>
+<li><strong>Prometheus</strong>: A monitoring tool for collecting, storing, and querying metrics, designed for tracking container health and performance across distributed environments through a standardized API.</li>
+<li><strong>Monitoring Docker Engine</strong>: Prometheus can monitor Docker Engine metrics directly, tracking data like container states and failed image builds through /metrics at 127.0.0.1:9323.</li>
+<li><strong>Container-Specific Metrics</strong>: Prometheus requires applications to expose their own metrics via Prometheus libraries, supporting custom metrics like response time, error rates, and specific logging events.</li>
+<li><strong>Key Metrics</strong>: Recommended metrics include <strong>response time</strong> (e.g., latency between services or user response times) and <strong>simple log counts</strong> (e.g., 500 errors), which provide valuable insights with minimal resource usage.</li>
+<li><strong>Prometheus in Golang</strong>: Example uses Prometheus Go client library to define Gauge and Counter metrics, exposing these via /metrics.</li>
+<li><strong>Prometheus in NodeJS</strong>: Uses prom-client to track metrics like total log requests and unique IP addresses, exposing the /metrics endpoint for scraping.</li>
+<li><strong>Prometheus Graphs</strong>: PromQL is used to query and visualize metric data over time. For example, sum functions aggregate data, and without excludes unwanted attributes.</li>
+<li><strong>Dynamic Scraping</strong>: Prometheus prometheus.yml configurations allow dynamic scraping of container metrics using dns_sd_configs (for services with multiple IPs) and static_configs (for fixed services).</li>
+<li><strong>Grafana</strong>: A dashboard tool that integrates with Prometheus to visualize metrics, enhancing application observability. It uses PromQL to pull and display Prometheus metrics in customized, interactive graphs.</li>
+<li><strong>Service Level Indicators (SLIs)</strong>: Key performance indicators such as latency, availability, and error rates, essential for monitoring application health. Resources like Google’s Site Reliability Engineering (SRE) guide provide guidance on SLIs.</li>
+</ul>
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%2010/">docker 교과서 Chapter 10</a>  도커 컴포즈를 이용한 여러 환경 구성<br />
 [[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트</p>
 <h2 id="3">3부 컨테이너 오케스트레이션을 이용한 스케일링<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
 <p>[[docker 교과서 Chapter 12]]  컨테이너 오케스틀이션: 도커 스웜과 쿠버네티스<br />

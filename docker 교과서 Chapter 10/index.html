@@ -36835,12 +36835,60 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="도커 컴포즈 오버라이드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      오버라이드 유스케이스
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#environment-env_file-secrets" class="md-nav__link">
     <span class="md-ellipsis">
       도커 컴포즈 환경변수와 비밀값 (environment, env_file, secrets)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="도커 컴포즈 환경변수와 비밀값 (environment, env_file, secrets)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      로컬 환경변수 이용하기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      YAML 확장 필드 사용해보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      도커를 이용한 설정 워크플로 이해하기
     </span>
   </a>
   
@@ -51845,12 +51893,60 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="도커 컴포즈 오버라이드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      오버라이드 유스케이스
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#environment-env_file-secrets" class="md-nav__link">
     <span class="md-ellipsis">
       도커 컴포즈 환경변수와 비밀값 (environment, env_file, secrets)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="도커 컴포즈 환경변수와 비밀값 (environment, env_file, secrets)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      로컬 환경변수 이용하기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      YAML 확장 필드 사용해보기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      도커를 이용한 설정 워크플로 이해하기
     </span>
   </a>
   
@@ -51900,14 +51996,90 @@ $<span class="w"> </span>docker-compose<span class="w"> </span>-f<span class="w"
 $<span class="w"> </span>docker-compose<span class="w"> </span>-f<span class="w"> </span>&lt;base-compose&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;override-compose&gt;<span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>&lt;override-compose&gt;<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>config<span class="w"> </span><span class="c1"># ⇒ 이 옵션은 up 하기 전에 오버라이드 결과를 출력하는 유용한 명령이다.</span>
 </code></pre></div>
 <p>이때 오버라이드 하려는 컴포즈 파일은 베이스 컴포즈 파일과 정확히 같은 구조를 가진 상태에서 옵션을 바꾸어야 한다. 예를 들어 <code>services.todo-web.image</code>의 값을 바꾸고 싶으면 이 구조를 그대로 가져가고 변경할 값을 지정해주어야 한다는 것이다. 포트 구성을 바꾸면 좋겠는걸</p>
-<h2 id="environment-env_file-secrets">도커 컴포즈 환경변수와 비밀값 (environment, env_file, secrets)<a class="headerlink" href="#environment-env_file-secrets" title="Permanent link">#</a></h2>
-<p>환경별로 설정값을 주입하기에 매우 유용하다. 오버라이드를 할때 도커 엔진 또는 파일시스템에 저장된 비밀 키값을 <code>source</code>에 넣고 컨테이너에 저장될 위치를 <code>target</code>에 명시하면 된다.</p>
+<p><em>docker-compose.yml</em></p>
+<div class="highlight"><pre><span></span><code>services:
+  todo-web:
+    image: diamol/ch06-todo-list
+    ports:
+      - 80
+    environment:
+      - Database:Provider=Sqlite
+    networks:
+      - app-net
+
+networks:
+  app-net:
+</code></pre></div>
+<p><em>docker-compose-v2.yml</em></p>
 <div class="highlight"><pre><span></span><code>services:
   todo-web:
     secrets:
       - source: todo-db-connection
         target: /app/config/secrets.json
 </code></pre></div>
+<p><strong>OVERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRIDE</strong></p>
+<div class="highlight"><pre><span></span><code>$<span class="w">  </span>docker-compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.yml<span class="w"> </span>-f<span class="w"> </span>docker-compose-v2.yml<span class="w"> </span>config
+
+name:<span class="w"> </span>todo-list
+services:
+<span class="w">  </span>todo-web:
+<span class="w">    </span>environment:
+<span class="w">      </span>Database:Provider:<span class="w"> </span>Sqlite
+<span class="w">    </span>image:<span class="w"> </span>diamol/ch06-todo-list:v2<span class="w"> </span>//<span class="w"> </span>⇐<span class="w"> </span>여기가<span class="w"> </span>오버라이드<span class="w"> </span>되었다!!!
+<span class="w">    </span>networks:
+<span class="w">      </span>app-net:<span class="w"> </span>null
+<span class="w">    </span>ports:
+<span class="w">      </span>-<span class="w"> </span>mode:<span class="w"> </span>ingress
+<span class="w">        </span>target:<span class="w"> </span><span class="m">80</span>
+<span class="w">        </span>protocol:<span class="w"> </span>tcp
+networks:
+<span class="w">  </span>app-net:
+<span class="w">    </span>name:<span class="w"> </span>todo-list_app-net
+</code></pre></div>
+<h3 id="_2">오버라이드 유스케이스<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<ul>
+<li><code>docker-compose.yml</code>: 베이스 컴포즈. 서비스 정의부. 포트나 도커 네트워크는 ❌</li>
+<li><code>docker-compose-dev.yml</code>: 개발 환경 대상 설정. 도커 네트워크 정의. 웹포트 정의, API포트 정의. 헬스체크 ❌ 디펜던시 체크 ❌</li>
+<li><code>docker-compose-test.yml</code>: 테스트 환경 대상 설정. 도커 네트워크 정의, 헬스체크 정의. 웹포트 정의, API 포트 ❌</li>
+<li><code>docker-compose-uat.yml</code>: 사용자 인수 테스트 설정. 도커 네트워크 정의. 웹포트 정의. 헬스체크 주기를 더 자주, unhealty 상태가 되면 재시작 옵션 추가.</li>
+</ul>
+<h2 id="environment-env_file-secrets">도커 컴포즈 환경변수와 비밀값 (environment, env_file, secrets)<a class="headerlink" href="#environment-env_file-secrets" title="Permanent link">#</a></h2>
+<p>환경별로 설정값을 주입하기에 매우 유용하다. 오버라이드를 할때 도커 엔진 또는 파일시스템에 저장된 비밀 키값을 <code>source</code>에 넣고 컨테이너에 저장될 위치를 <code>target</code>에 명시하면 된다.</p>
+<p>아래는 <code>docker secret create todo-db-connection</code> 을 해야만 동작할 것이다. 그렇지 않다면 아래 아래의 예시와 같이 <code>secrets</code> 최상단 프로퍼티를 정의해야 한다.</p>
+<div class="highlight"><pre><span></span><code>services:
+  todo-web:
+    secrets:
+      - source: todo-db-connection
+        target: /app/config/secrets.json
+</code></pre></div>
+<p>아래는 시크릿 파일을 컴포즈에서 따로 정의해주었다. </p>
+<ul>
+<li><code>environment</code>: 환경변수 키밸류 쌍을 문자열로 직접 정의할 수 있다.</li>
+<li><code>env_file</code>: 텍스트 파일의 경로를 값으로 받아 환경변수를 자동으로 정의해준다. 셸 환경변수 선언과 같은 문법을 가진다.</li>
+<li><code>secrets</code>: <strong>최상단 프로퍼티</strong>임에 주의. networks처럼 요소의 실제 시크릿 값 또는 값이 저장돼 있는 경로가 정의된다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>services:
+  todo-web:
+    ports:
+      -  8089:80
+    environment:
+      -  Database:Provider=Sqlite
+    env_file:
+      - ./config/logging.debug.env
+
+secrets:
+  todo-db-connection:
+    file: ./config/empty.json
+</code></pre></div>
+<h3 id="_3">로컬 환경변수 이용하기<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<p>오버라이드가 싫다면 로컬 시스템의 환경변수를 가져다 쓰는 방법이 있다. 문법은 <code>${VAR}</code>로, 유닉스 변수 사용과 동일하다. 한 번에 하나의 환경변수를 <code>export</code> 할 것이 아니라, env 파일을 생성하여 <code>source</code> 하거나 아예 셸파일을 사용하는 것이 정신건강에 좋을 것 같아보인다.</p>
+<div class="highlight"><pre><span></span><code>todo-web:
+  ports:
+    - &quot;${TODO_WEB_PORT}:80&quot;
+  ...
+</code></pre></div>
+<h2 id="yaml">YAML 확장 필드 사용해보기<a class="headerlink" href="#yaml" title="Permanent link">#</a></h2>
+<h2 id="_4">도커를 이용한 설정 워크플로 이해하기<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 
 
 
