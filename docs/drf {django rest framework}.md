@@ -42,3 +42,4 @@ title: drf {django rest framework}
 ## Related Topics
 
 - [[drf_spectacular, OpenAPI specification generator]]
+- [[Serializer 안에 Serializer가 들어가도 되나요?]]

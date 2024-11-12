@@ -4,7 +4,7 @@ tags:
 description:
 title: extend_schema {drf_spectacular}
 created: 2024-11-12T23:51:33
-updated: 2024-11-13T00:00:42
+updated: 2024-11-13T00:07:04
 ---
 - ref: 
 	- <https://drf-spectacular.readthedocs.io/en/latest/customization.html>
@@ -28,7 +28,7 @@ class CalendarCreateView(APIView):
         return Response({"message": "Calendar created"}, status=status.HTTP_201_CREATED)
 ```
 
-> request, response, parameter에 Serializer 클래스 또는 Serializer 인스턴스가 들어갈 수 있다.
+## request, response, parameter에 Serializer 클래스 또는 Serializer 인스턴스가 들어갈 수 있다.
 
 Serializer 인스턴스가 들어가는 경우는 Serializer에 `many=True` 옵션과 같은 경우에 대응할 수 있게된다.
 
