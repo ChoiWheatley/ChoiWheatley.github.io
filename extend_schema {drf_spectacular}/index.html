@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#request-response-parameter-serializer-serializer" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -7612,6 +7617,23 @@
     
   
   Sentinel Node
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Serializer%20%EC%95%88%EC%97%90%20Serializer%EA%B0%80%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%8F%84%20%EB%90%98%EB%82%98%EC%9A%94%3F/" class="md-tabs__link">
+        
+  
+    
+  
+  Serializer 안에 Serializer가 들어가도 되나요?
 
       </a>
     </li>
@@ -32716,6 +32738,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Serializer%20%EC%95%88%EC%97%90%20Serializer%EA%B0%80%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%8F%84%20%EB%90%98%EB%82%98%EC%9A%94%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Serializer 안에 Serializer가 들어가도 되나요?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Serializers%20%7Bdjango%20rest%20framework%7D/" class="md-nav__link">
         
   
@@ -37483,6 +37525,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    extend_schema {drf_spectacular}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -37492,6 +37545,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-response-parameter-serializer-serializer" class="md-nav__link">
+    <span class="md-ellipsis">
+      request, response, parameter에 Serializer 클래스 또는 Serializer 인스턴스가 들어갈 수 있다.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -51855,6 +51934,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-response-parameter-serializer-serializer" class="md-nav__link">
+    <span class="md-ellipsis">
+      request, response, parameter에 Serializer 클래스 또는 Serializer 인스턴스가 들어갈 수 있다.
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -51892,9 +51988,7 @@
         <span class="c1"># Placeholder implementation</span>
         <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Calendar created&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_201_CREATED</span><span class="p">)</span>
 </code></pre></div>
-<blockquote>
-<p>request, response, parameter에 Serializer 클래스 또는 Serializer 인스턴스가 들어갈 수 있다.</p>
-</blockquote>
+<h2 id="request-response-parameter-serializer-serializer">request, response, parameter에 Serializer 클래스 또는 Serializer 인스턴스가 들어갈 수 있다.<a class="headerlink" href="#request-response-parameter-serializer-serializer" title="Permanent link">#</a></h2>
 <p>Serializer 인스턴스가 들어가는 경우는 Serializer에 <code>many=True</code> 옵션과 같은 경우에 대응할 수 있게된다.</p>
 <p>예시:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">CalendarListView</span><span class="p">(</span><span class="n">ListAPIView</span><span class="p">):</span>
