@@ -38,3 +38,7 @@ title: drf {django rest framework}
 - Serializer는 다양한 **예외**클래스도 가지고 있다. 예를 들어 `ValidationError`는 발생 시 400 응답을 리턴한다.
 - `Serializer.save` 메서드는 `Model.save`와는 전혀 다르다. 객체 인스턴스를 리턴하는 것이지, 모델에 적용하는 명령이 아니라는 것이다. ~~왜 이따위로 만들었지~~ [save, create, update의 차이점 {sof}](https://stackoverflow.com/questions/45100515/what-is-the-different-between-save-create-and-update-in-django-rest-fram)
 - 
+
+## Related Topics
+
+- [[drf_spectacular, OpenAPI specification generator]]
