@@ -5,7 +5,7 @@ tags:
 description: 
 title: docker 교과서
 created: 2024-08-31T21:53:58
-updated: 2024-11-09T17:30:34
+updated: 2024-11-15T18:03:49
 ---
 
 ## 1부 도커 컨테이너와 이미지 이해하기
@@ -130,6 +130,23 @@ updated: 2024-11-09T17:30:34
 - **Service Level Indicators (SLIs)**: Key performance indicators such as latency, availability, and error rates, essential for monitoring application health. Resources like Google’s Site Reliability Engineering (SRE) guide provide guidance on SLIs.
 
 [[docker 교과서 Chapter 10]]  도커 컴포즈를 이용한 여러 환경 구성  
+
+- **Docker Compose for Environments**: Useful in cases where multiple containers need to run on a single Docker Engine, often for smaller services, testing, or development.
+- **Project Naming**: Allows running multiple instances of the same Compose setup by changing the project name (e.g., `-p todo-test`), helping avoid conflicts by isolating container names.
+- **Port Conflicts**: If containers have predefined ports in their configurations, repeated instances may use random ports. Use `docker port <container-name> <inner-port>` to retrieve active port mappings.
+- **Docker Compose Override**: Combines multiple Compose files (`base` and `override`) to modify configuration for specific environments without changing the base file structure.
+- **Environment-Specific Overrides**: Set up distinct configurations (e.g., `docker-compose-dev.yml`, `docker-compose-test.yml`) for dev, test, and user acceptance testing, customizing ports, networks, health checks, and restart policies.
+- **Environment Variables and Secrets**: 
+	- **`environment`**: Defines key-value pairs directly in the Compose file.
+    - **`env_file`**: Loads environment variables from a file with shell-style syntax.
+    - **`secrets`**: Declares sensitive data, stored securely and mapped to services in the `secrets` section.
+- **Using Local Environment Variables**: Use `${VAR}` syntax to pull values from the host environment, allowing flexible variable usage without explicit override files.
+- **YAML Extensions (Anchors and Aliases)**: Helps reduce redundancy by defining common settings (`&anchor`) and reusing them (`*alias`) across multiple services.
+- **Application Configuration with Docker Compose**: Adjust settings per environment for options like databases, port bindings, networks, and application-specific configs (e.g., logging level, cache size).  
+**Use Case Summary**:
+   - **Development**: Local database, custom port (`8089`), specific image version (e.g., `v2`).
+   - **Testing**: Separate database service (e.g., PostgreSQL), dedicated volume for persistence, assigned port (`8080`), and latest image version.
+
 [[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트
 
 ## 3부 컨테이너 오케스트레이션을 이용한 스케일링
