@@ -52188,8 +52188,27 @@
 <li><strong>Grafana</strong>: A dashboard tool that integrates with Prometheus to visualize metrics, enhancing application observability. It uses PromQL to pull and display Prometheus metrics in customized, interactive graphs.</li>
 <li><strong>Service Level Indicators (SLIs)</strong>: Key performance indicators such as latency, availability, and error rates, essential for monitoring application health. Resources like Google’s Site Reliability Engineering (SRE) guide provide guidance on SLIs.</li>
 </ul>
-<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%2010/">docker 교과서 Chapter 10</a>  도커 컴포즈를 이용한 여러 환경 구성<br />
-[[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트</p>
+<p><a href="../docker%20%EA%B5%90%EA%B3%BC%EC%84%9C%20Chapter%2010/">docker 교과서 Chapter 10</a>  도커 컴포즈를 이용한 여러 환경 구성  </p>
+<ul>
+<li><strong>Docker Compose for Environments</strong>: Useful in cases where multiple containers need to run on a single Docker Engine, often for smaller services, testing, or development.</li>
+<li><strong>Project Naming</strong>: Allows running multiple instances of the same Compose setup by changing the project name (e.g., <code>-p todo-test</code>), helping avoid conflicts by isolating container names.</li>
+<li><strong>Port Conflicts</strong>: If containers have predefined ports in their configurations, repeated instances may use random ports. Use <code>docker port &lt;container-name&gt; &lt;inner-port&gt;</code> to retrieve active port mappings.</li>
+<li><strong>Docker Compose Override</strong>: Combines multiple Compose files (<code>base</code> and <code>override</code>) to modify configuration for specific environments without changing the base file structure.</li>
+<li><strong>Environment-Specific Overrides</strong>: Set up distinct configurations (e.g., <code>docker-compose-dev.yml</code>, <code>docker-compose-test.yml</code>) for dev, test, and user acceptance testing, customizing ports, networks, health checks, and restart policies.</li>
+<li><strong>Environment Variables and Secrets</strong>: <ul>
+<li><strong><code>environment</code></strong>: Defines key-value pairs directly in the Compose file.</li>
+<li><strong><code>env_file</code></strong>: Loads environment variables from a file with shell-style syntax.</li>
+<li><strong><code>secrets</code></strong>: Declares sensitive data, stored securely and mapped to services in the <code>secrets</code> section.</li>
+</ul>
+</li>
+<li><strong>Using Local Environment Variables</strong>: Use <code>${VAR}</code> syntax to pull values from the host environment, allowing flexible variable usage without explicit override files.</li>
+<li><strong>YAML Extensions (Anchors and Aliases)</strong>: Helps reduce redundancy by defining common settings (<code>&amp;anchor</code>) and reusing them (<code>*alias</code>) across multiple services.</li>
+<li><strong>Application Configuration with Docker Compose</strong>: Adjust settings per environment for options like databases, port bindings, networks, and application-specific configs (e.g., logging level, cache size).<br />
+<strong>Use Case Summary</strong>:</li>
+<li><strong>Development</strong>: Local database, custom port (<code>8089</code>), specific image version (e.g., <code>v2</code>).</li>
+<li><strong>Testing</strong>: Separate database service (e.g., PostgreSQL), dedicated volume for persistence, assigned port (<code>8080</code>), and latest image version.</li>
+</ul>
+<p>[[docker 교과서 Chapter 11]]  도커와 도커 컴포즈를 이용한 애플리케이션 빌드 및 테스트</p>
 <h2 id="3">3부 컨테이너 오케스트레이션을 이용한 스케일링<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
 <p>[[docker 교과서 Chapter 12]]  컨테이너 오케스틀이션: 도커 스웜과 쿠버네티스<br />
 [[docker 교과서 Chapter 13]]  도커 스웜 스택으로 분산 애플리케이션 배포하기<br />
