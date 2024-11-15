@@ -4,7 +4,7 @@ tags:
 description:
 title: docker 교과서 Chapter 10
 created: 2024-11-08T22:56:52
-updated: 2024-11-09T18:31:16
+updated: 2024-11-15T17:59:38
 ---
 도커 컴포즈는 어떤 상황에서 많이 쓴다고? ⇒ 여러 컨테이너를 하나의 도커 엔진에서 돌려야 하는 경우, 특히 작은 규모의 서비스를 퍼블리시 할때, 아니면 테스트, 개발환경에서 자주 쓰인다. 이번 장에는 도커 컴포즈의 고급 기능을 활용하여 **환경**에 따라 애플리케이션의 동작을 다르게 하는 케이스에 대응하고자 한다.
 
@@ -140,6 +140,124 @@ todo-web:
   ...
 ```
 
-## YAML 확장 필드 사용해보기
+## [[YAML 확장 필드]]
+
+ 
+YAML 확장 필드와 앵커(`&`)와 별칭(`*`)을 활용해 중복 구성을 줄일 수 있습니다. 예를 들어, 공통 환경을 `x-common-env`에 정의하고 `<<: *common-env`로 참조하거나, 기본 설정을 `&defaults`로 정의한 뒤 필요한 서비스에서 `<<: *defaults`로 적용해 일관성을 유지합니다. 이로써 Docker Compose 등에서 효율적 구성 관리가 가능합니다.
+
+```yaml
+default-settings: &defaults
+  timeout: 30
+  retries: 3
+
+service1:
+  <<: *defaults
+  timeout: 60  # 이 서비스는 기본 설정을 재정의합니다.
+
+service2:
+  <<: *defaults
+```
 
 ## 도커를 이용한 설정 워크플로 이해하기
+
+이 챕터는 현업에서 대규모 프로젝트를 운영하는 경우에 대한 다양한 유스케이스를 소개한다. 애플리케이션 구성 요소를 유연하게 설정하는 경우, 환경 (포트, 볼륨, 네트워크 등)에 대한 결정을 미루는 경우, 로그수준이나 캐시 크기와 같이 애플리케이션 동작 config를 다르게 가져가야 하는 경우 등이 있다.
+
+## 연습 문제
+
+> todo-list 애플리케이션을 두 가지 환경으로 설정해보자.
+
+1. Dev (기본)
+	1. 로컬 파일 DB 사용
+	2. 8089번 포트 사용
+	3. to-do 애플리케이션의 v2 태그 실행
+2. Test
+	1. 별도의 DB 컨테이너 사용
+	2. DB 스토리지를 위한 볼륨 정의
+	3. 8080번 포트 사용
+	4. to-do 애플리케이션의 latest 태그 실행 
+
+필요한 파일의 개수는 3개, `docker-compose.yml` ⇒ Base, `docker-compose-dev.yml` ⇒ Dev, `docker-compose-test.yml` ⇒ Test 
+
+맨 땅에 헤딩할 필요는 없다. `/ch10/exercise/todo-list-configured` 실습의 내용을 참고해서 쓰면 된다.
+
+==`docker-compose.yml`==
+
+```yaml
+version: "3.7"
+
+services:
+  todo-web:
+    image: diamol/ch06-todo-list
+    secrets:
+      - source: todo-db-connection
+        target: /app/config/secrets.json
+```
+
+==`docker-compose-dev.yml`==
+
+db 설정을 줄때 로컬 파일 데이터베이스 (Sqlite) 쓰는 옵션은 환경변수 `Database:Provider`의 값을 `Sqlite`로 해주는 것이었다.
+
+포트 8089를 오픈하기 위해서는 `ports`를 사용하면 된다.
+
+to-do 이미지 `diamol/ch06-todo-list:v2`를 쓰면 된다.
+
+```yaml
+services:
+  todo-web:
+    image: diamol/ch06-todo-list:v2
+    ports:
+      - 8089:80
+    environment:
+      - Database:Provider=Sqlite
+```
+
+==`docker-compose-test.yml`==
+
+별도의 DB 컨테이너를 사용하라고 하는데, PostgreSQL을 사용하면 된다. 
+
+- 환경변수는 `Database:Provider=Postgres`
+- 서비스 하나를 더 정의해야 한다. `image: diamol/postgres:11.5` (근데 얘는 무슨 포트를 열어야 하나?)
+	- 이 서비스의 `PGDATA` 환경변수를 따로 설정해주어야 한다. 이 환경변수는 데이터베이스 서버가 사용할 볼륨의 위치를 정의하기 때문에 볼륨 지정도 따로 해줘야 한다.
+		- `volumes: "todo-database:/data"`
+		- `PGDATA=/data`
+	- 이 서비스는 secret.json 파일을 필요로 한다.
+- 8080 포트 사용, 얘는 쉽지 이젠 `ports: 8080:80`
+- 이미지의 latest 태그 사용 `diamol/ch06-todo-list:latest`
+
+```yaml
+services:
+  todo-web:
+    ports:
+      - "8080:80"
+    environment:
+      - "Database:Provider=Postgres"
+    image: diamol/ch06-todo-list:latest
+    networks:
+      - app-net
+
+  todo-db:
+    image: diamol/postgre:11.5
+    environment:
+      - "PGDATA=/data"
+    volumes:
+      - "todo-database:/data"
+    ports:
+      - "5433:5432"
+    networks:
+      - app-net
+    secrets:
+      - source: postgres-connection
+        target: /app/config/secrets.json
+
+networks:
+  app-net:
+    external:
+      name: nat
+
+volumes:
+  todo-database:
+
+secrets:
+  postgres-connection:
+    file: secret.json
+```
