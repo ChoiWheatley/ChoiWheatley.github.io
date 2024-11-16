@@ -43,3 +43,4 @@ title: drf {django rest framework}
 
 - [[drf_spectacular, OpenAPI specification generator]]
 - [[Serializer 안에 Serializer가 들어가도 되나요?]]
+- [[Reverse Relation {drf}]]
