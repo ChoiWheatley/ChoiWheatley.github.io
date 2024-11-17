@@ -24,3 +24,5 @@ title: mac 필수앱 🍎
 - [[noclamshell, 맥북 뚜껑을 닫으면 무조건 sleep모드로]]
 - [[Altdrag alternative window manager for mac {eash-move-resize}]]
 - [[homebrew]]
+- [[pbcopy, Copy data from STDIN to the clipboard]]
+- [[Raycast, Alternator of Spotlight and Alfred]]
