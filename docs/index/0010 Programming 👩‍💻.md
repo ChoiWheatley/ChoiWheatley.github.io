@@ -43,6 +43,7 @@ parent link: [[docs/index/index|index]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
 - [[JIRA]]
 - [[docker 🐳]]
+- [[SSH X11 Forwarding이 자꾸 끊겨요]]
 
 ## WSL
 
