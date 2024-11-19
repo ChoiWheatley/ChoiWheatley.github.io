@@ -44,6 +44,7 @@ parent link: [[docs/index/index|index]]
 - [[JIRA]]
 - [[docker 🐳]]
 - [[SSH X11 Forwarding이 자꾸 끊겨요]]
+- [[learnyaml]]
 
 ## WSL
 
