@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-11-19T17:40:08
+updated: 2024-11-19T17:41:45
 ---
 
 parent link: [[docs/index/index|index]]
@@ -54,17 +54,6 @@ parent link: [[docs/index/index|index]]
 
 - [[vim 관련 꿀팁]]
 - [[neovim]]
-
-## GIT
-
-- [[get fetch --prune]]
-- [[git submodule 개념 잡기]]
-- [[github chart]]
-- [[git commit message 규칙]]
-- [[0019 Git ᛘ]]
-- [[git selectively merge or pick changes from another branch]]
-- [[ssh-keygen for github]]
-- [[git rebase --interactive]]
 
 ## Web
 
