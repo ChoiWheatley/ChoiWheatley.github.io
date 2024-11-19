@@ -6,7 +6,7 @@ title: linux에서 Capslock 버튼을 한영키로 사용하기
 created: 2024-03-16T16:56:36
 updated: 2024-03-16T18:07:32
 ---
-- [[linux 🐧]]
+- [[001B linux 🐧]]
 - [참고한 블로그](https://ieworld.tistory.com/4) 이 블로그는 RAlt를 한영키로 바꾸었으나, 같은 디렉토리에 `capslock` 이라는 파일또한 존재하니 똑같이 생각하고 작성하면 되겠지
 ---
 

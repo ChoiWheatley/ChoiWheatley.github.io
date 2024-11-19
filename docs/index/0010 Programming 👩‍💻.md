@@ -12,7 +12,7 @@ aliases:
 tags: [" index  ", index]
 date created: Thursday, February 9th 2023, 11:01:42 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-08-04T14:26:59
+updated: 2024-11-19T17:40:08
 ---
 
 parent link: [[docs/index/index|index]]
@@ -27,27 +27,44 @@ parent link: [[docs/index/index|index]]
 - [[C++]]
 - [[0014 Python 🐍]]
 - [[0015 database]]
-- [[glossary]]
-- [[vim 관련 꿀팁]]
-- [[neovim]]
+- [[0016 Systems Programming {ssu2021-1st} 🐼]]
+- [[0017 C 🍎]]
+- [[0018 Javascript ☕️]]
+- [[0019 Git ᛘ]]
+- [[001A flask]]
+- [[001B linux 🐧]]
+- [[0110 Utility 🔧]]
+
+---
+
+## 미정리
+
 - [[ffmpeg]]
-- git 관련
-	- [[get fetch --prune]]
-	- [[git submodule 개념 잡기]]
-	- [[github chart]]
-	- [[git commit message 규칙]]
-	- [[0019 Git ᛘ]]
-	- [[git selectively merge or pick changes from another branch]]
-	- [[ssh-keygen for github]]
-	- [[git rebase --interactive]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
-- wsl
-	- [[ssh into WSL2 & vs-code]]
-	- [[port forwarding WSL2]]
-	- [[Use docker in WSL2 distro]]
 - [[JIRA]]
 - [[docker 🐳]]
-- [[Domain Name Server (DNS)]]
+
+## WSL
+
+- [[ssh into WSL2 & vs-code]]
+- [[port forwarding WSL2]]
+- [[Use docker in WSL2 distro]]
+
+## VIM
+
+- [[vim 관련 꿀팁]]
+- [[neovim]]
+
+## GIT
+
+- [[get fetch --prune]]
+- [[git submodule 개념 잡기]]
+- [[github chart]]
+- [[git commit message 규칙]]
+- [[0019 Git ᛘ]]
+- [[git selectively merge or pick changes from another branch]]
+- [[ssh-keygen for github]]
+- [[git rebase --interactive]]
 
 ## Web
 
@@ -55,7 +72,7 @@ parent link: [[docs/index/index|index]]
 [[소셜 로그인 마지막 단계에서의 리디렉션]]  
 [[소셜 로그인을 redirect + Set-Cookie 없이 할 수 있는 방법]]  
 [[프론트엔드, 백엔드 시퀀스 다이어그램]]  
-[[Cookie]]
+[[Cookie]]  
 [[rds postgresql ssl 인증서 발급하여 접속하기]]
 
 ---
@@ -90,9 +107,6 @@ ___
 
 ___
 
-## Utilities
-
-[[0110 Utility 🔧]]
 
 ---
 
@@ -104,6 +118,22 @@ ___
 
 
 ___
+
+## Glosarry
+
+- [[Palindrome]]
+- [[SLO, SLI, SLA란]]
+- [[Observability]]
+- [[Domain Name Server (DNS)]]
+
+## 생각
+
+- [[당장 돌아가는 코드를 만드는 것이 첫번째라면, 내가 선택한 것들에 대한 정리 및 회고가 두번째다. 문서화가 중요하단 뜻임.]]
+- 사람이 언제 가장 절실해지는 줄 알아? 마감이 임박했을 때, 보다못해 내가 발 벗고 나서야 할 때, 일이 잘 풀릴때!
+- 기능과 할 일, 버그와 리팩토링을 머리에 다 넣으려고 하지 말자. 여기는 씽크빅이 아니라 씽크스몰을 해야 복잡도를 견딜 수 있게된다.
+- [[Docker API를 활용하여 도커 관리 시스템 구축]] 원격으로 
+
+---
 
 ## Scrapped [[0080 Scraps 📚]]
 
@@ -133,16 +163,3 @@ ___
 - [[A Philosopy of Software Design - John Ousterhout - Talks at Google]]
 - [[Usecase Diagram]]
 - [[리눅스에서 키보드 이벤트를 관찰하고 싶은 경우 - evtest]]
-
-## Glosarry
-
-- [[Palindrome]]
-- [[SLO, SLI, SLA란]]
-- [[Observability]]
-
-## 생각
-
-- [[당장 돌아가는 코드를 만드는 것이 첫번째라면, 내가 선택한 것들에 대한 정리 및 회고가 두번째다. 문서화가 중요하단 뜻임.]]
-- 사람이 언제 가장 절실해지는 줄 알아? 마감이 임박했을 때, 보다못해 내가 발 벗고 나서야 할 때, 일이 잘 풀릴때!
-- 기능과 할 일, 버그와 리팩토링을 머리에 다 넣으려고 하지 말자. 여기는 씽크빅이 아니라 씽크스몰을 해야 복잡도를 견딜 수 있게된다.
-- [[Docker API를 활용하여 도커 관리 시스템 구축]] 원격으로 
