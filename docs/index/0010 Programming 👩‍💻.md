@@ -33,7 +33,7 @@ parent link: [[docs/index/index|index]]
 - [[0019 Git ᛘ]]
 - [[001A flask]]
 - [[001B linux 🐧]]
-- [[0110 Utility 🔧]]
+- [[001C docker 🐳]]
 
 ---
 
@@ -42,7 +42,6 @@ parent link: [[docs/index/index|index]]
 - [[ffmpeg]]
 - [[Github Copilot 대체제 5가지 {careerly}]]
 - [[JIRA]]
-- [[docker 🐳]]
 - [[SSH X11 Forwarding이 자꾸 끊겨요]]
 - [[learnyaml]]
 
