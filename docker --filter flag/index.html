@@ -52241,26 +52241,14 @@
   <h1>docker --filter flag</h1>
 
 <blockquote>
-<p>tell me about docker ps --filter queries</p>
+<p>how to change view for docker ps? I want to see only CONTAINER ID, NAME column</p>
 </blockquote>
-<p>The docker ps --filter command allows you to filter the list of running containers based on specific criteria. Here are some common filter options:</p>
-<ul>
-<li>status=<status>: Filter by container status (e.g., running, exited).</li>
-<li>name=<name>: Filter by container name or a part of it.</li>
-<li>id=<container_id>: Filter by container ID.</li>
-<li>label=<key=value>: Filter by container labels.</li>
-<li>ancestor=<image>: Filter by the image used to create the container.</li>
-</ul>
-<p><strong>Example usage:</strong></p>
-<div class="highlight"><pre><span></span><code>docker ps --filter &quot;status=running&quot;  
-docker ps --filter &quot;name=my_container&quot;
+<p>You can customize the output of docker ps using the --format option. To display only the CONTAINER ID and NAME columns, use the following command:</p>
+<div class="highlight"><pre><span></span><code> docker ps --format &quot;table {{.ID}}\t{{.Names}}&quot;
 </code></pre></div>
-<p>This helps in managing and monitoring containers more effectively.<br />
-➜  Giftogether_backend git:(main) ✗ sgpt "how to change view for docker ps? I want to see only CONTAINER ID, NAME column"<br />
-You can customize the output of docker ps using the --format option. To display only the CONTAINER ID and NAME columns, use the following command:</p>
-<p>docker ps --format "table {{.ID}}\t{{.Names}}"</p>
 <p>This command formats the output as a table with the specified columns. If you want a simpler output without the table format, you can use:</p>
-<p>docker ps --format "{{.ID}} {{.Names}}"</p>
+<div class="highlight"><pre><span></span><code> docker ps --format &quot;{{.ID}} {{.Names}}&quot;
+</code></pre></div>
 
 
 
