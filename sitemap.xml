@@ -1077,6 +1077,10 @@
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Easymotion%20Vim%20cheatsheat/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
@@ -1114,6 +1118,10 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/FileReader%20%7Bjs%7D/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/Filtering%20%7Bdrf%7D/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
@@ -2661,10 +2669,6 @@
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/drf%20%7Bdjango%20rest%20framework%7D/</loc>
-         <lastmod>2024-11-22</lastmod>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/drf%20%EC%97%90%EC%84%9C%20redirect%20url%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20ViewSet%EC%97%90%20%EB%8B%B4%EB%8A%94%EB%B2%95%20%7Bdrf%7D/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
@@ -2850,6 +2854,10 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/generator%20function%20-%20python/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/generic%20View%20%7Bdrf%7D/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
@@ -3533,6 +3541,10 @@
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/ozcodingschool%20startupcamp%20%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%20%EC%9B%B9%20%EA%B0%9C%EB%B0%9C%20%EC%B4%88%EA%B2%A9%EC%B0%A8%20%EC%BA%A0%ED%94%84%20with%20AWS%203%EA%B8%B0/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/padding%20bytes%20in%20struct%20%7BC%7D/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
@@ -4093,6 +4105,10 @@
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/swjungle%20%F0%9F%A4%96/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/sw%EC%82%AC%EA%B4%80%ED%95%99%EA%B5%90%20%EC%A0%95%EA%B8%80%207%EA%B8%B0%20%EC%A4%80%EB%B9%84/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
@@ -4462,6 +4478,10 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/wine%20setting/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/wishfunding%20%ED%8B%B0%EB%81%8C%EB%AA%A8%EC%95%84%20%ED%8E%80%EB%94%A9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%F0%9F%8E%81/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
@@ -6409,10 +6429,6 @@
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/index/0012.1%20ESTsoft%20%EB%B0%B1%EC%97%94%EB%93%9C%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%98%A4%EB%A5%B4%EB%AF%B8%201%EA%B8%B0%20%F0%9F%99%8A/</loc>
-         <lastmod>2024-11-22</lastmod>
-    </url>
-    <url>
          <loc>https://choiwheatley.github.io/index/0013%20Rust%20%F0%9F%A6%80/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
@@ -6425,11 +6441,19 @@
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/index/0014.1.1%20drf%20%7Bdjango%20rest%20framework%7D%20%F0%9F%98%B4/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/index/0015%20OS%20%7Bssu2021-2nd%7D%20%F0%9F%92%BB/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/index/0016%20Systems%20Programming%20%7Bssu2021-1st%7D%20%F0%9F%90%BC/</loc>
+         <loc>https://choiwheatley.github.io/index/0015.1%20CSAPP%20Third%20Edition%20Bryant%2C%20Randal%20E.%20O%27Hallaron%2C%20David.%20%F0%9F%92%BB/</loc>
+         <lastmod>2024-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/index/0015.2%20Systems%20Programming%20%7Bssu2021-1st%7D%20%F0%9F%90%BC/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
@@ -6498,22 +6522,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/index/0110%20Utility%20%F0%9F%94%A7/</loc>
-         <lastmod>2024-11-22</lastmod>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/index/0120%20swjungle%20%F0%9F%A4%96/</loc>
-         <lastmod>2024-11-22</lastmod>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/index/0121%20CSAPP%20Third%20Edition%20Bryant%2C%20Randal%20E.%20O%27Hallaron%2C%20David./</loc>
-         <lastmod>2024-11-22</lastmod>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/index/0130%20ozcodingschool%20startupcamp%20%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%20%EC%9B%B9%20%EA%B0%9C%EB%B0%9C%20%EC%B4%88%EA%B2%A9%EC%B0%A8%20%EC%BA%A0%ED%94%84%20with%20AWS%203%EA%B8%B0/</loc>
-         <lastmod>2024-11-22</lastmod>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/index/0140%20wishfunding%20%ED%8B%B0%EB%81%8C%EB%AA%A8%EC%95%84%20%ED%8E%80%EB%94%A9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%F0%9F%8E%81/</loc>
          <lastmod>2024-11-22</lastmod>
     </url>
     <url>
