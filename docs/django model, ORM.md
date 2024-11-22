@@ -3,8 +3,8 @@ description:
 aliases: 
 tags: 
 created: 2023-05-31T17:09:28
-updated: 2023-07-19T17:13:05
-title: django model
+updated: 2024-11-23T00:51:00
+title: django model, ORM
 ---
 
 ## documents
@@ -17,6 +17,7 @@ title: django model
 	- [[CharField {django} {choices}]]
 - [[querying in {django query}|queries]]
 - [[django internal class Meta]]
+- [[Model Constraints {django}]]
 
 ## problem solving
 

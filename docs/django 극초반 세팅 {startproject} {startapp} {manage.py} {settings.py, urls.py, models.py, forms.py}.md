@@ -60,7 +60,7 @@ title: django 극초반 세팅 {startproject} {startapp} {manage.py} {settings.p
 	- [[django.views.{View, generic.{ListView, DetailView}}]]
 - **`models.py`** 에 데이터를 명시하는 필드를 만들어 정의한다. SQL 문을 단 하나도 알지 못해도 작성할 수 있는 데이터 모델링~~~ 
 	- `User` 라는 모델이 디폴트로 이미 주어지기 때문에 `users` 앱은 단지 회원가입, 로그인, 로그아웃 관련한 유즈케이스만 다룬다. 
-	- [[django model]] 
+	- [[django model, ORM]] 
 - **`forms.py`**: 모델을 생성하고, 수정하는 코드를 편하게 작성하고 유효성 검증도 해주는 클래스를 제공.
 	- [[django forms]]
 

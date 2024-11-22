@@ -14,7 +14,7 @@ title: 20230605 book-project
 # TODO
 
 - [x] bootstore 리포에 `README.md` 작성 + PR까지 => 초기세팅법에 대하여 + PR 하는 방법 알려주기
-- [x] [[django model]] | 모델 이해도 높이고 커스텀 유저 만들어보자.
+- [x] [[django model, ORM]] | 모델 이해도 높이고 커스텀 유저 만들어보자.
 - [x] 조금만 더 욕심을 내면 커스텀 유저를 가지고 GET, POST, PATCH api도 만들어서 [[postman]]으로 실험해보자.
 
 # 발견한 것들

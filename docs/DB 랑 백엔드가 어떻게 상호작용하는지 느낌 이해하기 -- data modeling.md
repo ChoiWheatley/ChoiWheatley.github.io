@@ -7,7 +7,7 @@ updated: 2023-07-15T21:30:20
 title: DB 랑 백엔드가 어떻게 상호작용하는지 느낌 이해하기 -- data modeling
 ---
 [What is Data Modeling? - IBM](https://www.ibm.com/topics/data-modeling) |  
-[[django model]]  
+[[django model, ORM]]  
 [[Data Modeling {book-project}]]
 
 # What is Data Modeling?

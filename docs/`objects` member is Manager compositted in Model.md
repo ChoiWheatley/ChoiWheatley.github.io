@@ -7,7 +7,7 @@ created: 2023-07-28T09:44:28
 updated: 2023-07-28T10:02:48
 ---
 - link:
-	- [[django model]]
+	- [[django model, ORM]]
 	- [Post 안에 PostObjects 클래스를 정의하는 예시 {YT}](https://youtu.be/soxd_xdHR0o?t=2727)
 ___
 
