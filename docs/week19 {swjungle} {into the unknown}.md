@@ -6,7 +6,7 @@ title: week19 {swjungle} {into the unknown}
 created: 2023-12-18T18:31:28
 updated: 2023-12-19T16:53:53
 ---
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 - [[0012 Career 💼]]
 
 ## README

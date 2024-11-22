@@ -6,8 +6,8 @@ title: week 05 {swjungle} {malloc-lab}
 created: 2023-09-07T22:10:12
 updated: 2024-01-08T17:39:21
 ---
-- [[0120 swjungle 🤖]]
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[swjungle 🤖]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 	- WEEK04 못다 읽은 챕터들
 		- [[3. Machine Level Representation of Programs {CSAPP}]]
 			- [[⭐️ 3.4 Accessing Information]]

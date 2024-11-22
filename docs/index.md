@@ -35,7 +35,7 @@ I'm native Korean, but I can understand English at reading, listening.
 - [[0090 Bucket Lists 🪣|Bucketlist]] is my curious tank! go and see my weird ideas and stuffs
 - [[Daily Notes|Daily Notes]] is for scribbing daily thoughts and plans, music recommendations, etc.
 - [[0070 Obsidian 💎|obsidian]] meta ideas improving my blog experience
-- [[0120 swjungle 🤖]] is currently working on studying CS knowledge with [[pintos3 {pdf} {pintos}|PintOS]] and algorithms and web projects. (2023-08-07 ~ 2023-12-20)
+- [[swjungle 🤖]] is currently working on studying CS knowledge with [[pintos3 {pdf} {pintos}|PintOS]] and algorithms and web projects. (2023-08-07 ~ 2023-12-20)
 - Career
 	- [[최승현을 소개합니다]] is my self-introduction document
 	- [[최승현_Backend_Web_Developer_이력서]] is my resumé

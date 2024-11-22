@@ -6,9 +6,9 @@ title: week06 {swjungle}{proxy-lab}
 created: 2023-09-14T13:34:26
 updated: 2024-01-06T20:39:18
 ---
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 - [[proxylab]]
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 - [[10. System-Level IO {CSAPP}]]
 - [[11. Network Programming {CSAPP}]]
 - [[Socket Programming C API]]
@@ -86,7 +86,7 @@ C 코드 보고 이해하는 것만으로도 얻어가는 구조, 지식이 많�
 
 ## CSAPP
 
-[[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+[[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 
 - 이번주 필수
 	- [[11. Network Programming {CSAPP}]]

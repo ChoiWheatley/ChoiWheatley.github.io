@@ -6,12 +6,12 @@ title: week07-10 {swjungle} {pintos}
 created: 2023-09-21T16:20:48
 updated: 2024-01-05T00:09:09
 ---
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 - weekly
 	- [[week07 - Threads {pintos} {swjungle}]]
 	- [[week08 - User Program {pintos} {swjungle}]]
 	- [[week09 - Virtual Memory {pintos} {swjungle}]]
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.|csapp]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻|csapp]]
 	- [[3. Machine Level Representation of Programs {CSAPP}]]
 		- [[Hardware Knowledges for PintOS {swjungle}]]
 	- [[8. Exceptional Control Flow]]

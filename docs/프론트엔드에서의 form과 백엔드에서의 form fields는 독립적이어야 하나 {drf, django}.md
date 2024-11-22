@@ -8,7 +8,7 @@ updated: 2023-07-28T15:23:01
 ---
 - links
 	- [[3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estsoft {Django, DRF}]]
-	- [[drf {django rest framework}]]
+	- [[0014.1.1 drf {django rest framework} 😴]]
 	- [[0014.1 Django 🎈]]
 ___
 

@@ -6,7 +6,7 @@ title: memory representation {SP} {week03}
 created: 2023-08-30T16:56:00
 updated: 2023-08-30T17:13:26
 ---
-- parent: [[0016 Systems Programming {ssu2021-1st} 🐼]]
+- parent: [[0015.2 Systems Programming {ssu2021-1st} 🐼]]
 ___
 
 ## at a glance

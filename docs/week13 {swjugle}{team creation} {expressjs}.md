@@ -6,7 +6,7 @@ title: week13 {swjugle}{team creation} {expressjs}
 created: 2023-10-31T10:06:41
 updated: 2023-11-05T17:12:22
 ---
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 ___
 
 ## 스파르타 대표님 발제

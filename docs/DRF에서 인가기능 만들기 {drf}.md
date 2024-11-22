@@ -8,7 +8,7 @@ updated: 2023-08-04T00:35:18
 ---
 - links:
 	- [[0014.1 Django 🎈]]
-	- [[drf {django rest framework}]]  
+	- [[0014.1.1 drf {django rest framework} 😴]]  
 	- [[DRF에서 인증기능 만들기 {drf}]]
 		<iframe title="Django Rest Framework Series - Permissions and Custom Permissions - Part-2" src="https://www.youtube.com/embed/5AOn0BmSXyE?feature=oembed" height="113" width="200" allowfullscreen="" allow="fullscreen" style="aspect-ratio: 1.76991 / 1; width: 100%; height: 100%;"></iframe>
 

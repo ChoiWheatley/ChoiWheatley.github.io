@@ -3,9 +3,9 @@ aliases:
 tags:
   - giftogether
 description: 
-title: 0140 wishlist fun티끌모아ding project 생일선물 펀딩 프로젝트 🎁
+title: 0140 wishfunding 티끌모아 펀딩 프로젝트 🎁
 created: 2024-02-19T04:05:56
-updated: 2024-03-10T13:02:393302:44:57
+updated: 2024-11-22T22:39:01
 ---
 
 - [[2024-02-19 wishfunding 회의록]]

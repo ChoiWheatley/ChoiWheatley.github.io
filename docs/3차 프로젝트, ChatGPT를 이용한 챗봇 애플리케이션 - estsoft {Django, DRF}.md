@@ -6,7 +6,7 @@ title: 3차 프로젝트, ChatGPT를 이용한 챗봇 애플리케이션 - estso
 created: 2023-07-26T09:38:10
 updated: 2023-08-02T17:38:38
 ---
-- parent link: [[0014.1 Django 🎈]], [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
+- parent link: [[0014.1 Django 🎈]], [[ESTsoft 백엔드 개발자 부트캠프 오르미 1기]]
 - [요구사항 {Notion}](https://paullabworkspace.notion.site/ChatGPT-1bc750970cef40519e42a9d74404b5cb)
 - [ormi-project-1 {Notion}](https://github.com/ChoiWheatley/ormi-project-1)
 - [ormi-project-3 {Github}](git@github.com:ChoiWheatley/ormi-project-3.git)

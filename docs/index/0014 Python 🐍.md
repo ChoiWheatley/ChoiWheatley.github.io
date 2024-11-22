@@ -9,7 +9,7 @@ title: 0014 Python 🐍
 - [[venv activation and deactivation]]
 - [[python에서 Optional(Nullable) type을 다루는 법]]
 - [python google style guides](https://google.github.io/styleguide/pyguide.html)
-- [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]] 의 일환으로 빡세게 배울 파이썬 강의
+- [[ESTsoft 백엔드 개발자 부트캠프 오르미 1기]] 의 일환으로 빡세게 배울 파이썬 강의
 - [인프런 알고리즘 베스트 10 - 제코베](https://inf.run/qBQP)
 
 ---

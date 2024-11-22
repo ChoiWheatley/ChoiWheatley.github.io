@@ -14,7 +14,7 @@ title: 20230628 book-project
 
 ## updatepassword
 
-[[drf {django rest framework}]] 를 공부하면서 구현하는 비밀번호 변경 로직
+[[0014.1.1 drf {django rest framework} 😴]] 를 공부하면서 구현하는 비밀번호 변경 로직
 
 Serializer를 사용해서 수정하는 건 된다. 문제는 signout으로 리다이렉트가 안된다. js 단에서 `window.location.href`를 하는 것 가지고선 요청이 날아가지 않는다는 것을 알았다. 그러면 이번에도 fetch를 해야하나? 애초에 redirection 자체가 아닌걸.
 

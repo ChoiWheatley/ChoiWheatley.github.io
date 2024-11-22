@@ -9,13 +9,13 @@ updated: 2024-01-05T20:48:15
 
 ## INDEX
 
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 - [[이진검색트리 red black tree]] | 구현 인터페이스 확인바람.
 - [4주차 swjungle 안내 페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W04-rbtree.html)
 - [rbtree-lab {GH}](https://github.com/SWJungle/rbtree-lab)
 - [msambol/dsa/trees/red_black_tree.py {GH}](https://github.com/msambol/dsa/blob/master/trees/red_black_tree.py)
 - [[missing-semester 여러분의 CS 교육에서 누락된 학기]] | CS 학기에서 가르쳐주지 않지만 거의 필수적으로 알아야 하는 주제들에 대한 내용을 다루고 있음.
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 
 ## 구현 규칙
 

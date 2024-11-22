@@ -6,7 +6,7 @@ title: week20 {swjungle} {post jungle}
 created: 2023-12-21T16:09:27
 updated: 2023-12-29T15:32:33
 ---
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 ___
 
 ## README

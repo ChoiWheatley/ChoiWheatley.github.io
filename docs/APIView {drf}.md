@@ -7,7 +7,7 @@ created: 2023-07-28T10:03:39
 updated: 2023-07-28T10:48:10
 ---
 - link
-	- [[drf {django rest framework}]]
+	- [[0014.1.1 drf {django rest framework} 😴]]
 	- [Class-based Views {doc}](https://www.django-rest-framework.org/api-guide/views/)
 ___
 

@@ -27,7 +27,7 @@ parent link: [[docs/index/index|index]]
 - [[C++]]
 - [[0014 Python 🐍]]
 - [[0015 database]]
-- [[0016 Systems Programming {ssu2021-1st} 🐼]]
+- [[0015.2 Systems Programming {ssu2021-1st} 🐼]]
 - [[0017 C 🍎]]
 - [[0018 Javascript ☕️]]
 - [[0019 Git ᛘ]]
@@ -85,7 +85,7 @@ ___
 
 ## 교재
 
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 - [[Computer Networking, a top down approach - Kurose, James F. Ross, Keith W.]]
 - [[주니어 백엔드 개발자, 그 이상으로 🚀{book-project}]]
 - [[Operating System Concepts - Silberschatz, 8th edition]]

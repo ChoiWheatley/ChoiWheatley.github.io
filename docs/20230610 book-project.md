@@ -67,7 +67,7 @@ title: 20230610 book-project
 # Next
 
 - 일단 책 윤곽부터 [머리말과 저자소개 {NOTION}](https://www.notion.so/a99c4bc2c25443a4be2907c0c00b8aed)
-- DRF (django rest framework) | [[drf {django rest framework}]]
+- DRF (django rest framework) | [[0014.1.1 drf {django rest framework} 😴]]
 	- 직렬화, 역직렬화, JSON, form 대신에 serializer
 	- serializer: form 대신 JSON으로.
 - 상품 모델 커스텀

@@ -5,8 +5,8 @@ tags:
   - career
   - programming
 created: 2023-03-26T20:55:15
-updated: 2023-12-19T13:14:57
-title: 0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊
+updated: 2024-11-22T22:31:41
+title: ESTsoft 백엔드 개발자 부트캠프 오르미 1기
 ---
 - <https://estfamily.career.greetinghr.com/o/72417>
 - <https://m.post.naver.com/viewer/postView.nhn?volumeNo=35698694&memberNo=549393>

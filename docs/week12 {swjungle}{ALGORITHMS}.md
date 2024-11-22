@@ -6,7 +6,7 @@ title: week12 {swjungle}{ALGORITHMS}
 created: 2023-10-28T17:25:47
 updated: 2023-11-01T12:06:13
 ---
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 - [[0011 Algorithms ♾️|algorithms]]
 ---
 

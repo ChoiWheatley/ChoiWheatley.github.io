@@ -246,7 +246,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - [[typescript 언어에 대해서 설명해주세요]]
 - [[마크다운이란 무엇이고, 왜 써야 할까요, 한계가 무엇인가요]]
 - [[UTF8이 무엇인지 설명해 주세요. UTF8 문자열의 길이를 측정하는 방법과 n번째 문자를 가져오는 방법에 대해서도 설명해주세요]]
-- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] IT실습코치 포지션 면접질문
+- [[ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] IT실습코치 포지션 면접질문
 
 ### 면접 후기
 
@@ -268,7 +268,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - ~~[[남부발전 체험형 인턴]]~~
 - ~~[[삼성 SDS 공개채용]]~~
 - ~~[[컬리 채용 -  물류 프론트엔드 체험형 인턴 모집 3개월]]~~
-- [[0012.1 ESTsoft 백엔드 개발자 부트캠프 오르미 1기 🙊]]
+- [[ESTsoft 백엔드 개발자 부트캠프 오르미 1기]]
 - [[KB라이프생명 2023 채용연계형 인턴십 선발]]
 - [[2023 팀네이버 신입 공채]]
 - [[한화비전 23년 상반기 채용전제형 인턴 채용]]
@@ -301,7 +301,7 @@ parent link: [[docs/index/index|index]] [[0010 Programming 👩‍💻]]
 - \[네이버랩스] FE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91392> 
 - \[네이버랩스] BE (인턴십/자율주행 프로젝트) <https://inthiswork.com/archives/91395>
 - \[올웨이즈] \[개발 무경험자 전형] Problem Solver <https://team.alwayz.co/o/81238>
-- [[0130 ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] 
+- [[ozcodingschool startupcamp 스타트업 웹 개발 초격차 캠프 with AWS 3기]] 
 	- 2024-03-04 면접완료
 	- 2024-03-06 합격 💫
 - [[네오플 공개채용 2023]] → 이거 왜 2024-03-03 까지도 답이 없냐??

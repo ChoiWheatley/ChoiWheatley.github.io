@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: 0120 swjungle 🤖
+title: swjungle 🤖
 created: 2023-08-10T09:29:31
-updated: 2024-01-05T20:48:49
+updated: 2024-11-22T22:38:49
 ---
 
 ## INDEX
@@ -31,7 +31,7 @@ updated: 2024-01-05T20:48:49
 	- [[week19 {swjungle} {into the unknown}]]
 	- [[week20 {swjungle} {post jungle}]]
 - [[0015 OS {ssu2021-2nd} 💻]]
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 - [[Linux IPC Programming {inflearn archive}]]
 
 ## QUESTIONS and TEATIMES

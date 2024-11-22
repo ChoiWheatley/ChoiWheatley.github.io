@@ -9,13 +9,13 @@ updated: 2023-08-30T10:18:28
 
 ## INDEX
 
-- [[0120 swjungle 🤖]]
+- [[swjungle 🤖]]
 - [swjungle 정보페이지](https://jungle7-7610626261f4.herokuapp.com/pages/W01-problem-solving.html)
 - [문제모음집](https://docs.google.com/spreadsheets/d/1z4a3pSM-h76kwdUAlPXXmbwcpP-VKFYFK92TCQtjXV4/edit#gid=0)
 - [swjungle-week-01 {GH}](https://github.com/ChoiWheatley/swjungle-week-01)
 - [P7-Week01-03 목요일 시험 문제 답안 제출용 리포지토리 {GH}](https://github.com/SWJungle/P7-Week01-03)
 - [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]
-- [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+- [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 - [[0015 OS {ssu2021-2nd} 💻]]
 - [[Linux IPC Programming {inflearn archive}]]
 
@@ -152,7 +152,7 @@ ___
 
 동적 프로그래밍 & 그리디 알고리즘
 
-WEEK 04에서 C를 들어가는데, 미리미리 준비해주는 것이 좋을 것 같다. C '언어'를 배우는 게 아니다. C는 사실 제공되는 기능이 거의 없다. 기계를 이해하는 것, CPU 구조를 이해하는 데 중요하다. | [[0121 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David.]]
+WEEK 04에서 C를 들어가는데, 미리미리 준비해주는 것이 좋을 것 같다. C '언어'를 배우는 게 아니다. C는 사실 제공되는 기능이 거의 없다. 기계를 이해하는 것, CPU 구조를 이해하는 데 중요하다. | [[0015.1 CSAPP Third Edition Bryant, Randal E. O'Hallaron, David. 💻]]
 
 - INDEX
 	- [문제풀이링크 {GH}](https://github.com/Designated-Hitter/Week03----algorithm/pull/4) | 루트 README로 문제풀이현황을 체크하고 각 문제 폴더 안 README에 각종 고민들 풀고
