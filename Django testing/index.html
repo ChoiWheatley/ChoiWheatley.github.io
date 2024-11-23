@@ -52559,7 +52559,12 @@
   <h1>Django testing</h1>
 
 <ul>
-<li>ref: </li>
+<li>ref: <a href="https://docs.djangoproject.com/en/5.1/topics/testing/">https://docs.djangoproject.com/en/5.1/topics/testing/</a><ul>
+<li><a href="https://docs.djangoproject.com/en/5.1/topics/testing/overview/">Writing and running tests</a>  | Django의 테스트 프레임워크는 Python의 unittest 모듈을 활용하여 개발자가 애플리케이션 테스트를 작성하고 실행해 코드의 신뢰성과 정확성을 보장할 수 있게 합니다.</li>
+<li><a href="https://docs.djangoproject.com/en/5.1/topics/testing/tools/">Testing tools</a> | Django는 테스트 클라이언트와 RequestFactory를 제공하여 개발자가 애플리케이션의 뷰와 요청을 프로그램적으로 테스트할 수 있도록 지원합니다.</li>
+<li><a href="https://docs.djangoproject.com/en/5.1/topics/testing/advanced/">Advanced testing topics</a> | Django는 RequestFactory를 통해 뷰를 독립적으로 테스트하고, 다중 데이터베이스 설정 및 클래스 기반 뷰의 테스트를 지원합니다.</li>
+</ul>
+</li>
 </ul>
 <h2 id="unittesttestcase-djangotesttestcase"><code>unittest.TestCase</code> 와 <code>django.test.TestCase</code>의 차이점<a class="headerlink" href="#unittesttestcase-djangotesttestcase" title="Permanent link">#</a></h2>
 <p>If your tests rely on database access such as creating or querying models, be sure to create your test classes as subclasses of <a href="https://docs.djangoproject.com/en/5.1/topics/testing/tools/#django.test.TestCase" title="django.test.TestCase"><code>django.test.TestCase</code></a> rather than <a href="https://docs.python.org/3/library/unittest.html#unittest.TestCase" title="(in Python v3.13)"><code>unittest.TestCase</code></a>.</p>
