@@ -4,9 +4,12 @@ tags:
 description:
 title: Django testing
 created: 2024-11-23T21:00:09
-updated: 2024-11-23T21:06:46
+updated: 2024-11-23T21:42:10
 ---
-- ref: 
+- ref: <https://docs.djangoproject.com/en/5.1/topics/testing/>
+	- [Writing and running tests](https://docs.djangoproject.com/en/5.1/topics/testing/overview/)  | Django의 테스트 프레임워크는 Python의 unittest 모듈을 활용하여 개발자가 애플리케이션 테스트를 작성하고 실행해 코드의 신뢰성과 정확성을 보장할 수 있게 합니다.
+	- [Testing tools](https://docs.djangoproject.com/en/5.1/topics/testing/tools/) | Django는 테스트 클라이언트와 RequestFactory를 제공하여 개발자가 애플리케이션의 뷰와 요청을 프로그램적으로 테스트할 수 있도록 지원합니다.
+	- [Advanced testing topics](https://docs.djangoproject.com/en/5.1/topics/testing/advanced/) | Django는 RequestFactory를 통해 뷰를 독립적으로 테스트하고, 다중 데이터베이스 설정 및 클래스 기반 뷰의 테스트를 지원합니다.
 
 ## `unittest.TestCase` 와 `django.test.TestCase`의 차이점
 
