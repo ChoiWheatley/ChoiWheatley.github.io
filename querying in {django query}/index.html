@@ -4687,6 +4687,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Django%20testing/" class="md-tabs__link">
+        
+  
+    
+  
+  Django testing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Django%20was%20not%20configured.%20For%20more%20information%20run%20pylint%20--load-plugins%3Dpylint_django%20--help-msg%3Ddjango-not-configured/" class="md-tabs__link">
         
   
@@ -29533,6 +29550,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../Django%20testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Django testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Django%20was%20not%20configured.%20For%20more%20information%20run%20pylint%20--load-plugins%3Dpylint_django%20--help-msg%3Ddjango-not-configured/" class="md-nav__link">
         
   
@@ -52511,7 +52548,7 @@
 <li>
 <p><code>ForeignKey</code> 필드의 관계는 1:1 관계이므로 단순히 <code>.</code>으로 연결하면 된다.</p>
 <ul>
-<li><code>get</code> 메서드는 오직 하나의 개체만 가져온다는 것을 보장할 때 사용이 가능하다. | 없을 때 → <code>DoesNotExist</code> | 두개 이상일 때 → <code>MultipleObjectsReturned</code></li>
+<li><code>get</code> 메서드는 오직 하나의 개체만 가져온다는 것을 보장할 때 사용이 가능하다. | 없을 때 → <code>DoesNotExist</code> | 두개 이상일 때 → <code>MultipleObjectsReturned</code> 그래서 하나의 instance 만 가져오려면 queryset.get() 이 더 유리하다</li>
 </ul>
 <p><code>python
 e = Entry.objects.get(pk=1)

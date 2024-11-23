@@ -1053,6 +1053,10 @@
          <lastmod>2024-11-23</lastmod>
     </url>
     <url>
+         <loc>https://choiwheatley.github.io/Django%20testing/</loc>
+         <lastmod>2024-11-23</lastmod>
+    </url>
+    <url>
          <loc>https://choiwheatley.github.io/Django%20was%20not%20configured.%20For%20more%20information%20run%20pylint%20--load-plugins%3Dpylint_django%20--help-msg%3Ddjango-not-configured/</loc>
          <lastmod>2024-11-23</lastmod>
     </url>
