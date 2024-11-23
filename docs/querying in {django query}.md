@@ -3,7 +3,7 @@ aliases: 쿼리, 질의, queries, relationships
 tags: 
 description:
 created: 2023-06-20T10:48:13
-updated: 2023-07-15T21:33:03
+updated: 2024-11-23T20:37:05
 title: querying in {django query}
 ---
 - [doc](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
@@ -48,7 +48,7 @@ class Entry(models.Model):
 
 - `save` 를 해줘야 데이터베이스에 변경내용이 저장된다. 만약 새로운 필드를 생성하자마자 DB에 넣고싶다면 `create`를 사용할 것.
 - `ForeignKey` 필드의 관계는 1:1 관계이므로 단순히 `.`으로 연결하면 된다.
-	- `get` 메서드는 오직 하나의 개체만 가져온다는 것을 보장할 때 사용이 가능하다. | 없을 때 → `DoesNotExist` | 두개 이상일 때 → `MultipleObjectsReturned`
+	- `get` 메서드는 오직 하나의 개체만 가져온다는 것을 보장할 때 사용이 가능하다. | 없을 때 → `DoesNotExist` | 두개 이상일 때 → `MultipleObjectsReturned` 그래서 하나의 instance 만 가져오려면 queryset.get() 이 더 유리하다
 
 	 ```python
 	e = Entry.objects.get(pk=1)
