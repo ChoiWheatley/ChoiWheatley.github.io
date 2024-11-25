@@ -12,13 +12,13 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/Serializers%20%7Bdjango%20rest%20framework%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/Validation%20%7Bdrf%7D/">
       
       
-        <link rel="prev" href="../Serializer%20%EC%95%88%EC%97%90%20Serializer%EA%B0%80%20%EB%93%A4%EC%96%B4%EA%B0%80%EB%8F%84%20%EB%90%98%EB%82%98%EC%9A%94%3F/">
+        <link rel="prev" href="../VSCode%20Django%20Unit%20Tests/">
       
       
-        <link rel="next" href="../Service%20that%20deploys%20user%27s%20blog%20from%20markdown%20and%20media%20wiki/">
+        <link rel="next" href="../Validation%20%7Btypeorm%7D/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Serializers {django rest framework} - Choi Wheatley's Second Brain</title>
+        <title>Validation {drf} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#django-rest-framework-serializer-validation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Serializers {django rest framework}
+              Validation {drf}
             
           </span>
         </div>
@@ -7757,25 +7762,6 @@
         
   
   
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
-    
-  
-  Serializers {django rest framework}
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
   
     <li class="md-tabs__item">
       <a href="../Service%20that%20deploys%20user%27s%20blog%20from%20markdown%20and%20media%20wiki/" class="md-tabs__link">
@@ -8821,6 +8807,25 @@
     
   
   VSCode Django Unit Tests
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Validation {drf}
 
       </a>
     </li>
@@ -33179,34 +33184,6 @@
       
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Serializers {django rest framework}
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     <li class="md-nav__item">
@@ -34439,6 +34416,159 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Validation {drf}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Validation {drf}
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation의 주요 개념
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation 구현 방법
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation 구현 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 필드 수준 검증
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 객체 수준 검증
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validators" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. validators 옵션
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      ValidationError
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      참고 사항
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="참고 사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      예제: 전체적인 Validation 활용
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      공식 문서
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -52520,6 +52650,109 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation의 주요 개념
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation 구현 방법
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation 구현 방법">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 필드 수준 검증
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 객체 수준 검증
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validators" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. validators 옵션
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validationerror" class="md-nav__link">
+    <span class="md-ellipsis">
+      ValidationError
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      참고 사항
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="참고 사항">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      예제: 전체적인 Validation 활용
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      공식 문서
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -52534,12 +52767,103 @@
                   
 
 
-  <h1>Serializers {django rest framework}</h1>
-
 <ul>
-<li><a href="https://www.django-rest-framework.org/api-guide/serializers/">Serializers {doc}</a></li>
+<li>ref: <a href="https://www.django-rest-framework.org/api-guide/serializers/#validation">https://www.django-rest-framework.org/api-guide/serializers/#validation</a></li>
 </ul>
-<p>drf의 중심축을 담당하는 직렬화, 역직렬화에 대한 내용이다. </p>
+<blockquote>
+<p>GPT 응답</p>
+</blockquote>
+<h1 id="django-rest-framework-serializer-validation">Django REST Framework Serializer Validation<a class="headerlink" href="#django-rest-framework-serializer-validation" title="Permanent link">#</a></h1>
+<p>Django REST Framework (DRF)의 Serializer는 데이터 직렬화 및 역직렬화 과정을 처리하며, 입력 데이터를 검증하는 강력한 메커니즘을 제공합니다. 이 문서에서는 DRF Serializer의 Validation에 대해 설명하고, 유효성 검사를 수행하는 방법과 주요 메서드에 대해 다룹니다.</p>
+<hr />
+<h2 id="validation">Validation의 주요 개념<a class="headerlink" href="#validation" title="Permanent link">#</a></h2>
+<p>Serializer의 Validation은 입력 데이터를 처리하기 전에 데이터가 유효한지 확인하는 단계입니다. Validation은 일반적으로 다음과 같은 세 가지 수준에서 수행됩니다.</p>
+<ol>
+<li><strong>필드 수준 검증</strong>: 각 개별 필드에 대해 정의된 조건을 검증합니다.</li>
+<li><strong>객체 수준 검증</strong>: 입력된 데이터 전체에 대해 추가적인 검증 로직을 실행합니다.</li>
+<li><strong>정의된 제약 조건 검증</strong>: 모델 또는 특정 요구사항에 따라 자동으로 적용되는 검증입니다.</li>
+</ol>
+<hr />
+<h2 id="validation_1">Validation 구현 방법<a class="headerlink" href="#validation_1" title="Permanent link">#</a></h2>
+<h3 id="1">1. 필드 수준 검증<a class="headerlink" href="#1" title="Permanent link">#</a></h3>
+<p>필드 수준 검증은 Serializer의 <code>validate_&lt;field_name&gt;</code> 메서드를 사용하여 특정 필드에 대한 유효성 검사를 정의합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework</span> <span class="kn">import</span> <span class="n">serializers</span>
+
+<span class="k">class</span> <span class="nc">ExampleSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">validate_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Age must be a positive number.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+</code></pre></div>
+<p><strong>동작 원리</strong>:
+- <code>validate_&lt;field_name&gt;</code> 메서드는 해당 필드의 값에 대해 호출됩니다.
+- 유효하지 않은 값에 대해 <code>serializers.ValidationError</code>를 발생시킵니다.</p>
+<hr />
+<h3 id="2">2. 객체 수준 검증<a class="headerlink" href="#2" title="Permanent link">#</a></h3>
+<p>객체 수준 검증은 Serializer의 <code>validate</code> 메서드를 사용하여 여러 필드를 조합한 검증을 수행합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ExampleSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;start_date&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;end_date&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Start date must be before end date.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+</code></pre></div>
+<p><strong>동작 원리</strong>:
+- <code>validate</code> 메서드는 모든 필드 데이터를 포함하는 딕셔너리를 입력으로 받습니다.
+- 여러 필드 간의 상호 의존성을 검증할 때 유용합니다.</p>
+<hr />
+<h3 id="3-validators">3. <code>validators</code> 옵션<a class="headerlink" href="#3-validators" title="Permanent link">#</a></h3>
+<p>Serializer 필드에 <code>validators</code> 인자를 사용하여 사용자 정의 검증기를 추가할 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rest_framework.validators</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+
+<span class="k">def</span> <span class="nf">multiple_of_ten</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;This field must be a multiple of ten.&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ExampleSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">multiple_of_ten</span><span class="p">])</span>
+</code></pre></div>
+<hr />
+<h2 id="validationerror">ValidationError<a class="headerlink" href="#validationerror" title="Permanent link">#</a></h2>
+<p>유효성 검사 실패 시 <code>serializers.ValidationError</code> 예외가 발생합니다. 이 예외는 일반적으로 클라이언트로 반환되는 응답에 포함될 수 있는 직렬화된 에러 메시지를 제공합니다.</p>
+<p>예:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Age must be a positive number.&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;non_field_errors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Start date must be before end date.&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="_1">참고 사항<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<ul>
+<li>DRF Serializer는 Django 모델 필드의 기본 검증 로직을 자동으로 상속받습니다.</li>
+<li>데이터 입력 시 적절한 에러 메시지를 사용자에게 제공하여 유효성 검증 실패의 이유를 명확히 전달하는 것이 중요합니다.</li>
+<li>복잡한 검증 로직은 객체 수준 검증으로 구현하는 것이 유지보수에 유리합니다.</li>
+</ul>
+<hr />
+<h3 id="validation_2">예제: 전체적인 Validation 활용<a class="headerlink" href="#validation_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">UserSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">Serializer</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">EmailField</span><span class="p">()</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">write_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validate_username</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;admin&quot;</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;Username cannot contain &#39;admin&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">serializers</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">({</span><span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;Password must be at least 8 characters long.&quot;</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">data</span>
+</code></pre></div>
+<hr />
+<h2 id="_2">공식 문서<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>더 자세한 내용은 DRF 공식 문서를 참조하세요: <a href="https://www.django-rest-framework.org/api-guide/serializers/#validation">Django REST Framework Serializer Validation</a></p>
 
 
 
