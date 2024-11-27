@@ -26,3 +26,4 @@ title: mac 필수앱 🍎
 - [[homebrew]]
 - [[pbcopy, Copy data from STDIN to the clipboard]]
 - [[Raycast, Alternator of Spotlight and Alfred]]
+- [[메뉴바 아이콘이 너무 많아서 사라질때]]
