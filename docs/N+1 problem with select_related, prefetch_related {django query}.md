@@ -3,8 +3,8 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T10:22:03
-updated: 2023-07-15T21:33:03
-title: select_related, prefetch_related {django query}
+updated: 2024-11-29T21:19:56
+title: N+1 problem with select_related, prefetch_related {django query}
 ---
 `JOIN` 고도화에 사용되는 함수들. 단일 쿼리에서 계속 `JOIN`을 수행하면 비효율적이므로 미리 조인을 시켜놓은 결과를 객체로 반환한다.
 

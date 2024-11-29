@@ -101,6 +101,6 @@ SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. `QuerySet`로부�
 
 # Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.
 
-[[F(), Q() in {django query}]]
+[[F as field, Q as query in {django query}]]
 
 # EOF
