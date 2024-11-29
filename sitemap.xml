@@ -1113,7 +1113,7 @@
          <lastmod>2024-11-29</lastmod>
     </url>
     <url>
-         <loc>https://choiwheatley.github.io/F%28%29%2C%20Q%28%29%20in%20%7Bdjango%20query%7D/</loc>
+         <loc>https://choiwheatley.github.io/F%20as%20field%2C%20Q%20as%20query%20in%20%7Bdjango%20query%7D/</loc>
          <lastmod>2024-11-29</lastmod>
     </url>
     <url>
@@ -1446,6 +1446,10 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/Mutable%20reference%20is%20a%20non%20Copy%20type/</loc>
+         <lastmod>2024-11-29</lastmod>
+    </url>
+    <url>
+         <loc>https://choiwheatley.github.io/N%2B1%20problem%20with%20select_related%2C%20prefetch_related%20%7Bdjango%20query%7D/</loc>
          <lastmod>2024-11-29</lastmod>
     </url>
     <url>
@@ -3918,10 +3922,6 @@
     </url>
     <url>
          <loc>https://choiwheatley.github.io/scope%20of%20enum%20in%20C%20vs%20C%2B%2B/</loc>
-         <lastmod>2024-11-29</lastmod>
-    </url>
-    <url>
-         <loc>https://choiwheatley.github.io/select_related%2C%20prefetch_related%20%7Bdjango%20query%7D/</loc>
          <lastmod>2024-11-29</lastmod>
     </url>
     <url>
