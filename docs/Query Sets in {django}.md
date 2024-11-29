@@ -3,13 +3,14 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T11:49:38
-updated: 2023-07-25T13:05:56
+updated: 2024-11-30T00:18:27
 title: Query Sets in {django}
 ---
 
 # INDEX
 
 - [[querying in {django query}]]
+- [[How can I see the raw SQL queries Django is running]]
 - [[creating in {django query}]]
 - [[updating in {django query}]]
 - [[F as field, Q as query in {django query}]]

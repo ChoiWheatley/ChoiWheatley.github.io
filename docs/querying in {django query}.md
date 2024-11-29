@@ -3,12 +3,12 @@ aliases: 쿼리, 질의, queries, relationships
 tags: 
 description:
 created: 2023-06-20T10:48:13
-updated: 2024-11-23T20:37:05
+updated: 2024-11-30T00:18:17
 title: querying in {django query}
 ---
 - [doc](https://docs.djangoproject.com/en/4.2/topics/db/queries/)
 
-# Before you start (Blog, Author, Entry models)
+## Before you start (Blog, Author, Entry models)
 
 앞으로 모든 예시는 아래의 코드에서 정의한 모델을 기반으로 제공된다.
 
@@ -65,7 +65,7 @@ class Entry(models.Model):
 
 ![[스크린샷 2023-07-06 09.32.11.png]]
 
-# Field lookups {filter, get, exclude}
+## Field lookups {filter, get, exclude}
 
 [docs](https://docs.djangoproject.com/en/4.2/ref/models/querysets/#id4)
 
@@ -99,8 +99,10 @@ SQL의 WHERE 절로 변환이 되는 장고 모델 API이다. `QuerySet`로부�
 	Blog.objects.filter(entry__authors__name="Choi")
 	```
 
-# Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.
+## Q 객체는 하나의 Lookup 안에 여러 조건을 넣어줄 수 있다.
 
 [[F as field, Q as query in {django query}]]
 
-# EOF
+## Query문을 실행하기 전에 확인하고 싶은 경우
+
+[[How can I see the raw SQL queries Django is running]]
