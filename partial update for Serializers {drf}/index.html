@@ -52827,6 +52827,13 @@
 <span class="n">target_serializer</span><span class="o">.</span><span class="n">is_valid</span><span class="p">(</span><span class="n">raise_exception</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">updated_instance</span> <span class="o">=</span> <span class="n">target_serializer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 </code></pre></div>
+<p>Serializer 클래스에 <code>update</code> 메서드가 정의되어있어야 한다. <code>ModelSerializer</code> 를 상속받은 경우에는 <code>create</code>와 <code>update</code> 메서드가 자동으로 상속받게 되지만 오버라이드 하여 커스텀 로직을 추가하거나 Partial 옵션에 대응하는 경우를 고려할 수 있다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">validated_data</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">validated_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">instance</span>
+</code></pre></div>
 
 
 
