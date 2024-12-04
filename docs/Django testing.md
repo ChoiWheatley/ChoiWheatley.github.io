@@ -4,7 +4,7 @@ tags:
 description:
 title: Django testing
 created: 2024-11-23T21:00:09
-updated: 2024-11-23T21:42:10
+updated: 2024-12-05T00:36:50
 ---
 - ref: <https://docs.djangoproject.com/en/5.1/topics/testing/>
 	- [Writing and running tests](https://docs.djangoproject.com/en/5.1/topics/testing/overview/)  | Django의 테스트 프레임워크는 Python의 unittest 모듈을 활용하여 개발자가 애플리케이션 테스트를 작성하고 실행해 코드의 신뢰성과 정확성을 보장할 수 있게 합니다.
@@ -19,3 +19,4 @@ Using [`unittest.TestCase`](https://docs.python.org/3/library/unittest.html#uni
 
 - `django.test.TestCase`: 테스트를 실행할때 테스트용 `default` 데이터베이스를 생성하여 거기에서 테스트를 진행한다. 테스트가 끝나면 `default` 데이터베이스를 삭제한다.
 - `unittest.TestCase`: 테스트를 실행할때 데이터베이스 신경을 쓰지 않는다. 
+
