@@ -3,7 +3,7 @@ aliases:
 tags: 
 description:
 created: 2023-07-06T10:10:41
-updated: 2024-12-05T16:09:22
+updated: 2024-12-05T16:36:35
 title: F as field, Q as query in {django query}
 ---
 
@@ -40,6 +40,7 @@ Company.objects.annotate(built_by=F("manufacturer"))[0]
 # `Q()` 
 
 - <https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects>
+- source code: <https://github.com/django/django/blob/stable/5.1.x/django/db/models/query_utils.py#L38>
 
 AND(`&`), OR(`|`), NOT(`~`), XOR(`^`) 연산을 좀 더 편하게 만들어준다.
 
@@ -86,3 +87,20 @@ class MemoListView(APIView):
             queryset = queryset.filter(q)
 
 ```
+
+source code를 살펴보니 Q 오브젝트는 `tree.Node`를 상속받았다. 그 말은 즉슨 Q 오브젝트끼리 부모-자식 관계가 가능하다는 것이다. `Node.create`를 하고 새 Q 오브젝트를 `add`했다. 이때 Connector가 항상 따라붙는데, 간선에 OR, AND, XOR 연산을 정의하기 위해 사용하는 것 같다. 부울대수는 트리구조로 만들 수 있고, 그 정점끼리는 Q 오브젝트가 있으며, 간선은 정점간의 operator가 있는 셈이다. 
+
+예를 들어 `A & ((B | (C ^ D)) & E)` 를 트리구조로 표현하면 다음과 같이 될 것이다:
+
+```mermaid
+---
+title: Boolean logic graph
+---
+graph LR
+	A -- AND --- B
+	B -- OR --- C
+	B -- AND --- E
+	C -- XOR --- D
+	
+```
+
