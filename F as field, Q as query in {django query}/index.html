@@ -7290,6 +7290,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Query%20Parameter%EA%B0%80%20List%2C%20Dict%20%ED%83%80%EC%9E%85%EC%9D%BC%20%EA%B2%BD%EC%9A%B0/" class="md-tabs__link">
+        
+  
+    
+  
+  Query Parameter가 List, Dict 타입일 경우
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Query%20Sets%20in%20%7Bdjango%7D/" class="md-tabs__link">
         
   
@@ -24069,6 +24086,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../%ED%95%84%ED%84%B0%EB%A7%81%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%84%20%EC%84%A4%EA%B3%84%ED%95%98%EB%A9%B4%EC%84%9C%20%7Bdjango%20orm%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  필터링 알고리즘을 설계하면서 {django orm}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../%ED%95%98%EB%8A%94%20%EC%9D%BC%EC%97%90%EB%8A%94%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%9E%88%EB%8A%94%EC%A7%80/" class="md-tabs__link">
         
   
@@ -32815,6 +32849,26 @@
   
   <span class="md-ellipsis">
     Python Type Hints - How to Narrow Types with isinstance, assert, and literal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Query%20Parameter%EA%B0%80%20List%2C%20Dict%20%ED%83%80%EC%9E%85%EC%9D%BC%20%EA%B2%BD%EC%9A%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Query Parameter가 List, Dict 타입일 경우
   </span>
   
 
@@ -52570,6 +52624,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../%ED%95%84%ED%84%B0%EB%A7%81%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%84%20%EC%84%A4%EA%B3%84%ED%95%98%EB%A9%B4%EC%84%9C%20%7Bdjango%20orm%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    필터링 알고리즘을 설계하면서 {django orm}
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../%ED%95%98%EB%8A%94%20%EC%9D%BC%EC%97%90%EB%8A%94%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%9E%88%EB%8A%94%EC%A7%80/" class="md-nav__link">
         
   
@@ -52951,6 +53025,7 @@
 <h1 id="q"><code>Q()</code><a class="headerlink" href="#q" title="Permanent link">#</a></h1>
 <ul>
 <li><a href="https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects">https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects</a></li>
+<li>source code: <a href="https://github.com/django/django/blob/stable/5.1.x/django/db/models/query_utils.py#L38">https://github.com/django/django/blob/stable/5.1.x/django/db/models/query_utils.py#L38</a></li>
 </ul>
 <p>AND(<code>&amp;</code>), OR(<code>|</code>), NOT(<code>~</code>), XOR(<code>^</code>) 연산을 좀 더 편하게 만들어준다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
@@ -52990,6 +53065,17 @@
 
             <span class="n">queryset</span> <span class="o">=</span> <span class="n">queryset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 </code></pre></div>
+<p>source code를 살펴보니 Q 오브젝트는 <code>tree.Node</code>를 상속받았다. 그 말은 즉슨 Q 오브젝트끼리 부모-자식 관계가 가능하다는 것이다. <code>Node.create</code>를 하고 새 Q 오브젝트를 <code>add</code>했다. 이때 Connector가 항상 따라붙는데, 간선에 OR, AND, XOR 연산을 정의하기 위해 사용하는 것 같다. 부울대수는 트리구조로 만들 수 있고, 그 정점끼리는 Q 오브젝트가 있으며, 간선은 정점간의 operator가 있는 셈이다. </p>
+<p>예를 들어 <code>A &amp; ((B | (C ^ D)) &amp; E)</code> 를 트리구조로 표현하면 다음과 같이 될 것이다:</p>
+<pre class="mermaid"><code>---
+title: Boolean logic graph
+---
+graph LR
+    A -- AND --- B
+    B -- OR --- C
+    B -- AND --- E
+    C -- XOR --- D
+</code></pre>
 
 
 
