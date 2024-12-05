@@ -26,7 +26,7 @@
     
     
       
-        <title>F(), Q() in {django query} - Choi Wheatley's Second Brain</title>
+        <title>F as field, Q as query in {django query} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              F(), Q() in {django query}
+              F as field, Q as query in {django query}
             
           </span>
         </div>
@@ -4983,7 +4983,7 @@
   
     
   
-  F(), Q() in {django query}
+  F as field, Q as query in {django query}
 
       </a>
     </li>
@@ -30056,7 +30056,7 @@
           
   
   <span class="md-ellipsis">
-    F(), Q() in {django query}
+    F as field, Q as query in {django query}
   </span>
   
 
@@ -30067,7 +30067,7 @@
         
   
   <span class="md-ellipsis">
-    F(), Q() in {django query}
+    F as field, Q as query in {django query}
   </span>
   
 
@@ -52932,7 +52932,7 @@
 
 
 <h1 id="f"><code>F()</code><a class="headerlink" href="#f" title="Permanent link">#</a></h1>
-<p>https://docs.djangoproject.com/en/4.2/ref/models/expressions/#f-expressions</p>
+<p><a href="https://docs.djangoproject.com/en/4.2/ref/models/expressions/#f-expressions">https://docs.djangoproject.com/en/4.2/ref/models/expressions/#f-expressions</a></p>
 <blockquote>
 <p>F() 개체는 모델 필드의 값, 모델 필드의 변환된 값 또는 주석이 달린 열을 나타냅니다. 이를 통해 모델 필드 값을 참조하고 이를 사용하여 데이터베이스 작업을 수행할 수 있으므로 실제로 데이터베이스에서 파이썬 메모리로 가져올 필요 없이 데이터베이스 작업을 수행할 수 있습니다.</p>
 </blockquote>
@@ -52950,13 +52950,45 @@
 </code></pre></div>
 <h1 id="q"><code>Q()</code><a class="headerlink" href="#q" title="Permanent link">#</a></h1>
 <ul>
-<li>https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects</li>
+<li><a href="https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects">https://docs.djangoproject.com/en/4.2/topics/db/queries/#complex-lookups-with-q-objects</a></li>
 </ul>
 <p>AND(<code>&amp;</code>), OR(<code>|</code>), NOT(<code>~</code>), XOR(<code>^</code>) 연산을 좀 더 편하게 만들어준다.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Poll</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
     <span class="n">Q</span><span class="p">(</span><span class="n">question__startswith</span><span class="o">=</span><span class="s2">&quot;Who&quot;</span><span class="p">),</span>
     <span class="n">Q</span><span class="p">(</span><span class="n">pub_date</span><span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">pub_date</span><span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
 <span class="p">)</span>
+</code></pre></div>
+<p><strong>사용사례</strong></p>
+<p>쿼리 파라메터로 필터링을 수행할때 어떤 옵션은 하나의 filter로 끝나지 않는 경우가 있었다. 예를 들어 메모들을 쿼리하는데 태그를 필터링하고자 할 경우, 필터링 하는 태그가 여러개일 수도 있다. 이 경우 반복문을 사용하여 filter를 해야 하는데, 이때 Q 객체를 쓰면 편하다.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MemoListView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="nd">@extend_schema</span><span class="p">(</span>
+        <span class="n">summary</span><span class="o">=</span><span class="s2">&quot;메모 조회&quot;</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;날짜와 다양한 분류,정렬 기준으로 사용자의 메모를 조회합니다.&quot;</span><span class="p">,</span>
+        <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">OpenApiParameter</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tag[]&quot;</span><span class="p">,</span>
+                <span class="n">description</span><span class="o">=</span><span class="s2">&quot;태그 필터. 태그 이름은 고유하기 때문에 tag_title을 사용합니다. 다중인자를 허용합니다.&quot;</span><span class="p">,</span>
+                <span class="n">required</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="o">...</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="n">queryset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queryset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">memo_set__user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+        <span class="o">...</span>
+
+        <span class="c1"># `tag` filtering</span>
+        <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tag[]&quot;</span><span class="p">):</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s2">&quot;tag[]&quot;</span><span class="p">)</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">Q</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">tag_title</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+                <span class="n">q</span> <span class="o">|=</span> <span class="n">Q</span><span class="p">(</span><span class="n">memo_tags__title</span><span class="o">=</span><span class="n">tag_title</span><span class="p">)</span>
+
+            <span class="n">queryset</span> <span class="o">=</span> <span class="n">queryset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 </code></pre></div>
 
 
