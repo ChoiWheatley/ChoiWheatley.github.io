@@ -4,7 +4,7 @@ tags:
 description:
 title: neovim
 created: 2023-08-14T09:26:58
-updated: 2023-11-20T10:14:31
+updated: 2024-12-05T20:44:45
 ---
 - [[0010 Programming 👩‍💻|programming]]
 - [[0110 Utility 🔧]]
@@ -16,6 +16,12 @@ ___
 
 - [vscode-neovim 에서 사용할 수 있는 플러그인들](https://github.com/vscode-neovim/vscode-neovim/wiki/Plugins#quick-scope)
 
-- [[neovim 설정 관련 {NvChad}]]
+
 
 지금 (2023-08-31T23:46:29)은 neovim 설정하는 데 시간 쏟을 여력이 없다. 좋은 config가 있으니 일단 이것을 먼저 쓰자. `.zshrc` 파일에 `vim`을 `nvim`으로 별칭을 걸어놓기만 하자.
+
+## Related Topics
+
+- [[Telescope 사용법 {neovim}]]
+- [[NvChad {neovim}]]
+	- [[neovim 설정 관련 {NvChad}]]
