@@ -4,7 +4,7 @@ tags:
 description:
 title: PrimaryKeyRelatedField는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다 {drf}
 created: 2024-12-06T23:31:34
-updated: 2024-12-06T23:31:37
+updated: 2024-12-06T23:35:26
 ---
 [https://github.com/NohSungwoo/Plana/pull/25/files#diff-f96949d693834953aca5d343f59b82cb607f979dd16891020a6225a084b2b9e8R13](https://github.com/NohSungwoo/Plana/pull/25/files#diff-f96949d693834953aca5d343f59b82cb607f979dd16891020a6225a084b2b9e8R13) 해당 PR의 `memos/serializers.py` 파일에서 의문이 생겼습니다.
 
@@ -125,7 +125,7 @@ class HyperlinkedIdentityField(HyperlinkedRelatedField):
 
 ---
 
-### 결론: `PrimaryKeyRelatedField`는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.
+## 결론: `PrimaryKeyRelatedField`는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.
 
 `PrimaryKeyRelatedField`는 `use_pk_only_optimization()` 메서드가 `True`로 설정되어 있습니다. 이로 인해 DRF의 `get_attribute` 메서드는 최적화된 방식으로 작동하며, 연관된 모델 인스턴스를 참조하지 않고 `PKOnlyObject`를 반환합니다. 따라서, 이 필드를 Serializer에서 사용할 경우 다음과 같은 특징이 있습니다:
 
