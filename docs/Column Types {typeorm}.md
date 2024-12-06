@@ -6,7 +6,7 @@ title: Column Types {typeorm}
 created: 2023-11-27T17:15:06
 updated: 2024-04-14T23:01:16
 ---
-- [[typeorm]]
+- [[0018.4 TypeORM 💾]]
 - [공식문서](https://typeorm.io/entities#column-types)
 ___
 

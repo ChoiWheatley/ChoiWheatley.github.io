@@ -19,7 +19,7 @@ updated: 2024-04-03T20:41:43
 - [[Data Modeling {book-project}]]
 - [[DB 랑 백엔드가 어떻게 상호작용하는지 느낌 이해하기 -- data modeling]]
 - [[sequelize, a MySQL ORM for javascript]]
-- [[typeorm]]
+- [[0018.4 TypeORM 💾]]
 - [[여러가지 DBMS들]]
 - [[0015.2 SQLAlchemy Python ORM]]
 - [[SQLD]]

@@ -104,7 +104,7 @@ user[getName](); // "hello"
 
 - [[express.js]]
 - [[sequelize, a MySQL ORM for javascript]]
-- [[typeorm]]
+- [[0018.4 TypeORM 💾]]
 - [[nodemon, auto reload nodejs server {npm}]]
 - [[0018.1 Nest.js 🐱]]
 

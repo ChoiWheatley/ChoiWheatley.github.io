@@ -6,7 +6,7 @@ title: Repository {typeorm}
 created: 2023-11-27T17:14:01
 updated: 2024-03-28T21:42:00
 ---
-- [[typeorm]]
+- [[0018.4 TypeORM 💾]]
 - [공식문서](https://typeorm.io/working-with-repository#)
 ___
 
