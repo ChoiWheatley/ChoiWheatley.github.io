@@ -33069,14 +33069,20 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#primarykeyrelatedfield_1" class="md-nav__link">
     <span class="md-ellipsis">
       결론: PrimaryKeyRelatedField는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="결론: PrimaryKeyRelatedField는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -53359,14 +53365,20 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#primarykeyrelatedfield_1" class="md-nav__link">
     <span class="md-ellipsis">
       결론: PrimaryKeyRelatedField는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="결론: PrimaryKeyRelatedField는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -53493,7 +53505,7 @@
 </blockquote>
 <p>이는 목 객체가 필요 없다는 뜻이지, 기본적으로는 <code>HyperlinkedRelatedField</code>를 상속받고 있기 때문에 연관 인스턴스의 속성을 조회하기 위해선 <code>get_object</code>를 통해야 할 것이다.</p>
 <hr />
-<h3 id="primarykeyrelatedfield_1">결론: <code>PrimaryKeyRelatedField</code>는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.<a class="headerlink" href="#primarykeyrelatedfield_1" title="Permanent link">#</a></h3>
+<h2 id="primarykeyrelatedfield_1">결론: <code>PrimaryKeyRelatedField</code>는 모델 필드를 덮어씌우며, 연관 모델의 인스턴스를 저장하지 않습니다.<a class="headerlink" href="#primarykeyrelatedfield_1" title="Permanent link">#</a></h2>
 <p><code>PrimaryKeyRelatedField</code>는 <code>use_pk_only_optimization()</code> 메서드가 <code>True</code>로 설정되어 있습니다. 이로 인해 DRF의 <code>get_attribute</code> 메서드는 최적화된 방식으로 작동하며, 연관된 모델 인스턴스를 참조하지 않고 <code>PKOnlyObject</code>를 반환합니다. 따라서, 이 필드를 Serializer에서 사용할 경우 다음과 같은 특징이 있습니다:</p>
 <ol>
 <li><strong>연관 인스턴스 비저장</strong>:<ul>
