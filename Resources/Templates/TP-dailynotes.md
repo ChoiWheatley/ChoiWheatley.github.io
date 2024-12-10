@@ -1,13 +1,3 @@
----
-<%*
-const title = tp.file.title;
-const today = moment(title).format("YYYY-MM-DD");
-const yesterday = moment(title).subtract(1, 'days').format("YYYY-MM-DD");
-const tomorrow = moment(title).add(1, 'days').format("YYYY-MM-DD");
--%>
-tags:
-- " DailyNote "
----
 
 ## <% today %>
 
@@ -31,6 +21,10 @@ tags:
 ### 🌞 오늘은...
 
 ### 🌜 어제는...
+
+### 📖 오늘의 읽기목록
+
+- 
 
 ### ⏰ Daily Routine
 
