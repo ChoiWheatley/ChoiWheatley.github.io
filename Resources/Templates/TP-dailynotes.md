@@ -1,3 +1,13 @@
+---
+<%*
+const title = tp.file.title;
+const today = moment(title).format("YYYY-MM-DD");
+const yesterday = moment(title).subtract(1, 'days').format("YYYY-MM-DD");
+const tomorrow = moment(title).add(1, 'days').format("YYYY-MM-DD");
+-%>
+tags:
+- " DailyNote "
+---
 
 ## <% today %>
 
