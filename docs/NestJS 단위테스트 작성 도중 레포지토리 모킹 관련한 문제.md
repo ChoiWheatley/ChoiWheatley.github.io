@@ -4,7 +4,7 @@ tags:
 description:
 title: NestJS 단위테스트 작성 도중 레포지토리 모킹 관련한 문제
 created: 2024-12-15T16:47:49
-updated: 2024-12-17T01:32:05
+updated: 2024-12-17T01:33:46
 ---
 [nest/issues # Unable to run tests because Nest can't resolve dependencies of a service](https://github.com/nestjs/nest/issues/363)
 
@@ -100,7 +100,41 @@ NestJS에서 테스트 코드를 작성할 때, 데이터베이스 접근 여부
     
     아래 `createMockRepository`와 `createMockProvider` 헬퍼 함수는 이미 구현되어 있으므로, 여러분이 직접 작성할 필요는 없습니다. 이 함수는 모든 레포지토리 메서드와 `createQueryBuilder` 메서드를 포함한 모킹을 제공합니다.
 
-    ```tsx
+	```typescript
+	export function createMock<T>(cls: new (...args: any[]) => T): jest.Mocked<T> {
+	  const mock: Partial<jest.Mocked<T>> = {};
+	
+	  Object.entries(Object.getOwnPropertyDescriptors(cls.prototype)).forEach(
+	    ([key, descriptor]) => {
+	      if (typeof descriptor.value === 'function' && key !== 'constructor') {
+	        mock[key] = jest.fn();
+	      }
+	    },
+	  );
+	
+	  return mock as jest.Mocked<T>;
+	}
+	
+	type MockRepository<T> = jest.Mocked<T> & {
+	  createQueryBuilder: jest.Mocked<SelectQueryBuilder<T>>;
+	};
+	
+	function createMockSelectQueryBuilder<T>(): jest.Mocked<SelectQueryBuilder<T>> {
+	  return {
+	    select: jest.fn().mockReturnThis(),
+	    addSelect: jest.fn().mockReturnThis(),
+	    where: jest.fn().mockReturnThis(),
+	    update: jest.fn().mockReturnThis(),
+	    andWhere: jest.fn().mockReturnThis(),
+	    orWhere: jest.fn().mockReturnThis(),
+	    set: jest.fn().mockReturnThis(),
+	    setParameter: jest.fn().mockReturnThis(),
+	    getMany: jest.fn().mockResolvedValue([]), // Example of mocked result
+	    getOne: jest.fn().mockResolvedValue(null),
+	    execute: jest.fn().mockResolvedValue({}),
+	    // Include other methods as needed
+	  } as unknown as jest.Mocked<SelectQueryBuilder<T>>;
+	}
     /**
      * 아래 함수는 Repository<Entity>를 모킹하기 위해
      * 사용됩니다. 즉, 단위테스트를 위해 실제 RDS에 데이터를 저장하는
