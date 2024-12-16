@@ -53695,32 +53695,66 @@ export function createDataSourceOptions(
 <li>
 <p><strong>MockRepository 및 MockProvider 활용</strong></p>
 <p>아래 <code>createMockRepository</code>와 <code>createMockProvider</code> 헬퍼 함수는 이미 구현되어 있으므로, 여러분이 직접 작성할 필요는 없습니다. 이 함수는 모든 레포지토리 메서드와 <code>createQueryBuilder</code> 메서드를 포함한 모킹을 제공합니다.</p>
-<div class="highlight"><pre><span></span><code>/**
- * 아래 함수는 Repository&lt;Entity&gt;를 모킹하기 위해
- * 사용됩니다. 즉, 단위테스트를 위해 실제 RDS에 데이터를 저장하는
- * 것이 아닌, MockRepository에 호출만 합니다.
- *
- * 만약 실제로 데이터를 넣고 그 결과를 재가공해야 할 필요가 있다면
- * 아래 두 가지 방법 중 하나를 사용할 수 있습니다:
- *
- * 1. TypeOrmModule을 `imports:`에 추가한다. 테스트 DB에 직접
- *    데이터를 CRUD한다. (src/tests/data-source-options.ts 참조)
- * 2. 사용하고자 하는 메서드만 따로 구현한 MockRepository를 작성하여
- *    `useValue:` 자리에 할당한다.
- */
-export function createMockRepository&lt;T&gt;(
-  cls: new (...args: any[]) =&gt; T,
-): MockRepository&lt;T&gt; {
-  const mock = createMock(cls) as MockRepository&lt;T&gt;;
-  mock.createQueryBuilder = jest.fn(createMockSelectQueryBuilder) as any;
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createMock</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">cls</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">T</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">Mocked</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mock</span><span class="o">:</span><span class="w"> </span><span class="kt">Partial</span><span class="o">&lt;</span><span class="nx">jest</span><span class="p">.</span><span class="nx">Mocked</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
 
-  return mock;
-}
+<span class="w">  </span><span class="nb">Object</span><span class="p">.</span><span class="nx">entries</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptors</span><span class="p">(</span><span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)).</span><span class="nx">forEach</span><span class="p">(</span>
+<span class="w">    </span><span class="p">([</span><span class="nx">key</span><span class="p">,</span><span class="w"> </span><span class="nx">descriptor</span><span class="p">])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;function&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;constructor&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">mock</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">();</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">);</span>
 
-export const createMockProvider = (entity: EntityClassOrSchema): Provider =&gt; ({
-  provide: getRepositoryToken(entity),
-  useValue: createMockRepository(Repository&lt;typeof entity&gt;),
-});
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">mock</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">Mocked</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">type</span><span class="w"> </span><span class="nx">MockRepository</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">Mocked</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">createQueryBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.Mocked</span><span class="o">&lt;</span><span class="nx">SelectQueryBuilder</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">createMockSelectQueryBuilder</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">Mocked</span><span class="o">&lt;</span><span class="nx">SelectQueryBuilder</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">select</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">addSelect</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">update</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">andWhere</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">orWhere</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">set</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">setParameter</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockReturnThis</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">getMany</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockResolvedValue</span><span class="p">([]),</span><span class="w"> </span><span class="c1">// Example of mocked result</span>
+<span class="w">    </span><span class="nx">getOne</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockResolvedValue</span><span class="p">(</span><span class="kc">null</span><span class="p">),</span>
+<span class="w">    </span><span class="nx">execute</span><span class="o">:</span><span class="w"> </span><span class="kt">jest.fn</span><span class="p">().</span><span class="nx">mockResolvedValue</span><span class="p">({}),</span>
+<span class="w">    </span><span class="c1">// Include other methods as needed</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">unknown</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">Mocked</span><span class="o">&lt;</span><span class="nx">SelectQueryBuilder</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/**</span>
+<span class="cm"> * 아래 함수는 Repository&lt;Entity&gt;를 모킹하기 위해</span>
+<span class="cm"> * 사용됩니다. 즉, 단위테스트를 위해 실제 RDS에 데이터를 저장하는</span>
+<span class="cm"> * 것이 아닌, MockRepository에 호출만 합니다.</span>
+<span class="cm"> *</span>
+<span class="cm"> * 만약 실제로 데이터를 넣고 그 결과를 재가공해야 할 필요가 있다면</span>
+<span class="cm"> * 아래 두 가지 방법 중 하나를 사용할 수 있습니다:</span>
+<span class="cm"> *</span>
+<span class="cm"> * 1. TypeOrmModule을 `imports:`에 추가한다. 테스트 DB에 직접</span>
+<span class="cm"> *    데이터를 CRUD한다. (src/tests/data-source-options.ts 참조)</span>
+<span class="cm"> * 2. 사용하고자 하는 메서드만 따로 구현한 MockRepository를 작성하여</span>
+<span class="cm"> *    `useValue:` 자리에 할당한다.</span>
+<span class="cm"> */</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createMockRepository</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">cls</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">[])</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">T</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">MockRepository</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">mock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createMock</span><span class="p">(</span><span class="nx">cls</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">MockRepository</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">mock</span><span class="p">.</span><span class="nx">createQueryBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">(</span><span class="nx">createMockSelectQueryBuilder</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">any</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">mock</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">createMockProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">entity</span><span class="o">:</span><span class="w"> </span><span class="kt">EntityClassOrSchema</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Provider</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">  </span><span class="nx">provide</span><span class="o">:</span><span class="w"> </span><span class="kt">getRepositoryToken</span><span class="p">(</span><span class="nx">entity</span><span class="p">),</span>
+<span class="w">  </span><span class="nx">useValue</span><span class="o">:</span><span class="w"> </span><span class="kt">createMockRepository</span><span class="p">(</span><span class="nx">Repository</span><span class="o">&lt;</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">entity</span><span class="o">&gt;</span><span class="p">),</span>
+<span class="p">});</span>
 </code></pre></div>
 </li>
 <li>
