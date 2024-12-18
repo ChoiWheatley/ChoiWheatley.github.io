@@ -18,7 +18,7 @@
         <link rel="prev" href="../rust%EC%97%90%EC%84%9C%20c%2B%2B%EC%99%80%20%EA%B0%99%EC%9D%80%20custom%20comparator%EB%A5%BC%20%EC%A0%95%EC%9D%98%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%9D%84%EA%B9%8C%EC%9A%94/">
       
       
-        <link rel="next" href="../scope%20of%20enum%20in%20C%20vs%20C%2B%2B/">
+        <link rel="next" href="../save%20related%20entities%20only%20with%20PK%20%7Btypeorm%7D/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -75,6 +75,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -17185,6 +17190,23 @@
     
   
   save both relations {typeorm}
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../save%20related%20entities%20only%20with%20PK%20%7Btypeorm%7D/" class="md-tabs__link">
+        
+  
+    
+  
+  save related entities only with PK {typeorm}
 
       </a>
     </li>
@@ -44694,6 +44716,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    save both relations {typeorm}
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -44704,6 +44737,52 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      단계:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../save%20related%20entities%20only%20with%20PK%20%7Btypeorm%7D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    save related entities only with PK {typeorm}
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -53446,6 +53525,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      단계:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -53461,22 +53557,54 @@
 
   <h1>save both relations {typeorm}</h1>
 
-<blockquote>
-<p>Let's save a photo, and its metadata and attach them to each other.</p>
-</blockquote>
+<p><code>Photo</code> 엔티티와 관련된 <code>PhotoMetadata</code> 엔티티를 저장하면서 두 엔티티 간의 관계를 올바르게 설정하는 방법입니다.</p>
+<h3 id="_1">단계:<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>엔티티 인스턴스화:</strong></li>
+<li>
+<p>먼저 <code>Photo</code>와 <code>PhotoMetadata</code> 엔티티의 인스턴스를 생성합니다:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">photo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Photo</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PhotoMetadata</span><span class="p">();</span>
-<span class="p">...</span>
-<span class="c1">// get entity relationships</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">photoRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Photo</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">metadataRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">PhotoMetadata</span><span class="p">);</span>
-
-<span class="c1">// first we should save a photo</span>
-<span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photo</span><span class="p">);</span>
-
-<span class="c1">// photo is saved. Now we need to save a photo metadata</span>
-<span class="k">await</span><span class="w"> </span><span class="nx">metadataRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">metadata</span><span class="p">);</span>
 </code></pre></div>
+</li>
+<li>
+<p>이 엔티티들은 데이터베이스에 저장될 데이터를 나타냅니다.</p>
+</li>
+<li>
+<p><strong>레포지토리 가져오기:</strong></p>
+</li>
+<li>
+<p>각각의 엔티티에 대해 데이터베이스 작업을 처리하는 레포지토리를 가져옵니다:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">photoRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">Photo</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">metadataRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AppDataSource</span><span class="p">.</span><span class="nx">getRepository</span><span class="p">(</span><span class="nx">PhotoMetadata</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong><code>Photo</code> 엔티티를 먼저 저장:</strong></p>
+</li>
+<li><strong>순서가 중요한 이유:</strong> <code>PhotoMetadata</code> 엔티티는 관계를 통해 <code>Photo</code>를 참조할 수 있습니다. 따라서, <code>Photo</code>를 먼저 저장하면 데이터베이스에서 유효한 ID(예: 기본 키)가 생성되며, 이를 통해 <code>PhotoMetadata</code>가 올바르게 참조할 수 있습니다.</li>
+<li>
+<p><code>photo</code> 엔티티를 데이터베이스에 저장합니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">photoRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">photo</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>그 다음 <code>PhotoMetadata</code> 엔티티 저장:</strong></p>
+</li>
+<li>
+<p><code>photo</code>가 성공적으로 저장된 후, 이제 <code>PhotoMetadata</code> 엔티티를 저장합니다:</p>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">metadataRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">metadata</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>이 시점에서 <code>Photo</code>와 <code>PhotoMetadata</code> 간의 관계를 저장된 <code>photo</code> 인스턴스를 사용해 완전히 설정할 수 있습니다.</p>
+</li>
+</ol>
+<hr />
+<p><strong>순서의 중요성:</strong>
+- <strong>엔티티 간의 의존성:</strong> <code>PhotoMetadata</code> 엔티티는 종종 <code>Photo</code> 엔티티에 의존하여 관계를 설정합니다. 예를 들어, <code>PhotoMetadata</code>가 <code>Photo</code>를 참조하는 외래 키를 가지고 있다면, 관계를 저장하기 전에 <code>Photo</code>가 데이터베이스에 존재해야 합니다.
+- <strong>잠재적 오류:</strong> 이 순서를 반대로 하면 외래 키 제약 위반 또는 <code>PhotoMetadata</code> 엔티티에서 null 참조와 같은 문제가 발생할 수 있습니다.</p>
+<p>위와 같은 순서를 따름으로써, <code>PhotoMetadata</code> 엔티티가 저장된 <code>Photo</code> 엔티티를 올바르게 참조할 수 있도록 보장할 수 있습니다.</p>
 
 
 
