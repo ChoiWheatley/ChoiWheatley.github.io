@@ -2,9 +2,9 @@
 aliases: 
 tags: 
 description:
-title: QuerySet.paginate {django query}
+title: paginate {django query}
 created: 2024-12-19T21:55:22
-updated: 2024-12-19T22:12:44
+updated: 2024-12-19T22:47:33
 ---
 - ref: 
 	- <https://docs.djangoproject.com/en/5.1/topics/pagination/>

@@ -17,4 +17,4 @@ title: Query Sets in {django}
 - [[참조와 역참조]]
 - [[N+1 problem with select_related, prefetch_related {django query}]]
 - [[get_context_data, get_queryset { django } { ListView }]]
-- [[QuerySet.paginate {django query}]]
+- [[paginate {django query}]]
