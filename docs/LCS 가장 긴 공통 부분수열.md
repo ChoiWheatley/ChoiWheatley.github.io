@@ -1,12 +1,17 @@
 ---
-description:
+links:
+  - https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWBOHEx66kIDFAWr
+  - https://www.acmicpc.net/problem/9251
+status: 
+description: 
 aliases: 
-tags: algo/dp 
+tags:
+  - algo/dp
 date created: Monday, February 13th 2023, 6:16:28 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
 created: 2023-02-13T06:16:28
-updated: 2023-08-28T19:49:46
-title: LCS 가장 긴 공통 부분수열 {longest common subsequence}
+updated: 2024-12-23T18:10:54
+title: LCS 가장 긴 공통 부분수열
 ---
 
 # LCS 가장 긴 공통 부분수열

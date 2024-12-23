@@ -1,17 +1,19 @@
 ---
-description:
+links:
+status:
+description: 
 title: Segment Tree 연습문제 2
 created: 2023-02-14T23:46:49
-categories: 
- - problem
- - 문제
+categories:
+  - problem
+  - 문제
 aliases: 
- - 
-tags: [" algo/segment_tree  ", algo/segment_tree]
-state: "Pass"
+tags:
+  - segment_tree
+state: Pass
 date created: Tuesday, February 14th 2023, 11:46:49 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:03
+updated: 2024-12-23T18:07:01
 ---
 parent link: [[Segment Tree]]
 

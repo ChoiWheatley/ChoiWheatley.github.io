@@ -92,7 +92,7 @@ $$
 
 [이분탐색 헷갈리지 않게 구현하기 {최백준}](https://www.notion.so/choiwheatley/Binary-Search-fc80010792364e23924f1ec933d467df)
 
-[[binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}]]
+[[binary search를 활용한 lower upper bound 그리고 parametric search까지]]
 
 파이썬에선 `index()` 함수로 리스트, 튜플 내 원소 검색을 수행할 수 있다.
 
@@ -195,7 +195,7 @@ $$
 	- 누적도수분포표를 만든다 (누적 히스토그램)
 	- 정렬할 리스트를 순회하며 누적도수분포표가 가리키는 인덱스에 원소를 넣고 누적도수분포표의 값을 1 줄인다.
 	- profit 💵
-	- 아, [[도수정렬 (Counting Sort) {rust} {python}]]
+	- 아, [[수 정렬하기 3 (Counting Sort)]]
 
 ## Chapter04 스택과 힙
 

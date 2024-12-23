@@ -1,10 +1,13 @@
 ---
+links:
+status:
 aliases: 
-tags: algo/binarysearch 
-description:
-title: binary search를 활용한 lower upper bound 그리고 parametric search까지 {Notion export}
+tags:
+  - binarysearch
+description: 
+title: binary search를 활용한 lower upper bound 그리고 parametric search까지
 created: 2023-08-12T04:47:40
-updated: 2023-12-30T15:15:39
+updated: 2024-12-23T18:40:33
 ---
 
 - [[0011 Algorithms ♾️|algorithms]]
@@ -134,7 +137,6 @@ TEST(BinSearch, LowerBound) {
 # Parametric Search로의 확장
 
 > 이진탐색은 최적화 문제를 결정 문제로 바꿔서 풀 수 있게 해준다.
-> 
 
 - 최적화 문제 = $f(x)=\text{True}$가 되게 하는 x의 최댓값을 구하여라.
 - 결정 문제 = 어떤 x에 대하여 $f(x)=\text{True}$인가?
@@ -182,6 +184,15 @@ lowerbound는 어느 상황에서 쓰이는가? 바로 중간에 원소를 삽�
 구현 방법으로는 바이너리 서치가 있다. 
 
 ```python
-def lower_bound(ls: [int], val: int) -> int: 
-  # todo
+def lower_bound(ls: list[int], val: int) -> int: 
+    left, right = 0, len(ls)
+    
+    while left < right:
+        mid = (left + right) // 2
+        if ls[mid] < val:
+            left = mid + 1
+        else:
+            right = mid
+
+    return left
 ```

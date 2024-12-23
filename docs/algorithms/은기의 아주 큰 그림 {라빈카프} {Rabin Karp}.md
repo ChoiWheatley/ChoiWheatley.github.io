@@ -1,13 +1,17 @@
 ---
-description:
+links:
+status:
+description: 
 aliases: 
 created: 2023-02-16T20:39:00
-tags: algo/hash, algo/string 
+tags:
+  - hash
+  - string
 source: https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWkIfv7qBCYDFAXC
 author: 
 date created: Thursday, February 16th 2023, 8:39:00 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-08-27T14:04:09
+updated: 2024-12-23T18:45:03
 title: 은기의 아주 큰 그림 {라빈카프} {Rabin Karp}
 ---
 parent link: [[Hash]]
@@ -62,7 +66,7 @@ parent link: [[Hash]]
 
 [참고링크](https://codingdog.tistory.com/entry/라빈-카프-알고리즘-그래도-비벼볼-만한-문제가-있다)
 
-문제 난이도가 D6나 되는 덴 다 이유가 있다. 별 생각없이 풀었다가 메모리 초과 + 시간 초과로 인해 멘탈이 나가버렸다. 이차원의 큰 문자열 S를 다른 이차원의 문자열 W과 비교하여 푸는 문제로, 일차원일때엔 전에 [[kmp|KMP]]로 풀었던 것과 사실 똑같은 문제이다. 그래서 이차원일때에도 똑같이 풀어도 상관은 없었겠으나, 그래도 명색이 해시인데, 해시로 풀어보자 하고 덤벼보았다. 처음에 시도한 방법은 굉장히 단순했다.
+문제 난이도가 D6나 되는 덴 다 이유가 있다. 별 생각없이 풀었다가 메모리 초과 + 시간 초과로 인해 멘탈이 나가버렸다. 이차원의 큰 문자열 S를 다른 이차원의 문자열 W과 비교하여 푸는 문제로, 일차원일때엔 전에 [[부분 문자열|KMP]]로 풀었던 것과 사실 똑같은 문제이다. 그래서 이차원일때에도 똑같이 풀어도 상관은 없었겠으나, 그래도 명색이 해시인데, 해시로 풀어보자 하고 덤벼보았다. 처음에 시도한 방법은 굉장히 단순했다.
 
 1. `H(W) -> key`  은기가 꿈에서 본 그림 W를 일차원으로 세운 다음 해싱한 값을 key에 넣는다.
 2. `H(S[i:i+h-1][j:j+w-1]) == key` 선생님의 그림의 어떤 i,j에 대하여 해싱한 값이 key와 같다면 count를 하나 늘린다. 이때 h는 W의 세로 길이, w는 W의 가로 길이이다.

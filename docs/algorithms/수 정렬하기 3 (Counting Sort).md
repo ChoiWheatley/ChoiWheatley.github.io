@@ -1,15 +1,18 @@
 ---
+links:
+  - https://www.acmicpc.net/problem/10989
+status: 
 aliases: 
-tags: 
-description:
-title: 도수정렬 (Counting Sort) {rust} {python}
+tags:
+  - sort
+  - counting_sort
+description: 
+title: 수 정렬하기 3 (Counting Sort)
 created: 2023-08-14T16:47:35
-updated: 2023-08-14T18:46:06
+updated: 2024-12-23T18:17:15
 ---
 - [[0011 Algorithms ♾️]]
-- [수 정렬하기 3 {boj}](https://www.acmicpc.net/problem/10989)
-- [Rust 풀이](https://www.acmicpc.net/source/58913744)
-- [Python 풀이]  
+- [수 정렬하기 3 {boj}](https://www.acmicpc.net/problem/10989)  
 사실, [[Doit 자료구조와 함께 배우는 알고리즘 기초 파이썬 편]]에서 공부했을 때에 나온 도수정렬이 무엇이었는지 감도 제대로 안왔는데, 4월중에 내가 한창 러스트에 빠져있었을 때 도수정렬을 사용하여 문제를 풀었던 적이 있어 깜짝 놀라고 말았다.
 
 1. 도수분포표를 만든다. 어차피 원소의 개수는 정해져 있으니까 그 최댓값으로 초기화 한다.
