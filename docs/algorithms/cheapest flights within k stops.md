@@ -1,15 +1,17 @@
 ---
-description:
+status:
+description: 
 aliases: 
 tags: 
 created: 2023-05-26T17:25:57
-updated: 2023-07-15T21:33:04
-title: leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap
+updated: 2024-12-23T17:38:14
+title: cheapest flights within k stops
+links: https://leetcode.com/problems/cheapest-flights-within-k-stops/
 ---
 - 테스트케이스가 책이 출판된 뒤에 변경이 되어 타임아웃이 발생해서 멘붕이 왔었다.
-- https://leetcode.com/problems/cheapest-flights-within-k-stops/
+- <https://leetcode.com/problems/cheapest-flights-within-k-stops/>
 - notice: 책에 있는 코드로는 더 이상 ACCEPT가 나오지 않는다. 다음 링크를 참조하여 더 효율적인 코드에 대한 토론을 확인해보자.  
-    https://github.com/onlybooks/algorithm-interview/issues/104
+    <https://github.com/onlybooks/algorithm-interview/issues/104>
 
 # Commit Logs
 

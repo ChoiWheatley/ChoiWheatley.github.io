@@ -26,8 +26,7 @@ parent link: [[0011 Algorithms ♾️|algorithms]] [[SW Expert Academy|swea]]
 	- [x] [[Pro 사전문제 - 기초 Partial Sort 연습]]
 - [x] [[No. 24 - 보급로]]
 - [x] [[No. 25 중간값 구하기]]
-- [ ] [[No. 27 Social Media]]
-- [ ] [[1181 단어 정렬 {boj} source code {python} {heap}]]
+- [ ] [[1181 단어 정렬]]
 - [ ] [[11279 최대 힙 {boj} {heap} {python class Heap}]]
 - [x] [[1655 가운데를 말해요 {boj} {heapq}]]
 
@@ -129,4 +128,4 @@ pop이 구현하는데 꽤나 고생했다. left, right 인덱스가 자꾸 예�
 # 아무 정렬문제 힙으로 풀기 (python)
 
 힙소트가 아니라 '힙' 클래스를 구현하여 풀었다는 점에 의의를 두었다.  
-[1181 {boj} source code](https://www.acmicpc.net/source/65079282) | [[1181 단어 정렬 {boj} source code {python} {heap}]]
+[1181 {boj} source code](https://www.acmicpc.net/source/65079282) | [[1181 단어 정렬]]

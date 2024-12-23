@@ -1,37 +1,23 @@
 ---
 aliases: 
-tags: algo/heap 
+tags: 
 description:
-title: 1181 단어 정렬 {boj} source code {python} {heap}
-created: 2023-08-14T23:37:48
-updated: 2023-08-14T23:38:34
+title: 11279 최대 힙 {boj} {heap} {python class Heap}
+created: 2023-08-19T13:11:03
+updated: 2023-08-19T13:13:45
 ---
+<https://www.acmicpc.net/problem/11279>
+
+[[Heap]]
+
+## python sourcecode
+
+파이썬으로 직접 힙 클래스와 비교자를 구현해서 문제를 풀었다. 사실 이 코드는 [[1181 단어 정렬]] 에서 가져온 거임
 
 ```python
-"""max heap을 활용한 문제풀이
-커스텀 `less` predicate은 금방 만들 수 있지만, 가장 중요한 정렬파트는 내가 직접
-하나씩 구현해 보고 싶다."""
-
-from dataclasses import dataclass
-from typing import Any, List, Self, TypeVar, Type, Generic
 from abc import ABCMeta, abstractmethod
-from sys import stdin, stdout
-
-standard_input = """13
-but
-i
-wont
-hesitate
-no
-more
-no
-more
-it
-cannot
-wait
-im
-yours
-"""
+import sys
+from typing import Any, Generic, List, Type, TypeVar
 
 
 class Comparable(metaclass=ABCMeta):
@@ -121,31 +107,4 @@ class Heap(Generic[T]):
         if len(self) == 0:
             return None
         return self.data[1]
-
-
-@dataclass
-class CustomComparable(Comparable):
-    key: str
-
-    def __lt__(self, other: Self) -> bool:
-        if len(self.key) == len(other.key):
-            return self.key < other.key
-        return len(self.key) < len(other.key)
-
-    def __init__(self, string=None):
-        self.key = "" if string is None else string
-
-
-if __name__ == "__main__":
-    trash = input()
-    heap = Heap(CustomComparable)
-    for word in {e for e in stdin}:
-        heap.insert(CustomComparable(word.strip()))
-    while len(heap):
-        value = heap.peek()
-        heap.pop()
-        if value:
-            stdout.write(value.key + "\n")
-        else:
-            break
 ```

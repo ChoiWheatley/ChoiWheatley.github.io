@@ -1,10 +1,10 @@
 ---
 aliases: 
-tags: 
-description:
+tags: []
+description: 
 title: 10819 차이를 최대로 {boj} {permutation}
 created: 2023-08-15T11:35:09
-updated: 2023-08-15T11:37:04
+updated: 2024-12-23T17:22:33
 ---
 - <https://www.acmicpc.net/problem/10819>
 - [[next_permutation 구현]]

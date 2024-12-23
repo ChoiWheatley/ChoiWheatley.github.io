@@ -122,7 +122,7 @@ ___
 - [[1715 카드 정렬하기 {boj}]] →수열을 더하는데 괄호를 어디에 배치하느냐에 따라 달라지는 결과값 중 최소를 구하는 문제인듯
 - [[13334 철로 {boj} {priorityqueue}]]  
 - [[21606(아침산책) {boj} {dfs}]]  
-- [[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]  
+- [[network_delay_time]]  
 - [[이분 그래프]]  
 - [[2617 구슬찾기 {boj} {플로이드워셜}]]  
 - [[1948 임계경로 {boj} {위상정렬}]]

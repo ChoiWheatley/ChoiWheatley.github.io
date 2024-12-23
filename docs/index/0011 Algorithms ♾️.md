@@ -1,4 +1,6 @@
 ---
+links: "[[docs/index|index]]"
+status: 
 description: 
 title: 0011 Algorithms ♾️
 created: 2023-02-09T11:01:38
@@ -10,13 +12,9 @@ aliases:
 tags:
   - index
   - algo
-  - index
-  - algo
-parent:
-  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-12-23T14:50:43
+updated: 2024-12-23T18:01:31
 ---
 
 ___
@@ -72,13 +70,11 @@ ___
 
 # 문제풀이 회고용
 
-- [[11602 카드게임]] 
-- [[leet_743_network_delay_time{dijkstra}{graph}{min heap}]]
-- [[leet787 cheapest flights within k stops -- dijkstra -- graph --min-heap]]
-- [[Z {1074} {boj} {재귀}]]
-- [[N-Queen {boj}]]
-- [[한수 {boj}{1065}]]
-- [[leet 5 longest-palindrome-substring {string} {two_pointers}]]
+```dataview
+TABLE tags, difficulty, status, links FROM "docs/algorithms"
+```
+
+## Links
 
 - problems
 	- [최강박조 백준](https://www.acmicpc.net/group/5673)

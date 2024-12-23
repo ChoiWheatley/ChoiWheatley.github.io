@@ -1,10 +1,15 @@
 ---
-description:
+links: https://leetcode.com/problems/network-delay-time/
+status: 풀이완료
+description: 
 aliases: 
-tags: algo/dijkstra algo/graph algo/heap 
+tags:
+  - graph
+  - heap
+  - dijkstra
 created: 2023-05-25T15:19:23
-updated: 2023-08-22T10:11:26
-title: leet_743_network_delay_time{dijkstra}{graph}{min heap}
+updated: 2024-12-23T17:38:00
+title: network_delay_time
 ---
 - <https://leetcode.com/problems/network-delay-time/>
 - [The reason of FAIL -- github issue](https://github.com/OrmiCodeRanger/ChoiSeunghyeon/issues/1)

@@ -9,7 +9,7 @@ title: priority queue - python
 - [heapq](https://docs.python.org/3/library/heapq.html#module-heapq)
 - [queue.PriorityQueue](https://docs.python.org/3/library/queue.html#queue.PriorityQueue)
 
-[[leet_743_network_delay_time{dijkstra}{graph}{min heap}]] 문제를 풀다가 대가리가 아파서 조사를 진행함.
+[[network_delay_time]] 문제를 풀다가 대가리가 아파서 조사를 진행함.
 
 # heapq
 

@@ -1,12 +1,14 @@
 ---
+links:
+status:
 aliases: 
 tags:
-  - algo/string
-  - algo/two_pointers
+  - string
+  - two_pointers
 description: 
-title: leet 5 longest-palindrome-substring {string} {two_pointers}
+title: leet 5 longest-palindrome-substring
 created: 2024-01-02T17:43:53
-updated: 2024-01-03T18:09:23
+updated: 2024-12-23T18:00:13
 ---
 - [[0011 Algorithms ♾️|algorithms]]
 - <https://leetcode.com/problems/longest-palindromic-substring>

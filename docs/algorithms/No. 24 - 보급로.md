@@ -1,17 +1,20 @@
 ---
-description:
+links:
+status:
+description: 
 title: No. 24 - 보급로
 created: 2023-02-10T21:37:08
-categories: 
- - heap
- - bfs
- - memoization
-aliases: 
- - 보급로
-tags: [" algo/heap ", algo/heap]
+categories:
+  - heap
+  - bfs
+  - memoization
+aliases:
+  - 보급로
+tags:
+  - heap
 date created: Friday, February 10th 2023, 9:37:08 pm
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2023-07-15T21:33:04
+updated: 2024-12-23T17:58:36
 ---
 {% raw %}
 
