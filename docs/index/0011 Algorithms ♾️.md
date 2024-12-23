@@ -1,25 +1,27 @@
 ---
-description:
+description: 
 title: 0011 Algorithms ♾️
 created: 2023-02-09T11:01:38
-categories: 
- - index
-aliases: 
- - algorithms
- - 알고리즘
-tags: [" index algo  ", index, algo]
+categories:
+  - index
+aliases:
+  - algorithms
+  - 알고리즘
+tags:
+  - index
+  - algo
+  - index
+  - algo
 parent:
- - " [[0000 Index 🔗|index]] "
+  - " [[0000 Index 🔗|index]] "
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-01-11T00:40:52
+updated: 2024-12-23T14:50:43
 ---
 
 ___
 
 # ReadMe
-
-~~본격적인 포스팅은 [노션](https://choiwheatley.notion.site/180a950a1d5d4144a89e0fa8c75ec0e8?v=bfeb6746135f434b94a0851d1d09e96a)에 올리고 옵시디언은 약간 치트시트같은 느낌으로~~
 
 알고리즘 문제는 어떻게 정리해야할지 아직 제대로 잡혀있지 않았다. 열심히 문제풀고 C++로 푼 문제는 [choi-workspace](https://github.com/ChoiWheatley/choi-workspace)에, 파이썬으로 푼 문제는 [ChoiSeungHyeon](https://github.com/OrmiCodeRanger/ChoiSeunghyeon) 에 정리하고 있는데, 이것을 인덱싱을 어떻게 잘 할 수는 없을까?
 
@@ -36,23 +38,6 @@ ___
 
 # INDEX
 
-- problems
-	- [최강박조 백준](https://www.acmicpc.net/group/5673)
-	- [코드레인저 - ESTsoft 백준](https://www.acmicpc.net/group/17719)
-	- [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=recent)
-	- [알고스팟](https://algospot.com)
-	- [SWEA](https://swexpertacademy.com/main/main.do)
-	- [leet code](https://leetcode.com)
-		- [LeetCode 75](https://leetcode.com/studyplan/leetcode-75) - 기초 문제집
-- github
-	- [ChoiSeungHyeon](https://github.com/OrmiCodeRanger/ChoiSeunghyeon) | Python 문제풀이 오르미 코드레인저 
-	- [choi-workspace](https://github.com/ChoiWheatley/choi-workspace) | C++ 문제풀이 (파일구조가 조금 개판이긴 함)
-		- [cpp-algorithms](https://github.com/ChoiWheatley/cpp-algorithms) | choi-workspace에서 c++ 알고리즘만 가져옴
-	- [AlgorithmCheatSheet](https://github.com/OrmiCodeRanger/AlgorithmCheatSheet) | 오르미 코드레인저 팀원들이 사용하는 파이썬 기반 알고리즘 치트시트
-	- [Algorithm-Study](https://github.com/ChoiWheatley/Algorithm-Study) | Python 문제풀이 | swjungle 수료 후
-- swjungle
-	- [[week 01~03 {swjungle} {ALGORITHMS}]]
-	- [[week12 {swjungle}{ALGORITHMS}]]
 ---
 
 - [[graph 기초|graph]]
@@ -94,3 +79,22 @@ ___
 - [[N-Queen {boj}]]
 - [[한수 {boj}{1065}]]
 - [[leet 5 longest-palindrome-substring {string} {two_pointers}]]
+
+- problems
+	- [최강박조 백준](https://www.acmicpc.net/group/5673)
+	- [코드레인저 - ESTsoft 백준](https://www.acmicpc.net/group/17719)
+	- [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=recent)
+	- [알고스팟](https://algospot.com)
+	- [SWEA](https://swexpertacademy.com/main/main.do)
+	- [leet code](https://leetcode.com)
+		- [LeetCode 75](https://leetcode.com/studyplan/leetcode-75) - 기초 문제집
+	- [백준](https://boj.kr)
+- github
+	- [ChoiSeungHyeon](https://github.com/OrmiCodeRanger/ChoiSeunghyeon) | Python 문제풀이 오르미 코드레인저 
+	- [choi-workspace](https://github.com/ChoiWheatley/choi-workspace) | C++ 문제풀이 (파일구조가 조금 개판이긴 함)
+		- [cpp-algorithms](https://github.com/ChoiWheatley/cpp-algorithms) | choi-workspace에서 c++ 알고리즘만 가져옴
+	- [AlgorithmCheatSheet](https://github.com/OrmiCodeRanger/AlgorithmCheatSheet) | 오르미 코드레인저 팀원들이 사용하는 파이썬 기반 알고리즘 치트시트
+	- [Algorithm-Study](https://github.com/ChoiWheatley/Algorithm-Study) | Python 문제풀이 | swjungle 수료 후
+- swjungle
+	- [[week 01~03 {swjungle} {ALGORITHMS}]]
+	- [[week12 {swjungle}{ALGORITHMS}]]
