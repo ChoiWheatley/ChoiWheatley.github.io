@@ -6,7 +6,7 @@ tags:
 description:
 title: Poetry
 created: 2024-09-03T11:08:43
-updated: 2024-12-24T21:44:37
+updated: 2024-12-24T21:47:49
 ---
 
 ## poetry를 사용하여 가상환경 설정
@@ -108,13 +108,21 @@ poetry install
 
 - `pyproject.toml`에 정의된 모든 의존성을 설치
 
+```shell
+poetry install --no-root
+```
+
+- `poetry.lock`에 정의된 모든 의존성을 설치
+
+[[poetry.lock으로 설치하는 것과 pyproject.toml로 설치하는 것의 차이]]
+
 ### 의존성 업데이트
 
 ```bash
 poetry update
 ```
 
-- 모든 패키지를 최신 버전으로 업데이트
+- 모든 패키지를 최신 버전으로 업데이트. pyproject.toml, poetry.lock 모두 변경됨.
 
 ### 스크립트 실행
 
