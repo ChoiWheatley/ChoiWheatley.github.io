@@ -53024,20 +53024,23 @@
   <h1>Poetry</h1>
 
 <h2 id="poetry">poetry를 사용하여 가상환경 설정<a class="headerlink" href="#poetry" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="err">##</span><span class="w"> </span><span class="nx">폴더</span><span class="w"> </span><span class="nx">생성</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">mkdir</span><span class="w"> </span><span class="nx">oz</span><span class="o">-</span><span class="nx">backend</span><span class="o">-</span><span class="nx">django</span>
+<div class="highlight"><pre><span></span><code>## 폴더 생성
+&gt; mkdir oz-backend-django
 
-<span class="err">##</span><span class="w"> </span><span class="nx">폴더</span><span class="w"> </span><span class="nx">이동</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">cd</span><span class="w"> </span><span class="nx">oz</span><span class="o">-</span><span class="nx">backend</span><span class="o">-</span><span class="nx">django</span>
+## 폴더 이동
+&gt; cd oz-backend-django
 
-<span class="err">##</span><span class="w"> </span><span class="nx">poetry</span><span class="w"> </span><span class="nx">초기화</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">poetry</span><span class="w"> </span><span class="nx">init</span>
+## poetry 초기화
+&gt; poetry init
 
-<span class="err">##</span><span class="w"> </span><span class="nx">poetry</span><span class="w"> </span><span class="nx">의존성</span><span class="w"> </span><span class="nx">설치</span><span class="w"> </span><span class="nx">및</span><span class="w"> </span><span class="nx">가상환경</span><span class="w"> </span><span class="nx">세팅</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">poetry</span><span class="w"> </span><span class="nx">install</span>
+## poetry 의존성 설치 및 가상환경 세팅
+&gt; poetry install
 
-<span class="err">##</span><span class="w"> </span><span class="nx">가상환경</span><span class="w"> </span><span class="nx">접속하기</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">poetry</span><span class="w"> </span><span class="nx">shell</span>
+## poetry 의존성 설치 및 가상환경 세팅 (poetry.lock파일 사용)
+&gt; poetry install --no-root
+
+## 가상환경 접속하기
+&gt; poetry shell
 </code></pre></div>
 <h2 id="cheetsheets">CheetSheets<a class="headerlink" href="#cheetsheets" title="Permanent link">#</a></h2>
 <h3 id="poetry_1">Poetry 설치<a class="headerlink" href="#poetry_1" title="Permanent link">#</a></h3>
@@ -53045,6 +53048,9 @@
 </code></pre></div>
 <p>또는 Homebrew를 사용:</p>
 <div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>poetry
+</code></pre></div>
+<p>또는 pipx를 사용</p>
+<div class="highlight"><pre><span></span><code>pipx<span class="w"> </span>install<span class="w"> </span>poetry
 </code></pre></div>
 <h3 id="_1">새로운 프로젝트 생성<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>poetry<span class="w"> </span>new<span class="w"> </span>my-project
