@@ -1,15 +1,17 @@
 ---
+links:
+status:
 aliases: 
 tags: 
 description:
 title: Poetry
 created: 2024-09-03T11:08:43
-updated: 2024-09-03T14:07:02
+updated: 2024-12-24T21:44:37
 ---
 
 ## poetry를 사용하여 가상환경 설정
 
-```jsx
+```
 ## 폴더 생성
 > mkdir oz-backend-django
 
@@ -21,6 +23,9 @@ updated: 2024-09-03T14:07:02
 
 ## poetry 의존성 설치 및 가상환경 세팅
 > poetry install
+
+## poetry 의존성 설치 및 가상환경 세팅 (poetry.lock파일 사용)
+> poetry install --no-root
 
 ## 가상환경 접속하기
 > poetry shell
@@ -38,6 +43,12 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 ```bash
 brew install poetry
+```
+
+또는 pipx를 사용
+
+```shell
+pipx install poetry
 ```
 
 ### 새로운 프로젝트 생성
