@@ -14,7 +14,7 @@ tags:
   - algo
 date created: Thursday, February 9th 2023, 11:01:38 am
 date modified: Monday, February 27th 2023, 6:20:45 pm
-updated: 2024-12-23T18:46:25
+updated: 2024-12-24T10:36:29
 ---
 
 ## INDEX
@@ -74,6 +74,8 @@ updated: 2024-12-23T18:46:25
 ---
 
 ## 문제풀이 회고용
+
+[[docs/algorithms/README]]
 
 ```dataview
 TABLE tags, difficulty, status, links FROM "docs/algorithms"
