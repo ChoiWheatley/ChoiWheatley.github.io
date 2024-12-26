@@ -24972,6 +24972,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exceptions" class="md-nav__link">
     <span class="md-ellipsis">
       Exceptions
@@ -53085,6 +53094,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exceptions" class="md-nav__link">
     <span class="md-ellipsis">
       Exceptions
@@ -53419,6 +53437,11 @@ npx<span class="w"> </span>ts-jest<span class="w"> </span>config:init
 </code></pre></div>
 <h4 id="arraysiterables">Arrays/Iterables<a class="headerlink" href="#arraysiterables" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nx">expect</span><span class="p">(</span><span class="nx">array</span><span class="p">).</span><span class="nx">toContain</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">array</span><span class="p">).</span><span class="nx">toHaveLength</span><span class="p">(</span><span class="nx">number</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="objects">Objects<a class="headerlink" href="#objects" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nx">expect</span><span class="p">(</span><span class="nx">object</span><span class="p">).</span><span class="nx">toHaveProperty</span><span class="p">(</span><span class="nx">keyPath</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="nx">expect</span><span class="p">(</span><span class="nx">object</span><span class="p">).</span><span class="nx">toHaveProperty</span><span class="p">(</span><span class="s1">&#39;kitchen.area&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
 </code></pre></div>
 <h4 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nx">expect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
