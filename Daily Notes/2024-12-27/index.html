@@ -8633,6 +8633,23 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../Untitled%2016/" class="md-tabs__link">
+        
+  
+    
+  
+  Untitled 16
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../Untitled%202/" class="md-tabs__link">
         
   
@@ -38963,6 +38980,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Untitled%2016/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Untitled 16
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Untitled%202/" class="md-nav__link">
         
   
@@ -57559,7 +57596,8 @@
 </blockquote>
 <p>새로운 개발문화를 선도하기 위해 Best Practice를 연구하고 WIKI에 그 내용을 작성하는 것은 좋다. 하지만 납득이 가게끔 하려면 생산성이 높아져야 한다는 것을 어필해야 할 것이지만 정작 내가 생산성이 증가했는지 알 도리가 없다. 오히려 리서치와 개발을 같이 하느라 시간을 평소보다 몇배는 더 많이 쏟았지만 만들어진 API는 고작 하나인걸? 리서치 + 기반 다지기 + 테스팅 도입하기 + 유틸 클래스 &amp; 함수 만드는 데 걸리는 시간이 포함되었기 때문에 결과적으로 새 API를 하나 만들면서 다각도로 퍼포먼스를 측정하는 것이 필요해 보인다.</p>
 <p>당장 생각나는 것은 역시 <strong>테스팅</strong>이다. API 테스트를 자동화 하고자 하는 마음이 컸지만 지금까지 수동으로 하고 있었다. 하지만 E2E 테스트를 해보면서 API를 NestApplication에 던져보고 파급효과를 측정할 수 있기까지 하니 확실한 장점으로 가져올 수 있겠다. 유저를 생성하고 펀딩을 하나 만들고 새 유저를 생성하고 Provisional Donation을 하나 만들고 또 새 관리자를 생성하고 Deposit을 하나 만들었을 때 새 Donation 인스턴스가 생기는지 보기 위해선 API를 최소 9번은 호출해야 한다. 하지만 Jest를 이용하면? 딸깍. 결국은 자동화 하지 않으면 커다란 애그리게이트 하나의 생애주기를 시뮬레이션 하는 것이 대단한 부담이 될 것이다. 수동으로 API 보내는 것과 자동화 했을때 시나리오 하나를 시뮬레이션 하는데 걸리는 시간을 비교하자.</p>
-<p><strong>개발속도</strong>가 향상되는 것을 어떻게 측정하지?</p>
+<p><strong>개발속도</strong>가 향상되는 것을 어떻게 측정하지? GPT 한테 물어보니 JIRA 같은 서비스에서 티켓을 완료하기까지 소요시간을 기록한다고 하는데, 이게 과거 기준 잘 로그가 쌓여있는지 확인 후 새 기능 만들면서 얼마나 걸리는지 평균시간을 측정해 보는 것도 재미있겠다.</p>
+<p><strong>유지보수성</strong>을 정량화 하는 도구들은 많이 나와있다. SonarQube, CodeClimate같이 정적분석도구들은 코드 복잡도를 측정한다. 버그를 잘 기록해 왔다면, 해당 버그들을 각각의 도메인 모델에 매핑하고 DDD 적용 도메인에서 발생하는 버그의 양과 비교해볼 수도 있겠다. 의존성또한 분석도구가 있다. <a href="https://github.com/jmcdo29/nestjs-spelunker">nestjs-spelunker</a>는 Nest 앱을 가지고 모듈 간에 그래프를 JSON으로 뽑아준다. 이 JSON을 가지고 GPT한테 mermaid.js 양식으로 변환해 달라고 하면 해주겠지 머.</p>
 <h2 id="para">🪂 PARA<a class="headerlink" href="#para" title="Permanent link">#</a></h2>
 <blockquote>
 <p>[!note] <a href="https://chatgpt.com/g/g-46Xrh4MXk-para-expert">PARA Expert</a> 에 위의 'Daily Briefing'을 복붙하면 자동으로 아래의 PARA 구조로 변환해줍니다</p>
