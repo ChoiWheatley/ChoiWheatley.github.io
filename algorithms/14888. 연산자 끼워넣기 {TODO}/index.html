@@ -12,13 +12,13 @@
         <meta name="author" content="you">
       
       
-        <link rel="canonical" href="https://choiwheatley.github.io/algorithms/1197%20%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC%20%7Bboj%7D/">
+        <link rel="canonical" href="https://choiwheatley.github.io/algorithms/14888.%20%EC%97%B0%EC%82%B0%EC%9E%90%20%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0%20%7BTODO%7D/">
       
       
-        <link rel="prev" href="../1181%20%EB%8B%A8%EC%96%B4%20%EC%A0%95%EB%A0%AC/">
+        <link rel="prev" href="../1197%20%EC%B5%9C%EC%86%8C%20%EC%8A%A4%ED%8C%A8%EB%8B%9D%20%ED%8A%B8%EB%A6%AC%20%7Bboj%7D/">
       
       
-        <link rel="next" href="../14888.%20%EC%97%B0%EC%82%B0%EC%9E%90%20%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0%20%7BTODO%7D/">
+        <link rel="next" href="../1655%20%EA%B0%80%EC%9A%B4%EB%8D%B0%EB%A5%BC%20%EB%A7%90%ED%95%B4%EC%9A%94%20%7Bboj%7D%20%7Bheapq%7D/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>1197 최소 스패닝 트리 {boj} - Choi Wheatley's Second Brain</title>
+        <title>14888. 연산자 끼워넣기 {TODO} - Choi Wheatley's Second Brain</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#tldr" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1197 최소 스패닝 트리 {boj}
+              14888. 연산자 끼워넣기 {TODO}
             
           </span>
         </div>
@@ -52671,9 +52671,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#tldr" class="md-nav__link">
     <span class="md-ellipsis">
-      정렬을 할 줄이야
+      TLDR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snippet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-input-expected-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Input &amp; Expected Output
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Input & Expected Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
     </span>
   </a>
   
@@ -52694,46 +52745,89 @@
                   
 
 
-  <h1>1197 최소 스패닝 트리 {boj}</h1>
+  <h1>14888. 연산자 끼워넣기 {TODO}</h1>
 
-<ul>
-<li><a href="https://www.acmicpc.net/problem/1197">https://www.acmicpc.net/problem/1197</a>  </li>
-<li><a href="https://ongveloper.tistory.com/376">크루스칼 알고리즘 {blog}</a></li>
-<li><a href="https://github.com/Jungle-7-Algorithm-study/Algorithm-Study/pull/122">github.com / Jungle 7 Algorithm / pull / 122 / 전성태_MST</a></li>
-</ul>
-<h2 id="_1">정렬을 할 줄이야<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>모든 간선을 가중치 기준으로 정렬한 다음, 주어진 조건을 만족하기만 하면 T에 넣는다. 그렇게 총 <code>n-1</code>번 반복하면 된다.</p>
-<p><mark>주어진 조건</mark></p>
-<blockquote>
-<p>추가되는 간선은 사이클을 만들지 않아야 한다.</p>
-</blockquote>
-<p>사이클 탐지방법으로는 각 노드의 부모노드가 동일한지를 검사하면 된다. <a href="https://chanhuiseok.github.io/posts/algo-33/">Union Find 관련 블로그</a></p>
-<p><a href="../../Union%20Find/">Union Find</a></p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">sol</span><span class="p">(</span><span class="n">G</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    순회를 돌면서 매번 최소 가중치 간선을 찾아 추가하는 알고리즘</span>
-<span class="sd">    가중치값만 구하면 되므로 최소신장그래프는 작성하지 않는다.</span>
+<h2 id="tldr">TLDR<a class="headerlink" href="#tldr" title="Permanent link">#</a></h2>
+<!-- 문제에 대한 간략한 설명 및 풀이 접근 방식 요약 -->
 
-<span class="sd">    근데, 순환탐지를 어떻게 하지? =&gt; 간선을 추가할 때 중복된 정점이 있다면 순환임.</span>
+<hr />
+<h2 id="snippet">Snippet<a class="headerlink" href="#snippet" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">http://boj.kr/14888</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
-<span class="sd">    근데, 중복된 정점을 어떻게 찾지? =&gt; Union Find</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
 
-<span class="sd">    - G: 연결리스트 형식의 그래프, 각 원소는 (시작 정점번호, 인접 정점번호, 가중치)로 이루어져 있다.</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">disjoint_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MAXV</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>  <span class="c1"># 순환탐지용</span>
-    <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">union_parent</span><span class="p">(</span><span class="n">disjoint_set</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-            <span class="n">ret</span> <span class="o">+=</span> <span class="n">w</span>
-        <span class="k">except</span> <span class="n">NotADisJointSet</span><span class="p">:</span>
-            <span class="k">continue</span>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">OpCountAndExecute</span><span class="p">:</span>
+    <span class="n">count</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># 남은 연산자의 개수</span>
+    <span class="n">execute</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span>  <span class="c1"># 호출자</span>
 
-    <span class="k">return</span> <span class="n">ret</span>
+
+<span class="n">g_max</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">g_min</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">30</span>
+
+
+<span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span>
+    <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">result</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">operators</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">OpCountAndExecute</span><span class="p">],</span>
+    <span class="n">seq</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">global</span> <span class="n">g_max</span><span class="p">,</span> <span class="n">g_min</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">g_max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">g_max</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="n">g_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">g_min</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># print(f&quot;i={i}, seq[{i}]={seq[i]}, result={result}&quot;)</span>
+
+    <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operators</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">op</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">op</span><span class="o">.</span><span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">recurse</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">op</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">operators</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
+            <span class="n">op</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+    <span class="n">plus</span><span class="p">,</span> <span class="n">minus</span><span class="p">,</span> <span class="n">mult</span><span class="p">,</span> <span class="n">div</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+    <span class="n">operators</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">OpCountAndExecute</span><span class="p">(</span><span class="n">plus</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">),</span>
+        <span class="n">OpCountAndExecute</span><span class="p">(</span><span class="n">minus</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">),</span>
+        <span class="n">OpCountAndExecute</span><span class="p">(</span><span class="n">mult</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">),</span>
+        <span class="n">OpCountAndExecute</span><span class="p">(</span><span class="n">div</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">//</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)),</span>
+    <span class="p">]</span>
+
+    <span class="n">recurse</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">operators</span><span class="p">,</span> <span class="n">seq</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">g_max</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">g_min</span><span class="p">)</span>
 </code></pre></div>
+<!-- 주요 코드 작성 -->
+
+<hr />
+<h2 id="sample-input-expected-output">Sample Input &amp; Expected Output<a class="headerlink" href="#sample-input-expected-output" title="Permanent link">#</a></h2>
+<h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="expected-output">Expected Output<a class="headerlink" href="#expected-output" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<hr />
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
+<ul>
+<li></li>
+</ul>
 
 
 
