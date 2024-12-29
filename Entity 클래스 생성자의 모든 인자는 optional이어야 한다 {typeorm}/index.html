@@ -30048,6 +30048,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      다른 대안은 없나? (GPT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="다른 대안은 없나? (GPT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 정적 팩토리 메서드 사용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 데코레이터 기반 유효성 검사 사용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 서비스 계층에서 검증 로직 처리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lifecycle-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Lifecycle Hooks 사용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      요약
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -52818,6 +52878,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      다른 대안은 없나? (GPT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="다른 대안은 없나? (GPT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 정적 팩토리 메서드 사용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 데코레이터 기반 유효성 검사 사용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 서비스 계층에서 검증 로직 처리
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-lifecycle-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Lifecycle Hooks 사용
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      요약
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -52856,6 +52976,110 @@
 <blockquote>
 <p>When using an entity constructor its arguments MUST BE OPTIONAL. Since ORM creates instances of entity classes when laoding from the database, therefore it is not aware of your constructor arguments. - <a href="https://typeorm.io/entities#what-is-entity">What is Entity</a></p>
 </blockquote>
+<h2 id="gpt">다른 대안은 없나? (GPT)<a class="headerlink" href="#gpt" title="Permanent link">#</a></h2>
+<p>네, <code>TypeORM</code>에서 엔티티 클래스의 생성자에 인자를 넣는 것은 문제가 될 수 있습니다. 이유는 <code>TypeORM</code>이 데이터베이스에서 엔티티를 로드할 때 기본 생성자를 사용하여 객체를 초기화하기 때문입니다. 이 과정에서 필요한 인자를 제공하지 않으므로, 위와 같은 <code>undefined</code> 참조 에러가 발생합니다.</p>
+<p>대안으로 아래의 방법들을 고려할 수 있습니다:</p>
+<hr />
+<h3 id="1">1. <strong>정적 팩토리 메서드 사용</strong><a class="headerlink" href="#1" title="Permanent link">#</a></h3>
+<p>정적 메서드를 사용하여 엔티티 인스턴스를 생성하는 방법입니다. 이는 명확한 API를 제공하면서도 ORM이 기본 생성자를 사용할 수 있도록 보장합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Entity</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Donation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// ...</span>
+
+<span class="w">  </span><span class="kd">@Column</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// ...</span>
+
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 기본 생성자 비공개 처리</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">create</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">funding</span><span class="o">:</span><span class="w"> </span><span class="kt">Funding</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">senderUser</span><span class="o">:</span><span class="w"> </span><span class="kt">User</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">g2gException</span><span class="o">:</span><span class="w"> </span><span class="kt">GiftogetherExceptions</span><span class="p">,</span>
+<span class="w">  </span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Donation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">donation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Donation</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">funding</span><span class="p">.</span><span class="nx">fundGoal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Amount exceeds funding goal&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">donation</span><span class="p">.</span><span class="nx">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// 다른 속성 초기화 로직 추가</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">donation</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>이 방법은 객체 생성 시 생성자 대신 <code>Donation.create()</code>를 사용하도록 강제합니다.</p>
+<hr />
+<h3 id="2">2. <strong>데코레이터 기반 유효성 검사 사용</strong><a class="headerlink" href="#2" title="Permanent link">#</a></h3>
+<p><code>class-validator</code>나 <code>class-transformer</code>와 같은 라이브러리를 사용하여 유효성 검사를 수행하는 것도 가능합니다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Entity</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Donation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">@Column</span><span class="p">()</span>
+<span class="w">  </span><span class="kd">@IsInt</span><span class="p">()</span>
+<span class="w">  </span><span class="kd">@Min</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">@Max</span><span class="p">(</span><span class="mf">10000</span><span class="p">)</span><span class="w"> </span><span class="c1">// 예시로 최대 금액 제한</span>
+<span class="w">  </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>이 방법은 엔티티 속성에 유효성 검사를 적용하고, 비즈니스 로직은 서비스 계층에서 처리합니다.</p>
+<hr />
+<h3 id="3">3. <strong>서비스 계층에서 검증 로직 처리</strong><a class="headerlink" href="#3" title="Permanent link">#</a></h3>
+<p>비즈니스 로직을 엔티티에 포함시키지 않고 서비스 계층으로 옮깁니다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Injectable</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">DonationService</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">createDonation</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">funding</span><span class="o">:</span><span class="w"> </span><span class="kt">Funding</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">senderUser</span><span class="o">:</span><span class="w"> </span><span class="kt">User</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">g2gException</span><span class="o">:</span><span class="w"> </span><span class="kt">GiftogetherExceptions</span><span class="p">,</span>
+<span class="w">  </span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Donation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">funding</span><span class="p">.</span><span class="nx">fundGoal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Amount exceeds funding goal&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">donation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Donation</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">donation</span><span class="p">.</span><span class="nx">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">amount</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// 속성 설정</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">donation</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="4-lifecycle-hooks">4. <strong>Lifecycle Hooks 사용</strong><a class="headerlink" href="#4-lifecycle-hooks" title="Permanent link">#</a></h3>
+<p><code>@BeforeInsert</code> 또는 <code>@BeforeUpdate</code> 훅을 사용하여 엔티티 생성/수정 시 검증 로직을 추가할 수도 있습니다.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">@Entity</span><span class="p">()</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">Donation</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">@Column</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">@ManyToOne</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Funding</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">funding</span><span class="o">:</span><span class="w"> </span><span class="kt">Funding</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">@BeforeInsert</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">validate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">amount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">funding</span><span class="p">.</span><span class="nx">fundGoal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Amount exceeds funding goal&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>이 방법은 ORM에서 제공하는 기능을 활용하여 데이터 무결성을 보장합니다.</p>
+<hr />
+<h3 id="_1">요약<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<p>가장 적합한 대안은 프로젝트의 아키텍처와 요구사항에 따라 달라집니다:
+- <strong>객체 생성 로직이 명확히 필요하다면</strong> 정적 팩토리 메서드를 사용하세요.
+- <strong>데이터 검증이 주요 목적이라면</strong> 데코레이터 기반 검증이나 훅을 활용하세요.
+- <strong>비즈니스 로직 분리를 원한다면</strong> 서비스 계층으로 이동하세요.</p>
+<p>이 중 <strong>정적 팩토리 메서드와 서비스 계층 분리</strong>가 실무에서 가장 많이 사용되는 패턴입니다.</p>
 
 
 
