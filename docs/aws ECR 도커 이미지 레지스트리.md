@@ -1,10 +1,12 @@
 ---
+links:
+status:
 aliases: 
 tags: 
 description:
 title: aws ECR 도커 이미지 레지스트리
 created: 2024-11-19T16:18:17
-updated: 2024-11-19T16:36:33
+updated: 2024-12-30T00:50:03
 ---
 
 ## Pulling from ECR
