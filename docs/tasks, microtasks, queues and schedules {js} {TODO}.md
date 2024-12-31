@@ -1,11 +1,13 @@
 ---
+links:
+status:
 aliases: 
 tags:
   - scrap
 description: 
-title: tasks, microtasks, queues and schedules {js}
+title: tasks, microtasks, queues and schedules {js} {TODO}
 created: 2023-11-10T20:56:30
-updated: 2023-11-10T21:01:18
+updated: 2024-12-31T23:19:43
 ---
 - <https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/>
 - [[0018 Javascript ☕️]]

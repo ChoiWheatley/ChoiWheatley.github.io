@@ -1,9 +1,11 @@
 ---
+links:
+status:
 description:
 aliases: 
 tags: 
 created: 2023-05-22T21:37:49
-updated: 2024-06-16T17:46:41
+updated: 2024-12-31T23:27:05
 title: 0018 Javascript ☕️
 ---
 
@@ -25,68 +27,28 @@ title: 0018 Javascript ☕️
 
 - [[JS instance method]]
 - [[JS {basic} {types} {for in, for of} {spread} {destructuring}]]
-- [[비동기, Promise, async, await {JS}]]
 - hoisting과 temporal dead zone
 - constructor function
-- 계산된 프로퍼티
+- [[계산된 프로퍼티 {js}]]
+- [[Object Methods]]
+- [[Symbol 자료형]]
 
-```js
-const user = {
-	[expression] : value
-}
-// same as
-user[expression] = value
-```
+---
 
-- Object Methods
-	- `Object.assign(init, target)`: init 객체에 target 객체를 덮어씌운 새 객체를 리턴
-		- `const user2 = user` 이런 식으로 쓰면 안된다. 같은 주소값을 가리키기 때문.
-	- `Object.keys(obj)`: 키값만 배열로 반환
-	- `Object.values(obj)`: 밸류값들만 배열로 반환
-	- `Object.entries(obj)`: 키, 밸류를 가진 이차원 배열을 반환
-	- `Object.fromEntries(arr)`: 키, 밸류를 가진 이차원 배열로부터 객체 생성
+## 비동기, Promise, async, await {JS}
 
-- Symbol 자료형
+> OS레벨에서 스케줄링의 대상은 **프로세스**이지만 JS 레벨에서 스케줄링의 대상은 **함수**이다.
 
-JS는 남이 만들어놓은 객체의 프로퍼티를 자유롭게 추가 및 삭제할 수 있다. 그런데 원작자가 의도하지 않은 프로퍼티, 특히나 중복된 이름의 프로퍼티를 추가하려고 한다면 어떻게 될까?
+따라서, 콜백함수는, 내가 함수를 원할 때 호출하게 만들기 위한 수단으로 나온 것이다.
 
-```js
-const user = {
-	name: "hello",
-	age: 28,
-};
+> JS에서 기다리는 것은 동시에 할 수 있지만, 처리하는 것은 동시에 하지 못한다.
 
-// 1000 LOC
-user.getName = function() {
-	return this.name;
-};
+- [[tasks, microtasks, queues and schedules {js} {TODO}]]
+- [[Promise.all]]
+	- **Promise.all**은 여러 비동기 작업을 효율적으로 관리할 수 있는 강력한 도구입니다. 병렬로 실행될 수 있는 작업에서 특히 유용하며, 모든 작업의 결과를 한 번에 처리할 수 있습니다. 다만, 하나의 실패가 전체 작업에 영향을 미치므로 이를 방어하기 위한 추가적인 고려가 필요합니다.
+- 
 
-for (key in user) {
-	console.log(key); // name, age, function가 출력됨.
-}
-```
-
-따라서, 임의 프로퍼티를 안전하게 추가하려면 고유한, 나만이 접근할 수 있는 Key 값으로 새 프로퍼티를 만드는 것이 정신건강에 이로울 것이다. 이를 위해서 만든 개념이 Symbol 자료형이다.
-
-```js
-const user = {
-	name: "hello",
-	age: 28,
-};
-
-// 1000 LOC
-
-const getName = Symbol("get name");
-user[getName] = function() {
-	return this.name;
-};
-
-for (key in user) {
-	console.log(key); // name, age 까지만 출력됨. getName은 심볼이라서 가려짐
-}
-
-user[getName](); // "hello"
-```
+---
 
 ## 개꿀팁
 
