@@ -1,10 +1,12 @@
 ---
+links:
+status:
 aliases: 
 tags:
 description:
 title: 1005 ACM Craft
 created: 2023-08-23T00:03:37
-updated: 2023-08-23T00:15:47
+updated: 2025-01-01T22:15:07
 ---
 
 # 1005 ACM Craft
@@ -14,7 +16,7 @@ URL: boj.kr/1005
 상태: 풀이완료  
 최종 편집 일시: 2023년 4월 20일 오후 6:57
 
-[백준 1005] C++ ACM Craft(위상정렬)](<https://hwan-shell.tistory.com/313)>
+[백준 1005] C++ ACM Craft(위상정렬)](<<https://hwan-shell.tistory.com/313>)>
 
 inpired by this blog
 
@@ -113,20 +115,18 @@ swea 특강에서 온라인 수업에 잠깐 배운 기억이 있지만 문제�
 | weight | 10 | 100 | 1 | 10 |  
 | result | 10 | 110 | 11 | 10 |  
 
-2. `sorted_rev.pop()` ⇒ 2
+1. `sorted_rev.pop()` ⇒ 2
 	
 	2와 연결된 노드들에 `weight[2] = 110`을 더한다.
-	
 
 | i | 1 | 2 | 3 | 4 |  
 | --- | --- | --- | --- | --- |  
 | weight | 10 | 100 | 1 | 10 |  
 | result | 120 | 110 | 11 | 10 |  
 
-3. `sorted_rev.pop()` ⇒ 3
+1. `sorted_rev.pop()` ⇒ 3
 	
 	3과 연결된 노드들에 `weight[3] = 11`을 더한다.
-	
 
 | i | 1 | 2 | 3 | 4 |  
 | --- | --- | --- | --- | --- |  
