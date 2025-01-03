@@ -1,12 +1,13 @@
 ---
 aliases: 
-tags: 
-description:
-links:
-status:
+tags:
+  - giftogether
+description: 
+links: 
+status: 
 title: 2024-12-28 Giftogether
 created: 2024-12-28T23:32:46
-updated: 2024-12-29T11:10:51
+updated: 2025-01-03T22:29:08
 ---
 
 그럼 무엇을 해야하나? 거대한 PR을 요약하기, Donation 관련하여 두가지 설계 방향으로 구현한 브랜치를 비교분석, JIRA 티켓 보면서 완료한 것, 해야할 것 브리핑. 작성한 문서, 작성해야 할 문서.
